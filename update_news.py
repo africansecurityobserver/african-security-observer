@@ -3,18 +3,21 @@ import json
 from datetime import datetime, timezone
 
 RSS_FEEDS = {
-    "Sahel": [
+    "sahel": [
         "https://news.google.com/rss/search?q=Sahel+security+Africa&hl=en-US&gl=US&ceid=US:en"
     ],
-    "North Africa": [
+    "north": [
         "https://news.google.com/rss/search?q=North+Africa+security&hl=en-US&gl=US&ceid=US:en"
     ],
-    "Africa": [
+    "rest": [
         "https://news.google.com/rss/search?q=Africa+military+security&hl=en-US&gl=US&ceid=US:en"
+    ],
+    "defense": [
+        "https://news.google.com/rss/search?q=Africa+defense+military+weapons&hl=en-US&gl=US&ceid=US:en"
     ]
 }
 
-MAX_NEWS = 30
+MAX_NEWS_PER_CATEGORY = 30
 
 
 def get_news():
@@ -24,10 +27,10 @@ def get_news():
         for feed_url in feeds:
             feed = feedparser.parse(feed_url)
 
-            for entry in feed.entries:
+            for entry in feed.entries[:MAX_NEWS_PER_CATEGORY]:
                 items.append({
                     "title": entry.get("title", "").strip(),
-                    "link": entry.get("link", ""),
+                    "url": entry.get("link", ""),
                     "source": entry.get("source", {}).get(
                         "title", "Google News"
                     ),
@@ -35,7 +38,7 @@ def get_news():
                     "category": category
                 })
 
-    return items[:MAX_NEWS]
+    return items
 
 
 def main():
