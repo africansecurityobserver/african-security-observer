@@ -1,0 +1,5 @@
+[
+  {"name":"RFI Afrique","url":"https://www.rfi.fr/fr/afrique/rss","enabled":true},
+  {"name":"Africanews","url":"https://www.africanews.com/feed/rss","enabled":true},
+  {"name":"Defense News","url":"https://www.defensenews.com/arc/outboundfeeds/rss/","enabled":true}
+]
