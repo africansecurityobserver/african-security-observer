@@ -34,7 +34,7 @@ def decode_url(url):
             timeout=15
         )
 
-        if result.get("status"):
+        if result.get("success"):
             return result.get("decoded_url", url)
 
     except Exception as e:
