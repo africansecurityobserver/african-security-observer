@@ -1,5 +1,6 @@
 import feedparser
 import json
+import os
 from datetime import datetime, timezone, timedelta
 from urllib.parse import quote_plus
 from googlenewsdecoder import gnewsdecoder
@@ -20,7 +21,6 @@ SAHEL_COUNTRIES = [
     "Ivory Coast"
 ]
 
-
 NORTH_AFRICA_COUNTRIES = [
     "Tunisia",
     "Algeria",
@@ -28,7 +28,6 @@ NORTH_AFRICA_COUNTRIES = [
     "Libya",
     "Egypt"
 ]
-
 
 REST_OF_AFRICA_COUNTRIES = [
     "Nigeria",
@@ -61,6 +60,8 @@ REST_OF_AFRICA_COUNTRIES = [
     "Guinea-Bissau",
     "Togo",
     "Benin",
+    "Djibouti",
+    "Cabo Verde",
     "Equatorial Guinea",
     "Eritrea",
     "Eswatini",
@@ -68,7 +69,8 @@ REST_OF_AFRICA_COUNTRIES = [
     "Madagascar",
     "Mauritius",
     "Seychelles",
-    "Comoros"
+    "Comoros",
+    "Sao Tome and Principe"
 ]
 
 
@@ -106,13 +108,10 @@ SECURITY_TERMS = [
 
 
 # =========================================================
-# GOOGLE NEWS RSS URL
+# GOOGLE NEWS RSS
 # =========================================================
 
 def make_country_feed(country):
-
-    # Every important search term contains the country name.
-    # This prevents OR from bringing unrelated countries.
 
     search_parts = []
 
@@ -129,7 +128,6 @@ def make_country_feed(country):
 
     query = " OR ".join(search_parts)
 
-    # Limit Google News search to recent stories.
     query = f"({query}) when:2d"
 
     encoded_query = quote_plus(query)
@@ -142,7 +140,7 @@ def make_country_feed(country):
 
 
 # =========================================================
-# BUILD RSS FEEDS
+# RSS FEEDS
 # =========================================================
 
 RSS_FEEDS = {
@@ -191,11 +189,18 @@ RSS_FEEDS = {
 # =========================================================
 
 MAX_NEWS_PER_FEED = 10
+
 MAX_NEWS_AGE_HOURS = 48
+
+CURRENT_NEWS_DAYS = 7
+
+ARCHIVE_FOLDER = "archive"
+
+NEWS_FILE = "news.json"
 
 
 # =========================================================
-# DECODE GOOGLE NEWS URL
+# URL DECODER
 # =========================================================
 
 def decode_url(url):
@@ -212,6 +217,7 @@ def decode_url(url):
         )
 
         if result.get("success"):
+
             return result.get(
                 "decoded_url",
                 url
@@ -234,11 +240,6 @@ def classify_news(title, feed_category):
 
     text = title.lower()
 
-
-    # -----------------------------------------------------
-    # NORTH AFRICA
-    # -----------------------------------------------------
-
     north_words = [
         "tunisia",
         "tunisian",
@@ -253,11 +254,6 @@ def classify_news(title, feed_category):
         "north africa",
         "maghreb"
     ]
-
-
-    # -----------------------------------------------------
-    # SAHEL
-    # -----------------------------------------------------
 
     sahel_words = [
         "mali",
@@ -279,11 +275,6 @@ def classify_news(title, feed_category):
         "côte d'ivoire",
         "sahel"
     ]
-
-
-    # -----------------------------------------------------
-    # DEFENSE / ARMAMENT
-    # -----------------------------------------------------
 
     defense_words = [
 
@@ -355,46 +346,23 @@ def classify_news(title, feed_category):
         "armaments"
     ]
 
-
-    # -----------------------------------------------------
-    # GEOGRAPHICAL PRIORITY
-    #
-    # If an article is about Mali, for example, it goes
-    # to Sahel even if the title also contains "military"
-    # or "weapons".
-    # -----------------------------------------------------
-
     if any(
         word in text
         for word in north_words
     ):
-
         return "north"
-
 
     if any(
         word in text
         for word in sahel_words
     ):
-
         return "sahel"
-
-
-    # -----------------------------------------------------
-    # DEFENSE
-    # -----------------------------------------------------
 
     if any(
         word in text
         for word in defense_words
     ):
-
         return "defense"
-
-
-    # -----------------------------------------------------
-    # FALLBACK
-    # -----------------------------------------------------
 
     if feed_category == "north":
         return "north"
@@ -409,7 +377,40 @@ def classify_news(title, feed_category):
 
 
 # =========================================================
-# GET NEWS
+# LOAD EXISTING NEWS
+# =========================================================
+
+def load_existing_news():
+
+    if not os.path.exists(NEWS_FILE):
+        return []
+
+    try:
+
+        with open(
+            NEWS_FILE,
+            "r",
+            encoding="utf-8"
+        ) as file:
+
+            data = json.load(file)
+
+        return data.get(
+            "items",
+            []
+        )
+
+    except Exception as e:
+
+        print(
+            f"Could not load existing news: {e}"
+        )
+
+        return []
+
+
+# =========================================================
+# GET NEW NEWS
 # =========================================================
 
 def get_news():
@@ -420,19 +421,17 @@ def get_news():
 
     seen_titles = set()
 
-
     for feed_category, feeds in RSS_FEEDS.items():
 
         for feed_url in feeds:
 
             print(
-                f"Reading feed: {feed_url}"
+                f"Reading feed: {feed_category}"
             )
 
             feed = feedparser.parse(
                 feed_url
             )
-
 
             for entry in feed.entries[
                 :MAX_NEWS_PER_FEED
@@ -443,83 +442,34 @@ def get_news():
                     ""
                 ).strip()
 
-
                 google_url = entry.get(
                     "link",
                     ""
                 ).strip()
 
-
                 if not title or not google_url:
                     continue
-
-
-                # -------------------------------------------------
-                # Decode original article URL
-                # -------------------------------------------------
 
                 article_url = decode_url(
                     google_url
                 )
 
-
-                # -------------------------------------------------
-                # Remove duplicate URL
-                # -------------------------------------------------
-
                 if article_url in seen_urls:
                     continue
-
-
-                # -------------------------------------------------
-                # Remove duplicate title
-                # -------------------------------------------------
 
                 normalized_title = (
                     title.lower()
                     .replace(" ", "")
+                    .replace("-", "")
                 )
-
 
                 if normalized_title in seen_titles:
                     continue
-
-
-                seen_urls.add(
-                    article_url
-                )
-
-                seen_titles.add(
-                    normalized_title
-                )
-
-
-                # -------------------------------------------------
-                # Source
-                # -------------------------------------------------
-
-                source = entry.get(
-                    "source",
-                    {}
-                ).get(
-                    "title",
-                    "مصدر غير معروف"
-                )
-
-
-                # -------------------------------------------------
-                # Publication date
-                # -------------------------------------------------
 
                 published = entry.get(
                     "published",
                     ""
                 )
-
-
-                # -------------------------------------------------
-                # Ignore news older than 48 hours
-                # -------------------------------------------------
 
                 if published:
 
@@ -532,38 +482,34 @@ def get_news():
                             tzinfo=timezone.utc
                         )
 
-
-                        if (
+                        age = (
                             datetime.now(
                                 timezone.utc
                             )
                             - published_dt
-                            > timedelta(
-                                hours=MAX_NEWS_AGE_HOURS
-                            )
+                        )
+
+                        if age > timedelta(
+                            hours=MAX_NEWS_AGE_HOURS
                         ):
-
                             continue
-
 
                     except ValueError:
 
                         pass
 
-
-                # -------------------------------------------------
-                # Classify
-                # -------------------------------------------------
+                source = entry.get(
+                    "source",
+                    {}
+                ).get(
+                    "title",
+                    "مصدر غير معروف"
+                )
 
                 category = classify_news(
                     title,
                     feed_category
                 )
-
-
-                # -------------------------------------------------
-                # Save article
-                # -------------------------------------------------
 
                 items.append({
 
@@ -579,10 +525,13 @@ def get_news():
 
                 })
 
+                seen_urls.add(
+                    article_url
+                )
 
-    # =========================================================
-    # SORT NEWEST FIRST
-    # =========================================================
+                seen_titles.add(
+                    normalized_title
+                )
 
     items.sort(
         key=lambda x: x.get(
@@ -592,8 +541,270 @@ def get_news():
         reverse=True
     )
 
-
     return items
+
+
+# =========================================================
+# ARCHIVE HELPERS
+# =========================================================
+
+def normalize_article(article):
+
+    return {
+        "title": article.get(
+            "title",
+            ""
+        ),
+
+        "url": article.get(
+            "url",
+            ""
+        ),
+
+        "source": article.get(
+            "source",
+            "مصدر غير معروف"
+        ),
+
+        "published": article.get(
+            "published",
+            ""
+        ),
+
+        "category": article.get(
+            "category",
+            "rest"
+        )
+    }
+
+
+def article_key(article):
+
+    url = article.get(
+        "url",
+        ""
+    ).strip()
+
+    if url:
+        return "url:" + url
+
+    title = article.get(
+        "title",
+        ""
+    ).lower().strip()
+
+    return "title:" + title
+
+
+def archive_file_for(article):
+
+    published = article.get(
+        "published",
+        ""
+    )
+
+    try:
+
+        dt = datetime.strptime(
+            published,
+            "%a, %d %b %Y %H:%M:%S %Z"
+        )
+
+        return os.path.join(
+            ARCHIVE_FOLDER,
+            dt.strftime("%Y-%m") + ".json"
+        )
+
+    except ValueError:
+
+        return os.path.join(
+            ARCHIVE_FOLDER,
+            datetime.now(
+                timezone.utc
+            ).strftime("%Y-%m") + ".json"
+        )
+
+
+# =========================================================
+# UPDATE ARCHIVE
+# =========================================================
+
+def update_archive(all_articles):
+
+    os.makedirs(
+        ARCHIVE_FOLDER,
+        exist_ok=True
+    )
+
+    grouped = {}
+
+    for article in all_articles:
+
+        article = normalize_article(
+            article
+        )
+
+        file_path = archive_file_for(
+            article
+        )
+
+        if file_path not in grouped:
+            grouped[file_path] = {}
+
+        key = article_key(
+            article
+        )
+
+        grouped[file_path][key] = article
+
+    for file_path, articles in grouped.items():
+
+        existing = {}
+
+        if os.path.exists(file_path):
+
+            try:
+
+                with open(
+                    file_path,
+                    "r",
+                    encoding="utf-8"
+                ) as file:
+
+                    old_data = json.load(
+                        file
+                    )
+
+                for article in old_data.get(
+                    "items",
+                    []
+                ):
+
+                    key = article_key(
+                        article
+                    )
+
+                    existing[key] = article
+
+            except Exception as e:
+
+                print(
+                    f"Could not read archive {file_path}: {e}"
+                )
+
+        existing.update(
+            articles
+        )
+
+        final_items = list(
+            existing.values()
+        )
+
+        final_items.sort(
+            key=lambda x: x.get(
+                "published",
+                ""
+            ),
+            reverse=True
+        )
+
+        archive_data = {
+
+            "updated":
+                datetime.now(
+                    timezone.utc
+                ).isoformat(),
+
+            "items":
+                final_items
+        }
+
+        with open(
+            file_path,
+            "w",
+            encoding="utf-8"
+        ) as file:
+
+            json.dump(
+                archive_data,
+                file,
+                ensure_ascii=False,
+                indent=2
+            )
+
+        print(
+            f"Archive updated: {file_path}"
+        )
+
+
+# =========================================================
+# BUILD CURRENT NEWS
+# =========================================================
+
+def build_current_news(all_articles):
+
+    now = datetime.now(
+        timezone.utc
+    )
+
+    current = []
+
+    seen = set()
+
+    for article in all_articles:
+
+        published = article.get(
+            "published",
+            ""
+        )
+
+        keep = True
+
+        try:
+
+            published_dt = datetime.strptime(
+                published,
+                "%a, %d %b %Y %H:%M:%S %Z"
+            ).replace(
+                tzinfo=timezone.utc
+            )
+
+            age = now - published_dt
+
+            if age > timedelta(
+                days=CURRENT_NEWS_DAYS
+            ):
+                keep = False
+
+        except ValueError:
+
+            pass
+
+        if not keep:
+            continue
+
+        key = article_key(
+            article
+        )
+
+        if key in seen:
+            continue
+
+        seen.add(key)
+
+        current.append(
+            article
+        )
+
+    current.sort(
+        key=lambda x: x.get(
+            "published",
+            ""
+        ),
+        reverse=True
+    )
+
+    return current
 
 
 # =========================================================
@@ -602,10 +813,77 @@ def get_news():
 
 def main():
 
-    items = get_news()
+    print(
+        "Starting African Security Observer update..."
+    )
 
+    # -----------------------------------------------------
+    # Load current news
+    # -----------------------------------------------------
 
-    data = {
+    old_news = load_existing_news()
+
+    print(
+        f"Existing current news: {len(old_news)}"
+    )
+
+    # -----------------------------------------------------
+    # Get fresh news
+    # -----------------------------------------------------
+
+    new_news = get_news()
+
+    print(
+        f"Fresh news found: {len(new_news)}"
+    )
+
+    # -----------------------------------------------------
+    # Combine old + new
+    # -----------------------------------------------------
+
+    combined = {}
+
+    for article in old_news:
+
+        key = article_key(
+            article
+        )
+
+        combined[key] = normalize_article(
+            article
+        )
+
+    for article in new_news:
+
+        key = article_key(
+            article
+        )
+
+        combined[key] = normalize_article(
+            article
+        )
+
+    all_articles = list(
+        combined.values()
+    )
+
+    # -----------------------------------------------------
+    # Update monthly archive
+    # -----------------------------------------------------
+
+    update_archive(
+        all_articles
+    )
+
+    # -----------------------------------------------------
+    # Keep only last 7 days in news.json
+    # -----------------------------------------------------
+
+    current_news = build_current_news(
+        all_articles
+    )
+
+    news_data = {
 
         "updated":
             datetime.now(
@@ -613,33 +891,30 @@ def main():
             ).isoformat(),
 
         "items":
-            items
-
+            current_news
     }
 
-
     with open(
-        "news.json",
+        NEWS_FILE,
         "w",
         encoding="utf-8"
     ) as file:
 
         json.dump(
-            data,
+            news_data,
             file,
             ensure_ascii=False,
             indent=2
         )
 
-
     print(
-        f"Updated {len(items)} news items."
+        f"Current news saved: {len(current_news)}"
     )
 
+    print(
+        "African Security Observer update completed successfully."
+    )
 
-# =========================================================
-# RUN
-# =========================================================
 
 if __name__ == "__main__":
 
