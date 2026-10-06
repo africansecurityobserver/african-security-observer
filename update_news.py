@@ -1,6 +1,6 @@
 import feedparser
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from googlenewsdecoder import gnewsdecoder
 
 
