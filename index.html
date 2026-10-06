@@ -367,7 +367,9 @@ border-radius:8px
 display:none
 }
 
-/* ARCHIVE */
+/* =====================================================
+   ARCHIVE
+===================================================== */
 
 .archive-box{
 background:#fff;
@@ -453,6 +455,259 @@ padding:25px;
 color:var(--muted)
 }
 
+/* =====================================================
+   STRATEGIC ARTICLES
+===================================================== */
+
+.article-list{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:18px
+}
+
+.article-card{
+background:#fff;
+border:1px solid var(--line);
+border-radius:8px;
+overflow:hidden;
+cursor:pointer;
+transition:.15s
+}
+
+.article-card:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px #102b4615
+}
+
+.article-card-image{
+width:100%;
+height:220px;
+object-fit:cover;
+display:block;
+background:#e8edf1
+}
+
+.article-card-noimage{
+height:150px;
+background:linear-gradient(120deg,#173b58,#416b80 60%,#c09b57);
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+font-size:40px
+}
+
+.article-card-body{
+padding:18px
+}
+
+.article-card-title{
+font-size:20px;
+line-height:1.55;
+margin:0 0 12px;
+color:var(--navy)
+}
+
+.article-meta{
+font-size:11px;
+color:var(--muted);
+margin-top:10px
+}
+
+.article-loading{
+text-align:center;
+padding:35px;
+background:#fff;
+border:1px dashed var(--line);
+border-radius:8px;
+color:var(--muted)
+}
+
+.article-reader{
+background:#fff;
+border:1px solid var(--line);
+border-radius:8px;
+padding:20px
+}
+
+.article-back{
+margin-bottom:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+flex-wrap:wrap
+}
+
+.article-back button{
+background:#fff;
+border:1px solid var(--line);
+padding:9px 15px;
+border-radius:5px;
+font-family:inherit;
+cursor:pointer;
+color:var(--blue)
+}
+
+.article-back button:hover{
+background:#f0f4f7
+}
+
+.article-actions{
+display:flex;
+gap:8px;
+flex-wrap:wrap
+}
+
+.article-actions button{
+border:0;
+border-radius:5px;
+padding:9px 14px;
+font-family:inherit;
+font-size:13px;
+cursor:pointer
+}
+
+.download-button{
+background:var(--navy);
+color:#fff
+}
+
+.print-button{
+background:var(--gold);
+color:#172535
+}
+
+.article-page{
+max-width:900px;
+margin:auto
+}
+
+.article-page-header{
+border-bottom:2px solid var(--navy);
+padding-bottom:18px;
+margin-bottom:20px
+}
+
+.article-page-header h2{
+font-size:30px;
+line-height:1.5;
+margin:0 0 12px;
+color:var(--navy)
+}
+
+.article-page-meta{
+font-size:12px;
+color:var(--muted)
+}
+
+.article-page-image{
+width:100%;
+max-height:520px;
+object-fit:cover;
+border-radius:7px;
+margin:0 0 25px
+}
+
+.article-page-body{
+font-size:17px;
+line-height:2;
+color:#263746
+}
+
+.article-page-body h2{
+font-size:24px;
+color:var(--navy);
+margin:30px 0 10px
+}
+
+.article-page-body h3{
+font-size:20px;
+color:var(--navy);
+margin:25px 0 8px
+}
+
+.article-page-body p{
+margin:0 0 18px
+}
+
+.article-page-body strong{
+font-weight:bold
+}
+
+.article-page-body em{
+font-style:italic
+}
+
+.article-page-body blockquote{
+border-right:4px solid var(--gold);
+margin:20px 0;
+padding:10px 18px;
+background:#f5f7f8;
+color:#596b79
+}
+
+.article-page-body ul,
+.article-page-body ol{
+padding-right:30px;
+margin-bottom:20px
+}
+
+.article-page-body a{
+color:var(--blue);
+text-decoration:underline
+}
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+@media print{
+
+body{
+background:#fff
+}
+
+.top,
+.masthead,
+.ticker,
+.footer,
+.article-back,
+.article-actions{
+display:none !important
+}
+
+.main{
+padding:0
+}
+
+.article-reader{
+border:0;
+padding:0
+}
+
+.article-page{
+max-width:none
+}
+
+.article-page-header h2{
+font-size:28px
+}
+
+.article-page-body{
+font-size:16px
+}
+
+.article-page-image{
+max-height:none
+}
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media(max-width:760px){
 
 .grid{
@@ -485,6 +740,30 @@ grid-template-columns:1fr
 
 .archive-list{
 grid-template-columns:1fr
+}
+
+.article-list{
+grid-template-columns:1fr
+}
+
+.article-card-image{
+height:190px
+}
+
+.article-page-header h2{
+font-size:23px
+}
+
+.article-page-body{
+font-size:16px
+}
+
+.article-actions{
+width:100%
+}
+
+.article-actions button{
+flex:1
 }
 
 .top .wrap{
@@ -645,6 +924,84 @@ style="grid-template-columns:repeat(2,minmax(0,1fr));"
 
 
 <!-- =====================================================
+     STRATEGIC ARTICLES LIST
+===================================================== -->
+
+<section id="articlesSection" class="hidden">
+
+<div class="section-head">
+
+<h2>
+المقالات الاستراتيجية
+</h2>
+
+<small>
+تحليلات ودراسات المرصد الإفريقي
+</small>
+
+</div>
+
+
+<div id="articlesList" class="article-list">
+
+<div class="article-loading">
+جارٍ تحميل المقالات…
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     STRATEGIC ARTICLE READER
+===================================================== -->
+
+<section id="articleReaderSection" class="hidden">
+
+<div class="article-reader">
+
+<div class="article-back">
+
+<button onclick="showArticles()">
+→ العودة إلى المقالات الاستراتيجية
+</button>
+
+<div class="article-actions">
+
+<button
+class="download-button"
+onclick="downloadCurrentArticle()"
+>
+⬇ تحميل المقال
+</button>
+
+<button
+class="print-button"
+onclick="printCurrentArticle()"
+>
+🖨 طباعة / حفظ PDF
+</button>
+
+</div>
+
+</div>
+
+
+<div id="articleReader">
+
+<div class="article-loading">
+جارٍ تحميل المقال…
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      ARCHIVE SECTION
 ===================================================== -->
 
@@ -754,6 +1111,10 @@ const placeholder=document.getElementById('placeholder');
 
 const archiveSection=document.getElementById('archiveSection');
 
+const articlesSection=document.getElementById('articlesSection');
+
+const articleReaderSection=document.getElementById('articleReaderSection');
+
 
 document.getElementById('date').textContent=
 new Intl.DateTimeFormat(
@@ -820,6 +1181,10 @@ rel="noopener noreferrer"
 }
 
 
+/* =====================================================
+   NEWS
+===================================================== */
+
 let items=[];
 
 
@@ -876,284 +1241,349 @@ document.getElementById('empty')
 
 
 /* =====================================================
-   SHOW HOME
+   STRATEGIC ARTICLES
 ===================================================== */
 
-function showHome(){
+let articles=[];
 
-document.querySelectorAll('.nav button')
-.forEach(b=>b.classList.remove('active'));
-
-document.querySelector(
-'.nav button[data-section="home"]'
-).classList.add('active');
-
-home.classList.remove('hidden');
-
-placeholder.classList.add('hidden');
-
-archiveSection.classList.add('hidden');
-
-}
+let currentArticle=null;
 
 
-/* =====================================================
-   ARCHIVE
-===================================================== */
+async function loadArticles(){
 
-async function loadArchiveIndex(){
-
-const select=
-document.getElementById('archiveMonth');
+const container=
+document.getElementById('articlesList');
 
 try{
 
 const response=await fetch(
-'./archive/index.json',
+'./articles.json',
 {cache:'no-store'}
 );
 
 if(!response.ok)
-throw new Error('archive index unavailable');
+throw new Error('articles unavailable');
 
 const data=await response.json();
 
-const months=data.months||[];
+articles=Array.isArray(data)
+?
+data
+:
+(data.articles||[]);
 
-select.innerHTML='';
+if(articles.length===0){
 
-if(months.length===0){
-
-select.innerHTML=
-'<option value="">لا يوجد أرشيف متاح حالياً</option>';
+container.innerHTML=
+'<div class="empty">لا توجد مقالات استراتيجية منشورة حاليًا.</div>';
 
 return;
 
 }
 
-
-months.forEach(month=>{
-
-const option=document.createElement('option');
-
-option.value=month;
-
-option.textContent=formatMonth(month);
-
-select.appendChild(option);
-
-});
+container.innerHTML=
+articles.map(articleCard).join('');
 
 }
 
 catch(error){
 
-select.innerHTML=
-'<option value="">تعذر تحميل الأرشيف</option>';
+container.innerHTML=
+'<div class="empty">تعذر تحميل المقالات الاستراتيجية حاليًا.</div>';
 
 }
 
 }
 
 
-function formatMonth(month){
+function articleCard(article){
 
-const parts=month.split('-');
+const image=article.image
+?
+`
+<img
+class="article-card-image"
+src="${esc(article.image)}"
+alt="${esc(article.title)}"
+loading="lazy"
+>
+`
+:
+`
+<div class="article-card-noimage">
+◈
+</div>
+`;
 
-if(parts.length!==2)
-return month;
+return `
+<article
+class="article-card"
+onclick="openArticle('${encodeURIComponent(article.slug||'')}')"
+>
 
-const year=Number(parts[0]);
+${image}
 
-const monthNumber=Number(parts[1]);
+<div class="article-card-body">
 
-if(!year||!monthNumber)
-return month;
+<h3 class="article-card-title">
+${esc(article.title)}
+</h3>
 
-const date=new Date(
-Date.UTC(
-year,
-monthNumber-1,
-1
-)
-);
+<div class="article-meta">
+${article.author ? 'بقلم: '+esc(article.author) : ''}
+${article.author && article.date ? ' · ' : ''}
+${article.date ? formatArticleDate(article.date) : ''}
+</div>
+
+</div>
+
+</article>
+`;
+
+}
+
+
+function formatArticleDate(value){
+
+if(!value)
+return '';
+
+const date=new Date(value);
+
+if(Number.isNaN(date.getTime()))
+return esc(value);
 
 return new Intl.DateTimeFormat(
 'ar-TN',
 {
-month:'long',
 year:'numeric',
-timeZone:'UTC'
+month:'long',
+day:'numeric'
 }
 ).format(date);
 
 }
 
 
-async function loadSelectedArchive(){
+function findArticle(slug){
 
-const select=
-document.getElementById('archiveMonth');
-
-const month=select.value;
-
-const container=
-document.getElementById('archiveContent');
-
-if(!month){
-
-container.innerHTML=
-'<div class="empty">اختر شهراً أولاً.</div>';
-
-return;
-
-}
-
-
-container.innerHTML=
-'<div class="archive-loading">جارٍ تحميل الأرشيف…</div>';
-
-
-try{
-
-const response=await fetch(
-'./archive/'+month+'.json',
-{cache:'no-store'}
+return articles.find(
+article=>
+String(article.slug||'')===String(slug||'')
 );
 
-if(!response.ok)
-throw new Error('archive unavailable');
-
-const data=await response.json();
-
-const archiveItems=data.items||[];
-
-if(archiveItems.length===0){
-
-container.innerHTML=
-'<div class="empty">لا توجد أخبار في هذا الأرشيف.</div>';
-
-return;
-
 }
 
 
-container.innerHTML=`
+function markdownToHtml(markdown){
 
-<div class="archive-title">
-أخبار ${esc(formatMonth(month))}
-</div>
+let text=String(markdown||'').replace(/\r\n/g,'\n');
 
-<div class="archive-list">
-${archiveItems.map(card).join('')}
-</div>
+const lines=text.split('\n');
 
-`;
+let html='';
 
+let inUl=false;
+let inOl=false;
+let inQuote=false;
+
+
+function closeLists(){
+
+if(inUl){
+html+='</ul>';
+inUl=false;
 }
 
-catch(error){
-
-container.innerHTML=
-'<div class="empty">تعذر تحميل أرشيف هذا الشهر.</div>';
-
+if(inOl){
+html+='</ol>';
+inOl=false;
 }
 
 }
 
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
+function closeQuote(){
 
-document.querySelectorAll('.nav button')
-.forEach(btn=>{
-
-btn.addEventListener(
-'click',
-()=>{
-
-document.querySelectorAll('.nav button')
-.forEach(b=>b.classList.remove('active'));
-
-btn.classList.add('active');
-
-const key=btn.dataset.section;
-
-
-/* ARCHIVE */
-
-if(key==='archive'){
-
-home.classList.add('hidden');
-
-placeholder.classList.add('hidden');
-
-archiveSection.classList.remove('hidden');
-
-loadArchiveIndex();
-
-return;
+if(inQuote){
+html+='</blockquote>';
+inQuote=false;
+}
 
 }
 
 
-/* NORMAL SECTIONS */
+function inline(value){
 
-home.classList.toggle(
-'hidden',
-key!=='home'
+let s=esc(value);
+
+s=s.replace(
+/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/g,
+'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
 );
 
-placeholder.classList.toggle(
-'hidden',
-key==='home'
+s=s.replace(
+/\*\*(.*?)\*\*/g,
+'<strong>$1</strong>'
 );
 
-archiveSection.classList.add('hidden');
-
-
-document.getElementById(
-'sectionTitle'
-).textContent=
-names[key]||key;
-
-
-const filtered=
-key==='analysis'
-?
-[]
-:
-items.filter(
-x=>key==='home'||x.category===key
+s=s.replace(
+/__(.*?)__/g,
+'<strong>$1</strong>'
 );
 
+s=s.replace(
+/\*(.*?)\*/g,
+'<em>$1</em>'
+);
 
-document.getElementById(
-'section-list'
-).innerHTML=
-filtered.map(card).join('')
-||
-'<div class="empty">لا توجد أخبار مصنفة في هذا القسم حاليًا.</div>';
+s=s.replace(
+/_(.*?)_/g,
+'<em>$1</em>'
+);
 
-
-if(key==='home'){
-
-document.getElementById(
-'section-list'
-).innerHTML='';
+return s;
 
 }
 
+
+for(let i=0;i<lines.length;i++){
+
+const raw=lines[i];
+
+const line=raw.trim();
+
+
+if(!line){
+
+closeLists();
+closeQuote();
+
+continue;
+
 }
-);
-
-});
 
 
-load();
+/* H2 */
 
-</script>
+if(line.startsWith('## ')){
 
-</body>
-  </html>
+closeLists();
+closeQuote();
+
+html+=
+'<h2>'+
+inline(line.substring(3))+
+'</h2>';
+
+continue;
+
+}
+
+
+/* H3 */
+
+if(line.startsWith('### ')){
+
+closeLists();
+closeQuote();
+
+html+=
+'<h3>'+
+inline(line.substring(4))+
+'</h3>';
+
+continue;
+
+}
+
+
+/* Blockquote */
+
+if(line.startsWith('> ')){
+
+closeLists();
+
+if(!inQuote){
+
+html+='<blockquote>';
+inQuote=true;
+
+}
+
+html+=
+'<p>'+
+inline(line.substring(2))+
+'</p>';
+
+continue;
+
+}
+
+
+/* Unordered list */
+
+if(line.startsWith('- ') || line.startsWith('* ')){
+
+closeQuote();
+
+if(!inUl){
+
+closeLists();
+html+='<ul>';
+inUl=true;
+
+}
+
+html+=
+'<li>'+
+inline(line.substring(2))+
+'</li>';
+
+continue;
+
+}
+
+
+/* Ordered list */
+
+if(/^\d+\.\s/.test(line)){
+
+closeQuote();
+
+if(!inOl){
+
+closeLists();
+html+='<ol>';
+inOl=true;
+
+}
+
+html+=
+'<li>'+
+inline(line.replace(/^\d+\.\s/,'') )+
+'</li>';
+
+continue;
+
+}
+
+
+/* Normal paragraph */
+
+closeLists();
+closeQuote();
+
+html+=
+'<p>'+
+inline(line)+
+'</p>';
+
+}
+
+closeLists();
+closeQuote();
+
+return html;
+
+}
