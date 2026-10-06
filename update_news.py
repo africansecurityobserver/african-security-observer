@@ -198,6 +198,11 @@ ARCHIVE_FOLDER = "archive"
 
 NEWS_FILE = "news.json"
 
+ARCHIVE_INDEX_FILE = os.path.join(
+    ARCHIVE_FOLDER,
+    "index.json"
+)
+
 
 # =========================================================
 # URL DECODER
@@ -738,6 +743,82 @@ def update_archive(all_articles):
 
 
 # =========================================================
+# UPDATE ARCHIVE INDEX
+# =========================================================
+
+def update_archive_index():
+
+    os.makedirs(
+        ARCHIVE_FOLDER,
+        exist_ok=True
+    )
+
+    months = []
+
+    for filename in os.listdir(
+        ARCHIVE_FOLDER
+    ):
+
+        if not filename.endswith(
+            ".json"
+        ):
+            continue
+
+        if filename == "index.json":
+            continue
+
+        month = filename[:-5]
+
+        try:
+
+            datetime.strptime(
+                month,
+                "%Y-%m"
+            )
+
+            months.append(
+                month
+            )
+
+        except ValueError:
+
+            continue
+
+    months = sorted(
+        set(months),
+        reverse=True
+    )
+
+    archive_index = {
+
+        "updated":
+            datetime.now(
+                timezone.utc
+            ).isoformat(),
+
+        "months":
+            months
+    }
+
+    with open(
+        ARCHIVE_INDEX_FILE,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            archive_index,
+            file,
+            ensure_ascii=False,
+            indent=2
+        )
+
+    print(
+        f"Archive index updated: {len(months)} month(s)"
+    )
+
+
+# =========================================================
 # BUILD CURRENT NEWS
 # =========================================================
 
@@ -874,6 +955,12 @@ def main():
     update_archive(
         all_articles
     )
+
+    # -----------------------------------------------------
+    # Update archive index
+    # -----------------------------------------------------
+
+    update_archive_index()
 
     # -----------------------------------------------------
     # Keep only last 7 days in news.json
