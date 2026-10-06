@@ -1,19 +1,26 @@
 {
-  "updated": "2026-10-06T19:19:51.500960+00:00",
+  "updated": "2026-10-06T19:44:22.864999+00:00",
   "items": [
+    {
+      "title": "Report: Formula 1 returning to Africa in 2030 - Sacramento Bee",
+      "url": "https://www.sacbee.com/sports/nascar-auto-racing/article317515605.html",
+      "source": "Sacramento Bee",
+      "published": "Tue, 06 Oct 2026 19:34:07 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Niger Delta coalition faults Asari’s claims, says allegations against Olu Of Warri baseless - The Guardian Nigeria News",
+      "url": "https://guardian.ng/news/niger-delta-coalition-faults-asaris-claims-says-allegations-against-olu-of-warri-baseless/",
+      "source": "The Guardian Nigeria News",
+      "published": "Tue, 06 Oct 2026 19:23:00 GMT",
+      "category": "sahel"
+    },
     {
       "title": "Kenya records first Ebola case from Congo outbreak that has killed thousands - The Washington Post",
       "url": "https://www.washingtonpost.com/world/2026/10/06/kenya-records-first-ebola-case-congo-outbreak-that-has-killed-thousands/",
       "source": "The Washington Post",
       "published": "Tue, 06 Oct 2026 19:04:53 GMT",
       "category": "rest"
-    },
-    {
-      "title": "Ethiopian commander reports drone strikes in Tigray as markets reopen in regional capital - The Washington Post",
-      "url": "https://www.washingtonpost.com/world/2026/10/06/ethiopia-tigray-mekelle-tplf-fighting-drones-eritrea/6b0c93b8-c191-11f1-8170-681419af1cc9_story.html",
-      "source": "The Washington Post",
-      "published": "Tue, 06 Oct 2026 19:04:15 GMT",
-      "category": "defense"
     },
     {
       "title": "International Wrap-Up: Seven Pride players called up for October international duty - Orlando City",
@@ -28,6 +35,20 @@
       "source": "Bloomberg.com",
       "published": "Tue, 06 Oct 2026 19:01:40 GMT",
       "category": "rest"
+    },
+    {
+      "title": "Ethiopian commander reports drone strikes in Tigray as markets reopen in regional capital - The Washington Post",
+      "url": "https://www.washingtonpost.com/world/2026/10/06/ethiopia-tigray-mekelle-tplf-fighting-drones-eritrea/6b0c93b8-c191-11f1-8170-681419af1cc9_story.html",
+      "source": "The Washington Post",
+      "published": "Tue, 06 Oct 2026 18:55:28 GMT",
+      "category": "defense"
+    },
+    {
+      "title": "Aiguobasinmwin Movement Warns Asari Dokubo Against Attacks On Edo, Benin Throne - Independent Newspaper Nigeria",
+      "url": "https://independent.ng/aiguobasinmwin-movement-warns-asari-dokubo-against-attacks-on-edo-benin-throne/",
+      "source": "Independent Newspaper Nigeria",
+      "published": "Tue, 06 Oct 2026 18:51:42 GMT",
+      "category": "sahel"
     },
     {
       "title": "A Nigerian Christian Borderland Burns Again as Washington Watches - Truth Nigeria",
@@ -156,6 +177,13 @@
       "category": "sahel"
     },
     {
+      "title": "Could Scotland Step Up as Aid to Malawi Is Cut? - Center for Global Development",
+      "url": "https://www.cgdev.org/blog/could-scotland-step-aid-malawi-cut",
+      "source": "Center for Global Development",
+      "published": "Tue, 06 Oct 2026 15:56:54 GMT",
+      "category": "rest"
+    },
+    {
       "title": "One Day to Go: CAF Strategy Conference set to bring Africa’s football leadership together in Cabo Verde - CAFOnline.com",
       "url": "https://www.cafonline.com/caf-strategy-conference/news/one-day-to-go-caf-strategy-conference-set-to-bring-africa-s-football-leadership-together-in-cabo-verde/",
       "source": "CAFOnline.com",
@@ -191,7 +219,7 @@
       "category": "rest"
     },
     {
-      "title": "South Africa has chased an F1 return for years but Rwanda just stole the dream - GPFans",
+      "title": "South Africa has chased an F1 return for years but Rwanda may have stolen the dream - GPFans",
       "url": "https://www.gpfans.com/en/f1-news/1091185/f1-african-grand-prix-south-africa-disaster-rwanda-reports/",
       "source": "GPFans",
       "published": "Tue, 06 Oct 2026 15:27:00 GMT",
@@ -329,6 +357,13 @@
       "source": "Bloomberg.com",
       "published": "Tue, 06 Oct 2026 11:44:12 GMT",
       "category": "sahel"
+    },
+    {
+      "title": "UNHAS South Sudan September Report - ReliefWeb",
+      "url": "https://reliefweb.int/report/south-sudan/unhas-south-sudan-september-report",
+      "source": "ReliefWeb",
+      "published": "Tue, 06 Oct 2026 11:38:08 GMT",
+      "category": "rest"
     },
     {
       "title": "AUC Chairperson has arrived in the Republic of Mauritius to attend the official launch of the Africa Credit Rating Agency (AfCRA) - African Union",
@@ -688,13 +723,6 @@
       "category": "sahel"
     },
     {
-      "title": "Nigeria Military Helicopter Crashes With 32 Onboard - The New York Times",
-      "url": "https://www.nytimes.com/2026/10/05/world/africa/nigeria-military-aircraft-crash.html",
-      "source": "The New York Times",
-      "published": "Mon, 05 Oct 2026 21:20:46 GMT",
-      "category": "sahel"
-    },
-    {
       "title": "The Hawadle and Al Shabaab Understanding as a Symptom of State Failure in Central Somalia - horn review",
       "url": "https://hornreview.org/2026/10/05/the-hawadle-and-al-shabaab-understanding-as-a-symptom-of-state-failure-in-central-somalia/",
       "source": "horn review",
@@ -723,10 +751,10 @@
       "category": "rest"
     },
     {
-      "title": "More than 4,200 Christians killed in Nigeria this year - report - www.christiantoday.com",
-      "url": "https://www.christiantoday.com/news/more-than-4-200-christians-killed-in-nigeria-this-year-report",
-      "source": "www.christiantoday.com",
-      "published": "Mon, 05 Oct 2026 20:19:28 GMT",
+      "title": "Nigeria Military Helicopter Crashes With 32 Onboard - The New York Times",
+      "url": "https://www.nytimes.com/2026/10/05/world/africa/nigeria-military-aircraft-crash.html",
+      "source": "The New York Times",
+      "published": "Mon, 05 Oct 2026 20:47:31 GMT",
       "category": "sahel"
     },
     {
@@ -833,6 +861,13 @@
       "source": "Travel Safe - Abroad",
       "published": "Mon, 05 Oct 2026 13:51:52 GMT",
       "category": "rest"
+    },
+    {
+      "title": "More than 4,200 Christians killed in Nigeria this year - report - www.christiantoday.com",
+      "url": "https://www.christiantoday.com/news/more-than-4-200-christians-killed-in-nigeria-this-year-report",
+      "source": "www.christiantoday.com",
+      "published": "Mon, 05 Oct 2026 13:49:45 GMT",
+      "category": "sahel"
     },
     {
       "title": "Equatorial Guinea turns stranded gas into a regional hub strategy - Wood Mackenzie",
