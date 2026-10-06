@@ -46,41 +46,150 @@ def decode_url(url):
     return url
 
 
-def classify_news(title):
-    """Basic automatic classification."""
+def classify_news(title, feed_category):
+    """
+    Automatic news classification.
+
+    Priority:
+    1. Specific African country/region
+    2. Genuine defense/armament news
+    3. General African security news
+    """
 
     text = title.lower()
 
-    defense_words = [
-        "weapon", "weapons", "missile", "missiles",
-        "drone", "drones", "aircraft", "fighter",
-        "tank", "tanks", "submarine", "frigate",
-        "military equipment", "defense", "defence",
-        "arms", "armament", "navy", "air force",
-        "army", "military"
-    ]
+    # ---------------------------------------------------------
+    # 1. NORTH AFRICA
+    # ---------------------------------------------------------
 
     north_words = [
-        "tunisia", "algeria", "morocco",
-        "libya", "egypt", "mauritania",
-        "north africa", "maghreb"
+        "tunisia",
+        "tunisian",
+        "algeria",
+        "algerian",
+        "morocco",
+        "moroccan",
+        "libya",
+        "libyan",
+        "egypt",
+        "egyptian",
+        "north africa",
+        "maghreb"
     ]
+
+    # ---------------------------------------------------------
+    # 2. SAHEL
+    # ---------------------------------------------------------
 
     sahel_words = [
-        "mali", "burkina faso", "niger",
-        "chad", "mauritania", "sahel",
-        "senegal", "guinea", "ivory coast",
-        "cote d'ivoire"
+        "mali",
+        "malian",
+        "burkina faso",
+        "burkinabe",
+        "niger",
+        "nigerien",
+        "chad",
+        "chadian",
+        "mauritania",
+        "mauritanian",
+        "sahel",
+        "senegal",
+        "senegalese",
+        "guinea",
+        "guinean",
+        "ivory coast",
+        "cote d'ivoire",
+        "côte d'ivoire"
     ]
 
-    if any(word in text for word in defense_words):
-        return "defense"
+    # ---------------------------------------------------------
+    # 3. TRUE DEFENSE / ARMAMENT NEWS
+    # ---------------------------------------------------------
+
+    defense_words = [
+        "weapons",
+        "weapon",
+        "missile",
+        "missiles",
+        "rocket",
+        "rockets",
+        "drone",
+        "drones",
+        "uav",
+        "fighter jet",
+        "fighter jets",
+        "fighter aircraft",
+        "combat aircraft",
+        "aircraft",
+        "warplane",
+        "warplanes",
+        "tank",
+        "tanks",
+        "armored vehicle",
+        "armoured vehicle",
+        "armored vehicles",
+        "armoured vehicles",
+        "submarine",
+        "submarines",
+        "frigate",
+        "frigates",
+        "corvette",
+        "corvettes",
+        "warship",
+        "warships",
+        "naval vessel",
+        "air defense",
+        "air defence",
+        "military equipment",
+        "defense equipment",
+        "defence equipment",
+        "arms deal",
+        "arms deal",
+        "arms contract",
+        "arms purchase",
+        "weapons deal",
+        "weapons contract",
+        "military procurement",
+        "defense contract",
+        "defence contract",
+        "military hardware",
+        "armament",
+        "armaments"
+    ]
+
+    # ---------------------------------------------------------
+    # IMPORTANT:
+    # Regional classification comes BEFORE defense classification.
+    # This prevents "Mali + military" from going to defense.
+    # ---------------------------------------------------------
 
     if any(word in text for word in north_words):
         return "north"
 
     if any(word in text for word in sahel_words):
         return "sahel"
+
+    # Only after checking geographical regions,
+    # classify genuine armament/defense stories.
+    if any(word in text for word in defense_words):
+        return "defense"
+
+    # ---------------------------------------------------------
+    # 4. USE THE RSS CATEGORY AS A FALLBACK
+    # ---------------------------------------------------------
+
+    if feed_category == "north":
+        return "north"
+
+    if feed_category == "sahel":
+        return "sahel"
+
+    if feed_category == "defense":
+        return "defense"
+
+    # ---------------------------------------------------------
+    # 5. REST OF AFRICA
+    # ---------------------------------------------------------
 
     return "rest"
 
@@ -122,7 +231,10 @@ def get_news():
 
                 published = entry.get("published", "")
 
+                # -------------------------------------------------
                 # Ignore news older than 48 hours
+                # -------------------------------------------------
+
                 if published:
                     try:
                         published_dt = datetime.strptime(
@@ -130,13 +242,23 @@ def get_news():
                             "%a, %d %b %Y %H:%M:%S %Z"
                         ).replace(tzinfo=timezone.utc)
 
-                        if datetime.now(timezone.utc) - published_dt > timedelta(hours=MAX_NEWS_AGE_HOURS):
+                        if (
+                            datetime.now(timezone.utc) - published_dt
+                            > timedelta(hours=MAX_NEWS_AGE_HOURS)
+                        ):
                             continue
 
                     except ValueError:
                         pass
 
-                category = classify_news(title)
+                # -------------------------------------------------
+                # Classify news
+                # -------------------------------------------------
+
+                category = classify_news(
+                    title,
+                    feed_category
+                )
 
                 items.append({
                     "title": title,
@@ -146,7 +268,10 @@ def get_news():
                     "category": category
                 })
 
+    # ---------------------------------------------------------
     # Sort news from newest to oldest
+    # ---------------------------------------------------------
+
     items.sort(
         key=lambda x: x.get("published", ""),
         reverse=True
