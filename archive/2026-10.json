@@ -1,6 +1,13 @@
 {
-  "updated": "2026-10-06T20:09:23.663100+00:00",
+  "updated": "2026-10-06T20:21:24.742446+00:00",
   "items": [
+    {
+      "title": "An Arizona man who was deported to Equatorial Guinea has faced threats and beating - KJZZ",
+      "url": "https://www.kjzz.org/the-show/2026-10-06/arizona-man-caught-up-in-third-country-deportation-faces-threats-beatings-in-equatorial-guinea",
+      "source": "KJZZ",
+      "published": "Tue, 06 Oct 2026 20:11:00 GMT",
+      "category": "sahel"
+    },
     {
       "title": "I Explored the Seychelles Aboard a Superyacht—Here’s How it Went - Travel + Leisure",
       "url": "https://www.travelandleisure.com/seychelles-superyacht-12140274",
@@ -93,7 +100,7 @@
       "category": "sahel"
     },
     {
-      "title": "F1 set to return to Africa after 33 years with new Rwandan Grand Prix - The Times",
+      "title": "Rwanda set to end F1’s 33-year absence from Africa - The Times",
       "url": "https://www.thetimes.com/sport/formula-one/article/rwanda-grand-prix-f1-africa-lewis-hamilton-lzdzxbs58",
       "source": "The Times",
       "published": "Tue, 06 Oct 2026 18:40:07 GMT",
@@ -119,6 +126,13 @@
       "source": "The New York Times",
       "published": "Tue, 06 Oct 2026 18:32:31 GMT",
       "category": "sahel"
+    },
+    {
+      "title": "Mozambique Conflict Monitor Update: October 2026 - ACLED",
+      "url": "https://acleddata.com/update/mozambique-conflict-monitor-update-october-2026",
+      "source": "ACLED",
+      "published": "Tue, 06 Oct 2026 17:51:24 GMT",
+      "category": "rest"
     },
     {
       "title": "Kenya Records Ebola Case for First Time - The New York Times",
@@ -273,6 +287,13 @@
       "source": "GPblog",
       "published": "Tue, 06 Oct 2026 15:07:00 GMT",
       "category": "rest"
+    },
+    {
+      "title": "World Bank urges Guinea to use iron ore to diversify economy - Mining.com",
+      "url": "https://www.mining.com/web/world-bank-urges-guinea-to-use-iron-ore-to-diversify-economy/",
+      "source": "Mining.com",
+      "published": "Tue, 06 Oct 2026 14:57:34 GMT",
+      "category": "sahel"
     },
     {
       "title": "Kenya confirms first Ebola case imported from Congo after man dies in Nairobi - Reuters",
@@ -597,6 +618,13 @@
       "category": "defense"
     },
     {
+      "title": "Mozambique business activity falls in September as PMI drops - Investing.com",
+      "url": "https://www.investing.com/news/economic-indicators/mozambique-business-activity-falls-in-september-as-pmi-drops-93CH-4933498",
+      "source": "Investing.com",
+      "published": "Tue, 06 Oct 2026 07:20:12 GMT",
+      "category": "rest"
+    },
+    {
       "title": "Innodis and GreenYellow: the first two plants commissioned as part of an 8.2 MWp solar program in Mauritius - AFP.com",
       "url": "https://www.afp.com/en/agency/inside-afp/external-press-releases/innodis-and-greenyellow-first-two-plants-commissioned",
       "source": "AFP.com",
@@ -609,6 +637,13 @@
       "source": "Business Insider Africa",
       "published": "Tue, 06 Oct 2026 06:54:15 GMT",
       "category": "north"
+    },
+    {
+      "title": "Ivory Coast • Emmanuel Macron postpones Abidjan visit to March 2027 - Africa Intelligence",
+      "url": "https://www.africaintelligence.com/west-africa/2026/10/06/emmanuel-macron-postpones-abidjan-visit-to-march-2027,110890792-art",
+      "source": "Africa Intelligence",
+      "published": "Tue, 06 Oct 2026 06:53:09 GMT",
+      "category": "sahel"
     },
     {
       "title": "President William Ruto hosts his South Sudanese counterpart, President Salva Kiir Mayardit, at State House, Nairobi. - Facebook",
@@ -639,18 +674,18 @@
       "category": "rest"
     },
     {
-      "title": "Algeria projects its power in the Sahara - Financial Times",
-      "url": "https://www.ft.com/content/d1478058-6309-459f-875c-0a5409d715b4?syn-25a6b1a6=1",
-      "source": "Financial Times",
-      "published": "Tue, 06 Oct 2026 04:02:18 GMT",
-      "category": "north"
-    },
-    {
       "title": "Kenya: Ruto Pledges Kenya's Support for South Sudan Elections, Urges Dialogue - allAfrica.com",
       "url": "https://allafrica.com/stories/202610060022.html",
       "source": "allAfrica.com",
       "published": "Tue, 06 Oct 2026 04:00:26 GMT",
       "category": "rest"
+    },
+    {
+      "title": "Algeria projects its power in the Sahara - Financial Times",
+      "url": "https://www.ft.com/content/d1478058-6309-459f-875c-0a5409d715b4?syn-25a6b1a6=1",
+      "source": "Financial Times",
+      "published": "Tue, 06 Oct 2026 04:00:08 GMT",
+      "category": "north"
     },
     {
       "title": "Afghanistan’s only boarding school for girls — is in Rwanda - The World from PRX",
