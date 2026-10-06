@@ -1,39 +1,795 @@
 {
-  "updated": "2026-10-06T18:21:20.203390+00:00",
+  "updated": "2026-10-06T18:45:11.714765+00:00",
   "items": [
     {
-      "title": "Russia rolls out drones, robots and military hardware for African officials as defense ties grow - Business Insider Africa",
-      "url": "https://africa.businessinsider.com/local/markets/russia-rolls-out-drones-robots-and-military-hardware-for-african-officials-as-defense/tf0b9m0",
-      "source": "Business Insider Africa",
-      "published": "Tue, 06 Oct 2026 08:35:16 GMT",
+      "title": "Live From the Barracks: Three Juntas Launch TV Channel - The New York Times",
+      "url": "https://www.nytimes.com/2026/10/06/world/africa/russia-africa-propaganda-sahel-tafouk.html",
+      "source": "The New York Times",
+      "published": "Tue, 06 Oct 2026 18:32:31 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Kenya Records Ebola Case for First Time - The New York Times",
+      "url": "https://www.nytimes.com/2026/10/06/world/africa/kenya-case-ebola-outbreak.html",
+      "source": "The New York Times",
+      "published": "Tue, 06 Oct 2026 17:38:13 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Ethiopian commander reports drone strikes in Tigray as markets reopen in regional capital - The Washington Post",
+      "url": "https://www.washingtonpost.com/world/2026/10/06/ethiopia-tigray-mekelle-tplf-fighting-drones-eritrea/6b0c93b8-c191-11f1-8170-681419af1cc9_story.html",
+      "source": "The Washington Post",
+      "published": "Tue, 06 Oct 2026 17:34:15 GMT",
       "category": "defense"
     },
     {
-      "title": "The new dynamics of the role of the military in peace and security in Africa - Major General Kotia writes - CitiNewsroom.com",
-      "url": "https://www.citinewsroom.com/2026/10/the-new-dynamics-of-the-role-of-the-military-in-peace-and-security-in-africa-major-general-kotia-writes/",
-      "source": "CitiNewsroom.com",
-      "published": "Mon, 05 Oct 2026 15:47:39 GMT",
+      "title": "Gemcorp joins Madagascar to raise $5 billion for energy, mining - Mining.com",
+      "url": "https://www.mining.com/web/gemcorp-joins-madagascar-to-raise-5-billion-for-energy-mining/",
+      "source": "Mining.com",
+      "published": "Tue, 06 Oct 2026 17:27:38 GMT",
       "category": "rest"
+    },
+    {
+      "title": "Angola vs Malawi: Africa Cup of Nations Qualification stats & head-to-head - BBC",
+      "url": "https://www.bbc.com/sport/football/live/c6j9x9g7rg8jt",
+      "source": "BBC",
+      "published": "Tue, 06 Oct 2026 17:20:07 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Trafigura and partners back $300 million Zambia-Congo power link - Mining.com",
+      "url": "https://www.mining.com/web/trafigura-and-partners-back-300-million-zambia-congo-power-link/",
+      "source": "Mining.com",
+      "published": "Tue, 06 Oct 2026 17:17:34 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Storm over the Red Sea - World - Al-Ahram Weekly - Ahram Online",
+      "url": "https://english.ahram.org.eg/NewsContent/50/1203/578372/AlAhram-Weekly/World/Storm-over-the-Red-Sea.aspx",
+      "source": "Ahram Online",
+      "published": "Tue, 06 Oct 2026 17:11:11 GMT",
+      "category": "north"
+    },
+    {
+      "title": "Kenya confirms first Ebola case as man dies in Nairobi after DRC return - Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/10/6/kenya-confirms-first-ebola-case-after-patient-from-dr-congo-dies-in-nairobi",
+      "source": "Al Jazeera",
+      "published": "Tue, 06 Oct 2026 17:10:55 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Leonardo DiCaprio's $1m contribution puts Seychelles' pioneering ocean debt swap back in spotlight - Seychelles News Agency",
+      "url": "https://www.seychellesnewsagency.com/public/articles/22510/leonardo-dicaprios-1m-contribution-puts-seychelles-pioneering-ocean-debt-swap-back-in-spotlight",
+      "source": "Seychelles News Agency",
+      "published": "Tue, 06 Oct 2026 16:46:52 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Report says Rwanda has secured 2030 Formula 1 race - Grandprix.com",
+      "url": "https://www.grandprix.com/news/report-says-rwanda-has-secured-2030-formula-1-race.html",
+      "source": "Grandprix.com",
+      "published": "Tue, 06 Oct 2026 16:46:00 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Robinson Energy Receives Grant Offer For PRL 68, The Triceratops Gas And Condensate Discovery, Papua New Guinea - TradingView",
+      "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_TUA2DQXQZ:0-robinson-energy-receives-grant-offer-for-prl-68-the-triceratops-gas-and-condensate-discovery-papua-new-guinea/",
+      "source": "TradingView",
+      "published": "Tue, 06 Oct 2026 16:36:45 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Fulani Militia Torture 15 Kidnapped Nigerian Graduates as Ransom Deadline Expires - Truth Nigeria",
+      "url": "https://truthnigeria.com/2026/10/fulani-militia-torture-15-kidnapped-nigerian-graduates-as-ransom-deadline-expires/",
+      "source": "Truth Nigeria",
+      "published": "Tue, 06 Oct 2026 16:29:50 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Democratic Republic of the Congo, Kenya, Uganda | Ebola Bundibugyo virus disease outbreak and EU response - DG ECHO Daily Map | 06/10/2026 - ReliefWeb",
+      "url": "https://reliefweb.int/map/democratic-republic-congo/democratic-republic-congo-kenya-uganda-ebola-bundibugyo-virus-disease-outbreak-and-eu-response-dg-echo-daily-map-06102026",
+      "source": "ReliefWeb",
+      "published": "Tue, 06 Oct 2026 16:17:19 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Afwerki’s Calls for Non-Interference in Sudan as Eritrean Soldiers Continue Fighting for SAF - horn review",
+      "url": "https://hornreview.org/2026/10/06/afwerkis-calls-for-non-interference-in-sudan-as-eritrean-soldiers-continue-fighting-for-saf/",
+      "source": "horn review",
+      "published": "Tue, 06 Oct 2026 16:16:57 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Togo : Lomé Positions Itself as a Strategic Partner of the AES in the Face of the Terrorist Threat - Timbuktu Institute",
+      "url": "https://timbuktu-institute.org/index.php/toutes-l-actualites/item/1799-togo-lome-positions-itself-as-a-strategic-partner-of-the-aes-in-the-face-of-the-terrorist-threat",
+      "source": "Timbuktu Institute",
+      "published": "Tue, 06 Oct 2026 16:10:08 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Kenya records first Ebola case from Congo outbreak that has killed thousands - The Washington Post",
+      "url": "https://www.washingtonpost.com/world/2026/10/06/kenya-records-first-ebola-case-congo-outbreak-that-has-killed-thousands/",
+      "source": "The Washington Post",
+      "published": "Tue, 06 Oct 2026 16:04:21 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "ROBINSON ENERGY RECEIVES GRANT OFFER FOR PRL 68, THE TRICERATOPS GAS AND CONDENSATE DISCOVERY, PAPUA NEW GUINEA - Yahoo Finance",
+      "url": "https://finance.yahoo.com/energy/articles/robinson-energy-receives-grant-offer-155400940.html",
+      "source": "Yahoo Finance",
+      "published": "Tue, 06 Oct 2026 15:54:00 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Man living in Congo who returned to Kenya is country’s first confirmed Ebola case and first death - Boston Herald",
+      "url": "https://www.bostonherald.com/2026/10/06/ebola-first-kenya-death/",
+      "source": "Boston Herald",
+      "published": "Tue, 06 Oct 2026 15:43:18 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "F1 Set to Return to Africa With 2030 Rwanda Grand Prix - Autoguide.com",
+      "url": "https://www.autoguide.com/auto/f1-set-to-return-to-africa-with-2030-rwanda-grand-prix-44639827",
+      "source": "Autoguide.com",
+      "published": "Tue, 06 Oct 2026 15:32:03 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Trafigura and Partners Back $300 Million Zambia-Congo Power Link - Bloomberg.com",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-06/trafigura-and-partners-back-300-million-zambia-congo-power-link",
+      "source": "Bloomberg.com",
+      "published": "Tue, 06 Oct 2026 15:30:00 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "South Africa has chased an F1 return for years but Rwanda just stole the dream - GPFans",
+      "url": "https://www.gpfans.com/en/f1-news/1091185/f1-african-grand-prix-south-africa-disaster-rwanda-reports/",
+      "source": "GPFans",
+      "published": "Tue, 06 Oct 2026 15:27:00 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Zambia to sign $1.5 billion US health pact after resolving differences over data-sharing - CNBC Africa",
+      "url": "https://www.cnbcafrica.com/2026/zambia-to-sign-1-5-billion-us-health-pact-after-resolving-differences-over-data-sharing",
+      "source": "CNBC Africa",
+      "published": "Tue, 06 Oct 2026 15:16:32 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Kenya confirms first Ebola case imported from Congo after man dies in Nairobi - Reuters",
+      "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/kenya-confirms-first-ebola-case-imported-congo-patient-has-died-2026-10-06/",
+      "source": "Reuters",
+      "published": "Tue, 06 Oct 2026 14:55:20 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Zambia's Kwacha Stumbles, Then Steadies, as Dollar Demand Surges - Briefs Finance",
+      "url": "https://www.briefs.co/news/zambia-s-kwacha-stumbles-then-steadies-as-dollar-demand-surg/",
+      "source": "Briefs Finance",
+      "published": "Tue, 06 Oct 2026 14:50:31 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Zambia to secure $1.5 billion US health support after data-sharing differences are resolved - Business Insider Africa",
+      "url": "https://africa.businessinsider.com/local/markets/zambia-to-secure-dollar15-billion-us-health-support-after-data-sharing-differences/vg9cqnh",
+      "source": "Business Insider Africa",
+      "published": "Tue, 06 Oct 2026 14:48:18 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Mozambique’s COTE concludes public hearings - AZƏRTAC – Azərbaycan Dövlət İnformasiya Agentliyi",
+      "url": "https://azertag.az/en/xeber/mozambiques_cote_concludes_public_hearings-4448829",
+      "source": "AZƏRTAC – Azərbaycan Dövlət İnformasiya Agentliyi",
+      "published": "Tue, 06 Oct 2026 14:18:00 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Flying Blue offers 25% off awards to Europe, China, Kenya, Mauritius - InsideFlyer",
+      "url": "https://www.insideflyer.com/posts/flying-blue-offers-25-off-awards-to-europe-china-kenya-mauritius/",
+      "source": "InsideFlyer",
+      "published": "Tue, 06 Oct 2026 13:17:38 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "EU Calls for Halt to Ethiopia-Eritrea Escalation, Warns Fighting Could Spread - The Media Line",
+      "url": "https://themedialine.org/headlines/eu-calls-for-halt-to-ethiopia-eritrea-escalation-warns-fighting-could-spread/",
+      "source": "The Media Line",
+      "published": "Tue, 06 Oct 2026 13:13:25 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Congo’s Ebola Fighters Race Against a Moving Epidemic - Bloomberg.com",
+      "url": "https://www.bloomberg.com/news/newsletters/2026-10-06/next-africa-congo-s-ebola-fighters-are-racing-a-moving-epidemic",
+      "source": "Bloomberg.com",
+      "published": "Tue, 06 Oct 2026 13:00:01 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "World Bank urges Guinea to use iron-ore to diversify economy - Mining Weekly",
+      "url": "https://www.miningweekly.com/article/world-bank-urges-guinea-to-use-iron-ore-to-diversify-economy-2026-10-06",
+      "source": "Mining Weekly",
+      "published": "Tue, 06 Oct 2026 12:46:00 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Beyond What We Measure: The Lives Behind Development Results - United Nations Development Programme",
+      "url": "https://www.undp.org/gambia/stories/beyond-what-we-measure-lives-behind-development-results",
+      "source": "United Nations Development Programme",
+      "published": "Tue, 06 Oct 2026 12:40:10 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "WFP South Sudan Country Brief September 2026 - ReliefWeb",
+      "url": "https://reliefweb.int/report/south-sudan/wfp-south-sudan-country-brief-september-2026",
+      "source": "ReliefWeb",
+      "published": "Tue, 06 Oct 2026 12:39:14 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Mauritius tops Bloomberg Africa investment ranking as Nigeria climbs four places - IntelliNews",
+      "url": "https://www.intellinews.com/mauritius-tops-bloomberg-africa-investment-ranking-as-nigeria-climbs-four-places-473883/?source=ghana",
+      "source": "IntelliNews",
+      "published": "Tue, 06 Oct 2026 12:35:59 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Official Launch of the Seychelles National Action Plan on Women, Peace and Security 2026–2030 - African Union",
+      "url": "https://au.int/en/newsevents/20261007/official-launch-seychelles-national-action-plan-women-peace-and-security-2026",
+      "source": "African Union",
+      "published": "Tue, 06 Oct 2026 12:17:02 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Malawi: Zomba Diocese welcomes the first greenhouse - Hortidaily",
+      "url": "https://www.hortidaily.com/article/9878940/malawi-zomba-diocese-welcomes-the-first-greenhouse/",
+      "source": "Hortidaily",
+      "published": "Tue, 06 Oct 2026 12:15:37 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "El Niño is coming and the time for Malawi to prepare is running short - Africa South of the Sahara",
+      "url": "https://ssa.foodsecurityportal.org/node/3954",
+      "source": "Africa South of the Sahara",
+      "published": "Tue, 06 Oct 2026 12:07:00 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "What you need to know about the EAC FGM Bill, 2025 - Equality Now",
+      "url": "https://equalitynow.org/news/news-and-insights/what-you-need-to-know-about-the-eac-fgm-bill-2025/",
+      "source": "Equality Now",
+      "published": "Tue, 06 Oct 2026 11:52:56 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "World Bank Urges Guinea to Use Iron Ore to Diversify Economy - Bloomberg.com",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-06/world-bank-urges-guinea-to-use-iron-ore-to-diversify-economy",
+      "source": "Bloomberg.com",
+      "published": "Tue, 06 Oct 2026 11:44:12 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "AUC Chairperson has arrived in the Republic of Mauritius to attend the official launch of the Africa Credit Rating Agency (AfCRA) - African Union",
+      "url": "https://www.au.int/en/pressreleases/20261006/auc-chairperson-mauritius-attend-launch-africa-credit-rating-agency",
+      "source": "African Union",
+      "published": "Tue, 06 Oct 2026 11:34:42 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Mozambique Looking To Partner With Russia’s Rosneft, Gazprom & Novatek In Gas Development - russia's pivot to asia",
+      "url": "https://russiaspivottoasia.com/mozambique-looking-to-partner-with-russias-rosneft-gazprom-novatek-in-gas-development/",
+      "source": "russia's pivot to asia",
+      "published": "Tue, 06 Oct 2026 11:28:37 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Helping 100,000 amphibians safely cross the road - Mongabay News",
+      "url": "https://news.mongabay.com/?post_type=short-article&p=331704",
+      "source": "Mongabay News",
+      "published": "Tue, 06 Oct 2026 11:28:12 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Black Starlets: Seth Panwum questions road trip to Burkina Faso - 3News",
+      "url": "https://3news.com/sports/black-starlets-seth-panwum-questions-road-trip-to-burkina-faso",
+      "source": "3News",
+      "published": "Tue, 06 Oct 2026 11:27:35 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Malawi’s National Action Plan on Business and Human Rights: An Agenda for Responsible Business and Economic Reform - United Nations Development Programme",
+      "url": "https://www.undp.org/malawi/blog/malawis-national-action-plan-business-and-human-rights-agenda-responsible-business-and-economic-reform",
+      "source": "United Nations Development Programme",
+      "published": "Tue, 06 Oct 2026 11:23:44 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Infantino faces fresh World Cup row over secret ineligible DR Congo player - Yahoo Sports",
+      "url": "https://sports.yahoo.com/articles/infantino-faces-fresh-row-over-110933521.html",
+      "source": "Yahoo Sports",
+      "published": "Tue, 06 Oct 2026 11:09:33 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "DP World Granted Extension For Angola’S Luanda Terminal Concession To 2051 - TradingView",
+      "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_FWN45S0SO:0-dp-world-granted-extension-for-angola-s-luanda-terminal-concession-to-2051/",
+      "source": "TradingView",
+      "published": "Tue, 06 Oct 2026 11:05:12 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Kenya reports first-ever Ebola case after patient dies in Nairobi - DW.com",
+      "url": "https://www.dw.com/en/kenya-reports-first-ever-ebola-death/a-79563120",
+      "source": "DW.com",
+      "published": "Tue, 06 Oct 2026 11:00:06 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Gambia : Political Alliances Reshuffled Ahead of the Presidential Election - Timbuktu Institute",
+      "url": "https://timbuktu-institute.org/index.php/toutes-l-actualites/item/1795-gambia-political-alliances-reshuffled-ahead-of-the-presidential-election",
+      "source": "Timbuktu Institute",
+      "published": "Tue, 06 Oct 2026 10:59:23 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Madagascar Targets $5 Billion with Gemcorp for Energy, Infrastructure and Mining - News and Statistics - IndexBox",
+      "url": "https://www.indexbox.io/blog/madagascar-seeks-5-billion-via-gemcorp-partnership-for-energy-infrastructure-and-mining/",
+      "source": "IndexBox",
+      "published": "Tue, 06 Oct 2026 10:30:58 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Zambia says it will sign $3.6 billion US health deal after stripping patient data clauses - The Killeen Daily Herald",
+      "url": "https://kdhnews.com/news/world/zambia-says-it-will-sign-3-6-billion-us-health-deal-after-stripping-patient-data/article_ac069c82-d2d5-5eb1-bd37-1a31c4aac2e2.html",
+      "source": "The Killeen Daily Herald",
+      "published": "Tue, 06 Oct 2026 10:18:24 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Zambia says it will sign $3.6 billion US health deal after stripping patient data clauses - Ottumwa Courier",
+      "url": "https://www.ottumwacourier.com/news/national_news/zambia-says-it-will-sign-3-6-billion-us-health-deal-after-stripping-patient-data/article_bb29c0fb-f60a-585b-aa07-e0754e610927.html",
+      "source": "Ottumwa Courier",
+      "published": "Tue, 06 Oct 2026 10:18:24 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Zambia says it will sign $3.6 billion US health deal after stripping patient data clauses - AP News",
+      "url": "https://apnews.com/article/zambia-us-health-deal-aid-ad8b1b06e52379a6ba7e3eb576ca750d",
+      "source": "AP News",
+      "published": "Tue, 06 Oct 2026 10:18:00 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Middle East’s largest aluminium producer secures deal to ship up to 4.9 million tonnes of bauxite from Guinea every year until 2044 - Business Insider Africa",
+      "url": "https://africa.businessinsider.com/local/markets/middle-easts-largest-aluminium-producer-secures-deal-to-ship-up-to-49-million-tonnes/4kb2cm8",
+      "source": "Business Insider Africa",
+      "published": "Tue, 06 Oct 2026 10:13:20 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Commonwealth Secretary-General to make first official visit to Uganda - Commonwealth",
+      "url": "https://thecommonwealth.org/news/commonwealth-secretary-general-make-first-official-visit-uganda",
+      "source": "Commonwealth",
+      "published": "Tue, 06 Oct 2026 10:08:24 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Will Turkey Double Down on Somalia as Mogadishu’s African Partners Depart? - Middle East Forum",
+      "url": "https://www.meforum.org/mef-observer/will-turkey-double-down-on-somalia-as-mogadishus-african-partners-depart",
+      "source": "Middle East Forum",
+      "published": "Tue, 06 Oct 2026 10:03:04 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Democratic Republic of Congo (DRC): Ebola jeopardising education for 100,000s of children - Zawya",
+      "url": "https://www.zawya.com/en/press-release/africa-press-releases/democratic-republic-of-congo-drc-ebola-jeopardising-education-for-100000s-of-children-1521403",
+      "source": "Zawya",
+      "published": "Tue, 06 Oct 2026 10:01:00 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Guterres report: Mauritania demands guarantees on Lagouira - Yabiladi.com",
+      "url": "https://en.yabiladi.com/articles/details/204288/guterres-report-mauritania-demands-guarantees.html",
+      "source": "Yabiladi.com",
+      "published": "Tue, 06 Oct 2026 09:55:02 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Kenya confirms first Ebola case imported from Congo - Merced Sun-Star",
+      "url": "https://www.mercedsunstar.com/news/nation-world/world/article317507133.html",
+      "source": "Merced Sun-Star",
+      "published": "Tue, 06 Oct 2026 08:38:00 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Ohio man charged in Angola after wandering into apartments - WTVB",
+      "url": "https://wtvbam.com/2026/10/06/988439/",
+      "source": "WTVB",
+      "published": "Tue, 06 Oct 2026 08:34:10 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Gemcorp Joins Madagascar to Raise $5 Billion for Energy, Mining - Bloomberg.com",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-06/gemcorp-joins-madagascar-to-raise-5-billion-for-energy-mining",
+      "source": "Bloomberg.com",
+      "published": "Tue, 06 Oct 2026 08:18:40 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Trust is climate infrastructure: What Mauritius teaches us about building truly resilient communities - Resilience",
+      "url": "https://www.resilience.org/stories/2026-10-06/trust-is-climate-infrastructure-what-mauritius-teaches-us-about-building-truly-resilient-communities/",
+      "source": "Resilience",
+      "published": "Tue, 06 Oct 2026 08:07:59 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "IVORY COAST: Salesian missionaries with Don Bosco Pre-novitiate Korhogo have clean water thanks to Salesian Missions - MissionNewswire",
+      "url": "https://missionnewswire.org/ivory-coast-salesian-missionaries-with-don-bosco-pre-novitiate-korhogo-have-clean-water-thanks-to-salesian-missions/",
+      "source": "MissionNewswire",
+      "published": "Tue, 06 Oct 2026 07:47:11 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "East Africa: \"Response Will Be Doubled': Senior Ethiopian Official Warns Eritrea - U.S. Cautions Horn 'Cannot Sustain Another Military Conflict' - allAfrica.com",
+      "url": "https://allafrica.com/stories/202610060020.html",
+      "source": "allAfrica.com",
+      "published": "Tue, 06 Oct 2026 07:30:46 GMT",
+      "category": "defense"
+    },
+    {
+      "title": "Innodis and GreenYellow: the first two plants commissioned as part of an 8.2 MWp solar program in Mauritius - AFP.com",
+      "url": "https://www.afp.com/en/agency/inside-afp/external-press-releases/innodis-and-greenyellow-first-two-plants-commissioned",
+      "source": "AFP.com",
+      "published": "Tue, 06 Oct 2026 07:00:00 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "US clears $832 million weapons package for Egypt with up to 2,020 Javelin anti-tank missiles - Business Insider Africa",
+      "url": "https://africa.businessinsider.com/local/markets/us-clears-dollar832-million-weapons-package-for-egypt-with-up-to-2020-javelin-anti/cpf9ls0",
+      "source": "Business Insider Africa",
+      "published": "Tue, 06 Oct 2026 06:54:15 GMT",
+      "category": "north"
+    },
+    {
+      "title": "President William Ruto hosts his South Sudanese counterpart, President Salva Kiir Mayardit, at State House, Nairobi. - Facebook",
+      "url": "https://www.facebook.com/kenyanewsagency/posts/president-william-ruto-hosts-his-south-sudanese-counterpart-president-salva-kiir/1408522508130058/",
+      "source": "Facebook",
+      "published": "Tue, 06 Oct 2026 06:23:13 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Malawi, Kenya, Eswatini Bring State Ambitions to African Mining Week (AMW) 2026's National Mining Companies Forum - AZoMining",
+      "url": "https://www.azomining.com/News.aspx?newsID=18748",
+      "source": "AZoMining",
+      "published": "Tue, 06 Oct 2026 05:28:00 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Kenya/Mauritius • I&M pivots away from Mauritius retail banking - Africa Intelligence",
+      "url": "https://www.africaintelligence.com/eastern-africa-and-the-horn/2026/10/06/im-pivots-away-from-mauritius-retail-banking,110890799-bre",
+      "source": "Africa Intelligence",
+      "published": "Tue, 06 Oct 2026 04:42:05 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Rare Shark, Orca Sightings Off Mozambique Raise El Niño Question - Bloomberg.com",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-06/rare-shark-orca-sightings-off-mozambique-raise-el-nino-question",
+      "source": "Bloomberg.com",
+      "published": "Tue, 06 Oct 2026 04:30:00 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Algeria projects its power in the Sahara - Financial Times",
+      "url": "https://www.ft.com/content/d1478058-6309-459f-875c-0a5409d715b4?syn-25a6b1a6=1",
+      "source": "Financial Times",
+      "published": "Tue, 06 Oct 2026 04:02:18 GMT",
+      "category": "north"
+    },
+    {
+      "title": "Kenya: Ruto Pledges Kenya's Support for South Sudan Elections, Urges Dialogue - allAfrica.com",
+      "url": "https://allafrica.com/stories/202610060022.html",
+      "source": "allAfrica.com",
+      "published": "Tue, 06 Oct 2026 04:00:26 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Afghanistan’s only boarding school for girls — is in Rwanda - The World from PRX",
+      "url": "https://theworld.org/segments/2026/10/05/afghanistans-only-boarding-school-for-girls-is-in-rwanda",
+      "source": "The World from PRX",
+      "published": "Tue, 06 Oct 2026 03:42:45 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Tsetse flies in Mozambique reveal hidden web of parasites, hosts and microbes - Bioengineer.org",
+      "url": "https://bioengineer.org/tsetse-flies-in-mozambique-reveal-hidden-web-of-parasites-hosts-and-microbes/",
+      "source": "Bioengineer.org",
+      "published": "Tue, 06 Oct 2026 03:40:25 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Angola: A Decade of African Development Bank Investments Reshaping Development Outcomes - African Development Bank Group",
+      "url": "https://www.afdb.org/en/news-and-events/press-releases/angola-decade-african-development-bank-investments-reshaping-development-outcomes-97284",
+      "source": "African Development Bank Group",
+      "published": "Tue, 06 Oct 2026 03:33:33 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Ebola disease outbreak spreads like a megafire in North Kivu as new hotspots multiply - MSF",
+      "url": "https://www.msf.org/ebola-disease-outbreak-spreads-megafire-north-kivu",
+      "source": "MSF",
+      "published": "Tue, 06 Oct 2026 03:27:46 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Angola Key Message Update September 2026 - January 2027: Rising food prices and early lean season threaten food access in the south - ReliefWeb",
+      "url": "https://reliefweb.int/report/angola/angola-key-message-update-september-2026-january-2027-rising-food-prices-and-early-lean-season-threaten-food-access-south",
+      "source": "ReliefWeb",
+      "published": "Tue, 06 Oct 2026 01:57:21 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Journalists visit COESP and bolster the response to Mpox in Angola - WHO | Regional Office for Africa",
+      "url": "https://www.afro.who.int/countries/angola/news/journalists-visit-coesp-and-bolster-response-mpox-angola",
+      "source": "WHO | Regional Office for Africa",
+      "published": "Tue, 06 Oct 2026 01:06:36 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Rwanda vs Kenya: Friendlies stats & head-to-head - BBC",
+      "url": "https://www.bbc.com/sport/football/live/ckz65x3qg9npt",
+      "source": "BBC",
+      "published": "Tue, 06 Oct 2026 00:47:48 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Egypt, Eritrea, Somalia, Sudan forge regional security front - Radio Tamazuj",
+      "url": "https://www.radiotamazuj.org/en/news/article/egypt-eritrea-somalia-sudan-forge-regional-security-front",
+      "source": "Radio Tamazuj",
+      "published": "Sun, 04 Oct 2026 19:44:23 GMT",
+      "category": "north"
+    },
+    {
+      "title": "Egypt expands economic cooperation with South Africa, Equatorial Guinea - Dailynewsegypt",
+      "url": "https://www.dailynewsegypt.com/2026/10/04/egypt-expands-economic-cooperation-with-south-africa-equatorial-guinea/",
+      "source": "Dailynewsegypt",
+      "published": "Sun, 04 Oct 2026 18:54:53 GMT",
+      "category": "north"
+    },
+    {
+      "title": "In a Remote School in Niassa, One Teacher Keeps Six Grades Learning - JSI Research & Training Institute, Inc.",
+      "url": "https://www.jsi.org/insights/remote-school-niassa-mozambique-empowering-educators/",
+      "source": "JSI Research & Training Institute, Inc.",
+      "published": "Mon, 05 Oct 2026 23:46:18 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "4th Biennale of Luanda: Strengthening water governance for a culture of peace in Africa - UNESCO",
+      "url": "https://www.unesco.org/en/articles/4th-biennale-luanda-strengthening-water-governance-culture-peace-africa",
+      "source": "UNESCO",
+      "published": "Mon, 05 Oct 2026 23:45:40 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Niyobuhungiro Elysee: Nosratollah Zarghami Soltanahmadi Joins IHCRI Rwanda as Keynote Speaker - Oncodaily",
+      "url": "https://oncodaily.com/voices/niyobuhungiro-elysee-601377",
+      "source": "Oncodaily",
+      "published": "Mon, 05 Oct 2026 22:55:46 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Need proof that vaccines work? Many of Uganda's Gen Z don't know that meningitis exists - Gavi, the Vaccine Alliance",
+      "url": "https://www.gavi.org/vaccineswork/need-proof-vaccines-work-rural-uganda-gen-z-has-forgotten-meningitis-even-exists",
+      "source": "Gavi, the Vaccine Alliance",
+      "published": "Mon, 05 Oct 2026 22:51:12 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "4.5 million meals distributed in Mauritania under '100 Million Meals' - وزارة الخارجية الإماراتية",
+      "url": "https://www.mofa.gov.ae/en/Missions/Nouakchott/Media-hub/News/100-Million-Meals",
+      "source": "وزارة الخارجية الإماراتية",
+      "published": "Mon, 05 Oct 2026 22:47:44 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "The New York Times. . Ebola has spread rapidly in the Congolese town of Mangala since June, leading to one of the worst Ebola outbreaks in the Democratic Republic of Congo. Health workers in Mangala say fewer lives would have been lost had help arrive - Facebook",
+      "url": "https://www.facebook.com/nytimes/videos/ebola-has-spread-rapidly-in-the-congolese-town-of-mangala-since-june-leading-to-/28931876936437694/",
+      "source": "Facebook",
+      "published": "Mon, 05 Oct 2026 22:00:06 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Al-Shabaab Cannot Take Control of Somalia, Says President - Garowe Online",
+      "url": "https://www.garoweonline.com/en/news/somalia/al-shabaab-cannot-take-control-of-somalia-says-president",
+      "source": "Garowe Online",
+      "published": "Mon, 05 Oct 2026 21:39:57 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Nigeria Military Helicopter Crashes With 32 Onboard - The New York Times",
+      "url": "https://www.nytimes.com/2026/10/05/world/africa/nigeria-military-aircraft-crash.html",
+      "source": "The New York Times",
+      "published": "Mon, 05 Oct 2026 21:20:46 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "The Hawadle and Al Shabaab Understanding as a Symptom of State Failure in Central Somalia - horn review",
+      "url": "https://hornreview.org/2026/10/05/the-hawadle-and-al-shabaab-understanding-as-a-symptom-of-state-failure-in-central-somalia/",
+      "source": "horn review",
+      "published": "Mon, 05 Oct 2026 21:14:00 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "US financial sector hit by 40,000 phishing URLs in H1 2026 - TechRadar",
+      "url": "https://www.techradar.com/pro/nearly-40-000-phishing-attacks-hit-us-financial-firms-in-h1-2026-automated-ai-agents-and-a-new-seychelles-bulletproof-host-fuel-aggressive-new-campaigns",
+      "source": "TechRadar",
+      "published": "Mon, 05 Oct 2026 21:05:00 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Mozambique's Army Is Losing a Crucial Counter-Insurgency Battle - allAfrica.com",
+      "url": "https://allafrica.com/stories/202610050289.html",
+      "source": "allAfrica.com",
+      "published": "Mon, 05 Oct 2026 20:56:35 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "More than 4,200 Christians killed in Nigeria this year - report - www.christiantoday.com",
+      "url": "https://www.christiantoday.com/news/more-than-4-200-christians-killed-in-nigeria-this-year-report",
+      "source": "www.christiantoday.com",
+      "published": "Mon, 05 Oct 2026 20:19:28 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Terror at 34 000 feet: What flydubai passengers endured during a mid-flight cockpit attack - The Citizen",
+      "url": "https://www.citizen.co.za/news/south-africa/terror-what-passengers-flydubai-endured-when-cockpit-attack-erupted-mid-flight/",
+      "source": "The Citizen",
+      "published": "Mon, 05 Oct 2026 20:15:46 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Cunene Steps Up Community Surveillance to Accelerate the Eradication of Guinea Worm - WHO | Regional Office for Africa",
+      "url": "https://www.afro.who.int/countries/angola/news/cunene-steps-community-surveillance-accelerate-eradication-guinea-worm",
+      "source": "WHO | Regional Office for Africa",
+      "published": "Mon, 05 Oct 2026 19:44:37 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Uganda: after pressuring the media and repressing journalists, authorities now target press funding - RSF",
+      "url": "https://rsf.org/en/uganda-after-pressuring-media-and-repressing-journalists-authorities-now-target-press-funding",
+      "source": "RSF",
+      "published": "Mon, 05 Oct 2026 18:02:44 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Ecuador, Madagascar crown champions; Denmark, Germany, Latvia, Malta, Montenegro, Portugal, Serbia hand super cup titles - FIVB",
+      "url": "https://www.fivb.com/ecuador-madagascar-crown-champions-denmark-germany-latvia-malta-montenegro-portugal-serbia-hand-super-cup-titles/",
+      "source": "FIVB",
+      "published": "Mon, 05 Oct 2026 17:51:48 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Christian groups urge Mozambique to act on religious freedom, displacement and sexual violence - www.christiandaily.com",
+      "url": "https://www.christiandaily.com/news/christian-groups-urge-mozambique-to-act-on-religious-freedom-displacement-and-sexual-violence",
+      "source": "www.christiandaily.com",
+      "published": "Mon, 05 Oct 2026 17:06:13 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Violence grips northern Nigeria, yet dozens of Christians are willing to go there - Mission Network News",
+      "url": "https://www.mnnonline.org/news/violence-grips-northern-nigeria-yet-dozens-of-christians-are-willing-to-go-there/",
+      "source": "Mission Network News",
+      "published": "Mon, 05 Oct 2026 17:05:23 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Cocoa Prices Climb as Excessive Ivory Coast Rains Slow Cocoa Deliveries - Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/commodities/articles/cocoa-prices-climb-excessive-ivory-161006287.html",
+      "source": "Yahoo Finance",
+      "published": "Mon, 05 Oct 2026 16:10:06 GMT",
+      "category": "sahel"
     },
     {
       "title": "Fighting Without Holding: Why Military Operations Fail to Produce Security in West Africa - Texas National Security Review",
       "url": "https://tnsr.org/2026/10/converting-military-capacity-into-durable-security-in-west-africa/",
       "source": "Texas National Security Review",
       "published": "Mon, 05 Oct 2026 15:08:21 GMT",
+      "category": "defense"
+    },
+    {
+      "title": "US-Africa Week Ahead: Sudan at the UN, Nigeria at NED - The Africa Report",
+      "url": "https://www.theafricareport.com/432297/us-africa-week-ahead-sudan-at-the-un-nigeria-at-ned/",
+      "source": "The Africa Report",
+      "published": "Mon, 05 Oct 2026 14:38:01 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Petsense adoption event features cats, birds, rabbits and guinea pigs - Merced Sun-Star",
+      "url": "https://www.mercedsunstar.com/news/article317497069.html",
+      "source": "Merced Sun-Star",
+      "published": "Mon, 05 Oct 2026 14:36:00 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Ebola outbreak shows that the world is not ready for the next pandemic - Geneva Solutions",
+      "url": "https://genevasolutions.news/articles/the-ebola-outbreak-shows-that-the-world-is-not-ready-for-the-next-pandemic",
+      "source": "Geneva Solutions",
+      "published": "Mon, 05 Oct 2026 14:33:00 GMT",
       "category": "rest"
     },
     {
-      "title": "African Military Chiefs Conference kicks off in Kam - NewVision.co.ug",
-      "url": "https://www.newvision.co.ug/category/news/african-military-chiefs-conference-kicks-off-NV_241859_102026",
-      "source": "NewVision.co.ug",
-      "published": "Mon, 05 Oct 2026 14:00:05 GMT",
+      "title": "125 years of Catholic faith in Malawi, and still growing - Aleteia EN",
+      "url": "https://aleteia.org/2026/10/05/125-years-of-catholic-faith-in-malawi-and-still-growing/",
+      "source": "Aleteia EN",
+      "published": "Mon, 05 Oct 2026 14:17:41 GMT",
       "category": "rest"
     },
     {
-      "title": "Uganda Hosts First-Ever African Defence Chiefs Conference On Military Operations Other Than War - UPDF",
-      "url": "https://www.updf.go.ug/regional-security/uganda-hosts-first-ever-african-defence-chiefs-conference-on-military-operations-other-than-war/",
-      "source": "UPDF",
-      "published": "Mon, 05 Oct 2026 09:25:30 GMT",
+      "title": "Ethiopia’s forces retake Mekelle amid renewed Tigray fighting - Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/10/5/ethiopias-forces-retake-mekelle-amid-renewed-tigray-fighting",
+      "source": "Al Jazeera",
+      "published": "Mon, 05 Oct 2026 14:10:50 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Zambia projects 7% rise in spending in 2027 budget - Reuters",
+      "url": "https://www.reuters.com/world/africa/zambia-projects-7-rise-spending-2027-budget-2026-10-05/",
+      "source": "Reuters",
+      "published": "Mon, 05 Oct 2026 13:58:33 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Is Bossangoa Safe? Crime Rates & Safety Report - Travel Safe - Abroad",
+      "url": "https://www.travelsafe-abroad.com/central-african-republic/bossangoa/",
+      "source": "Travel Safe - Abroad",
+      "published": "Mon, 05 Oct 2026 13:51:52 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Equatorial Guinea turns stranded gas into a regional hub strategy - Wood Mackenzie",
+      "url": "https://www.woodmac.com/news/opinion/equatorial-guinea-turns-stranded-gas-into-a-regional-hub-strategy/",
+      "source": "Wood Mackenzie",
+      "published": "Mon, 05 Oct 2026 13:01:23 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "South African military chemical weapons specialists train continental colleagues - defenceWeb",
+      "url": "https://defenceweb.co.za/sa-defence-sa-defence/south-african-military-chemical-weapons-specialists-train-continental-colleagues/",
+      "source": "defenceWeb",
+      "published": "Mon, 05 Oct 2026 10:16:20 GMT",
+      "category": "defense"
+    },
+    {
+      "title": "OBT expands into Mauritania as demand for shipping and project logistics continues to grow — SMI DIGITAL - https://www.shipmanagementinternational.com/",
+      "url": "https://www.shipmanagementinternational.com/news/8b2dh4cw8th922f-lfj5n-lcmpx-nxsw6-57rhl-cln6f-7n9b4-x396p-ztbs9-tpnm8-x6ypj-a5x2l-f34wy-c2kd2-7tpp2-3swad-yzw9t-s2all-k2jnc-nx8h9-j7hsa-78ddw-tyslc",
+      "source": "https://www.shipmanagementinternational.com/",
+      "published": "Mon, 05 Oct 2026 10:12:48 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Driver killed in Ocean Parkway crash in Brooklyn; Audi driver sought - WABC-TV New York",
+      "url": "https://abc7ny.com/post/driver-killed-ocean-parkway-crash-brooklyn-audi-sought/19909374/",
+      "source": "WABC-TV New York",
+      "published": "Mon, 05 Oct 2026 08:35:54 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "Ethiopian Forces Retake Tigray Capital Mekelle as Tensions With Eritrea Escalate - https://globalpost.com/",
+      "url": "https://globalpost.com/stories/ethiopian-forces-retake-tigray-capital-mekelle-as-tensions-with-eritrea-escalate/",
+      "source": "https://globalpost.com/",
+      "published": "Mon, 05 Oct 2026 08:35:54 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Ethiopian conflict: TPLF forces withdraw from Tigray regional capital Mekelle - BBC",
+      "url": "https://www.bbc.com/news/articles/cqm249v07j4xo",
+      "source": "BBC",
+      "published": "Mon, 05 Oct 2026 08:29:12 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "As Iran war smolders, shunned Eritrea looks to come in from the cold - Reuters",
+      "url": "https://www.reuters.com/world/iran-war-smolders-shunned-eritrea-looks-come-cold-2026-10-05/",
+      "source": "Reuters",
+      "published": "Mon, 05 Oct 2026 06:07:00 GMT",
       "category": "rest"
     },
     {
@@ -42,6 +798,20 @@
       "source": "Business Insider Africa",
       "published": "Mon, 05 Oct 2026 06:00:00 GMT",
       "category": "north"
+    },
+    {
+      "title": "Madagascar • French MP on mission to Antananarivo - Africa Intelligence",
+      "url": "https://www.africaintelligence.com/southern-africa-and-islands/2026/10/05/french-mp-on-mission-to-antananarivo,110889513-bre",
+      "source": "Africa Intelligence",
+      "published": "Mon, 05 Oct 2026 04:42:36 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Moon-Like Madagascar - NASA Science (.gov)",
+      "url": "https://science.nasa.gov/earth/earth-observatory/moon-like-madagascar/",
+      "source": "NASA Science (.gov)",
+      "published": "Mon, 05 Oct 2026 04:01:00 GMT",
+      "category": "rest"
     }
   ]
 }
