@@ -1,1 +1,36 @@
+backend:
+  name: github
+  repo: africansecurityobserver/african-security-observer
+  branch: main
 
+media_folder: "images/articles"
+public_folder: "/african-security-observer/images/articles"
+
+collections:
+  - name: "articles"
+    label: "المقالات الاستراتيجية"
+    folder: "articles"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "عنوان المقال"
+        name: "title"
+        widget: "string"
+
+      - label: "الصورة الرئيسية"
+        name: "image"
+        widget: "image"
+        required: false
+
+      - label: "نص المقال"
+        name: "body"
+        widget: "markdown"
+
+      - label: "الكاتب"
+        name: "author"
+        widget: "string"
+
+      - label: "تاريخ النشر"
+        name: "date"
+        widget: "datetime"
