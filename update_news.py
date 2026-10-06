@@ -19,7 +19,8 @@ RSS_FEEDS = {
     ]
 }
 
-MAX_NEWS_PER_CATEGORY = 20
+MAX_NEWS_PER_CATEGORY = 30
+MAX_NEWS_AGE_HOURS = 48
 
 
 def decode_url(url):
