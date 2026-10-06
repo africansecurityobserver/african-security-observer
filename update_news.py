@@ -143,7 +143,12 @@ category = classify_news(title)
                     "category": category
                 })
 
-    return items
+    items.sort(
+    key=lambda x: x.get("published", ""),
+    reverse=True
+)
+
+return items
 
 
 def main():
