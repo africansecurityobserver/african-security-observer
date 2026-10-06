@@ -119,7 +119,21 @@ def get_news():
 
                 published = entry.get("published", "")
 
-                category = classify_news(title)
+# Ignore news older than 48 hours
+if published:
+    try:
+        published_dt = datetime.strptime(
+            published,
+            "%a, %d %b %Y %H:%M:%S %Z"
+        ).replace(tzinfo=timezone.utc)
+
+        if datetime.now(timezone.utc) - published_dt > timedelta(hours=MAX_NEWS_AGE_HOURS):
+            continue
+
+    except ValueError:
+        pass
+
+category = classify_news(title)
 
                 items.append({
                     "title": title,
