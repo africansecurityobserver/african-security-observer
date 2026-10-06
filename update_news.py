@@ -19,12 +19,14 @@ RSS_FEEDS = {
     ]
 }
 
+
 MAX_NEWS_PER_CATEGORY = 30
 MAX_NEWS_AGE_HOURS = 48
 
 
 def decode_url(url):
     """Convert Google News URL into the original publisher URL."""
+
     if not url or "news.google.com" not in url:
         return url
 
@@ -59,7 +61,7 @@ def classify_news(title):
     ]
 
     north_words = [
-        "tunisia", "tunisia", "algeria", "morocco",
+        "tunisia", "algeria", "morocco",
         "libya", "egypt", "mauritania",
         "north africa", "maghreb"
     ]
@@ -84,6 +86,7 @@ def classify_news(title):
 
 
 def get_news():
+
     items = []
     seen_urls = set()
 
@@ -119,21 +122,21 @@ def get_news():
 
                 published = entry.get("published", "")
 
-# Ignore news older than 48 hours
-if published:
-    try:
-        published_dt = datetime.strptime(
-            published,
-            "%a, %d %b %Y %H:%M:%S %Z"
-        ).replace(tzinfo=timezone.utc)
+                # Ignore news older than 48 hours
+                if published:
+                    try:
+                        published_dt = datetime.strptime(
+                            published,
+                            "%a, %d %b %Y %H:%M:%S %Z"
+                        ).replace(tzinfo=timezone.utc)
 
-        if datetime.now(timezone.utc) - published_dt > timedelta(hours=MAX_NEWS_AGE_HOURS):
-            continue
+                        if datetime.now(timezone.utc) - published_dt > timedelta(hours=MAX_NEWS_AGE_HOURS):
+                            continue
 
-    except ValueError:
-        pass
+                    except ValueError:
+                        pass
 
-category = classify_news(title)
+                category = classify_news(title)
 
                 items.append({
                     "title": title,
@@ -143,12 +146,13 @@ category = classify_news(title)
                     "category": category
                 })
 
+    # Sort news from newest to oldest
     items.sort(
-    key=lambda x: x.get("published", ""),
-    reverse=True
-)
+        key=lambda x: x.get("published", ""),
+        reverse=True
+    )
 
-return items
+    return items
 
 
 def main():
@@ -161,6 +165,7 @@ def main():
     }
 
     with open("news.json", "w", encoding="utf-8") as file:
+
         json.dump(
             data,
             file,
