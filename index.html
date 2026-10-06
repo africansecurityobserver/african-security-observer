@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -28,6 +29,10 @@ background:var(--paper);
 color:var(--ink);
 font-family:Tahoma,Arial,sans-serif;
 line-height:1.65
+}
+
+a{
+color:inherit
 }
 
 .wrap{
@@ -175,74 +180,10 @@ margin:0
 color:var(--muted)
 }
 
-.grid{
+.columns{
 display:grid;
-grid-template-columns:1.6fr 1fr;
-gap:20px
-}
-
-.hero{
-background:#fff;
-border:1px solid var(--line);
-border-radius:8px;
-overflow:hidden
-}
-
-.hero-art{
-height:245px;
-background:linear-gradient(120deg,#173b58,#416b80 60%,#c09b57);
-display:flex;
-align-items:center;
-justify-content:center;
-color:#fff;
-position:relative
-}
-
-.hero-art:before{
-content:'AFRICA';
-font-size:clamp(55px,10vw,110px);
-font-weight:bold;
-letter-spacing:7px;
-color:#ffffff18;
-position:absolute
-}
-
-.hero-art span{
-font-size:52px;
-z-index:1
-}
-
-.hero-body{
-padding:19px
-}
-
-.kicker{
-font-size:12px;
-color:var(--blue);
-font-weight:bold
-}
-
-.hero h3{
-font-size:23px;
-line-height:1.45;
-margin:7px 0
-}
-
-.summary{
-color:#596b79;
-font-size:14px;
-margin:0 0 12px
-}
-
-.meta{
-font-size:11px;
-color:var(--muted)
-}
-
-.side{
-display:flex;
-flex-direction:column;
-gap:12px
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:16px
 }
 
 .story{
@@ -258,100 +199,38 @@ line-height:1.5;
 margin:5px 0 7px
 }
 
+.story h3 a{
+text-decoration:none
+}
+
+.story h3 a:hover{
+color:var(--blue)
+}
+
 .label{
 font-size:11px;
 color:var(--blue);
 font-weight:bold
 }
 
-.columns{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:16px;
-margin-top:27px
+.summary{
+color:#596b79;
+font-size:14px;
+margin:0 0 12px
 }
 
-.region{
-background:#fff;
-border:1px solid var(--line);
-border-radius:8px;
-padding:15px
+.meta{
+font-size:11px;
+color:var(--muted)
 }
 
-.region h3{
-font-size:17px;
-margin:0 0 12px;
-padding-bottom:8px;
-border-bottom:1px solid var(--line)
+.meta a{
+color:var(--blue);
+text-decoration:none
 }
 
-.region article{
-padding:10px 0;
-border-bottom:1px solid #edf0f2
-}
-
-.region article:last-child{
-border:0
-}
-
-.region article strong{
-font-size:13px;
-display:block;
-line-height:1.55
-}
-
-.region article small{
-color:var(--muted);
-font-size:11px
-}
-
-.analysis{
-margin-top:28px;
-background:#eaf0f4;
-border:1px solid #d7e1e8;
-border-radius:8px;
-padding:18px
-}
-
-.analysis .section-head{
-border-color:#7d98ad
-}
-
-.analysis-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px
-}
-
-.analysis-card{
-background:white;
-border:1px solid var(--line);
-padding:14px;
-border-radius:6px
-}
-
-.analysis-card strong{
-font-size:14px
-}
-
-.analysis-card p{
-font-size:12px;
-color:var(--muted);
-margin:5px 0 0
-}
-
-.footer{
-background:#0b2035;
-color:#c7d4df;
-padding:22px 0;
-font-size:12px
-}
-
-.footer .wrap{
-display:flex;
-justify-content:space-between;
-gap:15px;
-flex-wrap:wrap
+.meta a:hover{
+text-decoration:underline
 }
 
 .empty{
@@ -364,99 +243,11 @@ border-radius:8px
 }
 
 .hidden{
-display:none
+display:none !important
 }
 
 /* =====================================================
-   ARCHIVE
-===================================================== */
-
-.archive-box{
-background:#fff;
-border:1px solid var(--line);
-border-radius:8px;
-padding:20px;
-margin-bottom:20px
-}
-
-.archive-controls{
-display:flex;
-align-items:center;
-gap:12px;
-flex-wrap:wrap
-}
-
-.archive-controls label{
-font-size:13px;
-font-weight:bold
-}
-
-.archive-controls select{
-padding:10px 14px;
-border:1px solid var(--line);
-border-radius:5px;
-background:#fff;
-font-family:inherit;
-font-size:13px;
-min-width:180px
-}
-
-.archive-controls button{
-padding:10px 18px;
-border:0;
-border-radius:5px;
-background:var(--navy);
-color:#fff;
-font-family:inherit;
-font-size:13px;
-cursor:pointer
-}
-
-.archive-controls button:hover{
-background:var(--blue)
-}
-
-.archive-title{
-margin-top:25px;
-font-size:17px;
-font-weight:bold;
-color:var(--navy)
-}
-
-.archive-list{
-display:grid;
-grid-template-columns:repeat(2,minmax(0,1fr));
-gap:16px;
-margin-top:16px
-}
-
-.archive-back{
-margin-bottom:18px
-}
-
-.archive-back button{
-background:none;
-border:1px solid var(--line);
-padding:8px 14px;
-border-radius:5px;
-font-family:inherit;
-cursor:pointer;
-color:var(--blue);
-background:#fff
-}
-
-.archive-back button:hover{
-background:#f0f4f7
-}
-
-.archive-loading{
-text-align:center;
-padding:25px;
-color:var(--muted)
-}
-
-/* =====================================================
-   STRATEGIC ARTICLES
+   ARTICLES
 ===================================================== */
 
 .article-list{
@@ -647,6 +438,10 @@ background:#f5f7f8;
 color:#596b79
 }
 
+.article-page-body blockquote p{
+margin:0
+}
+
 .article-page-body ul,
 .article-page-body ol{
 padding-right:30px;
@@ -656,6 +451,105 @@ margin-bottom:20px
 .article-page-body a{
 color:var(--blue);
 text-decoration:underline
+}
+
+/* =====================================================
+   ARCHIVE
+===================================================== */
+
+.archive-box{
+background:#fff;
+border:1px solid var(--line);
+border-radius:8px;
+padding:20px;
+margin-bottom:20px
+}
+
+.archive-controls{
+display:flex;
+align-items:center;
+gap:12px;
+flex-wrap:wrap
+}
+
+.archive-controls label{
+font-size:13px;
+font-weight:bold
+}
+
+.archive-controls select{
+padding:10px 14px;
+border:1px solid var(--line);
+border-radius:5px;
+background:#fff;
+font-family:inherit;
+font-size:13px;
+min-width:180px
+}
+
+.archive-controls button{
+padding:10px 18px;
+border:0;
+border-radius:5px;
+background:var(--navy);
+color:#fff;
+font-family:inherit;
+font-size:13px;
+cursor:pointer
+}
+
+.archive-controls button:hover{
+background:var(--blue)
+}
+
+.archive-list{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:16px;
+margin-top:16px
+}
+
+.archive-back{
+margin-bottom:18px
+}
+
+.archive-back button{
+background:none;
+border:1px solid var(--line);
+padding:8px 14px;
+border-radius:5px;
+font-family:inherit;
+cursor:pointer;
+color:var(--blue);
+background:#fff
+}
+
+.archive-back button:hover{
+background:#f0f4f7
+}
+
+.archive-loading{
+text-align:center;
+padding:25px;
+color:var(--muted)
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+background:#0b2035;
+color:#c7d4df;
+padding:22px 0;
+font-size:12px
+}
+
+.footer .wrap{
+display:flex;
+justify-content:space-between;
+gap:15px;
+flex-wrap:wrap
 }
 
 /* =====================================================
@@ -710,10 +604,6 @@ max-height:none
 
 @media(max-width:760px){
 
-.grid{
-grid-template-columns:1fr
-}
-
 .columns{
 grid-template-columns:1fr
 }
@@ -722,24 +612,8 @@ grid-template-columns:1fr
 display:none
 }
 
-.hero-art{
-height:190px
-}
-
-.hero h3{
-font-size:19px
-}
-
 .nav button{
 padding:11px 12px
-}
-
-.analysis-grid{
-grid-template-columns:1fr
-}
-
-.archive-list{
-grid-template-columns:1fr
 }
 
 .article-list{
@@ -783,7 +657,6 @@ font-size:10px
 </div>
 </div>
 
-
 <header class="masthead">
 
 <div class="wrap">
@@ -807,7 +680,6 @@ font-size:10px
 </div>
 
 </div>
-
 
 <nav class="nav" aria-label="الأقسام">
 
@@ -845,7 +717,6 @@ font-size:10px
 
 </header>
 
-
 <div class="ticker">
 
 <div class="wrap">
@@ -860,9 +731,7 @@ font-size:10px
 
 </div>
 
-
 <main class="wrap main" id="content">
-
 
 <!-- =====================================================
      HOME
@@ -872,7 +741,9 @@ font-size:10px
 
 <div class="section-head">
 
-<h2>أحدث الأخبار</h2>
+<h2>
+أحدث الأخبار
+</h2>
 
 <small id="updated">
 جارٍ تحميل الأخبار…
@@ -880,26 +751,18 @@ font-size:10px
 
 </div>
 
+<div id="news-list" class="columns"></div>
 
-<div
-id="news-list"
-class="columns"
-style="grid-template-columns:repeat(2,minmax(0,1fr));"
-></div>
-
-
-<div
-id="empty"
-class="empty hidden"
->
-لا توجد أخبار متاحة حاليًا. قد تكون خلاصات RSS غير متاحة أو لم تُشغّل الأتمتة بعد.
+<div id="empty" class="empty hidden">
+لا توجد أخبار متاحة حاليًا.
+قد تكون خلاصات RSS غير متاحة أو لم تُشغّل الأتمتة بعد.
 </div>
 
 </section>
 
 
 <!-- =====================================================
-     CATEGORY SECTION
+     CATEGORY
 ===================================================== -->
 
 <section id="placeholder" class="hidden">
@@ -914,11 +777,7 @@ class="empty hidden"
 
 </div>
 
-<div
-id="section-list"
-class="columns"
-style="grid-template-columns:repeat(2,minmax(0,1fr));"
-></div>
+<div id="section-list" class="columns"></div>
 
 </section>
 
@@ -941,7 +800,6 @@ style="grid-template-columns:repeat(2,minmax(0,1fr));"
 
 </div>
 
-
 <div id="articlesList" class="article-list">
 
 <div class="article-loading">
@@ -954,7 +812,7 @@ style="grid-template-columns:repeat(2,minmax(0,1fr));"
 
 
 <!-- =====================================================
-     STRATEGIC ARTICLE READER
+     ARTICLE READER
 ===================================================== -->
 
 <section id="articleReaderSection" class="hidden">
@@ -971,22 +829,19 @@ style="grid-template-columns:repeat(2,minmax(0,1fr));"
 
 <button
 class="download-button"
-onclick="downloadCurrentArticle()"
->
+onclick="downloadCurrentArticle()">
 ⬇ تحميل المقال
 </button>
 
 <button
 class="print-button"
-onclick="printCurrentArticle()"
->
+onclick="printCurrentArticle()">
 🖨 طباعة / حفظ PDF
 </button>
 
 </div>
 
 </div>
-
 
 <div id="articleReader">
 
@@ -1002,7 +857,7 @@ onclick="printCurrentArticle()"
 
 
 <!-- =====================================================
-     ARCHIVE SECTION
+     ARCHIVE
 ===================================================== -->
 
 <section id="archiveSection" class="hidden">
@@ -1019,7 +874,6 @@ onclick="printCurrentArticle()"
 
 </div>
 
-
 <div class="archive-back">
 
 <button onclick="showHome()">
@@ -1027,7 +881,6 @@ onclick="printCurrentArticle()"
 </button>
 
 </div>
-
 
 <div class="archive-box">
 
@@ -1053,17 +906,15 @@ onclick="printCurrentArticle()"
 
 </div>
 
-
 <div id="archiveContent">
 
 <div class="empty">
-اختر شهراً لعرض الأخبار المؤرشفة.
+اختر شهرًا لعرض الأخبار المؤرشفة.
 </div>
 
 </div>
 
 </section>
-
 
 </main>
 
@@ -1087,96 +938,69 @@ onclick="printCurrentArticle()"
 
 <script>
 
-const names={
+/* =====================================================
+   GENERAL
+===================================================== */
+
+const names = {
 home:'الرئيسية',
 sahel:'الساحل الإفريقي',
 north:'شمال إفريقيا',
 rest:'باقي إفريقيا',
 defense:'التسليح والدفاع',
-analysis:'المقالات الاستراتيجية'
+analysis:'المقالات الاستراتيجية',
+archive:'الأرشيف'
 };
 
-
-const categoryNames={
+const categoryNames = {
 sahel:'الساحل الإفريقي',
 north:'شمال إفريقيا',
 rest:'باقي إفريقيا',
 defense:'التسليح والدفاع'
 };
 
+const home =
+document.getElementById('home');
 
-const home=document.getElementById('home');
+const placeholder =
+document.getElementById('placeholder');
 
-const placeholder=document.getElementById('placeholder');
+const archiveSection =
+document.getElementById('archiveSection');
 
-const archiveSection=document.getElementById('archiveSection');
+const articlesSection =
+document.getElementById('articlesSection');
 
-const articlesSection=document.getElementById('articlesSection');
+const articleReaderSection =
+document.getElementById('articleReaderSection');
 
-const articleReaderSection=document.getElementById('articleReaderSection');
 
-
-document.getElementById('date').textContent=
+document.getElementById('date').textContent =
 new Intl.DateTimeFormat(
 'ar-TN',
 {dateStyle:'full'}
 ).format(new Date());
 
 
-function esc(s){
+/* =====================================================
+   SECURITY / HTML ESCAPE
+===================================================== */
 
-return String(s||'').replace(
-/[&<>"']/g,
-c=>({
+function esc(value){
+
+return String(value || '')
+.replace(/[&<>"']/g,function(c){
+
+return {
 '&':'&amp;',
 '<':'&lt;',
 '>':'&gt;',
 '"':'&quot;',
 "'":'&#39;'
-}[c])
-);
 
-}
+}[c];
 
-
-function card(item){
-
-return `
-<article class="story">
-
-<div class="label">
-${esc(categoryNames[item.category]||'متابعة إفريقية')}
- · ${esc(item.source)}
-</div>
-
-<h3>
-<a
-href="${esc(item.url)}"
-target="_blank"
-rel="noopener noreferrer"
->
-${esc(item.title)}
-</a>
-</h3>
-
-${item.summary?
-`<p class="summary">${esc(item.summary)}</p>`
-:''}
-
-<div class="meta">
-${esc(item.published||'تاريخ غير متوفر')}
- ·
-<a
-href="${esc(item.url)}"
-target="_blank"
-rel="noopener noreferrer"
->
-المصدر الأصلي
-</a>
-</div>
-
-</article>
-`;
+});
 
 }
 
@@ -1185,55 +1009,176 @@ rel="noopener noreferrer"
    NEWS
 ===================================================== */
 
-let items=[];
+let items = [];
+
+
+function card(item){
+
+const category =
+categoryNames[item.category] ||
+'متابعة إفريقية';
+
+const source =
+item.source ||
+'مصدر غير محدد';
+
+const title =
+item.title ||
+'بدون عنوان';
+
+const url =
+item.url ||
+'#';
+
+const published =
+item.published ||
+'تاريخ غير متوفر';
+
+const summary =
+item.summary || '';
+
+return `
+
+<article class="story">
+
+<div class="label">
+
+${esc(category)}
+ ·
+${esc(source)}
+
+</div>
+
+<h3>
+
+<a
+href="${esc(url)}"
+target="_blank"
+rel="noopener noreferrer">
+
+${esc(title)}
+
+</a>
+
+</h3>
+
+${summary ? `
+<p class="summary">
+${esc(summary)}
+</p>
+` : ''}
+
+<div class="meta">
+
+${esc(published)}
+
+ ·
+
+<a
+href="${esc(url)}"
+target="_blank"
+rel="noopener noreferrer">
+
+المصدر الأصلي
+
+</a>
+
+</div>
+
+</article>
+
+`;
+
+}
 
 
 async function load(){
 
+const newsList =
+document.getElementById('news-list');
+
+const empty =
+document.getElementById('empty');
+
+const updated =
+document.getElementById('updated');
+
 try{
 
-const r=await fetch(
-'./news.json',
+const response =
+await fetch(
+'./news.json?x=' + Date.now(),
 {cache:'no-store'}
 );
 
-if(!r.ok)
+if(!response.ok){
+
 throw new Error('news unavailable');
-
-const data=await r.json();
-
-items=data.items||[];
-
-document.getElementById('updated').textContent=
-'آخر تحديث: '+
-(
-data.updated
-?
-new Date(data.updated).toLocaleString('ar-TN')
-:
-'غير معروف'
-);
-
-document.getElementById('news-list').innerHTML=
-items.map(card).join('');
-
-document.getElementById('empty')
-.classList
-.toggle(
-'hidden',
-items.length>0
-);
 
 }
 
-catch(e){
+const data =
+await response.json();
 
-document.getElementById('updated').textContent=
-'بانتظار تفعيل التحديث الآلي';
 
-document.getElementById('empty')
-.classList
-.remove('hidden');
+/*
+   يدعم النظام الشكل الحالي:
+   {
+      "updated":"...",
+      "items":[...]
+   }
+
+   كما يدعم أيضًا مصفوفة مباشرة.
+*/
+
+if(Array.isArray(data)){
+
+items = data;
+
+}else{
+
+items = Array.isArray(data.items)
+? data.items
+: [];
+
+}
+
+
+if(data.updated){
+
+updated.textContent =
+'آخر تحديث: ' +
+new Date(data.updated)
+.toLocaleString('ar-TN');
+
+}else{
+
+updated.textContent =
+'آخر تحديث غير معروف';
+
+}
+
+
+newsList.innerHTML =
+items.map(card).join('');
+
+
+empty.classList.toggle(
+'hidden',
+items.length > 0
+);
+
+
+}catch(error){
+
+console.error(error);
+
+updated.textContent =
+'تعذر تحميل الأخبار حاليًا';
+
+newsList.innerHTML = '';
+
+empty.classList.remove('hidden');
 
 }
 
@@ -1241,117 +1186,256 @@ document.getElementById('empty')
 
 
 /* =====================================================
-   STRATEGIC ARTICLES
+   CATEGORY DISPLAY
 ===================================================== */
 
-let articles=[];
+function showCategory(category){
 
-let currentArticle=null;
+const filtered =
+items.filter(function(item){
+
+return item.category === category;
+
+});
+
+document.getElementById('sectionTitle').textContent =
+names[category] || 'الأخبار';
+
+const list =
+document.getElementById('section-list');
+
+
+if(filtered.length === 0){
+
+list.innerHTML = `
+<div class="empty">
+لا توجد أخبار متاحة حاليًا في هذا القسم.
+</div>
+`;
+
+}else{
+
+list.innerHTML =
+filtered.map(card).join('');
+
+}
+
+
+home.classList.add('hidden');
+
+articlesSection.classList.add('hidden');
+
+articleReaderSection.classList.add('hidden');
+
+archiveSection.classList.add('hidden');
+
+placeholder.classList.remove('hidden');
+
+setActiveNav(category);
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+function showHome(){
+
+home.classList.remove('hidden');
+
+placeholder.classList.add('hidden');
+
+articlesSection.classList.add('hidden');
+
+articleReaderSection.classList.add('hidden');
+
+archiveSection.classList.add('hidden');
+
+setActiveNav('home');
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+
+/* =====================================================
+   ARTICLES
+===================================================== */
+
+let articles = [];
+
+let currentArticle = null;
 
 
 async function loadArticles(){
 
-const container=
+const container =
 document.getElementById('articlesList');
 
 try{
 
-const response=await fetch(
-'./articles.json',
+const response =
+await fetch(
+'./articles.json?x=' + Date.now(),
 {cache:'no-store'}
 );
 
-if(!response.ok)
-throw new Error('articles unavailable');
+if(!response.ok){
 
-const data=await response.json();
+throw new Error(
+'articles unavailable'
+);
 
-articles=Array.isArray(data)
-?
-data
-:
-(data.articles||[]);
+}
 
-if(articles.length===0){
+const data =
+await response.json();
 
-container.innerHTML=
-'<div class="empty">لا توجد مقالات استراتيجية منشورة حاليًا.</div>';
+
+if(Array.isArray(data)){
+
+articles = data;
+
+}else{
+
+articles =
+Array.isArray(data.articles)
+? data.articles
+: [];
+
+}
+
+
+if(articles.length === 0){
+
+container.innerHTML = `
+<div class="empty">
+لا توجد مقالات استراتيجية منشورة حاليًا.
+</div>
+`;
 
 return;
 
 }
 
-container.innerHTML=
+
+container.innerHTML =
 articles.map(articleCard).join('');
 
+
+}catch(error){
+
+console.error(error);
+
+container.innerHTML = `
+<div class="empty">
+تعذر تحميل المقالات الاستراتيجية حاليًا.
+</div>
+`;
+
 }
 
-catch(error){
-
-container.innerHTML=
-'<div class="empty">تعذر تحميل المقالات الاستراتيجية حاليًا.</div>';
-
 }
 
-}
 
+/* =====================================================
+   ARTICLE CARD
+===================================================== */
 
 function articleCard(article){
 
-const image=article.image
-?
-`
+const image =
+article.image
+? `
+
 <img
 class="article-card-image"
 src="${esc(article.image)}"
 alt="${esc(article.title)}"
 loading="lazy"
+onerror="this.style.display='none'"
 >
+
 `
-:
-`
+: `
+
 <div class="article-card-noimage">
 ◈
 </div>
+
 `;
 
+
 return `
+
 <article
 class="article-card"
-onclick="openArticle('${encodeURIComponent(article.slug||'')}')"
->
+onclick="openArticle('${encodeURIComponent(article.slug || '')}')">
 
 ${image}
 
 <div class="article-card-body">
 
 <h3 class="article-card-title">
+
 ${esc(article.title)}
+
 </h3>
 
 <div class="article-meta">
-${article.author ? 'بقلم: '+esc(article.author) : ''}
-${article.author && article.date ? ' · ' : ''}
-${article.date ? formatArticleDate(article.date) : ''}
+
+${article.author
+? 'بقلم: ' + esc(article.author)
+: ''}
+
+${article.author && article.date
+? ' · '
+: ''}
+
+${article.date
+? formatArticleDate(article.date)
+: ''}
+
 </div>
 
 </div>
 
 </article>
+
 `;
 
 }
 
 
+/* =====================================================
+   ARTICLE DATE
+===================================================== */
+
 function formatArticleDate(value){
 
-if(!value)
+if(!value){
+
 return '';
 
-const date=new Date(value);
+}
 
-if(Number.isNaN(date.getTime()))
+const date =
+new Date(value);
+
+if(Number.isNaN(date.getTime())){
+
 return esc(value);
+
+}
 
 return new Intl.DateTimeFormat(
 'ar-TN',
@@ -1365,39 +1449,62 @@ day:'numeric'
 }
 
 
+/* =====================================================
+   FIND ARTICLE
+===================================================== */
+
 function findArticle(slug){
 
 return articles.find(
-article=>
-String(article.slug||'')===String(slug||'')
+function(article){
+
+return String(article.slug || '') ===
+String(slug || '');
+
+}
 );
 
 }
 
 
+/* =====================================================
+   MARKDOWN
+===================================================== */
+
 function markdownToHtml(markdown){
 
-let text=String(markdown||'').replace(/\r\n/g,'\n');
+let text =
+String(markdown || '')
+.replace(/\r\n/g,'\n');
 
-const lines=text.split('\n');
+const lines =
+text.split('\n');
 
-let html='';
+let html = '';
 
-let inUl=false;
-let inOl=false;
-let inQuote=false;
+let inUl = false;
+
+let inOl = false;
+
+let inQuote = false;
 
 
 function closeLists(){
 
 if(inUl){
-html+='</ul>';
-inUl=false;
+
+html += '</ul>';
+
+inUl = false;
+
 }
 
 if(inOl){
-html+='</ol>';
-inOl=false;
+
+html += '</ol>';
+
+inOl = false;
+
 }
 
 }
@@ -1406,8 +1513,11 @@ inOl=false;
 function closeQuote(){
 
 if(inQuote){
-html+='</blockquote>';
-inQuote=false;
+
+html += '</blockquote>';
+
+inQuote = false;
+
 }
 
 }
@@ -1415,175 +1525,23 @@ inQuote=false;
 
 function inline(value){
 
-let s=esc(value);
+let s =
+esc(value);
 
-s=s.replace(
+
+s =
+s.replace(
 /\[(.*?)\]\((https?:\/\/[^\s)]+)\)/g,
 '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
 );
 
-s=s.replace(
+
+s =
+s.replace(
 /\*\*(.*?)\*\*/g,
 '<strong>$1</strong>'
 );
 
-s=s.replace(
-/__(.*?)__/g,
-'<strong>$1</strong>'
-);
 
-s=s.replace(
-/\*(.*?)\*/g,
-'<em>$1</em>'
-);
-
-s=s.replace(
-/_(.*?)_/g,
-'<em>$1</em>'
-);
-
-return s;
-
-}
-
-
-for(let i=0;i<lines.length;i++){
-
-const raw=lines[i];
-
-const line=raw.trim();
-
-
-if(!line){
-
-closeLists();
-closeQuote();
-
-continue;
-
-}
-
-
-/* H2 */
-
-if(line.startsWith('## ')){
-
-closeLists();
-closeQuote();
-
-html+=
-'<h2>'+
-inline(line.substring(3))+
-'</h2>';
-
-continue;
-
-}
-
-
-/* H3 */
-
-if(line.startsWith('### ')){
-
-closeLists();
-closeQuote();
-
-html+=
-'<h3>'+
-inline(line.substring(4))+
-'</h3>';
-
-continue;
-
-}
-
-
-/* Blockquote */
-
-if(line.startsWith('> ')){
-
-closeLists();
-
-if(!inQuote){
-
-html+='<blockquote>';
-inQuote=true;
-
-}
-
-html+=
-'<p>'+
-inline(line.substring(2))+
-'</p>';
-
-continue;
-
-}
-
-
-/* Unordered list */
-
-if(line.startsWith('- ') || line.startsWith('* ')){
-
-closeQuote();
-
-if(!inUl){
-
-closeLists();
-html+='<ul>';
-inUl=true;
-
-}
-
-html+=
-'<li>'+
-inline(line.substring(2))+
-'</li>';
-
-continue;
-
-}
-
-
-/* Ordered list */
-
-if(/^\d+\.\s/.test(line)){
-
-closeQuote();
-
-if(!inOl){
-
-closeLists();
-html+='<ol>';
-inOl=true;
-
-}
-
-html+=
-'<li>'+
-inline(line.replace(/^\d+\.\s/,'') )+
-'</li>';
-
-continue;
-
-}
-
-
-/* Normal paragraph */
-
-closeLists();
-closeQuote();
-
-html+=
-'<p>'+
-inline(line)+
-'</p>';
-
-}
-
-closeLists();
-closeQuote();
-
-return html;
-
-}
+s =
+s.rep
