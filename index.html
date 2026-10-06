@@ -1544,4 +1544,769 @@ s.replace(
 
 
 s =
-s.rep
+s =
+s.replace(
+  /\*(.*?)\*/g,
+  '<em>$1</em>'
+);
+
+
+return s;
+
+}
+
+
+for(const line of lines){
+
+if(/^### /.test(line)){
+
+closeLists();
+closeQuote();
+
+html +=
+'<h3>' +
+inline(line.replace(/^### /,'')) +
+'</h3>';
+
+continue;
+
+}
+
+
+if(/^## /.test(line)){
+
+closeLists();
+closeQuote();
+
+html +=
+'<h2>' +
+inline(line.replace(/^## /,'')) +
+'</h2>';
+
+continue;
+
+}
+
+
+if(/^# /.test(line)){
+
+closeLists();
+closeQuote();
+
+html +=
+'<h2>' +
+inline(line.replace(/^# /,'')) +
+'</h2>';
+
+continue;
+
+}
+
+
+if(/^> /.test(line)){
+
+closeLists();
+
+if(!inQuote){
+
+html += '<blockquote>';
+
+inQuote = true;
+
+}
+
+html +=
+'<p>' +
+inline(line.replace(/^> /,'')) +
+'</p>';
+
+continue;
+
+}else{
+
+closeQuote();
+
+}
+
+
+if(/^- /.test(line)){
+
+if(inOl){
+
+html += '</ol>';
+
+inOl = false;
+
+}
+
+if(!inUl){
+
+html += '<ul>';
+
+inUl = true;
+
+}
+
+html +=
+'<li>' +
+inline(line.replace(/^- /,'')) +
+'</li>';
+
+continue;
+
+}
+
+
+if(/^\d+\. /.test(line)){
+
+if(inUl){
+
+html += '</ul>';
+
+inUl = false;
+
+}
+
+if(!inOl){
+
+html += '<ol>';
+
+inOl = true;
+
+}
+
+html +=
+'<li>' +
+inline(line.replace(/^\d+\. /,'')) +
+'</li>';
+
+continue;
+
+}
+
+
+if(line.trim() === ''){
+
+closeLists();
+closeQuote();
+
+continue;
+
+}
+
+
+closeLists();
+closeQuote();
+
+html +=
+'<p>' +
+inline(line) +
+'</p>';
+
+}
+
+
+closeLists();
+closeQuote();
+
+return html;
+
+}
+
+
+/* =====================================================
+   OPEN ARTICLE
+===================================================== */
+
+function openArticle(slug){
+
+const decoded =
+decodeURIComponent(slug);
+
+const article =
+findArticle(decoded);
+
+if(!article){
+
+showArticles();
+
+return;
+
+}
+
+
+currentArticle =
+article;
+
+
+const reader =
+document.getElementById(
+'articleReader'
+);
+
+
+const image =
+article.image
+? `
+<img
+class="article-page-image"
+src="${esc(article.image)}"
+alt="${esc(article.title)}"
+>
+`
+: '';
+
+
+reader.innerHTML = `
+
+<article class="article-page">
+
+<div class="article-page-header">
+
+<h2>
+${esc(article.title)}
+</h2>
+
+<div class="article-page-meta">
+
+${article.author
+? 'بقلم: ' + esc(article.author)
+: ''}
+
+${article.author && article.date
+? ' · '
+: ''}
+
+${article.date
+? formatArticleDate(article.date)
+: ''}
+
+</div>
+
+</div>
+
+${image}
+
+<div class="article-page-body">
+
+${markdownToHtml(article.body || '')}
+
+</div>
+
+</article>
+
+`;
+
+
+home.classList.add('hidden');
+
+placeholder.classList.add('hidden');
+
+articlesSection.classList.add('hidden');
+
+archiveSection.classList.add('hidden');
+
+articleReaderSection.classList.remove('hidden');
+
+setActiveNav('analysis');
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+
+/* =====================================================
+   SHOW ARTICLES
+===================================================== */
+
+function showArticles(){
+
+home.classList.add('hidden');
+
+placeholder.classList.add('hidden');
+
+archiveSection.classList.add('hidden');
+
+articleReaderSection.classList.add('hidden');
+
+articlesSection.classList.remove('hidden');
+
+setActiveNav('analysis');
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+
+/* =====================================================
+   DOWNLOAD ARTICLE
+===================================================== */
+
+function downloadCurrentArticle(){
+
+if(!currentArticle){
+
+return;
+
+}
+
+
+const title =
+currentArticle.title ||
+'article';
+
+
+const content =
+currentArticle.body ||
+'';
+
+
+const text =
+title +
+'\n\n' +
+'الكاتب: ' +
+(currentArticle.author || '') +
+'\n' +
+'التاريخ: ' +
+(currentArticle.date || '') +
+'\n\n' +
+content;
+
+
+const blob =
+new Blob(
+[text],
+{
+type:'text/plain;charset=utf-8'
+}
+);
+
+
+const url =
+URL.createObjectURL(blob);
+
+
+const link =
+document.createElement('a');
+
+
+link.href = url;
+
+link.download =
+title + '.txt';
+
+
+document.body.appendChild(link);
+
+link.click();
+
+link.remove();
+
+URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   PRINT ARTICLE
+===================================================== */
+
+function printCurrentArticle(){
+
+if(!currentArticle){
+
+return;
+
+}
+
+window.print();
+
+}
+
+
+/* =====================================================
+   ARCHIVE
+===================================================== */
+
+let archiveIndex = null;
+
+
+async function loadArchiveIndex(){
+
+const select =
+document.getElementById(
+'archiveMonth'
+);
+
+
+if(!select){
+
+return;
+
+}
+
+
+try{
+
+const response =
+await fetch(
+'./archive/index.json?x=' + Date.now(),
+{cache:'no-store'}
+);
+
+
+if(!response.ok){
+
+throw new Error(
+'archive unavailable'
+);
+
+}
+
+
+const data =
+await response.json();
+
+
+archiveIndex =
+Array.isArray(data.months)
+? data.months
+: [];
+
+
+if(archiveIndex.length === 0){
+
+select.innerHTML =
+'<option value="">لا يوجد أرشيف بعد</option>';
+
+return;
+
+}
+
+
+select.innerHTML =
+'<option value="">اختر الشهر</option>' +
+archiveIndex.map(function(month){
+
+return `
+<option value="${esc(month)}">
+${esc(formatArchiveMonth(month))}
+</option>
+`;
+
+}).join('');
+
+
+}catch(error){
+
+console.error(error);
+
+select.innerHTML =
+'<option value="">تعذر تحميل الأرشيف</option>';
+
+}
+
+}
+
+
+/* =====================================================
+   ARCHIVE MONTH NAME
+===================================================== */
+
+function formatArchiveMonth(month){
+
+const parts =
+String(month).split('-');
+
+
+if(parts.length !== 2){
+
+return month;
+
+}
+
+
+const year =
+Number(parts[0]);
+
+const monthNumber =
+Number(parts[1]);
+
+
+const date =
+new Date(
+year,
+monthNumber - 1,
+1
+);
+
+
+return new Intl.DateTimeFormat(
+'ar-TN',
+{
+year:'numeric',
+month:'long'
+}
+).format(date);
+
+}
+
+
+/* =====================================================
+   LOAD SELECTED ARCHIVE
+===================================================== */
+
+async function loadSelectedArchive(){
+
+const select =
+document.getElementById(
+'archiveMonth'
+);
+
+
+const content =
+document.getElementById(
+'archiveContent'
+);
+
+
+if(!select || !content){
+
+return;
+
+}
+
+
+const month =
+select.value;
+
+
+if(!month){
+
+content.innerHTML = `
+<div class="empty">
+اختر شهرًا لعرض الأخبار المؤرشفة.
+</div>
+`;
+
+return;
+
+}
+
+
+content.innerHTML = `
+<div class="archive-loading">
+جارٍ تحميل أخبار ${esc(formatArchiveMonth(month))}…
+</div>
+`;
+
+
+try{
+
+const response =
+await fetch(
+'./archive/' +
+encodeURIComponent(month) +
+'.json?x=' +
+Date.now(),
+{cache:'no-store'}
+);
+
+
+if(!response.ok){
+
+throw new Error(
+'archive month unavailable'
+);
+
+}
+
+
+const data =
+await response.json();
+
+
+const archiveItems =
+Array.isArray(data)
+? data
+: (
+Array.isArray(data.items)
+? data.items
+: []
+);
+
+
+if(!archiveItems.length){
+
+content.innerHTML = `
+<div class="empty">
+لا توجد أخبار في هذا الأرشيف.
+</div>
+`;
+
+return;
+
+}
+
+
+content.innerHTML = `
+
+<div class="section-head">
+
+<h2>
+أخبار ${esc(formatArchiveMonth(month))}
+</h2>
+
+<small>
+${archiveItems.length} خبر
+</small>
+
+</div>
+
+<div class="columns">
+
+${archiveItems.map(card).join('')}
+
+</div>
+
+`;
+
+
+}catch(error){
+
+console.error(error);
+
+content.innerHTML = `
+<div class="empty">
+تعذر تحميل أرشيف هذا الشهر.
+</div>
+`;
+
+}
+
+}
+
+
+/* =====================================================
+   SHOW ARCHIVE
+===================================================== */
+
+function showArchive(){
+
+home.classList.add('hidden');
+
+placeholder.classList.add('hidden');
+
+articlesSection.classList.add('hidden');
+
+articleReaderSection.classList.add('hidden');
+
+archiveSection.classList.remove('hidden');
+
+setActiveNav('archive');
+
+loadArchiveIndex();
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+function setActiveNav(section){
+
+document
+.querySelectorAll('.nav button')
+.forEach(function(button){
+
+button.classList.toggle(
+'active',
+button.dataset.section === section
+);
+
+});
+
+}
+
+
+document
+.querySelectorAll('.nav button')
+.forEach(function(button){
+
+button.addEventListener(
+'click',
+function(){
+
+const section =
+this.dataset.section;
+
+
+if(section === 'home'){
+
+showHome();
+
+}
+
+else if(
+section === 'sahel' ||
+section === 'north' ||
+section === 'rest' ||
+section === 'defense'
+){
+
+showCategory(section);
+
+}
+
+else if(section === 'analysis'){
+
+showArticles();
+
+}
+
+else if(section === 'archive'){
+
+showArchive();
+
+}
+
+});
+
+});
+
+
+/* =====================================================
+   START
+===================================================== */
+
+async function start(){
+
+await Promise.all([
+load(),
+loadArticles(),
+loadArchiveIndex()
+]);
+
+showHome();
+
+}
+
+
+start();
+
+</script>
+
+</body>
+</html>
