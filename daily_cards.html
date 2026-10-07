@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>البطاقات اليومية | African Security Observer</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Tahoma, sans-serif;
+            background: #f3f4f6;
+            color: #111827;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+            font-size: 28px;
+        }
+
+        header p {
+            margin: 0;
+            color: #d1d5db;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            border: none;
+            background: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+
+        .tab.active {
+            background: #111827;
+            color: white;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .card-header {
+            border-bottom: 2px solid #e5e7eb;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+        }
+
+        .card-header h2 {
+            margin: 0 0 8px;
+            font-size: 24px;
+        }
+
+        .card-header .period {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            background: #111827;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 7px;
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .event {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 13px 5px;
+        }
+
+        .event:last-child {
+            border-bottom: none;
+        }
+
+        .country {
+            font-weight: bold;
+            color: #374151;
+            margin-bottom: 5px;
+        }
+
+        .event-text {
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .loading,
+        .error,
+        .empty {
+            text-align: center;
+            padding: 40px 20px;
+            color: #6b7280;
+        }
+
+        .error {
+            color: #b91c1c;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            color: #6b7280;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>African Security Observer</h1>
+    <p>البطاقات اليومية</p>
+</header>
+
+<div class="container">
+
+    <div class="tabs">
+        <button class="tab active" data-slot="16">16:00</button>
+        <button class="tab" data-slot="21">21:00</button>
+        <button class="tab" data-slot="05">05:00</button>
+    </div>
+
+    <div id="content">
+        <div class="loading">
+            جاري تحميل البطاقة...
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    African Security Observer
+</footer>
+
+<script>
+
+const cardsUrl = "daily_cards/cards.json";
+
+let cardsData = null;
+
+async function loadCards() {
+
+    const content = document.getElementById("content");
+
+    try {
+
+        const response = await fetch(cardsUrl + "?t=" + Date.now());
+
+        if (!response.ok) {
+            throw new Error("HTTP " + response.status);
+        }
+
+        cardsData = await response.json();
+
+        showCard("16");
+
+    } catch (error) {
+
+        console.error(error);
+
+        content.innerHTML = `
+            <div class="error">
+                تعذر تحميل البطاقات اليومية.
+            </div>
+        `;
+    }
+}
+
+
+function findCard(slot) {
+
+    if (!cardsData) {
+        return null;
+    }
+
+    /*
+     * The generator normally stores the latest cards
+     * under the slot names 05, 16 and 21.
+     */
+
+    if (cardsData[slot]) {
+        return cardsData[slot];
+    }
+
+    if (cardsData.cards && cardsData.cards[slot]) {
+        return cardsData.cards[slot];
+    }
+
+    return null;
+}
+
+
+function showCard(slot) {
+
+    const content = document.getElementById("content");
+
+    const card = findCard(slot);
+
+    if (!card) {
+
+        content.innerHTML = `
+            <div class="empty">
+                لا توجد بطاقة متاحة لهذه الفترة حتى الآن.
+            </div>
+        `;
+
+        return;
+    }
+
+    let html = "";
+
+    html += `
+        <div class="card">
+
+            <div class="card-header">
+
+                <h2>
+                    البطاقة اليومية
+                </h2>
+
+                <div class="period">
+                    ${card.date || ""} — ${card.period || ""}
+                </div>
+
+            </div>
+    `;
+
+
+    const sections = card.sections || [];
+
+    sections.forEach(section => {
+
+        html += `
+            <div class="section">
+
+                <div class="section-title">
+                    ${escapeHtml(section.title || "")}
+                </div>
+        `;
+
+        const events = section.events || [];
+
+        events.forEach(event => {
+
+            html += `
+                <div class="event">
+
+                    <div class="country">
+                        ${escapeHtml(event.country || "")}
+                    </div>
+
+                    <div class="event-text">
+                        ${escapeHtml(event.text || "")}
+                    </div>
+
+                </div>
+            `;
+
+        });
+
+        html += `
+            </div>
+        `;
+
+    });
+
+
+    html += `
+        </div>
+    `;
+
+    content.innerHTML = html;
+}
+
+
+function escapeHtml(text) {
+
+    const div = document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+}
+
+
+document.querySelectorAll(".tab").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        document.querySelectorAll(".tab").forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        showCard(button.dataset.slot);
+
+    });
+
+});
+
+
+loadCards();
+
+</script>
+
+</body>
+</html>
