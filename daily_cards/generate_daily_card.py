@@ -706,60 +706,54 @@ def generate_with_gemini(prompt):
         ]
     }
 
-    # Models to try, in this order.
-    models = [
-        "gemini-2.5-flash",
-        "gemini-3.8-flash",
-    ]
+    model_name = "gemini-3.8-flash"
 
-    last_error = None
+    print("=" * 70)
+    print(f"Using Gemini Interactions API: {model_name}")
+    print("=" * 70)
 
-    for model_name in models:
+    try:
+        client = genai.Client(
+            api_key=api_key,
+            http_options=types.HttpOptions(timeout=90000)
+        )
 
-        print("=" * 70)
-        print(f"Trying Gemini model: {model_name}")
-        print("Timeout: 90 seconds")
-        print("=" * 70)
+        interaction = client.interactions.create(
+            model=model_name,
+            input=prompt,
+            response_format={
+                "type": "text",
+                "mime_type": "application/json",
+                "schema": response_schema
+            },
+            generation_config={
+                "temperature": 0.2,
+                "thinking_level": "low"
+            }
+        )
 
-        try:
-            client = genai.Client(
-                api_key=api_key,
-                http_options=types.HttpOptions(timeout=90000)
+        output_text = interaction.output_text
+
+        if not output_text:
+            raise RuntimeError(
+                "Gemini returned an empty response."
             )
 
-            response = client.models.generate_content(
-                model=model_name,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    temperature=0.2,
-                    response_mime_type="application/json",
-                    response_schema=response_schema,
-                ),
-            )
+        print("=" * 70)
+        print("Gemini generation succeeded.")
+        print("=" * 70)
 
-            if not response or not response.text:
-                raise RuntimeError(
-                    f"Gemini returned an empty response from {model_name}."
-                )
+        return json.loads(output_text)
 
-            print(f"Gemini generation succeeded with: {model_name}")
+    except Exception as e:
+        print("=" * 70)
+        print("Gemini Interactions API failed.")
+        print(f"Error: {type(e).__name__}: {e}")
+        print("=" * 70)
 
-            return json.loads(response.text)
-
-        except Exception as e:
-            last_error = e
-
-            print("=" * 70)
-            print(f"Gemini model failed: {model_name}")
-            print(f"Error: {type(e).__name__}: {e}")
-            print("=" * 70)
-
-            continue
-
-    raise RuntimeError(
-        "All Gemini models failed. Last error: "
-        f"{type(last_error).__name__}: {last_error}"
-    )
+        raise RuntimeError(
+            f"Gemini generation failed: {type(e).__name__}: {e}"
+        )
 
 # ============================================================
 # VALIDATION
