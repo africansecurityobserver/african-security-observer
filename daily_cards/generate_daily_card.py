@@ -797,9 +797,39 @@ def normalize_sections(generated):
 
     by_id = {}
 
+    # Map section titles to their expected IDs.
+    title_to_id = {
+        "ليبيا": "libya",
+        "الجزائر": "algeria",
+        "المغرب": "morocco",
+        "الأحداث الكبرى في إفريقيا": "africa_major",
+        "مستجدات الإرهاب في القارة الإفريقية والعالم": "terrorism",
+        "مستجدات الأوضاع في منطقة الشرق الأوسط": "middle_east",
+        "الأحداث الكبرى في بقية دول العالم": "world_major"
+    }
+
     for section in incoming:
 
-        section_id = section.get("id")
+        if not isinstance(section, dict):
+            continue
+
+        # First try to use the ID returned by Gemini.
+        section_id = str(
+            section.get("id", "")
+        ).strip()
+
+        # If Gemini did not return an ID,
+        # determine it from the section title.
+        if not section_id:
+
+            section_title = str(
+                section.get("title", "")
+            ).strip()
+
+            section_id = title_to_id.get(
+                section_title,
+                ""
+            )
 
         if section_id:
             by_id[section_id] = section
@@ -859,7 +889,6 @@ def normalize_sections(generated):
         })
 
     return final_sections
-
 
 # ============================================================
 # SAVE CARD
