@@ -808,7 +808,7 @@ def generate_with_gemini(prompt):
 
         print("=" * 70)
         print(f"Trying Gemini model: {model_name}")
-        print("Timeout: 90 seconds")
+        print("Timeout: 180 seconds")
         print("=" * 70)
 
         try:
