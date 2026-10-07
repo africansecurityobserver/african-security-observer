@@ -658,155 +658,67 @@ Africa/Tunis
 # ============================================================
 
 def generate_with_gemini(prompt):
-
     api_key = os.getenv("GEMINI_API_KEY")
 
     if not api_key:
-        raise RuntimeError(
-            "GEMINI_API_KEY is not available."
-        )
+        raise RuntimeError("GEMINI_API_KEY is not set.")
 
-    client = genai.Client(
-        api_key=api_key
-    )
-
-    response_schema = {
-        "type": "object",
-        "properties": {
-            "sections": {
-                "type": "array",
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "id": {
-                            "type": "string"
-                        },
-                        "title": {
-                            "type": "string"
-                        },
-                        "events": {
-                            "type": "array",
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "country": {
-                                        "type": "string"
-                                    },
-                                    "text": {
-                                        "type": "string"
-                                    }
-                                },
-                                "required": [
-                                    "country",
-                                    "text"
-                                ]
-                            }
-                        }
-                    },
-                    "required": [
-                        "id",
-                        "title",
-                        "events"
-                    ]
-                }
-            }
-        },
-        "required": [
-            "sections"
-        ]
-    }
-
-    # Models to try, in order.
-    # If the first model is temporarily unavailable,
-    # the next one will be tried automatically.
-    models_to_try = [
+    # Models to try, in this order.
+    models = [
+        "gemini-2.5-flash",
         "gemini-3.8-flash",
-        "gemini-2.5-flash"
     ]
 
     last_error = None
 
-    for model_name in models_to_try:
+    for model_name in models:
 
-        for attempt in range(3):
+        print("=" * 70)
+        print(f"Trying Gemini model: {model_name}")
+        print("Timeout: 90 seconds")
+        print("=" * 70)
 
-            try:
+        try:
+            # 90,000 milliseconds = 90 seconds
+            client = genai.Client(
+                api_key=api_key,
+                http_options=types.HttpOptions(timeout=90000)
+            )
 
-                print(
-                    f"Trying Gemini model: {model_name} "
-                    f"(attempt {attempt + 1}/3)"
+            response = client.models.generate_content(
+                model=model_name,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    temperature=0.2,
+                    response_mime_type="application/json",
+                    response_schema=response_schema,
+                    http_options={"timeout": 90000},
+                ),
+            )
+
+            if not response or not response.text:
+                raise RuntimeError(
+                    f"Gemini returned an empty response from {model_name}."
                 )
 
-                response = client.models.generate_content(
-                    model=model_name,
-                    contents=prompt,
-                    config=types.GenerateContentConfig(
-                        temperature=0.2,
-                        response_mime_type="application/json",
-                        response_schema=response_schema,
-                    )
-                )
+            print(f"Gemini generation succeeded with: {model_name}")
 
-                if not response.text:
-                    raise RuntimeError(
-                        "Gemini returned an empty response."
-                    )
+            return json.loads(response.text)
 
-                try:
-                    result = json.loads(
-                        response.text
-                    )
+        except Exception as e:
+            last_error = e
 
-                    print(
-                        f"Gemini succeeded with {model_name}"
-                    )
+            print("=" * 70)
+            print(f"Gemini model failed: {model_name}")
+            print(f"Error: {type(e).__name__}: {e}")
+            print("=" * 70)
 
-                    return result
-
-                except json.JSONDecodeError as e:
-
-                    raise RuntimeError(
-                        f"Gemini returned invalid JSON: {e}"
-                    )
-
-            except Exception as e:
-
-                last_error = e
-
-                error_text = str(e)
-
-                print(
-                    f"Gemini error with {model_name}: "
-                    f"{error_text}"
-                )
-
-                # Wait before retrying.
-                # This is especially useful for temporary 503 errors.
-                if attempt < 2:
-
-                    import time
-
-                    wait_seconds = 10 * (attempt + 1)
-
-                    print(
-                        f"Waiting {wait_seconds} seconds "
-                        f"before retry..."
-                    )
-
-                    time.sleep(
-                        wait_seconds
-                    )
-
-                else:
-
-                    print(
-                        f"Model {model_name} failed "
-                        f"after 3 attempts."
-                    )
+            # Try the next model immediately.
+            continue
 
     raise RuntimeError(
-        "All Gemini models failed. "
-        f"Last error: {last_error}"
+        "All Gemini models failed. Last error: "
+        f"{type(last_error).__name__}: {last_error}"
     )
 
 # ============================================================
