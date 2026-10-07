@@ -366,10 +366,13 @@ def load_previous_cards():
 
 def extract_previous_events(cards, current_date):
     """
-    Collect events from recent cards so Gemini can avoid
-    repeating the same event.
+    Collect events from cards that occurred BEFORE the current
+    card period.
 
-    We keep the last 24 hours only.
+    Important:
+    - Do NOT use the current card itself as a previous card.
+    - This allows safely rerunning the same slot without causing
+      Gemini to remove the events that it generated previously.
     """
 
     result = []
@@ -383,7 +386,9 @@ def extract_previous_events(cards, current_date):
         return result
 
     for card in cards:
+
         card_date = card.get("date")
+        card_slot = str(card.get("slot", "")).strip()
 
         if not card_date:
             continue
@@ -396,21 +401,74 @@ def extract_previous_events(cards, current_date):
         except Exception:
             continue
 
+        # Ignore cards older than one day.
         if abs((current_dt - card_dt).days) > 1:
             continue
 
-        sections = card.get("sections", [])
+        # ----------------------------------------------------
+        # IMPORTANT:
+        # Never treat the same slot on the same date as a
+        # previous card.
+        #
+        # This prevents a manual rerun of the 06:00–16:00 card
+        # from hiding the events that were already generated
+        # during an earlier test.
+        # ----------------------------------------------------
+        if card_dt == current_dt:
+
+            # Current 16 card:
+            # ignore another 16 card from the same date.
+            #
+            # Current 21 card:
+            # ignore another 21 card from the same date.
+            #
+            # Current 05 card:
+            # ignore another 05 card from the same date.
+            #
+            # We determine the current slot separately below.
+            current_slot = None
+
+            # The current slot will be supplied through the
+            # environment variable when the workflow runs.
+            current_slot = os.getenv(
+                "CARD_SLOT",
+                ""
+            ).strip()
+
+            if not current_slot and len(sys.argv) >= 2:
+                current_slot = sys.argv[1].strip()
+
+            if card_slot == current_slot:
+                continue
+
+        sections = card.get(
+            "sections",
+            []
+        )
 
         for section in sections:
-            events = section.get("events", [])
+
+            events = section.get(
+                "events",
+                []
+            )
 
             for event in events:
-                if isinstance(event, dict):
-                    text_value = event.get("text", "")
 
-                    if text_value:
-                        result.append(text_value)
+                if not isinstance(event, dict):
+                    continue
 
+                text_value = event.get(
+                    "text",
+                    ""
+                )
+
+                if text_value:
+                    result.append(
+                        text_value
+                    )
+
+    # Keep the most recent 80 previous events.
     return result[-80:]
 
 
