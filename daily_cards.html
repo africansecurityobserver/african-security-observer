@@ -205,22 +205,23 @@ function findCard(slot) {
         return null;
     }
 
-    /*
-     * The generator normally stores the latest cards
-     * under the slot names 05, 16 and 21.
-     */
+    // cards.json stores all cards inside the "cards" array.
+    if (Array.isArray(cardsData.cards)) {
 
-    if (cardsData[slot]) {
-        return cardsData[slot];
-    }
+        // Find the latest card for the requested slot.
+        const matchingCards = cardsData.cards.filter(card => {
+            return String(card.slot) === String(slot);
+        });
 
-    if (cardsData.cards && cardsData.cards[slot]) {
-        return cardsData.cards[slot];
+        if (matchingCards.length > 0) {
+
+            // Return the most recent matching card.
+            return matchingCards[matchingCards.length - 1];
+        }
     }
 
     return null;
 }
-
 
 function showCard(slot) {
 
