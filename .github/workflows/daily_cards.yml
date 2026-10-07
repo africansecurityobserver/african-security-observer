@@ -18,18 +18,14 @@ on:
     - cron: "0 21 * * *"
       timezone: "Africa/Tunis"
 
-
 permissions:
   contents: write
 
-
 jobs:
   generate-card:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -48,7 +44,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           CARD_SLOT: ${{ inputs.slot }}
         run: |
-          python daily_cards/generate_daily_card.py
+          python -u daily_cards/generate_daily_card.py
 
       - name: Commit and push card
         run: |
