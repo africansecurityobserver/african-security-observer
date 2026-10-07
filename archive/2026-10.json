@@ -1,6 +1,16 @@
 {
-  "updated": "2026-10-07T17:25:12.970512+00:00",
+  "updated": "2026-10-07T18:23:27.724558+00:00",
   "items": [
+    {
+      "title": "مقتل العشرات من الجنود والمسلحين وعمال المناجم في هجمات بنيجيريا - ذا ستار",
+      "description": "مقتل العشرات من الجنود والمسلحين وعمال المناجم في هجمات بنيجيريا    النجم",
+      "original_title": "Dozens of soldiers, militants and miners killed in Nigeria attacks - The Star",
+      "original_description": "Dozens of soldiers, militants and miners killed in Nigeria attacks &nbsp;&nbsp; The Star",
+      "url": "https://www.thestar.com.my/news/world/2026/10/08/dozens-of-soldiers-militants-and-miners-killed-in-nigeria-attacks",
+      "source": "The Star",
+      "published": "Wed, 07 Oct 2026 18:01:00 GMT",
+      "category": "sahel"
+    },
     {
       "title": "شهود: قوات إريترية تنتشر في منطقة تيغراي بإثيوبيا - افريكا نيوز",
       "description": "شهود عيان يقولون إن القوات الإريترية تنتشر في منطقة تيغراي بإثيوبيا    أفريكا نيوز",
@@ -10,6 +20,16 @@
       "source": "Africanews",
       "published": "Wed, 07 Oct 2026 15:09:15 GMT",
       "category": "rest"
+    },
+    {
+      "title": "الطائرة المغربية F-16 Block 72 تحلق وسط تنافس القوات الجوية الجزائرية - Defense Security Asia",
+      "description": "الطائرة المغربية F-16 Block 72 تحلق وسط تنافس القوات الجوية الجزائرية    Defense Security Asia",
+      "original_title": "Morocco’s F-16 Block 72 Takes Flight Amid Algeria Airpower Rivalry - Defence Security Asia",
+      "original_description": "Morocco’s F-16 Block 72 Takes Flight Amid Algeria Airpower Rivalry &nbsp;&nbsp; Defence Security Asia",
+      "url": "https://defencesecurityasia.com/en/morocco-f16-block-72-first-flight-algeria-airpower-rivalry/",
+      "source": "Defence Security Asia",
+      "published": "Wed, 07 Oct 2026 14:20:11 GMT",
+      "category": "north"
     },
     {
       "title": "الهند تريد دخول سوق الدفاع الإفريقي، وهي تقدم أكثر من مجرد أسلحة ودبابات",
@@ -22,10 +42,10 @@
       "category": "defense"
     },
     {
-      "title": "قوات إريترية تنتشر في منطقة تيغراي بإثيوبيا: مسؤول محلي وسكان - عرب نيوز",
-      "description": "قوات إريترية تنتشر في منطقة تيغراي بإثيوبيا: مسؤول محلي وسكان    عرب نيوز",
-      "original_title": "Eritrean troops deploy in Ethiopia’s Tigray region: local official, residents - Arab News",
-      "original_description": "Eritrean troops deploy in Ethiopia’s Tigray region: local official, residents &nbsp;&nbsp; Arab News",
+      "title": "شهود عيان: قوات إريترية تتوغل في بلدة بشمال إثيوبيا - عرب نيوز",
+      "description": "يقول شهود عيان إن القوات الإريترية تمر عبر بلدة شمال إثيوبيا    عرب نيوز",
+      "original_title": "Eritrean troops drive through northern Ethiopian town, witnesses say - Arab News",
+      "original_description": "Eritrean troops drive through northern Ethiopian town, witnesses say &nbsp;&nbsp; Arab News",
       "url": "https://www.arabnews.com/world/eritrean-troops-deploy-in-ethiopias-tigray-region-local-official-residents-3005051",
       "source": "Arab News",
       "published": "Wed, 07 Oct 2026 09:15:07 GMT",
@@ -583,7 +603,7 @@
     },
     {
       "title": "حركة أيجوباسيموين تحذر أساري دوكوبو من الهجمات على إيدو وعرش بنين - صحيفة إندبندنت نيجيريا",
-      "description": "حركة أيجوباسيموين تحذر أساري دوكوبو من الهجمات على إيدو، عرش بنين    صحيفة مستقلة نيجيريا",
+      "description": "حركة أيجوباسيموين تحذر أساري دوكوبو من الهجمات على إيدو، عرش بنين    صحيفة إندبندنت نيجيريا",
       "original_title": "Aiguobasinmwin Movement Warns Asari Dokubo Against Attacks On Edo, Benin Throne - Independent Newspaper Nigeria",
       "original_description": "Aiguobasinmwin Movement Warns Asari Dokubo Against Attacks On Edo, Benin Throne &nbsp;&nbsp; Independent Newspaper Nigeria",
       "url": "https://independent.ng/aiguobasinmwin-movement-warns-asari-dokubo-against-attacks-on-edo-benin-throne/",
