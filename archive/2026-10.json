@@ -1,6 +1,48 @@
 {
-  "updated": "2026-10-06T23:44:15.922875+00:00",
+  "updated": "2026-10-07T00:32:54.681930+00:00",
   "items": [
+    {
+      "title": "Malawi: The Green Heart of Africa - Watch the full documentary | ARTE in English - Arte TV.",
+      "url": "https://www.arte.tv/en/videos/122678-002-A/malawi-the-green-heart-of-africa/",
+      "source": "Arte TV.",
+      "published": "Wed, 07 Oct 2026 00:15:29 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "South Sudan’s aid crisis deepens as food stocks run low - Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/10/7/south-sudans-aid-crisis-deepens-as-food-stocks-run-low",
+      "source": "Al Jazeera",
+      "published": "Wed, 07 Oct 2026 00:14:21 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "LSE | New study finds major HIV service declines in Uganda and Zimbabwe after 2025 US aid cuts - European AIDS Treatment Group",
+      "url": "https://www.eatg.org/hiv-news/lse-new-study-finds-major-hiv-service-declines-in-uganda-and-zimbabwe-after-2025-us-aid-cuts/",
+      "source": "European AIDS Treatment Group",
+      "published": "Wed, 07 Oct 2026 00:08:06 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Man living in Congo who went back to Kenya is country's 1st confirmed Ebola case and death - PBS",
+      "url": "https://www.pbs.org/newshour/health/man-living-in-congo-who-went-back-to-kenya-is-countrys-1st-confirmed-ebola-case-and-death",
+      "source": "PBS",
+      "published": "Tue, 06 Oct 2026 23:58:07 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "IMF Staff-Level Agreement with Papua New Guinea Could Unlock $189 Million - News and Statistics - IndexBox",
+      "url": "https://www.indexbox.io/blog/imf-reaches-staff-level-agreement-with-papua-new-guinea-on-funding-reviews/",
+      "source": "IndexBox",
+      "published": "Tue, 06 Oct 2026 23:41:39 GMT",
+      "category": "sahel"
+    },
+    {
+      "title": "U-23 Africa Cup of Nations qualifiers: DRC beat Mauritania and advance to the second round (0–1, 2–0) - ACP | Agence Congolaise de Presse",
+      "url": "https://acp.cd/anglais/u-23-africa-cup-of-nations-qualifiers-drc-beat-mauritania-and-advance-to-the-second-round-0-1-2-0/",
+      "source": "ACP | Agence Congolaise de Presse",
+      "published": "Tue, 06 Oct 2026 23:39:59 GMT",
+      "category": "sahel"
+    },
     {
       "title": "Congo’s Ebola Fighters Race Against a Moving Epidemic - Bloomberg.com",
       "url": "https://www.bloomberg.com/news/newsletters/2026-10-06/next-africa-congo-s-ebola-fighters-are-racing-a-moving-epidemic",
@@ -90,6 +132,13 @@
       "url": "https://www.cafonline.com/afcon2025/news/angola-defeat-malawi-in-race-for-place-at-totalenergies-caf-afcon-pamoja-2027/",
       "source": "CAFOnline.com",
       "published": "Tue, 06 Oct 2026 21:02:58 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "Kenya Records Ebola Case for First Time - The New York Times",
+      "url": "https://www.nytimes.com/2026/10/06/world/africa/kenya-case-ebola-outbreak.html",
+      "source": "The New York Times",
+      "published": "Tue, 06 Oct 2026 21:02:07 GMT",
       "category": "rest"
     },
     {
@@ -296,13 +345,6 @@
       "category": "rest"
     },
     {
-      "title": "Kenya Records Ebola Case for First Time - The New York Times",
-      "url": "https://www.nytimes.com/2026/10/06/world/africa/kenya-case-ebola-outbreak.html",
-      "source": "The New York Times",
-      "published": "Tue, 06 Oct 2026 17:38:13 GMT",
-      "category": "rest"
-    },
-    {
       "title": "Man Dies of Ebola in Kenya, Marking Country’s First-Ever Confirmed Case of the Disease - People.com",
       "url": "https://people.com/kenya-first-ever-case-ebola-man-dies-12160923",
       "source": "People.com",
@@ -364,6 +406,13 @@
       "source": "Truth Nigeria",
       "published": "Tue, 06 Oct 2026 16:29:50 GMT",
       "category": "sahel"
+    },
+    {
+      "title": "AUC Chairperson was this evening hosted by Hon. Dhananjay Ramful, Minister of Foreign Affairs, Regional Integration and International Trade of the Republic of Mauritius - African Union",
+      "url": "https://au.int/en/pressreleases/20261006/auc-chairperson-hosted-minister-foreign-affairs-mauritius",
+      "source": "African Union",
+      "published": "Tue, 06 Oct 2026 16:24:32 GMT",
+      "category": "rest"
     },
     {
       "title": "Democratic Republic of the Congo, Kenya, Uganda | Ebola Bundibugyo virus disease outbreak and EU response - DG ECHO Daily Map | 06/10/2026 - ReliefWeb",
@@ -1224,6 +1273,13 @@
       "url": "https://www.africaintelligence.com/southern-africa-and-islands/2026/10/05/french-mp-on-mission-to-antananarivo,110889513-bre",
       "source": "Africa Intelligence",
       "published": "Mon, 05 Oct 2026 04:42:36 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "SA pilot helps save lives on Flydubai after planned ‘terrorist act’ - The Citizen",
+      "url": "https://www.citizen.co.za/news/south-africa/sa-pilot-helps-save-lives-flydubai-after-planned-terrorist-act/",
+      "source": "The Citizen",
+      "published": "Mon, 05 Oct 2026 04:31:47 GMT",
       "category": "rest"
     },
     {
