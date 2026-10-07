@@ -1,9 +1,12 @@
 import feedparser
 import json
 import os
+import re
+import time
 from datetime import datetime, timezone, timedelta
 from urllib.parse import quote_plus
 from googlenewsdecoder import gnewsdecoder
+from deep_translator import GoogleTranslator
 
 
 # =========================================================
@@ -103,7 +106,151 @@ SECURITY_TERMS = [
     "attacks",
     "kidnapping",
     "hostage",
-    "IED"
+    "IED",
+    "counterterrorism",
+    "counter-terrorism",
+    "border security",
+    "peacekeeping",
+    "troops",
+    "soldiers",
+    "airstrike",
+    "air strikes",
+    "military operation",
+    "military operations"
+]
+
+
+# =========================================================
+# DEFENSE TERMS
+# =========================================================
+
+DEFENSE_TERMS = [
+    "weapon",
+    "weapons",
+    "missile",
+    "missiles",
+    "rocket",
+    "rockets",
+    "drone",
+    "drones",
+    "UAV",
+    "fighter jet",
+    "fighter jets",
+    "fighter aircraft",
+    "combat aircraft",
+    "warplane",
+    "warplanes",
+    "tank",
+    "tanks",
+    "armored vehicle",
+    "armoured vehicle",
+    "armored vehicles",
+    "armoured vehicles",
+    "submarine",
+    "submarines",
+    "frigate",
+    "frigates",
+    "corvette",
+    "corvettes",
+    "warship",
+    "warships",
+    "naval vessel",
+    "air defense",
+    "air defence",
+    "military equipment",
+    "defense equipment",
+    "defence equipment",
+    "arms deal",
+    "arms contract",
+    "arms purchase",
+    "weapons deal",
+    "weapons contract",
+    "military procurement",
+    "defense contract",
+    "defence contract",
+    "military hardware",
+    "armament",
+    "armaments",
+    "military aircraft",
+    "military helicopter",
+    "helicopters",
+    "radar",
+    "aircraft carrier",
+    "military vehicle"
+]
+
+
+# =========================================================
+# WORDS TO EXCLUDE
+# =========================================================
+
+EXCLUDED_TERMS = [
+    "football",
+    "soccer",
+    "match",
+    "matches",
+    "league",
+    "premier league",
+    "cup",
+    "champions league",
+    "sport",
+    "sports",
+    "player",
+    "players",
+    "coach",
+    "goal",
+    "goals",
+    "tournament",
+    "tennis",
+    "basketball",
+    "rugby",
+
+    "tourism",
+    "tourist",
+    "travel",
+    "hotel",
+    "holiday",
+    "vacation",
+
+    "fashion",
+    "music",
+    "singer",
+    "celebrity",
+    "film",
+    "movie",
+    "entertainment",
+
+    "recipe",
+    "cooking",
+    "food",
+
+    "weather",
+    "rainfall",
+    "temperature",
+
+    "stock market",
+    "stocks",
+    "shares",
+    "banking",
+    "finance",
+    "financial markets",
+    "cryptocurrency",
+    "bitcoin",
+
+    "university",
+    "school",
+    "education",
+
+    "health",
+    "hospital",
+    "disease",
+    "medical",
+
+    "imf",
+    "inflation",
+    "gdp",
+
+    "unesco"
 ]
 
 
@@ -128,7 +275,7 @@ def make_country_feed(country):
 
     query = " OR ".join(search_parts)
 
-    query = f"({query}) when:2d"
+    query = f'({query}) when:2d'
 
     encoded_query = quote_plus(query)
 
@@ -138,10 +285,6 @@ def make_country_feed(country):
         + "&hl=en-US&gl=US&ceid=US:en"
     )
 
-
-# =========================================================
-# RSS FEEDS
-# =========================================================
 
 RSS_FEEDS = {
 
@@ -205,6 +348,90 @@ ARCHIVE_INDEX_FILE = os.path.join(
 
 
 # =========================================================
+# TRANSLATION
+# =========================================================
+
+translator = GoogleTranslator(
+    source="auto",
+    target="ar"
+)
+
+
+def clean_html(text):
+
+    if not text:
+        return ""
+
+    text = re.sub(
+        r"<[^>]+>",
+        " ",
+        text
+    )
+
+    text = re.sub(
+        r"\s+",
+        " ",
+        text
+    )
+
+    return text.strip()
+
+
+def translate_text(text):
+
+    if not text:
+        return ""
+
+    text = clean_html(text)
+
+    if not text:
+        return ""
+
+    # لا نرسل نصوصًا ضخمة إلى خدمة الترجمة
+    text = text[:5000]
+
+    try:
+
+        translated = translator.translate(
+            text
+        )
+
+        if translated:
+            return translated.strip()
+
+    except Exception as e:
+
+        print(
+            f"Translation failed: {e}"
+        )
+
+    # في حالة فشل الترجمة نحتفظ بالنص الأصلي
+    return text
+
+
+def translate_article(title, description):
+
+    print(
+        f"Translating: {title}"
+    )
+
+    arabic_title = translate_text(
+        title
+    )
+
+    time.sleep(0.5)
+
+    arabic_description = translate_text(
+        description
+    )
+
+    return (
+        arabic_title,
+        arabic_description
+    )
+
+
+# =========================================================
 # URL DECODER
 # =========================================================
 
@@ -238,12 +465,67 @@ def decode_url(url):
 
 
 # =========================================================
+# SECURITY FILTER
+# =========================================================
+
+def is_relevant_security_news(
+    title,
+    description
+):
+
+    text = (
+        str(title)
+        + " "
+        + str(description)
+    ).lower()
+
+    # -----------------------------------------------------
+    # Reject clearly unrelated subjects
+    # -----------------------------------------------------
+
+    for word in EXCLUDED_TERMS:
+
+        if word.lower() in text:
+            return False
+
+    # -----------------------------------------------------
+    # Accept defense stories
+    # -----------------------------------------------------
+
+    if any(
+        word.lower() in text
+        for word in DEFENSE_TERMS
+    ):
+        return True
+
+    # -----------------------------------------------------
+    # Accept security stories
+    # -----------------------------------------------------
+
+    if any(
+        word.lower() in text
+        for word in SECURITY_TERMS
+    ):
+        return True
+
+    return False
+
+
+# =========================================================
 # CLASSIFICATION
 # =========================================================
 
-def classify_news(title, feed_category):
+def classify_news(
+    title,
+    description,
+    feed_category
+):
 
-    text = title.lower()
+    text = (
+        str(title)
+        + " "
+        + str(description)
+    ).lower()
 
     north_words = [
         "tunisia",
@@ -282,73 +564,8 @@ def classify_news(title, feed_category):
     ]
 
     defense_words = [
-
-        "weapon",
-        "weapons",
-
-        "missile",
-        "missiles",
-
-        "rocket",
-        "rockets",
-
-        "drone",
-        "drones",
-        "uav",
-
-        "fighter jet",
-        "fighter jets",
-        "fighter aircraft",
-        "combat aircraft",
-
-        "warplane",
-        "warplanes",
-
-        "tank",
-        "tanks",
-
-        "armored vehicle",
-        "armoured vehicle",
-        "armored vehicles",
-        "armoured vehicles",
-
-        "submarine",
-        "submarines",
-
-        "frigate",
-        "frigates",
-
-        "corvette",
-        "corvettes",
-
-        "warship",
-        "warships",
-
-        "naval vessel",
-
-        "air defense",
-        "air defence",
-
-        "military equipment",
-        "defense equipment",
-        "defence equipment",
-
-        "arms deal",
-        "arms contract",
-        "arms purchase",
-
-        "weapons deal",
-        "weapons contract",
-
-        "military procurement",
-
-        "defense contract",
-        "defence contract",
-
-        "military hardware",
-
-        "armament",
-        "armaments"
+        word.lower()
+        for word in DEFENSE_TERMS
     ]
 
     if any(
@@ -387,7 +604,9 @@ def classify_news(title, feed_category):
 
 def load_existing_news():
 
-    if not os.path.exists(NEWS_FILE):
+    if not os.path.exists(
+        NEWS_FILE
+    ):
         return []
 
     try:
@@ -398,7 +617,9 @@ def load_existing_news():
             encoding="utf-8"
         ) as file:
 
-            data = json.load(file)
+            data = json.load(
+                file
+            )
 
         return data.get(
             "items",
@@ -455,6 +676,29 @@ def get_news():
                 if not title or not google_url:
                     continue
 
+                description = clean_html(
+                    entry.get(
+                        "summary",
+                        entry.get(
+                            "description",
+                            ""
+                        )
+                    )
+                )
+
+                # -------------------------------------------------
+                # SECURITY FILTER
+                # -------------------------------------------------
+
+                if not is_relevant_security_news(
+                    title,
+                    description
+                ):
+                    print(
+                        f"Rejected unrelated news: {title}"
+                    )
+                    continue
+
                 article_url = decode_url(
                     google_url
                 )
@@ -466,6 +710,7 @@ def get_news():
                     title.lower()
                     .replace(" ", "")
                     .replace("-", "")
+                    .replace(".", "")
                 )
 
                 if normalized_title in seen_titles:
@@ -513,12 +758,32 @@ def get_news():
 
                 category = classify_news(
                     title,
+                    description,
                     feed_category
+                )
+
+                # -------------------------------------------------
+                # TRANSLATION
+                # -------------------------------------------------
+
+                arabic_title, arabic_description = (
+                    translate_article(
+                        title,
+                        description
+                    )
                 )
 
                 items.append({
 
-                    "title": title,
+                    # Arabic content shown on newspaper
+                    "title": arabic_title,
+
+                    "description": arabic_description,
+
+                    # Original content kept for reference
+                    "original_title": title,
+
+                    "original_description": description,
 
                     "url": article_url,
 
@@ -556,8 +821,24 @@ def get_news():
 def normalize_article(article):
 
     return {
+
         "title": article.get(
             "title",
+            ""
+        ),
+
+        "description": article.get(
+            "description",
+            ""
+        ),
+
+        "original_title": article.get(
+            "original_title",
+            ""
+        ),
+
+        "original_description": article.get(
+            "original_description",
             ""
         ),
 
@@ -594,8 +875,11 @@ def article_key(article):
         return "url:" + url
 
     title = article.get(
-        "title",
-        ""
+        "original_title",
+        article.get(
+            "title",
+            ""
+        )
     ).lower().strip()
 
     return "title:" + title
@@ -666,7 +950,9 @@ def update_archive(all_articles):
 
         existing = {}
 
-        if os.path.exists(file_path):
+        if os.path.exists(
+            file_path
+        ):
 
             try:
 
@@ -744,8 +1030,7 @@ def update_archive(all_articles):
 
 # =========================================================
 # UPDATE ARCHIVE INDEX
-# =========================================================
-
+# ========================
 def update_archive_index():
 
     os.makedirs(
@@ -898,29 +1183,17 @@ def main():
         "Starting African Security Observer update..."
     )
 
-    # -----------------------------------------------------
-    # Load current news
-    # -----------------------------------------------------
-
     old_news = load_existing_news()
 
     print(
         f"Existing current news: {len(old_news)}"
     )
 
-    # -----------------------------------------------------
-    # Get fresh news
-    # -----------------------------------------------------
-
     new_news = get_news()
 
     print(
-        f"Fresh news found: {len(new_news)}"
+        f"Fresh relevant news found: {len(new_news)}"
     )
-
-    # -----------------------------------------------------
-    # Combine old + new
-    # -----------------------------------------------------
 
     combined = {}
 
@@ -948,23 +1221,11 @@ def main():
         combined.values()
     )
 
-    # -----------------------------------------------------
-    # Update monthly archive
-    # -----------------------------------------------------
-
     update_archive(
         all_articles
     )
 
-    # -----------------------------------------------------
-    # Update archive index
-    # -----------------------------------------------------
-
     update_archive_index()
-
-    # -----------------------------------------------------
-    # Keep only last 7 days in news.json
-    # -----------------------------------------------------
 
     current_news = build_current_news(
         all_articles
@@ -1004,5 +1265,4 @@ def main():
 
 
 if __name__ == "__main__":
-
     main()
