@@ -815,7 +815,7 @@ def generate_with_gemini(prompt):
 
             client = genai.Client(
                 api_key=api_key,
-                http_options=types.HttpOptions(timeout=90000)
+                http_options=types.HttpOptions(timeout=180000)
             )
 
             interaction = client.interactions.create(
