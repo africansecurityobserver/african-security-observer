@@ -716,32 +716,98 @@ def generate_with_gemini(prompt):
         ]
     }
 
-    response = client.models.generate_content(
-        model=MODEL_NAME,
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            temperature=0.2,
-            response_mime_type="application/json",
-            response_schema=response_schema,
-        )
+    # Models to try, in order.
+    # If the first model is temporarily unavailable,
+    # the next one will be tried automatically.
+    models_to_try = [
+        "gemini-3.8-flash",
+        "gemini-2.5-flash"
+    ]
+
+    last_error = None
+
+    for model_name in models_to_try:
+
+        for attempt in range(3):
+
+            try:
+
+                print(
+                    f"Trying Gemini model: {model_name} "
+                    f"(attempt {attempt + 1}/3)"
+                )
+
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        temperature=0.2,
+                        response_mime_type="application/json",
+                        response_schema=response_schema,
+                    )
+                )
+
+                if not response.text:
+                    raise RuntimeError(
+                        "Gemini returned an empty response."
+                    )
+
+                try:
+                    result = json.loads(
+                        response.text
+                    )
+
+                    print(
+                        f"Gemini succeeded with {model_name}"
+                    )
+
+                    return result
+
+                except json.JSONDecodeError as e:
+
+                    raise RuntimeError(
+                        f"Gemini returned invalid JSON: {e}"
+                    )
+
+            except Exception as e:
+
+                last_error = e
+
+                error_text = str(e)
+
+                print(
+                    f"Gemini error with {model_name}: "
+                    f"{error_text}"
+                )
+
+                # Wait before retrying.
+                # This is especially useful for temporary 503 errors.
+                if attempt < 2:
+
+                    import time
+
+                    wait_seconds = 10 * (attempt + 1)
+
+                    print(
+                        f"Waiting {wait_seconds} seconds "
+                        f"before retry..."
+                    )
+
+                    time.sleep(
+                        wait_seconds
+                    )
+
+                else:
+
+                    print(
+                        f"Model {model_name} failed "
+                        f"after 3 attempts."
+                    )
+
+    raise RuntimeError(
+        "All Gemini models failed. "
+        f"Last error: {last_error}"
     )
-
-    if not response.text:
-        raise RuntimeError(
-            "Gemini returned an empty response."
-        )
-
-    try:
-        return json.loads(response.text)
-
-    except json.JSONDecodeError as e:
-        print("Gemini response:")
-        print(response.text)
-
-        raise RuntimeError(
-            f"Gemini returned invalid JSON: {e}"
-        )
-
 
 # ============================================================
 # VALIDATION
