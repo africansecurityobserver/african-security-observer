@@ -1200,56 +1200,56 @@ def main():
 
     for article in old_news:
 
-    title_for_check = article.get(
-        "original_title"
-    ) or article.get(
-        "title",
-        ""
-    )
-
-    description_for_check = article.get(
-        "original_description"
-    ) or article.get(
-        "description",
-        ""
-    )
-
-    if not is_relevant_security_news(
-        title_for_check,
-        description_for_check
-    ):
-        continue
-
-    article = normalize_article(
-        article
-    )
-
-    if not article.get("original_title"):
-        original_title = article.get(
+        title_for_check = article.get(
+            "original_title"
+        ) or article.get(
             "title",
             ""
         )
 
-        original_description = article.get(
+        description_for_check = article.get(
+            "original_description"
+        ) or article.get(
             "description",
             ""
         )
 
-        arabic_title, arabic_description = translate_article(
-            original_title,
-            original_description
+        if not is_relevant_security_news(
+            title_for_check,
+            description_for_check
+        ):
+            continue
+
+        article = normalize_article(
+            article
         )
 
-        article["original_title"] = original_title
-        article["original_description"] = original_description
-        article["title"] = arabic_title
-        article["description"] = arabic_description
+        if not article.get("original_title"):
+            original_title = article.get(
+                "title",
+                ""
+            )
 
-    key = article_key(
-        article
-    )
+            original_description = article.get(
+                "description",
+                ""
+            )
 
-    combined[key] = article
+            arabic_title, arabic_description = translate_article(
+                original_title,
+                original_description
+            )
+
+            article["original_title"] = original_title
+            article["original_description"] = original_description
+            article["title"] = arabic_title
+            article["description"] = arabic_description
+
+        key = article_key(
+            article
+        )
+
+        combined[key] = article
 
     for article in new_news:
 
