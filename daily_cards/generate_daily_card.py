@@ -663,6 +663,49 @@ def generate_with_gemini(prompt):
     if not api_key:
         raise RuntimeError("GEMINI_API_KEY is not set.")
 
+    # JSON schema expected from Gemini
+    response_schema = {
+        "type": "object",
+        "properties": {
+            "sections": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "title": {
+                            "type": "string"
+                        },
+                        "events": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "country": {
+                                        "type": "string"
+                                    },
+                                    "text": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "country",
+                                    "text"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "title",
+                        "events"
+                    ]
+                }
+            }
+        },
+        "required": [
+            "sections"
+        ]
+    }
+
     # Models to try, in this order.
     models = [
         "gemini-2.5-flash",
@@ -679,7 +722,6 @@ def generate_with_gemini(prompt):
         print("=" * 70)
 
         try:
-            # 90,000 milliseconds = 90 seconds
             client = genai.Client(
                 api_key=api_key,
                 http_options=types.HttpOptions(timeout=90000)
@@ -692,7 +734,6 @@ def generate_with_gemini(prompt):
                     temperature=0.2,
                     response_mime_type="application/json",
                     response_schema=response_schema,
-                    http_options={"timeout": 90000},
                 ),
             )
 
@@ -713,7 +754,6 @@ def generate_with_gemini(prompt):
             print(f"Error: {type(e).__name__}: {e}")
             print("=" * 70)
 
-            # Try the next model immediately.
             continue
 
     raise RuntimeError(
