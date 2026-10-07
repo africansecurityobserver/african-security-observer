@@ -1030,7 +1030,8 @@ def update_archive(all_articles):
 
 # =========================================================
 # UPDATE ARCHIVE INDEX
-# ========================
+# =========================================================
+
 def update_archive_index():
 
     os.makedirs(
@@ -1199,13 +1200,56 @@ def main():
 
     for article in old_news:
 
-        key = article_key(
-            article
+    title_for_check = article.get(
+        "original_title"
+    ) or article.get(
+        "title",
+        ""
+    )
+
+    description_for_check = article.get(
+        "original_description"
+    ) or article.get(
+        "description",
+        ""
+    )
+
+    if not is_relevant_security_news(
+        title_for_check,
+        description_for_check
+    ):
+        continue
+
+    article = normalize_article(
+        article
+    )
+
+    if not article.get("original_title"):
+        original_title = article.get(
+            "title",
+            ""
         )
 
-        combined[key] = normalize_article(
-            article
+        original_description = article.get(
+            "description",
+            ""
         )
+
+        arabic_title, arabic_description = translate_article(
+            original_title,
+            original_description
+        )
+
+        article["original_title"] = original_title
+        article["original_description"] = original_description
+        article["title"] = arabic_title
+        article["description"] = arabic_description
+
+    key = article_key(
+        article
+    )
+
+    combined[key] = article
 
     for article in new_news:
 
