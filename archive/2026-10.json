@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T18:23:31.429847+00:00",
+  "updated": "2026-10-08T19:22:09.166834+00:00",
   "items": [
     {
       "title": "مقتل العشرات من الجنود والمسلحين وعمال المناجم في هجمات بنيجيريا - The Hindu",
@@ -92,12 +92,12 @@
       "category": "rest"
     },
     {
-      "title": "يقول مكتب التحقيقات الفيدرالي إنه أحبط هجومًا على مول أوف أمريكا قام به مراهق زوده ببندقية هجومية – ABC7 Eyewitness News",
-      "description": "يقول مكتب التحقيقات الفيدرالي إنه أحبط هجومًا على المركز التجاري الأمريكي من قبل مراهق زوده ببندقية هجومية    ABC7 Eyewitness News",
-      "original_title": "FBI says it thwarted an attack on the Mall of America by a teen it supplied with an assault rifle - ABC7 Eyewitness News",
-      "original_description": "FBI says it thwarted an attack on the Mall of America by a teen it supplied with an assault rifle &nbsp;&nbsp; ABC7 Eyewitness News",
+      "title": "مكتب التحقيقات الفيدرالي يقول إنه أحبط هجومًا على مول أوف أمريكا قام به مراهق زوده ببندقية هجومية - WABC-TV New York",
+      "description": "يقول مكتب التحقيقات الفيدرالي إنه أحبط هجومًا على مول أوف أمريكا قام به مراهق زوده ببندقية هجومية    WABC-TV New York",
+      "original_title": "FBI says it thwarted an attack on the Mall of America by a teen it supplied with an assault rifle - WABC-TV New York",
+      "original_description": "FBI says it thwarted an attack on the Mall of America by a teen it supplied with an assault rifle &nbsp;&nbsp; WABC-TV New York",
       "url": "https://abc7ny.com/story/fbi-says-thwarted-attack-mall-america-teen-supplied-assault-rifle/19918038/",
-      "source": "ABC7 Eyewitness News",
+      "source": "WABC-TV New York",
       "published": "Wed, 07 Oct 2026 18:49:56 GMT",
       "category": "rest"
     },
@@ -1752,7 +1752,7 @@
       "category": "rest"
     },
     {
-      "title": "الصومال تتطلع إلى الطائرات المقاتلة الباكستانية JF-17 في خطوة كبيرة لإعادة بناء وتحديث قوتها الجوية - Garowe Online",
+      "title": "الصومال تتطلع إلى الطائرات المقاتلة الباكستانية من طراز JF-17 في خطوة كبيرة لإعادة بناء وتحديث قوتها الجوية - Garowe Online",
       "description": "الصومال تتطلع إلى الطائرات المقاتلة الباكستانية JF-17 في خطوة كبيرة لإعادة بناء وتحديث قواتها الجوية    Garowe Online",
       "original_title": "Somalia Eyes Pakistan’s JF-17 Fighter Jets in Major Push to Rebuild and Modernise Its Air Force - Garowe Online",
       "original_description": "Somalia Eyes Pakistan’s JF-17 Fighter Jets in Major Push to Rebuild and Modernise Its Air Force &nbsp;&nbsp; Garowe Online",
@@ -1810,6 +1810,16 @@
       "source": "Business Insider Africa",
       "published": "Thu, 08 Oct 2026 11:30:00 GMT",
       "category": "defense"
+    },
+    {
+      "title": "القوات الإريترية تعبر إلى شمال إثيوبيا مع تصاعد الصراع - NBC News",
+      "description": "القوات الإريترية تعبر إلى شمال إثيوبيا مع تصاعد الصراع    NBC News",
+      "original_title": "Eritrean troops cross into northern Ethiopia as conflict escalates - NBC News",
+      "original_description": "Eritrean troops cross into northern Ethiopia as conflict escalates &nbsp;&nbsp; NBC News",
+      "url": "https://www.nbcnews.com/world/africa/eritrean-troops-cross-northern-ethiopia-conflict-escalates-rcna602246",
+      "source": "NBC News",
+      "published": "Thu, 08 Oct 2026 10:54:04 GMT",
+      "category": "rest"
     },
     {
       "title": "أكبر مناورة عسكرية إفريقية تجري في المغرب - ديفينس ويب",
