@@ -1,18 +1,25 @@
 <!doctype html>
+<html lang="ar" dir="rtl">
 
-<html lang="ar" dir="rtl">  <head>    
-<meta charset="utf-8">    
-<meta name="viewport" content="width=device-width,initial-scale=1">  <title>المرصد الإفريقي | الأمن والدفاع</title>  <style>    
-:root{    
---navy:#102b46;    
---blue:#174d75;    
---gold:#d7a849;    
---paper:#f4f6f8;    
---ink:#172535;    
---muted:#687887;    
---line:#dce3e9;    
---red:#b92f36    
-}    *{
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>المرصد الإفريقي | الأمن والدفاع</title>
+
+<style>
+:root{
+--navy:#102b46;
+--blue:#174d75;
+--gold:#d7a849;
+--paper:#f4f6f8;
+--ink:#172535;
+--muted:#687887;
+--line:#dce3e9;
+--red:#b92f36
+}
+
+*{
 box-sizing:border-box
 }
 
@@ -240,7 +247,7 @@ display:none !important
 }
 
 /* =====================================================
-ARTICLES
+   ARTICLES
 ===================================================== */
 
 .article-list{
@@ -447,7 +454,7 @@ text-decoration:underline
 }
 
 /* =====================================================
-ARCHIVE
+   ARCHIVE
 ===================================================== */
 
 .archive-box{
@@ -528,7 +535,7 @@ color:var(--muted)
 }
 
 /* =====================================================
-FOOTER
+   FOOTER
 ===================================================== */
 
 .footer{
@@ -546,7 +553,7 @@ flex-wrap:wrap
 }
 
 /* =====================================================
-PRINT
+   PRINT
 ===================================================== */
 
 @media print{
@@ -590,8 +597,9 @@ max-height:none
 }
 
 }
-   /* =====================================================
-MOBILE
+
+/* =====================================================
+   MOBILE
 ===================================================== */
 
 @media(max-width:760px){
@@ -638,93 +646,300 @@ font-size:10px
 
 }
 </style>
+</head>
 
-</head>  <body>  <div class="top">    
-<div class="wrap">    
-<span>منصة متابعة الأمن والدفاع في إفريقيا</span>    
-<span id="date"></span>    
-</div>    
-</div>  <header class="masthead">  <div class="wrap">  <div class="mast">  <div class="brand">  <div class="mark">◈</div>  <div>    
-<h1>المرصد الإفريقي</h1>    
-<div class="sub">للأمن والدفاع</div>    
-</div>  </div>  <div class="tagline">    
-خبر • تحليل • متابعة ميدانية<br>    
-قراءة في المشهد الأمني الإفريقي    
-</div>  </div>  <nav class="nav" aria-label="الأقسام">  <button class="active" data-section="home">    
-الرئيسية    
-</button>  <button data-section="sahel">    
-الساحل    
-</button>  <button data-section="north">    
-شمال إفريقيا    
-</button>  <button data-section="rest">    
-باقي إفريقيا    
-</button>  <button data-section="defense">    
-التسليح والدفاع    
-</button>  <button data-section="analysis">    
-المقالات الاستراتيجية    
-</button>  <button data-section="archive">    
-الأرشيف    
-</button>  </nav>  </div>  </header>  <div class="ticker">  <div class="wrap">  <span class="live">عاجل</span>  <span class="tickertext">    
-تحديث دوري من خلاصات الأخبار — راجع المصدر الأصلي لكل خبر.    
-</span>  </div>  </div>  <main class="wrap main" id="content">  <!-- =====================================================    
-     HOME    
-===================================================== -->  <section id="home">  <div class="section-head">  <h2>    
-أحدث الأخبار    
-</h2>  <small id="updated">    
-جارٍ تحميل الأخبار…    
-</small>  </div>  <div id="news-list" class="columns"></div>  <div id="empty" class="empty hidden">    
-لا توجد أخبار متاحة حاليًا.    
-قد تكون خلاصات RSS غير متاحة أو لم تُشغّل الأتمتة بعد.    
-</div>  </section>  <!-- =====================================================    
-     CATEGORY    
-===================================================== -->  <section id="placeholder" class="hidden">  <div class="section-head">  <h2 id="sectionTitle"></h2>  <small>    
-الأخبار المصنفة آليًا    
-</small>  </div>  <div id="section-list" class="columns"></div>  </section>  <!-- =====================================================    
-     STRATEGIC ARTICLES LIST    
-===================================================== -->  <section id="articlesSection" class="hidden">  <div class="section-head">  <h2>    
-المقالات الاستراتيجية    
-</h2>  <small>    
-تحليلات ودراسات المرصد الإفريقي    
-</small>  </div>  <div id="articlesList" class="article-list">  <div class="article-loading">    
-جارٍ تحميل المقالات…    
-</div>  </div>  </section>  <!-- =====================================================    
-     ARTICLE READER    
-===================================================== -->  <section id="articleReaderSection" class="hidden">  <div class="article-reader">  <div class="article-back">  <button onclick="showArticles()">    
-→ العودة إلى المقالات الاستراتيجية    
-</button>  <div class="article-actions">  <button    
-class="download-button"    
-onclick="downloadCurrentArticle()">  
-⬇ تحميل المقال  
-</button>  <button    
-class="print-button"    
+<body>
+
+<div class="top">
+<div class="wrap">
+<span>منصة متابعة الأمن والدفاع في إفريقيا</span>
+<span id="date"></span>
+</div>
+</div>
+
+<header class="masthead">
+
+<div class="wrap">
+
+<div class="mast">
+
+<div class="brand">
+
+<div class="mark">◈</div>
+
+<div>
+<h1>المرصد الإفريقي</h1>
+<div class="sub">للأمن والدفاع</div>
+</div>
+
+</div>
+
+<div class="tagline">
+خبر • تحليل • متابعة ميدانية<br>
+قراءة في المشهد الأمني الإفريقي
+</div>
+
+</div>
+
+<nav class="nav" aria-label="الأقسام">
+
+<button class="active" data-section="home">
+الرئيسية
+</button>
+
+<button data-section="sahel">
+الساحل
+</button>
+
+<button data-section="north">
+شمال إفريقيا
+</button>
+
+<button data-section="rest">
+باقي إفريقيا
+</button>
+
+<button data-section="defense">
+التسليح والدفاع
+</button>
+
+<button data-section="analysis">
+المقالات الاستراتيجية
+</button>
+
+<button data-section="archive">
+الأرشيف
+</button>
+
+</nav>
+
+</div>
+
+</header>
+
+<div class="ticker">
+
+<div class="wrap">
+
+<span class="live">عاجل</span>
+
+<span class="tickertext">
+تحديث دوري من خلاصات الأخبار — راجع المصدر الأصلي لكل خبر.
+</span>
+
+</div>
+
+</div>
+
+<main class="wrap main" id="content">
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section id="home">
+
+<div class="section-head">
+
+<h2>
+أحدث الأخبار
+</h2>
+
+<small id="updated">
+جارٍ تحميل الأخبار…
+</small>
+
+</div>
+
+<div id="news-list" class="columns"></div>
+
+<div id="empty" class="empty hidden">
+لا توجد أخبار متاحة حاليًا.
+قد تكون خلاصات RSS غير متاحة أو لم تُشغّل الأتمتة بعد.
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CATEGORY
+===================================================== -->
+
+<section id="placeholder" class="hidden">
+
+<div class="section-head">
+
+<h2 id="sectionTitle"></h2>
+
+<small>
+الأخبار المصنفة آليًا
+</small>
+
+</div>
+
+<div id="section-list" class="columns"></div>
+
+</section>
+
+
+<!-- =====================================================
+     STRATEGIC ARTICLES LIST
+===================================================== -->
+
+<section id="articlesSection" class="hidden">
+
+<div class="section-head">
+
+<h2>
+المقالات الاستراتيجية
+</h2>
+
+<small>
+تحليلات ودراسات المرصد الإفريقي
+</small>
+
+</div>
+
+<div id="articlesList" class="article-list">
+
+<div class="article-loading">
+جارٍ تحميل المقالات…
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ARTICLE READER
+===================================================== -->
+
+<section id="articleReaderSection" class="hidden">
+
+<div class="article-reader">
+
+<div class="article-back">
+
+<button onclick="showArticles()">
+→ العودة إلى المقالات الاستراتيجية
+</button>
+
+<div class="article-actions">
+
+<button
+class="download-button"
+onclick="downloadCurrentArticle()">
+⬇ تحميل المقال
+</button>
+
+<button
+class="print-button"
 onclick="printCurrentArticle()">
 🖨 طباعة / حفظ PDF
 </button>
 
-</div>  </div>  <div id="articleReader">  <div class="article-loading">    
-جارٍ تحميل المقال…    
-</div>  </div>  </div>  </section>  <!-- =====================================================    
-     ARCHIVE    
-===================================================== -->  <section id="archiveSection" class="hidden">  <div class="section-head">  <h2>    
-أرشيف الأخبار    
-</h2>  <small>    
-الأخبار السابقة حسب الشهر    
-</small>  </div>  <div class="archive-back">  <button onclick="showHome()">    
-← العودة إلى الأخبار الحالية    
-</button>  </div>  <div class="archive-box">  <div class="archive-controls">  <label for="archiveMonth">    
-اختر الشهر:    
-</label>  <select id="archiveMonth">  <option value="">    
-جارٍ تحميل الأرشيف…    
-</option>  </select>  <button onclick="loadSelectedArchive()">    
-عرض الأخبار    
-</button>  </div>  </div>  <div id="archiveContent">  <div class="empty">    
-اختر شهرًا لعرض الأخبار المؤرشفة.    
-</div>  </div>  </section>  </main>  <footer class="footer">  <div class="wrap">  <span>    
-المرصد الإفريقي للأمن والدفاع    
-</span>  <span>    
-الأخبار تُعرض من خلاصات المصادر مع روابطها الأصلية    
-</span>  </div>  </footer>  <script>    /* =====================================================
-GENERAL
+</div>
+
+</div>
+
+<div id="articleReader">
+
+<div class="article-loading">
+جارٍ تحميل المقال…
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ARCHIVE
+===================================================== -->
+
+<section id="archiveSection" class="hidden">
+
+<div class="section-head">
+
+<h2>
+أرشيف الأخبار
+</h2>
+
+<small>
+الأخبار السابقة حسب الشهر
+</small>
+
+</div>
+
+<div class="archive-back">
+
+<button onclick="showHome()">
+← العودة إلى الأخبار الحالية
+</button>
+
+</div>
+
+<div class="archive-box">
+
+<div class="archive-controls">
+
+<label for="archiveMonth">
+اختر الشهر:
+</label>
+
+<select id="archiveMonth">
+
+<option value="">
+جارٍ تحميل الأرشيف…
+</option>
+
+</select>
+
+<button onclick="loadSelectedArchive()">
+عرض الأخبار
+</button>
+
+</div>
+
+</div>
+
+<div id="archiveContent">
+
+<div class="empty">
+اختر شهرًا لعرض الأخبار المؤرشفة.
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer class="footer">
+
+<div class="wrap">
+
+<span>
+المرصد الإفريقي للأمن والدفاع
+</span>
+
+<span>
+الأخبار تُعرض من خلاصات المصادر مع روابطها الأصلية
+</span>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   GENERAL
 ===================================================== */
 
 const names = {
@@ -759,14 +974,16 @@ document.getElementById('articlesSection');
 const articleReaderSection =
 document.getElementById('articleReaderSection');
 
+
 document.getElementById('date').textContent =
 new Intl.DateTimeFormat(
 'ar-TN',
 {dateStyle:'full'}
 ).format(new Date());
 
+
 /* =====================================================
-SECURITY / HTML ESCAPE
+   SECURITY / HTML ESCAPE
 ===================================================== */
 
 function esc(value){
@@ -775,11 +992,11 @@ return String(value || '')
 .replace(/[&<>"']/g,function(c){
 
 return {
-'&':'&',
-'<':'<',
-'>':'>',
-'"':'"',
-"'":'''
+'&':'&amp;',
+'<':'&lt;',
+'>':'&gt;',
+'"':'&quot;',
+"'":'&#39;'
 
 }[c];
 
@@ -787,11 +1004,13 @@ return {
 
 }
 
+
 /* =====================================================
-NEWS
+   NEWS
 ===================================================== */
 
 let items = [];
+
 
 function card(item){
 
@@ -820,36 +1039,58 @@ item.summary || '';
 
 return `
 
-<article class="story">    <div class="label">    ${esc(category)}
-·
+<article class="story">
+
+<div class="label">
+
+${esc(category)}
+ ·
 ${esc(source)}
 
-</div>    <h3>    <a    
-href="${esc(url)}"    
-target="_blank"    
+</div>
+
+<h3>
+
+<a
+href="${esc(url)}"
+target="_blank"
 rel="noopener noreferrer">
 
 ${esc(title)}
 
-</a>    </h3>    ${summary ? `
+</a>
 
-<p class="summary">    
-${esc(summary)}    
-</p>    
-` : ''}    <div class="meta">    ${esc(published)}
+</h3>
 
-·
+${summary ? `
+<p class="summary">
+${esc(summary)}
+</p>
+` : ''}
 
-<a    
-href="${esc(url)}"    
-target="_blank"    
+<div class="meta">
+
+${esc(published)}
+
+ ·
+
+<a
+href="${esc(url)}"
+target="_blank"
 rel="noopener noreferrer">
 
 المصدر الأصلي
 
-</a>    </div>    </article>    `;
+</a>
+
+</div>
+
+</article>
+
+`;
 
 }
+
 
 async function load(){
 
@@ -879,14 +1120,15 @@ throw new Error('news unavailable');
 const data =
 await response.json();
 
-/*
-يدعم النظام الشكل الحالي:
-{
-"updated":"...",
-"items":[...]
-}
 
-كما يدعم أيضًا مصفوفة مباشرة.
+/*
+   يدعم النظام الشكل الحالي:
+   {
+      "updated":"...",
+      "items":[...]
+   }
+
+   كما يدعم أيضًا مصفوفة مباشرة.
 */
 
 if(Array.isArray(data)){
@@ -900,6 +1142,7 @@ items = Array.isArray(data.items)
 : [];
 
 }
+
 
 if(data.updated){
 
@@ -915,13 +1158,16 @@ updated.textContent =
 
 }
 
+
 newsList.innerHTML =
 items.map(card).join('');
+
 
 empty.classList.toggle(
 'hidden',
 items.length > 0
 );
+
 
 }catch(error){
 
@@ -938,8 +1184,9 @@ empty.classList.remove('hidden');
 
 }
 
+
 /* =====================================================
-CATEGORY DISPLAY
+   CATEGORY DISPLAY
 ===================================================== */
 
 function showCategory(category){
@@ -950,23 +1197,29 @@ items.filter(function(item){
 return item.category === category;
 
 });
-   document.getElementById('sectionTitle').textContent =
+
+document.getElementById('sectionTitle').textContent =
 names[category] || 'الأخبار';
 
 const list =
 document.getElementById('section-list');
 
+
 if(filtered.length === 0){
 
 list.innerHTML = `
+<div class="empty">
+لا توجد أخبار متاحة حاليًا في هذا القسم.
+</div>
+`;
 
-<div class="empty">    
-لا توجد أخبار متاحة حاليًا في هذا القسم.    
-</div>    
-`;  }else{  list.innerHTML =
+}else{
+
+list.innerHTML =
 filtered.map(card).join('');
 
 }
+
 
 home.classList.add('hidden');
 
@@ -987,8 +1240,9 @@ behavior:'smooth'
 
 }
 
+
 /* =====================================================
-HOME
+   HOME
 ===================================================== */
 
 function showHome(){
@@ -1012,13 +1266,15 @@ behavior:'smooth'
 
 }
 
+
 /* =====================================================
-ARTICLES
+   ARTICLES
 ===================================================== */
 
 let articles = [];
 
 let currentArticle = null;
+
 
 async function loadArticles(){
 
@@ -1044,6 +1300,7 @@ throw new Error(
 const data =
 await response.json();
 
+
 if(Array.isArray(data)){
 
 articles = data;
@@ -1057,31 +1314,41 @@ Array.isArray(data.articles)
 
 }
 
+
 if(articles.length === 0){
 
 container.innerHTML = `
+<div class="empty">
+لا توجد مقالات استراتيجية منشورة حاليًا.
+</div>
+`;
 
-<div class="empty">    
-لا توجد مقالات استراتيجية منشورة حاليًا.    
-</div>    
-`;  return;  }
+return;
+
+}
+
 
 container.innerHTML =
 articles.map(articleCard).join('');
+
 
 }catch(error){
 
 console.error(error);
 
 container.innerHTML = `
+<div class="empty">
+تعذر تحميل المقالات الاستراتيجية حاليًا.
+</div>
+`;
 
-<div class="empty">    
-تعذر تحميل المقالات الاستراتيجية حاليًا.    
-</div>    
-`;  }  }
+}
+
+}
+
 
 /* =====================================================
-ARTICLE CARD
+   ARTICLE CARD
 ===================================================== */
 
 function articleCard(article){
@@ -1096,20 +1363,41 @@ src="${esc(article.image)}"
 alt="${esc(article.title)}"
 loading="lazy"
 onerror="this.style.display='none'"
+>
 
-> 
+`
+: `
 
-:
+<div class="article-card-noimage">
+◈
+</div>
 
-<div class="article-card-noimage">    
-◈    
-</div>  `;  return `
+`;
 
-<article    
-class="article-card"    
-onclick="openArticle('${encodeURIComponent(article.slug || '')}')">  ${image}  <div class="article-card-body">  <h3 class="article-card-title">  ${esc(article.title)}  </h3>  <div class="article-meta">  ${article.author  
-? 'بقلم: ' + esc(article.author)  
-: ''}  ${article.author && article.date
+
+return `
+
+<article
+class="article-card"
+onclick="openArticle('${encodeURIComponent(article.slug || '')}')">
+
+${image}
+
+<div class="article-card-body">
+
+<h3 class="article-card-title">
+
+${esc(article.title)}
+
+</h3>
+
+<div class="article-meta">
+
+${article.author
+? 'بقلم: ' + esc(article.author)
+: ''}
+
+${article.author && article.date
 ? ' · '
 : ''}
 
@@ -1117,10 +1405,19 @@ ${article.date
 ? formatArticleDate(article.date)
 : ''}
 
-</div>  </div>  </article>  `;  }
+</div>
+
+</div>
+
+</article>
+
+`;
+
+}
+
 
 /* =====================================================
-ARTICLE DATE
+   ARTICLE DATE
 ===================================================== */
 
 function formatArticleDate(value){
@@ -1151,8 +1448,9 @@ day:'numeric'
 
 }
 
+
 /* =====================================================
-FIND ARTICLE
+   FIND ARTICLE
 ===================================================== */
 
 function findArticle(slug){
@@ -1168,8 +1466,9 @@ String(slug || '');
 
 }
 
+
 /* =====================================================
-MARKDOWN
+   MARKDOWN
 ===================================================== */
 
 function markdownToHtml(markdown){
@@ -1188,6 +1487,7 @@ let inUl = false;
 let inOl = false;
 
 let inQuote = false;
+
 
 function closeLists(){
 
@@ -1209,6 +1509,7 @@ inOl = false;
 
 }
 
+
 function closeQuote(){
 
 if(inQuote){
@@ -1221,33 +1522,39 @@ inQuote = false;
 
 }
 
+
 function inline(value){
 
 let s =
 esc(value);
 
+
 s =
 s.replace(
-/\((.*?)(https?://[^\s)]+)\)/g,
+/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/g,
 '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
 );
 
+
 s =
 s.replace(
-/(.*?)/g,
+/\*\*(.*?)\*\*/g,
 '<strong>$1</strong>'
 );
+
 
 s =
 s =
 s.replace(
-/(.?)*/g,
-'<em>$1</em>'
+  /\*(.*?)\*/g,
+  '<em>$1</em>'
 );
+
 
 return s;
 
 }
+
 
 for(const line of lines){
 
@@ -1265,6 +1572,7 @@ continue;
 
 }
 
+
 if(/^## /.test(line)){
 
 closeLists();
@@ -1279,6 +1587,7 @@ continue;
 
 }
 
+
 if(/^# /.test(line)){
 
 closeLists();
@@ -1292,6 +1601,7 @@ inline(line.replace(/^# /,'')) +
 continue;
 
 }
+
 
 if(/^> /.test(line)){
 
@@ -1317,6 +1627,7 @@ continue;
 closeQuote();
 
 }
+
 
 if(/^- /.test(line)){
 
@@ -1345,7 +1656,8 @@ continue;
 
 }
 
-if(/^\d+. /.test(line)){
+
+if(/^\d+\. /.test(line)){
 
 if(inUl){
 
@@ -1365,12 +1677,13 @@ inOl = true;
 
 html +=
 '<li>' +
-inline(line.replace(/^\d+. /,'')) +
+inline(line.replace(/^\d+\. /,'')) +
 '</li>';
 
 continue;
 
 }
+
 
 if(line.trim() === ''){
 
@@ -1380,6 +1693,7 @@ closeQuote();
 continue;
 
 }
+
 
 closeLists();
 closeQuote();
@@ -1391,6 +1705,7 @@ inline(line) +
 
 }
 
+
 closeLists();
 closeQuote();
 
@@ -1398,8 +1713,9 @@ return html;
 
 }
 
+
 /* =====================================================
-OPEN ARTICLE
+   OPEN ARTICLE
 ===================================================== */
 
 function openArticle(slug){
@@ -1418,13 +1734,16 @@ return;
 
 }
 
+
 currentArticle =
 article;
+
 
 const reader =
 document.getElementById(
 'articleReader'
 );
+
 
 const image =
 article.image
@@ -1433,19 +1752,28 @@ article.image
 class="article-page-image"
 src="${esc(article.image)}"
 alt="${esc(article.title)}"
-
-> 
-
+>
 `
 : '';
 
+
 reader.innerHTML = `
 
-<article class="article-page">  <div class="article-page-header">  <h2>    
-${esc(article.title)}    
-</h2>  <div class="article-page-meta">  ${article.author  
-? 'بقلم: ' + esc(article.author)  
-: ''}  ${article.author && article.date
+<article class="article-page">
+
+<div class="article-page-header">
+
+<h2>
+${esc(article.title)}
+</h2>
+
+<div class="article-page-meta">
+
+${article.author
+? 'بقلم: ' + esc(article.author)
+: ''}
+
+${article.author && article.date
 ? ' · '
 : ''}
 
@@ -1453,8 +1781,24 @@ ${article.date
 ? formatArticleDate(article.date)
 : ''}
 
-</div>  </div>  ${image}  <div class="article-page-body">  ${markdownToHtml(article.body || '')}  </div>  </article>  `;
-   home.classList.add('hidden');
+</div>
+
+</div>
+
+${image}
+
+<div class="article-page-body">
+
+${markdownToHtml(article.body || '')}
+
+</div>
+
+</article>
+
+`;
+
+
+home.classList.add('hidden');
 
 placeholder.classList.add('hidden');
 
@@ -1473,8 +1817,9 @@ behavior:'smooth'
 
 }
 
+
 /* =====================================================
-SHOW ARTICLES
+   SHOW ARTICLES
 ===================================================== */
 
 function showArticles(){
@@ -1498,8 +1843,9 @@ behavior:'smooth'
 
 }
 
+
 /* =====================================================
-DOWNLOAD ARTICLE
+   DOWNLOAD ARTICLE
 ===================================================== */
 
 function downloadCurrentArticle(){
@@ -1510,13 +1856,16 @@ return;
 
 }
 
+
 const title =
 currentArticle.title ||
 'article';
 
+
 const content =
 currentArticle.body ||
 '';
+
 
 const text =
 title +
@@ -1529,6 +1878,7 @@ title +
 '\n\n' +
 content;
 
+
 const blob =
 new Blob(
 [text],
@@ -1537,16 +1887,20 @@ type:'text/plain;charset=utf-8'
 }
 );
 
+
 const url =
 URL.createObjectURL(blob);
 
+
 const link =
 document.createElement('a');
+
 
 link.href = url;
 
 link.download =
 title + '.txt';
+
 
 document.body.appendChild(link);
 
@@ -1558,8 +1912,9 @@ URL.revokeObjectURL(url);
 
 }
 
+
 /* =====================================================
-PRINT ARTICLE
+   PRINT ARTICLE
 ===================================================== */
 
 function printCurrentArticle(){
@@ -1574,11 +1929,13 @@ window.print();
 
 }
 
+
 /* =====================================================
-ARCHIVE
+   ARCHIVE
 ===================================================== */
 
 let archiveIndex = null;
+
 
 async function loadArchiveIndex(){
 
@@ -1587,11 +1944,13 @@ document.getElementById(
 'archiveMonth'
 );
 
+
 if(!select){
 
 return;
 
 }
+
 
 try{
 
@@ -1601,6 +1960,7 @@ await fetch(
 {cache:'no-store'}
 );
 
+
 if(!response.ok){
 
 throw new Error(
@@ -1609,13 +1969,16 @@ throw new Error(
 
 }
 
+
 const data =
 await response.json();
+
 
 archiveIndex =
 Array.isArray(data.months)
 ? data.months
 : [];
+
 
 if(archiveIndex.length === 0){
 
@@ -1626,16 +1989,21 @@ return;
 
 }
 
+
 select.innerHTML =
 '<option value="">اختر الشهر</option>' +
 archiveIndex.map(function(month){
 
 return `
+<option value="${esc(month)}">
+${esc(formatArchiveMonth(month))}
+</option>
+`;
 
-<option value="${esc(month)}">    
-${esc(formatArchiveMonth(month))}    
-</option>    
-`;  }).join('');  }catch(error){
+}).join('');
+
+
+}catch(error){
 
 console.error(error);
 
@@ -1646,8 +2014,9 @@ select.innerHTML =
 
 }
 
+
 /* =====================================================
-ARCHIVE MONTH NAME
+   ARCHIVE MONTH NAME
 ===================================================== */
 
 function formatArchiveMonth(month){
@@ -1655,11 +2024,13 @@ function formatArchiveMonth(month){
 const parts =
 String(month).split('-');
 
+
 if(parts.length !== 2){
 
 return month;
 
 }
+
 
 const year =
 Number(parts[0]);
@@ -1667,12 +2038,14 @@ Number(parts[0]);
 const monthNumber =
 Number(parts[1]);
 
+
 const date =
 new Date(
 year,
 monthNumber - 1,
 1
 );
+
 
 return new Intl.DateTimeFormat(
 'ar-TN',
@@ -1684,8 +2057,9 @@ month:'long'
 
 }
 
+
 /* =====================================================
-LOAD SELECTED ARCHIVE
+   LOAD SELECTED ARCHIVE
 ===================================================== */
 
 async function loadSelectedArchive(){
@@ -1695,10 +2069,12 @@ document.getElementById(
 'archiveMonth'
 );
 
+
 const content =
 document.getElementById(
 'archiveContent'
 );
+
 
 if(!select || !content){
 
@@ -1706,24 +2082,34 @@ return;
 
 }
 
+
 const month =
 select.value;
+
 
 if(!month){
 
 content.innerHTML = `
+<div class="empty">
+اختر شهرًا لعرض الأخبار المؤرشفة.
+</div>
+`;
 
-<div class="empty">    
-اختر شهرًا لعرض الأخبار المؤرشفة.    
-</div>    
-`;  return;  }
+return;
+
+}
+
 
 content.innerHTML = `
+<div class="archive-loading">
+جارٍ تحميل أخبار ${esc(formatArchiveMonth(month))}…
+</div>
+`;
 
-<div class="archive-loading">    
-جارٍ تحميل أخبار ${esc(formatArchiveMonth(month))}…    
-</div>    
-`;  try{  const response =
+
+try{
+
+const response =
 await fetch(
 './archive/' +
 encodeURIComponent(month) +
@@ -1731,6 +2117,7 @@ encodeURIComponent(month) +
 Date.now(),
 {cache:'no-store'}
 );
+
 
 if(!response.ok){
 
@@ -1740,8 +2127,10 @@ throw new Error(
 
 }
 
+
 const data =
 await response.json();
+
 
 const archiveItems =
 Array.isArray(data)
@@ -1752,34 +2141,60 @@ Array.isArray(data.items)
 : []
 );
 
+
 if(!archiveItems.length){
 
 content.innerHTML = `
+<div class="empty">
+لا توجد أخبار في هذا الأرشيف.
+</div>
+`;
 
-<div class="empty">    
-لا توجد أخبار في هذا الأرشيف.    
-</div>    
-`;  return;  }
+return;
+
+}
+
 
 content.innerHTML = `
 
-<div class="section-head">  <h2>    
-أخبار ${esc(formatArchiveMonth(month))}    
-</h2>  <small>    
-${archiveItems.length} خبر    
-</small>  </div>  <div class="columns">  ${archiveItems.map(card).join('')}  </div>  `;  }catch(error){
+<div class="section-head">
+
+<h2>
+أخبار ${esc(formatArchiveMonth(month))}
+</h2>
+
+<small>
+${archiveItems.length} خبر
+</small>
+
+</div>
+
+<div class="columns">
+
+${archiveItems.map(card).join('')}
+
+</div>
+
+`;
+
+
+}catch(error){
 
 console.error(error);
 
 content.innerHTML = `
+<div class="empty">
+تعذر تحميل أرشيف هذا الشهر.
+</div>
+`;
 
-<div class="empty">    
-تعذر تحميل أرشيف هذا الشهر.    
-</div>    
-`;  }  }
+}
+
+}
+
 
 /* =====================================================
-SHOW ARCHIVE
+   SHOW ARCHIVE
 ===================================================== */
 
 function showArchive(){
@@ -1805,8 +2220,9 @@ behavior:'smooth'
 
 }
 
+
 /* =====================================================
-NAVIGATION
+   NAVIGATION
 ===================================================== */
 
 function setActiveNav(section){
@@ -1824,6 +2240,7 @@ button.dataset.section === section
 
 }
 
+
 document
 .querySelectorAll('.nav button')
 .forEach(function(button){
@@ -1834,6 +2251,7 @@ function(){
 
 const section =
 this.dataset.section;
+
 
 if(section === 'home'){
 
@@ -1868,8 +2286,9 @@ showArchive();
 
 });
 
+
 /* =====================================================
-START
+   START
 ===================================================== */
 
 async function start(){
@@ -1884,8 +2303,10 @@ showHome();
 
 }
 
+
 start();
 
-</script>  </body>
+</script>
 
+</body>
 </html>
