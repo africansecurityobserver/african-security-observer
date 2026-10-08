@@ -707,6 +707,10 @@ font-size:10px
 المقالات الاستراتيجية
 </button>
 
+<button data-section="dailycards">
+البطاقات اليومية
+</button>
+
 <button data-section="archive">
 الأرشيف
 </button>
@@ -756,6 +760,46 @@ font-size:10px
 <div id="empty" class="empty hidden">
 لا توجد أخبار متاحة حاليًا.
 قد تكون خلاصات RSS غير متاحة أو لم تُشغّل الأتمتة بعد.
+</div>
+
+<div class="section-head" style="margin-top:30px">
+
+<h2>
+البطاقات اليومية
+</h2>
+
+<small>
+المتابعة الأمنية والاستراتيجية اليومية
+</small>
+
+</div>
+
+<div class="daily-cards-box">
+
+<div class="daily-cards-content">
+
+<div class="daily-cards-text">
+
+<h3>
+بطاقات الأحداث اليومية
+</h3>
+
+<p>
+ملخصات دورية لأبرز التطورات الأمنية والعسكرية في إفريقيا والعالم، وفق الفترات الزمنية المحددة خلال اليوم.
+</p>
+
+</div>
+
+<a
+class="daily-cards-button"
+href="./daily_cards.html">
+
+تصفح البطاقات اليومية ←
+
+</a>
+
+</div>
+
 </div>
 
 </section>
@@ -949,6 +993,7 @@ north:'شمال إفريقيا',
 rest:'باقي إفريقيا',
 defense:'التسليح والدفاع',
 analysis:'المقالات الاستراتيجية',
+dailycards:'البطاقات اليومية',
 archive:'الأرشيف'
 };
 
@@ -1001,6 +1046,7 @@ return {
 }[c];
 
 });
+
 
 }
 
@@ -1223,13 +1269,13 @@ filtered.map(card).join('');
 
 home.classList.add('hidden');
 
+placeholder.classList.remove('hidden');
+
 articlesSection.classList.add('hidden');
 
 articleReaderSection.classList.add('hidden');
 
 archiveSection.classList.add('hidden');
-
-placeholder.classList.remove('hidden');
 
 setActiveNav(category);
 
@@ -1239,9 +1285,7 @@ behavior:'smooth'
 });
 
 }
-
-
-/* =====================================================
+<!-- =====================================================
    HOME
 ===================================================== */
 
@@ -1464,8 +1508,6 @@ String(slug || '');
 }
 );
 
-}
-
 
 /* =====================================================
    MARKDOWN
@@ -1544,10 +1586,9 @@ s.replace(
 
 
 s =
-s =
 s.replace(
-  /\*(.*?)\*/g,
-  '<em>$1</em>'
+/\*(.*?)\*/g,
+'<em>$1</em>'
 );
 
 
@@ -2012,294 +2053,1066 @@ select.innerHTML =
 
 }
 
+   }
+           <div class="article-page-header">
+          <div class="article-page-meta" id="article-meta"></div>
+          <h2 id="article-title"></h2>
+          <div class="article-actions">
+            <button id="download-article">تحميل المقال</button>
+            <button id="print-article">طباعة</button>
+          </div>
+        </div>
+
+        <div id="article-body" class="article-page-body"></div>
+      </section>
+
+      <section id="archive" class="hidden">
+
+        <div class="section-head">
+          <h2>الأرشيف</h2>
+          <small id="archive-updated"></small>
+        </div>
+
+        <div id="archive-list" class="archive-list"></div>
+
+        <div id="archive-empty" class="empty hidden">
+          لا توجد مواد مؤرشفة حاليًا.
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div>
+          <strong>المرصد الإفريقي للأمن والدفاع</strong>
+        </div>
+
+        <div>
+          منصة إخبارية وتحليلية متخصصة في قضايا الأمن والدفاع في إفريقيا.
+        </div>
+      </div>
+    </footer>
+
+<script>
+
+const names = {
+home:'الرئيسية',
+sahel:'الساحل الإفريقي',
+north:'شمال إفريقيا',
+rest:'باقي إفريقيا',
+defense:'التسليح والدفاع',
+analysis:'المقالات الاستراتيجية',
+dailycards:'البطاقات اليومية',
+archive:'الأرشيف'
+};
+
+const categoryNames = {
+sahel:'الساحل الإفريقي',
+north:'شمال إفريقيا',
+rest:'باقي إفريقيا',
+defense:'التسليح والدفاع'
+};
+
+const newsList =
+document.getElementById('news-list');
+
+const empty =
+document.getElementById('empty');
+
+const updated =
+document.getElementById('updated');
+
+const articleReader =
+document.getElementById('article-reader');
+
+const articleTitle =
+document.getElementById('article-title');
+
+const articleMeta =
+document.getElementById('article-meta');
+
+const articleBody =
+document.getElementById('article-body');
+
+const archiveList =
+document.getElementById('archive-list');
+
+const archiveEmpty =
+document.getElementById('archive-empty');
+
+const archiveUpdated =
+document.getElementById('archive-updated');
+
+let newsData = [];
+
+let articlesData = [];
+
+let archiveData = [];
+
+let currentArticle = null;
+
+
+function formatDate(value){
+
+  if(!value){
+    return '';
+  }
+
+  const date =
+    new Date(value);
+
+  if(
+    Number.isNaN(
+      date.getTime()
+    )
+  ){
+    return value;
+  }
+
+  return date.toLocaleDateString(
+    'ar-TN',
+    {
+      year:'numeric',
+      month:'long',
+      day:'numeric'
+    }
+  );
 }
 
 
-/* =====================================================
-   ARCHIVE MONTH NAME
-===================================================== */
-
-function formatArchiveMonth(month){
-
-const parts =
-String(month).split('-');
-
-
-if(parts.length !== 2){
-
-return month;
-
-}
-
-
-const year =
-Number(parts[0]);
-
-const monthNumber =
-Number(parts[1]);
-
-
-const date =
-new Date(
-year,
-monthNumber - 1,
-1
-);
-
-
-return new Intl.DateTimeFormat(
-'ar-TN',
-{
-year:'numeric',
-month:'long'
-}
-).format(date);
-
-}
-
-
-/* =====================================================
-   LOAD SELECTED ARCHIVE
-===================================================== */
-
-async function loadSelectedArchive(){
-
-const select =
-document.getElementById(
-'archiveMonth'
-);
-
-
-const content =
-document.getElementById(
-'archiveContent'
-);
-
-
-if(!select || !content){
-
-return;
-
-}
-
-
-const month =
-select.value;
-
-
-if(!month){
-
-content.innerHTML = `
-<div class="empty">
-اختر شهرًا لعرض الأخبار المؤرشفة.
-</div>
-`;
-
-return;
-
-}
-
-
-content.innerHTML = `
-<div class="archive-loading">
-جارٍ تحميل أخبار ${esc(formatArchiveMonth(month))}…
-</div>
-`;
-
-
-try{
-
-const response =
-await fetch(
-'./archive/' +
-encodeURIComponent(month) +
-'.json?x=' +
-Date.now(),
-{cache:'no-store'}
-);
-
-
-if(!response.ok){
-
-throw new Error(
-'archive month unavailable'
-);
-
-}
-
-
-const data =
-await response.json();
-
-
-const archiveItems =
-Array.isArray(data)
-? data
-: (
-Array.isArray(data.items)
-? data.items
-: []
-);
-
-
-if(!archiveItems.length){
-
-content.innerHTML = `
-<div class="empty">
-لا توجد أخبار في هذا الأرشيف.
-</div>
-`;
-
-return;
-
-}
-
-
-content.innerHTML = `
-
-<div class="section-head">
-
-<h2>
-أخبار ${esc(formatArchiveMonth(month))}
-</h2>
-
-<small>
-${archiveItems.length} خبر
-</small>
-
-</div>
-
-<div class="columns">
-
-${archiveItems.map(card).join('')}
-
-</div>
-
-`;
-
-
-}catch(error){
-
-console.error(error);
-
-content.innerHTML = `
-<div class="empty">
-تعذر تحميل أرشيف هذا الشهر.
-</div>
-`;
-
-}
+function esc(value){
+
+  return String(value || '')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#039;');
 
 }
 
 
-/* =====================================================
-   SHOW ARCHIVE
-===================================================== */
+function normalizeNews(data){
+
+  if(Array.isArray(data)){
+    return data;
+  }
+
+  if(
+    data &&
+    Array.isArray(data.articles)
+  ){
+    return data.articles;
+  }
+
+  if(
+    data &&
+    Array.isArray(data.news)
+  ){
+    return data.news;
+  }
+
+  return [];
+
+}
+
+
+async function load(){
+
+  try{
+
+    const response =
+      await fetch(
+        './news.json?ts=' +
+        Date.now()
+      );
+
+    if(!response.ok){
+      throw new Error(
+        'HTTP ' +
+        response.status
+      );
+    }
+
+    const data =
+      await response.json();
+
+    newsData =
+      normalizeNews(data);
+
+    renderNews(newsData);
+
+    updated.textContent =
+      'آخر تحديث: ' +
+      new Date().toLocaleString(
+        'ar-TN'
+      );
+
+  }
+  catch(error){
+
+    console.error(error);
+
+    newsData = [];
+
+    renderNews([]);
+
+    updated.textContent =
+      'تعذر تحميل الأخبار';
+
+  }
+
+}
+
+
+function renderNews(items){
+
+  newsList.innerHTML = '';
+
+  if(!items.length){
+
+    empty.classList.remove(
+      'hidden'
+    );
+
+    return;
+
+  }
+
+  empty.classList.add(
+    'hidden'
+  );
+
+  items.forEach(function(item){
+
+    const card =
+      document.createElement(
+        'article'
+      );
+
+    card.className =
+      'story';
+
+    const category =
+      item.category ||
+      item.section ||
+      '';
+
+    const title =
+      item.title ||
+      item.headline ||
+      'بدون عنوان';
+
+    const summary =
+      item.summary ||
+      item.description ||
+      '';
+
+    const date =
+      item.published ||
+      item.date ||
+      item.pubDate ||
+      '';
+
+    card.innerHTML = `
+
+      <div class="label">
+        ${esc(
+          categoryNames[category] ||
+          category ||
+          'أخبار'
+        )}
+      </div>
+
+      <h3>
+        ${esc(title)}
+      </h3>
+
+      ${
+        summary
+        ?
+        `<p class="summary">
+          ${esc(summary)}
+        </p>`
+        :
+        ''
+      }
+
+      <div class="meta">
+        ${esc(formatDate(date))}
+      </div>
+
+    `;
+
+    newsList.appendChild(
+      card
+    );
+
+  });
+
+}
+
+
+function showCategory(section){
+
+  document
+    .querySelectorAll(
+      'main > section'
+    )
+    .forEach(function(sectionElement){
+
+      sectionElement.classList.add(
+        'hidden'
+      );
+
+    });
+
+  const target =
+    document.getElementById(
+      section
+    );
+
+  if(!target){
+    return;
+  }
+
+  target.classList.remove(
+    'hidden'
+  );
+
+  const filtered =
+    newsData.filter(function(item){
+
+      return (
+        item.category === section ||
+        item.section === section
+      );
+
+    });
+
+  const list =
+    target.querySelector(
+      '.columns'
+    );
+
+  if(!list){
+    return;
+  }
+
+  list.innerHTML = '';
+
+  if(!filtered.length){
+
+    list.innerHTML = `
+      <div class="empty">
+        لا توجد أخبار متاحة حاليًا في هذا القسم.
+      </div>
+    `;
+
+    return;
+
+  }
+
+  filtered.forEach(function(item){
+
+    const card =
+      document.createElement(
+        'article'
+      );
+
+    card.className =
+      'story';
+
+    const title =
+      item.title ||
+      item.headline ||
+      'بدون عنوان';
+
+    const summary =
+      item.summary ||
+      item.description ||
+      '';
+
+    const date =
+      item.published ||
+      item.date ||
+      item.pubDate ||
+      '';
+
+    card.innerHTML = `
+
+      <div class="label">
+        ${esc(
+          categoryNames[section] ||
+          section
+        )}
+      </div>
+
+      <h3>
+        ${esc(title)}
+      </h3>
+
+      ${
+        summary
+        ?
+        `<p class="summary">
+          ${esc(summary)}
+        </p>`
+        :
+        ''
+      }
+
+      <div class="meta">
+        ${esc(formatDate(date))}
+      </div>
+
+    `;
+
+    list.appendChild(
+      card
+    );
+
+  });
+
+}
+
+
+function showHome(){
+
+  document
+    .querySelectorAll(
+      'main > section'
+    )
+    .forEach(function(section){
+
+      section.classList.add(
+        'hidden'
+      );
+
+    });
+
+  document
+    .getElementById('home')
+    .classList.remove(
+      'hidden'
+    );
+
+  renderNews(newsData);
+
+}
+
+
+function markdownToHtml(markdown){
+
+  let text =
+    String(markdown || '');
+
+  text =
+    esc(text);
+
+  text =
+    text.replace(
+      /^### (.*)$/gm,
+      '<h4>$1</h4>'
+    );
+
+  text =
+    text.replace(
+      /^## (.*)$/gm,
+      '<h3>$1</h3>'
+    );
+
+  text =
+    text.replace(
+      /^# (.*)$/gm,
+      '<h2>$1</h2>'
+    );
+
+  text =
+    text.replace(
+      /\*\*(.*?)\*\*/g,
+      '<strong>$1</strong>'
+    );
+
+  text =
+    text.replace(
+      /\*(.*?)\*/g,
+      '<em>$1</em>'
+    );
+
+  text =
+    text.replace(
+      /\n\n+/g,
+      '</p><p>'
+    );
+
+  text =
+    '<p>' +
+    text +
+    '</p>';
+
+  text =
+    text.replace(
+      /\n/g,
+      '<br>'
+    );
+
+  return text;
+
+}
+
+
+async function loadArticles(){
+
+  try{
+
+    const response =
+      await fetch(
+        './articles.json?ts=' +
+        Date.now()
+      );
+
+    if(!response.ok){
+      throw new Error(
+        'HTTP ' +
+        response.status
+      );
+    }
+
+    const data =
+      await response.json();
+
+    if(Array.isArray(data)){
+      articlesData = data;
+    }
+    else if(
+      data &&
+      Array.isArray(data.articles)
+    ){
+      articlesData =
+        data.articles;
+    }
+    else{
+      articlesData = [];
+    }
+
+  }
+  catch(error){
+
+    console.error(error);
+
+    articlesData = [];
+
+  }
+
+}
+
+
+function openArticle(article){
+
+  currentArticle =
+    article;
+
+  document
+    .querySelectorAll(
+      'main > section'
+    )
+    .forEach(function(section){
+
+      section.classList.add(
+        'hidden'
+      );
+
+    });
+
+  articleReader.classList.remove(
+    'hidden'
+  );
+
+  articleTitle.textContent =
+    article.title ||
+    'بدون عنوان';
+
+  articleMeta.textContent =
+    formatDate(
+      article.date ||
+      article.published
+    );
+
+  articleBody.innerHTML =
+    markdownToHtml(
+      article.content ||
+      article.body ||
+      article.text ||
+      ''
+    );
+
+  window.scrollTo(
+    {
+      top:0,
+      behavior:'smooth'
+    }
+  );
+
+}
+
+
+function showArticles(){
+
+  document
+    .querySelectorAll(
+      'main > section'
+    )
+    .forEach(function(section){
+
+      section.classList.add(
+        'hidden'
+      );
+
+    });
+
+  const target =
+    document.getElementById(
+      'analysis'
+    );
+
+  target.classList.remove(
+    'hidden'
+  );
+
+  const list =
+    document.getElementById(
+      'article-list'
+    );
+
+  if(!list){
+    return;
+  }
+
+  list.innerHTML = '';
+
+  if(!articlesData.length){
+
+    list.innerHTML = `
+      <div class="empty">
+        لا توجد مقالات استراتيجية منشورة حاليًا.
+      </div>
+    `;
+
+    return;
+
+  }
+
+  articlesData.forEach(function(article){
+
+    const card =
+      document.createElement(
+        'article'
+      );
+
+    card.className =
+      'article-card';
+
+    card.innerHTML = `
+
+      <div class="article-card-content">
+
+        <div class="label">
+          مقالة استراتيجية
+        </div>
+
+        <h3>
+          ${esc(
+            article.title ||
+            'بدون عنوان'
+          )}
+        </h3>
+
+        <p>
+          ${esc(
+            article.excerpt ||
+            article.summary ||
+            ''
+          )}
+        </p>
+
+        <div class="meta">
+          ${esc(
+            formatDate(
+              article.date ||
+              article.published
+            )
+          )}
+        </div>
+
+        <button class="article-open">
+          قراءة المقال
+        </button>
+
+      </div>
+
+    `;
+
+    card
+      .querySelector(
+        '.article-open'
+      )
+      .addEventListener(
+        'click',
+        function(){
+
+          openArticle(
+            article
+          );
+
+        }
+      );
+
+    list.appendChild(
+      card
+    );
+
+  });
+
+}
+
+
+function downloadCurrentArticle(){
+
+  if(!currentArticle){
+    return;
+  }
+
+  const title =
+    currentArticle.title ||
+    'article';
+
+  const content =
+    currentArticle.content ||
+    currentArticle.body ||
+    currentArticle.text ||
+    '';
+
+  const blob =
+    new Blob(
+      [
+        title +
+        '\n\n' +
+        content
+      ],
+      {
+        type:
+          'text/plain;charset=utf-8'
+      }
+    );
+
+  const url =
+    URL.createObjectURL(
+      blob
+    );
+
+  const link =
+    document.createElement(
+      'a'
+    );
+
+  link.href =
+    url;
+
+  link.download =
+    title
+      .replace(
+        /[\\/:*?"<>|]/g,
+        '-'
+      ) +
+    '.txt';
+
+  document.body.appendChild(
+    link
+  );
+
+  link.click();
+
+  link.remove();
+
+  URL.revokeObjectURL(
+    url
+  );
+
+}
+
+
+function printCurrentArticle(){
+
+  if(!currentArticle){
+    return;
+  }
+
+  window.print();
+
+}
+
+
+async function loadArchiveIndex(){
+
+  try{
+
+    const response =
+      await fetch(
+        './archive/index.json?ts=' +
+        Date.now()
+      );
+
+    if(!response.ok){
+      throw new Error(
+        'HTTP ' +
+        response.status
+      );
+    }
+
+    const data =
+      await response.json();
+
+    if(Array.isArray(data)){
+      archiveData = data;
+    }
+    else if(
+      data &&
+      Array.isArray(data.items)
+    ){
+      archiveData =
+        data.items;
+    }
+    else{
+      archiveData = [];
+    }
+
+  }
+  catch(error){
+
+    console.error(error);
+
+    archiveData = [];
+
+  }
+
+}
+
 
 function showArchive(){
 
-home.classList.add('hidden');
+  document
+    .querySelectorAll(
+      'main > section'
+    )
+    .forEach(function(section){
 
-placeholder.classList.add('hidden');
+      section.classList.add(
+        'hidden'
+      );
 
-articlesSection.classList.add('hidden');
+    });
 
-articleReaderSection.classList.add('hidden');
+  const target =
+    document.getElementById(
+      'archive'
+    );
 
-archiveSection.classList.remove('hidden');
+  target.classList.remove(
+    'hidden'
+  );
 
-setActiveNav('archive');
+  archiveList.innerHTML = '';
 
-loadArchiveIndex();
+  if(!archiveData.length){
 
-window.scrollTo({
-top:0,
-behavior:'smooth'
-});
+    archiveEmpty.classList.remove(
+      'hidden'
+    );
 
-}
+    archiveUpdated.textContent =
+      '';
 
+    return;
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
+  }
 
-function setActiveNav(section){
+  archiveEmpty.classList.add(
+    'hidden'
+  );
+
+  archiveUpdated.textContent =
+    'آخر تحديث: ' +
+    new Date().toLocaleString(
+      'ar-TN'
+    );
+
+  archiveData.forEach(function(item){
+
+    const card =
+      document.createElement(
+        'article'
+      );
+
+    card.className =
+      'archive-item';
+
+    const title =
+      item.title ||
+      item.name ||
+      item.date ||
+      'أرشيف';
+
+    const date =
+      item.date ||
+      item.published ||
+      '';
+
+    card.innerHTML = `
+
+      <h3>
+        ${esc(title)}
+      </h3>
+
+      <div class="meta">
+        ${esc(formatDate(date))}
+      </div>
+
+    `;
+
+    archiveList.appendChild(
+      card
+    );
+
+  });
+
+                 }
+   <script>
 
 document
 .querySelectorAll('.nav button')
 .forEach(function(button){
 
-button.classList.toggle(
-'active',
-button.dataset.section === section
-);
+  button.addEventListener(
+    'click',
+    function(){
+
+      const section =
+        this.dataset.section;
+
+      if(section === 'home'){
+
+        showHome();
+
+      }
+      else if(
+        section === 'sahel' ||
+        section === 'north' ||
+        section === 'rest' ||
+        section === 'defense'
+      ){
+
+        showCategory(
+          section
+        );
+
+      }
+      else if(
+        section === 'analysis'
+      ){
+
+        showArticles();
+
+      }
+      else if(
+        section === 'dailycards'
+      ){
+
+        window.location.href =
+          './daily_cards.html';
+
+      }
+      else if(
+        section === 'archive'
+      ){
+
+        showArchive();
+
+      }
+
+    }
+  );
 
 });
 
+
+const dailyCardsButton =
+  document.getElementById(
+    'daily-cards-button'
+  );
+
+if(dailyCardsButton){
+
+  dailyCardsButton.addEventListener(
+    'click',
+    function(){
+
+      window.location.href =
+        './daily_cards.html';
+
+    }
+  );
+
 }
 
 
-document
-.querySelectorAll('.nav button')
-.forEach(function(button){
-
-button.addEventListener(
-'click',
-function(){
-
-const section =
-this.dataset.section;
-
-
-if(section === 'home'){
-
-showHome();
-
-}
-
-else if(
-section === 'sahel' ||
-section === 'north' ||
-section === 'rest' ||
-section === 'defense'
+if(
+  document.getElementById(
+    'download-article'
+  )
 ){
 
-showCategory(section);
+  document
+    .getElementById(
+      'download-article'
+    )
+    .addEventListener(
+      'click',
+      downloadCurrentArticle
+    );
 
 }
 
-else if(section === 'analysis'){
 
-showArticles();
+if(
+  document.getElementById(
+    'print-article'
+  )
+){
+
+  document
+    .getElementById(
+      'print-article'
+    )
+    .addEventListener(
+      'click',
+      printCurrentArticle
+    );
 
 }
 
-else if(section === 'archive'){
-
-showArchive();
-
-}
-
-});
-
-});
-
-
-/* =====================================================
-   START
-===================================================== */
 
 async function start(){
 
-await Promise.all([
-load(),
-loadArticles(),
-loadArchiveIndex()
-]);
+  await Promise.all([
+    load(),
+    loadArticles(),
+    loadArchiveIndex()
+  ]);
 
-showHome();
+  showHome();
 
 }
 
