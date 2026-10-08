@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T00:28:10.983096+00:00",
+  "updated": "2026-10-08T01:22:14.624965+00:00",
   "items": [
     {
       "title": "مقتل العشرات من الجنود والمسلحين وعمال المناجم في هجمات بنيجيريا - The Hindu",
@@ -72,7 +72,17 @@
       "category": "sahel"
     },
     {
-      "title": "يقول مكتب التحقيقات الفيدرالي إنه أحبط هجومًا على مول أمريكا من قبل مراهق زوده ببندقية هجومية – ABC7 Eyewitness News",
+      "title": "شهود عيان يرصدون قوات إريترية داخل شمال إثيوبيا مع تصاعد التوترات - الجزيرة",
+      "description": "شهود عيان يرصدون قوات إريترية داخل شمال إثيوبيا مع تصاعد التوترات    الجزيرة",
+      "original_title": "Witnesses spot Eritrean troops inside northern Ethiopia as tensions flare - Al Jazeera",
+      "original_description": "Witnesses spot Eritrean troops inside northern Ethiopia as tensions flare &nbsp;&nbsp; Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/10/7/witnesses-spot-eritrean-troops-inside-northern-ethiopia-as-tensions-flare",
+      "source": "Al Jazeera",
+      "published": "Wed, 07 Oct 2026 18:53:45 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "يقول مكتب التحقيقات الفيدرالي إنه أحبط هجومًا على مول أوف أمريكا قام به مراهق زوده ببندقية هجومية – ABC7 Eyewitness News",
       "description": "يقول مكتب التحقيقات الفيدرالي إنه أحبط هجومًا على المركز التجاري الأمريكي من قبل مراهق زوده ببندقية هجومية    ABC7 Eyewitness News",
       "original_title": "FBI says it thwarted an attack on the Mall of America by a teen it supplied with an assault rifle - ABC7 Eyewitness News",
       "original_description": "FBI says it thwarted an attack on the Mall of America by a teen it supplied with an assault rifle &nbsp;&nbsp; ABC7 Eyewitness News",
@@ -223,7 +233,7 @@
     },
     {
       "title": "حركة أيجوباسيموين تحذر أساري دوكوبو من الهجمات على إيدو وعرش بنين - صحيفة إندبندنت نيجيريا",
-      "description": "حركة أيجوباسيموين تحذر أساري دوكوبو من الهجمات على إيدو، عرش بنين    صحيفة إندبندنت نيجيريا",
+      "description": "حركة أيجوباسيموين تحذر أساري دوكوبو من الهجمات على إيدو، عرش بنين    صحيفة مستقلة نيجيريا",
       "original_title": "Aiguobasinmwin Movement Warns Asari Dokubo Against Attacks On Edo, Benin Throne - Independent Newspaper Nigeria",
       "original_description": "Aiguobasinmwin Movement Warns Asari Dokubo Against Attacks On Edo, Benin Throne &nbsp;&nbsp; Independent Newspaper Nigeria",
       "url": "https://independent.ng/aiguobasinmwin-movement-warns-asari-dokubo-against-attacks-on-edo-benin-throne/",
@@ -290,6 +300,16 @@
       "source": "Business Insider Africa",
       "published": "Tue, 06 Oct 2026 06:54:15 GMT",
       "category": "north"
+    },
+    {
+      "title": "أقوى دولة عسكرية في شرق أفريقيا قد تواجه غزوًا من جارتها في الوقت الذي تواجه فيه تهديدات أمنية متزايدة",
+      "description": "قد تواجه أقوى دولة عسكرية في شرق أفريقيا غزوًا من جارتها في الوقت الذي تواجه فيه تهديدات أمنية متزايدة    Business Insider Africa",
+      "original_title": "East Africa’s strongest military nation may be faced with an invasion from its neighbour as it faces rising security threats - Business Insider Africa",
+      "original_description": "East Africa’s strongest military nation may be faced with an invasion from its neighbour as it faces rising security threats &nbsp;&nbsp; Business Insider Africa",
+      "url": "https://africa.businessinsider.com/local/markets/east-africas-strongest-military-nation-may-be-faced-with-an-invasion-from-its/8pz6qjl",
+      "source": "Business Insider Africa",
+      "published": "Thu, 08 Oct 2026 00:25:05 GMT",
+      "category": "rest"
     },
     {
       "title": "مصر وإريتريا والصومال والسودان يشكلون جبهة أمنية إقليمية - راديو تمازج",
