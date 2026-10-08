@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T11:21:05.799701+00:00",
+  "updated": "2026-10-08T12:26:52.286455+00:00",
   "items": [
     {
       "title": "مقتل العشرات من الجنود والمسلحين وعمال المناجم في هجمات بنيجيريا - The Hindu",
@@ -1742,6 +1742,26 @@
       "category": "rest"
     },
     {
+      "title": "فرنسا تقوم بتسليم طائرات VTOL بدون طيار إلى القوات المسلحة في مدغشقر - جينس",
+      "description": "فرنسا تقوم بتسليم طائرات VTOL بدون طيار إلى القوات المسلحة في مدغشقر    جينس",
+      "original_title": "France to deliver VTOL UAVs to Madagascar Armed Forces - Janes",
+      "original_description": "France to deliver VTOL UAVs to Madagascar Armed Forces &nbsp;&nbsp; Janes",
+      "url": "https://www.janes.com/defence-intelligence-insights/defence-news/air/france-to-deliver-vtol-uavs-to-madagascar-armed-forces",
+      "source": "Janes",
+      "published": "Thu, 08 Oct 2026 11:38:17 GMT",
+      "category": "defense"
+    },
+    {
+      "title": "ثاني أقوى جيش في أفريقيا يطير عبر المجال الجوي لحلف شمال الأطلسي إلى موسكو بينما تشرح بولندا تصريحه - Business Insider Africa",
+      "description": "يطير ثاني أقوى جيش في أفريقيا عبر المجال الجوي لحلف شمال الأطلسي إلى موسكو بينما تشرح بولندا تصريحها    Business Insider Africa",
+      "original_title": "Africa’s second most powerful army flies through NATO airspace to Moscow as Poland explains its clearance - Business Insider Africa",
+      "original_description": "Africa’s second most powerful army flies through NATO airspace to Moscow as Poland explains its clearance &nbsp;&nbsp; Business Insider Africa",
+      "url": "https://africa.businessinsider.com/local/markets/africas-second-most-powerful-army-flies-through-nato-airspace-to-moscow-as-poland/nrellp8",
+      "source": "Business Insider Africa",
+      "published": "Thu, 08 Oct 2026 11:30:00 GMT",
+      "category": "defense"
+    },
+    {
       "title": "أكبر مناورة عسكرية إفريقية تجري في المغرب - ديفينس ويب",
       "description": "أكبر مناورة عسكرية في أفريقيا ستتبلور في المغرب    defenceWeb",
       "original_title": "Africa’s largest military exercise to take shape in Morocco - defenceWeb",
@@ -1762,8 +1782,18 @@
       "category": "north"
     },
     {
+      "title": "مصادر: مقتل 24 شخصًا في قتال بين الجيش والجهاديين في نيجيريا",
+      "description": "مصادر: الجيش والقتال الجهادي يقتل عشرين في نيجيريا: مصادر    African Insider",
+      "original_title": "Army, jihadist fighting kills two dozen in Nigeria: sources - African Insider",
+      "original_description": "Army, jihadist fighting kills two dozen in Nigeria: sources &nbsp;&nbsp; African Insider",
+      "url": "https://www.africaninsider.com/world/army-jihadist-fighting-kills-two-dozen-nigeria-sources/",
+      "source": "African Insider",
+      "published": "Thu, 08 Oct 2026 07:37:58 GMT",
+      "category": "sahel"
+    },
+    {
       "title": "مرصد الإرهاب في أفريقيا: سبتمبر 2026 – الاستخبارات",
-      "description": "مرصد الإرهاب في أفريقيا: معلومات سبتمبر 2026",
+      "description": "مرصد الإرهاب في أفريقيا: استخبارات سبتمبر 2026",
       "original_title": "Africa Terrorism Monitor: September 2026 - Ujasusi",
       "original_description": "Africa Terrorism Monitor: September 2026 &nbsp;&nbsp; Ujasusi",
       "url": "https://www.ujasusi.com/p/africa-terrorism-monitor-september-2026",
@@ -1793,7 +1823,7 @@
     },
     {
       "title": "قائد متحالف مع الحكومة يقول إن الجنود الإريتريين دخلوا بلدات شمال إثيوبيا",
-      "description": "يقول القائد المتحالف مع الحكومة إن الجنود الإريتريين دخلوا بلدات شمال إثيوبيا    News4JAX",
+      "description": "يقول قائد متحالف مع الحكومة إن الجنود الإريتريين دخلوا بلدات شمال إثيوبيا    News4JAX",
       "original_title": "Eritrean soldiers entered northern Ethiopian towns, government-allied commander says - News4JAX",
       "original_description": "Eritrean soldiers entered northern Ethiopian towns, government-allied commander says &nbsp;&nbsp; News4JAX",
       "url": "https://www.news4jax.com/news/world/2026/10/08/eritrean-soldiers-entered-northern-ethiopian-towns-government-allied-commander-says/",
@@ -1808,7 +1838,17 @@
       "original_description": "KENYA, MALAWI DEEPEN COUNTER-TERRORISM COOPERATION &nbsp;&nbsp; Ministry of Defence – Kenya",
       "url": "https://www.mod.go.ke/news/kenya-malawi-deepen-counter-terrorism-cooperation/",
       "source": "Ministry of Defence – Kenya",
-      "published": "Thu, 08 Oct 2026 05:47:21 GMT",
+      "published": "Thu, 08 Oct 2026 05:41:52 GMT",
+      "category": "rest"
+    },
+    {
+      "title": "يقول مكتب التحقيقات الفيدرالي إنه أحبط هجومًا على مول أوف أمريكا قام به مراهق زوده ببندقية هجومية - ABC30 فريسنو",
+      "description": "يقول مكتب التحقيقات الفيدرالي إنه أحبط هجومًا على مول أوف أمريكا قام به مراهق زوده ببندقية هجومية    ABC30 فريسنو",
+      "original_title": "FBI says it thwarted an attack on the Mall of America by a teen it supplied with an assault rifle - ABC30 Fresno",
+      "original_description": "FBI says it thwarted an attack on the Mall of America by a teen it supplied with an assault rifle &nbsp;&nbsp; ABC30 Fresno",
+      "url": "https://abc30.com/story/fbi-says-thwarted-attack-mall-america-teen-supplied-assault-rifle/19918038/",
+      "source": "ABC30 Fresno",
+      "published": "Thu, 08 Oct 2026 05:04:57 GMT",
       "category": "rest"
     },
     {
