@@ -164,7 +164,48 @@ SECURITY_TERMS = [
     "تعاون دفاعي",
     "تعاون أمني",
     "قمة",
-    "مباحثات"
+    "مباحثات",
+    "عمليات عسكرية",
+    "عملية عسكرية",
+    "القوات المسلحة",
+    "الجيش",
+    "القوات الجوية",
+    "القوات البحرية",
+    "القوات البرية",
+    "هجوم",
+    "غارة جوية",
+    "غارات جوية",
+    "اشتباكات",
+    "قصف",
+    "قوات مشتركة",
+    "نشر قوات",
+    "تعزيزات عسكرية",
+    "انسحاب القوات",
+    "طائرات مسيرة",
+    "طائرات بدون طيار",
+    "صواريخ",
+    "دفاع جوي",
+    "مناورات عسكرية",
+    "تدريبات عسكرية",
+    "تسلح",
+    "صفقة أسلحة",
+    "قاعدة عسكرية",
+    "أمن الحدود",
+    "مكافحة الإرهاب",
+    "جماعات مسلحة",
+    "تنظيم إرهابي",
+    "وزير الدفاع",
+    "رئيس الأركان",
+    "مخابرات",
+    "استخبارات",
+    "اتفاق أمني",
+    "اتفاق دفاعي",
+    "وقف إطلاق النار",
+    "سفينة حربية",
+    "غواصة",
+    "مقاتلات",
+    "مركبات مدرعة",
+    "قوات حفظ السلام"
 ]
 
 
@@ -403,6 +444,34 @@ RSS_FEEDS = {
             )
             + "&hl=en-US&gl=US&ceid=US:en"
         )
+    ],
+
+    # Arabic-language news feeds: direct publishers plus a news aggregator
+    # with conflict/diplomacy categories and source-specific feeds.
+    "arabic_sources": [
+        "https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9",
+        "https://www.alaraby.co.uk/feeds",
+        "https://aawsat.com/feed/news",
+        "https://aawsat.com/feed/arab-world",
+        "https://aawsat.com/feed/africa",
+        "https://alikhbariya.net/feeds/topics/conflict.xml",
+        "https://alikhbariya.net/feeds/topics/diplomacy.xml",
+        "https://alikhbariya.net/feeds/sources/43f09431-308d-486d-bd8c-fd795d0104c1.xml",
+        "https://alikhbariya.net/feeds/sources/0a01f2ab-c9f2-4ce5-a6e7-6c1e0fe8a7e9.xml",
+        "https://alikhbariya.net/feeds/sources/699b81c7-946d-4597-9061-c0c730344be6.xml",
+        "https://alikhbariya.net/feeds/sources/138ec82a-8a67-420c-b570-55893564ad21.xml",
+        "https://alikhbariya.net/feeds/sources/f51d6e12-4518-4c15-9a3c-cd43dd8b8f94.xml",
+        "https://alikhbariya.net/feeds/sources/ba242115-5d30-4e48-9562-12c462f01111.xml",
+        "https://alikhbariya.net/feeds/sources/8f2e43a8-7327-4b8e-b95d-dea2a728ca4a.xml",
+        "https://alikhbariya.net/feeds/sources/015f1c27-1e52-4bd9-8359-40f9e3da4910.xml",
+        "https://alikhbariya.net/feeds/sources/dd0c2b11-8436-4ec3-96c5-d2931c08ae03.xml",
+        "https://alikhbariya.net/feeds/sources/52db9398-113c-44e2-9843-8a395bea37a3.xml",
+        "https://alikhbariya.net/feeds/sources/f9652135-4f5d-4dd6-b87f-55a324eed06e.xml",
+        "https://alikhbariya.net/feeds/sources/aa4950ef-9749-42cf-b023-43433d60aafc.xml",
+        "https://alikhbariya.net/feeds/sources/8c05d09d-1d37-4c04-a5f1-9c43f16ff71.xml",
+        "https://alikhbariya.net/feeds/sources/c437d4bb-fe9b-4b10-ad19-16c71a81e32e.xml",
+        "https://alikhbariya.net/feeds/sources/f65491e4-269b-4356-9f7e-6c92da9121f2.xml",
+        "https://alikhbariya.net/feeds/sources/7d02e6ac-19d7-40f8-b3dc-f868fa79ed32.xml"
     ]
 }
 
@@ -411,7 +480,7 @@ RSS_FEEDS = {
 # SETTINGS
 # =========================================================
 
-MAX_NEWS_PER_FEED = 10
+MAX_NEWS_PER_FEED = 15
 MAX_NEWS_AGE_HOURS = 48
 CURRENT_NEWS_DAYS = 7
 
@@ -787,7 +856,19 @@ def classify_news(
         "egypt",
         "egyptian",
         "north africa",
-        "maghreb"
+        "maghreb",
+        "تونس",
+        "التونسية",
+        "الجزائر",
+        "الجزائرية",
+        "المغرب",
+        "المغربية",
+        "ليبيا",
+        "الليبية",
+        "مصر",
+        "المصرية",
+        "شمال أفريقيا",
+        "المغرب العربي"
     ]
 
     sahel_words = [
@@ -808,7 +889,16 @@ def classify_news(
         "ivory coast",
         "cote d'ivoire",
         "côte d'ivoire",
-        "sahel"
+        "sahel",
+        "الساحل",
+        "مالي",
+        "النيجر",
+        "بوركينا فاسو",
+        "تشاد",
+        "موريتانيا",
+        "السنغال",
+        "غينيا",
+        "ساحل العاج"
     ]
 
     defense_words = [
