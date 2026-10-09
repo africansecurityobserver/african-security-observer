@@ -316,60 +316,46 @@ def make_country_feed(country):
 
 def make_strategic_diplomacy_feeds(country):
     """
-    Focused English, French and Arabic searches for North African
-    diplomatic/security developments. Separate feeds prevent broad OR
-    queries from burying local reporting.
+    Localized North Africa security and diplomacy searches.
+    Use Google News locale settings matching each search language.
     """
     local_names = {
-        "Tunisia": {
-            "fr": '"Tunisie" (diplomatie OR "visite officielle" OR accord OR coopération OR défense OR sécurité OR sommet)',
-            "ar": '"تونس" (دبلوماسية OR "زيارة رسمية" OR اتفاقية OR تعاون OR دفاع OR أمن OR قمة)'
-        },
-        "Algeria": {
-            "fr": '"Algérie" (diplomatie OR "visite officielle" OR accord OR coopération OR défense OR sécurité OR sommet)',
-            "ar": '"الجزائر" (دبلوماسية OR "زيارة رسمية" OR اتفاقية OR تعاون OR دفاع OR أمن OR قمة)'
-        },
-        "Morocco": {
-            "fr": '"Maroc" (diplomatie OR "visite officielle" OR accord OR coopération OR défense OR sécurité OR sommet)',
-            "ar": '"المغرب" (دبلوماسية OR "زيارة رسمية" OR اتفاقية OR تعاون OR دفاع OR أمن OR قمة)'
-        },
-        "Libya": {
-            "fr": '"Libye" (diplomatie OR "visite officielle" OR accord OR coopération OR défense OR sécurité OR sommet)',
-            "ar": '"ليبيا" (دبلوماسية OR "زيارة رسمية" OR اتفاقية OR تعاون OR دفاع OR أمن OR قمة)'
-        },
-        "Egypt": {
-            "fr": '"Égypte" (diplomatie OR "visite officielle" OR accord OR coopération OR défense OR sécurité OR sommet)',
-            "ar": '"مصر" (دبلوماسية OR "زيارة رسمية" OR اتفاقية OR تعاون OR دفاع OR أمن OR قمة)'
-        }
+        "Tunisia": {"fr": '"Tunisie"', "ar": '"تونس"'},
+        "Algeria": {"fr": '"Algérie"', "ar": '"الجزائر"'},
+        "Morocco": {"fr": '"Maroc"', "ar": '"المغرب"'},
+        "Libya": {"fr": '"Libye"', "ar": '"ليبيا"'},
+        "Egypt": {"fr": '"Égypte"', "ar": '"مصر"'}
     }
 
+    terms = {
+        "en": '("official visit" OR "bilateral talks" OR "strategic partnership" OR agreement OR "defense cooperation" OR "defence cooperation" OR "security cooperation" OR "foreign minister" OR summit OR diplomatic OR military OR security OR border)',
+        "fr": '(diplomatie OR "visite officielle" OR accord OR coopération OR défense OR sécurité OR sommet OR militaire OR frontières OR ministre)',
+        "ar": '(دبلوماسية OR "زيارة رسمية" OR اتفاقية OR تعاون OR دفاع OR أمن OR قمة OR عسكري OR حدود OR وزير)'
+    }
+
+    locales = {
+        "en": ("en-US", "US", "US:en"),
+        "fr": ("fr", "FR", "FR:fr"),
+        "ar": ("ar", "EG", "EG:ar")
+    }
+
+    country_en = f'"{country}"'
     queries = [
-        (
-            f'"{country}" '
-            '("official visit" OR "bilateral talks" OR "strategic partnership" '
-            'OR "signed agreement" OR "memorandum of understanding" '
-            'OR "defense cooperation" OR "defence cooperation" '
-            'OR "security cooperation" OR "foreign minister" '
-            'OR "joint commission" OR summit OR diplomatic) when:2d'
-        ),
-        local_names.get(country, {}).get("fr", ""),
-        local_names.get(country, {}).get("ar", "")
+        ("en", f'{country_en} {terms["en"]} when:7d'),
+        ("fr", f'{local_names[country]["fr"]} {terms["fr"]} when:7d'),
+        ("ar", f'{local_names[country]["ar"]} {terms["ar"]} when:7d')
     ]
 
     feeds = []
-    for query in queries:
-        if not query:
-            continue
-        if "when:2d" not in query:
-            query = f"({query}) when:2d"
+    for language, query in queries:
+        hl, gl, ceid = locales[language]
         feeds.append(
             "https://news.google.com/rss/search?q="
             + quote_plus(query)
-            + "&hl=en-US&gl=US&ceid=US:en"
+            + f"&hl={hl}&gl={gl}&ceid={ceid}"
         )
 
     return feeds
-
 
 RSS_FEEDS = {
     "sahel": [
