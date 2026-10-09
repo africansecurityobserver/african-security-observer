@@ -318,8 +318,13 @@ def get_news_for_period(slot, reference_date):
         if not dt:
             continue
 
-        # Half-open interval:
-        # start <= event < end
+        # Include only news published on the card's local calendar date
+        # in Tunisia, even for the 05:00 slot that spans the previous night.
+        if dt.date() != reference_date:
+            continue
+
+        # Keep the slot's time window as well as the local publication date.
+        # Half-open interval: start <= dt < end
         if start <= dt < end:
             selected.append({
                 "title": item.get("title", ""),
