@@ -397,6 +397,27 @@ def make_leadership_feeds(country):
     return feeds
 
 
+def make_libya_clashes_and_flights_feeds():
+    """
+    Dedicated multilingual coverage for armed clashes in Libya and reports
+    by specialist flight-tracking sources about military aircraft arrivals.
+    """
+    queries = [
+        ('en-US', 'US', 'US:en',
+         '"Libya" (clashes OR "armed clashes" OR militia OR fighting OR "military aircraft" OR "military flight" OR "cargo aircraft" OR "fighter jet" OR "flight tracking" OR "landed in Libya") when:3d'),
+        ('fr', 'FR', 'FR:fr',
+         '("Libye" OR libyen) (affrontements OR combats OR milice OR "avion militaire" OR "avion cargo" OR "vol militaire" OR "suivi des vols" OR "a atterri en Libye") when:3d'),
+        ('ar', 'EG', 'EG:ar',
+         '("ليبيا" OR "الليبية") (اشتباكات OR "مواجهات مسلحة" OR "مجموعة مسلحة" OR "طائرة عسكرية" OR "طائرة شحن" OR مقاتلة OR "رصد الطيران" OR "تتبع الطيران" OR "هبوط طائرة") when:3d')
+    ]
+    return [
+        "https://news.google.com/rss/search?q="
+        + quote_plus(query)
+        + f"&hl={hl}&gl={gl}&ceid={ceid}"
+        for hl, gl, ceid, query in queries
+    ]
+
+
 def make_strategic_diplomacy_feeds(country):
     """
     Localized North Africa security and diplomacy searches.
@@ -556,6 +577,8 @@ RSS_FEEDS = {
         for country in ("Libya", "Algeria", "Morocco")
         for feed_url in make_leadership_feeds(country)
     ],
+
+    "libya_clashes_flights": make_libya_clashes_and_flights_feeds(),
 
     "global_orgs": make_global_organization_feeds(),
 
@@ -938,6 +961,37 @@ def decode_url(url):
 # SECURITY FILTER
 # =========================================================
 
+def is_priority_libya_clashes_or_military_flights(title, description):
+    """
+    Preserve relevant Libya armed-clash and military-flight-monitoring reports,
+    even if they do not contain generic defense keywords.
+    """
+    text = (str(title) + " " + str(description)).lower()
+
+    libya_terms = [
+        "libya", "libyan", "libye", "libyen", "ليبيا", "الليبية", "الليبي"
+    ]
+    clash_terms = [
+        "clash", "clashes", "armed clash", "gunfight", "fighting", "firefight",
+        "armed confrontation", "militia", "militias", "armed group",
+        "اشتباك", "اشتباكات", "مواجهات مسلحة", "اندلاع مواجهات", "تبادل إطلاق النار",
+        "مجموعة مسلحة", "تشكيل مسلح", "ميليشيا", "ميليشيات"
+    ]
+    flight_terms = [
+        "military aircraft", "military flight", "cargo aircraft", "military cargo",
+        "fighter jet", "fighter aircraft", "aircraft tracker", "flight tracking",
+        "military transport aircraft", "landed at", "arrived in libya",
+        "طائرة عسكرية", "طائرة شحن", "مقاتلة", "رصد الطيران", "تتبع الطيران",
+        "هبوط طائرة", "هبطت في", "رحلة عسكرية", "مطار معيتيقة", "قاعدة الوطية",
+        "مطار بنينا", "مطار الخادم", "طائرات عسكرية"
+    ]
+
+    has_libya = any(term in text for term in libya_terms)
+    has_clash = any(term in text for term in clash_terms)
+    has_flight = any(term in text for term in flight_terms)
+    return has_libya and (has_clash or has_flight)
+
+
 def is_priority_magreb_leadership_news(title, description):
     """
     Preserve important political/diplomatic/military leadership news even
@@ -991,6 +1045,9 @@ def is_relevant_security_news(
     ).lower()
 
     if is_priority_magreb_leadership_news(title, description):
+        return True
+
+    if is_priority_libya_clashes_or_military_flights(title, description):
         return True
 
     if is_priority_global_organization_news(title, description):
