@@ -21,6 +21,11 @@ on:
 permissions:
   contents: write
 
+# Prevent scheduled and push-triggered news updates from writing the same JSON files concurrently.
+concurrency:
+  group: update-news-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   update-news:
     runs-on: ubuntu-24.04
