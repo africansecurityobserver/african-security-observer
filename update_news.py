@@ -4,6 +4,7 @@ import os
 import re
 import time
 from datetime import datetime, timezone, timedelta
+from email.utils import parsedate_to_datetime
 from urllib.parse import quote_plus, quote
 from googlenewsdecoder import gnewsdecoder
 from deep_translator import GoogleTranslator
@@ -117,7 +118,32 @@ SECURITY_TERMS = [
     "airstrike",
     "air strikes",
     "military operation",
-    "military operations"
+    "military operations",
+    "diplomacy",
+    "diplomatic",
+    "foreign minister",
+    "foreign affairs",
+    "bilateral talks",
+    "official visit",
+    "high-level meeting",
+    "strategic partnership",
+    "security cooperation",
+    "defense cooperation",
+    "defence cooperation",
+    "military cooperation",
+    "signed agreement",
+    "memorandum of understanding",
+    "treaty",
+    "joint commission",
+    "summit",
+    "ministerial meeting",
+    "presidential visit",
+    "defense agreement",
+    "defence agreement",
+    "diplomatic relations",
+    "joint statement",
+    "strategic dialogue",
+    "security agreement"
 ]
 
 
@@ -317,6 +343,33 @@ RSS_FEEDS = {
 MAX_NEWS_PER_FEED = 10
 MAX_NEWS_AGE_HOURS = 48
 CURRENT_NEWS_DAYS = 7
+
+
+def parse_published_datetime(value):
+    """Parse RSS or ISO publication dates into UTC-aware datetimes."""
+    if not value:
+        return None
+
+    text_value = str(value).strip()
+    if not text_value:
+        return None
+
+    try:
+        dt = parsedate_to_datetime(text_value)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc)
+    except (TypeError, ValueError, OverflowError):
+        pass
+
+    try:
+        dt = datetime.fromisoformat(text_value.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc)
+    except (TypeError, ValueError, OverflowError):
+        return None
+
 
 ARCHIVE_FOLDER = "archive"
 NEWS_FILE = "news.json"
@@ -848,32 +901,17 @@ def get_news():
                 )
 
                 if published:
+                    published_dt = parse_published_datetime(published)
 
-                    try:
+                    if published_dt is not None:
+                        age = datetime.now(timezone.utc) - published_dt
 
-                        published_dt = datetime.strptime(
-                            published,
-                            "%a, %d %b %Y %H:%M:%S %Z"
-                        ).replace(
-                            tzinfo=timezone.utc
-                        )
-
-                        age = (
-                            datetime.now(
-                                timezone.utc
-                            )
-                            - published_dt
-                        )
-
-                        if age > timedelta(
-                            hours=MAX_NEWS_AGE_HOURS
-                        ):
-
+                        if age > timedelta(hours=MAX_NEWS_AGE_HOURS):
                             continue
 
-                    except ValueError:
-
-                        pass
+                        # Reject clearly future-dated feed entries.
+                        if age < -timedelta(hours=24):
+                            continue
 
                 source = entry.get(
                     "source",
@@ -925,10 +963,7 @@ def get_news():
                 )
 
     items.sort(
-        key=lambda x: x.get(
-            "published",
-            ""
-        ),
+        key=lambda x: parse_published_datetime(x.get("published")) or datetime.min.replace(tzinfo=timezone.utc),
         reverse=True
     )
 
@@ -1014,26 +1049,15 @@ def archive_file_for(article):
         ""
     )
 
-    try:
+    dt = parse_published_datetime(published)
 
-        dt = datetime.strptime(
-            published,
-            "%a, %d %b %Y %H:%M:%S %Z"
-        )
+    if dt is None:
+        dt = datetime.now(timezone.utc)
 
-        return os.path.join(
-            ARCHIVE_FOLDER,
-            dt.strftime("%Y-%m") + ".json"
-        )
-
-    except ValueError:
-
-        return os.path.join(
-            ARCHIVE_FOLDER,
-            datetime.now(
-                timezone.utc
-            ).strftime("%Y-%m") + ".json"
-        )
+    return os.path.join(
+        ARCHIVE_FOLDER,
+        dt.strftime("%Y-%m") + ".json"
+    )
 
 
 # =========================================================
@@ -1115,10 +1139,7 @@ def update_archive(all_articles):
         )
 
         final_items.sort(
-            key=lambda x: x.get(
-                "published",
-                ""
-            ),
+            key=lambda x: parse_published_datetime(x.get("published")) or datetime.min.replace(tzinfo=timezone.utc),
             reverse=True
         )
 
@@ -1251,27 +1272,17 @@ def build_current_news(all_articles):
         )
 
         keep = True
+        published_dt = parse_published_datetime(published)
 
-        try:
-
-            published_dt = datetime.strptime(
-                published,
-                "%a, %d %b %Y %H:%M:%S %Z"
-            ).replace(
-                tzinfo=timezone.utc
-            )
-
+        if published_dt is not None:
             age = now - published_dt
 
-            if age > timedelta(
-                days=CURRENT_NEWS_DAYS
-            ):
-
+            if age > timedelta(days=CURRENT_NEWS_DAYS):
                 keep = False
 
-        except ValueError:
-
-            pass
+            # Do not publish items dated more than a day in the future.
+            if age < -timedelta(days=1):
+                keep = False
 
         if not keep:
             continue
@@ -1292,10 +1303,7 @@ def build_current_news(all_articles):
         )
 
     current.sort(
-        key=lambda x: x.get(
-            "published",
-            ""
-        ),
+        key=lambda x: parse_published_datetime(x.get("published")) or datetime.min.replace(tzinfo=timezone.utc),
         reverse=True
     )
 
