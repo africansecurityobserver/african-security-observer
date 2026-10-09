@@ -1,341 +1,182 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>البطاقات اليومية | African Security Observer</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Tahoma, sans-serif;
-            background: #f3f4f6;
-            color: #111827;
-        }
-
-        header {
-            background: #111827;
-            color: white;
-            padding: 25px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0 0 8px;
-            font-size: 28px;
-        }
-
-        header p {
-            margin: 0;
-            color: #d1d5db;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 25px auto;
-            padding: 0 15px;
-        }
-
-        .tabs {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .tab {
-            border: none;
-            background: white;
-            padding: 12px 22px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-        }
-
-        .tab.active {
-            background: #111827;
-            color: white;
-        }
-
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .card-header {
-            border-bottom: 2px solid #e5e7eb;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-        }
-
-        .card-header h2 {
-            margin: 0 0 8px;
-            font-size: 24px;
-        }
-
-        .card-header .period {
-            color: #6b7280;
-            font-size: 14px;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .section-title {
-            background: #111827;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 7px;
-            font-size: 19px;
-            margin-bottom: 12px;
-        }
-
-        .event {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 13px 5px;
-        }
-
-        .event:last-child {
-            border-bottom: none;
-        }
-
-        .country {
-            font-weight: bold;
-            color: #374151;
-            margin-bottom: 5px;
-        }
-
-        .event-text {
-            line-height: 1.8;
-            font-size: 16px;
-        }
-
-        .loading,
-        .error,
-        .empty {
-            text-align: center;
-            padding: 40px 20px;
-            color: #6b7280;
-        }
-
-        .error {
-            color: #b91c1c;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 15px;
-            color: #6b7280;
-            font-size: 13px;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>أرشيف البطاقات اليومية | المرصد الإفريقي</title>
+<style>
+:root{--navy:#102b46;--blue:#174d75;--gold:#d7a849;--paper:#f4f6f8;--ink:#172535;--muted:#687887;--line:#dce3e9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.7}
+header{background:var(--navy);color:#fff;padding:24px 18px;border-bottom:4px solid var(--gold)}
+.header-inner,.container{max-width:1100px;margin:auto}
+header h1{font-size:26px;margin:0 0 5px}
+header p{margin:0;color:#d3dfeb}
+.header-links{margin-top:12px;font-size:13px}
+.header-links a{color:#f1d28a;text-decoration:none}
+.container{padding:24px 16px 42px}
+.breadcrumb{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:18px;font-size:13px;color:var(--muted)}
+.breadcrumb button{border:0;background:none;color:var(--blue);font:inherit;cursor:pointer;padding:3px}
+.breadcrumb button:hover{text-decoration:underline}
+.page-title{margin:0 0 6px;font-size:23px;color:var(--navy)}
+.description{margin:0 0 22px;color:var(--muted);font-size:14px}
+.folder-grid,.cards-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.folder,.card-link{width:100%;text-align:right;background:#fff;border:1px solid var(--line);border-radius:9px;padding:18px;cursor:pointer;color:var(--ink);font:inherit;box-shadow:0 2px 7px #102b4608;transition:transform .15s,border-color .15s}
+.folder:hover,.card-link:hover{transform:translateY(-2px);border-color:var(--gold)}
+.folder-icon{font-size:32px;line-height:1.3;margin-bottom:8px}
+.folder-title{font-size:18px;font-weight:bold;color:var(--navy)}
+.folder-meta{font-size:12px;color:var(--muted);margin-top:5px}
+.card-link{min-height:150px;display:flex;flex-direction:column;gap:7px}
+.card-date{font-size:18px;font-weight:bold;color:var(--navy)}
+.card-period{font-size:13px;color:var(--blue)}
+.card-subtitle{font-size:12px;color:var(--muted);margin-top:auto}
+.card-view{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px}
+.card-head{border-bottom:2px solid var(--line);padding-bottom:14px;margin-bottom:18px}
+.card-head h2{margin:0 0 6px;color:var(--navy);font-size:23px}
+.card-head .period{color:var(--muted);font-size:13px}
+.section{margin-bottom:26px}
+.section-title{background:var(--navy);color:#fff;padding:9px 13px;border-radius:6px;font-size:18px;margin-bottom:9px}
+.event{padding:12px 4px;border-bottom:1px solid #e7ebef}
+.event:last-child{border-bottom:0}
+.country{font-weight:bold;color:#374151;margin-bottom:4px}
+.event-text{line-height:1.9;font-size:15px}
+.empty,.loading,.error{background:#fff;border:1px dashed var(--line);border-radius:8px;text-align:center;padding:30px;color:var(--muted)}
+.error{color:#b91c1c}
+.back-button{border:1px solid var(--line);background:#fff;color:var(--blue);border-radius:6px;padding:9px 14px;font:inherit;font-size:13px;cursor:pointer;margin-bottom:16px}
+.back-button:hover{background:#eef3f6}
+footer{text-align:center;padding:22px 12px;color:var(--muted);font-size:12px}
+@media(max-width:760px){.folder-grid,.cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}header h1{font-size:22px}.card-view{padding:14px}.card-head h2{font-size:20px}}
+@media(max-width:460px){.folder-grid,.cards-grid{grid-template-columns:1fr}.folder,.card-link{padding:15px}.card-link{min-height:120px}}
+</style>
 </head>
-
 <body>
-
 <header>
-    <h1>African Security Observer</h1>
-    <p>البطاقات اليومية</p>
-</header>
-
-<div class="container">
-
-    <div class="tabs">
-        <button class="tab active" data-slot="16">16:00</button>
-        <button class="tab" data-slot="21">21:00</button>
-        <button class="tab" data-slot="05">05:00</button>
-    </div>
-
-    <div id="content">
-        <div class="loading">
-            جاري تحميل البطاقة...
-        </div>
-    </div>
-
+<div class="header-inner">
+<h1>المرصد الإفريقي للأمن والدفاع</h1>
+<p>أرشيف البطاقات اليومية</p>
+<div class="header-links"><a href="./">← العودة إلى الموقع الرئيسي</a></div>
 </div>
-
-<footer>
-    African Security Observer
-</footer>
-
+</header>
+<main class="container">
+<div id="breadcrumb" class="breadcrumb"><span>البطاقات اليومية</span></div>
+<h2 id="pageTitle" class="page-title">أرشيف البطاقات اليومية</h2>
+<p id="pageDescription" class="description">اختر السنة، ثم الشهر، لعرض البطاقات المحفوظة.</p>
+<div id="content"><div class="loading">جارٍ تحميل أرشيف البطاقات…</div></div>
+</main>
+<footer>المرصد الإفريقي للأمن والدفاع</footer>
 <script>
+const indexUrl='./daily_cards/archive/index.json';
+const content=document.getElementById('content');
+const pageTitle=document.getElementById('pageTitle');
+const pageDescription=document.getElementById('pageDescription');
+const breadcrumb=document.getElementById('breadcrumb');
+let archiveIndex={years:[]};
+let selectedYear=null;
+let selectedMonth=null;
 
-const cardsUrl = "daily_cards/cards.json";
+const monthNames=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+const slotNames={'05':'05:00','16':'16:00','21':'21:00'};
 
-let cardsData = null;
-
-async function loadCards() {
-
-    const content = document.getElementById("content");
-
-    try {
-
-        const response = await fetch(cardsUrl + "?t=" + Date.now());
-
-        if (!response.ok) {
-            throw new Error("HTTP " + response.status);
-        }
-
-        cardsData = await response.json();
-
-        showCard("16");
-
-    } catch (error) {
-
-        console.error(error);
-
-        content.innerHTML = `
-            <div class="error">
-                تعذر تحميل البطاقات اليومية.
-            </div>
-        `;
-    }
+function esc(value){
+return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
-
-
-function findCard(slot) {
-
-    if (!cardsData) {
-        return null;
-    }
-
-    // cards.json stores all cards inside the "cards" array.
-    if (Array.isArray(cardsData.cards)) {
-
-        // Find the latest card for the requested slot.
-        const matchingCards = cardsData.cards.filter(card => {
-            return String(card.slot) === String(slot);
-        });
-
-        if (matchingCards.length > 0) {
-
-            // Return the most recent matching card.
-            return matchingCards[matchingCards.length - 1];
-        }
-    }
-
-    return null;
+function monthLabel(month){
+const n=Number(month);
+return monthNames[n-1]||month;
 }
-
-function showCard(slot) {
-
-    const content = document.getElementById("content");
-
-    const card = findCard(slot);
-
-    if (!card) {
-
-        content.innerHTML = `
-            <div class="empty">
-                لا توجد بطاقة متاحة لهذه الفترة حتى الآن.
-            </div>
-        `;
-
-        return;
-    }
-
-    let html = "";
-
-    html += `
-        <div class="card">
-
-            <div class="card-header">
-
-                <h2>
-                    البطاقة اليومية
-                </h2>
-
-                <div class="period">
-                    ${card.date || ""} — ${card.period || ""}
-                </div>
-
-            </div>
-    `;
-
-
-    const sections = card.sections || [];
-
-    sections.forEach(section => {
-
-        html += `
-            <div class="section">
-
-                <div class="section-title">
-                    ${escapeHtml(section.title || "")}
-                </div>
-        `;
-
-        const events = section.events || [];
-
-        events.forEach(event => {
-
-            html += `
-                <div class="event">
-
-                    <div class="country">
-                        ${escapeHtml(event.country || "")}
-                    </div>
-
-                    <div class="event-text">
-                        ${escapeHtml(event.text || "")}
-                    </div>
-
-                </div>
-            `;
-
-        });
-
-        html += `
-            </div>
-        `;
-
-    });
-
-
-    html += `
-        </div>
-    `;
-
-    content.innerHTML = html;
+function dateLabel(value){
+const p=String(value||'').split('-');
+if(p.length!==3)return value||'تاريخ غير معروف';
+return Number(p[2])+' '+monthLabel(p[1])+' '+p[0];
 }
-
-
-function escapeHtml(text) {
-
-    const div = document.createElement("div");
-
-    div.textContent = text;
-
-    return div.innerHTML;
+function setBreadcrumb(level){
+let html='<button onclick="showYears()">البطاقات اليومية</button>';
+if(level!=='years'&&selectedYear){
+html+='<span>‹</span><button onclick="showMonths(\''+selectedYear+'\')">'+esc(selectedYear)+'</button>';
 }
-
-
-document.querySelectorAll(".tab").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        document.querySelectorAll(".tab").forEach(btn => {
-            btn.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        showCard(button.dataset.slot);
-
-    });
-
+if((level==='cards'||level==='reader')&&selectedMonth){
+html+='<span>‹</span><button onclick="showMonthCards(\''+selectedYear+'\',\''+selectedMonth+'\')">'+esc(monthLabel(selectedMonth))+'</button>';
+}
+if(level==='reader')html+='<span>‹</span><span>عرض البطاقة</span>';
+breadcrumb.innerHTML=html;
+}
+function findYear(year){return archiveIndex.years.find(y=>String(y.year)===String(year));}
+function showYears(){
+selectedYear=null;selectedMonth=null;setBreadcrumb('years');
+pageTitle.textContent='أرشيف البطاقات اليومية';
+pageDescription.textContent='اختر السنة لعرض أشهرها والبطاقات المحفوظة فيها.';
+if(!archiveIndex.years.length){content.innerHTML='<div class="empty">لا توجد بطاقات مؤرشفة حتى الآن.</div>';return;}
+content.innerHTML='<div class="folder-grid">'+archiveIndex.years.map(y=>{
+const count=(y.months||[]).reduce((sum,m)=>sum+(m.cards||[]).length,0);
+return '<button class="folder" onclick="showMonths(\''+esc(y.year)+'\')"><div class="folder-icon">📁</div><div class="folder-title">'+esc(y.year)+'</div><div class="folder-meta">'+(y.months||[]).length+' أشهر · '+count+' بطاقة</div></button>';
+}).join('')+'</div>';
+}
+function showMonths(year){
+selectedYear=String(year);selectedMonth=null;setBreadcrumb('months');
+const entry=findYear(year);
+pageTitle.textContent='السنة '+year;
+pageDescription.textContent='اختر الشهر لعرض بطاقاته اليومية.';
+if(!entry||!(entry.months||[]).length){content.innerHTML='<div class="empty">لا توجد أشهر مؤرشفة في هذه السنة.</div>';return;}
+content.innerHTML='<div class="folder-grid">'+entry.months.map(m=>{
+return '<button class="folder" onclick="showMonthCards(\''+esc(year)+'\',\''+esc(m.month)+'\')"><div class="folder-icon">📂</div><div class="folder-title">'+esc(monthLabel(m.month))+'</div><div class="folder-meta">'+(m.cards||[]).length+' بطاقة محفوظة</div></button>';
+}).join('')+'</div>';
+}
+function showMonthCards(year,month){
+selectedYear=String(year);selectedMonth=String(month);setBreadcrumb('cards');
+const y=findYear(year);
+const m=y&&(y.months||[]).find(x=>String(x.month)===String(month));
+pageTitle.textContent='بطاقات '+monthLabel(month)+' '+year;
+pageDescription.textContent='اختر أي بطاقة لفتح تفاصيلها. البطاقات مرتبة من الأحدث إلى الأقدم.';
+if(!m||!(m.cards||[]).length){content.innerHTML='<div class="empty">لا توجد بطاقات محفوظة في هذا الشهر.</div>';return;}
+const cards=[...m.cards].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||String(b.slot||'').localeCompare(String(a.slot||'')));
+content.innerHTML='<div class="cards-grid">'+cards.map((c,i)=>{
+const label=slotNames[String(c.slot)]||c.period||'';
+return '<button class="card-link" onclick="openArchivedCard('+i+')"><div class="card-date">'+esc(dateLabel(c.date))+'</div><div class="card-period">الفترة: '+esc(label)+(c.period&&label!==c.period?' · '+esc(c.period):'')+'</div><div class="card-subtitle">بطاقة الأحداث اليومية</div></button>';
+}).join('')+'</div>';
+window.currentMonthCards=cards;
+}
+async function openArchivedCard(index){
+const card=window.currentMonthCards&&window.currentMonthCards[index];
+if(!card)return;
+setBreadcrumb('reader');
+pageTitle.textContent='بطاقة '+dateLabel(card.date);
+pageDescription.textContent='';
+content.innerHTML='<div class="loading">جارٍ فتح البطاقة…</div>';
+try{
+const response=await fetch('./daily_cards/archive/'+card.path+'?t='+Date.now(),{cache:'no-store'});
+if(!response.ok)throw new Error('HTTP '+response.status);
+const data=await response.json();
+renderCard(data);
+}catch(error){
+console.error(error);
+content.innerHTML='<div class="error">تعذر فتح هذه البطاقة. أعد المحاولة بعد تحديث الصفحة.</div>';
+}
+}
+function renderCard(card){
+let html='<div class="card-view"><div class="card-head"><h2>'+esc(card.title||'بطاقة الأحداث اليومية')+'</h2><div class="period">'+esc(dateLabel(card.date))+' — '+esc(card.period||'')+'</div></div>';
+(card.sections||[]).forEach(section=>{
+html+='<section class="section"><div class="section-title">'+esc(section.title||'')+'</div>';
+const events=section.events||[];
+if(!events.length){html+='<div class="event-text" style="color:#7b8792;padding:8px 4px">لا توجد أحداث مدرجة في هذا القسم ضمن هذه البطاقة.</div>';}
+events.forEach(event=>{html+='<div class="event"><div class="country">'+esc(event.country||'')+'</div><div class="event-text">'+esc(event.text||'')+'</div></div>';});
+html+='</section>';
 });
-
-
-loadCards();
-
+html+='</div><button class="back-button" onclick="showMonthCards(\''+esc(selectedYear)+'\',\''+esc(selectedMonth)+'\')">← العودة إلى بطاقات الشهر</button>';
+content.innerHTML=html;
+}
+async function loadArchive(){
+try{
+const response=await fetch(indexUrl+'?t='+Date.now(),{cache:'no-store'});
+if(!response.ok)throw new Error('Archive index unavailable');
+archiveIndex=await response.json();
+if(!Array.isArray(archiveIndex.years))archiveIndex.years=[];
+showYears();
+}catch(error){
+console.error(error);
+content.innerHTML='<div class="error">تعذر تحميل فهرس الأرشيف. ستظهر المجلدات بعد إنشاء الفهرس في عملية تحديث البطاقات القادمة.</div>';
+}
+}
+loadArchive();
 </script>
-
 </body>
 </html>
