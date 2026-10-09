@@ -12,7 +12,8 @@ on:
     - cron: "0 5 * * *"
       timezone: "Africa/Tunis"
 
-    - cron: "0 16 * * *"
+    # Create the 16:00–21:00 card at 16:01, then refresh it every 15 minutes.
+    - cron: "1,16,31,46 16-20 * * *"
       timezone: "Africa/Tunis"
 
     - cron: "0 21 * * *"
