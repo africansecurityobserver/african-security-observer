@@ -355,6 +355,48 @@ def make_country_feed(country):
     )
 
 
+def make_leadership_feeds(country):
+    """
+    Dedicated searches for major meetings, talks and decisions involving
+    senior political, diplomatic and military officials in Libya, Algeria
+    and Morocco. The wider 7-day window helps avoid missing important events.
+    """
+    country_names = {
+        "Algeria": {"en": '"Algeria"', "fr": '"Algérie"', "ar": '"الجزائر"'},
+        "Morocco": {"en": '"Morocco"', "fr": '"Maroc"', "ar": '"المغرب"'},
+        "Libya": {"en": '"Libya"', "fr": '"Libye"', "ar": '"ليبيا"'}
+    }
+
+    roles = {
+        "en": '("president" OR "head of state" OR "prime minister" OR "head of government" OR "foreign minister" OR "minister of foreign affairs" OR "defense minister" OR "defence minister" OR "chief of staff" OR "army chief" OR "armed forces chief")',
+        "fr": '("président" OR "chef de l’État" OR "Premier ministre" OR "chef du gouvernement" OR "ministre des Affaires étrangères" OR "ministre de la Défense" OR "chef d’état-major" OR "chef d’état-major général")',
+        "ar": '("الرئيس" OR "رئيس الدولة" OR "رئيس الحكومة" OR "الوزير الأول" OR "وزير الخارجية" OR "وزير الشؤون الخارجية" OR "وزير الدفاع" OR "رئيس الأركان" OR "رئيس أركان الجيش" OR "القائد العام")'
+    }
+
+    events = {
+        "en": '("meeting" OR "talks" OR "held talks" OR "received" OR "met with" OR "official visit" OR "consultations" OR "decision" OR "decree" OR "announced" OR "appointed" OR "agreement" OR "summit" OR "phone call")',
+        "fr": '(rencontre OR entretiens OR discussions OR "reçu" OR "visite officielle" OR consultations OR décision OR décret OR annonce OR nommé OR accord OR sommet OR "entretien téléphonique")',
+        "ar": '(اجتماع OR مباحثات OR محادثات OR استقبل OR التقى OR زيارة OR مشاورات OR قرار OR مرسوم OR أعلن OR تعيين OR اتفاق OR قمة OR اتصال)'
+    }
+
+    locales = {
+        "en": ("en-US", "US", "US:en"),
+        "fr": ("fr", "FR", "FR:fr"),
+        "ar": ("ar", "EG", "EG:ar")
+    }
+
+    feeds = []
+    for language in ("en", "fr", "ar"):
+        query = f'{country_names[country][language]} {roles[language]} {events[language]} when:7d'
+        hl, gl, ceid = locales[language]
+        feeds.append(
+            "https://news.google.com/rss/search?q="
+            + quote_plus(query)
+            + f"&hl={hl}&gl={gl}&ceid={ceid}"
+        )
+    return feeds
+
+
 def make_strategic_diplomacy_feeds(country):
     """
     Localized North Africa security and diplomacy searches.
@@ -415,6 +457,13 @@ RSS_FEEDS = {
             for feed_url in make_strategic_diplomacy_feeds(country)
         ]
     ),
+
+    # Extra priority coverage for senior officials in Libya, Algeria and Morocco.
+    "north_leaders": [
+        feed_url
+        for country in ("Libya", "Algeria", "Morocco")
+        for feed_url in make_leadership_feeds(country)
+    ],
 
     "rest": [
         make_country_feed(country)
@@ -795,6 +844,47 @@ def decode_url(url):
 # SECURITY FILTER
 # =========================================================
 
+def is_priority_magreb_leadership_news(title, description):
+    """
+    Preserve important political/diplomatic/military leadership news even
+    when an unrelated keyword (for example finance or education) also appears.
+    """
+    text = (str(title) + " " + str(description)).lower()
+
+    countries = [
+        "libya", "libyan", "libye", "ليبيا", "الليبية",
+        "algeria", "algerian", "algérie", "الجزائر", "الجزائرية",
+        "morocco", "moroccan", "maroc", "المغرب", "المغربية"
+    ]
+    roles = [
+        "president", "head of state", "prime minister", "head of government",
+        "foreign minister", "minister of foreign affairs", "defense minister",
+        "defence minister", "chief of staff", "army chief", "armed forces chief",
+        "président", "premier ministre", "chef du gouvernement",
+        "ministre des affaires étrangères", "ministre de la défense",
+        "chef d’état-major", "chef d'etat-major",
+        "الرئيس", "رئيس الدولة", "رئيس الحكومة", "الوزير الأول",
+        "وزير الخارجية", "وزير الشؤون الخارجية", "وزير الدفاع",
+        "رئيس الأركان", "رئيس أركان الجيش", "القائد العام",
+        "محمد السادس", "عبد المجيد تبون", "عبد الحميد الدبيبة",
+        "محمد المنفي", "ناصر بوريطة", "أحمد عطاف", "محمد بن بريك"
+    ]
+    event_terms = [
+        "meeting", "talks", "received", "met with", "official visit",
+        "consultations", "decision", "decree", "announced", "appointed",
+        "agreement", "summit", "phone call", "rencontre", "entretiens",
+        "discussions", "reçu", "visite officielle", "consultations",
+        "décision", "décret", "annonce", "accord", "sommet",
+        "اجتماع", "مباحثات", "محادثات", "استقبل", "التقى", "زيارة",
+        "مشاورات", "قرار", "مرسوم", "أعلن", "تعيين", "اتفاق", "قمة", "اتصال"
+    ]
+
+    has_country = any(term in text for term in countries)
+    has_role = any(term in text for term in roles)
+    has_event = any(term in text for term in event_terms)
+    return has_country and has_role and has_event
+
+
 def is_relevant_security_news(
     title,
     description
@@ -805,6 +895,9 @@ def is_relevant_security_news(
         + " "
         + str(description)
     ).lower()
+
+    if is_priority_magreb_leadership_news(title, description):
+        return True
 
     for word in EXCLUDED_TERMS:
 
@@ -927,7 +1020,7 @@ def classify_news(
 
         return "defense"
 
-    if feed_category == "north":
+    if feed_category in ("north", "north_leaders"):
         return "north"
 
     if feed_category == "sahel":
