@@ -143,7 +143,28 @@ SECURITY_TERMS = [
     "diplomatic relations",
     "joint statement",
     "strategic dialogue",
-    "security agreement"
+    "security agreement",
+    "coopération",
+    "visite officielle",
+    "relations bilatérales",
+    "accord de défense",
+    "accord de sécurité",
+    "ministre des affaires étrangères",
+    "forces armées",
+    "militaire",
+    "diplomatie",
+    "défense",
+    "sécurité",
+    "تعاون",
+    "دبلوماسية",
+    "زيارة رسمية",
+    "اتفاقية",
+    "مذكرة تفاهم",
+    "وزير الخارجية",
+    "تعاون دفاعي",
+    "تعاون أمني",
+    "قمة",
+    "مباحثات"
 ]
 
 
@@ -293,26 +314,61 @@ def make_country_feed(country):
     )
 
 
-def make_strategic_diplomacy_feed(country):
+def make_strategic_diplomacy_feeds(country):
     """
-    A focused feed for high-impact political and diplomatic developments.
-    Kept separate from the broad security feed so that visits, agreements,
-    strategic partnerships and official meetings are less likely to be buried.
+    Focused English, French and Arabic searches for North African
+    diplomatic/security developments. Separate feeds prevent broad OR
+    queries from burying local reporting.
     """
-    query = (
-        f'"{country}" '
-        '( "official visit" OR "bilateral talks" OR "strategic partnership" '
-        'OR "signed agreement" OR "memorandum of understanding" '
-        'OR "defense cooperation" OR "defence cooperation" '
-        'OR "security cooperation" OR "foreign minister" '
-        'OR "joint commission" OR summit OR diplomatic ) when:2d'
-    )
+    local_names = {
+        "Tunisia": {
+            "fr": '"Tunisie" (diplomatie OR "visite officielle" OR accord OR coopération OR défense OR sécurité OR sommet)',
+            "ar": '"تونس" (دبلوماسية OR "زيارة رسمية" OR اتفاقية OR تعاون OR دفاع OR أمن OR قمة)'
+        },
+        "Algeria": {
+            "fr": '"Algérie" (diplomatie OR "visite officielle" OR accord OR coopération OR défense OR sécurité OR sommet)',
+            "ar": '"الجزائر" (دبلوماسية OR "زيارة رسمية" OR اتفاقية OR تعاون OR دفاع OR أمن OR قمة)'
+        },
+        "Morocco": {
+            "fr": '"Maroc" (diplomatie OR "visite officielle" OR accord OR coopération OR défense OR sécurité OR sommet)',
+            "ar": '"المغرب" (دبلوماسية OR "زيارة رسمية" OR اتفاقية OR تعاون OR دفاع OR أمن OR قمة)'
+        },
+        "Libya": {
+            "fr": '"Libye" (diplomatie OR "visite officielle" OR accord OR coopération OR défense OR sécurité OR sommet)',
+            "ar": '"ليبيا" (دبلوماسية OR "زيارة رسمية" OR اتفاقية OR تعاون OR دفاع OR أمن OR قمة)'
+        },
+        "Egypt": {
+            "fr": '"Égypte" (diplomatie OR "visite officielle" OR accord OR coopération OR défense OR sécurité OR sommet)',
+            "ar": '"مصر" (دبلوماسية OR "زيارة رسمية" OR اتفاقية OR تعاون OR دفاع OR أمن OR قمة)'
+        }
+    }
 
-    return (
-        "https://news.google.com/rss/search?q="
-        + quote_plus(query)
-        + "&hl=en-US&gl=US&ceid=US:en"
-    )
+    queries = [
+        (
+            f'"{country}" '
+            '("official visit" OR "bilateral talks" OR "strategic partnership" '
+            'OR "signed agreement" OR "memorandum of understanding" '
+            'OR "defense cooperation" OR "defence cooperation" '
+            'OR "security cooperation" OR "foreign minister" '
+            'OR "joint commission" OR summit OR diplomatic) when:2d'
+        ),
+        local_names.get(country, {}).get("fr", ""),
+        local_names.get(country, {}).get("ar", "")
+    ]
+
+    feeds = []
+    for query in queries:
+        if not query:
+            continue
+        if "when:2d" not in query:
+            query = f"({query}) when:2d"
+        feeds.append(
+            "https://news.google.com/rss/search?q="
+            + quote_plus(query)
+            + "&hl=en-US&gl=US&ceid=US:en"
+        )
+
+    return feeds
 
 
 RSS_FEEDS = {
@@ -327,8 +383,9 @@ RSS_FEEDS = {
             for country in NORTH_AFRICA_COUNTRIES
         ]
         + [
-            make_strategic_diplomacy_feed(country)
+            feed_url
             for country in NORTH_AFRICA_COUNTRIES
+            for feed_url in make_strategic_diplomacy_feeds(country)
         ]
     ),
 
