@@ -89,6 +89,9 @@ let archiveIndex={years:[]};
 let selectedYear=null;
 let selectedMonth=null;
 let currentCardData=null;
+let currentCardPath=null;
+let currentCardRaw='';
+let currentView='years';
 
 const monthNames=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
 const slotNames={'05':'05:00','16':'16:00','21':'21:00'};
@@ -118,6 +121,7 @@ breadcrumb.innerHTML=html;
 }
 function findYear(year){return archiveIndex.years.find(y=>String(y.year)===String(year));}
 function showYears(){
+currentView='years';
 selectedYear=null;selectedMonth=null;setBreadcrumb('years');
 pageTitle.textContent='أرشيف البطاقات اليومية';
 pageDescription.textContent='اختر السنة لعرض أشهرها والبطاقات المحفوظة فيها.';
@@ -128,6 +132,7 @@ return '<button class="folder" onclick="showMonths(\''+esc(y.year)+'\')"><div cl
 }).join('')+'</div>';
 }
 function showMonths(year){
+currentView='months';
 selectedYear=String(year);selectedMonth=null;setBreadcrumb('months');
 const entry=findYear(year);
 pageTitle.textContent='السنة '+year;
@@ -138,6 +143,7 @@ return '<button class="folder" onclick="showMonthCards(\''+esc(year)+'\',\''+esc
 }).join('')+'</div>';
 }
 function showMonthCards(year,month){
+currentView='cards';
 selectedYear=String(year);selectedMonth=String(month);setBreadcrumb('cards');
 const y=findYear(year);
 const m=y&&(y.months||[]).find(x=>String(x.month)===String(month));
@@ -154,6 +160,8 @@ window.currentMonthCards=cards;
 async function openArchivedCard(index){
 const card=window.currentMonthCards&&window.currentMonthCards[index];
 if(!card)return;
+currentView='reader';
+currentCardPath=card.path;
 setBreadcrumb('reader');
 pageTitle.textContent='بطاقة '+dateLabel(card.date);
 pageDescription.textContent='';
@@ -161,7 +169,9 @@ content.innerHTML='<div class="loading">جارٍ فتح البطاقة…</div>'
 try{
 const response=await fetch('./daily_cards/archive/'+card.path+'?t='+Date.now(),{cache:'no-store'});
 if(!response.ok)throw new Error('HTTP '+response.status);
-const data=await response.json();
+const raw=await response.text();
+const data=JSON.parse(raw);
+currentCardRaw=raw;
 renderCard(data);
 }catch(error){
 console.error(error);
@@ -220,6 +230,37 @@ content.innerHTML='<div class="error">تعذر تحميل فهرس الأرشي�
 }
 }
 loadArchive();
+
+// Refresh the archive in the background so newly generated cards and
+// revised versions appear without requiring the visitor to reload the page.
+async function refreshLiveData(){
+try{
+const response=await fetch(indexUrl+'?t='+Date.now(),{cache:'no-store'});
+if(!response.ok)return;
+const freshIndex=await response.json();
+const changed=JSON.stringify(freshIndex)!==JSON.stringify(archiveIndex);
+archiveIndex=freshIndex;
+if(!Array.isArray(archiveIndex.years))archiveIndex.years=[];
+
+if(currentView==='reader'&&currentCardPath){
+const cardResponse=await fetch('./daily_cards/archive/'+currentCardPath+'?t='+Date.now(),{cache:'no-store'});
+if(cardResponse.ok){
+const raw=await cardResponse.text();
+if(raw!==currentCardRaw){
+currentCardRaw=raw;
+renderCard(JSON.parse(raw));
+}
+}
+}else if(changed){
+if(currentView==='months'&&selectedYear)showMonths(selectedYear);
+else if(currentView==='cards'&&selectedYear&&selectedMonth)showMonthCards(selectedYear,selectedMonth);
+else showYears();
+}
+}catch(error){
+console.warn('Live archive refresh skipped:',error);
+}
+}
+setInterval(refreshLiveData,120000);
 </script>
 </body>
 </html>
