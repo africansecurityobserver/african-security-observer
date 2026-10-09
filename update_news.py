@@ -293,16 +293,44 @@ def make_country_feed(country):
     )
 
 
+def make_strategic_diplomacy_feed(country):
+    """
+    A focused feed for high-impact political and diplomatic developments.
+    Kept separate from the broad security feed so that visits, agreements,
+    strategic partnerships and official meetings are less likely to be buried.
+    """
+    query = (
+        f'"{country}" '
+        '( "official visit" OR "bilateral talks" OR "strategic partnership" '
+        'OR "signed agreement" OR "memorandum of understanding" '
+        'OR "defense cooperation" OR "defence cooperation" '
+        'OR "security cooperation" OR "foreign minister" '
+        'OR "joint commission" OR summit OR diplomatic ) when:2d'
+    )
+
+    return (
+        "https://news.google.com/rss/search?q="
+        + quote_plus(query)
+        + "&hl=en-US&gl=US&ceid=US:en"
+    )
+
+
 RSS_FEEDS = {
     "sahel": [
         make_country_feed(country)
         for country in SAHEL_COUNTRIES
     ],
 
-    "north": [
-        make_country_feed(country)
-        for country in NORTH_AFRICA_COUNTRIES
-    ],
+    "north": (
+        [
+            make_country_feed(country)
+            for country in NORTH_AFRICA_COUNTRIES
+        ]
+        + [
+            make_strategic_diplomacy_feed(country)
+            for country in NORTH_AFRICA_COUNTRIES
+        ]
+    ),
 
     "rest": [
         make_country_feed(country)
