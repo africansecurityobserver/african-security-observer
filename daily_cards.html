@@ -31,6 +31,10 @@ header p{margin:0;color:#d3dfeb}
 .card-period{font-size:13px;color:var(--blue)}
 .card-subtitle{font-size:12px;color:var(--muted);margin-top:auto}
 .card-view{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px}
+.export-tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.export-button{border:0;border-radius:7px;padding:10px 15px;font:inherit;font-size:14px;cursor:pointer;color:#fff;background:var(--blue)}
+.export-button.word{background:#24613b}
+.export-button:hover{filter:brightness(1.08)}
 .card-head{border-bottom:2px solid var(--line);padding-bottom:14px;margin-bottom:18px}
 .card-head h2{margin:0 0 6px;color:var(--navy);font-size:23px}
 .card-head .period{color:var(--muted);font-size:13px}
@@ -47,6 +51,17 @@ header p{margin:0;color:#d3dfeb}
 footer{text-align:center;padding:22px 12px;color:var(--muted);font-size:12px}
 @media(max-width:760px){.folder-grid,.cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}header h1{font-size:22px}.card-view{padding:14px}.card-head h2{font-size:20px}}
 @media(max-width:460px){.folder-grid,.cards-grid{grid-template-columns:1fr}.folder,.card-link{padding:15px}.card-link{min-height:120px}}
+@media print{
+@page{size:A4;margin:15mm}
+body{background:#fff!important;color:#000!important}
+body *{visibility:hidden!important}
+.card-view,.card-view *{visibility:visible!important}
+.card-view{position:absolute!important;top:0!important;right:0!important;width:100%!important;border:0!important;border-radius:0!important;padding:0!important;margin:0!important;box-shadow:none!important;background:#fff!important}
+.export-tools,.back-button,header,footer,.breadcrumb,.page-title,.description{display:none!important}
+.section-title{-webkit-print-color-adjust:exact;print-color-adjust:exact;break-after:avoid}
+.section{break-inside:avoid}
+.event{break-inside:avoid}
+}
 </style>
 </head>
 <body>
@@ -73,6 +88,7 @@ const breadcrumb=document.getElementById('breadcrumb');
 let archiveIndex={years:[]};
 let selectedYear=null;
 let selectedMonth=null;
+let currentCardData=null;
 
 const monthNames=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
 const slotNames={'05':'05:00','16':'16:00','21':'21:00'};
@@ -153,7 +169,9 @@ content.innerHTML='<div class="error">تعذر فتح هذه البطاقة. أ�
 }
 }
 function renderCard(card){
-let html='<div class="card-view"><div class="card-head"><h2>'+esc(card.title||'بطاقة الأحداث اليومية')+'</h2><div class="period">'+esc(dateLabel(card.date))+' — '+esc(card.period||'')+'</div></div>';
+currentCardData=card;
+let html='<div class="export-tools"><button class="export-button" onclick="saveCardPdf()">حفظ البطاقة بصيغة PDF</button><button class="export-button word" onclick="saveCardWord()">تحميل البطاقة بصيغة Word</button></div>';
+html+='<div class="card-view"><div class="card-head"><h2>'+esc(card.title||'بطاقة الأحداث اليومية')+'</h2><div class="period">'+esc(dateLabel(card.date))+' — '+esc(card.period||'')+'</div></div>';
 (card.sections||[]).forEach(section=>{
 html+='<section class="section"><div class="section-title">'+esc(section.title||'')+'</div>';
 const events=section.events||[];
@@ -163,6 +181,31 @@ html+='</section>';
 });
 html+='</div><button class="back-button" onclick="showMonthCards(\''+esc(selectedYear)+'\',\''+esc(selectedMonth)+'\')">← العودة إلى بطاقات الشهر</button>';
 content.innerHTML=html;
+}
+function saveCardPdf(){
+if(!currentCardData)return;
+window.print();
+}
+function saveCardWord(){
+if(!currentCardData)return;
+const card=currentCardData;
+const sections=(card.sections||[]).map(section=>{
+const events=(section.events||[]).map(event=>
+'<div style="margin:10px 0;padding:8px 0;border-bottom:1px solid #ddd"><p style="font-weight:bold;margin:0 0 5px">'+esc(event.country||'')+'</p><p style="margin:0;line-height:1.9">'+esc(event.text||'')+'</p></div>'
+).join('');
+return '<h2 style="background:#102b46;color:#fff;padding:8px 12px;font-size:16pt">'+esc(section.title||'')+'</h2>'+events;
+}).join('');
+const documentHtml='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>'+esc(card.title||'البطاقة اليومية')+'</title></head><body dir="rtl" style="font-family:Tahoma,Arial,sans-serif;color:#172535;line-height:1.8"><h1 style="color:#102b46">'+esc(card.title||'بطاقة الأحداث اليومية')+'</h1><p style="color:#687887">'+esc(dateLabel(card.date))+' — '+esc(card.period||'')+'</p>'+sections+'<p style="margin-top:24px;font-size:10pt;color:#687887">المرصد الإفريقي للأمن والدفاع</p></body></html>';
+const blob=new Blob(['\ufeff',documentHtml],{type:'application/msword;charset=utf-8'});
+const url=URL.createObjectURL(blob);
+const link=document.createElement('a');
+const filename='بطاقة-يومية-'+String(card.date||'').replace(/[^0-9-]/g,'')+'-'+String(card.slot||card.period||'').replace(/[^0-9A-Za-z-]/g,'-');
+link.href=url;
+link.download=(filename||'البطاقة-اليومية')+'.doc';
+document.body.appendChild(link);
+link.click();
+link.remove();
+setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 async function loadArchive(){
 try{
