@@ -921,9 +921,19 @@ def get_news():
                 f"Reading feed: {feed_category}"
             )
 
-            feed = feedparser.parse(
-                feed_url
-            )
+            # Fetch RSS with a strict timeout so one unresponsive feed
+            # cannot stall the entire scheduled update.
+            try:
+                request = Request(
+                    feed_url,
+                    headers={"User-Agent": "Mozilla/5.0"}
+                )
+                with urlopen(request, timeout=8) as response:
+                    feed_content = response.read()
+                feed = feedparser.parse(feed_content)
+            except Exception as e:
+                print(f"Skipping feed after fetch error: {e}")
+                continue
 
             for entry in feed.entries[
                 :MAX_NEWS_PER_FEED
