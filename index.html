@@ -180,6 +180,29 @@ margin:0
 color:var(--muted)
 }
 
+.article-section-tools{
+display:flex;
+align-items:center;
+gap:12px;
+flex-wrap:wrap
+}
+
+.add-article-button{
+display:inline-block;
+background:var(--gold);
+color:#172535;
+padding:9px 13px;
+border-radius:5px;
+text-decoration:none;
+font-size:13px;
+font-weight:bold;
+white-space:nowrap
+}
+
+.add-article-button:hover{
+background:#e5bd65
+}
+
 .columns{
 display:grid;
 grid-template-columns:repeat(2,minmax(0,1fr));
@@ -799,9 +822,15 @@ onclick="window.location.href='./daily_cards.html'">
 المقالات الاستراتيجية
 </h2>
 
+<div class="article-section-tools">
 <small>
 تحليلات ودراسات المرصد الإفريقي
 </small>
+
+<a class="add-article-button" href="./admin/" title="إضافة مقال جديد إلى الموقع">
+＋ إضافة مقال استراتيجي
+</a>
+</div>
 
 </div>
 
