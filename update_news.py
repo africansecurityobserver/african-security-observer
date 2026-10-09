@@ -531,7 +531,7 @@ RSS_FEEDS = {
 
 MAX_NEWS_PER_FEED = 15
 MAX_NEWS_AGE_HOURS = 48
-CURRENT_NEWS_DAYS = 7
+CURRENT_NEWS_DAYS = 2
 
 
 def parse_published_datetime(value):
