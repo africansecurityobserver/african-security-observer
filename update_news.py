@@ -440,6 +440,98 @@ def make_strategic_diplomacy_feeds(country):
 
     return feeds
 
+
+def make_global_organization_feeds():
+    """
+    Dedicated Arabic, English and French feeds for major international
+    organizations. Focus on consequential political, security, defense,
+    peacekeeping, sanctions, crisis-response and strategic decisions.
+    """
+    organizations = {
+        "un": {
+            "en": '"United Nations" OR UN OR "UN Security Council" OR UNCTAD',
+            "fr": '"Nations unies" OR ONU OR "Conseil de sécurité"',
+            "ar": '"الأمم المتحدة" OR "مجلس الأمن" OR "الأمين العام للأمم المتحدة"'
+        },
+        "nato": {
+            "en": 'NATO OR "North Atlantic Treaty Organization"',
+            "fr": 'OTAN OR "Organisation du traité de l’Atlantique nord"',
+            "ar": 'الناتو OR "حلف شمال الأطلسي"'
+        },
+        "eu": {
+            "en": '"European Union" OR EU OR "European Council" OR "European Commission"',
+            "fr": '"Union européenne" OR "Conseil européen" OR "Commission européenne"',
+            "ar": '"الاتحاد الأوروبي" OR "المجلس الأوروبي" OR "المفوضية الأوروبية"'
+        },
+        "brics": {
+            "en": 'BRICS OR "BRICS summit"',
+            "fr": 'BRICS OR "sommet des BRICS"',
+            "ar": 'بريكس OR "قمة بريكس" OR "مجموعة بريكس"'
+        },
+        "au": {
+            "en": '"African Union" OR "African Union Commission" OR AU',
+            "fr": '"Union africaine" OR "Commission de l’Union africaine"',
+            "ar": '"الاتحاد الإفريقي" OR "الاتحاد الأفريقي" OR "مفوضية الاتحاد الإفريقي"'
+        }
+    }
+    event_terms = {
+        "en": '(security OR defense OR defence OR military OR sanctions OR peacekeeping OR "peace and security" OR resolution OR summit OR "major decision" OR agreement OR crisis OR conflict OR "ceasefire" OR "arms embargo" OR "military mission" OR "strategic partnership" OR "official statement")',
+        "fr": '(sécurité OR défense OR militaire OR sanctions OR "maintien de la paix" OR résolution OR sommet OR accord OR crise OR conflit OR "cessez-le-feu" OR embargo OR "partenariat stratégique" OR déclaration)',
+        "ar": '(أمن OR دفاع OR عسكري OR عقوبات OR "حفظ السلام" OR قرار OR قمة OR اتفاق OR أزمة OR نزاع OR "وقف إطلاق النار" OR حظر OR "شراكة استراتيجية" OR بيان OR عملية OR بعثة)'
+    }
+    locales = {
+        "en": ("en-US", "US", "US:en"),
+        "fr": ("fr", "FR", "FR:fr"),
+        "ar": ("ar", "EG", "EG:ar")
+    }
+    feeds = []
+    for org in organizations.values():
+        for language in ("en", "fr", "ar"):
+            hl, gl, ceid = locales[language]
+            query = f'({org[language]}) {event_terms[language]} when:2d'
+            feeds.append(
+                "https://news.google.com/rss/search?q="
+                + quote_plus(query)
+                + f"&hl={hl}&gl={gl}&ceid={ceid}"
+            )
+    return feeds
+
+
+def is_priority_global_organization_news(title, description):
+    """Keep consequential news about major international organizations."""
+    text = (str(title) + " " + str(description)).lower()
+    organizations = [
+        "united nations", "un security council", "unctad", "nations unies",
+        "onu", "مجلس الأمن", "الأمم المتحدة",
+        "nato", "north atlantic treaty organization", "otan",
+        "حلف شمال الأطلسي", "الناتو",
+        "european union", "european council", "european commission",
+        "union européenne", "الاتحاد الأوروبي", "المجلس الأوروبي",
+        "المفوضية الأوروبية",
+        "brics", "بريكس",
+        "african union", "union africaine", "الاتحاد الإفريقي",
+        "الاتحاد الأفريقي", "مفوضية الاتحاد الإفريقي"
+    ]
+    major_events = [
+        "security council", "resolution", "sanction", "peacekeeping",
+        "peace and security", "defense", "defence", "military mission",
+        "summit", "strategic partnership", "ceasefire", "arms embargo",
+        "collective defense", "collective defence", "accession",
+        "enlargement", "crisis", "conflict", "official statement",
+        "decision", "agreement", "treaty", "funding", "military aid",
+        "sécurité", "défense", "sanctions", "maintien de la paix",
+        "résolution", "sommet", "accord", "crise", "conflit",
+        "قرار", "عقوبات", "حفظ السلام", "أمن", "دفاع", "عسكري",
+        "قمة", "اتفاق", "أزمة", "نزاع", "وقف إطلاق النار",
+        "مهمة عسكرية", "بعثة", "مساعدات عسكرية", "بيان مشترك",
+        "شراكة استراتيجية", "إصلاح مجلس الأمن"
+    ]
+    return (
+        any(term in text for term in organizations)
+        and any(term in text for term in major_events)
+    )
+
+
 RSS_FEEDS = {
     "sahel": [
         make_country_feed(country)
@@ -464,6 +556,8 @@ RSS_FEEDS = {
         for country in ("Libya", "Algeria", "Morocco")
         for feed_url in make_leadership_feeds(country)
     ],
+
+    "global_orgs": make_global_organization_feeds(),
 
     "rest": [
         make_country_feed(country)
@@ -899,6 +993,9 @@ def is_relevant_security_news(
     if is_priority_magreb_leadership_news(title, description):
         return True
 
+    if is_priority_global_organization_news(title, description):
+        return True
+
     for word in EXCLUDED_TERMS:
 
         if word.lower() in text:
@@ -1022,6 +1119,9 @@ def classify_news(
 
     if feed_category in ("north", "north_leaders"):
         return "north"
+
+    if feed_category == "global_orgs" or is_priority_global_organization_news(title, description):
+        return "international"
 
     if feed_category == "sahel":
         return "sahel"
