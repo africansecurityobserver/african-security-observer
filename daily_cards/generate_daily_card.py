@@ -1223,6 +1223,96 @@ def save_archive(card):
         card
     )
 
+    # Rebuild the year/month archive index automatically after every card.
+    save_archive_index()
+
+
+def save_archive_index():
+
+    years = {}
+
+    if ARCHIVE_DIR.exists():
+
+        for date_dir in sorted(ARCHIVE_DIR.iterdir()):
+
+            if not date_dir.is_dir():
+                continue
+
+            try:
+                parsed_date = datetime.strptime(
+                    date_dir.name,
+                    "%Y-%m-%d"
+                )
+            except ValueError:
+                continue
+
+            year = str(parsed_date.year)
+            month = f"{parsed_date.month:02d}"
+
+            for card_file in sorted(date_dir.glob("*.json")):
+
+                try:
+                    with open(card_file, "r", encoding="utf-8") as f:
+                        card = json.load(f)
+                except Exception as e:
+                    print(f"Warning: could not index {card_file}: {e}")
+                    continue
+
+                slot = str(card.get("slot", card_file.stem))
+                period = str(card.get("period", ""))
+                title = str(
+                    card.get("title")
+                    or f"بطاقة يوم {parsed_date.strftime('%d/%m/%Y')}"
+                )
+
+                year_entry = years.setdefault(
+                    year,
+                    {"year": year, "months": {}}
+                )
+
+                month_entry = year_entry["months"].setdefault(
+                    month,
+                    {
+                        "month": month,
+                        "label": parsed_date.strftime("%m"),
+                        "cards": []
+                    }
+                )
+
+                month_entry["cards"].append({
+                    "date": date_dir.name,
+                    "slot": slot,
+                    "period": period,
+                    "title": title,
+                    "path": f"{date_dir.name}/{card_file.name}"
+                })
+
+    output_years = []
+
+    for year in sorted(years.keys(), reverse=True):
+
+        year_data = years[year]
+        months = []
+
+        for month in sorted(year_data["months"].keys(), reverse=True):
+
+            month_data = year_data["months"][month]
+            month_data["cards"].sort(
+                key=lambda c: (c.get("date", ""), c.get("slot", "")),
+                reverse=True
+            )
+            months.append(month_data)
+
+        output_years.append({
+            "year": year,
+            "months": months
+        })
+
+    save_json(
+        ARCHIVE_DIR / "index.json",
+        {"updated": datetime.now(TIMEZONE).isoformat(), "years": output_years}
+    )
+
 
 # ============================================================
 # MAIN
