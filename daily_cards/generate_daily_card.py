@@ -125,17 +125,22 @@ def determine_slot(now):
     """
     Determine the card slot automatically.
 
-    16:00 -> 16
-    21:00 -> 21
-    05:00 -> 05
+    The slot key identifies the period ending at the named hour:
+    - "16": 06:00–16:00
+    - "21": 16:00–21:00
+    - "05": 21:00–05:00
+
+    During 16:00–21:00, always refresh the "21" card so it can
+    appear shortly after 16:00 and be updated throughout the period.
     """
 
     hour = now.hour
-    minute = now.minute
 
-    # Exact scheduled hours, with a small tolerance window.
     if hour == 16:
-        return "16"
+        return "21"
+
+    if 16 < hour < 21:
+        return "21"
 
     if hour == 21:
         return "21"
@@ -143,7 +148,6 @@ def determine_slot(now):
     if hour == 5:
         return "05"
 
-    # For manual execution, allow choosing slot through argument.
     return None
 
 
