@@ -8,7 +8,10 @@ on:
       - 'articles/**'
       - 'images/articles/**'
       - 'build_articles.py'
+      - 'update_news.py'
+      - 'requirements.txt'
       - 'admin/config.yml'
+      - '.github/workflows/update-news.yml'
 
   schedule:
     - cron: '0 * * * *'
