@@ -4,19 +4,21 @@ on:
   workflow_dispatch:
     inputs:
       slot:
-        description: "Card slot: 05, 16, or 21"
+        description: "Daily card (use daily)"
         required: false
-        default: ""
+        default: "daily"
 
   schedule:
-    - cron: "0 5 * * *"
+    # Create the single daily card at 06:00, Tunisia time.
+    - cron: "0 6 * * *"
       timezone: "Africa/Tunis"
 
-    # Create the 16:00–21:00 card at 16:01, then refresh it every 15 minutes.
-    - cron: "1,16,31,46 16-20 * * *"
+    # Refresh the same card every 15 minutes from 06:00 through 23:45.
+    - cron: "0,15,30,45 6-23 * * *"
       timezone: "Africa/Tunis"
 
-    - cron: "0 21 * * *"
+    # Final refresh close to midnight.
+    - cron: "59 23 * * *"
       timezone: "Africa/Tunis"
 
 permissions:
@@ -45,7 +47,7 @@ jobs:
       - name: Generate daily card
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          CARD_SLOT: ${{ inputs.slot }}
+          CARD_SLOT: ${{ inputs.slot || 'daily' }}
         run: |
           python -u daily_cards/generate_daily_card.py
 
