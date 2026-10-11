@@ -965,6 +965,10 @@ Africa/Tunis
 تأكد قبل إخراج كل حدث من أن صياغته تبدأ بفعل واضح وطبيعي
 متى كان ذلك ممكناً، وأنها لا تبدأ باسم شخص أو مؤسسة أو دولة.
 
+ممنوع منعاً باتاً إدراج أخبار كرة القدم أو أي رياضة أخرى، حتى لو وردت فيها
+كلمات مثل «هجوم» أو «مهاجم» أو «دفاع». لا تعتبر المصطلحات الرياضية
+أخباراً أمنية أو عسكرية، واستبعد الخبر الرياضي بالكامل.
+
 النتيجة النهائية يجب أن تكون بطاقة استراتيجية مختصرة،
 مهنية، واضحة، وقابلة للنشر مباشرة.
 
@@ -1111,6 +1115,20 @@ EXPECTED_SECTIONS = [
 ]
 
 
+def is_sports_related(text):
+    """Final safety filter: do not publish sports stories in a security card."""
+    value = str(text).lower()
+    sports_terms = [
+        "football", "soccer", "كرة القدم", "كروي", "كروية", "الدوري",
+        "مباراة", "مباريات", "لاعب", "لاعبين", "لاعبو", "نادي", "أندية",
+        "مدرب", "هدف", "أهداف", "مهاجم", "ركلة جزاء", "champions league",
+        "premier league", "la liga", "serie a", "bundesliga", "footballer",
+        "striker", "goalkeeper", "scored", "league table", "transfer window",
+        "match de football", "club de football", "championnat", "buteur", "attaquant"
+    ]
+    return any(term in value for term in sports_terms)
+
+
 def normalize_sections(generated):
 
     incoming = generated.get("sections", [])
@@ -1187,6 +1205,11 @@ def normalize_sections(generated):
                 ).strip()
 
                 if not text_value:
+                    continue
+
+                # Never allow sports news into a strategic/security daily card.
+                if is_sports_related(country + " " + text_value):
+                    print(f"Filtered sports item from daily card: {text_value[:120]}")
                     continue
 
                 # Basic protection against accidental URLs
