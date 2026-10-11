@@ -1270,15 +1270,21 @@ def update_cards_file(card):
     if not isinstance(cards, list):
         cards = []
 
-    # Remove an existing card for exactly the same
-    # date + slot, if the workflow is manually rerun.
-    cards = [
-        c for c in cards
-        if not (
-            c.get("date") == card.get("date")
-            and c.get("slot") == card.get("slot")
-        )
-    ]
+    # For the new daily format, keep exactly one card for this date.
+    # Legacy period cards remain untouched on earlier dates.
+    if card.get("slot") == "daily":
+        cards = [
+            c for c in cards
+            if c.get("date") != card.get("date")
+        ]
+    else:
+        cards = [
+            c for c in cards
+            if not (
+                c.get("date") == card.get("date")
+                and c.get("slot") == card.get("slot")
+            )
+        ]
 
     cards.append(card)
 
@@ -1322,6 +1328,13 @@ def save_archive(card):
         archive_path,
         card
     )
+
+    # Going forward, each date has one archive card only.
+    # Remove old same-day period files when the daily-format card is saved.
+    if card.get("slot") == "daily":
+        for old_file in (ARCHIVE_DIR / archive_date).glob("*.json"):
+            if old_file.name != "daily.json" and old_file.name != "index.json":
+                old_file.unlink()
 
     # Rebuild the year/month archive index automatically after every card.
     save_archive_index()
