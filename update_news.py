@@ -605,7 +605,9 @@ RSS_FEEDS = {
         for feed_url in make_leadership_feeds(country)
     ],
 
-    "libya_leadership": make_libya_leadership_feeds(),\n\n    "libya_clashes_flights": make_libya_clashes_and_flights_feeds(),
+    "libya_leadership": make_libya_leadership_feeds(),
+
+    "libya_clashes_flights": make_libya_clashes_and_flights_feeds(),
 
     "global_orgs": make_global_organization_feeds(),
 
