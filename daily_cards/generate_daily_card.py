@@ -355,7 +355,7 @@ def extract_previous_events(cards, current_date):
             if not current_slot and len(sys.argv) >= 2:
                 current_slot = sys.argv[1].strip()
 
-            if card_slot == current_slot:
+            if current_slot == "daily" or card_slot == current_slot:
                 continue
 
         sections = card.get(
