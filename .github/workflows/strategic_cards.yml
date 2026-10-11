@@ -41,7 +41,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add strategic_cards.json
+          git add strategic_cards.json strategic_cards/archive/
 
           if git diff --cached --quiet; then
             echo "No strategic-card changes to commit."
