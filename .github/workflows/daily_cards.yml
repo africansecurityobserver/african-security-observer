@@ -13,8 +13,8 @@ on:
     - cron: "0 6 * * *"
       timezone: "Africa/Tunis"
 
-    # Refresh the same card every 15 minutes from 06:00 through 23:45.
-    - cron: "0,15,30,45 6-23 * * *"
+    # Refresh it hourly after the news feed has had time to update.
+    - cron: "10 6-23 * * *"
       timezone: "Africa/Tunis"
 
     # Final refresh close to midnight.
