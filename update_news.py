@@ -397,6 +397,33 @@ def make_leadership_feeds(country):
     return feeds
 
 
+def make_libya_leadership_feeds():
+    """
+    Dedicated multilingual searches for major political, military and
+    intelligence leadership developments on both sides of Libya.
+    """
+    queries = [
+        (
+            "en-US", "US", "US:en",
+            'Libya ("Khalifa Haftar" OR "Saddam Haftar" OR "Khaled Haftar" OR "eastern Libya commander" OR "Libyan National Army" OR "Government of National Unity" OR "Presidential Council" OR "interior minister" OR "chief of general staff" OR "intelligence chief") (meeting OR talks OR received OR visited OR appointed OR dismissed OR decision OR operation OR deployment OR statement OR agreement OR security) when:2d'
+        ),
+        (
+            "fr", "FR", "FR:fr",
+            '(Libye OR libyen) ("Khalifa Haftar" OR "Saddam Haftar" OR "Khaled Haftar" OR "armée nationale libyenne" OR "Gouvernement d’unité nationale" OR "Conseil présidentiel" OR "ministre de l’Intérieur" OR "chef d’état-major" OR renseignement) (rencontre OR entretiens OR reçu OR visite OR nommé OR limogé OR décision OR opération OR déploiement OR déclaration OR accord OR sécurité) when:2d'
+        ),
+        (
+            "ar", "EG", "EG:ar",
+            '(ليبيا OR الليبية) ("خليفة حفتر" OR "المشير حفتر" OR "صدام حفتر" OR "خالد حفتر" OR "القيادة العامة" OR "الجيش الوطني الليبي" OR "حكومة الوحدة الوطنية" OR "المجلس الرئاسي" OR "وزير الداخلية" OR "قائد الأركان العامة" OR "رئيس جهاز الاستخبارات" OR "رئيس المخابرات") (اجتماع OR مباحثات OR استقبل OR زيارة OR تعيين OR إقالة OR قرار OR عملية OR انتشار OR بيان OR اتفاق OR أمن OR عسكري) when:2d'
+        )
+    ]
+    return [
+        "https://news.google.com/rss/search?q="
+        + quote_plus(query)
+        + f"&hl={hl}&gl={gl}&ceid={ceid}"
+        for hl, gl, ceid, query in queries
+    ]
+
+
 def make_libya_clashes_and_flights_feeds():
     """
     Dedicated multilingual coverage for armed clashes in Libya and reports
@@ -578,7 +605,7 @@ RSS_FEEDS = {
         for feed_url in make_leadership_feeds(country)
     ],
 
-    "libya_clashes_flights": make_libya_clashes_and_flights_feeds(),
+    "libya_leadership": make_libya_leadership_feeds(),\n\n    "libya_clashes_flights": make_libya_clashes_and_flights_feeds(),
 
     "global_orgs": make_global_organization_feeds(),
 
