@@ -309,6 +309,7 @@ def main():
 
     data[kind].append(card)
     data[kind] = data[kind][-150:]
+    sync_archive(data)
     save_json(DATA_FILE, data)
     print(f"Published strategic card: {card['title']} ({kind})")
 
