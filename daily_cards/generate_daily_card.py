@@ -772,6 +772,19 @@ Africa/Tunis
   الناقصة بالتخمين.
 
 ============================================================
+ترتيب الأخبار داخل كل قسم — قاعدة إلزامية
+============================================================
+
+بعد جمع الأخبار الخاصة بكل قسم، رتّبها من الأعلى إلى الأسفل وفق الأولويات التالية، وينطبق ذلك على جميع الأقسام دون استثناء، وليس على ليبيا وحدها:
+
+1. أولاً: الأخبار السياسية والرسمية؛ مثل اجتماعات ولقاءات واستقبالات وزيارات المسؤولين السياسيين، ورؤساء الدول والحكومات والمجالس الرئاسية، والوزراء، والمباحثات والاتفاقات والقرارات والتعيينات الحكومية ذات الأهمية.
+2. ثانياً: أخبار القيادات العسكرية والأمنية والاستخباراتية؛ مثل اجتماعات قادة الجيوش ورؤساء الأركان وقادة التشكيلات العسكرية ورؤساء الأجهزة الأمنية والاستخباراتية، وتعييناتهم وقراراتهم وتحركاتهم الرسمية المهمة.
+3. ثالثاً: الأخبار الميدانية والعسكرية؛ مثل الاشتباكات والمعارك والهجمات والعمليات العسكرية والتدريبات والمناورات وانتشار القوات ووصول المعدات العسكرية.
+4. رابعاً: بقية الأخبار المرتبطة بالأمن والاستقرار، ومنها الهجرة غير النظامية والتهريب واعتراض المهاجرين وتقارير تتبع الرحلات الجوية المشبوهة أو الطائرات العسكرية عندما لا تكون جزءاً من تطور سياسي أو عسكري أعلى أولوية، ثم بقية المستجدات الأقل أولوية.
+
+إذا احتوى القسم على أخبار من أكثر من فئة، فلا ترتبها بحسب حداثتها وحدها؛ طبّق ترتيب الأولوية أعلاه أولاً، ثم قدّم الأحدث والأكثر أهمية داخل الفئة نفسها. إذا انتمى الخبر إلى أكثر من فئة، صنّفه وفق جوهر التطور الرئيسي. لا تحذف أي خبر مهم لمجرد أن مرتبته متأخرة؛ المطلوب تغيير الترتيب لا إسقاط الأخبار. طبّق القاعدة على ليبيا والجزائر والمغرب وسائر الأقسام.
+
+============================================================
 أقسام البطاقة
 ============================================================
 
@@ -1172,6 +1185,57 @@ def is_sports_related(text):
     return any(term in value for term in sports_terms)
 
 
+def event_priority(text_value):
+    """Lower numbers are shown first within each section."""
+    value = str(text_value).lower()
+
+    political_terms = [
+        "رئيس حكومة", "رئيس الحكومة", "رئيس المجلس الرئاسي", "رئيس الدولة",
+        "رئيس الجمهورية", "رئيس الوزراء", "رئيس البرلمان", "رئيس مجلس النواب",
+        "رئيس مجلس الوزراء", "وزير الخارجية", "وزير الداخلية", "وزير الدفاع",
+        "وزير", "الحكومة", "المجلس الرئاسي", "الرئاسة", "البرلمان",
+        "اجتماع", "اجتمع", "استقبل", "التقى", "لقاء", "مباحثات", "محادثات",
+        "مشاورات", "زيارة رسمية", "اتفاق", "اتفاقية", "مذكرة تفاهم", "وقّع",
+        "وقع", "أعلن اتفاق", "قرار حكومي", "مرسوم", "دبلوماسي", "دبلوماسية",
+        "president", "prime minister", "head of government", "presidential council",
+        "foreign minister", "interior minister", "cabinet", "government", "parliament",
+        "official visit", "bilateral talks", "meeting with", "agreement", "signed",
+        "président", "premier ministre", "chef du gouvernement", "conseil présidentiel",
+        "ministre", "gouvernement", "parlement", "visite officielle", "accord", "entretiens"
+    ]
+    military_leader_terms = [
+        "خليفة حفتر", "صدام حفتر", "خالد حفتر", "قائد الأركان", "رئيس الأركان",
+        "قائد الجيش", "القائد العام", "رئيس جهاز الاستخبارات", "رئيس المخابرات",
+        "قائد القوات", "قائد المنطقة العسكرية", "قيادة الأركان", "قيادات عسكرية",
+        "chief of staff", "army chief", "military commander", "intelligence chief",
+        "commander-in-chief", "chef d’état-major", "chef d'etat-major", "commandant en chef"
+    ]
+    field_terms = [
+        "اشتباك", "اشتباكات", "معركة", "معارك", "هجوم", "هجمات", "غارة", "قصف",
+        "عملية عسكرية", "عمليات عسكرية", "مناورة", "مناورات", "تدريب عسكري",
+        "تدريبات عسكرية", "انتشار القوات", "تعزيزات عسكرية", "اعتراض صاروخ",
+        "clashes", "fighting", "battle", "attack", "airstrike", "military operation",
+        "military exercise", "drill", "deployment", "affrontements", "combats",
+        "attaque", "frappe aérienne", "exercice militaire", "déploiement"
+    ]
+    lower_priority_terms = [
+        "هجرة", "مهاجرين", "الهجرة غير النظامية", "تهريب المهاجرين", "اعتراض مهاجرين",
+        "رحلة جوية", "تتبع الطيران", "رصد الطيران", "هبوط طائرة", "طائرة شحن",
+        "flight tracking", "aircraft tracking", "landed at", "migrant", "migration",
+        "smuggling", "suivi des vols", "avion cargo", "migrants"
+    ]
+
+    if any(term in value for term in political_terms):
+        return 0
+    if any(term in value for term in military_leader_terms):
+        return 1
+    if any(term in value for term in field_terms):
+        return 2
+    if any(term in value for term in lower_priority_terms):
+        return 3
+    return 4
+
+
 def normalize_sections(generated):
 
     incoming = generated.get("sections", [])
@@ -1268,6 +1332,15 @@ def normalize_sections(generated):
                     "country": country,
                     "text": text_value
                 })
+
+        # Keep all relevant events, but order them by editorial priority first,
+        # then by their original position for stable ordering within each tier.
+        clean_events = [
+            event for _, event in sorted(
+                enumerate(clean_events),
+                key=lambda pair: (event_priority(pair[1].get("text", "")), pair[0])
+            )
+        ]
 
         final_sections.append({
             "id": section_id,
