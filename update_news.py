@@ -1033,6 +1033,21 @@ def is_priority_magreb_leadership_news(title, description):
     return has_country and has_role and has_event
 
 
+def is_sports_related(title, description=""):
+    """Reject sports stories even when they contain generic words like attack/هجوم."""
+    text = (str(title) + " " + str(description)).lower()
+    sports_terms = [
+        "football", "soccer", "كرة القدم", "كروي", "كروية", "الدوري",
+        "مباراة", "مباريات", "لاعب", "لاعبين", "لاعبو", "نادي", "أندية",
+        "مدرب", "مدربه", "هدف", "أهداف", "مهاجم", "مهاجمون", "ركلة جزاء",
+        "champions league", "premier league", "la liga", "serie a", "bundesliga",
+        "matchday", "footballer", "striker", "goalkeeper", "scored", "scores",
+        "league table", "transfer window", "coach", "soccer player",
+        "match de football", "club de football", "championnat", "buteur", "attaquant"
+    ]
+    return any(term in text for term in sports_terms)
+
+
 def is_relevant_security_news(
     title,
     description
@@ -1043,6 +1058,10 @@ def is_relevant_security_news(
         + " "
         + str(description)
     ).lower()
+
+    # A sports context must never be rescued by generic terms such as attack/هجوم.
+    if is_sports_related(title, description):
+        return False
 
     if is_priority_magreb_leadership_news(title, description):
         return True
