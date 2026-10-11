@@ -3,50 +3,243 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>البطاقات الاستراتيجية | المرصد الإفريقي للأمن والدفاع</title>
+<title>أرشيف البطاقات الاستراتيجية | المرصد الإفريقي</title>
 <style>
-:root{color-scheme:dark;--bg:#0b1220;--panel:#142238;--line:#304057;--text:#edf3fb;--muted:#adbbcd;--gold:#d8b36b}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.85 Tahoma,Arial,sans-serif}
-.wrap{width:min(1080px,calc(100% - 28px));margin:auto}header{border-bottom:1px solid var(--line);padding:18px 0}
-.top{display:flex;justify-content:space-between;align-items:center;gap:15px}.brand{font-weight:bold;font-size:22px}.sub,small{color:var(--muted)}
-a{color:inherit}.back,.tab{border:1px solid var(--line);border-radius:10px;padding:8px 12px;text-decoration:none;background:var(--panel);color:var(--text)}
-main{padding:28px 0 45px}h1{font-size:clamp(26px,4vw,38px);margin:4px 0}.intro{color:var(--muted);max-width:850px}
-.notice{padding:12px 15px;border:1px solid #665438;border-radius:12px;background:#2a241a;color:#f2dfbd;margin:18px 0}
-.tabs{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0}.tab{cursor:pointer;font:inherit}.tab.active{background:var(--gold);color:#161b23;border-color:var(--gold);font-weight:bold}.tab:disabled{opacity:.4;cursor:not-allowed}
-.heading{border-bottom:1px solid var(--line);padding-bottom:10px;display:flex;justify-content:space-between;gap:12px;align-items:center}.heading h2{margin:0;font-size:22px}
-.empty{padding:28px 18px;text-align:center;border:1px dashed #3c4c63;border-radius:14px;background:#101a29;color:var(--muted);margin-top:16px}.empty strong{display:block;color:var(--text);font-size:18px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:15px;margin-top:16px}.card{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:18px}.tag{color:var(--gold);font-size:13px}.card h3{margin:5px 0}.card p{margin:8px 0}.source{color:#a9ccef}
-footer{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);font-size:12px}
-@media(max-width:550px){.top{align-items:flex-start;flex-direction:column}.heading{align-items:flex-start;flex-direction:column}}
+:root{--navy:#102b46;--blue:#174d75;--gold:#d7a849;--paper:#f4f6f8;--ink:#172535;--muted:#687887;--line:#dce3e9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.7}
+header{background:var(--navy);color:#fff;padding:24px 18px;border-bottom:4px solid var(--gold)}
+.header-inner,.container{max-width:1100px;margin:auto}
+header h1{font-size:26px;margin:0 0 5px}
+header p{margin:0;color:#d3dfeb}
+.header-links{margin-top:12px;font-size:13px}
+.header-links a{color:#f1d28a;text-decoration:none}
+.container{padding:24px 16px 42px}
+.breadcrumb{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:18px;font-size:13px;color:var(--muted)}
+.breadcrumb button{border:0;background:none;color:var(--blue);font:inherit;cursor:pointer;padding:3px}
+.breadcrumb button:hover{text-decoration:underline}
+.page-title{margin:0 0 6px;font-size:23px;color:var(--navy)}
+.description{margin:0 0 22px;color:var(--muted);font-size:14px}
+.folder-grid,.cards-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.folder,.card-link{width:100%;text-align:right;background:#fff;border:1px solid var(--line);border-radius:9px;padding:18px;cursor:pointer;color:var(--ink);font:inherit;box-shadow:0 2px 7px #102b4608;transition:transform .15s,border-color .15s}
+.folder:hover,.card-link:hover{transform:translateY(-2px);border-color:var(--gold)}
+.folder-icon{font-size:32px;line-height:1.3;margin-bottom:8px}
+.folder-title{font-size:18px;font-weight:bold;color:var(--navy)}
+.folder-meta{font-size:12px;color:var(--muted);margin-top:5px}
+.card-link{min-height:150px;display:flex;flex-direction:column;gap:7px}
+.card-date{font-size:18px;font-weight:bold;color:var(--navy)}
+.card-period{font-size:13px;color:var(--blue)}
+.card-subtitle{font-size:12px;color:var(--muted);margin-top:auto}
+.card-view{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px}
+.export-tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.export-button{border:0;border-radius:7px;padding:10px 15px;font:inherit;font-size:14px;cursor:pointer;color:#fff;background:var(--blue)}
+.export-button.word{background:#24613b}
+.export-button:hover{filter:brightness(1.08)}
+.card-head{border-bottom:2px solid var(--line);padding-bottom:14px;margin-bottom:18px}
+.card-head h2{margin:0 0 6px;color:var(--navy);font-size:23px}
+.card-head .period{color:var(--muted);font-size:13px}
+.section{margin-bottom:26px}
+.section-title{background:var(--navy);color:#fff;padding:9px 13px;border-radius:6px;font-size:18px;margin-bottom:9px}
+.event{padding:12px 4px;border-bottom:1px solid #e7ebef}
+.event:last-child{border-bottom:0}
+.country{font-weight:bold;color:#374151;margin-bottom:4px}
+.event-text{line-height:1.9;font-size:15px}
+.empty,.loading,.error{background:#fff;border:1px dashed var(--line);border-radius:8px;text-align:center;padding:30px;color:var(--muted)}
+.error{color:#b91c1c}
+.back-button{border:1px solid var(--line);background:#fff;color:var(--blue);border-radius:6px;padding:9px 14px;font:inherit;font-size:13px;cursor:pointer;margin-bottom:16px}
+.back-button:hover{background:#eef3f6}
+footer{text-align:center;padding:22px 12px;color:var(--muted);font-size:12px}
+@media(max-width:760px){.folder-grid,.cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}header h1{font-size:22px}.card-view{padding:14px}.card-head h2{font-size:20px}}
+@media(max-width:460px){.folder-grid,.cards-grid{grid-template-columns:1fr}.folder,.card-link{padding:15px}.card-link{min-height:120px}}
+@media print{
+@page{size:A4;margin:15mm}
+body{background:#fff!important;color:#000!important}
+body *{visibility:hidden!important}
+.card-view,.card-view *{visibility:visible!important}
+.card-view{position:absolute!important;top:0!important;right:0!important;width:100%!important;border:0!important;border-radius:0!important;padding:0!important;margin:0!important;box-shadow:none!important;background:#fff!important}
+.export-tools,.back-button,header,footer,.breadcrumb,.page-title,.description{display:none!important}
+.section-title{-webkit-print-color-adjust:exact;print-color-adjust:exact;break-after:avoid}
+.section{break-inside:avoid}
+.event{break-inside:avoid}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap top"><div><div class="brand">المرصد الإفريقي للأمن والدفاع</div><div class="sub">البطاقات الاستراتيجية والتحليلية</div></div><a class="back" href="./index.html">العودة إلى الموقع ←</a></div></header>
-<main class="wrap">
-<div class="sub">ملفات معمّقة • تسليح • دفاع • جيوسياسة</div>
-<h1>البطاقات الاستراتيجية</h1>
-<p class="intro">تُخصص مساحة مستقلة لكل نوع من البطاقات، بقالب تحريري وتحليلي يناسب موضوعه. نبدأ بصفقات التسلح الكبرى والمنظومات والابتكارات العسكرية، ثم نضيف الأنواع الأخرى بعد اعتماد نماذجها المرجعية.</p>
-<div class="notice">تُذكر المصادر والتواريخ داخل كل بطاقة، مع الفصل بين الوقائع المؤكدة والتقدير التحليلي. لن تُنشر بطاقة لمجرد ملء القسم أو اعتماداً على معلومات غير موثقة.</div>
-<nav class="tabs" aria-label="أنواع البطاقات">
-<button class="tab active" data-kind="deals">صفقات التسلح الكبرى</button>
-<button class="tab" data-kind="systems">المنظومات والابتكارات العسكرية</button>
-<button class="tab" disabled>التحالفات العسكرية</button>
-<button class="tab" disabled>الحروب والتحولات الجيوسياسية</button>
-<button class="tab" disabled>الأزمات الإقليمية</button>
-<button class="tab" disabled>سياسات الدفاع</button>
-<button class="tab" disabled>استراتيجيات الأمن القومي</button>
-</nav>
-<div class="heading"><h2 id="kindTitle">صفقات التسلح الكبرى</h2><small id="count">جارٍ تحميل البطاقات…</small></div>
-<div id="cards" class="cards"><div class="empty">جارٍ تحميل البطاقات…</div></div>
+<header>
+<div class="header-inner">
+<h1>المرصد الإفريقي للأمن والدفاع</h1>
+<p>أرشيف البطاقات الاستراتيجية</p>
+<div class="header-links"><a href="./">← العودة إلى الموقع الرئيسي</a></div>
+</div>
+</header>
+<main class="container">
+<div id="breadcrumb" class="breadcrumb"><span>البطاقات الاستراتيجية</span></div>
+<h2 id="pageTitle" class="page-title">أرشيف البطاقات الاستراتيجية</h2>
+<p id="pageDescription" class="description">اختر السنة، ثم الشهر، لعرض البطاقات المحفوظة.</p>
+<div id="content"><div class="loading">جارٍ تحميل أرشيف البطاقات…</div></div>
 </main>
-<footer><div class="wrap">المرصد الإفريقي للأمن والدفاع — تُتاح المصادر الأصلية من داخل كل بطاقة عند نشرها.</div></footer>
+<footer>المرصد الإفريقي للأمن والدفاع</footer>
 <script>
-const titles={deals:'صفقات التسلح الكبرى',systems:'المنظومات والابتكارات العسكرية'};
-let data={deals:[],systems:[]},kind='deals';
-const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function render(){const list=data[kind]||[];document.getElementById('kindTitle').textContent=titles[kind];document.getElementById('count').textContent=list.length+' بطاقة';const box=document.getElementById('cards');if(!list.length){box.innerHTML='<div class="empty"><strong>لا توجد بطاقات منشورة في هذا التصنيف بعد</strong>يجري تجهيز القالب التحريري وآلية التوليد الآلي والتحقق من المصادر. لن نعرض محتوى تجريبياً على أنه بطاقة منشورة.</div>';return;}box.innerHTML=list.map(c=>'<article class="card"><span class="tag">'+esc(titles[kind])+'</span><h3>'+esc(c.title)+'</h3><small>'+esc(c.date||'')+(c.region?' • '+esc(c.region):'')+'</small><p>'+esc(c.summary||'')+'</p>'+(Array.isArray(c.sections)?c.sections.map(s=>'<h4>'+esc(s.heading)+'</h4><p>'+esc(s.text)+'</p>').join(''):'')+(Array.isArray(c.sources)?'<h4>المصادر</h4><ul>'+c.sources.map(s=>'<li><a class="source" href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.title||s.url)+'</a></li>').join('')+'</ul>':'')+'</article>').join('');}
-document.querySelectorAll('[data-kind]').forEach(b=>b.addEventListener('click',()=>{kind=b.dataset.kind;document.querySelectorAll('[data-kind]').forEach(x=>x.classList.toggle('active',x===b));render();}));
-fetch('./strategic_cards.json?x='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{data={deals:Array.isArray(d.deals)?d.deals:[],systems:Array.isArray(d.systems)?d.systems:[]};render()}).catch(()=>{document.getElementById('count').textContent='';document.getElementById('cards').innerHTML='<div class="empty">تعذر تحميل البطاقات حالياً.</div>';});
+const indexUrl='./strategic_cards/archive/index.json';
+const content=document.getElementById('content');
+const pageTitle=document.getElementById('pageTitle');
+const pageDescription=document.getElementById('pageDescription');
+const breadcrumb=document.getElementById('breadcrumb');
+let archiveIndex={years:[]};
+let selectedYear=null;
+let selectedMonth=null;
+let currentCardData=null;
+let currentCardPath=null;
+let currentCardRaw='';
+let currentView='years';
+
+const monthNames=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+const slotNames={'daily':'تُحدّث خلال اليوم','05':'05:00','16':'16:00','21':'21:00'};
+
+function esc(value){
+return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function monthLabel(month){
+const n=Number(month);
+return monthNames[n-1]||month;
+}
+function dateLabel(value){
+const p=String(value||'').split('-');
+if(p.length!==3)return value||'تاريخ غير معروف';
+return Number(p[2])+' '+monthLabel(p[1])+' '+p[0];
+}
+function setBreadcrumb(level){
+let html='<button onclick="showYears()">البطاقات الاستراتيجية</button>';
+if(level!=='years'&&selectedYear){
+html+='<span>‹</span><button onclick="showMonths(\''+selectedYear+'\')">'+esc(selectedYear)+'</button>';
+}
+if((level==='cards'||level==='reader')&&selectedMonth){
+html+='<span>‹</span><button onclick="showMonthCards(\''+selectedYear+'\',\''+selectedMonth+'\')">'+esc(monthLabel(selectedMonth))+'</button>';
+}
+if(level==='reader')html+='<span>‹</span><span>عرض البطاقة</span>';
+breadcrumb.innerHTML=html;
+}
+function findYear(year){return archiveIndex.years.find(y=>String(y.year)===String(year));}
+function showYears(){
+currentView='years';
+selectedYear=null;selectedMonth=null;setBreadcrumb('years');
+pageTitle.textContent='أرشيف البطاقات الاستراتيجية';
+pageDescription.textContent='اختر السنة لعرض أشهرها والبطاقات المحفوظة فيها.';
+if(!archiveIndex.years.length){content.innerHTML='<div class="empty">لا توجد بطاقات مؤرشفة حتى الآن.</div>';return;}
+content.innerHTML='<div class="folder-grid">'+archiveIndex.years.map(y=>{
+const count=(y.months||[]).reduce((sum,m)=>sum+(m.cards||[]).length,0);
+return '<button class="folder" onclick="showMonths(\''+esc(y.year)+'\')"><div class="folder-icon">📁</div><div class="folder-title">'+esc(y.year)+'</div><div class="folder-meta">'+(y.months||[]).length+' أشهر · '+count+' بطاقة</div></button>';
+}).join('')+'</div>';
+}
+function showMonths(year){
+currentView='months';
+selectedYear=String(year);selectedMonth=null;setBreadcrumb('months');
+const entry=findYear(year);
+pageTitle.textContent='السنة '+year;
+pageDescription.textContent='اختر الشهر لعرض بطاقاته اليومية.';
+if(!entry||!(entry.months||[]).length){content.innerHTML='<div class="empty">لا توجد أشهر مؤرشفة في هذه السنة.</div>';return;}
+content.innerHTML='<div class="folder-grid">'+entry.months.map(m=>{
+return '<button class="folder" onclick="showMonthCards(\''+esc(year)+'\',\''+esc(m.month)+'\')"><div class="folder-icon">📂</div><div class="folder-title">'+esc(monthLabel(m.month))+'</div><div class="folder-meta">'+(m.cards||[]).length+' بطاقة محفوظة</div></button>';
+}).join('')+'</div>';
+}
+function showMonthCards(year,month){
+currentView='cards';selectedYear=String(year);selectedMonth=String(month);setBreadcrumb('cards');
+const y=findYear(year),m=y&&(y.months||[]).find(x=>String(x.month)===String(month));
+pageTitle.textContent='بطاقات '+monthLabel(month)+' '+year;
+pageDescription.textContent='اختر بطاقة لفتح تفاصيلها. البطاقات مرتبة من الأحدث إلى الأقدم.';
+if(!m||!(m.cards||[]).length){content.innerHTML='<div class="empty">لا توجد بطاقات محفوظة في هذا الشهر.</div>';return;}
+const cards=[...m.cards].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.title||'').localeCompare(a.title||''));
+content.innerHTML='<div class="cards-grid">'+cards.map((c,i)=>'<button class="card-link" onclick="openArchivedCard('+i+')"><div class="card-date">'+esc(dateLabel(c.date))+'</div><div class="card-period">'+esc(c.kind_label||'بطاقة استراتيجية')+'</div><div class="card-subtitle">'+esc(c.title||'')+'</div></button>').join('')+'</div>';
+window.currentMonthCards=cards;
+}
+async function openArchivedCard(index){
+const card=window.currentMonthCards&&window.currentMonthCards[index];
+if(!card)return;
+currentView='reader';
+currentCardPath=card.path;
+setBreadcrumb('reader');
+pageTitle.textContent='بطاقة '+dateLabel(card.date);
+pageDescription.textContent='';
+content.innerHTML='<div class="loading">جارٍ فتح البطاقة…</div>';
+try{
+const response=await fetch('./strategic_cards/archive/'+card.path+'?t='+Date.now(),{cache:'no-store'});
+if(!response.ok)throw new Error('HTTP '+response.status);
+const raw=await response.text();
+const data=JSON.parse(raw);
+currentCardRaw=raw;
+renderCard(data);
+}catch(error){
+console.error(error);
+content.innerHTML='<div class="error">تعذر فتح هذه البطاقة. أعد المحاولة بعد تحديث الصفحة.</div>';
+}
+}
+function renderCard(card){
+currentCardData=card;
+let html='<div class="export-tools"><button class="export-button" onclick="saveCardPdf()">حفظ البطاقة بصيغة PDF</button><button class="export-button word" onclick="saveCardWord()">تحميل البطاقة بصيغة Word</button></div>';
+html+='<div class="card-view"><div class="card-head"><h2>'+esc(card.title||'بطاقة استراتيجية')+'</h2><div class="period">'+esc(dateLabel(card.date))+(card.region?' — '+esc(card.region):'')+'</div></div>';
+if(card.summary)html+='<p style="font-weight:bold;margin-bottom:22px">'+esc(card.summary)+'</p>';
+(card.sections||[]).forEach(section=>{html+='<section class="section"><div class="section-title">'+esc(section.heading||'')+'</div><div class="event-text" style="white-space:pre-line">'+esc(section.text||'')+'</div></section>';});
+if((card.sources||[]).length){html+='<section class="section"><div class="section-title">المصادر</div><ul>'+(card.sources||[]).map(s=>'<li style="margin:8px 0"><a href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.title||s.url)+'</a></li>').join('')+'</ul></section>';}
+html+='</div><button class="back-button" onclick="showMonthCards(\''+esc(selectedYear)+'\',\''+esc(selectedMonth)+'\')">← العودة إلى بطاقات الشهر</button>';
+content.innerHTML=html;
+}
+function saveCardPdf(){
+if(!currentCardData)return;
+window.print();
+}
+function saveCardWord(){
+if(!currentCardData)return;
+const card=currentCardData;
+const sections=(card.sections||[]).map(section=>'<h2 style="color:#102b46;border-right:4px solid #d7a849;padding:4px 10px">'+esc(section.heading||'')+'</h2><p style="line-height:2;white-space:pre-line">'+esc(section.text||'')+'</p>').join('');
+const sources=(card.sources||[]).length?'<h2>المصادر</h2><ul>'+(card.sources||[]).map(s=>'<li>'+esc(s.title||s.url)+'<br>'+esc(s.url)+'</li>').join('')+'</ul>':'';
+const documentHtml='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>'+esc(card.title||'البطاقة الاستراتيجية')+'</title></head><body dir="rtl" style="font-family:Tahoma,Arial,sans-serif;color:#172535;line-height:1.8"><h1 style="color:#102b46">'+esc(card.title||'البطاقة الاستراتيجية')+'</h1><p style="color:#687887">'+esc(dateLabel(card.date))+(card.region?' — '+esc(card.region):'')+'</p><p><b>'+esc(card.summary||'')+'</b></p>'+sections+sources+'<p style="margin-top:24px;font-size:10pt;color:#687887">المرصد الإفريقي للأمن والدفاع</p></body></html>';
+const blob=new Blob(['\ufeff',documentHtml],{type:'application/msword;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');
+link.href=url;link.download='بطاقة-استراتيجية-'+String(card.date||'').replace(/[^0-9-]/g,'')+'.doc';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+async function loadArchive(){
+try{
+const response=await fetch(indexUrl+'?t='+Date.now(),{cache:'no-store'});
+if(!response.ok)throw new Error('Archive index unavailable');
+archiveIndex=await response.json();
+if(!Array.isArray(archiveIndex.years))archiveIndex.years=[];
+showYears();
+}catch(error){
+console.error(error);
+content.innerHTML='<div class="error">تعذر تحميل فهرس الأرشيف. ستظهر المجلدات بعد إنشاء الفهرس في عملية تحديث البطاقات القادمة.</div>';
+}
+}
+loadArchive();
+
+// Refresh the archive in the background so newly generated cards and
+// revised versions appear without requiring the visitor to reload the page.
+async function refreshLiveData(){
+try{
+const response=await fetch(indexUrl+'?t='+Date.now(),{cache:'no-store'});
+if(!response.ok)return;
+const freshIndex=await response.json();
+const changed=JSON.stringify(freshIndex)!==JSON.stringify(archiveIndex);
+archiveIndex=freshIndex;
+if(!Array.isArray(archiveIndex.years))archiveIndex.years=[];
+
+if(currentView==='reader'&&currentCardPath){
+const cardResponse=await fetch('./strategic_cards/archive/'+currentCardPath+'?t='+Date.now(),{cache:'no-store'});
+if(cardResponse.ok){
+const raw=await cardResponse.text();
+if(raw!==currentCardRaw){
+currentCardRaw=raw;
+renderCard(JSON.parse(raw));
+}
+}
+}else if(changed){
+if(currentView==='months'&&selectedYear)showMonths(selectedYear);
+else if(currentView==='cards'&&selectedYear&&selectedMonth)showMonthCards(selectedYear,selectedMonth);
+else showYears();
+}
+}catch(error){
+console.warn('Live archive refresh skipped:',error);
+}
+}
+setInterval(refreshLiveData,120000);
 </script>
 </body>
 </html>
