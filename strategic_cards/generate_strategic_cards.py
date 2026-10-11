@@ -97,6 +97,45 @@ def candidate_score(item):
         score = 0
     return score
 
+ARCHIVE_DIR = ROOT / "strategic_cards" / "archive"
+
+def sync_archive(data):
+    """Write published strategic cards separately and rebuild the year/month index."""
+    years = {}
+    for kind in ("deals", "systems"):
+        kind_label = "صفقات التسلح الكبرى" if kind == "deals" else "المنظومات والابتكارات العسكرية"
+        for card in data.get(kind, []):
+            if not isinstance(card, dict):
+                continue
+            date_value = clean_text(card.get("date"))[:10]
+            try:
+                year, month, _day = date_value.split("-")
+            except ValueError:
+                continue
+            card_id = clean_text(card.get("id")) or date_value
+            relative_path = f"{year}-{month}/{card_id}.json"
+            target = ARCHIVE_DIR / relative_path
+            target.parent.mkdir(parents=True, exist_ok=True)
+            archived = dict(card)
+            archived["kind"] = kind
+            archived["kind_label"] = kind_label
+            save_json(target, archived)
+            years.setdefault(year, {"year": year, "months": {}})
+            years[year]["months"].setdefault(month, {"month": month, "cards": []})
+            years[year]["months"][month]["cards"].append({
+                "date": date_value, "title": clean_text(card.get("title")),
+                "path": relative_path, "kind": kind, "kind_label": kind_label
+            })
+    output_years = []
+    for year in sorted(years, reverse=True):
+        months = []
+        for month in sorted(years[year]["months"], reverse=True):
+            cards = years[year]["months"][month]["cards"]
+            cards.sort(key=lambda item: (item.get("date", ""), item.get("title", "")), reverse=True)
+            months.append({"month": month, "cards": cards})
+        output_years.append({"year": year, "months": months})
+    save_json(ARCHIVE_DIR / "index.json", {"updated": datetime.now(TZ).isoformat(), "years": output_years})
+
 def main():
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
@@ -110,6 +149,8 @@ def main():
     data.setdefault("deals", [])
     data.setdefault("systems", [])
     data.setdefault("checked_urls", [])
+
+    sync_archive(data)
     checked = set(data["checked_urls"])
 
     cutoff = datetime.now(TZ) - timedelta(days=7)
