@@ -31,26 +31,11 @@ MAX_NEWS_ITEMS = 100
 # ============================================================
 
 PERIODS = {
-    "16": {
+    # One continuously updated card per Tunisia calendar day.
+    "daily": {
         "start_hour": 6,
         "start_minute": 0,
-        "end_hour": 16,
-        "end_minute": 0,
-        "label": "06:00–16:00",
-    },
-    "21": {
-        "start_hour": 16,
-        "start_minute": 0,
-        "end_hour": 21,
-        "end_minute": 0,
-        "label": "16:00–21:00",
-    },
-    "05": {
-        "start_hour": 21,
-        "start_minute": 0,
-        "end_hour": 5,
-        "end_minute": 0,
-        "label": "21:00–05:00",
+        "label": "06:00–23:59 (تُحدّث خلال اليوم)",
     },
 }
 
@@ -122,111 +107,20 @@ def parse_datetime(value):
 
 
 def determine_slot(now):
-    """
-    Determine the card slot automatically.
-
-    The slot key identifies the period ending at the named hour:
-    - "16": 06:00–16:00
-    - "21": 16:00–21:00
-    - "05": 21:00–05:00
-
-    During 16:00–21:00, always refresh the "21" card so it can
-    appear shortly after 16:00 and be updated throughout the period.
-    """
-
-    hour = now.hour
-
-    if hour == 16:
-        return "21"
-
-    if 16 < hour < 21:
-        return "21"
-
-    if hour == 21:
-        return "21"
-
-    if hour == 5:
-        return "05"
-
-    return None
-
+    """Return the single daily card identifier."""
+    return "daily"
 
 def get_period_dates(slot, reference_date):
-    """
-    Return start/end datetimes in Africa/Tunis.
+    """Collect today's news from 06:00 until the current local time."""
+    if slot != "daily":
+        raise ValueError(f"Unknown card type: {slot}")
 
-    16:
-        same day 06:00 -> same day 16:00
-
-    21:
-        same day 16:00 -> same day 21:00
-
-    05:
-        previous day 21:00 -> current day 05:00
-    """
-
-    if slot == "16":
-        start = datetime(
-            reference_date.year,
-            reference_date.month,
-            reference_date.day,
-            6,
-            0,
-            tzinfo=TIMEZONE
-        )
-
-        end = datetime(
-            reference_date.year,
-            reference_date.month,
-            reference_date.day,
-            16,
-            0,
-            tzinfo=TIMEZONE
-        )
-
-    elif slot == "21":
-        start = datetime(
-            reference_date.year,
-            reference_date.month,
-            reference_date.day,
-            16,
-            0,
-            tzinfo=TIMEZONE
-        )
-
-        end = datetime(
-            reference_date.year,
-            reference_date.month,
-            reference_date.day,
-            21,
-            0,
-            tzinfo=TIMEZONE
-        )
-
-    elif slot == "05":
-        previous_day = reference_date - timedelta(days=1)
-
-        start = datetime(
-            previous_day.year,
-            previous_day.month,
-            previous_day.day,
-            21,
-            0,
-            tzinfo=TIMEZONE
-        )
-
-        end = datetime(
-            reference_date.year,
-            reference_date.month,
-            reference_date.day,
-            5,
-            0,
-            tzinfo=TIMEZONE
-        )
-
-    else:
-        raise ValueError(f"Unknown slot: {slot}")
-
+    now = datetime.now(TIMEZONE)
+    start = datetime(
+        reference_date.year, reference_date.month, reference_date.day,
+        6, 0, tzinfo=TIMEZONE
+    )
+    end = max(start, now) if now.date() == reference_date else start
     return start, end
 
 
@@ -510,7 +404,7 @@ def build_prompt(
 
     date_text = reference_date.strftime("%d/%m/%Y")
 
-    period_label = PERIODS[slot]["label"]
+    period_label = f"06:00–{end.strftime('%H:%M')} (تُحدّث خلال اليوم)"
 
     news_material = []
 
@@ -1557,8 +1451,7 @@ def main():
 
         else:
             raise SystemExit(
-                "Could not determine card slot. "
-                "Use 16, 21, or 05."
+                "Could not determine the daily card. Use CARD_SLOT=daily."
             )
 
     # --------------------------------------------------------
@@ -1607,7 +1500,7 @@ def main():
     )
 
     print(
-        f"Slot: {slot}"
+        f"Card: {slot}"
     )
 
     print(
@@ -1657,11 +1550,7 @@ def main():
             "date": reference_date.isoformat(),
             "slot": slot,
             "period": PERIODS[slot]["label"],
-            "title": (
-                f"بطاقة الأحداث اليومية "
-                f"ليوم {reference_date.strftime('%d/%m/%Y')} "
-                f"— {PERIODS[slot]['label']}"
-            ),
+            "title": f"بطاقة أحداث يوم {reference_date.strftime('%d/%m/%Y')}",
             "generated_at": now.isoformat(),
             "sections": empty_sections
         }
@@ -1735,11 +1624,7 @@ def main():
 
         "period": PERIODS[slot]["label"],
 
-        "title": (
-            f"بطاقة الأحداث اليومية "
-            f"ليوم {reference_date.strftime('%d/%m/%Y')} "
-            f"— {PERIODS[slot]['label']}"
-        ),
+        "title": f"بطاقة أحداث يوم {reference_date.strftime('%d/%m/%Y')}",
 
         "generated_at": now.isoformat(),
 
