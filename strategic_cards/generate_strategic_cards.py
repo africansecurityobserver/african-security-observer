@@ -533,7 +533,13 @@ def main():
     if (
         kind not in TYPE_LABELS
         or not title
-        or len(sections) < 3
+        or len(clean_text(output.get("summary"))) < 60
+        or len(sections) < 4
+        or not any(
+            "خلاصة استراتيجية" in section["heading"]
+            or "الخلاصة الاستراتيجية" in section["heading"]
+            for section in sections
+        )
         or not chosen_urls
     ):
         data["checked_urls"] = list(dict.fromkeys(
