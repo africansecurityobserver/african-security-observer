@@ -136,7 +136,7 @@ currentView='months';
 selectedYear=String(year);selectedMonth=null;setBreadcrumb('months');
 const entry=findYear(year);
 pageTitle.textContent='السنة '+year;
-pageDescription.textContent='اختر الشهر لعرض بطاقاته اليومية.';
+pageDescription.textContent='اختر الشهر لعرض البطاقات الاستراتيجية المحفوظة.';
 if(!entry||!(entry.months||[]).length){content.innerHTML='<div class="empty">لا توجد أشهر مؤرشفة في هذه السنة.</div>';return;}
 content.innerHTML='<div class="folder-grid">'+entry.months.map(m=>{
 return '<button class="folder" onclick="showMonthCards(\''+esc(year)+'\',\''+esc(m.month)+'\')"><div class="folder-icon">📂</div><div class="folder-title">'+esc(monthLabel(m.month))+'</div><div class="folder-meta">'+(m.cards||[]).length+' بطاقة محفوظة</div></button>';
