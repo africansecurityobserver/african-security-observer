@@ -124,7 +124,7 @@ def sync_archive(data):
 def prompt_for(material):
  return f"""
 أنت رئيس تحرير ومحلل استراتيجي في «المرصد الإفريقي للأمن والدفاع». أنشئ بطاقة عربية رسمية عميقة ومقنعة انطلاقًا حصريًا من المواد المرفقة. هذه البطاقة مخصصة للتحولات الجيوسياسية والأمنية والدفاعية، وليست بطاقة مواصفات سلاح أو صفقة تسلح؛ لهما مولّد مستقل.
-تاريخ تونس اليوم: {datetime.now(TZ).strftime("%Y-%m-%d")}
+تاريخ تونس اليوم: {datetime.now(TZ).strftime('%Y-%m-%d')}
 اختر تصنيفًا واحدًا:
 {json.dumps(DESCRIPTIONS,ensure_ascii=False)}
 
@@ -161,7 +161,7 @@ def main():
  checked=set(data["checked_strategic_urls"])
  cutoff=datetime.now(TZ)-timedelta(days=MAX_AGE_DAYS)
  candidates=[];seen=set()
- for item in items if isinstance(items,list) else []:
+ for item in (items if isinstance(items,list) else []):
   if not isinstance(item,dict):continue
   url=clean(item.get("url"))
   if not url or url in checked or url in seen:continue
