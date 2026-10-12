@@ -207,8 +207,9 @@ def select_candidates(items, checked):
     # crowd every other subject out of the model's source packet.
     chosen = []
     chosen_urls = set()
+    pools = {}
     for kind in TYPE_ORDER:
-        pool = sorted(
+        pools[kind] = sorted(
             [item for item in candidates if item["_type_scores"].get(kind, 0) >= 2],
             key=lambda item: (
                 item["_type_scores"].get(kind, 0),
@@ -216,7 +217,14 @@ def select_candidates(items, checked):
             ),
             reverse=True
         )
-        for item in pool[:2]:
+    # First pass takes one candidate per available topic; second pass adds a
+    # second candidate per topic, keeping the source packet balanced.
+    for round_index in range(2):
+        for kind in TYPE_ORDER:
+            pool = pools[kind]
+            if len(pool) <= round_index:
+                continue
+            item = pool[round_index]
             if item["_url"] not in chosen_urls:
                 chosen.append(item)
                 chosen_urls.add(item["_url"])
