@@ -29,27 +29,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install google-genai requests selectolax
 
-      - name: Validate generator syntax
-        run: |
-          python -m py_compile strategic_cards/generate_strategic_cards.py
-
-      - name: Validate strategic-card Python syntax
-        run: |
-          python -m py_compile strategic_cards/generate_strategic_cards.py strategic_cards/generate_geostrategic_cards.py
-
       - name: Generate strategic card
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.5-flash-lite
         run: |
           python -u strategic_cards/generate_strategic_cards.py
-
-      - name: Generate geopolitical and strategic assessment card
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-3.5-flash-lite
-        run: |
-          python -u strategic_cards/generate_geostrategic_cards.py
 
       - name: Commit and publish generated cards
         run: |
