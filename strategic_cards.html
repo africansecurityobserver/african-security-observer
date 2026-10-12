@@ -149,7 +149,7 @@ pageTitle.textContent='بطاقات '+monthLabel(month)+' '+year;
 pageDescription.textContent='اختر بطاقة لفتح تفاصيلها. البطاقات مرتبة من الأحدث إلى الأقدم.';
 if(!m||!(m.cards||[]).length){content.innerHTML='<div class="empty">لا توجد بطاقات محفوظة في هذا الشهر.</div>';return;}
 const cards=[...m.cards].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.title||'').localeCompare(a.title||''));
-content.innerHTML='<div class="cards-grid">'+cards.map((c,i)=>'<button class="card-link" onclick="openArchivedCard('+i+')"><div class="card-date">'+esc(dateLabel(c.date))+'</div><div class="card-period">'+esc(c.kind_label||'بطاقة استراتيجية')+'</div><div class="card-subtitle">'+esc(c.title||'')+'</div></button>').join('')+'</div>';
+content.innerHTML='<div class="cards-grid">'+cards.map((c,i)=>'<button class="card-link" onclick="openArchivedCard('+i+')"><div class="card-date">'+esc(dateLabel(c.date))+'</div><div class="card-period">'+(c.slot==='morning'?'البطاقة الاستراتيجية الصباحية':c.slot==='evening'?'البطاقة الاستراتيجية المسائية':esc(c.kind_label||'بطاقة استراتيجية'))+'</div><div class="card-subtitle">'+esc(c.subject||c.title||'')+'</div></button>').join('')+'</div>';
 window.currentMonthCards=cards;
 }
 async function openArchivedCard(index){
@@ -176,7 +176,7 @@ content.innerHTML='<div class="error">تعذر فتح هذه البطاقة. أ�
 function renderCard(card){
 currentCardData=card;
 let html='<div class="export-tools"><button class="export-button" onclick="saveCardPdf()">حفظ البطاقة بصيغة PDF</button><button class="export-button word" onclick="saveCardWord()">تحميل البطاقة بصيغة Word</button></div>';
-html+='<div class="card-view"><div class="card-head"><h2>'+esc(card.title||'بطاقة استراتيجية')+'</h2><div class="period">'+esc(dateLabel(card.date))+(card.region?' — '+esc(card.region):'')+'</div></div>';
+html+='<div class="card-view"><div class="card-head"><h2>'+esc(card.title||'بطاقة استراتيجية')+'</h2>'+(card.subject?'<h3 style="margin:8px 0;color:var(--blue);font-size:19px">'+esc(card.subject)+'</h3>':'')+'<div class="period">'+esc(dateLabel(card.date))+(card.region?' — '+esc(card.region):'')+'</div></div>';
 if(card.summary)html+='<p style="font-weight:bold;margin-bottom:22px">'+esc(card.summary)+'</p>';
 (card.sections||[]).forEach(section=>{html+='<section class="section"><div class="section-title">'+esc(section.heading||'')+'</div><div class="event-text" style="white-space:pre-line">'+esc(section.text||'')+'</div></section>';});
 if((card.sources||[]).length){html+='<section class="section"><div class="section-title">المصادر</div><ul>'+(card.sources||[]).map(s=>'<li style="margin:8px 0"><a href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.title||s.url)+'</a></li>').join('')+'</ul></section>';}
@@ -192,7 +192,7 @@ if(!currentCardData)return;
 const card=currentCardData;
 const sections=(card.sections||[]).map(section=>'<h2 style="color:#102b46;border-right:4px solid #d7a849;padding:4px 10px">'+esc(section.heading||'')+'</h2><p style="line-height:2;white-space:pre-line">'+esc(section.text||'')+'</p>').join('');
 const sources=(card.sources||[]).length?'<h2>المصادر</h2><ul>'+(card.sources||[]).map(s=>'<li>'+esc(s.title||s.url)+'<br>'+esc(s.url)+'</li>').join('')+'</ul>':'';
-const documentHtml='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>'+esc(card.title||'البطاقة الاستراتيجية')+'</title></head><body dir="rtl" style="font-family:Tahoma,Arial,sans-serif;color:#172535;line-height:1.8"><h1 style="color:#102b46">'+esc(card.title||'البطاقة الاستراتيجية')+'</h1><p style="color:#687887">'+esc(dateLabel(card.date))+(card.region?' — '+esc(card.region):'')+'</p><p><b>'+esc(card.summary||'')+'</b></p>'+sections+sources+'<p style="margin-top:24px;font-size:10pt;color:#687887">المرصد الإفريقي للأمن والدفاع</p></body></html>';
+const documentHtml='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>'+esc(card.title||'البطاقة الاستراتيجية')+'</title></head><body dir="rtl" style="font-family:Tahoma,Arial,sans-serif;color:#172535;line-height:1.8"><h1 style="color:#102b46">'+esc(card.title||'البطاقة الاستراتيجية')+'</h1>'+(card.subject?'<h2>'+esc(card.subject)+'</h2>':'')+'<p style="color:#687887">'+esc(dateLabel(card.date))+(card.region?' — '+esc(card.region):'')+'</p><p><b>'+esc(card.summary||'')+'</b></p>'+sections+sources+'<p style="margin-top:24px;font-size:10pt;color:#687887">المرصد الإفريقي للأمن والدفاع</p></body></html>';
 const blob=new Blob(['\ufeff',documentHtml],{type:'application/msword;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');
 link.href=url;link.download='بطاقة-استراتيجية-'+String(card.date||'').replace(/[^0-9-]/g,'')+'.doc';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
