@@ -157,8 +157,8 @@ def main():
  if not isinstance(data,dict):data={}
  for k in LABELS:
   if not isinstance(data.get(k),list):data[k]=[]
- data.setdefault("checked_strategic_urls",[])
- checked=set(data["checked_strategic_urls"] if isinstance(data["checked_strategic_urls"],list) else [])
+ if not isinstance(data.get("checked_strategic_urls"),list):data["checked_strategic_urls"]=[]
+ checked=set(data["checked_strategic_urls"])
  cutoff=datetime.now(TZ)-timedelta(days=MAX_AGE_DAYS)
  candidates=[];seen=set()
  for item in (items if isinstance(items,list) else []):
