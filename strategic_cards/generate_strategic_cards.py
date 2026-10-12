@@ -13,34 +13,97 @@ from google.genai import types
 ROOT = Path(__file__).resolve().parent.parent
 NEWS_FILE = ROOT / "news.json"
 DATA_FILE = ROOT / "strategic_cards.json"
+ARCHIVE_DIR = ROOT / "strategic_cards" / "archive"
 TZ = ZoneInfo("Africa/Tunis")
 MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
-MAX_CANDIDATES = 5
+MAX_CANDIDATES = 12
+MAX_CARD_AGE_DAYS = 7
+MAX_ARCHIVE_CARDS_PER_TYPE = 150
 
-KEYWORDS = [
-    "صفقة", "تسلح", "أسلحة", "سلاح", "مقاتلة", "طائرة حربية", "دبابة",
-    "غواصة", "سفينة حربية", "فرقاطة", "مدرعة", "صاروخ", "دفاع جوي",
-    "رادار", "منظومة", "ابتكار عسكري", "صناعة دفاعية", "ذخائر",
-    "عقد دفاعي", "شراء أسلحة", "تصدير أسلحة", "تسليم معدات",
-    "military deal", "arms deal", "defense contract", "defence contract",
-    "weapons", "fighter jet", "warship", "submarine", "frigate", "tank",
-    "air defense", "air-defence", "missile system", "radar system",
-    "military technology", "defense industry", "defence industry",
-    "armored vehicle", "drones", "unmanned aircraft", "procurement",
-    "livraison d'armes", "contrat de défense", "contrat de defense",
-    "avion de combat", "navire de guerre", "système de défense", "système d'armes"
-]
+TYPE_LABELS = {
+    "deals": "صفقات التسلح الكبرى",
+    "systems": "المنظومات والابتكارات العسكرية",
+    "defense_economics": "الأمن الاقتصادي والجيو-اقتصادي",
+    "military_transformation": "التحولات العسكرية والتنظيمية والتكنولوجية",
+    "defense_strategy": "الاستراتيجيات والتحالفات والجاهزية الدفاعية",
+    "regional_crisis": "الأزمات الإقليمية والتقييمات الجيوسياسية",
+    "strategic_assessment": "التقديرات الاستراتيجية والأمنية"
+}
+TYPE_ORDER = list(TYPE_LABELS.keys())
+
+TYPE_KEYWORDS = {
+    "deals": [
+        "صفقة تسلح", "صفقات أسلحة", "عقد دفاعي", "شراء أسلحة", "تصدير أسلحة",
+        "تسليم معدات", "مقاتلة", "طائرة حربية", "دبابة", "غواصة", "فرقاطة",
+        "منظومة دفاع جوي", "صاروخ", "ذخائر", "military deal", "arms deal",
+        "defense contract", "defence contract", "weapons procurement", "fighter jet",
+        "warship", "submarine", "frigate", "tank", "air defense", "missile system",
+        "livraison d'armes", "contrat de défense", "avion de combat", "navire de guerre"
+    ],
+    "systems": [
+        "منظومة عسكرية", "تقنية عسكرية", "ابتكار عسكري", "طائرة دون طيار",
+        "أنظمة غير مأهولة", "روبوت عسكري", "ذكاء اصطناعي عسكري", "رادار",
+        "military technology", "unmanned", "drone system", "autonomous warfare",
+        "artificial intelligence", "robotic system", "radar system", "electronic warfare",
+        "technologie militaire", "système autonome"
+    ],
+    "defense_economics": [
+        "اقتصاد الدفاع", "الاقتصاد الدفاعي", "تمويل الدفاع", "تمويل عسكري",
+        "الصناعات الدفاعية", "القاعدة الصناعية الدفاعية", "المعادن الحيوية",
+        "سلاسل الإمداد", "تمويل التنمية", "النفوذ الاقتصادي", "الاستثمار الدفاعي",
+        "defense economics", "defence economics", "defense industry", "defence industry",
+        "defense financing", "military financing", "critical minerals", "supply chains",
+        "economic statecraft", "defense production", "defence production",
+        "financement de la défense", "industrie de défense"
+    ],
+    "military_transformation": [
+        "إعادة هيكلة الجيش", "إعادة هيكلة القوات المسلحة", "قيادة عسكرية جديدة",
+        "القيادات العسكرية", "القيادة والسيطرة", "الحرب الذاتية", "الأنظمة الذاتية",
+        "الذكاء الاصطناعي", "التصنيع العسكري", "الإنتاج العسكري", "التحول العسكري",
+        "military restructuring", "military command", "autonomous warfare",
+        "artificial intelligence", "military reform", "force structure", "command and control",
+        "military transformation", "defense reform", "defence reform",
+        "réforme militaire", "restructuration militaire"
+    ],
+    "defense_strategy": [
+        "استراتيجية دفاعية", "استراتيجية الأمن القومي", "الجاهزية الدفاعية",
+        "التنقل العسكري", "النقل العسكري", "الإمداد اللوجستي", "التحالف العسكري",
+        "تحالف دفاعي", "الردع", "الدفاع الجماعي", "ميزانية الدفاع", "الإنفاق الدفاعي",
+        "defense strategy", "defence strategy", "national security strategy",
+        "military mobility", "military logistics", "defense readiness", "defence readiness",
+        "military alliance", "defense alliance", "collective defense", "defence spending",
+        "budget militaire", "mobilité militaire", "alliance de défense"
+    ],
+    "regional_crisis": [
+        "قطع العلاقات الدبلوماسية", "أزمة دبلوماسية", "أزمة إقليمية", "تصاعد التوتر",
+        "نزاع إقليمي", "الحرب في", "وقف إطلاق النار", "محادثات سلام", "مفاوضات",
+        "انقلاب عسكري", "صراع مسلح", "تدخل خارجي", "عقوبات", "السودان", "ليبيا",
+        "الساحل والصحراء", "الصحراء الغربية", "قطع العلاقات", "تدهور العلاقات",
+        "diplomatic crisis", "regional crisis", "armed conflict", "ceasefire",
+        "peace talks", "military coup", "diplomatic relations", "regional tensions",
+        "conflit régional", "crise diplomatique", "cessez-le-feu"
+    ],
+    "strategic_assessment": [
+        "توازنات إقليمية", "توازن القوى", "تنافس استراتيجي", "تحولات جيوسياسية",
+        "الأمن الإقليمي", "الأمن القومي", "السياسة الخارجية", "المصالح الاستراتيجية",
+        "نفوذ إقليمي", "شراكة استراتيجية", "تداعيات أمنية", "موقف دولي",
+        "geopolitical", "strategic competition", "regional security", "national security",
+        "foreign policy", "strategic interests", "regional influence", "security implications",
+        "geopolitique", "sécurité régionale", "politique étrangère"
+    ]
+}
 
 def load_json(path, default):
     try:
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except Exception:
+        with open(path, "r", encoding="utf-8") as file:
+            return json.load(file)
+    except (OSError, json.JSONDecodeError):
         return default
 
 def save_json(path, value):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(value, f, ensure_ascii=False, indent=2)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as file:
+        json.dump(value, file, ensure_ascii=False, indent=2)
 
 def clean_text(value):
     return re.sub(r"\s+", " ", str(value or "")).strip()
@@ -50,16 +113,16 @@ def parse_date(value):
         return None
     try:
         from email.utils import parsedate_to_datetime
-        dt = parsedate_to_datetime(value)
-        if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=timezone.utc)
-        return dt.astimezone(TZ)
+        parsed = parsedate_to_datetime(value)
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        return parsed.astimezone(TZ)
     except Exception:
         try:
-            dt = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
-            if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=timezone.utc)
-            return dt.astimezone(TZ)
+            parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+            if parsed.tzinfo is None:
+                parsed = parsed.replace(tzinfo=timezone.utc)
+            return parsed.astimezone(TZ)
         except Exception:
             return None
 
@@ -69,7 +132,7 @@ def get_article_text(url):
     try:
         response = requests.get(
             url,
-            timeout=12,
+            timeout=15,
             headers={"User-Agent": "Mozilla/5.0 (compatible; AfricanSecurityObserver/1.0)"}
         )
         if response.status_code != 200:
@@ -81,30 +144,103 @@ def get_article_text(url):
         article = parser.css_first("article") or parser.css_first("main") or parser.body
         if not article:
             return ""
-        return clean_text(article.text(separator=" ", strip=True))[:9000]
+        return clean_text(article.text(separator=" ", strip=True))[:6500]
     except Exception as exc:
         print(f"Source extraction failed for {url}: {type(exc).__name__}")
         return ""
 
-def candidate_score(item):
+def score_types(item):
     title = clean_text(item.get("original_title") or item.get("title"))
-    desc = clean_text(item.get("original_description") or item.get("description"))
-    value = (title + " " + desc).lower()
-    score = sum(2 if term.lower() in title.lower() else 1 for term in KEYWORDS if term.lower() in value)
-    if item.get("category") == "defense":
-        score += 5
-    if not item.get("url"):
+    description = clean_text(
+        item.get("original_description") or item.get("description") or item.get("summary")
+    )
+    title_lower = title.lower()
+    combined = (title + " " + description).lower()
+    scores = {}
+    for kind, keywords in TYPE_KEYWORDS.items():
         score = 0
-    return score
+        for keyword in keywords:
+            term = keyword.lower()
+            if term in title_lower:
+                score += 3
+            elif term in combined:
+                score += 1
+        scores[kind] = score
+    if item.get("category") == "defense":
+        for kind in ("deals", "systems", "military_transformation", "defense_strategy"):
+            scores[kind] += 2
+        for kind in ("defense_economics", "regional_crisis", "strategic_assessment"):
+            scores[kind] += 1
+    return scores
 
-ARCHIVE_DIR = ROOT / "strategic_cards" / "archive"
+def candidate_score(item):
+    scores = score_types(item)
+    return max(scores.values(), default=0), scores
+
+def select_candidates(items, checked):
+    now = datetime.now(TZ)
+    cutoff = now - timedelta(days=MAX_CARD_AGE_DAYS)
+    candidates = []
+    seen_urls = set()
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        url = clean_text(item.get("url"))
+        if not url or not url.startswith(("http://", "https://")):
+            continue
+        if url in checked or url in seen_urls:
+            continue
+        published = parse_date(item.get("published"))
+        if published and published < cutoff:
+            continue
+        score, scores = candidate_score(item)
+        if score < 2:
+            continue
+        seen_urls.add(url)
+        copy = dict(item)
+        copy["_score"] = score
+        copy["_type_scores"] = scores
+        copy["_url"] = url
+        candidates.append(copy)
+
+    # Keep a mix of strategic topics instead of letting frequent arms stories
+    # crowd every other subject out of the model's source packet.
+    chosen = []
+    chosen_urls = set()
+    for kind in TYPE_ORDER:
+        pool = sorted(
+            [item for item in candidates if item["_type_scores"].get(kind, 0) >= 2],
+            key=lambda item: (
+                item["_type_scores"].get(kind, 0),
+                parse_date(item.get("published")) or datetime.min.replace(tzinfo=TZ)
+            ),
+            reverse=True
+        )
+        for item in pool[:2]:
+            if item["_url"] not in chosen_urls:
+                chosen.append(item)
+                chosen_urls.add(item["_url"])
+    for item in sorted(
+        candidates,
+        key=lambda item: (
+            item["_score"],
+            parse_date(item.get("published")) or datetime.min.replace(tzinfo=TZ)
+        ),
+        reverse=True
+    ):
+        if len(chosen) >= MAX_CANDIDATES:
+            break
+        if item["_url"] not in chosen_urls:
+            chosen.append(item)
+            chosen_urls.add(item["_url"])
+    return chosen[:MAX_CANDIDATES]
 
 def sync_archive(data):
-    """Write published strategic cards separately and rebuild the year/month index."""
+    """Create the year/month index for all strategic-card categories."""
     years = {}
-    for kind in ("deals", "systems"):
-        kind_label = "صفقات التسلح الكبرى" if kind == "deals" else "المنظومات والابتكارات العسكرية"
-        for card in data.get(kind, []):
+    for kind in TYPE_ORDER:
+        cards = data.get(kind, [])
+        for card in cards:
             if not isinstance(card, dict):
                 continue
             date_value = clean_text(card.get("date"))[:10]
@@ -118,14 +254,18 @@ def sync_archive(data):
             target.parent.mkdir(parents=True, exist_ok=True)
             archived = dict(card)
             archived["kind"] = kind
-            archived["kind_label"] = kind_label
+            archived["kind_label"] = TYPE_LABELS.get(kind, TYPE_LABELS["strategic_assessment"])
             save_json(target, archived)
             years.setdefault(year, {"year": year, "months": {}})
             years[year]["months"].setdefault(month, {"month": month, "cards": []})
             years[year]["months"][month]["cards"].append({
-                "date": date_value, "title": clean_text(card.get("title")),
-                "path": relative_path, "kind": kind, "kind_label": kind_label
+                "date": date_value,
+                "title": clean_text(card.get("title")),
+                "path": relative_path,
+                "kind": kind,
+                "kind_label": TYPE_LABELS.get(kind, TYPE_LABELS["strategic_assessment"])
             })
+
     output_years = []
     for year in sorted(years, reverse=True):
         months = []
@@ -134,103 +274,111 @@ def sync_archive(data):
             cards.sort(key=lambda item: (item.get("date", ""), item.get("title", "")), reverse=True)
             months.append({"month": month, "cards": cards})
         output_years.append({"year": year, "months": months})
-    save_json(ARCHIVE_DIR / "index.json", {"updated": datetime.now(TZ).isoformat(), "years": output_years})
+    save_json(ARCHIVE_DIR / "index.json", {
+        "updated": datetime.now(TZ).isoformat(),
+        "years": output_years
+    })
+
+def build_prompt(source_material):
+    today = datetime.now(TZ).strftime("%Y-%m-%d")
+    return f"""
+أنت رئيس تحرير ومحلل استراتيجي في «المرصد الإفريقي للأمن والدفاع». المطلوب إعداد بطاقة استراتيجية عربية عميقة ومقنعة اعتمادًا على المواد المصدرية المرفقة وحدها. هذه ليست بطاقة خبرية قصيرة، بل تقدير موقف منظم يشرح الحدث وسياقه ودلالاته وتداعياته.
+
+اختر تصنيفًا واحدًا فقط من التصنيفات التالية، بحسب جوهر الموضوع:
+- deals: صفقات التسلح الكبرى والعقود والتسليمات والتعاون الصناعي المحدد.
+- systems: المنظومات والابتكارات العسكرية والتقنيات والمعدات.
+- defense_economics: اقتصاد الدفاع، التمويل، الاستثمارات، المعادن الحيوية، سلاسل الإمداد، أدوات النفوذ الاقتصادي.
+- military_transformation: إعادة هيكلة القوات المسلحة، القيادات، العقيدة، الذكاء الاصطناعي، الأنظمة الذاتية، والتحولات التنظيمية والتكنولوجية.
+- defense_strategy: الاستراتيجيات الدفاعية، التحالفات، الجاهزية، النقل والإمداد العسكري، الإنفاق الدفاعي، البنية التحتية والردع.
+- regional_crisis: الأزمات الثنائية والإقليمية، النزاعات، تدهور العلاقات، تضارب المصالح، وآثارها السياسية والاقتصادية والأمنية.
+- strategic_assessment: التقديرات الجيوسياسية والأمنية التي لا ينطبق عليها تصنيف أدق.
+
+منهج البناء:
+1. ابدأ بمقدمة رسمية تحدد الحدث أو التطور والجهة والتاريخ والمكان عند توافرها، وتوضح سبب أهميته.
+2. أنشئ من 4 إلى 7 أقسام تحليلية بعناوين دقيقة متخصصة بالموضوع. لا تستخدم عناوين ثابتة لا تناسب المادة.
+3. فسّر الخلفية والدوافع والمصالح ذات الصلة، ثم حلل مضمون القرار أو التطور وآليات تنفيذه، ثم اربطه بمؤشرات أوسع أو خطوات عملية مرتبطة به.
+4. قيّم التداعيات المحتملة والقيود والمخاطر والسيناريوهات عند وجود أساس مصدري. في الأزمات، حلل مواقف الأطراف وأسباب الخلاف وآثاره السياسية والاقتصادية والأمنية، ثم الخيارات الممكنة لتونس ومزاياها ومخاطرها وحدودها.
+5. اختم بخلاصة استراتيجية مركزة. بعدها أضف فقرة قصيرة من 4 إلى 5 أسطر عن دلالات الموضوع لتونس عندما تكون ذات صلة حقيقية. لا تجعل «تونس» عنوان قسم مستقلًا، ولا تفرض توصية عامة أو وساطة أو حيادًا إيجابيًا دون تحليل.
+6. اجعل البطاقة غنية بالمعلومات لكنها غير مكررة. قدّم علاقات السبب والنتيجة بوضوح، وميّز بين ما هو معلن وما هو تحليل أو توقع.
+7. استخدم العربية الفصحى الرسمية، وصحح أسماء المؤسسات والرتب والبلدان قدر الإمكان استنادًا إلى المصادر فقط. لا تنقل أخطاء المصدر على أنها حقائق مؤكدة.
+8. اشرح الاختصار الأجنبي أو اسم المؤسسة أو الشركة أو المختبر أو الآلية بين قوسين عند أول ذكر مباشرة بعد الاسم، بتعريف موجز دقيق. لا تكرر التعريف بلا حاجة.
+9. اكتب المبالغ بصيغة مختصرة دقيقة مثل «180.6 مليون أورو» أو «1.1 مليار أورو». استخدم «أورو» دائمًا لا «يورو». لا تنسب قيمة مشروع إجمالي إلى جزء واحد منه.
+10. لا تخترع أي أرقام أو أسعار أو مواصفات أو اقتباسات أو تواريخ أو اتفاقات أو دوافع سرية أو مواعيد تنفيذ. ميّز بين النية والمقترح والموافقة والعقد والتنفيذ والتسليم.
+11. عند نقل اتهام أو ادعاء من طرف في أزمة، انسبه بوضوح إلى الجهة التي طرحته ولا تعرضه كحقيقة مستقلة ما لم تؤيده أدلة مستقلة في المواد.
+12. لا تخلط بين تصريحات المسؤولين، والقرارات الرسمية، والتحليلات الصحفية، والتوقعات. اذكر عدم اليقين أو نقص المعلومات حين يكون مؤثرًا.
+13. استخدم فقط روابط المصادر الأصلية الواردة في المواد. لا تخترع مصادر أو روابط. اختر المصادر التي تسند فعلًا الاستنتاجات الجوهرية.
+14. إذا كانت المواد قديمة أو متناقضة أو سطحية أو لا تسمح ببطاقة موثوقة ذات قيمة، فأعد publish=false بدل اختلاق تحليل.
+15. إذا كانت البطاقة عن صفقة أو منظومة عسكرية، احتفظ بالتفاصيل التقنية والتعاقدية المهمة، وميّز بين الأداء الذي تعلنه الشركة والأداء المثبت ميدانيًا.
+16. إذا كانت المادة عن تحول تنظيمي أو استراتيجية دفاعية، اشرح العلاقة بين التنظيم والقدرات والجاهزية والقاعدة الصناعية والعمليات، دون افتراض أن إعلانًا يعني أن القدرة دخلت الخدمة.
+17. لا تُصدر حكمًا سياسيًا أو ترتيبًا غير مسند، ولا تصف نوايا طرف على أنها مؤكدة دون مصدر واضح.
+18. لا تكتب أي شيء خارج JSON.
+
+تاريخ اليوم في تونس: {today}
+
+المواد المصدرية:
+{json.dumps(source_material, ensure_ascii=False)}
+"""
 
 def main():
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        raise RuntimeError("GEMINI_API_KEY is missing. Reuse the existing GitHub Actions secret used by daily cards.")
+        raise RuntimeError("GEMINI_API_KEY is missing. The workflow reuses the existing GitHub Actions secret.")
 
     news = load_json(NEWS_FILE, {})
     items = news.get("items", []) if isinstance(news, dict) else []
-    data = load_json(DATA_FILE, {"deals": [], "systems": [], "checked_urls": []})
+    default_data = {kind: [] for kind in TYPE_ORDER}
+    default_data["checked_urls"] = []
+    data = load_json(DATA_FILE, default_data)
     if not isinstance(data, dict):
-        data = {"deals": [], "systems": [], "checked_urls": []}
-    data.setdefault("deals", [])
-    data.setdefault("systems", [])
-    data.setdefault("checked_urls", [])
+        data = default_data
+    for kind in TYPE_ORDER:
+        if not isinstance(data.get(kind), list):
+            data[kind] = []
+    if not isinstance(data.get("checked_urls"), list):
+        data["checked_urls"] = []
 
+    # Migrate the old two-category data shape without discarding existing cards.
+    checked = set(clean_text(url) for url in data["checked_urls"] if clean_text(url))
     sync_archive(data)
-    checked = set(data["checked_urls"])
 
-    cutoff = datetime.now(TZ) - timedelta(days=7)
-    candidates = []
-    seen = set()
-    for item in items:
-        url = clean_text(item.get("url"))
-        if not url or url in checked or url in seen:
-            continue
-        published = parse_date(item.get("published"))
-        if published and published < cutoff:
-            continue
-        score = candidate_score(item)
-        if score < 2:
-            continue
-        seen.add(url)
-        item["_score"] = score
-        item["_url"] = url
-        candidates.append(item)
-
-    candidates.sort(
-        key=lambda x: (x.get("_score", 0), parse_date(x.get("published")) or datetime.min.replace(tzinfo=TZ)),
-        reverse=True
-    )
-    candidates = candidates[:MAX_CANDIDATES]
+    candidates = select_candidates(items, checked)
     if not candidates:
-        print("No new suitable arms or military-technology items. Nothing published.")
+        print("No new, sufficiently relevant strategic sources were found.")
         return
 
     source_material = []
     for index, item in enumerate(candidates, start=1):
         title = clean_text(item.get("original_title") or item.get("title"))
-        desc = clean_text(item.get("original_description") or item.get("description"))
+        description = clean_text(
+            item.get("original_description") or item.get("description") or item.get("summary")
+        )
         body = get_article_text(item["_url"])
+        scores = item.get("_type_scores", {})
+        likely_types = [
+            TYPE_LABELS[kind] for kind in TYPE_ORDER
+            if scores.get(kind, 0) >= 2
+        ]
         source_material.append({
             "id": index,
-            "title": title[:400],
-            "description": desc[:1800],
+            "title": title[:450],
+            "description": description[:1600],
             "published": clean_text(item.get("published")),
             "source": clean_text(item.get("source")),
+            "category_from_feed": clean_text(item.get("category")),
+            "possible_topics": likely_types,
             "url": item["_url"],
             "article_text": body
         })
 
-    prompt = f"""
-أنت محرر متخصص في التسلح والصناعات الدفاعية لدى «المرصد الإفريقي للأمن والدفاع».
-أنشئ بطاقة استراتيجية واحدة فقط من المواد المرفقة، أو قرر عدم النشر إذا لم تتوفر مادة حديثة وذات قيمة ومعلومات كافية.
-
-التصنيفات المسموحة:
-- deal: صفقة تسلح كبرى، عقد، تسليم فعلي، اتفاق تصدير أو توطين صناعي محدد.
-- system: منظومة أو ابتكار عسكري أو معدة أو تقنية دفاعية جديدة.
-
-قواعد إلزامية:
-1. اعتمد فقط على المواد المصدرية المرفقة. لا تستخدم معرفة خارجية لسد النقص.
-2. لا تنشر إذا كانت المادة مجرد تعليق عام أو إعادة تدوير خبر قديم أو لا تحتوي تفاصيل كافية لبناء بطاقة مفيدة.
-3. لا تخترع الأسعار أو الأعداد أو المديات أو المواصفات أو الدول المشاركة أو التواريخ أو حالة التسليم.
-4. ميّز بدقة بين إعلان نية الشراء، وإبرام العقد، وبدء التصنيع، والتسليم الفعلي.
-5. ميّز بين المواصفات التي تعلنها الشركة المصنعة والأداء المثبت ميدانياً. لا تصف قدرة معلنة بأنها مثبتة عملياً دون دليل.
-6. اكتب بالعربية الفصحى بأسلوب رسمي تحليلي، على غرار بطاقات المرصد: مقدمة مرتبطة بالحدث، معلومات تقنية أو تعاقدية، دلالات صناعية واستراتيجية، تقييم عملياتي، ثم انعكاسات محتملة على تونس عند وجود أساس حقيقي لذلك.
-7. اجعل الأقسام متخصصة في موضوع البطاقة، لا تستخدم قالباً واحداً جامداً. لصفقة تسلح ركّز على الأطراف والمعدات والقيمة والجدول الزمني إذا كانت موثقة، والأهداف والدلالات. لمنظومة ركّز على تعريفها ومكوناتها ومواصفاتها ومهامها والقيود المعروفة.
-8. لا تفرض فقرة تونسية إذا لم تكن ذات قيمة؛ ولا تقدم توصية اقتناء مباشرة دون معلومات كافية.
-9. استخدم من 4 إلى 7 أقسام قصيرة. لا تكرر المعلومات، ولا تكتب حشواً.
-10. أدرج في المصادر روابط أصلية مأخوذة حصراً من المواد المرفقة. لا تخترع روابط أو أسماء مصادر.
-11. إذا لم يكن هناك حدث مناسب أو لا تكفي البيانات، أعد publish=false.
-12. عند ذكر أي شركة أو مختبر أو معهد أو منظمة أو مؤسسة أو آلية، افتح قوسًا مباشرة بعد الاسم وضع تعريفًا موجزًا بها في سطر أو أقل، مع تجنب تكرار التعريف في كل ظهور إذا أمكن.
-13. عند ذكر الأموال، لا تكتب الأرقام الطويلة كاملة بفواصل الآلاف. قرّبها إلى صيغة واضحة مثل «180.6 مليون أورو» أو «1.1 مليار أورو» مع الحفاظ على الدقة المناسبة للسياق، واستخدم كلمة «أورو» دائمًا لا «يورو». لا تنسب قيمة المشروع الإجمالية إلى جزء من الصفقة.
-14. اكتب الخلاصة الاستراتيجية أولًا، ثم أضف بعدها فقرة قصيرة من 4 إلى 5 أسطر عن دلالات الموضوع لتونس عند وجود أساس حقيقي لذلك. لا تجعل تونس عنوان قسم مستقلًا، ولا تفرض الإشارة إليها إذا لم تكن مفيدة.
-15. لا تكتب أي نص خارج JSON.
-
-تاريخ اليوم في تونس: {datetime.now(TZ).strftime("%Y-%m-%d")}
-
-المواد:
-{json.dumps(source_material, ensure_ascii=False)}
-"""
-
+    client = genai.Client(
+        api_key=api_key,
+        http_options=types.HttpOptions(timeout=180000)
+    )
     schema = {
         "type": "object",
         "properties": {
             "publish": {"type": "boolean"},
-            "type": {"type": "string", "enum": ["deal", "system"]},
+            "type": {"type": "string", "enum": TYPE_ORDER},
             "title": {"type": "string"},
             "region": {"type": "string"},
             "summary": {"type": "string"},
@@ -249,69 +397,97 @@ def main():
         },
         "required": ["publish", "type", "title", "region", "summary", "sections", "source_urls"]
     }
-
-    client = genai.Client(
-        api_key=api_key,
-        http_options=types.HttpOptions(timeout=180000)
-    )
     result = client.interactions.create(
         model=MODEL,
-        input=prompt,
+        input=build_prompt(source_material),
         response_format={"type": "text", "mime_type": "application/json", "schema": schema},
         generation_config={"temperature": 0.2, "thinking_level": "low"}
     )
-    output = json.loads(result.output_text or "{}")
+    try:
+        output = json.loads(result.output_text or "{}")
+    except json.JSONDecodeError:
+        raise RuntimeError("Gemini returned invalid JSON; no card was published.")
 
-    # Mark considered stories so the daily workflow does not repeatedly spend quota on them.
-    data["checked_urls"] = list(dict.fromkeys(data["checked_urls"] + [x["_url"] for x in candidates]))[-1000:]
+    # Record the candidate URLs considered during this run, including rejected ones,
+    # so the same weak material is not repeatedly submitted every day.
+    data["checked_urls"] = list(dict.fromkeys(
+        [clean_text(url) for url in data["checked_urls"] if clean_text(url)]
+        + [item["_url"] for item in candidates]
+    ))[-1500:]
 
     if not output.get("publish"):
         save_json(DATA_FILE, data)
-        print("Model found no sufficiently substantiated strategic card. No publication.")
+        sync_archive(data)
+        print("Model rejected the source material as insufficient for a reliable card.")
         return
 
+    kind = clean_text(output.get("type"))
+    title = clean_text(output.get("title"))
+    sections = [
+        {"heading": clean_text(section.get("heading")), "text": clean_text(section.get("text"))}
+        for section in output.get("sections", [])
+        if isinstance(section, dict) and clean_text(section.get("heading")) and clean_text(section.get("text"))
+    ]
     valid_urls = {item["url"] for item in source_material}
-    chosen_urls = [url for url in output.get("source_urls", []) if url in valid_urls]
-    if not chosen_urls or not clean_text(output.get("title")) or len(output.get("sections", [])) < 3:
+    chosen_urls = [
+        clean_text(url) for url in output.get("source_urls", [])
+        if clean_text(url) in valid_urls
+    ]
+    chosen_urls = list(dict.fromkeys(chosen_urls))
+
+    if (
+        kind not in TYPE_LABELS
+        or not title
+        or len(sections) < 3
+        or not chosen_urls
+    ):
         save_json(DATA_FILE, data)
-        print("Generated result failed validation. No publication.")
+        sync_archive(data)
+        print("Generated card failed type, section, title, or source validation. No publication.")
         return
 
     source_by_url = {item["url"]: item for item in source_material}
     sources = [
-        {"title": source_by_url[url]["source"] or source_by_url[url]["title"], "url": url}
-        for url in dict.fromkeys(chosen_urls)
+        {
+            "title": source_by_url[url]["source"] or source_by_url[url]["title"],
+            "url": url
+        }
+        for url in chosen_urls
     ]
-    kind = "deals" if output.get("type") == "deal" else "systems"
     card = {
         "id": datetime.now(TZ).strftime("%Y%m%d%H%M%S"),
-        "title": clean_text(output.get("title")),
+        "type": kind,
+        "kind": kind,
+        "kind_label": TYPE_LABELS[kind],
+        "title": title,
         "date": datetime.now(TZ).strftime("%Y-%m-%d"),
         "region": clean_text(output.get("region")),
         "summary": clean_text(output.get("summary")),
-        "sections": [
-            {"heading": clean_text(section.get("heading")), "text": clean_text(section.get("text"))}
-            for section in output.get("sections", [])
-            if clean_text(section.get("heading")) and clean_text(section.get("text"))
-        ],
+        "sections": sections,
         "sources": sources
     }
 
-    existing_titles = {
-        clean_text(card_item.get("title")).lower()
-        for card_item in data[kind]
+    existing_cards = [
+        card_item
+        for category in TYPE_ORDER
+        for card_item in data.get(category, [])
         if isinstance(card_item, dict)
-    }
-    if card["title"].lower() in existing_titles:
+    ]
+    title_key = re.sub(r"\W+", "", title.lower())
+    if any(
+        re.sub(r"\W+", "", clean_text(existing.get("title")).lower()) == title_key
+        for existing in existing_cards
+    ):
         save_json(DATA_FILE, data)
+        sync_archive(data)
         print("A card with the same title already exists. Skipping duplicate.")
         return
 
     data[kind].append(card)
-    data[kind] = data[kind][-150:]
+    data[kind] = data[kind][-MAX_ARCHIVE_CARDS_PER_TYPE:]
     sync_archive(data)
     save_json(DATA_FILE, data)
-    print(f"Published strategic card: {card['title']} ({kind})")
+    print(f"Published strategic card: {title} ({TYPE_LABELS[kind]})")
 
 if __name__ == "__main__":
     main()
