@@ -1,6 +1,8 @@
 import json
 import os
 import re
+import xml.etree.ElementTree as ET
+from html import unescape
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -19,6 +21,31 @@ MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 MAX_CANDIDATES = 12
 MAX_CARD_AGE_DAYS = 7
 MAX_ARCHIVE_CARDS_PER_TYPE = 150
+
+# Supplemental searches widen strategic coverage beyond the existing daily-news
+# feed, especially for diplomacy, defense policy, logistics, and defense economics.
+STRATEGIC_RSS_QUERIES = {
+    "defense_economics": [
+        '"defense economics" OR "defence economics" OR "critical minerals" Africa security',
+        '"économie de défense" OR "économie de la défense" Afrique sécurité'
+    ],
+    "military_transformation": [
+        '"military restructuring" OR "autonomous warfare" OR "military AI" armed forces',
+        '"réforme militaire" OR "intelligence artificielle militaire" forces armées'
+    ],
+    "defense_strategy": [
+        '"military mobility" OR "defense readiness" OR "military logistics" Europe NATO',
+        '"national security strategy" OR "defense policy" military alliance'
+    ],
+    "regional_crisis": [
+        '"diplomatic crisis" OR "sever diplomatic relations" Algeria UAE Libya Sudan Sahel',
+        '"crise diplomatique" OR "قطع العلاقات الدبلوماسية" الجزائر الإمارات ليبيا السودان الساحل'
+    ],
+    "strategic_assessment": [
+        '"geopolitical competition" OR "regional security" Africa Sahel North Africa',
+        '"توازنات إقليمية" OR "الأمن الإقليمي" OR "السياسة الخارجية" شمال إفريقيا الساحل'
+    ]
+}
 
 TYPE_LABELS = {
     "deals": "صفقات التسلح الكبرى",
@@ -148,6 +175,70 @@ def get_article_text(url):
     except Exception as exc:
         print(f"Source extraction failed for {url}: {type(exc).__name__}")
         return ""
+
+def fetch_strategic_rss_items():
+    """Fetch a small, recent, multilingual source pool for strategic topics."""
+    collected = []
+    seen = set()
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; AfricanSecurityObserver/1.0)"}
+    for topic, queries in STRATEGIC_RSS_QUERIES.items():
+        for query in queries:
+            try:
+                response = requests.get(
+                    "https://news.google.com/rss/search",
+                    params={"q": query + " when:7d", "hl": "en-US", "gl": "US", "ceid": "US:en"},
+                    timeout=18,
+                    headers=headers
+                )
+                if response.status_code != 200:
+                    print(f"Strategic RSS unavailable for {topic}: HTTP {response.status_code}")
+                    continue
+                root = ET.fromstring(response.content)
+                entries = root.findall("./channel/item")
+                for entry in entries[:4]:
+                    title = clean_text(unescape(re.sub(r"<[^>]+>", " ", entry.findtext("title") or "")))
+                    wrapper_url = clean_text(entry.findtext("link") or "")
+                    description = clean_text(unescape(re.sub(
+                        r"<[^>]+>", " ", entry.findtext("description") or ""
+                    )))
+                    published = clean_text(entry.findtext("pubDate") or "")
+                    source_node = entry.find("source")
+                    source = clean_text(source_node.text if source_node is not None else "")
+                    if not title or not wrapper_url:
+                        continue
+
+                    # Follow Google's redirect so published source links point to
+                    # the original publisher whenever the redirect is available.
+                    article_url = wrapper_url
+                    try:
+                        redirected = requests.get(
+                            wrapper_url, timeout=8, headers=headers,
+                            allow_redirects=True, stream=True
+                        )
+                        if redirected.url and redirected.url.startswith(("http://", "https://")):
+                            article_url = redirected.url
+                        redirected.close()
+                    except Exception:
+                        pass
+
+                    if article_url in seen:
+                        continue
+                    seen.add(article_url)
+                    collected.append({
+                        "title": title,
+                        "original_title": title,
+                        "description": description,
+                        "original_description": description,
+                        "published": published,
+                        "source": source,
+                        "category": "strategic",
+                        "_strategic_topic": topic,
+                        "url": article_url
+                    })
+            except Exception as exc:
+                print(f"Strategic RSS search failed for {topic}: {type(exc).__name__}")
+    print(f"Collected {len(collected)} supplemental strategic RSS items.")
+    return collected
 
 def score_types(item):
     title = clean_text(item.get("original_title") or item.get("title"))
@@ -334,6 +425,7 @@ def main():
 
     news = load_json(NEWS_FILE, {})
     items = news.get("items", []) if isinstance(news, dict) else []
+    items = list(items) + fetch_strategic_rss_items()
     default_data = {kind: [] for kind in TYPE_ORDER}
     default_data["checked_urls"] = []
     data = load_json(DATA_FILE, default_data)
