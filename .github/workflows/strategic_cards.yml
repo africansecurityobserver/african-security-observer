@@ -46,6 +46,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No strategic-card changes to commit."
           else
-            git commit -m "Generate strategic arms and military systems card"
+            git commit -m "Generate strategic analysis card"
             git push
           fi
