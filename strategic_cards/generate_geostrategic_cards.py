@@ -98,7 +98,7 @@ def score(item):
 def sync_archive(data):
  years={}
  for kind,label in LABELS.items():
-  for card in data.get(kind,[]) if isinstance(data.get(kind),list) else []:
+  for card in (data.get(kind,[]) if isinstance(data.get(kind),list) else []):
    if not isinstance(card,dict):continue
    d=clean(card.get("date"))[:10]
    try:
@@ -158,7 +158,7 @@ def main():
  for k in LABELS:
   if not isinstance(data.get(k),list):data[k]=[]
  data.setdefault("checked_strategic_urls",[])
- checked=set(data["checked_strategic_urls"])
+ checked=set(data["checked_strategic_urls"] if isinstance(data["checked_strategic_urls"],list) else [])
  cutoff=datetime.now(TZ)-timedelta(days=MAX_AGE_DAYS)
  candidates=[];seen=set()
  for item in (items if isinstance(items,list) else []):
