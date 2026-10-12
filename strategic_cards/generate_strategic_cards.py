@@ -38,7 +38,7 @@ STRATEGIC_RSS_QUERIES = {
         '"diplomatic crisis" OR "sever diplomatic relations" OR "crise diplomatique" OR "قطع العلاقات الدبلوماسية" Algeria UAE Libya Sudan Sahel'
     ],
     "strategic_assessment": [
-        '"geopolitical competition" OR "regional security" OR "توازنات إقليمية" OR "الأمن الإقليمي" Africa Sahel North Africa'
+        '"geopolitical competition" OR "regional security" OR "national security strategy" OR "security strategy" OR "defense policy" OR "defence policy" OR "توازنات إقليمية" OR "الأمن الإقليمي" OR "استراتيجية الأمن القومي" OR "السياسة الدفاعية" Africa Sahel North Africa'
     ]
 }
 
@@ -378,7 +378,7 @@ def build_prompt(source_material):
     return f"""
 أنت رئيس تحرير ومحلل استراتيجي في «المرصد الإفريقي للأمن والدفاع». المطلوب إعداد بطاقة استراتيجية عربية عميقة ومقنعة اعتمادًا على المواد المصدرية المرفقة وحدها. هذه ليست بطاقة خبرية قصيرة، بل تقدير موقف منظم يشرح الحدث وسياقه ودلالاته وتداعياته.
 
-اختر تصنيفًا واحدًا فقط من التصنيفات التالية، بحسب جوهر الموضوع:
+اختر تصنيفًا واحدًا فقط من التصنيفات التالية، بحسب جوهر الموضوع. ويشمل strategic_assessment أيضًا استراتيجيات الأمن القومي والسياسة الخارجية عندما لا ينطبق تصنيف أدق:
 - deals: صفقات التسلح الكبرى والعقود والتسليمات والتعاون الصناعي المحدد.
 - systems: المنظومات والابتكارات العسكرية والتقنيات والمعدات.
 - defense_economics: اقتصاد الدفاع، التمويل، الاستثمارات، المعادن الحيوية، سلاسل الإمداد، أدوات النفوذ الاقتصادي.
