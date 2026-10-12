@@ -355,6 +355,8 @@ def sync_archive(data):
             years[year]["months"][month]["cards"].append({
                 "date": date_value,
                 "title": clean_text(card.get("title")),
+                "subject": clean_text(card.get("subject")),
+                "slot": clean_text(card.get("slot")),
                 "path": relative_path,
                 "kind": kind,
                 "kind_label": TYPE_LABELS.get(kind, TYPE_LABELS["strategic_assessment"])
