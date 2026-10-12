@@ -373,7 +373,7 @@ def sync_archive(data):
         "years": output_years
     })
 
-def build_prompt(source_material):
+def build_prompt(source_material, slot_label, window_label, date_label):
     today = datetime.now(TZ).strftime("%Y-%m-%d")
     return f"""
 أنت رئيس تحرير ومحلل استراتيجي في «المرصد الإفريقي للأمن والدفاع». المطلوب إعداد بطاقة استراتيجية عربية عميقة ومقنعة اعتمادًا على المواد المصدرية المرفقة وحدها. هذه ليست بطاقة خبرية قصيرة، بل تقدير موقف منظم يشرح الحدث وسياقه ودلالاته وتداعياته.
@@ -408,19 +408,61 @@ def build_prompt(source_material):
 18. لا تكتب أي شيء خارج JSON.
 
 تاريخ اليوم في تونس: {today}
+الفترة الزمنية المعتمدة لهذه البطاقة: {window_label}
+نوع البطاقة المطلوب: {slot_label}
+عنوان الموضوع الذي تقترحه داخل JSON يجب أن يكون عنوانًا تحليليًا يعبّر عن القضية المختارة، لا عنوان النشرة اليومية. سيُحفظ هذا العنوان بوصفه موضوع البطاقة، بينما سيُعتمد عنوان النشر الثابت وفق الفترة: «البطاقة الاستراتيجية {slot_label} ليوم {date_label}».
+لا تستخدم أي خبر خارج الفترة الزمنية المحددة أعلاه، ولا تعتمد على معلومات منشورة قبل بدايتها أو بعدها.
 
 المواد المصدرية:
 {json.dumps(source_material, ensure_ascii=False)}
 """
+
+ARABIC_MONTHS = {
+    1: "جانفي", 2: "فيفري", 3: "مارس", 4: "أفريل",
+    5: "ماي", 6: "جوان", 7: "جويلية", 8: "أوت",
+    9: "سبتمبر", 10: "أكتوبر", 11: "نوفمبر", 12: "ديسمبر"
+}
+
+def arabic_date_label(value):
+    return f"{value.day} {ARABIC_MONTHS[value.month]} {value.year}"
+
+def filter_items_for_slot(items, slot, now):
+    """Only use articles published inside the requested Tunisia-local daily window."""
+    if slot == "morning":
+        start = now.replace(hour=0, minute=1, second=0, microsecond=0)
+        end = now.replace(hour=8, minute=55, second=59, microsecond=999999)
+        slot_label = "الصباحية"
+        window_label = "من 00:01 إلى 08:55 بتوقيت تونس"
+    elif slot == "evening":
+        start = now.replace(hour=9, minute=1, second=0, microsecond=0)
+        end = now.replace(hour=23, minute=50, second=59, microsecond=999999)
+        slot_label = "المسائية"
+        window_label = "من 09:01 إلى 23:50 بتوقيت تونس"
+    else:
+        raise ValueError("CARD_SLOT must be either 'morning' or 'evening'.")
+
+    filtered = []
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        published = parse_date(item.get("published"))
+        if published is not None and start <= published <= end:
+            filtered.append(item)
+    print(f"Slot={slot}; window={window_label}; in-window articles={len(filtered)}")
+    return filtered, slot_label, window_label
 
 def main():
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         raise RuntimeError("GEMINI_API_KEY is missing. The workflow reuses the existing GitHub Actions secret.")
 
+    slot = clean_text(os.getenv("CARD_SLOT", "morning")).lower()
+    now = datetime.now(TZ)
+    date_label = arabic_date_label(now)
     news = load_json(NEWS_FILE, {})
     items = news.get("items", []) if isinstance(news, dict) else []
     items = list(items) + fetch_strategic_rss_items()
+    items, slot_label, window_label = filter_items_for_slot(items, slot, now)
     default_data = {kind: [] for kind in TYPE_ORDER}
     default_data["checked_urls"] = []
     data = load_json(DATA_FILE, default_data)
@@ -438,7 +480,7 @@ def main():
 
     candidates = select_candidates(items, checked)
     if not candidates:
-        print("No new, sufficiently relevant strategic sources were found.")
+        print(f"No new, sufficiently relevant sources were found for the {slot_label} card; no card will be fabricated.")
         return
 
     source_material = []
@@ -494,7 +536,7 @@ def main():
     }
     result = client.interactions.create(
         model=MODEL,
-        input=build_prompt(source_material),
+        input=build_prompt(source_material, slot_label, window_label, date_label),
         response_format={"type": "text", "mime_type": "application/json", "schema": schema},
         generation_config={"temperature": 0.2, "thinking_level": "low"}
     )
@@ -564,15 +606,18 @@ def main():
         }
         for url in chosen_urls
     ]
+    publication_title = f"البطاقة الاستراتيجية {slot_label} ليوم {date_label}"
     card = {
         "id": datetime.now(TZ).strftime("%Y%m%d%H%M%S"),
+        "slot": slot,
         "type": kind,
         "kind": kind,
         "kind_label": TYPE_LABELS[kind],
-        "title": title,
-        "date": datetime.now(TZ).strftime("%Y-%m-%d"),
+        "title": publication_title,
+        "subject": title,
+        "date": now.strftime("%Y-%m-%d"),
         "region": clean_text(output.get("region")),
-        "summary": clean_text(output.get("summary")),
+        "summary": f"موضوع البطاقة: {title}. {clean_text(output.get('summary'))}",
         "sections": sections,
         "sources": sources
     }
@@ -585,7 +630,7 @@ def main():
     ]
     title_key = re.sub(r"\W+", "", title.lower())
     if any(
-        re.sub(r"\W+", "", clean_text(existing.get("title")).lower()) == title_key
+        re.sub(r"\W+", "", clean_text(existing.get("subject") or existing.get("title")).lower()) == title_key
         for existing in existing_cards
     ):
         save_json(DATA_FILE, data)
