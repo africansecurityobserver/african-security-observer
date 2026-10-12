@@ -416,14 +416,14 @@ def main():
     except json.JSONDecodeError:
         raise RuntimeError("Gemini returned invalid JSON; no card was published.")
 
-    # Record the candidate URLs considered during this run, including rejected ones,
-    # so the same weak material is not repeatedly submitted every day.
-    data["checked_urls"] = list(dict.fromkeys(
-        [clean_text(url) for url in data["checked_urls"] if clean_text(url)]
-        + [item["_url"] for item in candidates]
-    ))[-1500:]
-
+    # If no reliable card can be produced, mark these sources as reviewed so
+    # weak material is not submitted repeatedly. When a card is published, only
+    # its selected sources are marked; other candidates remain available later.
     if not output.get("publish"):
+        data["checked_urls"] = list(dict.fromkeys(
+            [clean_text(url) for url in data["checked_urls"] if clean_text(url)]
+            + [item["_url"] for item in candidates]
+        ))[-1500:]
         save_json(DATA_FILE, data)
         sync_archive(data)
         print("Model rejected the source material as insufficient for a reliable card.")
@@ -449,10 +449,19 @@ def main():
         or len(sections) < 3
         or not chosen_urls
     ):
+        data["checked_urls"] = list(dict.fromkeys(
+            [clean_text(url) for url in data["checked_urls"] if clean_text(url)]
+            + [item["_url"] for item in candidates]
+        ))[-1500:]
         save_json(DATA_FILE, data)
         sync_archive(data)
         print("Generated card failed type, section, title, or source validation. No publication.")
         return
+
+    data["checked_urls"] = list(dict.fromkeys(
+        [clean_text(url) for url in data["checked_urls"] if clean_text(url)]
+        + chosen_urls
+    ))[-1500:]
 
     source_by_url = {item["url"]: item for item in source_material}
     sources = [
