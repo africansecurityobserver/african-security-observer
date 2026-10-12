@@ -196,7 +196,7 @@ def main():
  except Exception:out={}
  data["checked_strategic_urls"]=list(dict.fromkeys(data["checked_strategic_urls"]+[x["_url"] for x in candidates]))[-1500:]
  if not out.get("publish"):
-  save(DATA_FILE,data);print("Model rejected candidates; no card published.");return
+  sync_archive(data);save(DATA_FILE,data);print("Model rejected candidates; no card published.");return
  valid={x["url"] for x in material}
  urls=[]
  for u in out.get("source_urls",[]):
@@ -210,7 +210,7 @@ def main():
  if (kind not in DESCRIPTIONS or not urls or len(clean(out.get("title")))<12
      or len(clean(out.get("summary")))<80 or len(sections)<4
      or not any("خلاصة استراتيجية" in s["heading"] for s in sections)):
-  save(DATA_FILE,data);print("Validation failed; no card published.");return
+  sync_archive(data);save(DATA_FILE,data);print("Validation failed; no card published.");return
  by_url={x["url"]:x for x in material}
  sources=[{"title":by_url[u]["source"] or by_url[u]["title"],"url":u} for u in urls]
  card={"id":datetime.now(TZ).strftime("%Y%m%d%H%M%S"),"title":clean(out.get("title")),
@@ -219,7 +219,7 @@ def main():
   "kind":kind,"kind_label":LABELS[kind]}
  titles={clean(c.get("title")).casefold() for c in data[kind] if isinstance(c,dict)}
  if card["title"].casefold() in titles:
-  save(DATA_FILE,data);print("Duplicate title skipped.");return
+  sync_archive(data);save(DATA_FILE,data);print("Duplicate title skipped.");return
  data[kind].append(card);data[kind]=data[kind][-150:]
  sync_archive(data);save(DATA_FILE,data)
  print(f"Published strategic card: {card['title']} ({LABELS[kind]})")
