@@ -1,0 +1,39 @@
+name: Validate Strategic Card Code
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "strategic_cards/generate_strategic_cards.py"
+      - "strategic_cards/generate_geostrategic_cards.py"
+      - "strategic_cards.json"
+      - "strategic_cards/archive/index.json"
+      - ".github/workflows/strategic_cards.yml"
+      - ".github/workflows/validate-strategic-cards.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile both generators
+        run: |
+          python -m py_compile strategic_cards/generate_strategic_cards.py strategic_cards/generate_geostrategic_cards.py
+      - name: Validate strategic-card JSON files
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for name in ("strategic_cards.json", "strategic_cards/archive/index.json"):
+              with Path(name).open(encoding="utf-8") as f:
+                  json.load(f)
+              print(f"Valid JSON: {name}")
+          PY
