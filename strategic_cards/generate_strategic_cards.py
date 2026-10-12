@@ -26,24 +26,19 @@ MAX_ARCHIVE_CARDS_PER_TYPE = 150
 # feed, especially for diplomacy, defense policy, logistics, and defense economics.
 STRATEGIC_RSS_QUERIES = {
     "defense_economics": [
-        '"defense economics" OR "defence economics" OR "critical minerals" Africa security',
-        '"économie de défense" OR "économie de la défense" Afrique sécurité'
+        '"defense economics" OR "defence economics" OR "critical minerals" OR "اقتصاد الدفاع" OR "المعادن الحيوية" Africa security'
     ],
     "military_transformation": [
-        '"military restructuring" OR "autonomous warfare" OR "military AI" armed forces',
-        '"réforme militaire" OR "intelligence artificielle militaire" forces armées'
+        '"military restructuring" OR "autonomous warfare" OR "military AI" OR "إعادة هيكلة الجيش" OR "الذكاء الاصطناعي العسكري"'
     ],
     "defense_strategy": [
-        '"military mobility" OR "defense readiness" OR "military logistics" Europe NATO',
-        '"national security strategy" OR "defense policy" military alliance'
+        '"military mobility" OR "defense readiness" OR "military logistics" OR "الجاهزية الدفاعية" OR "النقل العسكري" Europe NATO'
     ],
     "regional_crisis": [
-        '"diplomatic crisis" OR "sever diplomatic relations" Algeria UAE Libya Sudan Sahel',
-        '"crise diplomatique" OR "قطع العلاقات الدبلوماسية" الجزائر الإمارات ليبيا السودان الساحل'
+        '"diplomatic crisis" OR "sever diplomatic relations" OR "crise diplomatique" OR "قطع العلاقات الدبلوماسية" Algeria UAE Libya Sudan Sahel'
     ],
     "strategic_assessment": [
-        '"geopolitical competition" OR "regional security" Africa Sahel North Africa',
-        '"توازنات إقليمية" OR "الأمن الإقليمي" OR "السياسة الخارجية" شمال إفريقيا الساحل'
+        '"geopolitical competition" OR "regional security" OR "توازنات إقليمية" OR "الأمن الإقليمي" Africa Sahel North Africa'
     ]
 }
 
