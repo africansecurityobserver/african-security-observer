@@ -59,6 +59,47 @@ CENTERS = [
     {"name": "المكتب الوطني للأبحاث الآسيوية (NBR)", "short": "NBR", "domain": "nbr.org", "query": "Asia OR security OR defense OR military OR geopolitics"},
     {"name": "معهد أبحاث الدفاع والأمن الوطني التايواني (INDSR)", "short": "INDSR", "domain": "indsr.org.tw", "query": "defense OR security OR military OR strategy OR Indo-Pacific"},
 ]
+    {"name": "معهد الدراسات الأمنية الأوروبي (EUISS)", "short": "EUISS", "domain": "iss.europa.eu", "query": "Africa OR Mediterranean OR Sahel OR security OR defence OR defense OR strategic autonomy"},
+    {"name": "مركز الأمن الأمريكي الجديد (CNAS)", "short": "CNAS", "domain": "cnas.org", "query": "national security OR defense OR military OR technology OR China OR Russia"},
+    {"name": "مركز بلفر للعلوم والشؤون الدولية", "short": "Belfer Center", "domain": "belfercenter.org", "query": "security OR defense OR nuclear OR cyber OR energy OR geopolitics"},
+    {"name": "معهد الشرق الأوسط", "short": "Middle East Institute", "domain": "mei.edu", "query": "North Africa OR Tunisia OR Libya OR Algeria OR Mediterranean OR security OR defense"},
+    {"name": "المركز العربي في واشنطن", "short": "Arab Center Washington DC", "domain": "arabcenterdc.org", "query": "Tunisia OR Libya OR Algeria OR North Africa OR Mediterranean OR security"},
+    {"name": "مركز الإمارات للسياسات", "short": "Emirates Policy Center", "domain": "epc.ae", "query": "North Africa OR Libya OR Algeria OR Mediterranean OR security OR geopolitics"},
+    {"name": "مركز أبحاث الخليج", "short": "Gulf Research Center", "domain": "grc.net", "query": "Mediterranean OR North Africa OR energy security OR maritime security OR geopolitics"},
+    {"name": "تريندز للبحوث والاستشارات", "short": "TRENDS Research", "domain": "trendsresearch.org", "query": "Africa OR North Africa OR security OR defense OR terrorism OR geopolitics"},
+    {"name": "مؤسسة سيتا التركية", "short": "SETA", "domain": "setav.org", "query": "Libya OR Tunisia OR Algeria OR North Africa OR Mediterranean OR security"},
+    {"name": "مركز الاقتصاد والسياسة الخارجية التركي", "short": "EDAM", "domain": "edam.org.tr", "query": "Mediterranean OR Libya OR North Africa OR defense OR security OR NATO"},
+    {"name": "المعهد النرويجي للشؤون الدولية (NUPI)", "short": "NUPI", "domain": "nupi.no", "query": "Africa OR Sahel OR Mediterranean OR security OR conflict OR geopolitics"},
+    {"name": "المعهد الدنماركي للدراسات الدولية (DIIS)", "short": "DIIS", "domain": "diis.dk", "query": "Africa OR Sahel OR migration OR security OR defense OR geopolitics"},
+    {"name": "المعهد البولندي للشؤون الدولية (PISM)", "short": "PISM", "domain": "pism.pl", "query": "Africa OR Mediterranean OR NATO OR security OR defense OR geopolitics"},
+    {"name": "المعهد الإستوني للسياسة الخارجية", "short": "Estonian Foreign Policy Institute", "domain": "evi.ee", "query": "NATO OR Russia OR Europe OR security OR defense OR geopolitics"},
+    {"name": "وكالة أبحاث الدفاع السويدية (FOI)", "short": "FOI", "domain": "foi.se", "query": "defense OR security OR military OR Russia OR NATO OR cyber"},
+    {"name": "الجمعية الألمانية للسياسة الخارجية (DGAP)", "short": "DGAP", "domain": "dgap.org", "query": "Africa OR Mediterranean OR Europe OR security OR defense OR geopolitics"},
+    {"name": "مؤسسة كونراد أديناور", "short": "Konrad Adenauer Stiftung", "domain": "kas.de", "query": "Africa OR Sahel OR North Africa OR security OR geopolitics"},
+    {"name": "مؤسسة فريدريش إيبرت", "short": "Friedrich Ebert Stiftung", "domain": "fes.de", "query": "North Africa OR Tunisia OR Libya OR Sahel OR peace OR security"},
+    {"name": "المعهد الجنوب إفريقي للشؤون الدولية (SAIIA)", "short": "SAIIA", "domain": "saiia.org.za", "query": "Africa OR Sahel OR security OR defense OR conflict OR geopolitics"},
+    {"name": "معهد الدراسات الدفاعية والاستراتيجية في إسلام آباد", "short": "ISSI", "domain": "issi.org.pk", "query": "Africa OR Middle East OR security OR defense OR military OR geopolitics"},
+    {"name": "معهد اليابان للشؤون الدولية (JIIA)", "short": "JIIA", "domain": "jiia.or.jp", "query": "security OR defense OR Middle East OR Africa OR maritime OR geopolitics"},
+    {"name": "معهد جنيف للسياسات الأمنية (GCSP)", "short": "GCSP", "domain": "gcsp.ch", "query": "cybersecurity OR defense OR security OR artificial intelligence OR geopolitics"},
+    {"name": "مسح الأسلحة الصغيرة (Small Arms Survey)", "short": "Small Arms Survey", "domain": "smallarmssurvey.org", "query": "Africa OR Sahel OR Libya OR arms trafficking OR armed violence"},
+    {"name": "المعهد الدولي لنزع السلاح (UNIDIR)", "short": "UNIDIR", "domain": "unidir.org", "query": "cyber OR artificial intelligence OR arms control OR weapons OR security"},
+    {"name": "المبادرة العالمية لمكافحة الجريمة المنظمة العابرة للحدود", "short": "Global Initiative", "domain": "globalinitiative.net", "query": "Africa OR Sahel OR Libya OR smuggling OR trafficking OR organized crime"},
+    {"name": "شبكة القيادة الأوروبية", "short": "European Leadership Network", "domain": "europeanleadershipnetwork.org", "query": "NATO OR Russia OR nuclear OR European security OR defense"},
+    {"name": "المعهد السويسري لأبحاث السلام (swisspeace)", "short": "swisspeace", "domain": "swisspeace.ch", "query": "Africa OR Sahel OR conflict OR peacebuilding OR security"},
+    {"name": "المركز البرازيلي للعلاقات الدولية (CEBRI)", "short": "CEBRI", "domain": "cebri.org", "query": "Africa OR Mediterranean OR security OR defense OR geopolitics"},
+    {"name": "مركز الدراسات الاستراتيجية والأمنية في بنغلادش", "short": "BIPSS", "domain": "bipss.org.bd", "query": "Africa OR Middle East OR security OR defense OR terrorism"},
+    {"name": "مركز الدراسات السياسية والاستراتيجية بالأهرام", "short": "ACPSS", "domain": "acpss.ahram.org.eg", "query": "Libya OR Tunisia OR Algeria OR North Africa OR security OR military"},
+    {"name": "المركز المصري للفكر والدراسات الاستراتيجية", "short": "ECSS", "domain": "ecss.com.eg", "query": "Libya OR Tunisia OR Algeria OR North Africa OR security OR defense"},
+    {"name": "مركز الدراسات الاستراتيجية في جامعة أديس أبابا", "short": "IPSS Addis Ababa", "domain": "ipss-addis.org", "query": "Africa OR Sahel OR security OR conflict OR peace"},
+    {"name": "مركز تحليل البيانات المتعلقة بالنزاعات المسلحة (ACLED)", "short": "ACLED", "domain": "acleddata.com", "query": "Africa OR Sahel OR Libya OR Algeria OR conflict OR political violence"},
+    {"name": "المعهد الدولي لمكافحة الإرهاب (ICT)", "short": "ICT", "domain": "ict.org.il", "query": "Africa OR Sahel OR North Africa OR terrorism OR counterterrorism"},
+    {"name": "مركز أولويات الدفاع", "short": "Defense Priorities", "domain": "defensepriorities.org", "query": "Africa OR Middle East OR military strategy OR defense OR foreign policy"},
+    {"name": "معهد كوينسي للحكم المسؤول", "short": "Quincy Institute", "domain": "quincyinst.org", "query": "Africa OR Middle East OR military intervention OR foreign policy OR security"},
+    {"name": "مركز أبحاث السياسة الخارجية النمساوي (oiip)", "short": "oiip", "domain": "oiip.ac.at", "query": "Mediterranean OR North Africa OR security OR migration OR geopolitics"},
+    {"name": "معهد الدراسات الأمنية والتنمية (ISDP)", "short": "ISDP", "domain": "isdp.eu", "query": "Africa OR Middle East OR security OR defense OR geopolitics"},
+    {"name": "معهد أبحاث السلام والسياسة الأمنية في هامبورغ (IFSH)", "short": "IFSH", "domain": "ifsh.de", "query": "security OR defense OR arms control OR nuclear OR Europe"},
+    {"name": "المعهد الملكي للدراسات الدفاعية (RINSA)", "short": "RINSA", "domain": "rinsa.org", "query": "Africa OR security OR defense OR military OR strategy"},
+]
 
 # Strict relevance filter: keep only work directly about Tunisia, work on
 # nearby/regional issues with a plausible spillover to Tunisia, or global
@@ -377,7 +418,16 @@ def main():
         # Google News RSS supports after: dates; this gives the initial
         # 1–13 October backfill and then includes newer posts on every run.
         after_date = (cutoff.date() - timedelta(days=1)).isoformat()
-        query = f"site:{center['domain']} ({center['query']}) after:{after_date}"
+        # Combine each center's core themes with Tunisia's strategic
+        # neighbourhood so regional work is discoverable across all providers.
+        regional_terms = (
+            "Tunisia OR Tunisian OR Libya OR Libyan OR Algeria OR Algerian "
+            "OR Morocco OR Maghreb OR Mediterranean OR Sahel OR North Africa"
+        )
+        query = (
+            f"site:{center['domain']} ({center['query']} OR {regional_terms}) "
+            f"after:{after_date}"
+        )
         params = {"q": query, "hl": "en-US", "gl": "US", "ceid": "US:en"}
         try:
             response = session.get("https://news.google.com/rss/search", params=params, timeout=22)
