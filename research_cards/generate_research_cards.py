@@ -1,11 +1,12 @@
-import hashlib, json, os, re
+import hashlib, json, os, re, io
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 from zoneinfo import ZoneInfo
 import requests
 from googlenewsdecoder import gnewsdecoder
 from selectolax.lexbor import LexborHTMLParser
+from pypdf import PdfReader
 from google import genai
 from google.genai import types
 
@@ -31,48 +32,167 @@ def clean(value):
     value=re.sub(r"<[^>]+>"," ",str(value or ""))
     return re.sub(r"\s+"," ",value).strip()
 
+def fetch_url(url):
+    """Fetch a page or PDF with bounded timeouts and redirects."""
+    response = requests.get(url, headers=HEADERS, timeout=30, allow_redirects=True)
+    response.raise_for_status()
+    return response
+
+
+def extract_pdf_text(response):
+    """Extract readable text from a PDF; return empty text for scanned/unreadable files."""
+    try:
+        reader = PdfReader(io.BytesIO(response.content))
+        pages = []
+        for page in reader.pages[:100]:
+            text = page.extract_text() or ""
+            if text.strip():
+                pages.append(text)
+        return clean(" ".join(pages))[:60000]
+    except Exception as exc:
+        print(f"PDF text extraction failed: {type(exc).__name__}")
+        return ""
+
+
+def html_main_text(html):
+    parser = LexborHTMLParser(html)
+    for sel in ("script", "style", "nav", "footer", "header", "aside", "form", "noscript"):
+        for node in parser.css(sel):
+            node.decompose()
+    candidates = []
+    for sel in ("article", "main", "[role=main]", ".article-body", ".entry-content",
+                ".post-content", ".report-content", ".publication-content"):
+        for node in parser.css(sel):
+            text = clean(node.text(separator=" "))
+            if len(text) > max([len(x) for x in candidates] or [0]):
+                candidates = [text]
+    if not candidates:
+        candidates = [clean(node.text(separator=" ")) for node in parser.css("p")]
+    return max(candidates, key=len, default="")[:60000]
+
+
 def get_text(url, center_site=""):
+    """
+    Make a best effort to locate the full publication, not just an abstract:
+    decode Google News links, inspect the source page for official full-text/PDF
+    links, and extract PDFs linked by that page. Never use a search snippet as
+    the body of a strategic card.
+    """
+    original_url = url
     try:
         if "news.google.com" in urlparse(url).netloc.lower():
             try:
-                decoded=gnewsdecoder(url,interval=0.5,timeout=15)
+                decoded = gnewsdecoder(url, interval=0.5, timeout=15)
                 if decoded.get("success") and decoded.get("decoded_url"):
-                    url=decoded["decoded_url"]
-            except Exception as decode_error:
-                print(f"Google News URL decode failed: {type(decode_error).__name__}")
-        r=requests.get(url,headers=HEADERS,timeout=25,allow_redirects=True); r.raise_for_status()
-        parser=LexborHTMLParser(r.text)
-        # Google News wrappers often keep the publisher link inside the page
-        # instead of redirecting. Resolve a link on the expected center domain.
-        expected_host=urlparse(center_site).netloc.lower().removeprefix("www.")
-        if expected_host and ("news.google.com" in urlparse(url).netloc.lower() or "news.google.com" in urlparse(r.url).netloc.lower()):
-            targets=[]
+                    url = decoded["decoded_url"]
+            except Exception as exc:
+                print(f"Google News URL decode failed: {type(exc).__name__}")
+
+        response = fetch_url(url)
+        content_type = response.headers.get("content-type", "").lower()
+        if "pdf" in content_type or response.url.lower().split("?")[0].endswith(".pdf"):
+            pdf_text = extract_pdf_text(response)
+            if len(pdf_text) >= 1800:
+                print(f"Full text extracted directly from PDF: {response.url}")
+                return response.url, pdf_text
+            return response.url, pdf_text
+
+        html = response.text
+        page_url = response.url
+        page_text = html_main_text(html)
+        if len(page_text) >= 1800:
+            print(f"Extracted substantial page text: {page_url} ({len(page_text)} chars)")
+            return page_url, page_text
+
+        # If the search result led to a Google News wrapper, find a direct link
+        # to the relevant research center before looking for a report download.
+        expected_host = urlparse(center_site).netloc.lower().removeprefix("www.")
+        parser = LexborHTMLParser(html)
+        if expected_host and ("news.google.com" in urlparse(page_url).netloc.lower()):
             for node in parser.css("a[href]"):
-                href=node.attributes.get("href","")
-                host=urlparse(href).netloc.lower().removeprefix("www.")
-                if host==expected_host or host.endswith("."+expected_host):
-                    if href.startswith("http"):
-                        targets.append(href)
-            if targets:
-                try:
-                    direct=requests.get(targets[0],headers=HEADERS,timeout=25,allow_redirects=True)
-                    direct.raise_for_status()
-                    r=direct
-                    parser=LexborHTMLParser(r.text)
-                except Exception:
-                    pass
-        for sel in ("script","style","nav","footer","header","aside","form","noscript"):
-            for n in parser.css(sel): n.decompose()
-        candidates=[]
-        for sel in ("article","main","[role=main]",".article-body",".entry-content",".post-content"):
-            for n in parser.css(sel):
-                t=clean(n.text(separator=" "))
-                if len(t)>max([len(x) for x in candidates] or [0]): candidates=[t]
-        if not candidates: candidates=[clean(n.text(separator=" ")) for n in parser.css("p")]
-        return r.url,max(candidates,key=len,default="")[:26000]
-    except Exception as e:
-        print(f"Article extraction failed: {type(e).__name__}")
-        return url,""
+                href = urljoin(page_url, node.attributes.get("href", ""))
+                host = urlparse(href).netloc.lower().removeprefix("www.")
+                if href.startswith("http") and (host == expected_host or host.endswith("." + expected_host)):
+                    try:
+                        response = fetch_url(href)
+                        page_url, html = response.url, response.text
+                        content_type = response.headers.get("content-type", "").lower()
+                        if "pdf" in content_type or page_url.lower().split("?")[0].endswith(".pdf"):
+                            body = extract_pdf_text(response)
+                            if len(body) >= 1800:
+                                return page_url, body
+                        page_text = html_main_text(html)
+                        if len(page_text) >= 1800:
+                            return page_url, page_text
+                        parser = LexborHTMLParser(html)
+                        break
+                    except Exception:
+                        continue
+
+        # Try official download/full-text links on the source publication page.
+        # Prefer PDF/download/report links and reject unrelated navigation links.
+        parser = LexborHTMLParser(html)
+        link_candidates = []
+        seen_links = set()
+        page_host = urlparse(page_url).netloc.lower().removeprefix("www.")
+        expected_host = expected_host or page_host
+        positive = re.compile(
+            r"full.?text|full.?report|download|pdf|read.?report|report|publication|"
+            r"النص الكامل|تحميل|تنزيل|الدراسة كاملة|التقرير الكامل|الدراسة|التقرير",
+            re.I
+        )
+        negative = re.compile(
+            r"privacy|cookie|subscribe|newsletter|donate|login|register|"
+            r"سياسة الخصوصية|اشترك|تبرع|تسجيل الدخول",
+            re.I
+        )
+        for node in parser.css("a[href]"):
+            href = urljoin(page_url, node.attributes.get("href", "").strip())
+            label = clean(node.text(separator=" "))
+            combined = label + " " + href
+            if not href.startswith("http") or href in seen_links or negative.search(combined):
+                continue
+            host = urlparse(href).netloc.lower().removeprefix("www.")
+            # Trust download links embedded on the official center site, including
+            # its report/CDN subdomains; don't follow unrelated third-party links.
+            if not (host == expected_host or host.endswith("." + expected_host)):
+                continue
+            if positive.search(combined) or href.lower().split("?")[0].endswith(".pdf"):
+                seen_links.add(href)
+                score = 0
+                if href.lower().split("?")[0].endswith(".pdf"): score += 5
+                if re.search(r"full.?text|full.?report|النص الكامل|الدراسة كاملة|التقرير الكامل", combined, re.I): score += 6
+                if re.search(r"download|تحميل|تنزيل|pdf", combined, re.I): score += 3
+                link_candidates.append((score, href, label))
+
+        link_candidates.sort(key=lambda item: item[0], reverse=True)
+        for score, candidate_url, label in link_candidates[:12]:
+            try:
+                linked = fetch_url(candidate_url)
+                ctype = linked.headers.get("content-type", "").lower()
+                if "pdf" in ctype or linked.url.lower().split("?")[0].endswith(".pdf"):
+                    body = extract_pdf_text(linked)
+                else:
+                    body = html_main_text(linked.text)
+                if len(body) >= 1800:
+                    print(
+                        f"Found full-text/download link on center site: {label[:80]} "
+                        f"-> {linked.url} ({len(body)} chars)"
+                    )
+                    return linked.url, body
+            except Exception as exc:
+                print(f"Official full-text candidate failed ({candidate_url}): {type(exc).__name__}")
+
+        # Preserve the page's extracted content for diagnostics only. The caller
+        # will reject it if it is merely an abstract or short summary.
+        print(
+            f"No substantial full text found after checking official download links: "
+            f"{page_url}; page chars={len(page_text)}"
+        )
+        return page_url or original_url, page_text
+    except Exception as exc:
+        print(f"Article/full-text extraction failed: {type(exc).__name__}")
+        return original_url, ""
 
 def make_index(cards):
     years={}
@@ -132,10 +252,11 @@ def main():
         MIN_FULL_TEXT_CHARS = 1800
         if len(body.strip()) < MIN_FULL_TEXT_CHARS:
             print(
-                "Full publication text unavailable or too short; skipping card "
-                "and leaving publication pending for retry:",
+                "Full publication text unavailable after checking the source page "
+                "and linked official full-text/PDF downloads; skipping card and "
+                "leaving publication pending for retry:",
                 title[:140],
-                f"(extracted_chars={len(body.strip())})"
+                f"(extracted_chars={len(body.strip())}, source={resolved})"
             )
             failed_count += 1
             continue
