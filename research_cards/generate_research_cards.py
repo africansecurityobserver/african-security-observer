@@ -4,6 +4,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 import requests
+from googlenewsdecoder import gnewsdecoder
 from selectolax.lexbor import LexborHTMLParser
 from google import genai
 from google.genai import types
@@ -32,6 +33,13 @@ def clean(value):
 
 def get_text(url, center_site=""):
     try:
+        if "news.google.com" in urlparse(url).netloc.lower():
+            try:
+                decoded=gnewsdecoder(url,interval=0.5,timeout=15)
+                if decoded.get("success") and decoded.get("decoded_url"):
+                    url=decoded["decoded_url"]
+            except Exception as decode_error:
+                print(f"Google News URL decode failed: {type(decode_error).__name__}")
         r=requests.get(url,headers=HEADERS,timeout=25,allow_redirects=True); r.raise_for_status()
         parser=LexborHTMLParser(r.text)
         # Google News wrappers often keep the publisher link inside the page
