@@ -903,6 +903,31 @@ Africa/Tunis
 بدأ تنفيذه، أو قراراً رسمياً اتُّخذ، أو حدثاً مستقبلياً محدداً أُعلن عنه
 رسمياً مع موعد أو مكان أو تفاصيل قابلة للتحقق.
 
+============================================================
+بوابة استبعاد إلزامية: لا تعليق عام ولا جريمة حق عام
+============================================================
+
+- لا تُدرج تعليقاً منسوباً إلى باحثين أو محللين أو خبراء عن أهمية لقاء
+  أو احتمال أن يؤدي إلى التقريب بين أطراف أو تغيير موازين القوى؛ فهذا
+  تحليل أو توقع وليس واقعة مستقلة. إذا كان اللقاء نفسه حدثاً موثقاً ومهماً،
+  فصغ خبر اللقاء مباشرة من المادة الأصلية، ولا تنقل رأي المعلقين عنه.
+- استبعد الصيغ من نوع: «أكد باحثون سياسيون أهمية المحادثات... مشيرين إلى
+  إمكانية...» ما لم تتضمن المادة نفسها قراراً أو إجراءً جديداً ملموساً
+  يمكن التحقق منه. لا تجعل مجرد ذكر مسؤولين أو محادثات في سياق رأي تحليلي
+  سبباً كافياً لإدراج الخبر.
+- استبعد أخبار الجرائم المحلية الفردية والجنح والسرقة والاعتداء والضرب
+  والجرح والتوقيفات المرتبطة بها، بما فيها حوادث الاستدراج والسرقة بسلاح
+  أبيض، ما لم تكشف المادة عن صلة واضحة بالإرهاب أو شبكة إجرامية منظمة
+  عابرة للحدود أو تهديد أمني واسع أو تداعيات مباشرة على الأمن القومي.
+- لا تعتبر كل خبر صادر عن الشرطة أو المصالح الأمنية خبراً أمنياً
+  استراتيجياً. معيار الإدراج هو حجم التهديد والأثر الأمني، لا مجرد أن
+  الجهة التي أعلنت الخبر هي الشرطة.
+- أبقِ أخبار الإرهاب، والشبكات الإجرامية المنظمة، والاتجار بالبشر،
+  والتهريب العابر للحدود، والأسلحة النارية أو المتفجرات، والعمليات
+  الواسعة ذات الأثر الأمني؛ بشرط أن تكون الصلة موثقة في المادة.
+- إذا شككت في أن الخبر يحقق هذا المعيار، فاستبعده بدلاً من خفض معيار
+  البطاقة وإدراج خبر هامشي.
+
 أعطِ الأولوية لما يمكن للقارئ أن يعرف منه بوضوح: من فعل ماذا؟ وأين؟ ومتى؟
 وما النتيجة أو التفاصيل الملموسة؟ اذكر الأرقام والأسماء والمواقع والتواريخ
 ونوع المعدات أو الوحدة أو الاتفاق كلما وردت في المادة.
@@ -1094,6 +1119,75 @@ def is_sports_related(text):
     return any(term in value for term in sports_terms)
 
 
+def is_editorially_eligible(text_value):
+    """
+    Hard editorial gate for daily strategic cards.
+    Reject commentary/speculation presented as news and routine common crime.
+    The same gate is applied to newly generated events and to older events
+    during cumulative merging, so rejected items do not persist forever.
+    """
+    value = str(text_value or "").lower()
+
+    # 1) Commentary about what an event might mean is not itself an event.
+    commentary_sources = [
+        "باحثون سياسيون", "باحثون", "محللون سياسيون", "محللون",
+        "خبراء سياسيون", "خبراء", "مراقبون", "يرى محللون",
+        "قال محللون", "يقول محللون", "analysts", "researchers",
+        "political experts", "commentators", "experts say"
+    ]
+    speculation_markers = [
+        "إمكانية", "امكانية", "قد يسهم", "قد يساهم", "قد تلعب",
+        "قد يلعب", "يمكن أن", "يمكن ان", "من الممكن", "يرجح أن",
+        "يرجح ان", "يتوقع أن", "يتوقع ان", "قد يؤدي", "قد تؤدي",
+        "من شأنه أن", "من شأنها أن", "أهمية المحادثات",
+        "أهمية اللقاء", "التقريب بين الأطراف", "التقريب بين الاطراف",
+        "may help", "could help", "could play a role", "might",
+        "potentially", "analysts say", "experts believe"
+    ]
+    if (any(term in value for term in commentary_sources)
+            and any(term in value for term in speculation_markers)):
+        return False
+
+    # 2) Routine local/common-law crimes are not national-security events.
+    ordinary_crime_markers = [
+        "السرقة", "سرقة", "النشل", "الاعتداء بالضرب", "الضرب والجرح",
+        "الضرب والجرح والسرقة", "استدراج شخص", "استدراج شخصين",
+        "سرقة تحت التهديد", "السلاح الأبيض", "سلاح أبيض",
+        "اعتداء جسدي", "جريمة حق عام", "جنحة", "جرائم حق عام",
+        "robbery", "petty theft", "theft", "assault and theft",
+        "common-law crime", "vol à l'arraché", "vol avec violence",
+        "coups et blessures"
+    ]
+    routine_police_markers = [
+        "أوقفت المصالح الأمنية", "أوقفت المصالح الامنية",
+        "أوقفت الشرطة", "أوقفت عناصر الأمن", "أوقفت عناصر الامن",
+        "أوقفته الشرطة", "أوقفته المصالح الأمنية", "توقيف فتاة",
+        "توقيف شخص", "اعتقلت الشرطة", "أوقفت شخصا", "أوقفت شخصين",
+        "arrested by police", "police arrested", "interpellé par la police"
+    ]
+    national_security_markers = [
+        "إرهاب", "إرهابي", "خلية إرهابية", "خلية ارهابية",
+        "تنظيم داعش", "تنظيم القاعدة", "جماعة مسلحة", "جماعات مسلحة",
+        "هجوم مسلح", "هجوما مسلحا", "تفجير", "عبوة ناسفة",
+        "أسلحة نارية", "اسلحة نارية", "ترسانة أسلحة", "اتجار بالبشر",
+        "شبكة إجرامية منظمة", "شبكة اجرامية منظمة", "تهريب دولي",
+        "تهريب عبر الحدود", "مخطط إرهابي", "مخطط ارهابي",
+        "national security", "terrorist cell", "terrorism",
+        "armed group", "organized criminal network", "human trafficking",
+        "cross-border smuggling", "explosives", "firearms"
+    ]
+
+    is_ordinary_crime = any(term in value for term in ordinary_crime_markers)
+    is_routine_police_case = any(term in value for term in routine_police_markers)
+    is_security_exception = any(term in value for term in national_security_markers)
+
+    if is_ordinary_crime and (is_routine_police_case or "سلاح أبيض" in value or "السلاح الأبيض" in value):
+        if not is_security_exception:
+            return False
+
+    return True
+
+
 def event_priority(text_value):
     """Lower numbers are shown first within each section."""
     value = str(text_value).lower()
@@ -1228,6 +1322,11 @@ def normalize_sections(generated):
                     print(f"Filtered sports item from daily card: {text_value[:120]}")
                     continue
 
+                # Enforce hard editorial eligibility after model generation.
+                if not is_editorially_eligible(country + " " + text_value):
+                    print(f"Filtered low-value/speculative or routine-crime item: {text_value[:160]}")
+                    continue
+
                 # Basic protection against accidental URLs
                 text_value = text_value.replace(
                     "http://",
@@ -1305,9 +1404,15 @@ def merge_event_lists(existing_events, incoming_events):
     merged = []
     for event in existing_events if isinstance(existing_events, list) else []:
         if isinstance(event, dict) and str(event.get("text", "")).strip():
+            old_country = str(event.get("country", "")).strip()
+            old_text = str(event.get("text", "")).strip()
+            if is_sports_related(old_country + " " + old_text):
+                continue
+            if not is_editorially_eligible(old_country + " " + old_text):
+                continue
             merged.append({
-                "country": str(event.get("country", "")).strip(),
-                "text": str(event.get("text", "")).strip()
+                "country": old_country,
+                "text": old_text
             })
 
     for event in incoming_events if isinstance(incoming_events, list) else []:
