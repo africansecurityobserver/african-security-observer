@@ -55,7 +55,7 @@ footer{text-align:center;padding:20px 12px;color:var(--muted);font-size:12px}
 <div class="tools">
 <input id="search" type="search" placeholder="ابحث في عنوان المنشور أو اسم المركز" aria-label="البحث في المنشورات">
 <select id="centerFilter" aria-label="تصفية حسب المركز"><option value="">جميع المراكز</option></select>
-<select id="tierFilter" aria-label="ترتيب حسب الأهمية الجغرافية"><option value="all">مستويات الأهمية الثلاثة</option><option value="1">1 · تونس مباشرة</option><option value="2">2 · دول الجوار وشمال إفريقيا والمتوسط</option><option value="3">3 · قضايا عالمية قد تؤثر في تونس</option></select>
+<select id="tierFilter" aria-label="ترتيب حسب الأهمية الجغرافية"><option value="all">مستويات الأهمية الأربعة</option><option value="1">1 · تونس مباشرة</option><option value="2">2 · ليبيا والجزائر</option><option value="3">3 · شمال إفريقيا والبحر المتوسط والمنطقة القريبة</option><option value="4">4 · قضايا عالمية قد تؤثر في تونس</option></select>
 <select id="periodFilter" aria-label="تصفية حسب الفترة"><option value="30">آخر 30 يومًا</option><option value="7">آخر 7 أيام</option><option value="14">آخر 14 يومًا</option><option value="all">كل المنشورات المتاحة</option></select>
 </div>
 <div id="publications" class="publications"><div class="loading">جارٍ تحميل المنشورات…</div></div>
@@ -79,17 +79,19 @@ function normalizeText(v){
 }
 const tierRules={
  1:['tunisia','tunisian','tunisie','تونس','تونسي','قرطاج','صفاقس','بنزرت','سوسة','القيروان','قابس','مدنين','جربة'],
- 2:['libya','libyan','libye','ليبيا','ليبي','طرابلس','بنغازي','حفتر','الدبيبة','المنفي','algeria','algerian','algérie','الجزائر','جزائري','algiers','تبون','شنقريحة','north africa','north african','maghreb','المغرب العربي','شمال افريقيا','شمال إفريقيا','morocco','moroccan','maroc','المغرب','مغربي','western sahara','الصحراء الغربية','egypt','egyptian','مصر','مصري','mauritania','موريتانيا','mediterranean','méditerranée','البحر المتوسط','جنوب اوروبا','southern europe','sahel','الساحل الافريقي'],
- 3:['energy security','oil price','oil prices','natural gas','lng','energy market','اسعار النفط','النفط','الغاز الطبيعي','امن الطاقة','migration','migrants','asylum','الهجرة','المهاجرين','اللجوء','european union','european security','الاتحاد الاوروبي','الامن الاوروبي','europe','european defence','european defense','nato','الناتو','terrorism','counterterrorism','الارهاب','مكافحة الارهاب','arms trade','arms transfers','الانفاق العسكري','cybersecurity','امن الملاحة','التجارة العالمية','سلاسل الامداد','supply chain','global trade','shipping','maritime security','climate security','food security','الامن الغذائي','black sea','ukraine','russia','china','united states','middle east','الشرق الاوسط','اوكرانيا','روسيا','الصين','الولايات المتحدة','red sea','البحر الاحمر']
+ 2:['libya','libyan','libye','libyen','ليبيا','ليبي','طرابلس','بنغازي','حفتر','الدبيبة','المنفي','algeria','algerian','algérie','الجزائر','جزائري','algiers','تبون','شنقريحة'],
+ 3:['north africa','north african','maghreb','المغرب العربي','شمال افريقيا','شمال إفريقيا','morocco','moroccan','maroc','المغرب','مغربي','western sahara','الصحراء الغربية','egypt','egyptian','مصر','موريتانيا','mauritania','mediterranean','méditerranée','البحر المتوسط','جنوب اوروبا','southern europe','sahel','الساحل الافريقي'],
+ 4:['energy security','oil price','oil prices','natural gas','lng','energy market','اسعار النفط','النفط','الغاز الطبيعي','امن الطاقة','migration','migrants','asylum','الهجرة','المهاجرين','اللجوء','european union','european security','الاتحاد الاوروبي','الامن الاوروبي','europe','european defence','european defense','nato','الناتو','terrorism','counterterrorism','الارهاب','مكافحة الارهاب','arms trade','arms transfers','الانفاق العسكري','cybersecurity','امن الملاحة','التجارة العالمية','سلاسل الامداد','supply chain','global trade','shipping','maritime security','climate security','food security','الامن الغذائي','black sea','ukraine','russia','china','united states','middle east','الشرق الاوسط','اوكرانيا','روسيا','الصين','الولايات المتحدة','red sea','البحر الاحمر']
 };
-const tierLabels={1:'تونس مباشرة',2:'دول الجوار وشمال إفريقيا والبحر المتوسط',3:'قضايا عالمية قد تؤثر في تونس'};
+const tierLabels={1:'تونس مباشرة',2:'ليبيا والجزائر',3:'شمال إفريقيا والبحر المتوسط والمنطقة القريبة',4:'قضايا عالمية قد تؤثر في تونس'};
 function relevanceTier(p){
  const stored=Number(p.relevance_tier);
- if(stored>=1&&stored<=3)return stored;
+ if(stored>=1&&stored<=4)return stored;
  const text=normalizeText([p.title,p.title_ar,p.description].join(' '));
  if(tierRules[1].some(k=>text.includes(normalizeText(k))))return 1;
  if(tierRules[2].some(k=>text.includes(normalizeText(k))))return 2;
  if(tierRules[3].some(k=>text.includes(normalizeText(k))))return 3;
+ if(tierRules[4].some(k=>text.includes(normalizeText(k))))return 4;
  return 0;
 }
 function render(){
