@@ -1,4 +1,25 @@
 {
-  "updated": "2026-10-13T22:02:58+01:00",
-  "years": []
+  "updated": "2026-10-13T22:15:00+01:00",
+  "years": [
+    {
+      "year": "2026",
+      "months": [
+        {
+          "month": "10",
+          "cards": [
+            {
+              "date": "2026-10-13",
+              "title": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي",
+              "subject": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي",
+              "path": "2026-10/20261013_ai-cyber-threats.json",
+              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+              "source_title": "Africa must prepare for AI-powered cyber threats at scale - ISS Africa",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
