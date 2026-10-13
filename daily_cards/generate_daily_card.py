@@ -1294,7 +1294,7 @@ def same_event_text(left, right):
     union = tokens_a | tokens_b
     jaccard = len(common) / max(1, len(union))
     ratio = SequenceMatcher(None, a, b).ratio()
-    return ratio >= 0.72 or (len(common) >= 5 and jaccard >= 0.48)
+    return ratio >= 0.66 or (len(common) >= 4 and jaccard >= 0.38)
 
 
 def merge_event_lists(existing_events, incoming_events):
