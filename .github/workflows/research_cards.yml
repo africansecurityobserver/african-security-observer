@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install google-genai requests selectolax googlenewsdecoder
+          pip install google-genai requests 'selectolax==0.3.29' googlenewsdecoder
       - name: Generate cards from research publications
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
