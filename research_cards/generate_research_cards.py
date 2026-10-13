@@ -185,8 +185,8 @@ publish boolean; introduction string; analysis_one, analysis_two, analysis_three
           "source_url":url,"source_original_url":resolved if resolved.startswith("http") else url,"path":path}
         save(ARCHIVE/path,card); data["cards"].append(card); data["processed_urls"].append(url); count+=1
         print("Published research card:",card["title"][:150])
-    data["cards"]=sorted(data["cards"],key=lambda c:(c.get("date",""),c.get("title","")),reverse=True)[:800]
-    data["processed_urls"]=list(dict.fromkeys(data["processed_urls"]))[-2000:]
+    data["cards"]=sorted(data["cards"],key=lambda c:(c.get("date",""),c.get("title","")),reverse=True)
+    data["processed_urls"]=list(dict.fromkeys(data["processed_urls"]))
     data["updated"]=datetime.now(TZ).isoformat(timespec="seconds")
     save(DATA,data); save(INDEX,make_index(data["cards"]))
     print(f"Research cards total={len(data['cards'])}; generated this run={count}; pending for retry={failed_count}; new candidates seen={len(candidates)}")
