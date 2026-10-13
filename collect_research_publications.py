@@ -224,6 +224,29 @@ def contains_arabic(value):
     return bool(re.search(r"[\u0600-\u06FF]", str(value or "")))
 
 
+KNOWN_ARABIC_TITLES = {
+    "Emerging ICT Talent and the Dutch Market: Nearshoring to Morocco, Egypt, Tunisia and Nigeria - Clingendael": "المواهب الناشئة في تكنولوجيا المعلومات والاتصالات والسوق الهولندية: نقل الخدمات إلى المغرب ومصر وتونس ونيجيريا",
+    "Conflict in Yemen and the Red Sea | Global Conflict Tracker - Council on Foreign Relations": "الصراع في اليمن والبحر الأحمر | متعقّب النزاعات العالمية",
+    "international maritime conventions - orfonline.org": "الاتفاقيات البحرية الدولية",
+    "Africa must prepare for AI-powered cyber threats at scale - ISS Africa": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي",
+    "How Houthi military aggression in the Red Sea threatens Africa - ISS Africa": "كيف يهدد التصعيد العسكري للحوثيين في البحر الأحمر إفريقيا",
+    "Beyond AGOA: Reimagining the Future of U.S.-Africa Trade - CSIS | Center for Strategic and International Studies": "ما بعد قانون النمو والفرص في إفريقيا: إعادة تصور مستقبل التجارة بين الولايات المتحدة وإفريقيا",
+    "Could Fighting in Ethiopia Spark Regional War in the Horn of Africa? - CSIS | Center for Strategic and International Studies": "هل يمكن أن يؤدي القتال في إثيوبيا إلى اندلاع حرب إقليمية في القرن الإفريقي؟",
+    "October is Cybersecurity Awareness Month - CSIS | Center for Strategic and International Studies": "أكتوبر هو شهر التوعية بالأمن السيبراني",
+    "Africa can see El Niño coming – will countries act in time? - ISS Africa": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
+    "Illicit Drug Trade Between North America and Africa: Routes, Patterns, and Responses - Africa Center for Strategic Studies": "تجارة المخدرات غير المشروعة بين أمريكا الشمالية وإفريقيا: المسارات والأنماط وسبل المواجهة",
+    "Russia-Ukraine War Update and Perspectives From NATO Member Countries: Lunch and Discussion with CFR's Global Board of Advisors - Council on Foreign Relations": "تحديث بشأن الحرب الروسية الأوكرانية ووجهات نظر من دول الناتو: نقاش مع المجلس الاستشاري العالمي لمجلس العلاقات الخارجية",
+    "The New Red Sea Wars - International Crisis Group": "الحروب الجديدة في البحر الأحمر",
+    "Russia’s military recruitment networks exploit Western tech platforms - ISS Africa": "شبكات التجنيد العسكري الروسية تستغل منصات التكنولوجيا الغربية",
+    "US Defense Spending, Russia-NATO Tensions, and China’s Military Expansion - Hudson Institute": "الإنفاق الدفاعي الأمريكي والتوترات بين روسيا والناتو والتوسع العسكري الصيني",
+    "China and Africa boost law enforcement ties in crackdown on cross-border cybercrime - Royal United Services Institute (RUSI)": "الصين وإفريقيا تعززان التعاون بين أجهزة إنفاذ القانون لمكافحة الجرائم السيبرانية العابرة للحدود",
+    "Africa should prepare for a new Arctic shipping era - ISS Africa": "ينبغي لإفريقيا الاستعداد لعصر جديد من الملاحة البحرية في القطب الشمالي",
+    "Ethiopia’s widening war threatens the Horn of Africa - Clingendael": "اتساع رقعة الحرب في إثيوبيا يهدد القرن الإفريقي",
+    "Five Energy Market Factors That Could Tip the Scales in the Middle East War - International Crisis Group": "خمسة عوامل في سوق الطاقة قد ترجّح كفة أحد الأطراف في حرب الشرق الأوسط",
+    "Japan as a Maritime Great Power and the China Challenge - CSIS | Center for Strategic and International Studies": "اليابان بوصفها قوة بحرية كبرى والتحدي الصيني"
+}
+
+
 def translate_one_title(title):
     """
     Try a lightweight public translation endpoint first, then Google Translate.
@@ -232,6 +255,8 @@ def translate_one_title(title):
     title = str(title or "").strip()
     if not title:
         return ""
+    if title in KNOWN_ARABIC_TITLES:
+        return KNOWN_ARABIC_TITLES[title]
 
     # MyMemory fallback is called through requests, already used by this collector.
     try:
