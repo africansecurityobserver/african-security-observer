@@ -8,7 +8,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import requests
-from selectolax.parser import HTMLParser
+from selectolax.lexbor import LexborHTMLParser
 from google import genai
 from google.genai import types
 
@@ -159,7 +159,7 @@ def get_article_text(url):
         )
         if response.status_code != 200:
             return ""
-        parser = HTMLParser(response.text)
+        parser = LexborHTMLParser(response.text)
         for selector in ("script", "style", "nav", "header", "footer", "aside", "form"):
             for node in parser.css(selector):
                 node.decompose()
