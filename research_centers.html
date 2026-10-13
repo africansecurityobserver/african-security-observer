@@ -75,7 +75,7 @@ function dateValue(item){const d=new Date(item.published||item.date||'');return 
 function normalizeText(v){
  return String(v||'').toLocaleLowerCase()
   .replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه')
-  .replace(/[\\u064B-\\u065F\\u0670\\u0640]/g,'');
+  .replace(/[\u064B-\u065F\u0670\u0640]/g,'');
 }
 const tierRules={
  1:['tunisia','tunisian','tunisie','تونس','تونسي','قرطاج','صفاقس','بنزرت','سوسة','القيروان','قابس','مدنين','جربة'],
