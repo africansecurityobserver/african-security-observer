@@ -224,82 +224,94 @@ def contains_arabic(value):
     return bool(re.search(r"[\u0600-\u06FF]", str(value or "")))
 
 
+def translate_one_title(title):
+    """
+    Try a lightweight public translation endpoint first, then Google Translate.
+    GoogleTranslator was returning TooManyRequests for every title in GitHub Actions.
+    """
+    title = str(title or "").strip()
+    if not title:
+        return ""
+
+    # MyMemory fallback is called through requests, already used by this collector.
+    try:
+        response = requests.get(
+            "https://api.mymemory.translated.net/get",
+            params={"q": title, "langpair": "en|ar"},
+            timeout=15,
+            headers=HEADERS
+        )
+        response.raise_for_status()
+        payload = response.json()
+        translated = clean(
+            (payload.get("responseData") or {}).get("translatedText", "")
+        )
+        if translated and contains_arabic(translated):
+            return translated
+    except Exception as exc:
+        print(f"MyMemory translation failed: {type(exc).__name__}")
+
+    # Secondary fallback: Google Translate, with only two attempts to avoid
+    # spending several minutes retrying a rate-limited endpoint.
+    for attempt in range(1, 3):
+        try:
+            translated = clean(
+                GoogleTranslator(source="auto", target="ar").translate(title) or ""
+            )
+            if translated and contains_arabic(translated):
+                return translated
+        except Exception as exc:
+            print(f"Google translation attempt {attempt}/2 failed: {type(exc).__name__}")
+        if attempt < 2:
+            time.sleep(2)
+    return ""
+
+
 def translate_titles_to_arabic(items):
     """
-    Translate every publication title into Arabic while preserving the
-    publisher's original title. Retry temporary rate limits and log failures
-    clearly so a failed translation service cannot pass unnoticed.
+    Keep original publisher titles in 'title'; populate 'title_ar' for display.
+    Existing translations are retained and failed titles are retried next run.
     """
-    pending = [
-        item for item in items
-        if str(item.get("title", "")).strip()
-        and not str(item.get("title_ar", "")).strip()
-        and not contains_arabic(item.get("title", ""))
-    ]
-
-    if not pending:
-        # Preserve Arabic-origin titles in Arabic without sending them to translation.
-        for item in items:
-            title = str(item.get("title", "")).strip()
-            if title and contains_arabic(title) and not item.get("title_ar"):
-                item["title_ar"] = title
-        print(f"Arabic titles available: {sum(1 for item in items if item.get('title_ar'))}/{len(items)}; no untranslated titles queued")
-        return
-
     translated_count = 0
     failed_titles = []
 
-    # Translate one title at a time with retries. This is slower than a large
-    # batch, but avoids a single failed batch causing every title to remain English.
-    for index, item in enumerate(pending, start=1):
-        title = str(item.get("title", "")).strip()
-        result = ""
-        for attempt in range(1, 4):
-            try:
-                result = str(
-                    GoogleTranslator(source="auto", target="ar").translate(title) or ""
-                ).strip()
-                if result and contains_arabic(result):
-                    item["title_ar"] = result
-                    translated_count += 1
-                    break
-                result = ""
-            except Exception as exc:
-                print(
-                    f"Translation attempt {attempt}/3 failed for item {index}/{len(pending)}: "
-                    f"{type(exc).__name__}"
-                )
-            # Back off between attempts to reduce temporary throttling.
-            if attempt < 3:
-                time.sleep(1.5 * attempt)
+    for index, item in enumerate(items, start=1):
+        title = clean(item.get("title", ""))
+        if not title:
+            continue
 
-        if not result:
-            # Keep this title unmarked so it will be retried on the next run.
+        # Arabic-origin titles can be used directly.
+        if contains_arabic(title):
+            if not clean(item.get("title_ar", "")):
+                item["title_ar"] = title
+            continue
+
+        if contains_arabic(item.get("title_ar", "")):
+            continue
+
+        translated = translate_one_title(title)
+        if translated:
+            item["title_ar"] = translated
+            translated_count += 1
+        else:
             item.pop("title_ar", None)
             failed_titles.append(title)
-        # Small delay between requests prevents rapid-fire calls to the free endpoint.
-        time.sleep(0.35)
 
+        # Small delay between calls to reduce pressure on free endpoints.
+        time.sleep(0.25)
         if index % 25 == 0:
             print(
-                f"Title translation progress: {index}/{len(pending)} "
+                f"Title translation progress: {index}/{len(items)} "
                 f"(translated this run: {translated_count}, failures: {len(failed_titles)})"
             )
 
-    # Keep Arabic-origin titles in Arabic without sending them to translation.
-    for item in items:
-        title = str(item.get("title", "")).strip()
-        if title and contains_arabic(title) and not item.get("title_ar"):
-            item["title_ar"] = title
-
-    available = sum(1 for item in items if item.get("title_ar"))
+    available = sum(1 for item in items if contains_arabic(item.get("title_ar", "")))
     print(
         f"Arabic titles available: {available}/{len(items)}; "
         f"translated this run: {translated_count}; failed: {len(failed_titles)}"
     )
     if failed_titles:
         print("Some titles could not be translated and will be retried next run.")
-
 
 def direct_url(url):
     if not url:
