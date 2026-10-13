@@ -434,7 +434,7 @@ def build_prompt(
     if not previous_text:
         previous_text = "لا توجد بطاقات سابقة متاحة."
 
-    current_text = "\\n".join(f"- {event}" for event in (current_events or []))
+    current_text = "\n".join(f"- {event}" for event in (current_events or []))
     if not current_text:
         current_text = "لا توجد أحداث محفوظة في نسخة اليوم الحالية."
 
