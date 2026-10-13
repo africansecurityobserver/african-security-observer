@@ -869,6 +869,23 @@ Africa/Tunis
 
 إذا وجدت خبراً مكرراً من عدة مصادر، ادمجه في حدث واحد.
 
+============================================================
+قاعدة إلزامية لدمج الأخبار التي تتناول الحدث نفسه
+============================================================
+
+- قارن الأخبار داخل كل قسم قبل إخراج البطاقة، حتى لو اختلفت الصياغة أو المصدر.
+- إذا تناول خبران الهجوم أو إطلاق الصواريخ أو الغارة أو الاقتحام أو القرار نفسه،
+  فادمجهما في فقرة واحدة تحفظ التفاصيل المؤكدة غير المتعارضة.
+- مثال: خبر عن اعتراض ثلاثة صواريخ باتجاه الرياض وخبر عن اعتراض الصواريخ
+  الثلاثة نفسها واستمرار إغلاق مطار الملك خالد يجب أن يصبحا خبراً واحداً.
+- لا تدمج الأخبار لمجرد أنها تخص الدولة نفسها أو تتناول التصعيد نفسه؛ أبقِ
+  الوقائع المنفصلة جغرافياً أو زمنياً منفصلة.
+- في أخبار فلسطين، ميّز بين غزة والضفة الغربية/رام الله. ادمج التكرار الذي
+  يصف الواقعة نفسها، لكن لا تخلط حصائل أو مواقع منفصلة ولا تجمع أعداد الضحايا
+  إلا إذا أكدت المواد أنها تخص الواقعة نفسها.
+- عند التعارض في الأرقام، لا تخمّن؛ احتفظ بالمعلومة المؤكدة أو وضّح التعارض.
+- المطلوب حدث واحد لكل واقعة، لا فقرة مستقلة لكل مصدر.
+
 إذا وجدت عنواناً مثيراً لكنه لا يحتوي على معلومات كافية،
 لا تستنتج تفاصيل غير موجودة.
 
@@ -1377,7 +1394,10 @@ def normalize_event_for_match(value):
 
 
 def same_event_text(left, right):
-    """Return true only when two descriptions are strongly likely to be the same event."""
+    """
+    Conservative same-event matching: combine near-duplicate reports when
+    concrete event anchors overlap, but not merely because the topic/country matches.
+    """
     from difflib import SequenceMatcher
 
     a = normalize_event_for_match(left)
@@ -1393,7 +1413,39 @@ def same_event_text(left, right):
     union = tokens_a | tokens_b
     jaccard = len(common) / max(1, len(union))
     ratio = SequenceMatcher(None, a, b).ratio()
-    return ratio >= 0.66 or (len(common) >= 4 and jaccard >= 0.38)
+    if ratio >= 0.70 or (len(common) >= 5 and jaccard >= 0.40):
+        return True
+
+    anchor_groups = [
+        ["صواريخ باليستية", "صاروخ باليستي", "صواريخ بالستية", "صاروخ بالستي"],
+        ["الحوثيون", "الحوثي", "مليشيا الحوثي", "جماعة الحوثي"],
+        ["مطار الملك خالد", "مطار الرياض", "المطار الدولي الرئيسي", "إغلاق المطار", "اغلاق المطار"],
+        ["قصف", "غارة جوية", "غارات جوية", "ضربة جوية", "ضربات جوية"],
+        ["اقتحام", "اقتحامات", "مداهمة", "مداهمات"],
+        ["نسف مبان", "هدم منازل", "هدم مبان", "تدمير مبان سكنية"],
+        ["إطلاق نار", "اطلاق نار", "برصاص", "نيران الجيش"],
+        ["أسرى", "رهائن", "تبادل أسرى", "صفقة تبادل"],
+        ["وقف إطلاق النار", "هدنة", "تمديد الهدنة"],
+    ]
+    shared_groups = sum(
+        1 for group in anchor_groups
+        if any(term in a for term in group) and any(term in b for term in group)
+    )
+    place_groups = [
+        ["الرياض", "riyadh"], ["مطار الملك خالد", "king khalid"],
+        ["غزة", "gaza"], ["رام الله", "ramallah"],
+        ["الضفة الغربية", "west bank"], ["جنوب لبنان", "southern lebanon"],
+        ["بيروت", "beirut"], ["البحر الأحمر", "red sea"]
+    ]
+    shared_place = any(
+        any(place in a for place in group) and any(place in b for place in group)
+        for group in place_groups
+    )
+    shared_specifics = any(
+        term in a and term in b
+        for term in ["ثلاثة صواريخ", "3 صواريخ", "136 اعتداء", "20 شخصا"]
+    )
+    return shared_groups >= 2 and (shared_place or shared_specifics)
 
 
 def merge_event_lists(existing_events, incoming_events):
@@ -1425,6 +1477,10 @@ def merge_event_lists(existing_events, incoming_events):
 
         match_index = None
         for index, old_event in enumerate(merged):
+            old_country = normalize_event_for_match(old_event.get("country", ""))
+            new_country = normalize_event_for_match(incoming_country)
+            if old_country and new_country and old_country != new_country:
+                continue
             if same_event_text(old_event.get("text", ""), incoming_text):
                 match_index = index
                 break
