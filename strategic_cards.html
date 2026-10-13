@@ -80,18 +80,21 @@ body *{visibility:hidden!important}
 </main>
 <footer>المرصد الإفريقي للأمن والدفاع</footer>
 <script>
-const indexUrl='./strategic_cards/archive/index.json';
+const newsIndexUrl='./strategic_cards/archive/index.json';
+const researchIndexUrl='./research_cards/archive/index.json';
 const content=document.getElementById('content');
 const pageTitle=document.getElementById('pageTitle');
 const pageDescription=document.getElementById('pageDescription');
 const breadcrumb=document.getElementById('breadcrumb');
 let archiveIndex={years:[]};
+let archiveType='news';
+let archiveBase='./strategic_cards/archive/';
 let selectedYear=null;
 let selectedMonth=null;
 let currentCardData=null;
 let currentCardPath=null;
 let currentCardRaw='';
-let currentView='years';
+let currentView='root';
 
 const monthNames=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
 const slotNames={'daily':'تُحدّث خلال اليوم','05':'05:00','16':'16:00','21':'21:00'};
@@ -109,7 +112,10 @@ if(p.length!==3)return value||'تاريخ غير معروف';
 return Number(p[2])+' '+monthLabel(p[1])+' '+p[0];
 }
 function setBreadcrumb(level){
-let html='<button onclick="showYears()">البطاقات الاستراتيجية</button>';
+let html='<button onclick="showRoot()">البطاقات الاستراتيجية</button>';
+if(level!=='root'){
+html+='<span>‹</span><button onclick="showYears()">'+(archiveType==='research'?'البطاقات الاستراتيجية من مراكز البحث':'البطاقات الاستراتيجية من مصدر إخباري')+'</button>';
+}
 if(level!=='years'&&selectedYear){
 html+='<span>‹</span><button onclick="showMonths(\''+selectedYear+'\')">'+esc(selectedYear)+'</button>';
 }
@@ -120,12 +126,39 @@ if(level==='reader')html+='<span>‹</span><span>عرض البطاقة</span>';
 breadcrumb.innerHTML=html;
 }
 function findYear(year){return archiveIndex.years.find(y=>String(y.year)===String(year));}
+function showRoot(){
+currentView='root';selectedYear=null;selectedMonth=null;
+setBreadcrumb('root');
+pageTitle.textContent='البطاقات الاستراتيجية';
+pageDescription.textContent='اختر نوع البطاقات التي تريد تصفحها.';
+content.innerHTML='<div class="folder-grid">'+
+'<button class="folder" onclick="openArchive(\'news\')"><div class="folder-icon">📰</div><div class="folder-title">البطاقات الاستراتيجية من مصدر إخباري</div><div class="folder-meta">بطاقتان يومياً: 08:55 صباحاً و23:55 مساءً</div></button>'+
+'<button class="folder" onclick="openArchive(\'research\')"><div class="folder-icon">📚</div><div class="folder-title">البطاقات الاستراتيجية من مراكز البحث</div><div class="folder-meta">تلخيصات منشورات مراكز الدراسات الاستراتيجية</div></button>'+
+'</div>';
+}
+async function openArchive(type){
+archiveType=type;
+archiveBase=type==='research'?'./research_cards/archive/':'./strategic_cards/archive/';
+currentView='years';selectedYear=null;selectedMonth=null;
+content.innerHTML='<div class="loading">جارٍ تحميل الأرشيف…</div>';
+try{
+const url=(type==='research'?researchIndexUrl:newsIndexUrl)+'?t='+Date.now();
+const response=await fetch(url,{cache:'no-store'});
+if(!response.ok)throw new Error('Archive index unavailable');
+archiveIndex=await response.json();
+if(!Array.isArray(archiveIndex.years))archiveIndex.years=[];
+showYears();
+}catch(error){
+console.error(error);
+content.innerHTML='<div class="error">تعذر تحميل هذا الأرشيف حالياً.</div>';
+}
+}
 function showYears(){
 currentView='years';
 selectedYear=null;selectedMonth=null;setBreadcrumb('years');
-pageTitle.textContent='أرشيف البطاقات الاستراتيجية';
-pageDescription.textContent='اختر السنة لعرض أشهرها والبطاقات المحفوظة فيها.';
-if(!archiveIndex.years.length){content.innerHTML='<div class="empty">لا توجد بطاقات مؤرشفة حتى الآن.</div>';return;}
+pageTitle.textContent=archiveType==='research'?'البطاقات الاستراتيجية من مراكز البحث':'البطاقات الاستراتيجية من مصدر إخباري';
+pageDescription.textContent='اختر السنة، ثم الشهر، لعرض البطاقات المحفوظة.';
+if(!archiveIndex.years.length){content.innerHTML='<div class="empty">لا توجد بطاقات مؤرشفة في هذا الملف حتى الآن.</div>';return;}
 content.innerHTML='<div class="folder-grid">'+archiveIndex.years.map(y=>{
 const count=(y.months||[]).reduce((sum,m)=>sum+(m.cards||[]).length,0);
 return '<button class="folder" onclick="showMonths(\''+esc(y.year)+'\')"><div class="folder-icon">📁</div><div class="folder-title">'+esc(y.year)+'</div><div class="folder-meta">'+(y.months||[]).length+' أشهر · '+count+' بطاقة</div></button>';
@@ -136,7 +169,7 @@ currentView='months';
 selectedYear=String(year);selectedMonth=null;setBreadcrumb('months');
 const entry=findYear(year);
 pageTitle.textContent='السنة '+year;
-pageDescription.textContent='اختر الشهر لعرض البطاقات الاستراتيجية المحفوظة.';
+pageDescription.textContent=archiveType==='research'?'بطاقات استراتيجية مستخلصة من منشورات مراكز البحث.':'بطاقات استراتيجية مستخلصة من الأخبار اليومية.';
 if(!entry||!(entry.months||[]).length){content.innerHTML='<div class="empty">لا توجد أشهر مؤرشفة في هذه السنة.</div>';return;}
 content.innerHTML='<div class="folder-grid">'+entry.months.map(m=>{
 return '<button class="folder" onclick="showMonthCards(\''+esc(year)+'\',\''+esc(m.month)+'\')"><div class="folder-icon">📂</div><div class="folder-title">'+esc(monthLabel(m.month))+'</div><div class="folder-meta">'+(m.cards||[]).length+' بطاقة محفوظة</div></button>';
@@ -146,7 +179,7 @@ function showMonthCards(year,month){
 currentView='cards';selectedYear=String(year);selectedMonth=String(month);setBreadcrumb('cards');
 const y=findYear(year),m=y&&(y.months||[]).find(x=>String(x.month)===String(month));
 pageTitle.textContent='بطاقات '+monthLabel(month)+' '+year;
-pageDescription.textContent='اختر بطاقة لفتح تفاصيلها. البطاقات مرتبة من الأحدث إلى الأقدم.';
+pageDescription.textContent=archiveType==='research'?'اختر بطاقة لقراءة تلخيص النشرية الأصلية.':'اختر بطاقة لقراءة التحليل الاستراتيجي المستخلص من الأخبار.';
 if(!m||!(m.cards||[]).length){content.innerHTML='<div class="empty">لا توجد بطاقات محفوظة في هذا الشهر.</div>';return;}
 const cards=[...m.cards].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.title||'').localeCompare(a.title||''));
 content.innerHTML='<div class="cards-grid">'+cards.map((c,i)=>'<button class="card-link" onclick="openArchivedCard('+i+')"><div class="card-date">'+esc(dateLabel(c.date))+'</div><div class="card-period">'+(c.slot==='morning'?'البطاقة الاستراتيجية الصباحية':c.slot==='evening'?'البطاقة الاستراتيجية المسائية':esc(c.kind_label||'بطاقة استراتيجية'))+'</div><div class="card-subtitle">'+esc(c.subject||c.title||'')+'</div></button>').join('')+'</div>';
@@ -162,7 +195,7 @@ pageTitle.textContent='بطاقة '+dateLabel(card.date);
 pageDescription.textContent='';
 content.innerHTML='<div class="loading">جارٍ فتح البطاقة…</div>';
 try{
-const response=await fetch('./strategic_cards/archive/'+card.path+'?t='+Date.now(),{cache:'no-store'});
+const response=await fetch(archiveBase+card.path+'?t='+Date.now(),{cache:'no-store'});
 if(!response.ok)throw new Error('HTTP '+response.status);
 const raw=await response.text();
 const data=JSON.parse(raw);
@@ -197,16 +230,7 @@ const blob=new Blob(['\ufeff',documentHtml],{type:'application/msword;charset=ut
 link.href=url;link.download='بطاقة-استراتيجية-'+String(card.date||'').replace(/[^0-9-]/g,'')+'.doc';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 async function loadArchive(){
-try{
-const response=await fetch(indexUrl+'?t='+Date.now(),{cache:'no-store'});
-if(!response.ok)throw new Error('Archive index unavailable');
-archiveIndex=await response.json();
-if(!Array.isArray(archiveIndex.years))archiveIndex.years=[];
-showYears();
-}catch(error){
-console.error(error);
-content.innerHTML='<div class="error">تعذر تحميل فهرس الأرشيف. ستظهر المجلدات بعد إنشاء الفهرس في عملية تحديث البطاقات القادمة.</div>';
-}
+showRoot();
 }
 loadArchive();
 
@@ -214,7 +238,9 @@ loadArchive();
 // revised versions appear without requiring the visitor to reload the page.
 async function refreshLiveData(){
 try{
-const response=await fetch(indexUrl+'?t='+Date.now(),{cache:'no-store'});
+if(currentView==='root')return;
+const activeIndexUrl=(archiveType==='research'?researchIndexUrl:newsIndexUrl);
+const response=await fetch(activeIndexUrl+'?t='+Date.now(),{cache:'no-store'});
 if(!response.ok)return;
 const freshIndex=await response.json();
 const changed=JSON.stringify(freshIndex)!==JSON.stringify(archiveIndex);
@@ -222,7 +248,7 @@ archiveIndex=freshIndex;
 if(!Array.isArray(archiveIndex.years))archiveIndex.years=[];
 
 if(currentView==='reader'&&currentCardPath){
-const cardResponse=await fetch('./strategic_cards/archive/'+currentCardPath+'?t='+Date.now(),{cache:'no-store'});
+const cardResponse=await fetch(archiveBase+currentCardPath+'?t='+Date.now(),{cache:'no-store'});
 if(cardResponse.ok){
 const raw=await cardResponse.text();
 if(raw!==currentCardRaw){
