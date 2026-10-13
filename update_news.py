@@ -455,6 +455,11 @@ def make_priority_official_feeds():
         }
     }
 
+    country_terms = {
+        "Libya": {"en": '"Libya"', "fr": '"Libye"', "ar": '"ليبيا"'},
+        "Algeria": {"en": '"Algeria"', "fr": '"Algérie"', "ar": '"الجزائر"'},
+        "Morocco": {"en": '"Morocco"', "fr": '"Maroc"', "ar": '"المغرب"'}
+    }
     actions = {
         "en": '(meeting OR talks OR received OR met OR visit OR decision OR decree OR announced OR appointed OR dismissed OR agreement OR summit OR attended OR signed OR inspected OR launched OR deployment OR operation OR statement)',
         "fr": '(rencontre OR entretiens OR reçu OR visite OR décision OR décret OR annoncé OR nommé OR limogé OR accord OR sommet OR participé OR signé OR inspecté OR opération OR déclaration)',
@@ -470,7 +475,7 @@ def make_priority_official_feeds():
     for country, language_names in people.items():
         for language in ("en", "fr", "ar"):
             names_query = " OR ".join(language_names[language])
-            query = f'("{country}" OR "{country.lower()}") ({names_query}) {actions[language]} when:2d'
+            query = f'{country_terms[country][language]} ({names_query}) {actions[language]} when:2d'
             hl, gl, ceid = locales[language]
             feeds.append(
                 "https://news.google.com/rss/search?q="
