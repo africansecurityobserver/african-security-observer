@@ -49,26 +49,14 @@ footer{text-align:center;padding:20px 12px;color:var(--muted);font-size:12px}
 </header>
 <main>
 <section class="section">
-<h2>المراكز المشمولة بالمتابعة</h2>
-<p class="intro">قائمة بالمؤسسات البحثية المرجعية التي نتابع منشوراتها في الاستراتيجية والأمن والدفاع والعلاقات الدولية. افتح الموقع الرسمي للاطلاع على الدراسات الأصلية.</p>
-<div class="centers">
-<article class="center"><h3>المعهد الدولي للدراسات الاستراتيجية (IISS)</h3><div class="country">المملكة المتحدة</div><p>الاستراتيجية العسكرية، التسلح، التوازنات الدفاعية والأمن الدولي.</p><a href="https://www.iiss.org/" target="_blank" rel="noopener noreferrer">الموقع الرسمي ↗</a></article>
-<article class="center"><h3>مركز الدراسات الاستراتيجية والدولية (CSIS)</h3><div class="country">الولايات المتحدة</div><p>الدفاع، الأمن القومي، التنافس بين القوى الكبرى والصراعات الإقليمية.</p><a href="https://www.csis.org/" target="_blank" rel="noopener noreferrer">الموقع الرسمي ↗</a></article>
-<article class="center"><h3>تشاتام هاوس (Chatham House)</h3><div class="country">المملكة المتحدة</div><p>الجغرافيا السياسية، السياسة الخارجية، أفريقيا والشرق الأوسط.</p><a href="https://www.chathamhouse.org/" target="_blank" rel="noopener noreferrer">الموقع الرسمي ↗</a></article>
-<article class="center"><h3>معهد ستوكهولم الدولي لأبحاث السلام (SIPRI)</h3><div class="country">السويد</div><p>نقل الأسلحة، الإنفاق العسكري، التسلح ونزع السلاح.</p><a href="https://www.sipri.org/" target="_blank" rel="noopener noreferrer">الموقع الرسمي ↗</a></article>
-<article class="center"><h3>مؤسسة RAND</h3><div class="country">الولايات المتحدة</div><p>التخطيط الدفاعي، العقائد العسكرية، الردع والسياسات الأمنية.</p><a href="https://www.rand.org/" target="_blank" rel="noopener noreferrer">الموقع الرسمي ↗</a></article>
-<article class="center"><h3>معهد بروكينغز (Brookings)</h3><div class="country">الولايات المتحدة</div><p>السياسة الخارجية، الأمن الدولي، القوى الكبرى والشرق الأوسط.</p><a href="https://www.brookings.edu/" target="_blank" rel="noopener noreferrer">الموقع الرسمي ↗</a></article>
-</div>
-</section>
-<section class="section">
-<h2>البطاقات المستخلصة من الدراسات</h2>
-<p class="intro">تُعرض هنا البطاقات العربية التي تلخص الدراسات الأصلية، مع رابط واضح إلى الدراسة المرجعية. يمكن تصفحها والبحث حسب المركز أو الموضوع.</p>
+<h2>الدراسات والبحوث الاستراتيجية</h2>
+<p class="intro">قائمة البطاقات العربية المستخلصة من الدراسات والتقارير والأبحاث المنشورة حديثًا، مع إتاحة قراءة الملخص والبطاقة كاملة والرجوع إلى المصادر الأصلية.</p>
 <div class="tools">
-<input id="search" type="search" placeholder="ابحث في عنوان البطاقة أو ملخصها">
-<select id="centerFilter"><option value="">جميع المراكز</option></select>
+<input id="search" type="search" placeholder="ابحث في عنوان الدراسة أو ملخصها">
+<select id="centerFilter"><option value="">جميع المصادر</option></select>
 <select id="periodFilter"><option value="">كل الفترات</option><option value="morning">صباحية</option><option value="evening">مسائية</option></select>
 </div>
-<div id="cards" class="cards"><div class="loading">جارٍ تحميل البطاقات…</div></div>
+<div id="cards" class="cards"><div class="loading">جارٍ تحميل الدراسات…</div></div>
 </section>
 </main>
 <footer>المرصد الإفريقي للأمن والدفاع · تُلخّص البطاقات الدراسات مع الحفاظ على رابط المصدر الأصلي.</footer>
@@ -79,29 +67,41 @@ const centerEl=document.getElementById('centerFilter');
 const periodEl=document.getElementById('periodFilter');
 let cards=[];
 function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function sourceLabel(c){
+const sources=Array.isArray(c.sources)?c.sources:[];
+return sources.map(s=>s&&s.title?s.title:'').filter(Boolean).join('؛ ') || 'المصدر الأصلي';
+}
+function sourceLinks(c){
+const sources=Array.isArray(c.sources)?c.sources:[];
+return sources.filter(s=>s&&s.url).map(s=>'<a class="source-link" href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.title||'قراءة المصدر الأصلي')+' ↗</a>').join(' ');
+}
 function cardMarkup(c){
-const period=c.period==='morning'?'صباحية':c.period==='evening'?'مسائية':'استراتيجية';
-const source=c.source_url?'<a class="source-link" href="'+esc(c.source_url)+'" target="_blank" rel="noopener noreferrer">قراءة الدراسة الأصلية ↗</a>':'';
-const full=c.body?'<details style="margin-top:12px"><summary style="cursor:pointer;color:var(--blue);font-weight:bold">قراءة البطاقة كاملة</summary><div style="white-space:pre-line;line-height:2;margin-top:10px">'+esc(c.body)+'</div></details>':'';
-return '<article class="research-card"><span class="badge">بطاقة '+period+'</span><h3>'+esc(c.title||'دراسة استراتيجية')+'</h3><div class="meta">'+esc(c.center||'مركز أبحاث')+(c.date?' · '+esc(c.date):'')+'</div>'+(c.summary?'<p class="summary">'+esc(c.summary)+'</p>':'')+full+'<div class="card-actions">'+source+'</div></article>';
+const period=c.slot==='morning'?'صباحية':c.slot==='evening'?'مسائية':'استراتيجية';
+const sources=sourceLinks(c);
+const sections=Array.isArray(c.sections)?c.sections:[];
+const body=sections.map(s=>(s.heading||'')+'\n'+(s.text||'')).join('\n\n');
+const full=body?'<details style="margin-top:12px"><summary style="cursor:pointer;color:var(--blue);font-weight:bold">قراءة البطاقة كاملة</summary><div style="white-space:pre-line;line-height:2;margin-top:10px">'+esc(body)+'</div></details>':'';
+const subject=c.subject||c.title||'دراسة استراتيجية';
+return '<article class="research-card"><span class="badge">دراسة استراتيجية '+period+'</span><h3>'+esc(subject)+'</h3><div class="meta">'+esc(sourceLabel(c))+(c.date?' · '+esc(c.date):'')+(c.region?' · '+esc(c.region):'')+'</div>'+(c.summary?'<p class="summary">'+esc(c.summary)+'</p>':'')+full+'<div class="card-actions">'+sources+'</div></article>';
 }
 function render(){
 const q=searchEl.value.trim().toLocaleLowerCase();
-const center=centerEl.value;
+const source=centerEl.value;
 const period=periodEl.value;
-const filtered=cards.filter(c=>(!center||c.center===center)&&(!period||c.period===period)&&(!q||(String(c.title||'')+' '+String(c.summary||'')+' '+String(c.body||'')).toLocaleLowerCase().includes(q)));
-if(!filtered.length){cardsEl.innerHTML='<div class="empty">لا توجد بطاقات منشورة في هذا القسم حتى الآن. ستظهر هنا الملخصات عند إضافتها إلى ملف البيانات الخاص بالقسم.</div>';return;}
+const filtered=cards.filter(c=>(!source||sourceLabel(c)===source)&&(!period||c.slot===period)&&(!q||(String(c.subject||'')+' '+String(c.title||'')+' '+String(c.summary||'')+' '+(Array.isArray(c.sections)?c.sections.map(s=>(s.heading||'')+' '+(s.text||'')).join(' '):'')).toLocaleLowerCase().includes(q)));
+if(!filtered.length){cardsEl.innerHTML='<div class="empty">لا توجد دراسات أو بطاقات استراتيجية منشورة مطابقة للبحث حاليًا. ستظهر المواد الجديدة هنا بعد نشرها آليًا.</div>';return;}
 cardsEl.innerHTML=filtered.sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).map(cardMarkup).join('');
 }
 async function load(){
 try{
-const r=await fetch('./research_cards.json?t='+Date.now(),{cache:'no-store'});
-if(!r.ok)throw new Error('Research cards data unavailable');
+const r=await fetch('./strategic_cards.json?t='+Date.now(),{cache:'no-store'});
+if(!r.ok)throw new Error('Strategic cards data unavailable');
 const data=await r.json();
-cards=Array.isArray(data)?data:(Array.isArray(data.cards)?data.cards:[]);
-[...new Set(cards.map(c=>c.center).filter(Boolean))].sort().forEach(name=>{const o=document.createElement('option');o.value=name;o.textContent=name;centerEl.appendChild(o);});
+cards=Array.isArray(data)?data:(data&&typeof data==='object'?Object.entries(data).filter(([key,value])=>key!=='checked_urls'&&Array.isArray(value)).flatMap(([,value])=>value):[]);
+const names=[...new Set(cards.map(sourceLabel).filter(Boolean))].sort();
+names.forEach(name=>{const o=document.createElement('option');o.value=name;o.textContent=name;centerEl.appendChild(o);});
 render();
-}catch(e){console.error(e);cardsEl.innerHTML='<div class="empty">تعذر تحميل بيانات البطاقات حاليًا.</div>';}
+}catch(e){console.error(e);cardsEl.innerHTML='<div class="empty">تعذر تحميل بيانات الدراسات حاليًا.</div>';}
 }
 [searchEl,centerEl,periodEl].forEach(el=>el.addEventListener('input',render));
 load();
