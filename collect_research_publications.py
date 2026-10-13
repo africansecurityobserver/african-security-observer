@@ -468,6 +468,12 @@ def main():
         "updated": now.isoformat(timespec="minutes"),
         "window_days": MAX_AGE_DAYS,
         "seed_start_date": SEED_START_DATE,
+        "center_count": len(CENTERS),
+        "centers": [
+            {"name": center["name"], "short": center["short"],
+             "domain": center["domain"], "site": "https://" + center["domain"] + "/"}
+            for center in CENTERS
+        ],
         "count": len(publications),
         "publications": publications
     }
