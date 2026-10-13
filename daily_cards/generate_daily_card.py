@@ -1323,6 +1323,23 @@ def event_priority(text_value):
         "smuggling", "suivi des vols", "avion cargo", "migrants"
     ]
 
+    priority_official_terms = [
+        "خليفة حفتر", "صدام حفتر", "خالد حفتر", "عبد الحميد الدبيبة",
+        "عبدالحميد الدبيبة", "محمد المنفي", "عبد المجيد مليقطة",
+        "عبدالمجيد مليقطة", "الطاهر الباعور", "عبد السلام الزوبي",
+        "عبدالسلام الزوبي", "محمود حمزة",
+        "عبد المجيد تبون", "عبدالمجيد تبون", "السعيد شنقريحة", "محمد عرقاب",
+        "سيفي غريب", "أحمد عطاف", "احمد عطاف", "السعيد سعيود", "الحاج بوسلجة",
+        "محمد السادس", "فاطمة الزهراء المنصوري", "ناصر بوريطة",
+        "عبد الوافي لفتيت", "عبدالوافي لفتيت", "محمد بريظ",
+        "khalifa haftar", "saddam haftar", "khaled haftar",
+        "abdelmadjid tebboune", "said chengriha", "mohamed arkab",
+        "sifi ghrieb", "ahmed attaf", "said sayoud", "nasser bourita",
+        "abdelouafi laftit", "mohamed berrid"
+    ]
+
+    if any(term in value for term in priority_official_terms):
+        return 0
     if any(term in value for term in political_terms):
         return 0
     if any(term in value for term in military_leader_terms):
