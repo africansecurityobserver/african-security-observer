@@ -13,9 +13,12 @@ import requests
 ROOT = Path(__file__).resolve().parent
 OUTPUT = ROOT / "research_publications.json"
 TZ = ZoneInfo("Africa/Tunis")
+# Initial backfill begins on 1 October 2026. Subsequent scheduled runs
+# add newly published items while retaining the existing list for up to 30 days.
+SEED_START_DATE = "2026-10-01"
 MAX_AGE_DAYS = 30
-MAX_PER_CENTER = 12
-MAX_TOTAL = 250
+MAX_PER_CENTER = 30
+MAX_TOTAL = 800
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; AfricanSecurityObserver/1.0)"}
 
 # Direct, source-specific searches: this file records publications and links only.
@@ -90,14 +93,32 @@ def direct_url(url):
 
 def main():
     now = datetime.now(TZ)
-    cutoff = now - timedelta(days=MAX_AGE_DAYS)
+    rolling_cutoff = now - timedelta(days=MAX_AGE_DAYS)
+    seed_start = datetime.strptime(SEED_START_DATE, "%Y-%m-%d").replace(tzinfo=TZ)
+    cutoff = max(rolling_cutoff, seed_start)
+
+    # Preserve previously collected items so a six-hour run adds new links
+    # instead of replacing the whole list with a smaller search result.
+    existing_items = []
+    if OUTPUT.exists():
+        try:
+            old_data = json.loads(OUTPUT.read_text(encoding="utf-8"))
+            old_items = old_data.get("publications", []) if isinstance(old_data, dict) else old_data
+            if isinstance(old_items, list):
+                existing_items = [item for item in old_items if isinstance(item, dict)]
+        except Exception as exc:
+            print(f"Could not read prior publication list: {type(exc).__name__}")
+
     publications = []
     seen = set()
     session = requests.Session()
     session.headers.update(HEADERS)
 
     for center in CENTERS:
-        query = f"site:{center['domain']} ({center['query']}) when:{MAX_AGE_DAYS}d"
+        # Google News RSS supports after: dates; this gives the initial
+        # 1–13 October backfill and then includes newer posts on every run.
+        after_date = (cutoff.date() - timedelta(days=1)).isoformat()
+        query = f"site:{center['domain']} ({center['query']}) after:{after_date}"
         params = {"q": query, "hl": "en-US", "gl": "US", "ceid": "US:en"}
         try:
             response = session.get("https://news.google.com/rss/search", params=params, timeout=22)
@@ -145,11 +166,34 @@ def main():
             publications.append(item)
         print(f"{center['short']}: {min(len(center_items), MAX_PER_CENTER)} publications")
 
-    publications.sort(key=lambda x: x.get("published", ""), reverse=True)
+    # Merge the existing list after fresh results, deduplicate by URL, and
+    # retain the newest item for each URL. This prevents six-hour refreshes
+    # from deleting valid older entries that Google News no longer returns.
+    merged = {}
+    for item in existing_items + publications:
+        url = str(item.get("url", "")).strip()
+        if not url:
+            continue
+        published_dt = parse_date(item.get("published") or item.get("date"))
+        if published_dt and published_dt < cutoff:
+            continue
+        if url not in merged:
+            merged[url] = item
+        else:
+            old_dt = parse_date(merged[url].get("published") or merged[url].get("date"))
+            if published_dt and (not old_dt or published_dt > old_dt):
+                merged[url] = item
+
+    publications = list(merged.values())
+    publications.sort(
+        key=lambda x: parse_date(x.get("published") or x.get("date")) or cutoff,
+        reverse=True
+    )
     publications = publications[:MAX_TOTAL]
     payload = {
         "updated": now.isoformat(timespec="minutes"),
         "window_days": MAX_AGE_DAYS,
+        "seed_start_date": SEED_START_DATE,
         "count": len(publications),
         "publications": publications
     }
