@@ -153,7 +153,7 @@ def main():
         "count": len(publications),
         "publications": publications
     }
-    OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Saved {len(publications)} research publications to {OUTPUT.name}")
 
 if __name__ == "__main__":
