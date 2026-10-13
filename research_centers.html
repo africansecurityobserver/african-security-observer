@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>دراسات مراكز الأبحاث الاستراتيجية | المرصد الإفريقي</title>
+<meta name="description" content="قائمة دورية بعناوين الدراسات والتقارير والمنشورات الجديدة الصادرة عن مراكز البحوث الاستراتيجية، مع روابطها الأصلية.">
+<title>منشورات مراكز الدراسات الاستراتيجية | المرصد الإفريقي</title>
 <style>
 :root{--navy:#102b46;--blue:#174d75;--gold:#d7a849;--paper:#f4f6f8;--ink:#172535;--muted:#687887;--line:#dce3e9}
 *{box-sizing:border-box}
@@ -11,97 +12,100 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,Arial,
 header{background:var(--navy);color:#fff;padding:24px 18px;border-bottom:4px solid var(--gold)}
 .header-inner,main{max-width:1120px;margin:auto}
 header h1{font-size:25px;margin:0 0 5px}
-header p{margin:0;color:#d3dfeb}
+header p{margin:0;color:#d3dfeb;font-size:14px}
 .header-links{margin-top:12px;font-size:13px}
 .header-links a{color:#f1d28a;text-decoration:none}
 main{padding:24px 16px 44px}
-h2{color:var(--navy);font-size:22px;margin:0 0 8px}
-.intro{color:var(--muted);margin:0 0 20px;font-size:14px}
-.section{margin-bottom:28px}
-.centers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.center,.research-card{background:#fff;border:1px solid var(--line);border-radius:9px;padding:17px;box-shadow:0 2px 7px #102b4608}
-.center h3{margin:0 0 4px;font-size:17px;color:var(--navy)}
-.center .country{font-size:12px;color:var(--blue);font-weight:bold}
-.center p{font-size:13px;color:var(--muted);margin:8px 0 12px}
-.center a,.source-link{color:var(--blue);text-decoration:none;font-size:13px;font-weight:bold}
-.center a:hover,.source-link:hover{text-decoration:underline}
-.tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 15px}
-.tools input,.tools select{font:inherit;font-size:13px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;min-width:190px}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.research-card h3{font-size:18px;line-height:1.6;margin:7px 0;color:var(--navy)}
-.meta{font-size:12px;color:var(--muted)}
-.summary{font-size:14px;margin:10px 0 14px}
-.card-actions{display:flex;gap:12px;flex-wrap:wrap;border-top:1px solid #edf0f3;padding-top:12px}
-.badge{display:inline-block;background:#edf3f7;color:var(--blue);border-radius:4px;padding:3px 7px;font-size:11px}
-.empty,.loading{background:#fff;border:1px dashed var(--line);border-radius:8px;text-align:center;padding:28px;color:var(--muted);grid-column:1/-1}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--navy);padding-bottom:10px;margin-bottom:12px}
+h2{color:var(--navy);font-size:22px;margin:0}
+.intro{color:var(--muted);margin:0 0 18px;font-size:14px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px}
+.tools input,.tools select{font:inherit;font-size:13px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;min-width:210px}
+#status{font-size:12px;color:var(--muted)}
+.publications{display:grid;grid-template-columns:1fr;gap:10px}
+.publication{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;box-shadow:0 2px 7px #102b4608}
+.publication h3{font-size:16px;line-height:1.65;margin:7px 0 8px;color:var(--navy)}
+.publication h3 a{text-decoration:none;color:inherit}
+.publication h3 a:hover{color:var(--blue);text-decoration:underline}
+.meta{display:flex;gap:8px 14px;flex-wrap:wrap;align-items:center;font-size:12px;color:var(--muted)}
+.center{display:inline-block;background:#edf3f7;color:var(--blue);border-radius:4px;padding:2px 8px;font-size:11px;font-weight:bold}
+.source-link{display:inline-block;color:var(--blue);font-size:13px;font-weight:bold;text-decoration:none;margin-top:8px}
+.source-link:hover{text-decoration:underline}
+.empty,.loading{background:#fff;border:1px dashed var(--line);border-radius:8px;text-align:center;padding:28px;color:var(--muted)}
 footer{text-align:center;padding:20px 12px;color:var(--muted);font-size:12px}
-@media(max-width:760px){.centers,.cards{grid-template-columns:1fr}header h1{font-size:22px}.tools input,.tools select{width:100%}}
-@media print{header,.header-links,.tools,.card-actions,footer{display:none!important}body{background:#fff}.research-card,.center{break-inside:avoid;box-shadow:none}}
+@media(max-width:650px){header h1{font-size:21px}.tools input,.tools select{width:100%;min-width:0}.publication{padding:12px}.publication h3{font-size:15px}}
+@media print{header,.header-links,.tools,footer{display:none!important}body{background:#fff}.publication{break-inside:avoid;box-shadow:none}}
 </style>
 </head>
 <body>
 <header>
 <div class="header-inner">
 <h1>المرصد الإفريقي للأمن والدفاع</h1>
-<p>دراسات مراكز الأبحاث الاستراتيجية</p>
+<p>متابعة منشورات مراكز البحوث الاستراتيجية والأمنية</p>
 <div class="header-links"><a href="./">← العودة إلى الموقع الرئيسي</a></div>
 </div>
 </header>
 <main>
-<section class="section">
-<h2>الدراسات والبحوث الاستراتيجية</h2>
-<p class="intro">قائمة البطاقات العربية المستخلصة من الدراسات والتقارير والأبحاث المنشورة حديثًا، مع إتاحة قراءة الملخص والبطاقة كاملة والرجوع إلى المصادر الأصلية.</p>
-<div class="tools">
-<input id="search" type="search" placeholder="ابحث في عنوان الدراسة أو ملخصها">
-<select id="centerFilter"><option value="">جميع المصادر</option></select>
-<select id="periodFilter"><option value="">كل الفترات</option><option value="morning">صباحية</option><option value="evening">مسائية</option></select>
+<section>
+<div class="section-head">
+<h2>أحدث الدراسات والتقارير المنشورة</h2>
+<span id="status">جارٍ تحميل قائمة المنشورات…</span>
 </div>
-<div id="cards" class="cards"><div class="loading">جارٍ تحميل الدراسات…</div></div>
+<p class="intro">يعرض هذا القسم عناوين الدراسات والتقارير والتحليلات المنشورة على المواقع الأصلية لمراكز البحوث، مع روابط مباشرة لقراءتها. لا يعرض البطاقات الاستراتيجية الصباحية والمسائية؛ فهي موجودة في قسم مستقل.</p>
+<div class="tools">
+<input id="search" type="search" placeholder="ابحث في عنوان المنشور أو اسم المركز" aria-label="البحث في المنشورات">
+<select id="centerFilter" aria-label="تصفية حسب المركز"><option value="">جميع المراكز</option></select>
+<select id="periodFilter" aria-label="تصفية حسب الفترة"><option value="30">آخر 30 يومًا</option><option value="7">آخر 7 أيام</option><option value="14">آخر 14 يومًا</option><option value="all">كل المنشورات المتاحة</option></select>
+</div>
+<div id="publications" class="publications"><div class="loading">جارٍ تحميل المنشورات…</div></div>
 </section>
 </main>
-<footer>المرصد الإفريقي للأمن والدفاع · تُلخّص البطاقات الدراسات مع الحفاظ على رابط المصدر الأصلي.</footer>
+<footer>المرصد الإفريقي للأمن والدفاع · العناوين والروابط تعود إلى ناشريها الأصليين.</footer>
 <script>
-const cardsEl=document.getElementById('cards');
+const listEl=document.getElementById('publications');
 const searchEl=document.getElementById('search');
 const centerEl=document.getElementById('centerFilter');
 const periodEl=document.getElementById('periodFilter');
-let cards=[];
+const statusEl=document.getElementById('status');
+let publications=[];
 function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-function sourceLabel(c){
-const sources=Array.isArray(c.sources)?c.sources:[];
-return sources.map(s=>s&&s.title?s.title:'').filter(Boolean).join('؛ ') || 'المصدر الأصلي';
-}
-function sourceLinks(c){
-const sources=Array.isArray(c.sources)?c.sources:[];
-return sources.filter(s=>s&&s.url).map(s=>'<a class="source-link" href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.title||'قراءة المصدر الأصلي')+' ↗</a>').join(' ');
-}
-function cardMarkup(c){
-const period=c.slot==='morning'?'صباحية':c.slot==='evening'?'مسائية':'استراتيجية';
-const sources=sourceLinks(c);
-const sections=Array.isArray(c.sections)?c.sections:[];
-const body=sections.map(s=>(s.heading||'')+'\n'+(s.text||'')).join('\n\n');
-const full=body?'<details style="margin-top:12px"><summary style="cursor:pointer;color:var(--blue);font-weight:bold">قراءة البطاقة كاملة</summary><div style="white-space:pre-line;line-height:2;margin-top:10px">'+esc(body)+'</div></details>':'';
-const subject=c.subject||c.title||'دراسة استراتيجية';
-return '<article class="research-card"><span class="badge">دراسة استراتيجية '+period+'</span><h3>'+esc(subject)+'</h3><div class="meta">'+esc(sourceLabel(c))+(c.date?' · '+esc(c.date):'')+(c.region?' · '+esc(c.region):'')+'</div>'+(c.summary?'<p class="summary">'+esc(c.summary)+'</p>':'')+full+'<div class="card-actions">'+sources+'</div></article>';
-}
+function dateValue(item){const d=new Date(item.published||item.date||'');return Number.isNaN(d.getTime())?null:d;}
 function render(){
-const q=searchEl.value.trim().toLocaleLowerCase();
-const source=centerEl.value;
-const period=periodEl.value;
-const filtered=cards.filter(c=>(!source||sourceLabel(c)===source)&&(!period||c.slot===period)&&(!q||(String(c.subject||'')+' '+String(c.title||'')+' '+String(c.summary||'')+' '+(Array.isArray(c.sections)?c.sections.map(s=>(s.heading||'')+' '+(s.text||'')).join(' '):'')).toLocaleLowerCase().includes(q)));
-if(!filtered.length){cardsEl.innerHTML='<div class="empty">لا توجد دراسات أو بطاقات استراتيجية منشورة مطابقة للبحث حاليًا. ستظهر المواد الجديدة هنا بعد نشرها آليًا.</div>';return;}
-cardsEl.innerHTML=filtered.sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).map(cardMarkup).join('');
+ const q=searchEl.value.trim().toLocaleLowerCase();
+ const center=centerEl.value;
+ const days=periodEl.value;
+ const now=Date.now();
+ const filtered=publications.filter(p=>{
+   const date=dateValue(p);
+   const matchesDate=days==='all'||!date||now-date.getTime()<=Number(days)*86400000;
+   const matchesText=(String(p.title||'')+' '+String(p.center||'')+' '+String(p.source||'')).toLocaleLowerCase().includes(q);
+   return (!center||p.center===center)&&matchesDate&&matchesText;
+ });
+ filtered.sort((a,b)=>(dateValue(b)?.getTime()||0)-(dateValue(a)?.getTime()||0));
+ if(!filtered.length){listEl.innerHTML='<div class="empty">لا توجد منشورات مطابقة حاليًا. ستظهر هنا عناوين جديدة وروابطها بعد التحديث الدوري للمصادر.</div>';return;}
+ listEl.innerHTML=filtered.map(p=>{
+   const d=dateValue(p);
+   const dateLabel=d?new Intl.DateTimeFormat('ar-TN',{dateStyle:'medium'}).format(d):(p.date||'تاريخ غير متوفر');
+   const url=/^https?:\/\//i.test(p.url||'')?p.url:'#';
+   return '<article class="publication"><div class="meta"><span class="center">'+esc(p.center||p.center_short||'مركز أبحاث')+'</span><span>'+esc(dateLabel)+'</span></div><h3><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.title||'منشور دون عنوان')+'</a></h3><div class="meta">'+(p.source&&p.source!==p.center?'<span>الناشر: '+esc(p.source)+'</span>':'')+'</div><a class="source-link" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">قراءة المنشور في موقعه الأصلي ↗</a></article>';
+ }).join('');
 }
 async function load(){
-try{
-const r=await fetch('./strategic_cards.json?t='+Date.now(),{cache:'no-store'});
-if(!r.ok)throw new Error('Strategic cards data unavailable');
-const data=await r.json();
-cards=Array.isArray(data)?data:(data&&typeof data==='object'?Object.entries(data).filter(([key,value])=>key!=='checked_urls'&&Array.isArray(value)).flatMap(([,value])=>value):[]);
-const names=[...new Set(cards.map(sourceLabel).filter(Boolean))].sort();
-names.forEach(name=>{const o=document.createElement('option');o.value=name;o.textContent=name;centerEl.appendChild(o);});
-render();
-}catch(e){console.error(e);cardsEl.innerHTML='<div class="empty">تعذر تحميل بيانات الدراسات حاليًا.</div>';}
+ try{
+  const r=await fetch('./research_publications.json?t='+Date.now(),{cache:'no-store'});
+  if(!r.ok)throw new Error('publication data unavailable');
+  const data=await r.json();
+  publications=Array.isArray(data)?data:(Array.isArray(data.publications)?data.publications:[]);
+  const centers=[...new Set(publications.map(p=>p.center).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ar'));
+  centers.forEach(name=>{const o=document.createElement('option');o.value=name;o.textContent=name;centerEl.appendChild(o);});
+  const updated=data.updated?new Date(data.updated):null;
+  statusEl.textContent='عدد المنشورات: '+publications.length+(updated&&!Number.isNaN(updated.getTime())?' · آخر تحديث: '+new Intl.DateTimeFormat('ar-TN',{dateStyle:'medium',timeStyle:'short'}).format(updated):'');
+  render();
+ }catch(e){
+  console.error(e);
+  statusEl.textContent='تعذر تحميل القائمة';
+  listEl.innerHTML='<div class="empty">تعذر تحميل قائمة المنشورات حاليًا. يرجى المحاولة لاحقًا.</div>';
+ }
 }
 [searchEl,centerEl,periodEl].forEach(el=>el.addEventListener('input',render));
 load();
