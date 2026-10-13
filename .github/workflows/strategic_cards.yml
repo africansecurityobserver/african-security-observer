@@ -13,8 +13,8 @@ on:
         default: morning
 
   schedule:
-    # Morning card: articles published 00:01–08:55, published at 09:00 Tunis time.
-    - cron: "0 9 * * *"
+    # Morning card: publish at 08:55 Tunis time.
+    - cron: "55 8 * * *"
       timezone: "Africa/Tunis"
     # Evening card: articles published 09:01–23:50, published at 23:55 Tunis time.
     - cron: "55 23 * * *"
