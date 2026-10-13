@@ -39,6 +39,25 @@ STRATEGIC_RSS_QUERIES = {
     ],
     "strategic_assessment": [
         '"geopolitical competition" OR "regional security" OR "national security strategy" OR "security strategy" OR "defense policy" OR "defence policy" OR "توازنات إقليمية" OR "الأمن الإقليمي" OR "استراتيجية الأمن القومي" OR "السياسة الدفاعية" Africa Sahel North Africa'
+    ],
+    # Direct source-specific monitoring for the six strategic research centers.
+    "source_iiss": [
+        'site:iiss.org (Africa OR Sahel OR security OR military OR defence OR defense OR strategy OR geopolitics)'
+    ],
+    "source_csis": [
+        'site:csis.org (Africa OR Sahel OR security OR military OR defence OR defense OR strategy OR geopolitics)'
+    ],
+    "source_chatham_house": [
+        'site:chathamhouse.org (Africa OR Sahel OR security OR conflict OR defence OR defense OR geopolitics)'
+    ],
+    "source_sipri": [
+        'site:sipri.org (Africa OR arms transfers OR military spending OR weapons OR conflict OR security)'
+    ],
+    "source_rand": [
+        'site:rand.org (Africa OR national security OR military strategy OR defense OR defence OR conflict)'
+    ],
+    "source_brookings": [
+        'site:brookings.edu (Africa OR security OR foreign policy OR military OR conflict OR strategy)'
     ]
 }
 
@@ -190,7 +209,7 @@ def fetch_strategic_rss_items():
                     continue
                 root = ET.fromstring(response.content)
                 entries = root.findall("./channel/item")
-                for entry in entries[:4]:
+                for entry in entries[:8 if topic.startswith('source_') else 4]:
                     title = clean_text(unescape(re.sub(r"<[^>]+>", " ", entry.findtext("title") or "")))
                     wrapper_url = clean_text(entry.findtext("link") or "")
                     description = clean_text(unescape(re.sub(
@@ -378,7 +397,7 @@ def sync_archive(data):
 def build_prompt(source_material, slot_label, window_label, date_label):
     today = datetime.now(TZ).strftime("%Y-%m-%d")
     return f"""
-أنت رئيس تحرير ومحلل استراتيجي في «المرصد الإفريقي للأمن والدفاع». المطلوب إعداد بطاقة استراتيجية عربية عميقة ومقنعة اعتمادًا على المواد المصدرية المرفقة وحدها. هذه ليست بطاقة خبرية قصيرة، بل تقدير موقف منظم يشرح الحدث وسياقه ودلالاته وتداعياته.
+أنت رئيس تحرير ومحلل استراتيجي في «المرصد الإفريقي للأمن والدفاع». المطلوب إعداد بطاقة استراتيجية عربية عميقة ومقنعة اعتمادًا على مقال بحثي واحد مرفق في المواد المصدرية. كل بطاقة يجب أن تعالج مقالًا أصليًا واحدًا فقط، وألا تدمج موضوعات مقالات مختلفة في بطاقة واحدة. هذه ليست بطاقة خبرية قصيرة، بل تقدير موقف منظم يشرح أطروحة المقال وأدلته وسياقه ودلالاته وتداعياته. استهدف 900 إلى 1200 كلمة عربية تقريبًا، بما يعادل نحو صفحة ونصف إلى صفحتين عند الطباعة. لا تكرر الفكرة نفسها لإطالة النص؛ إذا كان المقال الأصلي قصيرًا أو لا يتيح تحليلًا موثوقًا بهذا الحجم، أعد publish=false.
 
 اختر تصنيفًا واحدًا فقط من التصنيفات التالية، بحسب جوهر الموضوع. ويشمل strategic_assessment أيضًا استراتيجيات الأمن القومي والسياسة الخارجية عندما لا ينطبق تصنيف أدق:
 - deals: صفقات التسلح الكبرى والعقود والتسليمات والتعاون الصناعي المحدد.
@@ -461,10 +480,14 @@ def main():
     slot = clean_text(os.getenv("CARD_SLOT", "morning")).lower()
     now = datetime.now(TZ)
     date_label = arabic_date_label(now)
+
     news = load_json(NEWS_FILE, {})
     items = news.get("items", []) if isinstance(news, dict) else []
+    # Keep the existing general strategic searches and add source-specific
+    # searches for IISS, CSIS, Chatham House, SIPRI, RAND and Brookings.
     items = list(items) + fetch_strategic_rss_items()
     items, slot_label, window_label = filter_items_for_slot(items, slot, now)
+
     default_data = {kind: [] for kind in TYPE_ORDER}
     default_data["checked_urls"] = []
     data = load_json(DATA_FILE, default_data)
@@ -476,38 +499,13 @@ def main():
     if not isinstance(data.get("checked_urls"), list):
         data["checked_urls"] = []
 
-    # Migrate the old two-category data shape without discarding existing cards.
     checked = set(clean_text(url) for url in data["checked_urls"] if clean_text(url))
     sync_archive(data)
 
     candidates = select_candidates(items, checked)
     if not candidates:
-        print(f"No new, sufficiently relevant sources were found for the {slot_label} card; no card will be fabricated.")
+        print(f"No new, sufficiently relevant source articles were found for the {slot_label} period; no card will be fabricated.")
         return
-
-    source_material = []
-    for index, item in enumerate(candidates, start=1):
-        title = clean_text(item.get("original_title") or item.get("title"))
-        description = clean_text(
-            item.get("original_description") or item.get("description") or item.get("summary")
-        )
-        body = get_article_text(item["_url"])
-        scores = item.get("_type_scores", {})
-        likely_types = [
-            TYPE_LABELS[kind] for kind in TYPE_ORDER
-            if scores.get(kind, 0) >= 2
-        ]
-        source_material.append({
-            "id": index,
-            "title": title[:450],
-            "description": description[:1600],
-            "published": clean_text(item.get("published")),
-            "source": clean_text(item.get("source")),
-            "category_from_feed": clean_text(item.get("category")),
-            "possible_topics": likely_types,
-            "url": item["_url"],
-            "article_text": body
-        })
 
     client = genai.Client(
         api_key=api_key,
@@ -536,115 +534,148 @@ def main():
         },
         "required": ["publish", "type", "title", "region", "summary", "sections", "source_urls"]
     }
-    result = client.interactions.create(
-        model=MODEL,
-        input=build_prompt(source_material, slot_label, window_label, date_label),
-        response_format={"type": "text", "mime_type": "application/json", "schema": schema},
-        generation_config={"temperature": 0.2, "thinking_level": "low"}
-    )
-    try:
-        output = json.loads(result.output_text or "{}")
-    except json.JSONDecodeError:
-        raise RuntimeError("Gemini returned invalid JSON; no card was published.")
 
-    # If no reliable card can be produced, mark these sources as reviewed so
-    # weak material is not submitted repeatedly. When a card is published, only
-    # its selected sources are marked; other candidates remain available later.
-    if not output.get("publish"):
-        data["checked_urls"] = list(dict.fromkeys(
-            [clean_text(url) for url in data["checked_urls"] if clean_text(url)]
-            + [item["_url"] for item in candidates]
-        ))[-1500:]
-        save_json(DATA_FILE, data)
-        sync_archive(data)
-        print("Model rejected the source material as insufficient for a reliable card.")
-        return
+    published_count = 0
+    reviewed_count = 0
+    # One source article -> one independent strategic card. This prevents a
+    # single card from blending unrelated research papers or think-tank essays.
+    for index, item in enumerate(candidates, start=1):
+        url = item["_url"]
+        title_original = clean_text(item.get("original_title") or item.get("title"))
+        description = clean_text(
+            item.get("original_description") or item.get("description") or item.get("summary")
+        )
+        body = get_article_text(url)
 
-    kind = clean_text(output.get("type"))
-    title = clean_text(output.get("title"))
-    sections = [
-        {"heading": clean_text(section.get("heading")), "text": clean_text(section.get("text"))}
-        for section in output.get("sections", [])
-        if isinstance(section, dict) and clean_text(section.get("heading")) and clean_text(section.get("text"))
-    ]
-    valid_urls = {item["url"] for item in source_material}
-    chosen_urls = [
-        clean_text(url) for url in output.get("source_urls", [])
-        if clean_text(url) in valid_urls
-    ]
-    chosen_urls = list(dict.fromkeys(chosen_urls))
+        # Do not pretend to summarize a full article if both the extracted
+        # body and the publisher's abstract/description are too thin.
+        if len(body) < 500 and len(description) < 350:
+            print(f"Skipping source with insufficient readable text: {title_original[:120]}")
+            checked.add(url)
+            data["checked_urls"] = list(checked)[-1500:]
+            save_json(DATA_FILE, data)
+            sync_archive(data)
+            reviewed_count += 1
+            continue
 
-    if (
-        kind not in TYPE_LABELS
-        or not title
-        or len(clean_text(output.get("summary"))) < 60
-        or len(sections) < 4
-        or not any(
+        scores = item.get("_type_scores", {})
+        likely_types = [
+            TYPE_LABELS[kind] for kind in TYPE_ORDER
+            if scores.get(kind, 0) >= 2
+        ]
+        source_material = [{
+            "id": index,
+            "title": title_original[:450],
+            "description": description[:1600],
+            "published": clean_text(item.get("published")),
+            "source": clean_text(item.get("source")),
+            "category_from_feed": clean_text(item.get("category")),
+            "possible_topics": likely_types,
+            "url": url,
+            "article_text": body
+        }]
+
+        try:
+            result = client.interactions.create(
+                model=MODEL,
+                input=build_prompt(source_material, slot_label, window_label, date_label),
+                response_format={"type": "text", "mime_type": "application/json", "schema": schema},
+                generation_config={"temperature": 0.2, "thinking_level": "low"}
+            )
+            output = json.loads(result.output_text or "{}")
+        except Exception as exc:
+            # Keep processing other articles if one request fails; leave this
+            # URL unchecked so the next scheduled run can retry it if in-window.
+            print(f"Strategic-card generation failed for one article: {type(exc).__name__}")
+            continue
+
+        reviewed_count += 1
+        if not output.get("publish"):
+            checked.add(url)
+            data["checked_urls"] = list(checked)[-1500:]
+            save_json(DATA_FILE, data)
+            sync_archive(data)
+            print(f"Source rejected as insufficient for a reliable standalone card: {title_original[:120]}")
+            continue
+
+        kind = clean_text(output.get("type"))
+        subject = clean_text(output.get("title"))
+        sections = [
+            {"heading": clean_text(section.get("heading")), "text": clean_text(section.get("text"))}
+            for section in output.get("sections", [])
+            if isinstance(section, dict) and clean_text(section.get("heading")) and clean_text(section.get("text"))
+        ]
+        summary_text = clean_text(output.get("summary"))
+        full_text = " ".join([summary_text] + [section["text"] for section in sections])
+        word_count = len(re.findall(r"\S+", full_text))
+        has_conclusion = any(
             "خلاصة استراتيجية" in section["heading"]
             or "الخلاصة الاستراتيجية" in section["heading"]
             for section in sections
         )
-        or not chosen_urls
-    ):
-        data["checked_urls"] = list(dict.fromkeys(
-            [clean_text(url) for url in data["checked_urls"] if clean_text(url)]
-            + [item["_url"] for item in candidates]
-        ))[-1500:]
-        save_json(DATA_FILE, data)
-        sync_archive(data)
-        print("Generated card failed type, section, title, or source validation. No publication.")
-        return
 
-    data["checked_urls"] = list(dict.fromkeys(
-        [clean_text(url) for url in data["checked_urls"] if clean_text(url)]
-        + chosen_urls
-    ))[-1500:]
+        if (
+            kind not in TYPE_LABELS
+            or not subject
+            or len(summary_text) < 60
+            or len(sections) < 5
+            or not has_conclusion
+            or word_count < 650
+        ):
+            print(f"Generated card failed quality validation (words={word_count}, sections={len(sections)}); no publication.")
+            checked.add(url)
+            data["checked_urls"] = list(checked)[-1500:]
+            save_json(DATA_FILE, data)
+            sync_archive(data)
+            continue
 
-    source_by_url = {item["url"]: item for item in source_material}
-    sources = [
-        {
-            "title": source_by_url[url]["source"] or source_by_url[url]["title"],
-            "url": url
+        existing_cards = [
+            existing
+            for category in TYPE_ORDER
+            for existing in data.get(category, [])
+            if isinstance(existing, dict)
+        ]
+        subject_key = re.sub(r"\W+", "", subject.lower())
+        if any(
+            re.sub(r"\W+", "", clean_text(existing.get("subject") or existing.get("title")).lower()) == subject_key
+            for existing in existing_cards
+        ):
+            print(f"Duplicate strategic subject skipped: {subject}")
+            checked.add(url)
+            data["checked_urls"] = list(checked)[-1500:]
+            save_json(DATA_FILE, data)
+            sync_archive(data)
+            continue
+
+        publication_title = f"البطاقة الاستراتيجية {slot_label} ليوم {date_label}"
+        card = {
+            "id": datetime.now(TZ).strftime("%Y%m%d%H%M%S") + "_" + re.sub(r"[^a-zA-Z0-9]", "", __import__("hashlib").sha1(url.encode("utf-8")).hexdigest())[:8],
+            "slot": slot,
+            "type": kind,
+            "kind": kind,
+            "kind_label": TYPE_LABELS[kind],
+            "title": publication_title,
+            "subject": subject,
+            "date": now.strftime("%Y-%m-%d"),
+            "region": clean_text(output.get("region")),
+            "summary": f"موضوع البطاقة: {subject}. {summary_text}",
+            "sections": sections,
+            "sources": [{
+                "title": clean_text(item.get("source")) or title_original,
+                "url": url
+            }]
         }
-        for url in chosen_urls
-    ]
-    publication_title = f"البطاقة الاستراتيجية {slot_label} ليوم {date_label}"
-    card = {
-        "id": datetime.now(TZ).strftime("%Y%m%d%H%M%S"),
-        "slot": slot,
-        "type": kind,
-        "kind": kind,
-        "kind_label": TYPE_LABELS[kind],
-        "title": publication_title,
-        "subject": title,
-        "date": now.strftime("%Y-%m-%d"),
-        "region": clean_text(output.get("region")),
-        "summary": f"موضوع البطاقة: {title}. {clean_text(output.get('summary'))}",
-        "sections": sections,
-        "sources": sources
-    }
 
-    existing_cards = [
-        card_item
-        for category in TYPE_ORDER
-        for card_item in data.get(category, [])
-        if isinstance(card_item, dict)
-    ]
-    title_key = re.sub(r"\W+", "", title.lower())
-    if any(
-        re.sub(r"\W+", "", clean_text(existing.get("subject") or existing.get("title")).lower()) == title_key
-        for existing in existing_cards
-    ):
+        data[kind].append(card)
+        data[kind] = data[kind][-MAX_ARCHIVE_CARDS_PER_TYPE:]
+        checked.add(url)
+        data["checked_urls"] = list(checked)[-1500:]
         save_json(DATA_FILE, data)
         sync_archive(data)
-        print("A card with the same title already exists. Skipping duplicate.")
-        return
+        published_count += 1
+        print(f"Published independent strategic card: {subject} ({TYPE_LABELS[kind]}; approx. {word_count} words)")
 
-    data[kind].append(card)
-    data[kind] = data[kind][-MAX_ARCHIVE_CARDS_PER_TYPE:]
-    sync_archive(data)
-    save_json(DATA_FILE, data)
-    print(f"Published strategic card: {title} ({TYPE_LABELS[kind]})")
+    print(f"Strategic-card run complete: published={published_count}; reviewed={reviewed_count}; candidates={len(candidates)}.")
 
 if __name__ == "__main__":
     main()
