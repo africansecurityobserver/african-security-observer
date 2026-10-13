@@ -1,0 +1,42 @@
+name: Generate Research-Center Strategic Cards
+
+on:
+  schedule:
+    # Run shortly after the publication collector, every six hours in Tunis time.
+    - cron: "37 */6 * * *"
+      timezone: "Africa/Tunis"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-research-cards:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-genai requests selectolax
+      - name: Generate cards from research publications
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.5-flash-lite
+        run: python -u research_cards/generate_research_cards.py
+      - name: Commit research cards and archive
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_cards.json research_cards/archive/
+          if git diff --cached --quiet; then
+            echo "No research-card changes."
+          else
+            git commit -m "Generate strategic cards from research center publications"
+            git push
+          fi
