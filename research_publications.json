@@ -15,7 +15,8 @@
       "description": "Emerging ICT Talent and the Dutch Market: Nearshoring to Morocco, Egypt, Tunisia and Nigeria Clingendael",
       "center_site": "https://clingendael.org/",
       "relevance_tier": 1,
-      "relevance_label": "تونس مباشرة"
+      "relevance_label": "تونس مباشرة",
+      "title_ar": "المواهب الناشئة في تكنولوجيا المعلومات والاتصالات والسوق الهولندية: نقل الخدمات إلى المغرب ومصر وتونس ونيجيريا"
     },
     {
       "center": "مجلس العلاقات الخارجية",
@@ -41,7 +42,8 @@
       "description": "Africa must prepare for AI-powered cyber threats at scale ISS Africa",
       "center_site": "https://issafrica.org/",
       "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي"
     },
     {
       "center": "مؤسسة أبحاث المراقب (ORF)",
@@ -67,7 +69,8 @@
       "description": "How Houthi military aggression in the Red Sea threatens Africa ISS Africa",
       "center_site": "https://issafrica.org/",
       "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "كيف يهدد التصعيد العسكري للحوثيين في البحر الأحمر إفريقيا"
     },
     {
       "center": "مركز الدراسات الاستراتيجية والدولية (CSIS)",
@@ -80,7 +83,8 @@
       "description": "Beyond AGOA: Reimagining the Future of U.S.-Africa Trade CSIS | Center for Strategic and International Studies",
       "center_site": "https://csis.org/",
       "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "ما بعد قانون النمو والفرص في إفريقيا: إعادة تصور مستقبل التجارة بين الولايات المتحدة وإفريقيا"
     },
     {
       "center": "مركز الدراسات الاستراتيجية والدولية (CSIS)",
@@ -93,7 +97,8 @@
       "description": "Could Fighting in Ethiopia Spark Regional War in the Horn of Africa? CSIS | Center for Strategic and International Studies",
       "center_site": "https://csis.org/",
       "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "هل يمكن أن يؤدي القتال في إثيوبيا إلى اندلاع حرب إقليمية في القرن الإفريقي؟"
     },
     {
       "center": "مركز الدراسات الاستراتيجية والدولية (CSIS)",
@@ -132,7 +137,8 @@
       "description": "Illicit Drug Trade Between North America and Africa: Routes, Patterns, and Responses Africa Center for Strategic Studies",
       "center_site": "https://africacenter.org/",
       "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "تجارة المخدرات غير المشروعة بين أمريكا الشمالية وإفريقيا: المسارات والأنماط وسبل المواجهة"
     },
     {
       "center": "مجلس العلاقات الخارجية",
@@ -158,7 +164,8 @@
       "description": "The New Red Sea Wars International Crisis Group",
       "center_site": "https://crisisgroup.org/",
       "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "الحروب الجديدة في البحر الأحمر"
     },
     {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
@@ -171,7 +178,8 @@
       "description": "Russia’s military recruitment networks exploit Western tech platforms ISS Africa",
       "center_site": "https://issafrica.org/",
       "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "شبكات التجنيد العسكري الروسية تستغل منصات التكنولوجيا الغربية"
     },
     {
       "center": "معهد هدسون",
@@ -184,7 +192,8 @@
       "description": "US Defense Spending, Russia-NATO Tensions, and China’s Military Expansion Hudson Institute",
       "center_site": "https://hudson.org/",
       "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "الإنفاق الدفاعي الأمريكي والتوترات بين روسيا والناتو والتوسع العسكري الصيني"
     },
     {
       "center": "المعهد الملكي للخدمات المتحدة (RUSI)",
@@ -210,7 +219,8 @@
       "description": "Africa should prepare for a new Arctic shipping era ISS Africa",
       "center_site": "https://issafrica.org/",
       "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "ينبغي لإفريقيا الاستعداد لعصر جديد من الملاحة البحرية في القطب الشمالي"
     },
     {
       "center": "معهد كلينغندايل",
@@ -223,7 +233,8 @@
       "description": "Ethiopia’s widening war threatens the Horn of Africa Clingendael",
       "center_site": "https://clingendael.org/",
       "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "اتساع رقعة الحرب في إثيوبيا يهدد القرن الإفريقي"
     },
     {
       "center": "مجموعة الأزمات الدولية",
@@ -236,7 +247,8 @@
       "description": "Five Energy Market Factors That Could Tip the Scales in the Middle East War International Crisis Group",
       "center_site": "https://crisisgroup.org/",
       "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "خمسة عوامل في سوق الطاقة قد ترجّح كفة أحد الأطراف في حرب الشرق الأوسط"
     },
     {
       "center": "مركز الدراسات الاستراتيجية والدولية (CSIS)",
@@ -251,5 +263,6 @@
       "relevance_tier": 3,
       "relevance_label": "تطور عالمي قد يؤثر في تونس"
     }
-  ]
+  ],
+  "translations_updated": "2026-10-13T19:10:56.113Z"
 }
