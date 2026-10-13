@@ -129,7 +129,7 @@ publish boolean; introduction string; analysis_one, analysis_two, analysis_three
         for h,g in zip(["أولاً: محاور النشرية ومرتكزاتها","ثانياً: النتائج والتفاصيل الرئيسية","ثالثاً: التداعيات والقيود"],groups):
             sections.append({"heading":h,"text":"\n".join("• "+clean(x) for x in g)})
         conclusion=clean(out.get("strategic_conclusion"))
-        if "تونس" not in conclusion: conclusion=conclusion.rstrip(" .،؛")+"، وتبرز أهمية هذه المسائل بالنسبة إلى تونس في متابعة انعكاساتها على أمنها ومصالحها الاستراتيجية."
+        conclusion=conclusion.rstrip(" .،؛")+" . وتبرز أهمية هذه المسائل بالنسبة إلى تونس في متابعة انعكاساتها على أمنها ومصالحها الاستراتيجية."
         if len(intro)<80 or len(conclusion)<180 or any(len(clean(x))<180 for g in groups for x in g):
             print("Card failed length validation; will retry later:",title[:100]); continue
         slug=hashlib.sha1(url.encode()).hexdigest()[:12]
