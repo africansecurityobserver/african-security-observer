@@ -1,9 +1,464 @@
 {
-  "updated": "2026-10-13T20:12+01:00",
+  "updated": "2026-10-13T22:32+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
-  "count": 19,
+  "center_count": 73,
+  "centers": [
+    {
+      "name": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
+      "short": "IISS",
+      "domain": "iiss.org",
+      "site": "https://iiss.org/"
+    },
+    {
+      "name": "مركز الدراسات الاستراتيجية والدولية (CSIS)",
+      "short": "CSIS",
+      "domain": "csis.org",
+      "site": "https://csis.org/"
+    },
+    {
+      "name": "تشاتام هاوس",
+      "short": "Chatham House",
+      "domain": "chathamhouse.org",
+      "site": "https://chathamhouse.org/"
+    },
+    {
+      "name": "معهد ستوكهولم الدولي لأبحاث السلام (SIPRI)",
+      "short": "SIPRI",
+      "domain": "sipri.org",
+      "site": "https://sipri.org/"
+    },
+    {
+      "name": "مؤسسة RAND",
+      "short": "RAND",
+      "domain": "rand.org",
+      "site": "https://rand.org/"
+    },
+    {
+      "name": "معهد بروكينغز",
+      "short": "Brookings",
+      "domain": "brookings.edu",
+      "site": "https://brookings.edu/"
+    },
+    {
+      "name": "المجلس الأطلسي",
+      "short": "Atlantic Council",
+      "domain": "atlanticcouncil.org",
+      "site": "https://atlanticcouncil.org/"
+    },
+    {
+      "name": "المعهد الملكي للخدمات المتحدة (RUSI)",
+      "short": "RUSI",
+      "domain": "rusi.org",
+      "site": "https://rusi.org/"
+    },
+    {
+      "name": "مؤسسة كارنيغي للسلام الدولي",
+      "short": "Carnegie Endowment",
+      "domain": "carnegieendowment.org",
+      "site": "https://carnegieendowment.org/"
+    },
+    {
+      "name": "مركز كارنيغي للشرق الأوسط",
+      "short": "Carnegie Middle East",
+      "domain": "carnegie-mec.org",
+      "site": "https://carnegie-mec.org/"
+    },
+    {
+      "name": "مجموعة الأزمات الدولية",
+      "short": "International Crisis Group",
+      "domain": "crisisgroup.org",
+      "site": "https://crisisgroup.org/"
+    },
+    {
+      "name": "المجلس الأوروبي للعلاقات الخارجية (ECFR)",
+      "short": "ECFR",
+      "domain": "ecfr.eu",
+      "site": "https://ecfr.eu/"
+    },
+    {
+      "name": "معهد ستيمسون",
+      "short": "Stimson Center",
+      "domain": "stimson.org",
+      "site": "https://stimson.org/"
+    },
+    {
+      "name": "مركز ويلسون",
+      "short": "Wilson Center",
+      "domain": "wilsoncenter.org",
+      "site": "https://wilsoncenter.org/"
+    },
+    {
+      "name": "مجلس العلاقات الخارجية",
+      "short": "CFR",
+      "domain": "cfr.org",
+      "site": "https://cfr.org/"
+    },
+    {
+      "name": "مؤسسة هيريتيج",
+      "short": "Heritage Foundation",
+      "domain": "heritage.org",
+      "site": "https://heritage.org/"
+    },
+    {
+      "name": "معهد هدسون",
+      "short": "Hudson Institute",
+      "domain": "hudson.org",
+      "site": "https://hudson.org/"
+    },
+    {
+      "name": "صندوق مارشال الألماني (GMF)",
+      "short": "GMF",
+      "domain": "gmfus.org",
+      "site": "https://gmfus.org/"
+    },
+    {
+      "name": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
+      "short": "SWP",
+      "domain": "swp-berlin.org",
+      "site": "https://swp-berlin.org/"
+    },
+    {
+      "name": "معهد كلينغندايل",
+      "short": "Clingendael",
+      "domain": "clingendael.org",
+      "site": "https://clingendael.org/"
+    },
+    {
+      "name": "المعهد الفرنسي للعلاقات الدولية (IFRI)",
+      "short": "IFRI",
+      "domain": "ifri.org",
+      "site": "https://ifri.org/"
+    },
+    {
+      "name": "معهد العلاقات الدولية والاستراتيجية (IRIS)",
+      "short": "IRIS",
+      "domain": "iris-france.org",
+      "site": "https://iris-france.org/"
+    },
+    {
+      "name": "المعهد الملكي إلكانو",
+      "short": "Elcano",
+      "domain": "realinstitutoelcano.org",
+      "site": "https://realinstitutoelcano.org/"
+    },
+    {
+      "name": "المعهد الفنلندي للشؤون الدولية (FIIA)",
+      "short": "FIIA",
+      "domain": "fiia.fi",
+      "site": "https://fiia.fi/"
+    },
+    {
+      "name": "معهد لوي",
+      "short": "Lowy Institute",
+      "domain": "lowyinstitute.org",
+      "site": "https://lowyinstitute.org/"
+    },
+    {
+      "name": "المعهد الأسترالي للسياسة الاستراتيجية (ASPI)",
+      "short": "ASPI",
+      "domain": "aspistrategist.org.au",
+      "site": "https://aspistrategist.org.au/"
+    },
+    {
+      "name": "مؤسسة أبحاث المراقب (ORF)",
+      "short": "ORF",
+      "domain": "orfonline.org",
+      "site": "https://orfonline.org/"
+    },
+    {
+      "name": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+      "short": "ISS Africa",
+      "domain": "issafrica.org",
+      "site": "https://issafrica.org/"
+    },
+    {
+      "name": "مركز إفريقيا للدراسات الاستراتيجية",
+      "short": "Africa Center for Strategic Studies",
+      "domain": "africacenter.org",
+      "site": "https://africacenter.org/"
+    },
+    {
+      "name": "معهد الدراسات الدفاعية والاستراتيجية الهندي (MP-IDSA)",
+      "short": "MP-IDSA",
+      "domain": "idsa.in",
+      "site": "https://idsa.in/"
+    },
+    {
+      "name": "المعهد الوطني الياباني للدراسات الدفاعية (NIDS)",
+      "short": "NIDS",
+      "domain": "nids.mod.go.jp",
+      "site": "https://nids.mod.go.jp/"
+    },
+    {
+      "name": "المعهد الكوري للتحليلات الدفاعية (KIDA)",
+      "short": "KIDA",
+      "domain": "kida.re.kr",
+      "site": "https://kida.re.kr/"
+    },
+    {
+      "name": "المكتب الوطني للأبحاث الآسيوية (NBR)",
+      "short": "NBR",
+      "domain": "nbr.org",
+      "site": "https://nbr.org/"
+    },
+    {
+      "name": "معهد أبحاث الدفاع والأمن الوطني التايواني (INDSR)",
+      "short": "INDSR",
+      "domain": "indsr.org.tw",
+      "site": "https://indsr.org.tw/"
+    },
+    {
+      "name": "معهد الدراسات الأمنية الأوروبي (EUISS)",
+      "short": "EUISS",
+      "domain": "iss.europa.eu",
+      "site": "https://iss.europa.eu/"
+    },
+    {
+      "name": "مركز الأمن الأمريكي الجديد (CNAS)",
+      "short": "CNAS",
+      "domain": "cnas.org",
+      "site": "https://cnas.org/"
+    },
+    {
+      "name": "مركز بلفر للعلوم والشؤون الدولية",
+      "short": "Belfer Center",
+      "domain": "belfercenter.org",
+      "site": "https://belfercenter.org/"
+    },
+    {
+      "name": "معهد الشرق الأوسط",
+      "short": "Middle East Institute",
+      "domain": "mei.edu",
+      "site": "https://mei.edu/"
+    },
+    {
+      "name": "المركز العربي في واشنطن",
+      "short": "Arab Center Washington DC",
+      "domain": "arabcenterdc.org",
+      "site": "https://arabcenterdc.org/"
+    },
+    {
+      "name": "مركز الإمارات للسياسات",
+      "short": "Emirates Policy Center",
+      "domain": "epc.ae",
+      "site": "https://epc.ae/"
+    },
+    {
+      "name": "مركز أبحاث الخليج",
+      "short": "Gulf Research Center",
+      "domain": "grc.net",
+      "site": "https://grc.net/"
+    },
+    {
+      "name": "تريندز للبحوث والاستشارات",
+      "short": "TRENDS Research",
+      "domain": "trendsresearch.org",
+      "site": "https://trendsresearch.org/"
+    },
+    {
+      "name": "مؤسسة سيتا التركية",
+      "short": "SETA",
+      "domain": "setav.org",
+      "site": "https://setav.org/"
+    },
+    {
+      "name": "مركز الاقتصاد والسياسة الخارجية التركي",
+      "short": "EDAM",
+      "domain": "edam.org.tr",
+      "site": "https://edam.org.tr/"
+    },
+    {
+      "name": "المعهد النرويجي للشؤون الدولية (NUPI)",
+      "short": "NUPI",
+      "domain": "nupi.no",
+      "site": "https://nupi.no/"
+    },
+    {
+      "name": "المعهد الدنماركي للدراسات الدولية (DIIS)",
+      "short": "DIIS",
+      "domain": "diis.dk",
+      "site": "https://diis.dk/"
+    },
+    {
+      "name": "المعهد البولندي للشؤون الدولية (PISM)",
+      "short": "PISM",
+      "domain": "pism.pl",
+      "site": "https://pism.pl/"
+    },
+    {
+      "name": "المعهد الإستوني للسياسة الخارجية",
+      "short": "Estonian Foreign Policy Institute",
+      "domain": "evi.ee",
+      "site": "https://evi.ee/"
+    },
+    {
+      "name": "وكالة أبحاث الدفاع السويدية (FOI)",
+      "short": "FOI",
+      "domain": "foi.se",
+      "site": "https://foi.se/"
+    },
+    {
+      "name": "الجمعية الألمانية للسياسة الخارجية (DGAP)",
+      "short": "DGAP",
+      "domain": "dgap.org",
+      "site": "https://dgap.org/"
+    },
+    {
+      "name": "مؤسسة كونراد أديناور",
+      "short": "Konrad Adenauer Stiftung",
+      "domain": "kas.de",
+      "site": "https://kas.de/"
+    },
+    {
+      "name": "مؤسسة فريدريش إيبرت",
+      "short": "Friedrich Ebert Stiftung",
+      "domain": "fes.de",
+      "site": "https://fes.de/"
+    },
+    {
+      "name": "المعهد الجنوب إفريقي للشؤون الدولية (SAIIA)",
+      "short": "SAIIA",
+      "domain": "saiia.org.za",
+      "site": "https://saiia.org.za/"
+    },
+    {
+      "name": "معهد الدراسات الدفاعية والاستراتيجية في إسلام آباد",
+      "short": "ISSI",
+      "domain": "issi.org.pk",
+      "site": "https://issi.org.pk/"
+    },
+    {
+      "name": "معهد اليابان للشؤون الدولية (JIIA)",
+      "short": "JIIA",
+      "domain": "jiia.or.jp",
+      "site": "https://jiia.or.jp/"
+    },
+    {
+      "name": "معهد جنيف للسياسات الأمنية (GCSP)",
+      "short": "GCSP",
+      "domain": "gcsp.ch",
+      "site": "https://gcsp.ch/"
+    },
+    {
+      "name": "مسح الأسلحة الصغيرة (Small Arms Survey)",
+      "short": "Small Arms Survey",
+      "domain": "smallarmssurvey.org",
+      "site": "https://smallarmssurvey.org/"
+    },
+    {
+      "name": "المعهد الدولي لنزع السلاح (UNIDIR)",
+      "short": "UNIDIR",
+      "domain": "unidir.org",
+      "site": "https://unidir.org/"
+    },
+    {
+      "name": "المبادرة العالمية لمكافحة الجريمة المنظمة العابرة للحدود",
+      "short": "Global Initiative",
+      "domain": "globalinitiative.net",
+      "site": "https://globalinitiative.net/"
+    },
+    {
+      "name": "شبكة القيادة الأوروبية",
+      "short": "European Leadership Network",
+      "domain": "europeanleadershipnetwork.org",
+      "site": "https://europeanleadershipnetwork.org/"
+    },
+    {
+      "name": "المعهد السويسري لأبحاث السلام (swisspeace)",
+      "short": "swisspeace",
+      "domain": "swisspeace.ch",
+      "site": "https://swisspeace.ch/"
+    },
+    {
+      "name": "المركز البرازيلي للعلاقات الدولية (CEBRI)",
+      "short": "CEBRI",
+      "domain": "cebri.org",
+      "site": "https://cebri.org/"
+    },
+    {
+      "name": "مركز الدراسات الاستراتيجية والأمنية في بنغلادش",
+      "short": "BIPSS",
+      "domain": "bipss.org.bd",
+      "site": "https://bipss.org.bd/"
+    },
+    {
+      "name": "مركز الدراسات السياسية والاستراتيجية بالأهرام",
+      "short": "ACPSS",
+      "domain": "acpss.ahram.org.eg",
+      "site": "https://acpss.ahram.org.eg/"
+    },
+    {
+      "name": "المركز المصري للفكر والدراسات الاستراتيجية",
+      "short": "ECSS",
+      "domain": "ecss.com.eg",
+      "site": "https://ecss.com.eg/"
+    },
+    {
+      "name": "مركز الدراسات الاستراتيجية في جامعة أديس أبابا",
+      "short": "IPSS Addis Ababa",
+      "domain": "ipss-addis.org",
+      "site": "https://ipss-addis.org/"
+    },
+    {
+      "name": "مركز تحليل البيانات المتعلقة بالنزاعات المسلحة (ACLED)",
+      "short": "ACLED",
+      "domain": "acleddata.com",
+      "site": "https://acleddata.com/"
+    },
+    {
+      "name": "المعهد الدولي لمكافحة الإرهاب (ICT)",
+      "short": "ICT",
+      "domain": "ict.org.il",
+      "site": "https://ict.org.il/"
+    },
+    {
+      "name": "مركز أولويات الدفاع",
+      "short": "Defense Priorities",
+      "domain": "defensepriorities.org",
+      "site": "https://defensepriorities.org/"
+    },
+    {
+      "name": "معهد كوينسي للحكم المسؤول",
+      "short": "Quincy Institute",
+      "domain": "quincyinst.org",
+      "site": "https://quincyinst.org/"
+    },
+    {
+      "name": "مركز أبحاث السياسة الخارجية النمساوي (oiip)",
+      "short": "oiip",
+      "domain": "oiip.ac.at",
+      "site": "https://oiip.ac.at/"
+    },
+    {
+      "name": "معهد الدراسات الأمنية والتنمية (ISDP)",
+      "short": "ISDP",
+      "domain": "isdp.eu",
+      "site": "https://isdp.eu/"
+    },
+    {
+      "name": "معهد أبحاث السلام والسياسة الأمنية في هامبورغ (IFSH)",
+      "short": "IFSH",
+      "domain": "ifsh.de",
+      "site": "https://ifsh.de/"
+    }
+  ],
+  "count": 24,
   "publications": [
+    {
+      "center": "المركز العربي في واشنطن",
+      "center_short": "Arab Center Washington DC",
+      "title": "Tunisia’s Fractured Transition in Comparative Perspective - Arab Center Washington DC",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNWXhSU0RCY3VELVlodFVFMS1ZeXh2eUs5bk5zb3hnUjVOdGZlTm1PdC1iaGk0RTBwb2JQRDRHTm82TkRBbUUwcXAzSTctdnBtZF8tRVpIazJoOFBrLWdudFVQUjFpbW9wc2ZaemF3cmhTN2xIdmlmekM2ODY3SmdIb0hxN1ZwX1ZvTFN6Y0dXdnZJdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-08T22:58+01:00",
+      "date": "2026-10-08",
+      "source": "Arab Center Washington DC",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxNWXhSU0RCY3VELVlodFVFMS1ZeXh2eUs5bk5zb3hnUjVOdGZlTm1PdC1iaGk0RTBwb2JQRDRHTm82TkRBbUUwcXAzSTctdnBtZF8tRVpIazJoOFBrLWdudFVQUjFpbW9wc2ZaemF3cmhTN2xIdmlmekM2ODY3SmdIb0hxN1ZwX1ZvTFN6Y0dXdnZJdw?oc=5\" target=\"_blank\">Tunisia’s Fractured Transition in Comparative Perspective</a> <font color=\"#6f6f6f\">Arab Center Washington DC</font>",
+      "center_site": "https://arabcenterdc.org/",
+      "relevance_tier": 1,
+      "relevance_label": "تونس مباشرة",
+      "title_ar": "الانتقال المتصدع في تونس من منظور مقارن - المركز العربي واشنطن العاصمة"
+    },
     {
       "center": "معهد كلينغندايل",
       "center_short": "Clingendael",
@@ -47,6 +502,20 @@
       "title_ar": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي"
     },
     {
+      "center": "المعهد النرويجي للشؤون الدولية (NUPI)",
+      "center_short": "NUPI",
+      "title": "Strengthening the AU-UN Strategic Partnerships for Peace, Security and Sustainable Development in Africa - NUPI",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPdWhjSGNMZ1JxT1BELTA1S20tNmc3WkhkQlBBQzMyaE1GTGs3dHJ2R09mbGxiSm9mdTVqakNyaWNWeUc3ZEVRcUFuSTROd2NDZnFLTUNUVjhYcmtMTUFMdU5sZHdubjZjelNmVU1Xc2ZCcVhsS0Z0dDBpNU5LVnVHdkhyc1RyQkk3eFR1OU8yZ1JRVkJVckVwUl9BTWFfR2p1TEVLeWRfS0NrQVA1T1NiMHpCYnpMMFF6SjY2dnBwcnhXR1o1a1hGVjJNWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-12T07:55+01:00",
+      "date": "2026-10-12",
+      "source": "NUPI",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxPdWhjSGNMZ1JxT1BELTA1S20tNmc3WkhkQlBBQzMyaE1GTGs3dHJ2R09mbGxiSm9mdTVqakNyaWNWeUc3ZEVRcUFuSTROd2NDZnFLTUNUVjhYcmtMTUFMdU5sZHdubjZjelNmVU1Xc2ZCcVhsS0Z0dDBpNU5LVnVHdkhyc1RyQkk3eFR1OU8yZ1JRVkJVckVwUl9BTWFfR2p1TEVLeWRfS0NrQVA1T1NiMHpCYnpMMFF6SjY2dnBwcnhXR1o1a1hGVjJNWQ?oc=5\" target=\"_blank\">Strengthening the AU-UN Strategic Partnerships for Peace, Security and Sustainable Development in Africa</a> <font color=\"#6f6f6f\">NUPI</font>",
+      "center_site": "https://nupi.no/",
+      "relevance_tier": 3,
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "تعزيز الشراكات الاستراتيجية بين الاتحاد الأفريقي والأمم المتحدة من أجل السلام والأمن والتنمية المستدامة في أفريقيا - NUPI"
+    },
+    {
       "center": "مؤسسة أبحاث المراقب (ORF)",
       "center_short": "ORF",
       "title": "international maritime conventions - orfonline.org",
@@ -59,6 +528,20 @@
       "relevance_tier": 3,
       "relevance_label": "تطور عالمي قد يؤثر في تونس",
       "title_ar": "الاتفاقيات البحرية الدولية"
+    },
+    {
+      "center": "وكالة أبحاث الدفاع السويدية (FOI)",
+      "center_short": "FOI",
+      "title": "Russia's Military Engagement in Africa - Totalförsvarets forskningsinstitut - FOI",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQUzk2U2V6NzlPRXFIeHVKRmt5aTJxUkFNbjlxWFVIYjVuLUstNThFb0FhTWM2bVRGMnZhLUlMQmg5S2tVLURheTJQTDJmRS1PcnVZN1V2TWx1RWtoaTF2cnNaODJUd05NSmJYOE5ibko2Z1lzVVdZZFVWa3VLTEZxSHdXOG5FbzBKZG5hc0MyZ1Z1cUpkTHZQS1ZxV3Y2dnRpd0x3NFV3?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-09T09:43+01:00",
+      "date": "2026-10-09",
+      "source": "Totalförsvarets forskningsinstitut - FOI",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxQUzk2U2V6NzlPRXFIeHVKRmt5aTJxUkFNbjlxWFVIYjVuLUstNThFb0FhTWM2bVRGMnZhLUlMQmg5S2tVLURheTJQTDJmRS1PcnVZN1V2TWx1RWtoaTF2cnNaODJUd05NSmJYOE5ibko2Z1lzVVdZZFVWa3VLTEZxSHdXOG5FbzBKZG5hc0MyZ1Z1cUpkTHZQS1ZxV3Y2dnRpd0x3NFV3?oc=5\" target=\"_blank\">Russia's Military Engagement in Africa</a> <font color=\"#6f6f6f\">Totalförsvarets forskningsinstitut - FOI</font>",
+      "center_site": "https://foi.se/",
+      "relevance_tier": 3,
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "المشاركة العسكرية الروسية في أفريقيا - Totalförsvarets forskningsinstitut - FOI"
     },
     {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
@@ -187,6 +670,20 @@
       "title_ar": "شبكات التجنيد العسكري الروسية تستغل منصات التكنولوجيا الغربية"
     },
     {
+      "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
+      "center_short": "UNIDIR",
+      "title": "Reviewing two decades of subregional arms and ammunition control in Africa - UNIDIR",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQLTBIYzhTN0tZY0s1YWQ3LWMwb3RMSkh2UGdOMWkydnpoNld6YzJ6dVVNc2VrRG5qOW9mV043d1ZVM0FkaFN4Q1VfY1pOYzc5QU5HUmpUZ3QtLU1NNlRYTHVJUWFmR1RQQzlYektsODNpXzVVT3Y0VXQ0aGxBR05GRENJZ3JjaGJoTXBQWmRial85cElwNUE1Vjln?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-05T18:52+01:00",
+      "date": "2026-10-05",
+      "source": "UNIDIR",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxQLTBIYzhTN0tZY0s1YWQ3LWMwb3RMSkh2UGdOMWkydnpoNld6YzJ6dVVNc2VrRG5qOW9mV043d1ZVM0FkaFN4Q1VfY1pOYzc5QU5HUmpUZ3QtLU1NNlRYTHVJUWFmR1RQQzlYektsODNpXzVVT3Y0VXQ0aGxBR05GRENJZ3JjaGJoTXBQWmRial85cElwNUE1Vjln?oc=5\" target=\"_blank\">Reviewing two decades of subregional arms and ammunition control in Africa</a> <font color=\"#6f6f6f\">UNIDIR</font>",
+      "center_site": "https://unidir.org/",
+      "relevance_tier": 3,
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "استعراض عقدين من مراقبة الأسلحة والذخائر على الصعيد دون الإقليمي في أفريقيا - معهد الأمم المتحدة لبحوث نزع السلاح"
+    },
+    {
       "center": "معهد هدسون",
       "center_short": "Hudson Institute",
       "title": "US Defense Spending, Russia-NATO Tensions, and China’s Military Expansion - Hudson Institute",
@@ -199,6 +696,20 @@
       "relevance_tier": 3,
       "relevance_label": "تطور عالمي قد يؤثر في تونس",
       "title_ar": "الإنفاق الدفاعي الأمريكي والتوترات بين روسيا والناتو والتوسع العسكري الصيني"
+    },
+    {
+      "center": "مؤسسة كونراد أديناور",
+      "center_short": "Konrad Adenauer Stiftung",
+      "title": "Regional Programme Security Policy for West Africa - Konrad-Adenauer-Stiftung",
+      "url": "https://news.google.com/rss/articles/CBMi6wJBVV95cUxOb1VrQlpLWjhRMVFabXQ0RzA4ZEtfekZ4TUM3Q2hJblpqRS1xTzlCb19VMTZNc25wbTlkeUtYdjZ1alhYREZRUHkyazlRbDFBZVEtRXJQdUpYTlJkR09tbkJTN1Y4LUtuU0hlNkhzSUxzeGlKM09mQ01Na3VhSUtyTFJ0UUl1ODk0MG9pWW1YWFJjMnRSMW8zZ1hSZGZScnhuUS1UTjNHay1ZcDNPRU40X3lvT1BIR3oxSGlvUWJyUlJncUl0WHBNOFF1SmxYT0dFYV9OV1VKZF94cFdvOHpiZDM0cndLTTBVZzc3VDRYdkhQWE45cHNGWE5rUndOZmpNOEhIellSSTZwQ05ycnZCM3M2QXdXMjVfQ3N0WThvSm9yRGpMYnpQRUFKS0hoeURsSE8yV0dyT2dsZTNNdy1OaWFlX2VtTUhUN3VyOFRIRVJPakswMFhCZE5RN1dxRGdiWjBsekZCbkhNYTQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-04T19:12+01:00",
+      "date": "2026-10-04",
+      "source": "Konrad-Adenauer-Stiftung",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi6wJBVV95cUxOb1VrQlpLWjhRMVFabXQ0RzA4ZEtfekZ4TUM3Q2hJblpqRS1xTzlCb19VMTZNc25wbTlkeUtYdjZ1alhYREZRUHkyazlRbDFBZVEtRXJQdUpYTlJkR09tbkJTN1Y4LUtuU0hlNkhzSUxzeGlKM09mQ01Na3VhSUtyTFJ0UUl1ODk0MG9pWW1YWFJjMnRSMW8zZ1hSZGZScnhuUS1UTjNHay1ZcDNPRU40X3lvT1BIR3oxSGlvUWJyUlJncUl0WHBNOFF1SmxYT0dFYV9OV1VKZF94cFdvOHpiZDM0cndLTTBVZzc3VDRYdkhQWE45cHNGWE5rUndOZmpNOEhIellSSTZwQ05ycnZCM3M2QXdXMjVfQ3N0WThvSm9yRGpMYnpQRUFKS0hoeURsSE8yV0dyT2dsZTNNdy1OaWFlX2VtTUhUN3VyOFRIRV",
+      "center_site": "https://kas.de/",
+      "relevance_tier": 3,
+      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "title_ar": "سياسة أمن البرنامج الإقليمي لغرب أفريقيا - مؤسسة كونراد أديناور"
     },
     {
       "center": "المعهد الملكي للخدمات المتحدة (RUSI)",
