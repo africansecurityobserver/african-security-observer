@@ -43,5 +43,6 @@ jobs:
             echo "No research-card changes."
           else
             git commit -m "Generate strategic cards from research center publications"
+            git pull --rebase origin main
             git push
           fi
