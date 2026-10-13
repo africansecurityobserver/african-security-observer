@@ -129,11 +129,11 @@ GLOBAL_IMPACT_PATH_TERMS = [
     "shipping", "maritime", "mediterranean", "méditerranée", "red sea",
     "suez", "european security", "european defence", "european defense",
     "eu security", "nato", "sahel", "africa", "migration", "asylum",
-    "terrorism", "counterterrorism", "cybersecurity", "critical infrastructure",
-    "sanctions", "commodity prices", "commodities", "المتوسط", "البحر المتوسط",
+    "counterterrorism", "cybersecurity", "critical infrastructure",
+    "commodity prices", "commodities", "المتوسط", "البحر المتوسط",
     "البحر الأحمر", "قناة السويس", "أمن الطاقة", "أسعار الطاقة", "أسعار النفط",
     "أسعار الغاز", "أمن غذائي", "الأمن الغذائي", "الحبوب", "سلاسل الإمداد",
-    "التجارة العالمية", "أمن الملاحة", "الهجرة", "الساحل", "أمن أوروبا",
+    "التجارة العالمية", "أمن الملاحة", "الهجرة", "أمن أوروبا",
     "الأمن الأوروبي", "العقوبات", "البنية التحتية الحيوية", "الأمن السيبراني"
 ]
 
