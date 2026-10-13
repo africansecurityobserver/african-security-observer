@@ -60,6 +60,87 @@ CENTERS = [
     {"name": "معهد أبحاث الدفاع والأمن الوطني التايواني (INDSR)", "short": "INDSR", "domain": "indsr.org.tw", "query": "defense OR security OR military OR strategy OR Indo-Pacific"},
 ]
 
+# Relevance tiers are ordered from Tunisia outward. Only publications matching
+# one of these tiers are exposed in the public list.
+TIER_KEYWORDS = {
+    1: [
+        "tunisia", "tunisian", "tunis", "tunisie", "tunisien", "تونس", "تونسي",
+        "تونسيّة", "التونسي", "تونسية", "قرطاج", "صفاقس", "بنزرت", "سوسة",
+        "القيروان", "قابس", "مدنين", "جربة"
+    ],
+    2: [
+        "libya", "libyan", "libye", "libyen", "ليبيا", "ليبي", "طرابلس", "بنغازي",
+        "حفتر", "الدبيبة", "المنفي", "الجزائر", "جزائري", "algeria", "algerian",
+        "algérie", "algérien", "algiers", "الجزائر العاصمة", "تبون", "شنقريحة",
+        "الغاز الجزائري"
+    ],
+    3: [
+        "north africa", "north african", "maghreb", "maghrib", "المغرب العربي",
+        "شمال افريقيا", "شمال إفريقيا", "north african", "morocco", "moroccan",
+        "maroc", "marocain", "المغرب", "مغربي", "مغربية", "western sahara",
+        "الصحراء الغربية", "egypt", "egyptian", "égypte", "مصر", "مصري",
+        "mauritania", "موريتانيا", "mediterranean", "méditerranée",
+        "البحر المتوسط", "المتوسط", "southern europe", "جنوب أوروبا",
+        "southern mediterranean", "غرب المتوسط", "شرق المتوسط"
+    ],
+    4: [
+        "energy security", "oil price", "oil prices", "natural gas", "lng",
+        "energy market", "أسعار النفط", "النفط", "الغاز الطبيعي", "أمن الطاقة",
+        "migration", "migrants", "asylum", "الهجرة", "المهاجرين", "اللجوء",
+        "european union", "european security", "eu policy", "الاتحاد الأوروبي",
+        "الأمن الأوروبي", "europe", "europa", "european", "european defence",
+        "european defense", "nato", "الناتو", "حلف شمال الأطلسي",
+        "sahel", "الساحل الإفريقي", "الساحل الافريقي", "terrorism", "terrorist",
+        "counterterrorism", "الإرهاب", "مكافحة الإرهاب", "armed conflict",
+        "war", "warfare", "conflict", "security", "defence", "defense",
+        "military", "geopolitics", "strategic", "الصراع", "الحرب", "الأمن",
+        "الدفاع", "عسكري", "استراتيجي", "التسلح", "الأسلحة", "arms trade",
+        "arms transfers", "weapons", "الإنفاق العسكري", "cybersecurity",
+        "cyber security", "الأمن السيبراني", "black sea", "ukraine", "russia",
+        "china", "united states", "middle east", "الشرق الأوسط", "أوكرانيا",
+        "روسيا", "الصين", "الولايات المتحدة", "red sea", "البحر الأحمر",
+        "supply chain", "global trade", "shipping", "maritime security",
+        "التجارة العالمية", "سلاسل الإمداد", "أمن الملاحة", "البحر الأحمر",
+        "climate security", "food security", "الأمن الغذائي"
+    ]
+}
+
+
+def normalize_relevance_text(value):
+    text = str(value or "").lower()
+    text = text.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا")
+    text = text.replace("ى", "ي").replace("ة", "ه")
+    text = re.sub(r"[\\u064B-\\u065F\\u0670\\u0640]", "", text)
+    return re.sub(r"\\s+", " ", text)
+
+
+def classify_relevance(item):
+    """
+    Assign one of four ordered relevance tiers:
+    1 Tunisia; 2 Libya/Algeria; 3 wider North Africa/Mediterranean;
+    4 global developments with plausible implications for Tunisia.
+    Generic global topics are not included unless they match the defined
+    security, energy, migration, trade, or geopolitical impact vocabulary.
+    """
+    text = normalize_relevance_text(" ".join(str(item.get(k, "") or "") for k in (
+        "title", "title_ar", "description", "source", "center"
+    )))
+    for tier in (1, 2, 3, 4):
+        if any(normalize_relevance_text(word) in text for word in TIER_KEYWORDS[tier]):
+            labels = {
+                1: "تونس",
+                2: "ليبيا والجزائر",
+                3: "شمال إفريقيا والبحر الأبيض المتوسط",
+                4: "تطور عالمي ذو صلة بتونس"
+            }
+            item["relevance_tier"] = tier
+            item["relevance_label"] = labels[tier]
+            return tier
+    item["relevance_tier"] = 0
+    item["relevance_label"] = "خارج نطاق المتابعة"
+    return 0
+
+
 def clean(value):
     return re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", str(value or "")))).strip()
 
@@ -216,7 +297,9 @@ def main():
                 "description": description[:500],
                 "center_site": "https://" + center["domain"] + "/"
             }
-            center_items.append(item)
+            classify_relevance(item)
+            if item.get("relevance_tier", 0) > 0:
+                center_items.append(item)
 
         center_items.sort(key=lambda x: x.get("published", ""), reverse=True)
         for item in center_items[:MAX_PER_CENTER]:
@@ -246,6 +329,19 @@ def main():
                 merged[url] = item
 
     publications = list(merged.values())
+    publications = [
+        item for item in publications
+        if classify_relevance(item) > 0
+    ]
+    publications.sort(
+        key=lambda x: (
+            int(x.get("relevance_tier", 99)),
+            -(parse_date(x.get("published") or x.get("date")).timestamp()
+              if parse_date(x.get("published") or x.get("date")) else 0)
+        )
+    )
+    # Keep the best-ranked publications first, with newest first within each tier.
+    publications = publications[:MAX_TOTAL]
     publications.sort(
         key=lambda x: parse_date(x.get("published") or x.get("date")) or cutoff,
         reverse=True
