@@ -1,6 +1,11 @@
 name: Generate Research-Center Strategic Cards
 
 on:
+  push:
+    paths:
+      - "research_cards/generate_research_cards.py"
+      - "research_publications.json"
+      - ".github/workflows/research_cards.yml"
   schedule:
     # Run shortly after the publication collector, every six hours in Tunis time.
     - cron: "37 */6 * * *"
