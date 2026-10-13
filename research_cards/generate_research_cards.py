@@ -16,7 +16,7 @@ ARCHIVE=ROOT/"research_cards"/"archive"
 INDEX=ARCHIVE/"index.json"
 TZ=ZoneInfo("Africa/Tunis")
 MODEL=os.getenv("GEMINI_MODEL","gemini-3.5-flash-lite")
-MAX_PER_RUN=3
+# Process every newly discovered, in-scope publication; do not select only a daily quota.
 HEADERS={"User-Agent":"Mozilla/5.0 (compatible; AfricanSecurityObserver/1.0)"}
 
 def load(path, default):
@@ -119,14 +119,18 @@ def main():
       "strategic_conclusion":{"type":"string"},"summary":{"type":"string"}},
       "required":["publish","introduction","analysis_one","analysis_two","analysis_three","strategic_conclusion","summary"]}
     count=0
+    failed_count=0
     for p in candidates:
-        if count>=MAX_PER_RUN: break
         title=clean(p.get("title")); title_ar=clean(p.get("title_ar")); center=clean(p.get("center") or p.get("source") or "مركز بحثي")
         url=clean(p.get("url")); desc=clean(p.get("description")); published=clean(p.get("published") or p.get("date"))
         resolved,body=get_text(url,clean(p.get("center_site")))
         if len(body)<650 and len(desc)<220:
-            print("Insufficient text; marking source as checked:",title[:100])
-            count+=1; continue
+            # Keep this URL unprocessed so the next six-hour run can retry it.
+            # A publication is not silently discarded merely because extraction
+            # failed temporarily or its page was inaccessible.
+            print("Insufficient source text; leaving publication pending for retry:",title[:100])
+            failed_count+=1
+            continue
         prompt=f"""
 أنت محرر بطاقة استراتيجية عربية في المرصد الإفريقي للأمن والدفاع. أنشئ بطاقة واحدة تلخص هذه النشرية وحدها.
 العنوان الأصلي الذي نشره المركز يجب أن يبقى محفوظاً كما هو: {title}
@@ -146,20 +150,31 @@ publish boolean; introduction string; analysis_one, analysis_two, analysis_three
             response=client.interactions.create(model=MODEL,input=prompt,response_format={"type":"text","mime_type":"application/json","schema":schema},generation_config={"temperature":0.2,"thinking_level":"low"})
             out=json.loads(response.output_text or "{}")
         except Exception as e:
-            print("Generation failed; will retry later:",type(e).__name__); continue
+            print("Generation failed; will retry later:",type(e).__name__)
+            failed_count+=1
+            continue
         if not out.get("publish"):
-            data["processed_urls"].append(url); count+=1; print("Source rejected as insufficient:",title[:100]); continue
+            # Never mark a relevant publication as permanently processed just
+            # because one model response judged its content insufficient.
+            # It stays pending and is retried on a later six-hour run.
+            print("Model could not yet produce a reliable card; leaving publication pending:",title[:100])
+            failed_count+=1
+            continue
         intro=clean(out.get("introduction")); groups=[out.get("analysis_one",[]),out.get("analysis_two",[]),out.get("analysis_three",[])]
         if not intro.endswith("وفيما يلي أهم ما ورد فيها."): intro=re.sub(r"[.!؟؛،\s]+$","",intro)+". وفيما يلي أهم ما ورد فيها."
         if any(not isinstance(g,list) or len(g)!=4 for g in groups):
-            print("Invalid bullet structure; will retry later:",title[:100]); continue
+            print("Invalid bullet structure; will retry later:",title[:100])
+            failed_count+=1
+            continue
         sections=[{"heading":"المقدمة","text":intro}]
         for h,g in zip(["أولاً: محاور النشرية ومرتكزاتها","ثانياً: النتائج والتفاصيل الرئيسية","ثالثاً: التداعيات والقيود"],groups):
             sections.append({"heading":h,"text":"\n".join("• "+clean(x) for x in g)})
         conclusion=clean(out.get("strategic_conclusion"))
         conclusion=conclusion.rstrip(" .،؛")+". وتبرز أهمية هذه المسائل بالنسبة إلى تونس في متابعة انعكاساتها على أمنها ومصالحها الاستراتيجية."
         if len(intro)<80 or len(conclusion)<180 or any(len(clean(x))<180 for g in groups for x in g):
-            print("Card failed length validation; will retry later:",title[:100]); continue
+            print("Card failed length validation; will retry later:",title[:100])
+            failed_count+=1
+            continue
         slug=hashlib.sha1(url.encode()).hexdigest()[:12]
         now=datetime.now(TZ); date=published[:10] if re.match(r"\d{4}-\d{2}-\d{2}",published) else now.strftime("%Y-%m-%d")
         path=f"{date[:7]}/{date.replace('-','')}_{slug}.json"
@@ -174,6 +189,6 @@ publish boolean; introduction string; analysis_one, analysis_two, analysis_three
     data["processed_urls"]=list(dict.fromkeys(data["processed_urls"]))[-2000:]
     data["updated"]=datetime.now(TZ).isoformat(timespec="seconds")
     save(DATA,data); save(INDEX,make_index(data["cards"]))
-    print(f"Research cards total={len(data['cards'])}; processed this run={count}")
+    print(f"Research cards total={len(data['cards'])}; generated this run={count}; pending for retry={failed_count}; new candidates seen={len(candidates)}")
 
 if __name__=="__main__": main()
