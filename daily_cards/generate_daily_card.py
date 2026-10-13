@@ -399,7 +399,8 @@ def build_prompt(
     start,
     end,
     news_items,
-    previous_events
+    previous_events,
+    current_events=None
 ):
 
     date_text = reference_date.strftime("%d/%m/%Y")
@@ -432,6 +433,10 @@ def build_prompt(
 
     if not previous_text:
         previous_text = "لا توجد بطاقات سابقة متاحة."
+
+    current_text = "\\n".join(f"- {event}" for event in (current_events or []))
+    if not current_text:
+        current_text = "لا توجد أحداث محفوظة في نسخة اليوم الحالية."
 
     prompt = f"""
 أنت محرر رئيسي في صحيفة استخباراتية/استراتيجية عربية متخصصة
@@ -831,14 +836,24 @@ Africa/Tunis
 البطاقات السابقة
 ============================================================
 
-هذه أحداث ظهرت في بطاقات سابقة قريبة زمنياً:
+هذه أحداث من بطاقات سابقة لأيام قريبة، وليست جزءاً من النسخة الحالية لليوم:
 
 {previous_text}
 
-لا تعيد هذه الأحداث في البطاقة الحالية إذا لم يحدث تطور جديد.
+لا تعِد نشر هذه الأحداث إلا إذا طرأ تطور جديد مهم.
 
-إذا حدث تطور كبير جديد بشأن حدث سابق، يمكن إدراجه، لكن ركز على
-التطور الجديد ولا تعيد صياغة الخبر القديم بالكامل.
+============================================================
+الأحداث الموجودة بالفعل في نسخة بطاقة اليوم المنشورة
+
+{current_text}
+
+هذه القائمة هي المحتوى الحالي الذي يجب تحديثه تراكمياً، وليست قائمة أخبار يجب إعادة إنشائها من الصفر:
+- احتفظ بكل حدث قائم ما لم يثبت أنه مكرر أو خاطئ بوضوح.
+- إذا لم تحمل المواد الجديدة تطوراً جديداً للحدث، احتفظ بصياغته وتفاصيله كما هي.
+- إذا وردت تفاصيل موثوقة إضافية عن الحدث نفسه، حسّن صياغته وأضف التفاصيل الجديدة دون إسقاط التفاصيل السابقة.
+- أضف كل حدث جديد مستقل من المواد الحالية.
+- لا تحذف حدثاً لمجرد أنه لم يظهر في نتائج التحديث الحالي أو لأن النموذج لم يختره.
+- دمج التكرارات مسموح، أما حذف الأحداث السابقة أو استبدال القائمة كاملة فممنوع.
 
 ============================================================
 المواد الإخبارية للفترة الحالية
@@ -1245,98 +1260,199 @@ def normalize_sections(generated):
     return final_sections
 
 # ============================================================
+# ACCUMULATIVE DAILY-CARD MERGING
+# ============================================================
+
+def normalize_event_for_match(value):
+    """Normalize Arabic/Latin text for conservative event matching."""
+    import re
+    import unicodedata
+
+    text = unicodedata.normalize("NFKD", str(value or "").lower())
+    text = "".join(ch for ch in text if not unicodedata.combining(ch))
+    text = re.sub(r"[\u064B-\u065F\u0670\u0640]", "", text)
+    text = text.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا")
+    text = text.replace("ى", "ي").replace("ة", "ه")
+    text = re.sub(r"[^\w\s]", " ", text, flags=re.UNICODE)
+    return " ".join(text.split())
+
+
+def same_event_text(left, right):
+    """Return true only when two descriptions are strongly likely to be the same event."""
+    from difflib import SequenceMatcher
+
+    a = normalize_event_for_match(left)
+    b = normalize_event_for_match(right)
+    if not a or not b:
+        return False
+    if a in b or b in a:
+        return True
+
+    tokens_a = {token for token in a.split() if len(token) > 2}
+    tokens_b = {token for token in b.split() if len(token) > 2}
+    common = tokens_a & tokens_b
+    union = tokens_a | tokens_b
+    jaccard = len(common) / max(1, len(union))
+    ratio = SequenceMatcher(None, a, b).ratio()
+    return ratio >= 0.72 or (len(common) >= 5 and jaccard >= 0.48)
+
+
+def merge_event_lists(existing_events, incoming_events):
+    """
+    Keep every previously published event. New items are appended; likely
+    updates to an existing event replace it only when the new wording is richer.
+    """
+    merged = []
+    for event in existing_events if isinstance(existing_events, list) else []:
+        if isinstance(event, dict) and str(event.get("text", "")).strip():
+            merged.append({
+                "country": str(event.get("country", "")).strip(),
+                "text": str(event.get("text", "")).strip()
+            })
+
+    for event in incoming_events if isinstance(incoming_events, list) else []:
+        if not isinstance(event, dict):
+            continue
+        incoming_text = str(event.get("text", "")).strip()
+        if not incoming_text:
+            continue
+        incoming_country = str(event.get("country", "")).strip()
+
+        match_index = None
+        for index, old_event in enumerate(merged):
+            if same_event_text(old_event.get("text", ""), incoming_text):
+                match_index = index
+                break
+
+        if match_index is None:
+            merged.append({"country": incoming_country, "text": incoming_text})
+            continue
+
+        old_event = merged[match_index]
+        old_text = old_event.get("text", "")
+        # A fuller version replaces the shorter one; otherwise preserve the
+        # existing text so a sparse regeneration cannot erase useful details.
+        if len(incoming_text) > len(old_text) * 1.08:
+            old_event["text"] = incoming_text
+            if incoming_country:
+                old_event["country"] = incoming_country
+        elif not old_event.get("country") and incoming_country:
+            old_event["country"] = incoming_country
+
+    # Sort after merging, but do not drop lower-ranked items.
+    return [
+        event for _, event in sorted(
+            enumerate(merged),
+            key=lambda pair: (event_priority(pair[1].get("text", "")), pair[0])
+        )
+    ]
+
+
+def merge_card_sections(existing_sections, incoming_sections):
+    """Union existing and newly generated sections without deleting old events."""
+    old_by_id = {
+        section.get("id"): section
+        for section in existing_sections if isinstance(section, dict)
+    } if isinstance(existing_sections, list) else {}
+    new_by_id = {
+        section.get("id"): section
+        for section in incoming_sections if isinstance(section, dict)
+    } if isinstance(incoming_sections, list) else {}
+
+    merged_sections = []
+    for section_id, title in EXPECTED_SECTIONS:
+        old_section = old_by_id.get(section_id, {})
+        new_section = new_by_id.get(section_id, {})
+        events = merge_event_lists(
+            old_section.get("events", []),
+            new_section.get("events", [])
+        )
+        merged_sections.append({
+            "id": section_id,
+            "title": title,
+            "events": events
+        })
+    return merged_sections
+
+
+def load_current_day_events(reference_date):
+    """Return the existing version of today's card to guide enrichment."""
+    cards = load_previous_cards()
+    for card in reversed(cards):
+        if card.get("date") == reference_date.isoformat() and card.get("slot") == "daily":
+            result = []
+            for section in card.get("sections", []):
+                for event in section.get("events", []):
+                    if isinstance(event, dict) and event.get("text"):
+                        result.append(
+                            f"[{section.get('title', '')}] {event.get('country', '')}: {event.get('text', '')}"
+                        )
+            return result
+    return []
+
+
+# ============================================================
 # SAVE CARD
 # ============================================================
 
 def update_cards_file(card):
 
-    existing = load_json(
-        CARDS_FILE,
-        {
-            "cards": []
-        }
-    )
-
+    existing = load_json(CARDS_FILE, {"cards": []})
     if not isinstance(existing, dict):
-        existing = {
-            "cards": []
-        }
+        existing = {"cards": []}
 
-    cards = existing.get(
-        "cards",
-        []
-    )
-
+    cards = existing.get("cards", [])
     if not isinstance(cards, list):
         cards = []
 
-    # For the new daily format, keep exactly one card for this date.
-    # Legacy period cards remain untouched on earlier dates.
-    if card.get("slot") == "daily":
-        cards = [
-            c for c in cards
-            if c.get("date") != card.get("date")
-        ]
-    else:
-        cards = [
-            c for c in cards
-            if not (
-                c.get("date") == card.get("date")
-                and c.get("slot") == card.get("slot")
-            )
-        ]
-
-    cards.append(card)
-
-    # Sort chronologically
-    cards.sort(
-        key=lambda c: (
-            c.get("date", ""),
-            c.get("slot", "")
+    # Merge against the currently saved card before replacing its JSON record.
+    # This is the main safeguard against a sparse model response erasing events.
+    prior = next((
+        item for item in reversed(cards)
+        if item.get("date") == card.get("date")
+        and item.get("slot") == card.get("slot")
+    ), None)
+    if prior:
+        card["sections"] = merge_card_sections(
+            prior.get("sections", []),
+            card.get("sections", [])
         )
-    )
 
-    # Keep a reasonable archive size in cards.json
-    # while individual archives remain available.
+    cards = [
+        item for item in cards
+        if not (
+            item.get("date") == card.get("date")
+            and item.get("slot") == card.get("slot")
+        )
+    ]
+    cards.append(card)
+    cards.sort(key=lambda item: (item.get("date", ""), item.get("slot", "")))
     cards = cards[-90:]
 
-    output = {
-        "updated": datetime.now(
-            timezone.utc
-        ).isoformat(),
-
+    save_json(CARDS_FILE, {
+        "updated": datetime.now(timezone.utc).isoformat(),
         "cards": cards
-    }
-
-    save_json(
-        CARDS_FILE,
-        output
-    )
+    })
+    return card
 
 
 def save_archive(card):
 
     archive_date = card["date"]
+    archive_path = ARCHIVE_DIR / archive_date / f"{card['slot']}.json"
 
-    archive_path = (
-        ARCHIVE_DIR
-        / archive_date
-        / f"{card['slot']}.json"
-    )
+    # The archive is also cumulative, even if cards.json was incomplete.
+    archived_card = load_json(archive_path, None)
+    if isinstance(archived_card, dict):
+        card["sections"] = merge_card_sections(
+            archived_card.get("sections", []),
+            card.get("sections", [])
+        )
 
-    save_json(
-        archive_path,
-        card
-    )
+    save_json(archive_path, card)
 
-    # Going forward, each date has one archive card only.
-    # Remove old same-day period files when the daily-format card is saved.
-    if card.get("slot") == "daily":
-        for old_file in (ARCHIVE_DIR / archive_date).glob("*.json"):
-            if old_file.name != "daily.json" and old_file.name != "index.json":
-                old_file.unlink()
-
-    # Rebuild the year/month archive index automatically after every card.
+    # Never delete other files from the date directory. Older period cards
+    # and prior formats are historical records, not disposable duplicates.
     save_archive_index()
 
 
@@ -1545,20 +1661,26 @@ def main():
 
     if not news_items:
 
-        print(
-            "No news found for this period."
-        )
+        print("No news found for this period.")
+        existing_card = next((
+            item for item in reversed(load_previous_cards())
+            if item.get("date") == reference_date.isoformat()
+            and item.get("slot") == slot
+        ), None)
 
-        # Still create an empty card rather than inventing news.
-        empty_sections = []
+        # A failed/empty feed must never replace a populated card with emptiness.
+        if existing_card and any(
+            section.get("events")
+            for section in existing_card.get("sections", [])
+            if isinstance(section, dict)
+        ):
+            print("Keeping the existing populated card unchanged; no empty overwrite.")
+            return
 
-        for section_id, title in EXPECTED_SECTIONS:
-            empty_sections.append({
-                "id": section_id,
-                "title": title,
-                "events": []
-            })
-
+        empty_sections = [
+            {"id": section_id, "title": title, "events": []}
+            for section_id, title in EXPECTED_SECTIONS
+        ]
         card = {
             "date": reference_date.isoformat(),
             "slot": slot,
@@ -1567,14 +1689,9 @@ def main():
             "generated_at": now.isoformat(),
             "sections": empty_sections
         }
-
-        update_cards_file(card)
+        card = update_cards_file(card)
         save_archive(card)
-
-        print(
-            "Empty card saved because there were no candidates."
-        )
-
+        print("Empty card saved because there were no candidates and no populated card existed.")
         return
 
     # --------------------------------------------------------
@@ -1597,13 +1714,17 @@ def main():
     # Build prompt
     # --------------------------------------------------------
 
+    current_events = load_current_day_events(reference_date)
+    print(f"Existing events supplied for cumulative update: {len(current_events)}")
+
     prompt = build_prompt(
         slot=slot,
         reference_date=reference_date,
         start=start,
         end=end,
         news_items=news_items,
-        previous_events=previous_events
+        previous_events=previous_events,
+        current_events=current_events
     )
 
     # --------------------------------------------------------
@@ -1648,13 +1769,9 @@ def main():
     # Save
     # --------------------------------------------------------
 
-    update_cards_file(
-        card
-    )
+    card = update_cards_file(card)
 
-    save_archive(
-        card
-    )
+    save_archive(card)
 
     # --------------------------------------------------------
     # Statistics
