@@ -333,18 +333,13 @@ def main():
         item for item in publications
         if classify_relevance(item) > 0
     ]
+    # Sort by the requested relevance hierarchy, then newest first within each tier.
     publications.sort(
         key=lambda x: (
             int(x.get("relevance_tier", 99)),
             -(parse_date(x.get("published") or x.get("date")).timestamp()
               if parse_date(x.get("published") or x.get("date")) else 0)
         )
-    )
-    # Keep the best-ranked publications first, with newest first within each tier.
-    publications = publications[:MAX_TOTAL]
-    publications.sort(
-        key=lambda x: parse_date(x.get("published") or x.get("date")) or cutoff,
-        reverse=True
     )
     publications = publications[:MAX_TOTAL]
 
