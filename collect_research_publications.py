@@ -60,80 +60,138 @@ CENTERS = [
     {"name": "معهد أبحاث الدفاع والأمن الوطني التايواني (INDSR)", "short": "INDSR", "domain": "indsr.org.tw", "query": "defense OR security OR military OR strategy OR Indo-Pacific"},
 ]
 
-# Relevance tiers are ordered from Tunisia outward. Only publications matching
-# one of these tiers are exposed in the public list.
-TIER_KEYWORDS = {
-    1: [
-        "tunisia", "tunisian", "tunis", "tunisie", "tunisien", "تونس", "تونسي",
-        "تونسيّة", "التونسي", "تونسية", "قرطاج", "صفاقس", "بنزرت", "سوسة",
-        "القيروان", "قابس", "مدنين", "جربة"
-    ],
-    2: [
-        "libya", "libyan", "libye", "libyen", "ليبيا", "ليبي", "طرابلس", "بنغازي",
-        "حفتر", "الدبيبة", "المنفي", "الجزائر", "جزائري", "algeria", "algerian",
-        "algérie", "algérien", "algiers", "الجزائر العاصمة", "تبون", "شنقريحة",
-        "الغاز الجزائري"
-    ],
-    3: [
-        "north africa", "north african", "maghreb", "maghrib", "المغرب العربي",
-        "شمال افريقيا", "شمال إفريقيا", "north african", "morocco", "moroccan",
-        "maroc", "marocain", "المغرب", "مغربي", "مغربية", "western sahara",
-        "الصحراء الغربية", "egypt", "egyptian", "égypte", "مصر", "مصري",
-        "mauritania", "موريتانيا", "mediterranean", "méditerranée",
-        "البحر المتوسط", "المتوسط", "southern europe", "جنوب أوروبا",
-        "southern mediterranean", "غرب المتوسط", "شرق المتوسط"
-    ],
-    4: [
-        "energy security", "oil price", "oil prices", "natural gas", "lng",
-        "energy market", "أسعار النفط", "النفط", "الغاز الطبيعي", "أمن الطاقة",
-        "migration", "migrants", "asylum", "الهجرة", "المهاجرين", "اللجوء",
-        "european union", "european security", "eu policy", "الاتحاد الأوروبي",
-        "الأمن الأوروبي", "europe", "europa", "european", "european defence",
-        "european defense", "nato", "الناتو", "حلف شمال الأطلسي",
-        "sahel", "الساحل الإفريقي", "الساحل الافريقي", "terrorism", "terrorist",
-        "counterterrorism", "الإرهاب", "مكافحة الإرهاب", "armed conflict",
-        "الصراع", "الحرب", "التسلح", "الأسلحة", "arms trade",
-        "arms transfers", "weapons", "الإنفاق العسكري", "cybersecurity",
-        "cyber security", "الأمن السيبراني", "black sea", "ukraine", "russia",
-        "china", "united states", "middle east", "الشرق الأوسط", "أوكرانيا",
-        "روسيا", "الصين", "الولايات المتحدة", "red sea", "البحر الأحمر",
-        "supply chain", "global trade", "shipping", "maritime security",
-        "التجارة العالمية", "سلاسل الإمداد", "أمن الملاحة", "البحر الأحمر",
-        "climate security", "food security", "الأمن الغذائي"
-    ]
-}
+# Strict relevance filter: keep only work directly about Tunisia, work on
+# nearby/regional issues with a plausible spillover to Tunisia, or global
+# strategic developments with a credible transmission channel to Tunisia.
+TUNISIA_TERMS = [
+    "tunisia", "tunisian", "tunisie", "tunisien", "تونس", "تونسي",
+    "تونسيه", "قرطاج", "صفاقس", "بنزرت", "سوسة", "القيروان", "قابس",
+    "مدنين", "جربة", "جرجيس"
+]
+NEARBY_TERMS = [
+    "libya", "libyan", "libye", "libyen", "ليبيا", "ليبي", "طرابلس",
+    "بنغازي", "حفتر", "الدبيبة", "المنفي", "algeria", "algerian",
+    "algérie", "algérien", "algiers", "الجزائر", "جزائري", "تبون",
+    "شنقريحة", "north africa", "north african", "maghreb", "maghrib",
+    "المغرب العربي", "شمال افريقيا", "شمال إفريقيا", "morocco", "moroccan",
+    "maroc", "المغرب", "مغربي", "egypt", "egyptian", "مصر", "موريتانيا",
+    "mauritania", "mediterranean", "méditerranée", "البحر المتوسط",
+    "southern mediterranean", "western sahara", "الصحراء الغربية",
+    "sahel", "الساحل الإفريقي", "الساحل الافريقي"
+]
+# A nearby-country article is retained only when its title/description shows
+# a plausible link such as cross-border effects, trade, migration, energy,
+# maritime routes, or regional security—not simply because it names Libya.
+SPILLOVER_TERMS = [
+    "tunisia", "tunisian", "tunisie", "تونس", "تونسية", "تونسيا",
+    "cross-border", "cross border", "border region", "border security",
+    "border crossing", "shared border", "neighbouring", "neighboring",
+    "spillover", "regional impact", "regional security", "regional stability",
+    "transnational", "bilateral", "trade ties", "trade route", "trade routes",
+    "exports", "imports", "energy supply", "gas supply", "gas exports",
+    "oil supply", "energy market", "energy markets", "oil prices", "gas prices",
+    "migration route", "migration routes", "irregular migration",
+    "human trafficking", "smuggling network", "maritime security",
+    "shipping route", "shipping routes", "mediterranean", "méditerranée",
+    "المتوسط", "البحر المتوسط", "حدود", "عبر الحدود", "الحدود المشتركة",
+    "تعاون أمني", "تعاون دفاعي", "التعاون الأمني", "التعاون الدفاعي",
+    "الهجرة", "المهاجرين", "تهريب", "الطاقة", "الغاز", "النفط",
+    "التجارة", "التبادل التجاري", "الأمن الإقليمي", "استقرار المنطقة",
+    "طرق الملاحة", "الأمن البحري", "الساحل", "شمال إفريقيا", "شمال افريقيا",
+    "المغرب العربي", "تداعيات إقليمية", "تداعيات على تونس"
+]
+# Global developments need both a strategic subject and a credible impact
+# pathway relevant to Tunisia (energy, food, trade, shipping, migration,
+# European/Mediterranean security, Sahel security, sanctions, or cyber risks).
+GLOBAL_CONTEXT_TERMS = [
+    "global", "worldwide", "international", "europe", "european union", "eu ",
+    "nato", "russia", "ukraine", "china", "united states", "u.s.", "iran",
+    "middle east", "red sea", "gulf", "black sea", "indo-pacific", "africa",
+    "sahel", "الساحل", "الاتحاد الأوروبي", "الناتو", "روسيا", "أوكرانيا",
+    "الصين", "الولايات المتحدة", "الشرق الأوسط", "البحر الأحمر", "الخليج",
+    "دولي", "عالمي", "أوروبا", "إفريقيا", "افريقيا"
+]
+GLOBAL_STRATEGIC_TERMS = [
+    "war", "conflict", "military", "defen", "security", "sanction", "terror",
+    "armed", "missile", "drone", "arms", "weapon", "naval", "maritime",
+    "energy", "oil", "gas", "pipeline", "lng", "food security", "grain",
+    "wheat", "supply chain", "trade", "shipping", "migration", "asylum",
+    "cyber", "critical infrastructure", "defense", "defence", "تسلح",
+    "عسكري", "أمني", "الأمن", "الحرب", "الصراع", "العقوبات", "الطاقة",
+    "النفط", "الغاز", "الغذاء", "الحبوب", "التجارة", "الملاحة", "الهجرة",
+    "الإرهاب", "الصواريخ", "المسيرات", "الأمن السيبراني"
+]
+GLOBAL_IMPACT_PATH_TERMS = [
+    "energy market", "energy markets", "oil price", "oil prices", "gas price",
+    "gas prices", "energy supply", "gas supply", "oil supply", "fuel prices",
+    "food security", "food prices", "grain prices", "wheat", "fertilizer",
+    "supply chain", "supply chains", "global trade", "trade routes",
+    "shipping", "maritime", "mediterranean", "méditerranée", "red sea",
+    "suez", "european security", "european defence", "european defense",
+    "eu security", "nato", "sahel", "africa", "migration", "asylum",
+    "terrorism", "counterterrorism", "cybersecurity", "critical infrastructure",
+    "sanctions", "commodity prices", "commodities", "المتوسط", "البحر المتوسط",
+    "البحر الأحمر", "قناة السويس", "أمن الطاقة", "أسعار الطاقة", "أسعار النفط",
+    "أسعار الغاز", "أمن غذائي", "الأمن الغذائي", "الحبوب", "سلاسل الإمداد",
+    "التجارة العالمية", "أمن الملاحة", "الهجرة", "الساحل", "أمن أوروبا",
+    "الأمن الأوروبي", "العقوبات", "البنية التحتية الحيوية", "الأمن السيبراني"
+]
 
 
 def normalize_relevance_text(value):
     text = str(value or "").lower()
     text = text.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا")
     text = text.replace("ى", "ي").replace("ة", "ه")
-    text = re.sub(r"[\u064B-\u065F\u0670\u0640]", "", text)
-    return re.sub(r"\s+", " ", text)
+    text = re.sub(r"[\\u064B-\\u065F\\u0670\\u0640]", "", text)
+    return re.sub(r"\\s+", " ", text)
+
+
+def has_any(text, terms):
+    return any(normalize_relevance_text(term) in text
+               for term in terms)
 
 
 def classify_relevance(item):
     """
-    Assign one of four ordered relevance tiers:
-    1 Tunisia; 2 Libya/Algeria; 3 wider North Africa/Mediterranean;
-    4 global developments with plausible implications for Tunisia.
-    Generic global topics are not included unless they match the defined
-    security, energy, migration, trade, or geopolitical impact vocabulary.
+    Three strict priority tiers:
+    1. Publications directly about Tunisia.
+    2. Nearby/North African/Mediterranean issues only when a credible
+       spillover channel to Tunisia is visible in title/description.
+    3. Global strategic issues only when both the subject and a plausible
+       impact pathway relevant to Tunisia are present.
+    Center/source names alone never determine relevance.
     """
-    text = normalize_relevance_text(" ".join(str(item.get(k, "") or "") for k in (
-        "title", "title_ar", "description", "source", "center"
-    )))
-    for tier in (1, 2, 3, 4):
-        if any(normalize_relevance_text(word) in text for word in TIER_KEYWORDS[tier]):
-            labels = {
-                1: "تونس",
-                2: "ليبيا والجزائر",
-                3: "شمال إفريقيا والبحر الأبيض المتوسط",
-                4: "تطور عالمي ذو صلة بتونس"
-            }
-            item["relevance_tier"] = tier
-            item["relevance_label"] = labels[tier]
-            return tier
+    text = normalize_relevance_text(" ".join(
+        str(item.get(k, "") or "")
+        for k in ("title", "title_ar", "description")
+    ))
+
+    labels = {
+        1: "تونس مباشرة",
+        2: "دول الجوار والمنطقة مع ارتداد على تونس",
+        3: "تطور عالمي قد يؤثر في تونس"
+    }
+
+    if has_any(text, TUNISIA_TERMS):
+        item["relevance_tier"] = 1
+        item["relevance_label"] = labels[1]
+        return 1
+
+    nearby = has_any(text, NEARBY_TERMS)
+    spillover = has_any(text, SPILLOVER_TERMS)
+    if nearby and spillover:
+        item["relevance_tier"] = 2
+        item["relevance_label"] = labels[2]
+        return 2
+
+    global_context = has_any(text, GLOBAL_CONTEXT_TERMS)
+    strategic_subject = has_any(text, GLOBAL_STRATEGIC_TERMS)
+    impact_path = has_any(text, GLOBAL_IMPACT_PATH_TERMS)
+    if global_context and strategic_subject and impact_path:
+        item["relevance_tier"] = 3
+        item["relevance_label"] = labels[3]
+        return 3
+
     item["relevance_tier"] = 0
     item["relevance_label"] = "خارج نطاق المتابعة"
     return 0
