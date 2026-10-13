@@ -108,7 +108,8 @@ function render(){
  listEl.innerHTML=filtered.map(p=>{
    const d=dateValue(p);
    const dateLabel=d?new Intl.DateTimeFormat('ar-TN',{dateStyle:'medium'}).format(d):(p.date||'تاريخ غير متوفر');
-   const url=/^https?:\\/\\//i.test(p.url||'')?p.url:'#';
+   const candidateUrl=String(p.url||'').trim();
+   const url=(candidateUrl.startsWith('https://')||candidateUrl.startsWith('http://'))?candidateUrl:'#';
    const tier=relevanceTier(p);
    return '<article class="publication"><div class="meta"><span class="center">'+esc(p.center||p.center_short||'مركز أبحاث')+'</span><span class="center">الأولوية '+tier+' · '+esc(tierLabels[tier])+'</span><span>'+esc(dateLabel)+'</span></div><h3><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.title_ar||p.title||'منشور دون عنوان')+'</a></h3><div class="meta">'+(p.source&&p.source!==p.center?'<span>الناشر: '+esc(p.source)+'</span>':'')+'</div><a class="source-link" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">قراءة المنشور في موقعه الأصلي ↗</a></article>';
  }).join('');
