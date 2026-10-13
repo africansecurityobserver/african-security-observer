@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-13T19:11+01:00",
+  "updated": "2026-10-13T20:06+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
-  "count": 13,
+  "count": 19,
   "publications": [
     {
       "center": "معهد كلينغندايل",
@@ -18,6 +18,19 @@
       "relevance_label": "تونس مباشرة"
     },
     {
+      "center": "مجلس العلاقات الخارجية",
+      "center_short": "CFR",
+      "title": "Conflict in Yemen and the Red Sea | Global Conflict Tracker - Council on Foreign Relations",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1wLVlLT0hRb1JoS2NYWXdlLWtBdlJHVjBfUFMzLW04cU9ENTE3VVlwUW5IdHRqdDhfTmFqZ1FiRnBRcDU3a3NUajF4Ny1Wb1UxN2lqR091Q1BETVNSZm5maTVEeGhLM3VySUZuRVc5Yw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-13T12:30+01:00",
+      "date": "2026-10-13",
+      "source": "Council on Foreign Relations",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMib0FVX3lxTE1wLVlLT0hRb1JoS2NYWXdlLWtBdlJHVjBfUFMzLW04cU9ENTE3VVlwUW5IdHRqdDhfTmFqZ1FiRnBRcDU3a3NUajF4Ny1Wb1UxN2lqR091Q1BETVNSZm5maTVEeGhLM3VySUZuRVc5Yw?oc=5\" target=\"_blank\">Conflict in Yemen and the Red Sea | Global Conflict Tracker</a> <font color=\"#6f6f6f\">Council on Foreign Relations</font>",
+      "center_site": "https://cfr.org/",
+      "relevance_tier": 3,
+      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+    },
+    {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
       "center_short": "ISS Africa",
       "title": "Africa must prepare for AI-powered cyber threats at scale - ISS Africa",
@@ -31,15 +44,15 @@
       "relevance_label": "تطور عالمي قد يؤثر في تونس"
     },
     {
-      "center": "مركز الدراسات الاستراتيجية والدولية (CSIS)",
-      "center_short": "CSIS",
-      "title": "Russia’s Turn to China Under Sanctions: Sanctions Decay, Substitution Elasticity, and the Challenge of Sustaining Pressure - CSIS | Center for Strategic and International Studies",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE94clA1ZGhqd0k5a0tjVHlnd0U2V0hPMWJtR2F6UzJETVZvNmtmd0NWMXdjb1RqOWNsd2JCU3FhZjduSFlvTE5OYjdQRDBuM19jVVQtRFZ2d0g2alNtZWpXZzNKREozVWctZG5zV1lpaUdRdw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-09T19:47+01:00",
-      "date": "2026-10-09",
-      "source": "CSIS | Center for Strategic and International Studies",
-      "description": "Russia’s Turn to China Under Sanctions: Sanctions Decay, Substitution Elasticity, and the Challenge of Sustaining Pressure CSIS | Center for Strategic and International Studies",
-      "center_site": "https://csis.org/",
+      "center": "مؤسسة أبحاث المراقب (ORF)",
+      "center_short": "ORF",
+      "title": "international maritime conventions - orfonline.org",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9yZTJEQXZXYm5GcjE1S01rUDJUQXVkWXdFUUNScXBlczFPRUJhNWkwTGRtUTFhLWFwbXJFQmk0YWZ1bGh2ZjRxZVVFN3pUbzQ1Wmo2b3F3eVdwVGpaWTYwWTJTckpVV0NYMDJfODU1NFRSMEE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-10T01:08+01:00",
+      "date": "2026-10-10",
+      "source": "orfonline.org",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMic0FVX3lxTE9yZTJEQXZXYm5GcjE1S01rUDJUQXVkWXdFUUNScXBlczFPRUJhNWkwTGRtUTFhLWFwbXJFQmk0YWZ1bGh2ZjRxZVVFN3pUbzQ1Wmo2b3F3eVdwVGpaWTYwWTJTckpVV0NYMDJfODU1NFRSMEE?oc=5\" target=\"_blank\">international maritime conventions</a> <font color=\"#6f6f6f\">orfonline.org</font>",
+      "center_site": "https://orfonline.org/",
       "relevance_tier": 3,
       "relevance_label": "تطور عالمي قد يؤثر في تونس"
     },
@@ -83,6 +96,32 @@
       "relevance_label": "تطور عالمي قد يؤثر في تونس"
     },
     {
+      "center": "مركز الدراسات الاستراتيجية والدولية (CSIS)",
+      "center_short": "CSIS",
+      "title": "October is Cybersecurity Awareness Month - CSIS | Center for Strategic and International Studies",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9YYlFZWTNOZXpoRFdTM1RYaVE3M0VyQ0E5RTRNTzk1c3A5T3NTNUUxU2VEMTB6dGhkVGxDOWdtWjRfVGtkVmc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-08T10:28+01:00",
+      "date": "2026-10-08",
+      "source": "CSIS | Center for Strategic and International Studies",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiRkFVX3lxTE9YYlFZWTNOZXpoRFdTM1RYaVE3M0VyQ0E5RTRNTzk1c3A5T3NTNUUxU2VEMTB6dGhkVGxDOWdtWjRfVGtkVmc?oc=5\" target=\"_blank\">October is Cybersecurity Awareness Month</a> <font color=\"#6f6f6f\">CSIS | Center for Strategic and International Studies</font>",
+      "center_site": "https://csis.org/",
+      "relevance_tier": 3,
+      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+    },
+    {
+      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+      "center_short": "ISS Africa",
+      "title": "Africa can see El Niño coming – will countries act in time? - ISS Africa",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOaEE0ZmVOMzUxNEYwM0hKRXN0YnZJV204emZhOWRjYWJVVkRhM0lwU2E1ZnlwVWswdDRLMHdGOHBZSENIbHlUZFI4XzNsUHExdzR6OURrRjBsNEtDRWVkWWxSZXB4Z0lXUFZSelFaR0FkVlZ6ankzdGhZeTdlNGxmTkZxSkNZNDFKa1BkSTdJeF8zZw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-08T09:43+01:00",
+      "date": "2026-10-08",
+      "source": "ISS Africa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxOaEE0ZmVOMzUxNEYwM0hKRXN0YnZJV204emZhOWRjYWJVVkRhM0lwU2E1ZnlwVWswdDRLMHdGOHBZSENIbHlUZFI4XzNsUHExdzR6OURrRjBsNEtDRWVkWWxSZXB4Z0lXUFZSelFaR0FkVlZ6ankzdGhZeTdlNGxmTkZxSkNZNDFKa1BkSTdJeF8zZw?oc=5\" target=\"_blank\">Africa can see El Niño coming – will countries act in time?</a> <font color=\"#6f6f6f\">ISS Africa</font>",
+      "center_site": "https://issafrica.org/",
+      "relevance_tier": 3,
+      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+    },
+    {
       "center": "مركز إفريقيا للدراسات الاستراتيجية",
       "center_short": "Africa Center for Strategic Studies",
       "title": "Illicit Drug Trade Between North America and Africa: Routes, Patterns, and Responses - Africa Center for Strategic Studies",
@@ -92,6 +131,19 @@
       "source": "Africa Center for Strategic Studies",
       "description": "Illicit Drug Trade Between North America and Africa: Routes, Patterns, and Responses Africa Center for Strategic Studies",
       "center_site": "https://africacenter.org/",
+      "relevance_tier": 3,
+      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+    },
+    {
+      "center": "مجلس العلاقات الخارجية",
+      "center_short": "CFR",
+      "title": "Russia-Ukraine War Update and Perspectives From NATO Member Countries: Lunch and Discussion with CFR's Global Board of Advisors - Council on Foreign Relations",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOejFlNFo0dW9VdjR0QXdwSE8wZFE3cjgyazZBbE1JMWlJR2hiUTZpY1hQUVJkbFZSbWhHeVVleE0zcjhCNHRhZDF0dGJPZjBwVHV0aXY2eDhPMGNxdFZuMHVKV0lTSkpwSG5xS2I0dG1ZQlp4aXVEbEE1Qk41aEtwTFFKN1B0V0FacUs1XzhQWWlQSVIxZlhCeFhaN29zd3RmcGtlOTFEb0NlWExtTEFOZnFHSmtQempzN25Fd0FveHE4RDlzUVNkaldfVVZnTWJpNV9OLXkyME51dVFPUzBCRXZ6OENxZw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-06T16:45+01:00",
+      "date": "2026-10-06",
+      "source": "Council on Foreign Relations",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi5gFBVV95cUxOejFlNFo0dW9VdjR0QXdwSE8wZFE3cjgyazZBbE1JMWlJR2hiUTZpY1hQUVJkbFZSbWhHeVVleE0zcjhCNHRhZDF0dGJPZjBwVHV0aXY2eDhPMGNxdFZuMHVKV0lTSkpwSG5xS2I0dG1ZQlp4aXVEbEE1Qk41aEtwTFFKN1B0V0FacUs1XzhQWWlQSVIxZlhCeFhaN29zd3RmcGtlOTFEb0NlWExtTEFOZnFHSmtQempzN25Fd0FveHE4RDlzUVNkaldfVVZnTWJpNV9OLXkyME51dVFPUzBCRXZ6OENxZw?oc=5\" target=\"_blank\">Russia-Ukraine War Update and Perspectives From NATO Member Countries: Lunch and Discussion with CFR's Global Board o",
+      "center_site": "https://cfr.org/",
       "relevance_tier": 3,
       "relevance_label": "تطور عالمي قد يؤثر في تونس"
     },
@@ -135,6 +187,19 @@
       "relevance_label": "تطور عالمي قد يؤثر في تونس"
     },
     {
+      "center": "المعهد الملكي للخدمات المتحدة (RUSI)",
+      "center_short": "RUSI",
+      "title": "China and Africa boost law enforcement ties in crackdown on cross-border cybercrime - Royal United Services Institute (RUSI)",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQNEMyTFJSM19CSloyVTZaRy15VlJSWE56RDRWUTFoRlVoTHRqOWI0VDJ4c213NEdEelYyaEFiT3FZSlIxS3hWUWVSSERiWENncW4tZDFHaFFXS3RmWVVhZnlLU2VTaFhmbTlvaUpCVWprck9ZUlM0TW5YOFV4TlRVMWNMMC11bUxzVXFxZ2N6OGtvSDBKblVZcGhiQW5DeW5oQ1NRc002UExYZGdyLUtrb1lEbU5tNWZMWVJRdzRRR3c3OEVQaVE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-04T08:00+01:00",
+      "date": "2026-10-04",
+      "source": "Royal United Services Institute (RUSI)",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQNEMyTFJSM19CSloyVTZaRy15VlJSWE56RDRWUTFoRlVoTHRqOWI0VDJ4c213NEdEelYyaEFiT3FZSlIxS3hWUWVSSERiWENncW4tZDFHaFFXS3RmWVVhZnlLU2VTaFhmbTlvaUpCVWprck9ZUlM0TW5YOFV4TlRVMWNMMC11bUxzVXFxZ2N6OGtvSDBKblVZcGhiQW5DeW5oQ1NRc002UExYZGdyLUtrb1lEbU5tNWZMWVJRdzRRR3c3OEVQaVE?oc=5\" target=\"_blank\">China and Africa boost law enforcement ties in crackdown on cross-border cybercrime</a> <font color=\"#6f6f6f\">Royal United Services Institute (RUSI)</font>",
+      "center_site": "https://rusi.org/",
+      "relevance_tier": 3,
+      "relevance_label": "تطور عالمي قد يؤثر في تونس"
+    },
+    {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
       "center_short": "ISS Africa",
       "title": "Africa should prepare for a new Arctic shipping era - ISS Africa",
@@ -172,8 +237,19 @@
       "center_site": "https://crisisgroup.org/",
       "relevance_tier": 3,
       "relevance_label": "تطور عالمي قد يؤثر في تونس"
+    },
+    {
+      "center": "مركز الدراسات الاستراتيجية والدولية (CSIS)",
+      "center_short": "CSIS",
+      "title": "Japan as a Maritime Great Power and the China Challenge - CSIS | Center for Strategic and International Studies",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE05dXpNVTlDMWxIMnJTS0tBR1RnR0RMdGkwVHIzTUhVUXM0Yk1qSXY4b0g1aC1lMGRXNXVpZXJ2Q2JSUmZEUHRZckVuSTM0eENKMTBGNFB0LTZnaS11WWMzMXdkdEZIS2kwSnVyR3R4YjZIc3VwSGVaRHN6WmdEV0U?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-01T08:00+01:00",
+      "date": "2026-10-01",
+      "source": "CSIS | Center for Strategic and International Studies",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE05dXpNVTlDMWxIMnJTS0tBR1RnR0RMdGkwVHIzTUhVUXM0Yk1qSXY4b0g1aC1lMGRXNXVpZXJ2Q2JSUmZEUHRZckVuSTM0eENKMTBGNFB0LTZnaS11WWMzMXdkdEZIS2kwSnVyR3R4YjZIc3VwSGVaRHN6WmdEV0U?oc=5\" target=\"_blank\">Japan as a Maritime Great Power and the China Challenge</a> <font color=\"#6f6f6f\">CSIS | Center for Strategic and International Studies</font>",
+      "center_site": "https://csis.org/",
+      "relevance_tier": 3,
+      "relevance_label": "تطور عالمي قد يؤثر في تونس"
     }
-  ],
-  "filter_version": 2,
-  "filter_description": "Strict Tunisia relevance: direct Tunisia; nearby/regional issues with spillover; global strategic issues with a credible impact channel."
+  ]
 }
