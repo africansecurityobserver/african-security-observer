@@ -1,6 +1,7 @@
 import hashlib, json, os, re
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 import requests
 from selectolax.lexbor import LexborHTMLParser
@@ -29,18 +30,37 @@ def clean(value):
     value=re.sub(r"<[^>]+>"," ",str(value or ""))
     return re.sub(r"\s+"," ",value).strip()
 
-def get_text(url):
+def get_text(url, center_site=""):
     try:
         r=requests.get(url,headers=HEADERS,timeout=25,allow_redirects=True); r.raise_for_status()
-        p=LexborHTMLParser(r.text)
+        parser=LexborHTMLParser(r.text)
+        # Google News wrappers often keep the publisher link inside the page
+        # instead of redirecting. Resolve a link on the expected center domain.
+        expected_host=urlparse(center_site).netloc.lower().removeprefix("www.")
+        if expected_host and ("news.google.com" in urlparse(url).netloc.lower() or "news.google.com" in urlparse(r.url).netloc.lower()):
+            targets=[]
+            for node in parser.css("a[href]"):
+                href=node.attributes.get("href","")
+                host=urlparse(href).netloc.lower().removeprefix("www.")
+                if host==expected_host or host.endswith("."+expected_host):
+                    if href.startswith("http"):
+                        targets.append(href)
+            if targets:
+                try:
+                    direct=requests.get(targets[0],headers=HEADERS,timeout=25,allow_redirects=True)
+                    direct.raise_for_status()
+                    r=direct
+                    parser=LexborHTMLParser(r.text)
+                except Exception:
+                    pass
         for sel in ("script","style","nav","footer","header","aside","form","noscript"):
-            for n in p.css(sel): n.decompose()
+            for n in parser.css(sel): n.decompose()
         candidates=[]
         for sel in ("article","main","[role=main]",".article-body",".entry-content",".post-content"):
-            for n in p.css(sel):
+            for n in parser.css(sel):
                 t=clean(n.text(separator=" "))
                 if len(t)>max([len(x) for x in candidates] or [0]): candidates=[t]
-        if not candidates: candidates=[clean(n.text(separator=" ")) for n in p.css("p")]
+        if not candidates: candidates=[clean(n.text(separator=" ")) for n in parser.css("p")]
         return r.url,max(candidates,key=len,default="")[:26000]
     except Exception as e:
         print(f"Article extraction failed: {type(e).__name__}")
@@ -95,10 +115,10 @@ def main():
         if count>=MAX_PER_RUN: break
         title=clean(p.get("title")); title_ar=clean(p.get("title_ar")); center=clean(p.get("center") or p.get("source") or "مركز بحثي")
         url=clean(p.get("url")); desc=clean(p.get("description")); published=clean(p.get("published") or p.get("date"))
-        resolved,body=get_text(url)
+        resolved,body=get_text(url,clean(p.get("center_site")))
         if len(body)<650 and len(desc)<220:
             print("Insufficient text; marking source as checked:",title[:100])
-            data["processed_urls"].append(url); count+=1; continue
+            count+=1; continue
         prompt=f"""
 أنت محرر بطاقة استراتيجية عربية في المرصد الإفريقي للأمن والدفاع. أنشئ بطاقة واحدة تلخص هذه النشرية وحدها.
 العنوان الأصلي الذي نشره المركز يجب أن يبقى محفوظاً كما هو: {title}
