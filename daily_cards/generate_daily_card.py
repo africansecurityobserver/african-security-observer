@@ -1691,6 +1691,8 @@ def main():
         }
         card = update_cards_file(card)
         save_archive(card)
+        # Sync any additional events recovered from the archive back to cards.json.
+        update_cards_file(card)
         print("Empty card saved because there were no candidates and no populated card existed.")
         return
 
@@ -1772,6 +1774,10 @@ def main():
     card = update_cards_file(card)
 
     save_archive(card)
+
+    # save_archive may recover events that existed only in the archive;
+    # write the final merged version back to the current-card dataset too.
+    update_cards_file(card)
 
     # --------------------------------------------------------
     # Statistics
