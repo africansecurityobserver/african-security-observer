@@ -75,7 +75,7 @@ STRATEGIC_RSS_QUERIES = {
     "source_idsa": ['site:idsa.in (defence OR defense OR security OR military OR Africa OR geopolitics)'],
     "source_nids": ['site:nids.mod.go.jp (security OR defense OR military OR Indo-Pacific)'],
     "source_kida": ['site:kida.re.kr (security OR defense OR military OR strategy)'],
-    "source_nbr": ['site: nbr.org (Asia OR security OR defense OR military OR geopolitics)'],
+    "source_nbr": ['site:nbr.org (Asia OR security OR defense OR military OR geopolitics)'],
     "source_taiwan_institute": ['site:indsr.org.tw (defense OR security OR military OR strategy OR Indo-Pacific)'],
     "source_clingendael_insights": ['site:clingendael.org/publication (Africa OR security OR conflict OR defense)']
 }
