@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13T22:32+01:00",
+  "updated": "2026-10-14T00:44+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 73,
@@ -443,7 +443,7 @@
       "site": "https://ifsh.de/"
     }
   ],
-  "count": 24,
+  "count": 25,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -474,6 +474,20 @@
       "title_ar": "المواهب الناشئة في تكنولوجيا المعلومات والاتصالات والسوق الهولندية: نقل الخدمات إلى المغرب ومصر وتونس ونيجيريا"
     },
     {
+      "center": "مجموعة الأزمات الدولية",
+      "center_short": "International Crisis Group",
+      "title": "The U.S. and UN Will Need More Patience to Resolve Western Sahara Conflict - International Crisis Group",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPOVNVbW85ZW5KMHp5QUo0NXdJU205bGhOMmVlNVpicGN0dXc5TzAwVUg2UUFTMi1LdlI1aVdyTjcyYXZ0ekdRV2RQNVFEQVNLOWlSek81elN6dm50d2NGejJ5dmJpc0dMUXdocGthblVBd3lMWGU5cGVQYmhPUXlfbHRSMV9PWW4yMUFLWjREOGtUbXNNbDhWUm5hdWZxYTAyVmE0dXlDNzRyYmtQQ1o5dkZZcHZhVG5uY1FpMkNxMlhROFpSN21KaVdaZXFuWV84UUtR?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-09T16:45+01:00",
+      "date": "2026-10-09",
+      "source": "International Crisis Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxPOVNVbW85ZW5KMHp5QUo0NXdJU205bGhOMmVlNVpicGN0dXc5TzAwVUg2UUFTMi1LdlI1aVdyTjcyYXZ0ekdRV2RQNVFEQVNLOWlSek81elN6dm50d2NGejJ5dmJpc0dMUXdocGthblVBd3lMWGU5cGVQYmhPUXlfbHRSMV9PWW4yMUFLWjREOGtUbXNNbDhWUm5hdWZxYTAyVmE0dXlDNzRyYmtQQ1o5dkZZcHZhVG5uY1FpMkNxMlhROFpSN21KaVdaZXFuWV84UUtR?oc=5\" target=\"_blank\">The U.S. and UN Will Need More Patience to Resolve Western Sahara Conflict</a> <font color=\"#6f6f6f\">International Crisis Group</font>",
+      "center_site": "https://crisisgroup.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
+    },
+    {
       "center": "مجلس العلاقات الخارجية",
       "center_short": "CFR",
       "title": "Conflict in Yemen and the Red Sea | Global Conflict Tracker - Council on Foreign Relations",
@@ -483,8 +497,8 @@
       "source": "Council on Foreign Relations",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMib0FVX3lxTE1wLVlLT0hRb1JoS2NYWXdlLWtBdlJHVjBfUFMzLW04cU9ENTE3VVlwUW5IdHRqdDhfTmFqZ1FiRnBRcDU3a3NUajF4Ny1Wb1UxN2lqR091Q1BETVNSZm5maTVEeGhLM3VySUZuRVc5Yw?oc=5\" target=\"_blank\">Conflict in Yemen and the Red Sea | Global Conflict Tracker</a> <font color=\"#6f6f6f\">Council on Foreign Relations</font>",
       "center_site": "https://cfr.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الصراع في اليمن والبحر الأحمر | متعقّب النزاعات العالمية"
     },
     {
@@ -497,8 +511,8 @@
       "source": "ISS Africa",
       "description": "Africa must prepare for AI-powered cyber threats at scale ISS Africa",
       "center_site": "https://issafrica.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي"
     },
     {
@@ -511,8 +525,8 @@
       "source": "NUPI",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxPdWhjSGNMZ1JxT1BELTA1S20tNmc3WkhkQlBBQzMyaE1GTGs3dHJ2R09mbGxiSm9mdTVqakNyaWNWeUc3ZEVRcUFuSTROd2NDZnFLTUNUVjhYcmtMTUFMdU5sZHdubjZjelNmVU1Xc2ZCcVhsS0Z0dDBpNU5LVnVHdkhyc1RyQkk3eFR1OU8yZ1JRVkJVckVwUl9BTWFfR2p1TEVLeWRfS0NrQVA1T1NiMHpCYnpMMFF6SjY2dnBwcnhXR1o1a1hGVjJNWQ?oc=5\" target=\"_blank\">Strengthening the AU-UN Strategic Partnerships for Peace, Security and Sustainable Development in Africa</a> <font color=\"#6f6f6f\">NUPI</font>",
       "center_site": "https://nupi.no/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "تعزيز الشراكات الاستراتيجية بين الاتحاد الأفريقي والأمم المتحدة من أجل السلام والأمن والتنمية المستدامة في أفريقيا - NUPI"
     },
     {
@@ -525,8 +539,8 @@
       "source": "orfonline.org",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMic0FVX3lxTE9yZTJEQXZXYm5GcjE1S01rUDJUQXVkWXdFUUNScXBlczFPRUJhNWkwTGRtUTFhLWFwbXJFQmk0YWZ1bGh2ZjRxZVVFN3pUbzQ1Wmo2b3F3eVdwVGpaWTYwWTJTckpVV0NYMDJfODU1NFRSMEE?oc=5\" target=\"_blank\">international maritime conventions</a> <font color=\"#6f6f6f\">orfonline.org</font>",
       "center_site": "https://orfonline.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الاتفاقيات البحرية الدولية"
     },
     {
@@ -539,8 +553,8 @@
       "source": "Totalförsvarets forskningsinstitut - FOI",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxQUzk2U2V6NzlPRXFIeHVKRmt5aTJxUkFNbjlxWFVIYjVuLUstNThFb0FhTWM2bVRGMnZhLUlMQmg5S2tVLURheTJQTDJmRS1PcnVZN1V2TWx1RWtoaTF2cnNaODJUd05NSmJYOE5ibko2Z1lzVVdZZFVWa3VLTEZxSHdXOG5FbzBKZG5hc0MyZ1Z1cUpkTHZQS1ZxV3Y2dnRpd0x3NFV3?oc=5\" target=\"_blank\">Russia's Military Engagement in Africa</a> <font color=\"#6f6f6f\">Totalförsvarets forskningsinstitut - FOI</font>",
       "center_site": "https://foi.se/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "المشاركة العسكرية الروسية في أفريقيا - Totalförsvarets forskningsinstitut - FOI"
     },
     {
@@ -553,8 +567,8 @@
       "source": "ISS Africa",
       "description": "How Houthi military aggression in the Red Sea threatens Africa ISS Africa",
       "center_site": "https://issafrica.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "كيف يهدد التصعيد العسكري للحوثيين في البحر الأحمر إفريقيا"
     },
     {
@@ -567,8 +581,8 @@
       "source": "CSIS | Center for Strategic and International Studies",
       "description": "Beyond AGOA: Reimagining the Future of U.S.-Africa Trade CSIS | Center for Strategic and International Studies",
       "center_site": "https://csis.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "ما بعد قانون النمو والفرص في إفريقيا: إعادة تصور مستقبل التجارة بين الولايات المتحدة وإفريقيا"
     },
     {
@@ -581,8 +595,8 @@
       "source": "CSIS | Center for Strategic and International Studies",
       "description": "Could Fighting in Ethiopia Spark Regional War in the Horn of Africa? CSIS | Center for Strategic and International Studies",
       "center_site": "https://csis.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "هل يمكن أن يؤدي القتال في إثيوبيا إلى اندلاع حرب إقليمية في القرن الإفريقي؟"
     },
     {
@@ -595,8 +609,8 @@
       "source": "CSIS | Center for Strategic and International Studies",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiRkFVX3lxTE9YYlFZWTNOZXpoRFdTM1RYaVE3M0VyQ0E5RTRNTzk1c3A5T3NTNUUxU2VEMTB6dGhkVGxDOWdtWjRfVGtkVmc?oc=5\" target=\"_blank\">October is Cybersecurity Awareness Month</a> <font color=\"#6f6f6f\">CSIS | Center for Strategic and International Studies</font>",
       "center_site": "https://csis.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "أكتوبر هو شهر التوعية بالأمن السيبراني"
     },
     {
@@ -609,8 +623,8 @@
       "source": "ISS Africa",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxOaEE0ZmVOMzUxNEYwM0hKRXN0YnZJV204emZhOWRjYWJVVkRhM0lwU2E1ZnlwVWswdDRLMHdGOHBZSENIbHlUZFI4XzNsUHExdzR6OURrRjBsNEtDRWVkWWxSZXB4Z0lXUFZSelFaR0FkVlZ6ankzdGhZeTdlNGxmTkZxSkNZNDFKa1BkSTdJeF8zZw?oc=5\" target=\"_blank\">Africa can see El Niño coming – will countries act in time?</a> <font color=\"#6f6f6f\">ISS Africa</font>",
       "center_site": "https://issafrica.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟"
     },
     {
@@ -623,8 +637,8 @@
       "source": "Africa Center for Strategic Studies",
       "description": "Illicit Drug Trade Between North America and Africa: Routes, Patterns, and Responses Africa Center for Strategic Studies",
       "center_site": "https://africacenter.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "تجارة المخدرات غير المشروعة بين أمريكا الشمالية وإفريقيا: المسارات والأنماط وسبل المواجهة"
     },
     {
@@ -637,8 +651,8 @@
       "source": "Council on Foreign Relations",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi5gFBVV95cUxOejFlNFo0dW9VdjR0QXdwSE8wZFE3cjgyazZBbE1JMWlJR2hiUTZpY1hQUVJkbFZSbWhHeVVleE0zcjhCNHRhZDF0dGJPZjBwVHV0aXY2eDhPMGNxdFZuMHVKV0lTSkpwSG5xS2I0dG1ZQlp4aXVEbEE1Qk41aEtwTFFKN1B0V0FacUs1XzhQWWlQSVIxZlhCeFhaN29zd3RmcGtlOTFEb0NlWExtTEFOZnFHSmtQempzN25Fd0FveHE4RDlzUVNkaldfVVZnTWJpNV9OLXkyME51dVFPUzBCRXZ6OENxZw?oc=5\" target=\"_blank\">Russia-Ukraine War Update and Perspectives From NATO Member Countries: Lunch and Discussion with CFR's Global Board o",
       "center_site": "https://cfr.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "تحديث بشأن الحرب الروسية الأوكرانية ووجهات نظر من دول الناتو: نقاش مع المجلس الاستشاري العالمي لمجلس العلاقات الخارجية"
     },
     {
@@ -651,8 +665,8 @@
       "source": "International Crisis Group",
       "description": "The New Red Sea Wars International Crisis Group",
       "center_site": "https://crisisgroup.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الحروب الجديدة في البحر الأحمر"
     },
     {
@@ -665,8 +679,8 @@
       "source": "ISS Africa",
       "description": "Russia’s military recruitment networks exploit Western tech platforms ISS Africa",
       "center_site": "https://issafrica.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "شبكات التجنيد العسكري الروسية تستغل منصات التكنولوجيا الغربية"
     },
     {
@@ -679,8 +693,8 @@
       "source": "UNIDIR",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxQLTBIYzhTN0tZY0s1YWQ3LWMwb3RMSkh2UGdOMWkydnpoNld6YzJ6dVVNc2VrRG5qOW9mV043d1ZVM0FkaFN4Q1VfY1pOYzc5QU5HUmpUZ3QtLU1NNlRYTHVJUWFmR1RQQzlYektsODNpXzVVT3Y0VXQ0aGxBR05GRENJZ3JjaGJoTXBQWmRial85cElwNUE1Vjln?oc=5\" target=\"_blank\">Reviewing two decades of subregional arms and ammunition control in Africa</a> <font color=\"#6f6f6f\">UNIDIR</font>",
       "center_site": "https://unidir.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "استعراض عقدين من مراقبة الأسلحة والذخائر على الصعيد دون الإقليمي في أفريقيا - معهد الأمم المتحدة لبحوث نزع السلاح"
     },
     {
@@ -693,8 +707,8 @@
       "source": "Hudson Institute",
       "description": "US Defense Spending, Russia-NATO Tensions, and China’s Military Expansion Hudson Institute",
       "center_site": "https://hudson.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الإنفاق الدفاعي الأمريكي والتوترات بين روسيا والناتو والتوسع العسكري الصيني"
     },
     {
@@ -707,8 +721,8 @@
       "source": "Konrad-Adenauer-Stiftung",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi6wJBVV95cUxOb1VrQlpLWjhRMVFabXQ0RzA4ZEtfekZ4TUM3Q2hJblpqRS1xTzlCb19VMTZNc25wbTlkeUtYdjZ1alhYREZRUHkyazlRbDFBZVEtRXJQdUpYTlJkR09tbkJTN1Y4LUtuU0hlNkhzSUxzeGlKM09mQ01Na3VhSUtyTFJ0UUl1ODk0MG9pWW1YWFJjMnRSMW8zZ1hSZGZScnhuUS1UTjNHay1ZcDNPRU40X3lvT1BIR3oxSGlvUWJyUlJncUl0WHBNOFF1SmxYT0dFYV9OV1VKZF94cFdvOHpiZDM0cndLTTBVZzc3VDRYdkhQWE45cHNGWE5rUndOZmpNOEhIellSSTZwQ05ycnZCM3M2QXdXMjVfQ3N0WThvSm9yRGpMYnpQRUFKS0hoeURsSE8yV0dyT2dsZTNNdy1OaWFlX2VtTUhUN3VyOFRIRV",
       "center_site": "https://kas.de/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "سياسة أمن البرنامج الإقليمي لغرب أفريقيا - مؤسسة كونراد أديناور"
     },
     {
@@ -721,8 +735,8 @@
       "source": "Royal United Services Institute (RUSI)",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQNEMyTFJSM19CSloyVTZaRy15VlJSWE56RDRWUTFoRlVoTHRqOWI0VDJ4c213NEdEelYyaEFiT3FZSlIxS3hWUWVSSERiWENncW4tZDFHaFFXS3RmWVVhZnlLU2VTaFhmbTlvaUpCVWprck9ZUlM0TW5YOFV4TlRVMWNMMC11bUxzVXFxZ2N6OGtvSDBKblVZcGhiQW5DeW5oQ1NRc002UExYZGdyLUtrb1lEbU5tNWZMWVJRdzRRR3c3OEVQaVE?oc=5\" target=\"_blank\">China and Africa boost law enforcement ties in crackdown on cross-border cybercrime</a> <font color=\"#6f6f6f\">Royal United Services Institute (RUSI)</font>",
       "center_site": "https://rusi.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الصين وإفريقيا تعززان التعاون بين أجهزة إنفاذ القانون لمكافحة الجرائم السيبرانية العابرة للحدود"
     },
     {
@@ -735,8 +749,8 @@
       "source": "ISS Africa",
       "description": "Africa should prepare for a new Arctic shipping era ISS Africa",
       "center_site": "https://issafrica.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "ينبغي لإفريقيا الاستعداد لعصر جديد من الملاحة البحرية في القطب الشمالي"
     },
     {
@@ -749,8 +763,8 @@
       "source": "Clingendael",
       "description": "Ethiopia’s widening war threatens the Horn of Africa Clingendael",
       "center_site": "https://clingendael.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "اتساع رقعة الحرب في إثيوبيا يهدد القرن الإفريقي"
     },
     {
@@ -763,8 +777,8 @@
       "source": "International Crisis Group",
       "description": "Five Energy Market Factors That Could Tip the Scales in the Middle East War International Crisis Group",
       "center_site": "https://crisisgroup.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "خمسة عوامل في سوق الطاقة قد ترجّح كفة أحد الأطراف في حرب الشرق الأوسط"
     },
     {
@@ -777,8 +791,8 @@
       "source": "CSIS | Center for Strategic and International Studies",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE05dXpNVTlDMWxIMnJTS0tBR1RnR0RMdGkwVHIzTUhVUXM0Yk1qSXY4b0g1aC1lMGRXNXVpZXJ2Q2JSUmZEUHRZckVuSTM0eENKMTBGNFB0LTZnaS11WWMzMXdkdEZIS2kwSnVyR3R4YjZIc3VwSGVaRHN6WmdEV0U?oc=5\" target=\"_blank\">Japan as a Maritime Great Power and the China Challenge</a> <font color=\"#6f6f6f\">CSIS | Center for Strategic and International Studies</font>",
       "center_site": "https://csis.org/",
-      "relevance_tier": 3,
-      "relevance_label": "تطور عالمي قد يؤثر في تونس",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "اليابان بوصفها قوة بحرية كبرى والتحدي الصيني"
     }
   ]
