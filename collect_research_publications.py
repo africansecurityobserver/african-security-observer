@@ -58,7 +58,6 @@ CENTERS = [
     {"name": "المعهد الكوري للتحليلات الدفاعية (KIDA)", "short": "KIDA", "domain": "kida.re.kr", "query": "security OR defense OR military OR strategy"},
     {"name": "المكتب الوطني للأبحاث الآسيوية (NBR)", "short": "NBR", "domain": "nbr.org", "query": "Asia OR security OR defense OR military OR geopolitics"},
     {"name": "معهد أبحاث الدفاع والأمن الوطني التايواني (INDSR)", "short": "INDSR", "domain": "indsr.org.tw", "query": "defense OR security OR military OR strategy OR Indo-Pacific"},
-]
     {"name": "معهد الدراسات الأمنية الأوروبي (EUISS)", "short": "EUISS", "domain": "iss.europa.eu", "query": "Africa OR Mediterranean OR Sahel OR security OR defence OR defense OR strategic autonomy"},
     {"name": "مركز الأمن الأمريكي الجديد (CNAS)", "short": "CNAS", "domain": "cnas.org", "query": "national security OR defense OR military OR technology OR China OR Russia"},
     {"name": "مركز بلفر للعلوم والشؤون الدولية", "short": "Belfer Center", "domain": "belfercenter.org", "query": "security OR defense OR nuclear OR cyber OR energy OR geopolitics"},
@@ -98,7 +97,6 @@ CENTERS = [
     {"name": "مركز أبحاث السياسة الخارجية النمساوي (oiip)", "short": "oiip", "domain": "oiip.ac.at", "query": "Mediterranean OR North Africa OR security OR migration OR geopolitics"},
     {"name": "معهد الدراسات الأمنية والتنمية (ISDP)", "short": "ISDP", "domain": "isdp.eu", "query": "Africa OR Middle East OR security OR defense OR geopolitics"},
     {"name": "معهد أبحاث السلام والسياسة الأمنية في هامبورغ (IFSH)", "short": "IFSH", "domain": "ifsh.de", "query": "security OR defense OR arms control OR nuclear OR Europe"},
-    {"name": "المعهد الملكي للدراسات الدفاعية (RINSA)", "short": "RINSA", "domain": "rinsa.org", "query": "Africa OR security OR defense OR military OR strategy"},
 ]
 
 # Strict relevance filter: keep only work directly about Tunisia, work on
