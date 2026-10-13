@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13T22:55:58+01:00",
+  "updated": "2026-10-13T23:10:00+01:00",
   "years": [
     {
       "year": "2026",
@@ -7,6 +7,16 @@
         {
           "month": "10",
           "cards": [
+            {
+              "date": "2026-10-13",
+              "title": "Beyond Wagner: Russia’s Military Engagement in Africa in the 2020s",
+              "subject": "ما بعد فاغنر: الانخراط العسكري الروسي في إفريقيا خلال عشرينيات القرن الحادي والعشرين",
+              "path": "2026-10/20261013_beyond-wagner-russia-africa.json",
+              "center": "الوكالة السويدية لأبحاث الدفاع (FOI)",
+              "source_title": "Beyond Wagner: Russia’s Military Engagement in Africa in the 2020s — Swedish Defence Research Agency (FOI)",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
             {
               "date": "2026-10-13",
               "title": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي",
