@@ -78,7 +78,7 @@ function render(){
  const filtered=publications.filter(p=>{
    const date=dateValue(p);
    const matchesDate=days==='all'||!date||now-date.getTime()<=Number(days)*86400000;
-   const matchesText=(String(p.title||'')+' '+String(p.center||'')+' '+String(p.source||'')).toLocaleLowerCase().includes(q);
+   const matchesText=(String(p.title_ar||p.title||'')+' '+String(p.title||'')+' '+String(p.center||'')+' '+String(p.source||'')).toLocaleLowerCase().includes(q);
    return (!center||p.center===center)&&matchesDate&&matchesText;
  });
  filtered.sort((a,b)=>(dateValue(b)?.getTime()||0)-(dateValue(a)?.getTime()||0));
@@ -87,7 +87,7 @@ function render(){
    const d=dateValue(p);
    const dateLabel=d?new Intl.DateTimeFormat('ar-TN',{dateStyle:'medium'}).format(d):(p.date||'تاريخ غير متوفر');
    const url=/^https?:\/\//i.test(p.url||'')?p.url:'#';
-   return '<article class="publication"><div class="meta"><span class="center">'+esc(p.center||p.center_short||'مركز أبحاث')+'</span><span>'+esc(dateLabel)+'</span></div><h3><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.title||'منشور دون عنوان')+'</a></h3><div class="meta">'+(p.source&&p.source!==p.center?'<span>الناشر: '+esc(p.source)+'</span>':'')+'</div><a class="source-link" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">قراءة المنشور في موقعه الأصلي ↗</a></article>';
+   return '<article class="publication"><div class="meta"><span class="center">'+esc(p.center||p.center_short||'مركز أبحاث')+'</span><span>'+esc(dateLabel)+'</span></div><h3><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.title_ar||p.title||'منشور دون عنوان')+'</a></h3><div class="meta">'+(p.source&&p.source!==p.center?'<span>الناشر: '+esc(p.source)+'</span>':'')+'</div><a class="source-link" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">قراءة المنشور في موقعه الأصلي ↗</a></article>';
  }).join('');
 }
 async function load(){
