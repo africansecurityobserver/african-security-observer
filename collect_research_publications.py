@@ -57,7 +57,7 @@ CENTERS = [
 ]
 
 def clean(value):
-    return re.sub(r"\\s+", " ", unescape(re.sub(r"<[^>]+>", " ", str(value or "")))).strip()
+    return re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", str(value or "")))).strip()
 
 def parse_date(value):
     if not value:
