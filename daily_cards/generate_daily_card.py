@@ -25,6 +25,41 @@ MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 # Number of news items sent to Gemini at most
 MAX_NEWS_ITEMS = 100
 
+# Senior officials whose concrete, current events receive priority in the
+# daily card. Names are matched against Arabic and common Latin-script forms.
+PRIORITY_OFFICIALS = {
+    "libya": [
+        "خليفة حفتر", "Khalifa Haftar", "Khalifa Hifter",
+        "صدام حفتر", "Saddam Haftar", "Saddam Hifter",
+        "خالد حفتر", "Khaled Haftar", "Khalid Haftar",
+        "عبد الحميد الدبيبة", "عبدالحميد الدبيبة", "Abdul Hamid Dbeibeh",
+        "Abdelhamid Dbeibah", "Abdulhamid Dbeibeh",
+        "محمد المنفي", "Mohamed al-Menfi", "Mohammed al-Menfi", "Mohamed Menfi",
+        "عبد المجيد مليقطة", "عبدالمجيد مليقطة", "Abdelmajid Mleigta",
+        "Abdulmajid Mleigta",
+        "الطاهر الباعور", "Taher al-Baour", "Taher Albawour",
+        "عبد السلام الزوبي", "عبدالسلام الزوبي", "Abdul Salam al-Zoubi",
+        "Abdel Salam Zoubi",
+        "محمود حمزة", "Mahmoud Hamza"
+    ],
+    "algeria": [
+        "عبد المجيد تبون", "عبدالمجيد تبون", "Abdelmadjid Tebboune",
+        "السعيد شنقريحة", "السعيد شنقريحه", "Said Chengriha", "Saïd Chengriha",
+        "محمد عرقاب", "Mohamed Arkab", "Mohammed Arkab",
+        "سيفي غريب", "سيفي غريب", "Sifi Ghrieb", "Sifi Ghrib",
+        "أحمد عطاف", "احمد عطاف", "Ahmed Attaf",
+        "السعيد سعيود", "Saïd Sayoud", "Said Sayoud",
+        "الحاج بوسلجة", "الحاج بوسلجه", "El Hadj Bousselja", "Hadj Bousselja"
+    ],
+    "morocco": [
+        "محمد السادس", "Mohammed VI", "Mohammed the Sixth", "King Mohammed VI",
+        "فاطمة الزهراء المنصوري", "Fatima Zahra Mansouri",
+        "ناصر بوريطة", "Nasser Bourita", "Nasser Bourita",
+        "عبد الوافي لفتيت", "عبدالوافي لفتيت", "Abdelouafi Laftit",
+        "محمد بريظ", "محمد بريظ", "Mohamed Berrid", "Mohammed Berrid"
+    ]
+}
+
 
 # ============================================================
 # CARD PERIODS
@@ -244,20 +279,32 @@ def get_news_for_period(slot, reference_date):
 
     selected = basic_deduplicate(selected)
 
-    # Preserve dedicated international-organization stories when the feed
-    # volume is high, then fill the remaining slots with the latest news.
+    # Preserve reports about named senior officials before applying the
+    # input cap. Also reserve room for major international-organization news.
     if len(selected) > MAX_NEWS_ITEMS:
+        priority_people_items = [
+            item for item in selected
+            if priority_section_for_text(news_item_search_text(item))
+        ][-40:]
         priority_org_items = [
             item for item in selected
             if item.get("category") == "international"
-        ]
+        ][-20:]
+
+        chosen = []
+        chosen_ids = set()
+        for item in priority_people_items + priority_org_items:
+            marker = id(item)
+            if marker not in chosen_ids:
+                chosen.append(item)
+                chosen_ids.add(marker)
+
         other_items = [
             item for item in selected
-            if item.get("category") != "international"
+            if id(item) not in chosen_ids
         ]
-        priority_org_items = priority_org_items[-20:]
-        remaining = max(0, MAX_NEWS_ITEMS - len(priority_org_items))
-        selected = priority_org_items + other_items[-remaining:]
+        remaining = max(0, MAX_NEWS_ITEMS - len(chosen))
+        selected = chosen + (other_items[-remaining:] if remaining else [])
         selected.sort(
             key=lambda x: parse_datetime(x.get("published")) or start
         )
@@ -690,6 +737,17 @@ Africa/Tunis
 القسم الأول:
 "ليبيا"
 
+قائمة أسماء رئيسية إلزامية للمتابعة في المواد الإخبارية:
+خليفة حفتر، صدام حفتر، خالد حفتر، عبد الحميد الدبيبة، محمد المنفي،
+عبد المجيد مليقطة، الطاهر الباعور، عبد السلام الزوبي، محمود حمزة.
+
+قاعدة إلزامية: افحص عناوين وأوصاف جميع المواد بحثاً عن هذه الأسماء
+وصيغ كتابتها اللاتينية الشائعة. إذا تضمنت مادة خبراً ملموساً وحديثاً
+عن اجتماع أو استقبال أو زيارة أو قرار أو تعيين أو إقالة أو تصريح رسمي
+مهم أو تحرك عسكري/أمني يتعلق بأحدهم، فأدرج الحدث في قسم ليبيا.
+لا تسقطه لمجرد أن أخباراً أخرى أكثر عدداً أو لأن الحدث سياسي/دبلوماسي.
+مجرد ورود الاسم في تحليل أو خبر قديم أو ذكر عابر لا يكفي للإدراج.
+
 ضع فيه الأحداث المتعلقة بليبيا، مع إعطاء أولوية واضحة لنوعين من الأخبار الإضافية التالية:
 
 أولوية خاصة: متابعة القيادات السياسية والعسكرية والأمنية في طرفي الانقسام الليبي
@@ -720,10 +778,30 @@ Africa/Tunis
 القسم الثاني:
 "الجزائر"
 
+قائمة أسماء رئيسية إلزامية للمتابعة في المواد الإخبارية:
+عبد المجيد تبون، السعيد شنقريحة، محمد عرقاب، سيفي غريب،
+أحمد عطاف، السعيد سعيود، الحاج بوسلجة.
+
+افحص جميع المواد بحثاً عن هذه الأسماء وصيغ كتابتها اللاتينية الشائعة.
+أدرج كل واقعة حديثة ومحددة تتعلق بأحدهم، مثل الاجتماعات والزيارات
+والقرارات والتعيينات والإقالات والاتفاقات والتحركات العسكرية أو
+الدبلوماسية المهمة. لا تدرج مجرد ذكر الاسم أو تحليلاً عاماً أو خبراً
+قديماً بلا تطور جديد.
+
 ضع فيه الأحداث المتعلقة بالجزائر.
 
 القسم الثالث:
 "المغرب"
+
+قائمة أسماء رئيسية إلزامية للمتابعة في المواد الإخبارية:
+محمد السادس، فاطمة الزهراء المنصوري، ناصر بوريطة،
+عبد الوافي لفتيت، محمد بريظ.
+
+افحص جميع المواد بحثاً عن هذه الأسماء وصيغ كتابتها اللاتينية الشائعة.
+أدرج كل واقعة حديثة ومحددة تتعلق بأحدهم، مثل الاجتماعات والزيارات
+والقرارات والتعيينات والإقالات والاتفاقات والتحركات العسكرية أو
+الدبلوماسية المهمة. لا تدرج مجرد ذكر الاسم أو تحليلاً عاماً أو خبراً
+قديماً بلا تطور جديد.
 
 ضع فيه الأحداث المتعلقة بالمغرب.
 
@@ -1377,7 +1455,7 @@ def normalize_sections(generated):
             "events": clean_events
         })
 
-    return final_sections
+    return route_priority_events(final_sections)
 
 # ============================================================
 # ACCUMULATIVE DAILY-CARD MERGING
@@ -1395,6 +1473,69 @@ def normalize_event_for_match(value):
     text = text.replace("ى", "ي").replace("ة", "ه")
     text = re.sub(r"[^\w\s]", " ", text, flags=re.UNICODE)
     return " ".join(text.split())
+
+
+def news_item_search_text(item):
+    """Combine translated and original headlines/descriptions for name matching."""
+    fields = (
+        "title", "description", "original_title", "original_description",
+        "source"
+    )
+    return " ".join(str(item.get(field, "") or "") for field in fields)
+
+
+def priority_section_for_text(value):
+    """Return the country section associated with a listed senior official."""
+    normalized = normalize_event_for_match(value)
+    if not normalized:
+        return None
+
+    # Match full names (not isolated first or family names) to avoid false positives.
+    for section_id, aliases in PRIORITY_OFFICIALS.items():
+        for alias in aliases:
+            normalized_alias = normalize_event_for_match(alias)
+            if normalized_alias and normalized_alias in normalized:
+                return section_id
+    return None
+
+
+def route_priority_events(sections):
+    """Move listed officials' events into their corresponding country section."""
+    if not isinstance(sections, list):
+        return sections
+
+    by_id = {
+        section.get("id"): section
+        for section in sections
+        if isinstance(section, dict)
+    }
+
+    for section in sections:
+        if not isinstance(section, dict):
+            continue
+        source_id = section.get("id")
+        retained = []
+        for event in section.get("events", []):
+            if not isinstance(event, dict):
+                continue
+            destination_id = priority_section_for_text(
+                str(event.get("country", "")) + " " + str(event.get("text", ""))
+            )
+            if destination_id and destination_id != source_id and destination_id in by_id:
+                target = by_id[destination_id]
+                target["events"] = merge_event_lists(
+                    target.get("events", []),
+                    [event]
+                )
+                print(
+                    f"Routed named-official event from {source_id} "
+                    f"to {destination_id}: {str(event.get('text', ''))[:100]}"
+                )
+            else:
+                retained.append(event)
+        section["events"] = retained
+
+    return sections
 
 
 def same_event_text(left, right):
@@ -1537,7 +1678,7 @@ def merge_card_sections(existing_sections, incoming_sections):
             "title": title,
             "events": events
         })
-    return merged_sections
+    return route_priority_events(merged_sections)
 
 
 def load_current_day_events(reference_date):
