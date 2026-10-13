@@ -81,7 +81,7 @@ def parse_date(value):
             return None
 
 def contains_arabic(value):
-    return bool(re.search(r"[\\u0600-\\u06FF]", str(value or "")))
+    return bool(re.search(r"[\u0600-\u06FF]", str(value or "")))
 
 
 def translate_titles_to_arabic(items):
