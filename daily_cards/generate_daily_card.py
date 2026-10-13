@@ -1358,8 +1358,12 @@ def normalize_sections(generated):
                     "text": text_value
                 })
 
-        # Keep all relevant events, but order them by editorial priority first,
-        # then by their original position for stable ordering within each tier.
+        # Deduplicate within the newly generated section as well as when
+        # merging with an already-published card. This matters on the first
+        # generation of a day, when there is no previous card to merge against.
+        clean_events = merge_event_lists([], clean_events)
+
+        # Keep relevant events ordered by editorial priority, then original order.
         clean_events = [
             event for _, event in sorted(
                 enumerate(clean_events),
