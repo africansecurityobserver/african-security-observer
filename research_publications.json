@@ -1,9 +1,20 @@
 {
-  "updated": "2026-10-13T19:00+01:00",
+  "updated": "2026-10-13T19:11+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
-  "count": 462,
+  "count": 464,
   "publications": [
+    {
+      "center": "مركز الدراسات الاستراتيجية والدولية (CSIS)",
+      "center_short": "CSIS",
+      "title": "The Future of U.S-UK Defense Cooperation with UK Secretary of Defence Wes Streeting - CSIS | Center for Strategic and International Studies",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxObzRyQUVqbVdQeUZqYnFUblpmSFBFQjNfb2FMald5OFZSSk1QR3JLcFR3aElNd09aNzliOTZhWS1qVmg3enkwNVkxTTNPQkQtbTZMVC1LMTI4RUFrSTYyakpsRWd0cmZabVZoR0RabVQxaU82a2plXzdiS1M2S0dFOVRmb3hYbFRlSHVrVjRkXzNyWnY4b25obTJqQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-13T19:07+01:00",
+      "date": "2026-10-13",
+      "source": "CSIS | Center for Strategic and International Studies",
+      "description": "The Future of U.S-UK Defense Cooperation with UK Secretary of Defence Wes Streeting CSIS | Center for Strategic and International Studies",
+      "center_site": "https://csis.org/"
+    },
     {
       "center": "المعهد الملكي للخدمات المتحدة (RUSI)",
       "center_short": "RUSI",
@@ -3666,6 +3677,17 @@
       "source": "MP-IDSA",
       "description": "6-Defence Studies Book Cover (October 2011)_V3 MP-IDSA",
       "center_site": "https://idsa.in/"
+    },
+    {
+      "center": "معهد ستوكهولم الدولي لأبحاث السلام (SIPRI)",
+      "center_short": "SIPRI",
+      "title": "SIPRI Yearbook 2026, Summary in Swedish - Stockholm International Peace Research Institute",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQSE1xdFRfWXFaeWlCMy1vbHVuTGVFQnFLU2ZHdmJXMDRncnhwWDhURFhPeGE5RjBRT0pVSEMyQl8taUt0TF9jdV9reEhDbGJTNDhQLTJZZlJZYlVWaE1NbHNEQV9JNTFVYV9MUTNyM3BRcnZlR2tNTk9VaDF2MmpydmI2ZVdHZ193TEE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-07T06:24+01:00",
+      "date": "2026-10-07",
+      "source": "Stockholm International Peace Research Institute",
+      "description": "SIPRI Yearbook 2026, Summary in Swedish Stockholm International Peace Research Institute",
+      "center_site": "https://sipri.org/"
     },
     {
       "center": "المعهد الأسترالي للسياسة الاستراتيجية (ASPI)",
