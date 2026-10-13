@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 from html import unescape
 
 import requests
+from deep_translator import GoogleTranslator
 
 ROOT = Path(__file__).resolve().parent
 OUTPUT = ROOT / "research_publications.json"
@@ -78,6 +79,66 @@ def parse_date(value):
             return dt.astimezone(TZ)
         except Exception:
             return None
+
+def contains_arabic(value):
+    return bool(re.search(r"[\\u0600-\\u06FF]", str(value or "")))
+
+
+def translate_titles_to_arabic(items):
+    """
+    Add title_ar for every publication while preserving the publisher's
+    original title in title. Existing translations are retained on later runs.
+    """
+    translator = GoogleTranslator(source="auto", target="ar")
+    pending = [
+        item for item in items
+        if str(item.get("title", "")).strip()
+        and not str(item.get("title_ar", "")).strip()
+        and not contains_arabic(item.get("title", ""))
+    ]
+
+    # Translate in small batches to avoid overwhelming the free translation
+    # endpoint. Fall back to individual requests if batch translation fails.
+    for start_index in range(0, len(pending), 15):
+        batch = pending[start_index:start_index + 15]
+        titles = [str(item.get("title", "")).strip() for item in batch]
+        translated = None
+        try:
+            translated = translator.translate_batch(titles)
+            if not isinstance(translated, list) or len(translated) != len(batch):
+                translated = None
+        except Exception as exc:
+            print(f"Batch title translation failed: {type(exc).__name__}")
+
+        for index, item in enumerate(batch):
+            result = ""
+            if translated:
+                result = str(translated[index] or "").strip()
+            if not result:
+                try:
+                    result = str(translator.translate(titles[index]) or "").strip()
+                except Exception as exc:
+                    print(f"Title translation failed: {type(exc).__name__}")
+            if result:
+                item["title_ar"] = result
+            elif contains_arabic(item.get("title", "")):
+                item["title_ar"] = item["title"]
+            else:
+                # Mark failed translations explicitly so the same older items
+                # can be retried next run; the page can identify the fallback.
+                item.pop("title_ar", None)
+
+        time.sleep(0.4)
+
+    # Keep Arabic-origin titles in Arabic without sending them to translation.
+    for item in items:
+        title = str(item.get("title", "")).strip()
+        if title and contains_arabic(title) and not item.get("title_ar"):
+            item["title_ar"] = title
+
+    translated_count = sum(1 for item in items if item.get("title_ar"))
+    print(f"Arabic titles available: {translated_count}/{len(items)}")
+
 
 def direct_url(url):
     if not url:
@@ -190,6 +251,11 @@ def main():
         reverse=True
     )
     publications = publications[:MAX_TOTAL]
+
+    # Translate both newly discovered publications and the initial 1–13 October
+    # backfill. Existing Arabic titles are preserved on each six-hour refresh.
+    translate_titles_to_arabic(publications)
+
     payload = {
         "updated": now.isoformat(timespec="minutes"),
         "window_days": MAX_AGE_DAYS,
