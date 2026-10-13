@@ -124,12 +124,20 @@ def main():
         title=clean(p.get("title")); title_ar=clean(p.get("title_ar")); center=clean(p.get("center") or p.get("source") or "مركز بحثي")
         url=clean(p.get("url")); desc=clean(p.get("description")); published=clean(p.get("published") or p.get("date"))
         resolved,body=get_text(url,clean(p.get("center_site")))
-        if len(body)<650 and len(desc)<220:
-            # Keep this URL unprocessed so the next six-hour run can retry it.
-            # A publication is not silently discarded merely because extraction
-            # failed temporarily or its page was inaccessible.
-            print("Insufficient source text; leaving publication pending for retry:",title[:100])
-            failed_count+=1
+
+        # Hard rule: a strategic card may only be written from the publication's
+        # accessible full text. A title, snippet, search-result extract, or short
+        # description is not enough evidence for a multi-section analytical card.
+        # Leave incomplete items unprocessed so a later six-hour run can retry.
+        MIN_FULL_TEXT_CHARS = 1800
+        if len(body.strip()) < MIN_FULL_TEXT_CHARS:
+            print(
+                "Full publication text unavailable or too short; skipping card "
+                "and leaving publication pending for retry:",
+                title[:140],
+                f"(extracted_chars={len(body.strip())})"
+            )
+            failed_count += 1
             continue
         prompt=f"""
 أنت محرر بطاقة استراتيجية عربية في المرصد الإفريقي للأمن والدفاع. أنشئ بطاقة واحدة تلخص هذه النشرية وحدها.
