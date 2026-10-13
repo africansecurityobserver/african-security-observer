@@ -397,6 +397,89 @@ def make_leadership_feeds(country):
     return feeds
 
 
+def make_priority_official_feeds():
+    """
+    Dedicated Arabic, English and French searches for the user-designated
+    senior officials in Libya, Algeria and Morocco. Searches are name-led,
+    rather than relying only on generic job titles.
+    """
+    people = {
+        "Libya": {
+            "en": [
+                '"Khalifa Haftar"', '"Saddam Haftar"', '"Khaled Haftar"',
+                '"Abdul Hamid Dbeibeh"', '"Abdelhamid Dbeibah"', '"Mohamed al-Menfi"',
+                '"Abdelmajid Mleigta"', '"Taher al-Baour"', '"Abdul Salam al-Zoubi"',
+                '"Mahmoud Hamza"'
+            ],
+            "fr": [
+                '"Khalifa Haftar"', '"Saddam Haftar"', '"Khaled Haftar"',
+                '"Abdul Hamid Dbeibeh"', '"Mohamed al-Menfi"', '"Abdelmajid Mleigta"',
+                '"Taher al-Baour"', '"Abdul Salam al-Zoubi"', '"Mahmoud Hamza"'
+            ],
+            "ar": [
+                '"خليفة حفتر"', '"صدام حفتر"', '"خالد حفتر"', '"عبد الحميد الدبيبة"',
+                '"عبدالحميد الدبيبة"', '"محمد المنفي"', '"عبد المجيد مليقطة"',
+                '"عبدالمجيد مليقطة"', '"الطاهر الباعور"', '"عبد السلام الزوبي"',
+                '"عبدالسلام الزوبي"', '"محمود حمزة"'
+            ]
+        },
+        "Algeria": {
+            "en": [
+                '"Abdelmadjid Tebboune"', '"Said Chengriha"', '"Mohamed Arkab"',
+                '"Sifi Ghrieb"', '"Ahmed Attaf"', '"Said Sayoud"', '"El Hadj Bousselja"'
+            ],
+            "fr": [
+                '"Abdelmadjid Tebboune"', '"Saïd Chengriha"', '"Mohamed Arkab"',
+                '"Sifi Ghrieb"', '"Ahmed Attaf"', '"Saïd Sayoud"', '"El Hadj Bousselja"'
+            ],
+            "ar": [
+                '"عبد المجيد تبون"', '"عبدالمجيد تبون"', '"السعيد شنقريحة"',
+                '"محمد عرقاب"', '"سيفي غريب"', '"أحمد عطاف"', '"احمد عطاف"',
+                '"السعيد سعيود"', '"الحاج بوسلجة"', '"الحاج بوسلجه"'
+            ]
+        },
+        "Morocco": {
+            "en": [
+                '"Mohammed VI"', '"King Mohammed VI"', '"Fatima Zahra Mansouri"',
+                '"Nasser Bourita"', '"Abdelouafi Laftit"', '"Mohamed Berrid"',
+                '"Mohammed Berrid"'
+            ],
+            "fr": [
+                '"Mohammed VI"', '"Fatima Zahra Mansouri"', '"Nasser Bourita"',
+                '"Abdelouafi Laftit"', '"Mohamed Berrid"', '"Mohammed Berrid"'
+            ],
+            "ar": [
+                '"محمد السادس"', '"فاطمة الزهراء المنصوري"', '"ناصر بوريطة"',
+                '"عبد الوافي لفتيت"', '"عبدالوافي لفتيت"', '"محمد بريظ"'
+            ]
+        }
+    }
+
+    actions = {
+        "en": '(meeting OR talks OR received OR met OR visit OR decision OR decree OR announced OR appointed OR dismissed OR agreement OR summit OR attended OR signed OR inspected OR launched OR deployment OR operation OR statement)',
+        "fr": '(rencontre OR entretiens OR reçu OR visite OR décision OR décret OR annoncé OR nommé OR limogé OR accord OR sommet OR participé OR signé OR inspecté OR opération OR déclaration)',
+        "ar": '(اجتماع OR مباحثات OR محادثات OR استقبل OR التقى OR زيارة OR قرار OR مرسوم OR أعلن OR تعيين OR إقالة OR اتفاق OR قمة OR شارك OR ترأس OR وقع OR وقّع OR تفقد OR أشرف OR عملية OR انتشار OR بيان OR وصل)'
+    }
+    locales = {
+        "en": ("en-US", "US", "US:en"),
+        "fr": ("fr", "FR", "FR:fr"),
+        "ar": ("ar", "EG", "EG:ar")
+    }
+
+    feeds = []
+    for country, language_names in people.items():
+        for language in ("en", "fr", "ar"):
+            names_query = " OR ".join(language_names[language])
+            query = f'("{country}" OR "{country.lower()}") ({names_query}) {actions[language]} when:2d'
+            hl, gl, ceid = locales[language]
+            feeds.append(
+                "https://news.google.com/rss/search?q="
+                + quote_plus(query)
+                + f"&hl={hl}&gl={gl}&ceid={ceid}"
+            )
+    return feeds
+
+
 def make_libya_leadership_feeds():
     """
     Dedicated multilingual searches for major political, military and
@@ -599,11 +682,14 @@ RSS_FEEDS = {
     ),
 
     # Extra priority coverage for senior officials in Libya, Algeria and Morocco.
-    "north_leaders": [
-        feed_url
-        for country in ("Libya", "Algeria", "Morocco")
-        for feed_url in make_leadership_feeds(country)
-    ],
+    "north_leaders": (
+        [
+            feed_url
+            for country in ("Libya", "Algeria", "Morocco")
+            for feed_url in make_leadership_feeds(country)
+        ]
+        + make_priority_official_feeds()
+    ),
 
     "libya_leadership": make_libya_leadership_feeds(),
 
@@ -1062,6 +1148,54 @@ def is_priority_magreb_leadership_news(title, description):
     return has_country and has_role and has_event
 
 
+def is_priority_named_official_news(title, description):
+    """
+    Preserve concrete current events involving any user-designated official,
+    even when the article does not use generic security keywords.
+    """
+    text = (str(title) + " " + str(description)).lower()
+    names = [
+        # Libya
+        "خليفة حفتر", "صدام حفتر", "خالد حفتر", "عبد الحميد الدبيبة",
+        "عبدالحميد الدبيبة", "محمد المنفي", "عبد المجيد مليقطة",
+        "عبدالمجيد مليقطة", "الطاهر الباعور", "عبد السلام الزوبي",
+        "عبدالسلام الزوبي", "محمود حمزة",
+        "khalifa haftar", "khalifa hifter", "saddam haftar", "saddam hifter",
+        "khaled haftar", "khalid haftar", "abdul hamid dbeibeh",
+        "abdelhamid dbeibah", "mohamed al-menfi", "mohammed al-menfi",
+        "abdelmajid mleigta", "taher al-baour", "abdul salam al-zoubi",
+        "mahmoud hamza",
+        # Algeria
+        "عبد المجيد تبون", "عبدالمجيد تبون", "السعيد شنقريحة",
+        "محمد عرقاب", "سيفي غريب", "أحمد عطاف", "احمد عطاف",
+        "السعيد سعيود", "الحاج بوسلجة", "الحاج بوسلجه",
+        "abdelmadjid tebboune", "said chengriha", "saïd chengriha",
+        "mohamed arkab", "mohammed arkab", "sifi ghrieb", "sifi ghrib",
+        "ahmed attaf", "said sayoud", "saïd sayoud", "el hadj bousselja",
+        "hadj bousselja",
+        # Morocco
+        "محمد السادس", "فاطمة الزهراء المنصوري", "ناصر بوريطة",
+        "عبد الوافي لفتيت", "عبدالوافي لفتيت", "محمد بريظ",
+        "mohammed vi", "king mohammed vi", "fatima zahra mansouri",
+        "nasser bourita", "abdelouafi laftit", "mohamed berrid",
+        "mohammed berrid"
+    ]
+    actions = [
+        "meeting", "talks", "received", "met with", "official visit",
+        "visit", "decision", "decree", "announced", "appointed", "dismissed",
+        "agreement", "summit", "phone call", "attended", "signed", "inspected",
+        "launched", "operation", "deployment", "statement", "rencontre",
+        "entretiens", "reçu", "visite officielle", "décision", "décret",
+        "annonce", "nommé", "accord", "sommet", "signé", "déclaration",
+        "اجتماع", "مباحثات", "محادثات", "استقبل", "التقى", "زيارة",
+        "مشاورات", "قرار", "مرسوم", "أعلن", "تعيين", "عين", "إقالة",
+        "أقال", "اتفاق", "قمة", "اتصال", "شارك", "ترأس", "وقع", "وقّع",
+        "تفقد", "أشرف", "عملية", "انتشار", "بيان", "وصل", "افتتح",
+        "دشن", "تدشين", "مناورة", "تدريبات", "أجرى", "بحث"
+    ]
+    return any(name in text for name in names) and any(action in text for action in actions)
+
+
 def is_sports_related(title, description=""):
     """Reject sports stories even when they contain generic words like attack/هجوم."""
     text = (str(title) + " " + str(description)).lower()
@@ -1091,6 +1225,9 @@ def is_relevant_security_news(
     # A sports context must never be rescued by generic terms such as attack/هجوم.
     if is_sports_related(title, description):
         return False
+
+    if is_priority_named_official_news(title, description):
+        return True
 
     if is_priority_magreb_leadership_news(title, description):
         return True
