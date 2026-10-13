@@ -27,7 +27,7 @@ def save(path,obj):
 
 def clean(value):
     value=re.sub(r"<[^>]+>"," ",str(value or ""))
-    return re.sub(r"\\s+"," ",value).strip()
+    return re.sub(r"\s+"," ",value).strip()
 
 def get_text(url):
     try:
@@ -50,7 +50,7 @@ def make_index(cards):
     years={}
     for c in cards:
         d=clean(c.get("date"))
-        if not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}",d): continue
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}",d): continue
         y,m,_=d.split("-")
         years.setdefault(y,{}).setdefault(m,[]).append({k:c.get(k,"") for k in ("date","title","subject","path","center","source_title")}|{"slot":"research","kind_label":"بطاقة استراتيجية من مراكز البحث"})
     out={"updated":datetime.now(TZ).isoformat(timespec="seconds"),"years":[]}
@@ -74,6 +74,12 @@ def main():
     candidates.sort(key=lambda p:(int(p.get("relevance_tier",9) or 9),-(str(p.get("published") or p.get("date") or "")).replace("-","").replace(":","").replace("T","").replace("+","").replace(" ","").__len__()))
     # Prefer highest-ranked publications; process newest first within each rank.
     candidates=sorted(candidates,key=lambda p:(int(p.get("relevance_tier",9) or 9),str(p.get("published") or p.get("date") or "")),reverse=False)
+# Process highest relevance first, newest first within each tier.
+candidates=sorted(candidates,key=lambda p:(int(p.get("relevance_tier",9) or 9),))
+ordered=[]
+for tier in sorted({int(p.get("relevance_tier",9) or 9) for p in candidates}):
+    ordered.extend(sorted([p for p in candidates if int(p.get("relevance_tier",9) or 9)==tier],key=lambda p:str(p.get("published") or p.get("date") or ""),reverse=True))
+candidates=ordered
     if not candidates:
         print("No new research publications to convert."); return
     client=genai.Client(api_key=key,http_options=types.HttpOptions(timeout=180000))
@@ -116,18 +122,18 @@ publish boolean; introduction string; analysis_one, analysis_two, analysis_three
         if not out.get("publish"):
             data["processed_urls"].append(url); count+=1; print("Source rejected as insufficient:",title[:100]); continue
         intro=clean(out.get("introduction")); groups=[out.get("analysis_one",[]),out.get("analysis_two",[]),out.get("analysis_three",[])]
-        if not intro.endswith("وفيما يلي أهم ما ورد فيها."): intro=re.sub(r"[.!؟؛،\\s]+$","",intro)+". وفيما يلي أهم ما ورد فيها."
+        if not intro.endswith("وفيما يلي أهم ما ورد فيها."): intro=re.sub(r"[.!؟؛،\s]+$","",intro)+". وفيما يلي أهم ما ورد فيها."
         if any(not isinstance(g,list) or len(g)!=4 for g in groups):
             print("Invalid bullet structure; will retry later:",title[:100]); continue
         sections=[{"heading":"المقدمة","text":intro}]
         for h,g in zip(["أولاً: محاور النشرية ومرتكزاتها","ثانياً: النتائج والتفاصيل الرئيسية","ثالثاً: التداعيات والقيود"],groups):
-            sections.append({"heading":h,"text":"\\n".join("• "+clean(x) for x in g)})
+            sections.append({"heading":h,"text":"\n".join("• "+clean(x) for x in g)})
         conclusion=clean(out.get("strategic_conclusion"))
         if "تونس" not in conclusion: conclusion=conclusion.rstrip(" .،؛")+"، وتبرز أهمية هذه المسائل بالنسبة إلى تونس في متابعة انعكاساتها على أمنها ومصالحها الاستراتيجية."
         if len(intro)<80 or len(conclusion)<180 or any(len(clean(x))<180 for g in groups for x in g):
             print("Card failed length validation; will retry later:",title[:100]); continue
         slug=hashlib.sha1(url.encode()).hexdigest()[:12]
-        now=datetime.now(TZ); date=published[:10] if re.match(r"\\d{4}-\\d{2}-\\d{2}",published) else now.strftime("%Y-%m-%d")
+        now=datetime.now(TZ); date=published[:10] if re.match(r"\d{4}-\d{2}-\d{2}",published) else now.strftime("%Y-%m-%d")
         path=f"{date[:7]}/{date.replace('-','')}_{slug}.json"
         card={"id":slug,"kind":"research_center","kind_label":"بطاقة استراتيجية من مراكز البحث",
           "title":title_ar or title,"source_title":title,"subject":title_ar or title,"center":center,
