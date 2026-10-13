@@ -142,8 +142,8 @@ def normalize_relevance_text(value):
     text = str(value or "").lower()
     text = text.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا")
     text = text.replace("ى", "ي").replace("ة", "ه")
-    text = re.sub(r"[\\u064B-\\u065F\\u0670\\u0640]", "", text)
-    return re.sub(r"\\s+", " ", text)
+    text = re.sub(r"[\u064B-\u065F\u0670\u0640]", "", text)
+    return re.sub(r"\s+", " ", text)
 
 
 def has_any(text, terms):
