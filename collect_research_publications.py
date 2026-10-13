@@ -193,12 +193,13 @@ def has_any(text, terms):
 
 def classify_relevance(item):
     """
-    Three strict priority tiers:
-    1. Publications directly about Tunisia.
-    2. Nearby/North African/Mediterranean issues only when a credible
-       spillover channel to Tunisia is visible in title/description.
-    3. Global strategic issues only when both the subject and a plausible
-       impact pathway relevant to Tunisia are present.
+    Four ranked relevance tiers:
+    1. Directly about Tunisia.
+    2. Directly about Tunisia's immediate neighbours, Libya or Algeria.
+    3. North Africa, the wider Maghreb, the Mediterranean, or nearby Sahel
+       when the topic has a plausible regional-security/economic connection.
+    4. Global strategic issues only when a credible impact pathway to Tunisia
+       is visible in the title or description.
     Center/source names alone never determine relevance.
     """
     text = normalize_relevance_text(" ".join(
@@ -208,8 +209,9 @@ def classify_relevance(item):
 
     labels = {
         1: "تونس مباشرة",
-        2: "دول الجوار والمنطقة مع ارتداد على تونس",
-        3: "تطور عالمي قد يؤثر في تونس"
+        2: "ليبيا والجزائر",
+        3: "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+        4: "قضايا عالمية قد تؤثر في تونس"
     }
 
     if has_any(text, TUNISIA_TERMS):
@@ -217,20 +219,46 @@ def classify_relevance(item):
         item["relevance_label"] = labels[1]
         return 1
 
-    nearby = has_any(text, NEARBY_TERMS)
-    spillover = has_any(text, SPILLOVER_TERMS)
-    if nearby and spillover:
+    immediate_neighbours = [
+        "libya", "libyan", "libye", "libyen", "libyenne", "ليبيا", "ليبي",
+        "طرابلس", "بنغازي", "حفتر", "الدبيبة", "المنفي",
+        "algeria", "algerian", "algérie", "algérien", "algiers",
+        "الجزائر", "جزائري", "تبون", "شنقريحة"
+    ]
+    if has_any(text, immediate_neighbours):
         item["relevance_tier"] = 2
         item["relevance_label"] = labels[2]
         return 2
+
+    regional_terms = [
+        "north africa", "north african", "maghreb", "maghrib",
+        "المغرب العربي", "شمال افريقيا", "شمال إفريقيا", "morocco",
+        "moroccan", "maroc", "المغرب", "مغربي", "egypt", "egyptian",
+        "مصر", "موريتانيا", "mauritania", "mediterranean", "méditerranée",
+        "البحر المتوسط", "southern mediterranean", "western sahara",
+        "الصحراء الغربية", "sahel", "الساحل الإفريقي", "الساحل الافريقي"
+    ]
+    regional_security_or_spillover = (
+        has_any(text, SPILLOVER_TERMS)
+        or has_any(text, [
+            "security", "defence", "defense", "military", "arms", "conflict",
+            "migration", "energy", "trade", "maritime", "naval", "terrorism",
+            "cyber", "الامن", "الأمن", "الدفاع", "عسكري", "تسلح", "نزاع",
+            "هجرة", "طاقة", "تجارة", "بحري", "إرهاب", "سيبراني"
+        ])
+    )
+    if has_any(text, regional_terms) and regional_security_or_spillover:
+        item["relevance_tier"] = 3
+        item["relevance_label"] = labels[3]
+        return 3
 
     global_context = has_any(text, GLOBAL_CONTEXT_TERMS)
     strategic_subject = has_any(text, GLOBAL_STRATEGIC_TERMS)
     impact_path = has_any(text, GLOBAL_IMPACT_PATH_TERMS)
     if global_context and strategic_subject and impact_path:
-        item["relevance_tier"] = 3
-        item["relevance_label"] = labels[3]
-        return 3
+        item["relevance_tier"] = 4
+        item["relevance_label"] = labels[4]
+        return 4
 
     item["relevance_tier"] = 0
     item["relevance_label"] = "خارج نطاق المتابعة"
