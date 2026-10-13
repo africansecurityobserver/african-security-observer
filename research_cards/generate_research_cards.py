@@ -73,10 +73,8 @@ def html_main_text(html):
 
 def get_text(url, center_site=""):
     """
-    Make a best effort to locate the full publication, not just an abstract:
-    decode Google News links, inspect the source page for official full-text/PDF
-    links, and extract PDFs linked by that page. Never use a search snippet as
-    the body of a strategic card.
+    Prefer the full report/PDF linked from the official publication page.
+    A readable abstract is only a fallback after checking the page's download links.
     """
     original_url = url
     try:
@@ -91,50 +89,43 @@ def get_text(url, center_site=""):
         response = fetch_url(url)
         content_type = response.headers.get("content-type", "").lower()
         if "pdf" in content_type or response.url.lower().split("?")[0].endswith(".pdf"):
-            pdf_text = extract_pdf_text(response)
-            if len(pdf_text) >= 1800:
-                print(f"Full text extracted directly from PDF: {response.url}")
-                return response.url, pdf_text
-            return response.url, pdf_text
+            return response.url, extract_pdf_text(response)
 
-        html = response.text
         page_url = response.url
+        html = response.text
         page_text = html_main_text(html)
-        if len(page_text) >= 1800:
-            print(f"Extracted substantial page text: {page_url} ({len(page_text)} chars)")
-            return page_url, page_text
-
-        # If the search result led to a Google News wrapper, find a direct link
-        # to the relevant research center before looking for a report download.
-        expected_host = urlparse(center_site).netloc.lower().removeprefix("www.")
         parser = LexborHTMLParser(html)
-        if expected_host and ("news.google.com" in urlparse(page_url).netloc.lower()):
+        expected_host = urlparse(center_site).netloc.lower().removeprefix("www.")
+        page_host = urlparse(page_url).netloc.lower().removeprefix("www.")
+
+        # If a Google News wrapper was not decoded cleanly, locate the publisher
+        # link on the wrapper page, then inspect that publisher page for its report.
+        if "news.google.com" in urlparse(page_url).netloc.lower():
             for node in parser.css("a[href]"):
                 href = urljoin(page_url, node.attributes.get("href", ""))
                 host = urlparse(href).netloc.lower().removeprefix("www.")
-                if href.startswith("http") and (host == expected_host or host.endswith("." + expected_host)):
+                if href.startswith("http") and (
+                    not expected_host or host == expected_host or host.endswith("." + expected_host)
+                ):
                     try:
-                        response = fetch_url(href)
-                        page_url, html = response.url, response.text
-                        content_type = response.headers.get("content-type", "").lower()
-                        if "pdf" in content_type or page_url.lower().split("?")[0].endswith(".pdf"):
-                            body = extract_pdf_text(response)
+                        direct = fetch_url(href)
+                        direct_type = direct.headers.get("content-type", "").lower()
+                        if "pdf" in direct_type or direct.url.lower().split("?")[0].endswith(".pdf"):
+                            body = extract_pdf_text(direct)
                             if len(body) >= 1800:
-                                return page_url, body
+                                return direct.url, body
+                        page_url, html = direct.url, direct.text
                         page_text = html_main_text(html)
-                        if len(page_text) >= 1800:
-                            return page_url, page_text
                         parser = LexborHTMLParser(html)
+                        page_host = urlparse(page_url).netloc.lower().removeprefix("www.")
                         break
                     except Exception:
                         continue
 
-        # Try official download/full-text links on the source publication page.
-        # Prefer PDF/download/report links and reject unrelated navigation links.
-        parser = LexborHTMLParser(html)
+        # Prefer links on the actual publisher page, especially direct PDF/full-report
+        # downloads. The download may be hosted on a subdomain/CDN of the same center.
         link_candidates = []
         seen_links = set()
-        page_host = urlparse(page_url).netloc.lower().removeprefix("www.")
         expected_host = expected_host or page_host
         positive = re.compile(
             r"full.?text|full.?report|download|pdf|read.?report|report|publication|"
@@ -153,20 +144,23 @@ def get_text(url, center_site=""):
             if not href.startswith("http") or href in seen_links or negative.search(combined):
                 continue
             host = urlparse(href).netloc.lower().removeprefix("www.")
-            # Trust download links embedded on the official center site, including
-            # its report/CDN subdomains; don't follow unrelated third-party links.
             if not (host == expected_host or host.endswith("." + expected_host)):
                 continue
             if positive.search(combined) or href.lower().split("?")[0].endswith(".pdf"):
                 seen_links.add(href)
                 score = 0
-                if href.lower().split("?")[0].endswith(".pdf"): score += 5
-                if re.search(r"full.?text|full.?report|النص الكامل|الدراسة كاملة|التقرير الكامل", combined, re.I): score += 6
-                if re.search(r"download|تحميل|تنزيل|pdf", combined, re.I): score += 3
+                if href.lower().split("?")[0].endswith(".pdf"):
+                    score += 6
+                if re.search(r"full.?text|full.?report|النص الكامل|الدراسة كاملة|التقرير الكامل", combined, re.I):
+                    score += 8
+                if re.search(r"download|تحميل|تنزيل|pdf", combined, re.I):
+                    score += 4
+                if re.search(r"executive.?summary|ملخص تنفيذي", combined, re.I):
+                    score -= 4
                 link_candidates.append((score, href, label))
 
         link_candidates.sort(key=lambda item: item[0], reverse=True)
-        for score, candidate_url, label in link_candidates[:12]:
+        for score, candidate_url, label in link_candidates[:15]:
             try:
                 linked = fetch_url(candidate_url)
                 ctype = linked.headers.get("content-type", "").lower()
@@ -176,15 +170,22 @@ def get_text(url, center_site=""):
                     body = html_main_text(linked.text)
                 if len(body) >= 1800:
                     print(
-                        f"Found full-text/download link on center site: {label[:80]} "
-                        f"-> {linked.url} ({len(body)} chars)"
+                        f"Found linked report/full text: {label[:80]} -> {linked.url} "
+                        f"({len(body)} chars)"
                     )
                     return linked.url, body
             except Exception as exc:
                 print(f"Official full-text candidate failed ({candidate_url}): {type(exc).__name__}")
 
-        # Preserve the page's extracted content for diagnostics only. The caller
-        # will reject it if it is merely an abstract or short summary.
+        # Only fall back to the publication page after attempting its linked
+        # full report. The card generator still rejects pages under 1,800 chars.
+        if len(page_text.strip()) >= 1800:
+            print(
+                f"No longer linked report found; using substantial source-page text: "
+                f"{page_url} ({len(page_text)} chars)"
+            )
+            return page_url, page_text
+
         print(
             f"No substantial full text found after checking official download links: "
             f"{page_url}; page chars={len(page_text)}"
