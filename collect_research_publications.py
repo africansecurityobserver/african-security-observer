@@ -140,7 +140,9 @@ def classify_relevance(item):
 
 
 def clean(value):
-    return re.sub(r"\s+", " ", text)
+    """Normalize empty, HTML-escaped, or whitespace-heavy feed fields."""
+    value = unescape(str(value or ""))
+    return re.sub(r"\s+", " ", value).strip()
 
 def parse_date(value):
     if not value:
