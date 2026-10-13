@@ -71,15 +71,15 @@ def main():
     known=set(data["processed_urls"])
     known.update(c.get("source_url","") for c in data["cards"] if isinstance(c,dict))
     candidates=[p for p in publications if isinstance(p,dict) and p.get("url") and p["url"] not in known]
-    candidates.sort(key=lambda p:(int(p.get("relevance_tier",9) or 9),-(str(p.get("published") or p.get("date") or "")).replace("-","").replace(":","").replace("T","").replace("+","").replace(" ","").__len__()))
-    # Prefer highest-ranked publications; process newest first within each rank.
-    candidates=sorted(candidates,key=lambda p:(int(p.get("relevance_tier",9) or 9),str(p.get("published") or p.get("date") or "")),reverse=False)
-# Process highest relevance first, newest first within each tier.
-candidates=sorted(candidates,key=lambda p:(int(p.get("relevance_tier",9) or 9),))
-ordered=[]
-for tier in sorted({int(p.get("relevance_tier",9) or 9) for p in candidates}):
-    ordered.extend(sorted([p for p in candidates if int(p.get("relevance_tier",9) or 9)==tier],key=lambda p:str(p.get("published") or p.get("date") or ""),reverse=True))
-candidates=ordered
+    # Process highest relevance first, newest first within each relevance tier.
+    ordered=[]
+    for tier in sorted({int(p.get("relevance_tier",9) or 9) for p in candidates}):
+        ordered.extend(sorted(
+            [p for p in candidates if int(p.get("relevance_tier",9) or 9)==tier],
+            key=lambda p:str(p.get("published") or p.get("date") or ""),
+            reverse=True
+        ))
+    candidates=ordered
     if not candidates:
         print("No new research publications to convert."); return
     client=genai.Client(api_key=key,http_options=types.HttpOptions(timeout=180000))
