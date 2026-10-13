@@ -55,6 +55,7 @@ footer{text-align:center;padding:20px 12px;color:var(--muted);font-size:12px}
 <div class="tools">
 <input id="search" type="search" placeholder="ابحث في عنوان المنشور أو اسم المركز" aria-label="البحث في المنشورات">
 <select id="centerFilter" aria-label="تصفية حسب المركز"><option value="">جميع المراكز</option></select>
+<select id="tierFilter" aria-label="ترتيب حسب الأهمية الجغرافية"><option value="all">كل مستويات الأهمية</option><option value="1">1 · تونس</option><option value="2">2 · ليبيا والجزائر</option><option value="3">3 · شمال إفريقيا والمتوسط</option><option value="4">4 · قضايا عالمية تؤثر في تونس</option></select>
 <select id="periodFilter" aria-label="تصفية حسب الفترة"><option value="30">آخر 30 يومًا</option><option value="7">آخر 7 أيام</option><option value="14">آخر 14 يومًا</option><option value="all">كل المنشورات المتاحة</option></select>
 </div>
 <div id="publications" class="publications"><div class="loading">جارٍ تحميل المنشورات…</div></div>
@@ -66,28 +67,50 @@ const listEl=document.getElementById('publications');
 const searchEl=document.getElementById('search');
 const centerEl=document.getElementById('centerFilter');
 const periodEl=document.getElementById('periodFilter');
+const tierEl=document.getElementById('tierFilter');
 const statusEl=document.getElementById('status');
 let publications=[];
 function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function dateValue(item){const d=new Date(item.published||item.date||'');return Number.isNaN(d.getTime())?null:d;}
+function normalizeText(v){
+ return String(v||'').toLocaleLowerCase()
+  .replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه')
+  .replace(/[\\u064B-\\u065F\\u0670\\u0640]/g,'');
+}
+const tierRules={
+ 1:['tunisia','tunisian','tunisie','تونس','تونسي','قرطاج','صفاقس','بنزرت','سوسة','القيروان','قابس','مدنين','جربة'],
+ 2:['libya','libyan','libye','ليبيا','ليبي','طرابلس','بنغازي','حفتر','الدبيبة','المنفي','algeria','algerian','algérie','الجزائر','جزائري','algiers','تبون','شنقريحة'],
+ 3:['north africa','north african','maghreb','المغرب العربي','شمال افريقيا','morocco','moroccan','maroc','المغرب','مغربي','western sahara','الصحراء الغربية','egypt','egyptian','مصر','مصري','mauritania','موريتانيا','mediterranean','méditerranée','البحر المتوسط','جنوب اوروبا','southern europe'],
+ 4:['energy security','oil price','oil prices','natural gas','lng','energy market','اسعار النفط','النفط','الغاز الطبيعي','امن الطاقة','migration','migrants','asylum','الهجرة','المهاجرين','اللجوء','european union','european security','الاتحاد الاوروبي','الامن الاوروبي','europe','european defence','european defense','nato','الناتو','sahel','الساحل الافريقي','terrorism','counterterrorism','الارهاب','مكافحة الارهاب','arms trade','arms transfers','الانفاق العسكري','cybersecurity','امن الملاحة','التجارة العالمية','سلاسل الامداد','supply chain','global trade','shipping','maritime security','climate security','food security','الامن الغذائي','black sea','ukraine','russia','china','united states','middle east','الشرق الاوسط','اوكرانيا','روسيا','الصين','الولايات المتحدة','red sea','البحر الاحمر']
+};
+const tierLabels={1:'تونس',2:'ليبيا والجزائر',3:'شمال إفريقيا والبحر الأبيض المتوسط',4:'قضايا عالمية ذات صلة بتونس'};
+function relevanceTier(p){
+ if(Number(p.relevance_tier)>=1&&Number(p.relevance_tier)<=4)return Number(p.relevance_tier);
+ const text=normalizeText([p.title,p.title_ar,p.description,p.source,p.center].join(' '));
+ for(const tier of [1,2,3,4])if(tierRules[tier].some(k=>text.includes(normalizeText(k))))return tier;
+ return 0;
+}
 function render(){
  const q=searchEl.value.trim().toLocaleLowerCase();
  const center=centerEl.value;
  const days=periodEl.value;
+ const selectedTier=tierEl.value;
  const now=Date.now();
  const filtered=publications.filter(p=>{
    const date=dateValue(p);
    const matchesDate=days==='all'||!date||now-date.getTime()<=Number(days)*86400000;
    const matchesText=(String(p.title_ar||p.title||'')+' '+String(p.title||'')+' '+String(p.center||'')+' '+String(p.source||'')).toLocaleLowerCase().includes(q);
-   return (!center||p.center===center)&&matchesDate&&matchesText;
+   const tier=relevanceTier(p);
+   return tier>0&&(selectedTier==='all'||tier===Number(selectedTier))&&(!center||p.center===center)&&matchesDate&&matchesText;
  });
- filtered.sort((a,b)=>(dateValue(b)?.getTime()||0)-(dateValue(a)?.getTime()||0));
- if(!filtered.length){listEl.innerHTML='<div class="empty">لا توجد منشورات مطابقة حاليًا. ستظهر هنا عناوين جديدة وروابطها بعد التحديث الدوري للمصادر.</div>';return;}
+ filtered.sort((a,b)=>relevanceTier(a)-relevanceTier(b)||(dateValue(b)?.getTime()||0)-(dateValue(a)?.getTime()||0));
+ if(!filtered.length){listEl.innerHTML='<div class="empty">لا توجد منشورات مطابقة لمعايير الأهمية الجغرافية المختارة حاليًا. ستظهر المنشورات الجديدة المؤهلة بعد التحديث الدوري.</div>';return;}
  listEl.innerHTML=filtered.map(p=>{
    const d=dateValue(p);
    const dateLabel=d?new Intl.DateTimeFormat('ar-TN',{dateStyle:'medium'}).format(d):(p.date||'تاريخ غير متوفر');
-   const url=/^https?:\/\//i.test(p.url||'')?p.url:'#';
-   return '<article class="publication"><div class="meta"><span class="center">'+esc(p.center||p.center_short||'مركز أبحاث')+'</span><span>'+esc(dateLabel)+'</span></div><h3><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.title_ar||p.title||'منشور دون عنوان')+'</a></h3><div class="meta">'+(p.source&&p.source!==p.center?'<span>الناشر: '+esc(p.source)+'</span>':'')+'</div><a class="source-link" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">قراءة المنشور في موقعه الأصلي ↗</a></article>';
+   const url=/^https?:\\/\\//i.test(p.url||'')?p.url:'#';
+   const tier=relevanceTier(p);
+   return '<article class="publication"><div class="meta"><span class="center">'+esc(p.center||p.center_short||'مركز أبحاث')+'</span><span class="center">الأولوية '+tier+' · '+esc(tierLabels[tier])+'</span><span>'+esc(dateLabel)+'</span></div><h3><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.title_ar||p.title||'منشور دون عنوان')+'</a></h3><div class="meta">'+(p.source&&p.source!==p.center?'<span>الناشر: '+esc(p.source)+'</span>':'')+'</div><a class="source-link" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">قراءة المنشور في موقعه الأصلي ↗</a></article>';
  }).join('');
 }
 async function load(){
@@ -107,7 +130,7 @@ async function load(){
   listEl.innerHTML='<div class="empty">تعذر تحميل قائمة المنشورات حاليًا. يرجى المحاولة لاحقًا.</div>';
  }
 }
-[searchEl,centerEl,periodEl].forEach(el=>el.addEventListener('input',render));
+[searchEl,centerEl,periodEl,tierEl].forEach(el=>el.addEventListener('input',render));
 load();
 </script>
 </body>
