@@ -40,25 +40,44 @@ STRATEGIC_RSS_QUERIES = {
     "strategic_assessment": [
         '"geopolitical competition" OR "regional security" OR "national security strategy" OR "security strategy" OR "defense policy" OR "defence policy" OR "توازنات إقليمية" OR "الأمن الإقليمي" OR "استراتيجية الأمن القومي" OR "السياسة الدفاعية" Africa Sahel North Africa'
     ],
-    # Direct source-specific monitoring for the six strategic research centers.
-    "source_iiss": [
-        'site:iiss.org (Africa OR Sahel OR security OR military OR defence OR defense OR strategy OR geopolitics)'
-    ],
-    "source_csis": [
-        'site:csis.org (Africa OR Sahel OR security OR military OR defence OR defense OR strategy OR geopolitics)'
-    ],
-    "source_chatham_house": [
-        'site:chathamhouse.org (Africa OR Sahel OR security OR conflict OR defence OR defense OR geopolitics)'
-    ],
-    "source_sipri": [
-        'site:sipri.org (Africa OR arms transfers OR military spending OR weapons OR conflict OR security)'
-    ],
-    "source_rand": [
-        'site:rand.org (Africa OR national security OR military strategy OR defense OR defence OR conflict)'
-    ],
-    "source_brookings": [
-        'site:brookings.edu (Africa OR security OR foreign policy OR military OR conflict OR strategy)'
-    ]
+    # Broad source-specific monitoring list kept in code only. The public page
+    # displays research cards, not this internal list of institutions.
+    "source_iiss": ['site:iiss.org (Africa OR Sahel OR security OR military OR defence OR defense OR strategy OR geopolitics)'],
+    "source_csis": ['site:csis.org (Africa OR Sahel OR security OR military OR defence OR defense OR strategy OR geopolitics)'],
+    "source_chatham_house": ['site:chathamhouse.org (Africa OR Sahel OR security OR conflict OR defence OR defense OR geopolitics)'],
+    "source_sipri": ['site:sipri.org (Africa OR arms transfers OR military spending OR weapons OR conflict OR security)'],
+    "source_rand": ['site:rand.org (Africa OR national security OR military strategy OR defense OR defence OR conflict)'],
+    "source_brookings": ['site:brookings.edu (Africa OR security OR foreign policy OR military OR conflict OR strategy)'],
+    "source_atlantic_council": ['site:atlanticcouncil.org (Africa OR Sahel OR defense OR security OR geopolitics OR military)'],
+    "source_rusi": ['site:rusi.org (Africa OR military OR defence OR defense OR security OR strategy OR conflict)'],
+    "source_carnegie_endowment": ['site:carnegieendowment.org (Africa OR security OR foreign policy OR military OR geopolitics)'],
+    "source_carnegie_middle_east": ['site:carnegie-mec.org (security OR defense OR military OR Middle East OR North Africa OR Libya)'],
+    "source_crisis_group": ['site:crisisgroup.org (Africa OR Sahel OR Libya OR Sudan OR conflict OR security)'],
+    "source_ecfr": ['site:ecfr.eu (Africa OR security OR defense OR defence OR geopolitics OR Middle East)'],
+    "source_stimson": ['site:stimson.org (Africa OR security OR defense OR arms control OR military OR geopolitics)'],
+    "source_wilson_center": ['site:wilsoncenter.org (Africa OR security OR military OR defense OR Middle East OR geopolitics)'],
+    "source_cfr": ['site:cfr.org (Africa OR security OR military OR foreign policy OR conflict OR defense)'],
+    "source_heritage": ['site:heritage.org (national security OR military OR defense OR Africa OR Middle East)'],
+    "source_hudson": ['site:hudson.org (military OR defense OR security OR Africa OR Middle East OR geopolitics)'],
+    "source_gmf": ['site:gmfus.org (Africa OR security OR defense OR geopolitics OR NATO OR military)'],
+    "source_swp": ['site:swp-berlin.org (Africa OR security OR defense OR military OR geopolitics)'],
+    "source_clingendael": ['site:clingendael.org (Africa OR Sahel OR security OR defense OR conflict)'],
+    "source_ifri": ['site:ifri.org (Africa OR sécurité OR défense OR militaire OR géopolitique)'],
+    "source_iris": ['site:iris-france.org (Afrique OR sécurité OR défense OR géopolitique OR militaire)'],
+    "source_elcano": ['site:realinstitutoelcano.org (Africa OR security OR defense OR geopolitics OR military)'],
+    "source_fiia": ['site:fiia.fi (security OR defense OR NATO OR geopolitics OR military)'],
+    "source_lowy": ['site:lowyinstitute.org (Indo-Pacific OR security OR defense OR military OR geopolitics)'],
+    "source_aspi": ['site:aspistrategist.org.au (defence OR defense OR military OR security OR Indo-Pacific)'],
+    "source_orf": ['site:orfonline.org (security OR defense OR military OR Africa OR geopolitics)'],
+    "source_iss_africa": ['site:issafrica.org (Africa OR Sahel OR security OR conflict OR military)'],
+    "source_africa_center": ['site:africacenter.org (Africa OR security OR military OR Sahel OR conflict)'],
+    "source_acss": ['site:africom.mil "Africa Center for Strategic Studies" (security OR Africa OR military)'],
+    "source_idsa": ['site:idsa.in (defence OR defense OR security OR military OR Africa OR geopolitics)'],
+    "source_nids": ['site:nids.mod.go.jp (security OR defense OR military OR Indo-Pacific)'],
+    "source_kida": ['site:kida.re.kr (security OR defense OR military OR strategy)'],
+    "source_nbr": ['site: nbr.org (Asia OR security OR defense OR military OR geopolitics)'],
+    "source_taiwan_institute": ['site:indsr.org.tw (defense OR security OR military OR strategy OR Indo-Pacific)'],
+    "source_clingendael_insights": ['site:clingendael.org/publication (Africa OR security OR conflict OR defense)']
 }
 
 TYPE_LABELS = {
@@ -209,7 +228,7 @@ def fetch_strategic_rss_items():
                     continue
                 root = ET.fromstring(response.content)
                 entries = root.findall("./channel/item")
-                for entry in entries[:8 if topic.startswith('source_') else 4]:
+                for entry in entries[:5 if topic.startswith('source_') else 4]:
                     title = clean_text(unescape(re.sub(r"<[^>]+>", " ", entry.findtext("title") or "")))
                     wrapper_url = clean_text(entry.findtext("link") or "")
                     description = clean_text(unescape(re.sub(
@@ -308,10 +327,30 @@ def select_candidates(items, checked):
         copy["_url"] = url
         candidates.append(copy)
 
-    # Keep a mix of strategic topics instead of letting frequent arms stories
-    # crowd every other subject out of the model's source packet.
+    # First diversify across research-center feeds, so one prolific publisher
+    # cannot crowd every other center out of the morning/evening source packet.
     chosen = []
     chosen_urls = set()
+    source_items = sorted(
+        [item for item in candidates if str(item.get("_strategic_topic", "")).startswith("source_")],
+        key=lambda item: (
+            parse_date(item.get("published")) or datetime.min.replace(tzinfo=TZ),
+            item["_score"]
+        ),
+        reverse=True
+    )
+    seen_source_topics = set()
+    for item in source_items:
+        topic = item.get("_strategic_topic")
+        if topic in seen_source_topics:
+            continue
+        chosen.append(item)
+        chosen_urls.add(item["_url"])
+        seen_source_topics.add(topic)
+        if len(chosen) >= min(8, MAX_CANDIDATES):
+            break
+
+    # Fill remaining slots with a balanced mix of strategic topics.
     pools = {}
     for kind in TYPE_ORDER:
         pools[kind] = sorted(
@@ -483,8 +522,7 @@ def main():
 
     news = load_json(NEWS_FILE, {})
     items = news.get("items", []) if isinstance(news, dict) else []
-    # Keep the existing general strategic searches and add source-specific
-    # searches for IISS, CSIS, Chatham House, SIPRI, RAND and Brookings.
+    # Combine general strategic searches with a broad, code-only list of research-center feeds.
     items = list(items) + fetch_strategic_rss_items()
     items, slot_label, window_label = filter_items_for_slot(items, slot, now)
 
