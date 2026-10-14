@@ -59,6 +59,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No strategic-card changes to commit."
           else
-            git commit -m "Generate ${{ env.CARD_SLOT }} strategic analysis card"
+            git commit -m "Generate ${{ github.event_name == 'workflow_dispatch' && inputs.slot || (github.event.schedule == '55 23 * * *' && 'evening' || 'morning') }} strategic analysis card"
             git push
           fi
