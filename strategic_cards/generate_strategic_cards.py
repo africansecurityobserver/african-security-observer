@@ -508,7 +508,10 @@ def filter_items_for_slot(items, slot, now):
         published = parse_date(item.get("published"))
         if published is not None and start <= published <= end:
             filtered.append(item)
-    print(f"Slot={slot}; window={window_label}; in-window articles={len(filtered)}")
+    print(
+        f"Slot={slot}; target_date={now.strftime('%Y-%m-%d')}; "
+        f"window={window_label}; in-window articles={len(filtered)}"
+    )
     return filtered, slot_label, window_label
 
 def main():
@@ -518,6 +521,27 @@ def main():
 
     slot = clean_text(os.getenv("CARD_SLOT", "morning")).lower()
     now = datetime.now(TZ)
+
+    # GitHub scheduled workflows can start late. If the 23:55 Tunis-time
+    # evening run starts shortly after midnight, anchor its publication window
+    # to the scheduled evening's date, not the new calendar day. Only do this
+    # for scheduled runs; a manual evening run keeps the date the user chose.
+    if (
+        slot == "evening"
+        and os.getenv("GITHUB_EVENT_NAME") == "schedule"
+        and now.hour < 4
+    ):
+        scheduled_day = now.date() - timedelta(days=1)
+        now = now.replace(
+            year=scheduled_day.year,
+            month=scheduled_day.month,
+            day=scheduled_day.day
+        )
+        print(
+            "Scheduled evening run crossed midnight; "
+            f"using intended Tunisia date {now.strftime('%Y-%m-%d')}."
+        )
+
     date_label = arabic_date_label(now)
 
     news = load_json(NEWS_FILE, {})
