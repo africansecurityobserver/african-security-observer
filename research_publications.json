@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T06:49+01:00",
+  "updated": "2026-10-14T12:52+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 73,
@@ -443,7 +443,7 @@
       "site": "https://ifsh.de/"
     }
   ],
-  "count": 25,
+  "count": 26,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -472,6 +472,20 @@
       "relevance_tier": 1,
       "relevance_label": "تونس مباشرة",
       "title_ar": "المواهب الناشئة في تكنولوجيا المعلومات والاتصالات والسوق الهولندية: نقل الخدمات إلى المغرب ومصر وتونس ونيجيريا"
+    },
+    {
+      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+      "center_short": "ISS Africa",
+      "title": "Libya’s arsenals are a blind spot in the Tripoli agreement - ISS Africa",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPemc4VXRERUxjaGEwNFB3US1LRENRaWhqTFFTMEhCc1lNbmRfaXBINU50c1NZbDY3ZEx4aUJ2d1htU1FtZ0l4RlF6MFBKTk93bFFlM24yY3ZmNXNvazFsSVREZFNsdDFaTURnbERFaDdEWGozbnp2WUd2d01LWkRvamNjVmktUklaTTdka180dGxfNE94?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-14T09:39+01:00",
+      "date": "2026-10-14",
+      "source": "ISS Africa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxPemc4VXRERUxjaGEwNFB3US1LRENRaWhqTFFTMEhCc1lNbmRfaXBINU50c1NZbDY3ZEx4aUJ2d1htU1FtZ0l4RlF6MFBKTk93bFFlM24yY3ZmNXNvazFsSVREZFNsdDFaTURnbERFaDdEWGozbnp2WUd2d01LWkRvamNjVmktUklaTTdka180dGxfNE94?oc=5\" target=\"_blank\">Libya’s arsenals are a blind spot in the Tripoli agreement</a> <font color=\"#6f6f6f\">ISS Africa</font>",
+      "center_site": "https://issafrica.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا"
     },
     {
       "center": "مجموعة الأزمات الدولية",
