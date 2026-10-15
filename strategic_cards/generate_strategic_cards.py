@@ -18,7 +18,7 @@ DATA_FILE = ROOT / "strategic_cards.json"
 ARCHIVE_DIR = ROOT / "strategic_cards" / "archive"
 TZ = ZoneInfo("Africa/Tunis")
 MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
-MAX_CANDIDATES = 18
+MAX_CANDIDATES = 36
 MAX_CARD_AGE_DAYS = 7
 MAX_ARCHIVE_CARDS_PER_TYPE = 150
 
@@ -335,7 +335,12 @@ def select_candidates(items, checked):
         if published and published < cutoff:
             continue
         score, scores = candidate_score(item)
-        if score < 2:
+        # Center-specific searches already constrain results to security,
+        # defense, strategy, or geopolitics. Allow a lower score for those
+        # results so the generator has enough full-text candidates to try;
+        # the strict text-extraction and card-quality gates remain unchanged.
+        is_center_search = str(item.get("_strategic_topic", "")).startswith("source_")
+        if score < (1 if is_center_search else 2):
             continue
         seen_urls.add(url)
         copy = dict(item)
@@ -364,9 +369,11 @@ def select_candidates(items, checked):
         chosen.append(item)
         chosen_urls.add(item["_url"])
         seen_source_topics.add(topic)
-        # Research-center search results are supplemental, not the main feed.
-        # Limit them so broad site-search hits cannot crowd out concrete news.
-        if len(chosen) >= min(3, MAX_CANDIDATES):
+        # Give several independent research centers a chance to supply
+        # a full-text article, while leaving most slots for concrete current
+        # strategic developments. The article-text and quality gates below
+        # reject thin search snippets and unrelated results.
+        if len(chosen) >= min(8, MAX_CANDIDATES):
             break
 
     # Fill remaining slots with a balanced mix of strategic topics.
