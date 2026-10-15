@@ -1,8 +1,11 @@
 name: Generate Strategic Cards
 
 on:
-  # Do not use push as a generation trigger: code edits at arbitrary hours
-  # must not accidentally publish a morning card in the evening.
+  # Run a validation/generation pass when the generator or its schedule changes.
+  push:
+    paths:
+      - "strategic_cards/generate_strategic_cards.py"
+      - ".github/workflows/strategic_cards.yml"
   workflow_dispatch:
     inputs:
       slot:
