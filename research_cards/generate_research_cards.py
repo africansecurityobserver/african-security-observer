@@ -80,7 +80,7 @@ def get_text(url, center_site=""):
     try:
         if "news.google.com" in urlparse(url).netloc.lower():
             try:
-                decoded = gnewsdecoder(url, interval=0.5, timeout=15)
+                decoded = gnewsdecoder(url, interval=0.5)
                 if decoded.get("success") and decoded.get("decoded_url"):
                     url = decoded["decoded_url"]
             except Exception as exc:
