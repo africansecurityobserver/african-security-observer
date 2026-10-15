@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T06:50+01:00",
+  "updated": "2026-10-15T12:51+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 73,
@@ -443,7 +443,7 @@
       "site": "https://ifsh.de/"
     }
   ],
-  "count": 29,
+  "count": 30,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -486,6 +486,20 @@
       "relevance_tier": 2,
       "relevance_label": "ليبيا والجزائر",
       "title_ar": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا"
+    },
+    {
+      "center": "معهد الدراسات الأمنية والتنمية (ISDP)",
+      "center_short": "ISDP",
+      "title": "From Hormuz to the Eastern Mediterranean: India, Israel, and the Indo-Pacific’s Western Flank - Institute for Security & Development Policy",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxORWYzME95NzhDZVA4TVl1WUk3QVVpbUtVTDZOOVRzQ0dDWm1hMWducWdnNVNTbHRyay03TzdFM1I0NkFnaXBkZEpjUjZ5Rmp4NWllRHU1SzgtSW1zQ2FpN0FEMTdvTVQtZGw2NFF1cmIwX1hRR1J3czB1QWFpYlBLV0dfOS12X0x1ODRMN1Z6cmVaeFNHZjlUOUNETnNzOXRzNGxLa2swNHVyTVpzakc4?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-15T09:40+01:00",
+      "date": "2026-10-15",
+      "source": "Institute for Security & Development Policy",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxORWYzME95NzhDZVA4TVl1WUk3QVVpbUtVTDZOOVRzQ0dDWm1hMWducWdnNVNTbHRyay03TzdFM1I0NkFnaXBkZEpjUjZ5Rmp4NWllRHU1SzgtSW1zQ2FpN0FEMTdvTVQtZGw2NFF1cmIwX1hRR1J3czB1QWFpYlBLV0dfOS12X0x1ODRMN1Z6cmVaeFNHZjlUOUNETnNzOXRzNGxLa2swNHVyTVpzakc4?oc=5\" target=\"_blank\">From Hormuz to the Eastern Mediterranean: India, Israel, and the Indo-Pacific’s Western Flank</a> <font color=\"#6f6f6f\">Institute for Security & Development Policy</font>",
+      "center_site": "https://isdp.eu/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "من هرمز إلى شرق البحر الأبيض المتوسط: الهند وإسرائيل والجناح الغربي لمنطقة المحيطين الهندي والهادئ - معهد سياسة الأمن والتنمية"
     },
     {
       "center": "مؤسسة كونراد أديناور",
