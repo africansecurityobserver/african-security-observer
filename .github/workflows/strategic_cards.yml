@@ -1,6 +1,13 @@
 name: Generate Strategic Cards
 
 on:
+  # Run once immediately when the generator or its schedule is repaired.
+  # Do not watch the output JSON files, or generated cards would cause a loop.
+  push:
+    paths:
+      - "strategic_cards/generate_strategic_cards.py"
+      - ".github/workflows/strategic_cards.yml"
+
   workflow_dispatch:
     inputs:
       slot:
