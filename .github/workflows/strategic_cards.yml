@@ -1,13 +1,8 @@
 name: Generate Strategic Cards
 
 on:
-  # Run once immediately when the generator or its schedule is repaired.
-  # Do not watch the output JSON files, or generated cards would cause a loop.
-  push:
-    paths:
-      - "strategic_cards/generate_strategic_cards.py"
-      - ".github/workflows/strategic_cards.yml"
-
+  # Do not use push as a generation trigger: code edits at arbitrary hours
+  # must not accidentally publish a morning card in the evening.
   workflow_dispatch:
     inputs:
       slot:
@@ -20,12 +15,11 @@ on:
         default: morning
 
   schedule:
-    # Morning card: publish at 08:55 Tunis time.
-    - cron: "55 8 * * *"
-      timezone: "Africa/Tunis"
-    # Evening card: articles published 09:01–23:50, published at 23:55 Tunis time.
-    - cron: "55 23 * * *"
-      timezone: "Africa/Tunis"
+    # GitHub Actions cron uses UTC. Tunisia is UTC+1 year-round.
+    # Morning card: 08:55 Africa/Tunis = 07:55 UTC.
+    - cron: "55 7 * * *"
+    # Evening card: 23:55 Africa/Tunis = 22:55 UTC.
+    - cron: "55 22 * * *"
 
 permissions:
   contents: write
