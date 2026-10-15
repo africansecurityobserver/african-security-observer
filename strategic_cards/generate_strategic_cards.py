@@ -373,7 +373,11 @@ def select_candidates(items, checked):
     pools = {}
     for kind in TYPE_ORDER:
         pools[kind] = sorted(
-            [item for item in candidates if item["_type_scores"].get(kind, 0) >= 2],
+            [
+                item for item in candidates
+                if not str(item.get("_strategic_topic", "")).startswith("source_")
+                and item["_type_scores"].get(kind, 0) >= 2
+            ],
             key=lambda item: (
                 item["_type_scores"].get(kind, 0),
                 parse_date(item.get("published")) or datetime.min.replace(tzinfo=TZ)
@@ -394,10 +398,10 @@ def select_candidates(items, checked):
     for item in sorted(
         candidates,
         key=lambda item: (
-            item["_score"],
-            parse_date(item.get("published")) or datetime.min.replace(tzinfo=TZ)
-        ),
-        reverse=True
+            str(item.get("_strategic_topic", "")).startswith("source_"),
+            -item["_score"],
+            -(parse_date(item.get("published")) or datetime.min.replace(tzinfo=TZ)).timestamp()
+        )
     ):
         if len(chosen) >= MAX_CANDIDATES:
             break
@@ -468,7 +472,7 @@ def build_prompt(source_material, slot_label, window_label, date_label):
 
 منهج البناء:
 1. ابدأ بمقدمة رسمية تحدد الحدث أو التطور والجهة والتاريخ والمكان عند توافرها، وتوضح سبب أهميته.
-2. أنشئ من 4 إلى 7 أقسام تحليلية بعناوين دقيقة متخصصة بالموضوع. لا تستخدم عناوين ثابتة لا تناسب المادة.
+2. أنشئ من 5 إلى 7 أقسام تحليلية بعناوين دقيقة متخصصة بالموضوع، بما فيها قسم مستقل بعنوان «خلاصة استراتيجية». لا تستخدم عناوين ثابتة لا تناسب المادة.
 3. فسّر الخلفية والدوافع والمصالح ذات الصلة، ثم حلل مضمون القرار أو التطور وآليات تنفيذه، ثم اربطه بمؤشرات أوسع أو خطوات عملية مرتبطة به.
 4. قيّم التداعيات المحتملة والقيود والمخاطر والسيناريوهات عند وجود أساس مصدري. في الأزمات، حلل مواقف الأطراف وأسباب الخلاف وآثاره السياسية والاقتصادية والأمنية، ثم الخيارات الممكنة لتونس ومزاياها ومخاطرها وحدودها.
 5. اختم بخلاصة استراتيجية مركزة. بعدها أضف فقرة قصيرة من 4 إلى 5 أسطر عن دلالات الموضوع لتونس عندما تكون ذات صلة حقيقية. لا تجعل «تونس» عنوان قسم مستقلًا، ولا تفرض توصية عامة أو وساطة أو حيادًا إيجابيًا دون تحليل.
@@ -612,6 +616,20 @@ def main():
 
     checked = set(clean_text(url) for url in data["checked_urls"] if clean_text(url))
     sync_archive(data)
+
+    # A slot is a publication unit: a manual rerun or code-fix push must not
+    # create a second morning/evening card on the same Tunisia-local date.
+    today_key = now.strftime("%Y-%m-%d")
+    existing_slot_card = any(
+        isinstance(card, dict)
+        and clean_text(card.get("date"))[:10] == today_key
+        and clean_text(card.get("slot")) == slot
+        for kind in TYPE_ORDER
+        for card in data.get(kind, [])
+    )
+    if existing_slot_card:
+        print(f"A {slot_label} strategic card already exists for {today_key}; skipping duplicate slot generation.")
+        return
 
     candidates = select_candidates(items, checked)
     if not candidates:
