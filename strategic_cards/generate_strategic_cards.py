@@ -9,6 +9,10 @@ from zoneinfo import ZoneInfo
 
 import requests
 from selectolax.lexbor import LexborHTMLParser
+try:
+    from googlenewsdecoder import gnewsdecoder
+except ImportError:
+    gnewsdecoder = None
 from google import genai
 from google.genai import types
 
@@ -186,45 +190,114 @@ def parse_date(value):
         except Exception:
             return None
 
+def decode_google_news_url(url):
+    """Resolve Google News redirect links to the publisher's canonical article."""
+    if not url or "news.google.com" not in url or gnewsdecoder is None:
+        return url
+    try:
+        result = gnewsdecoder(url, interval=0.5, timeout=15)
+        if result.get("success") and result.get("decoded_url"):
+            return result["decoded_url"]
+    except Exception as exc:
+        print(f"Google News URL decoding failed: {type(exc).__name__}")
+    return url
+
+
 def get_article_text(url):
     if not url or not url.startswith(("http://", "https://")):
         return ""
-    try:
-        response = requests.get(
-            url,
-            timeout=15,
-            headers={"User-Agent": "Mozilla/5.0 (compatible; AfricanSecurityObserver/1.0)"}
-        )
-        if response.status_code != 200:
-            return ""
-        parser = LexborHTMLParser(response.text)
-        for selector in ("script", "style", "nav", "header", "footer", "aside", "form"):
-            for node in parser.css(selector):
-                node.decompose()
-        article = parser.css_first("article") or parser.css_first("main") or parser.body
-        article_text = clean_text(article.text(separator=" ", strip=True)) if article else ""
 
-        # Some publishers render a thin article container but expose a meaningful
-        # abstract in OpenGraph or standard description metadata.
-        if len(article_text) < 500:
-            meta_parts = []
-            for selector in (
-                'meta[property="og:description"]',
-                'meta[name="description"]',
-                'meta[name="twitter:description"]'
-            ):
-                node = parser.css_first(selector)
-                if node:
-                    value = clean_text(node.attributes.get("content", ""))
-                    if value:
-                        meta_parts.append(value)
-            if meta_parts:
-                article_text = clean_text(article_text + " " + " ".join(meta_parts))
+    resolved_url = decode_google_news_url(url)
+    urls_to_try = []
+    for candidate_url in (resolved_url, url):
+        if candidate_url and candidate_url not in urls_to_try:
+            urls_to_try.append(candidate_url)
 
-        return article_text[:9000]
-    except Exception as exc:
-        print(f"Source extraction failed for {url}: {type(exc).__name__}")
-        return ""
+    for candidate_url in urls_to_try:
+        try:
+            response = requests.get(
+                candidate_url,
+                timeout=20,
+                headers={
+                    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                                  "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+                    "Accept-Language": "en-US,en;q=0.9,fr;q=0.8,ar;q=0.7"
+                },
+                allow_redirects=True
+            )
+            if response.status_code != 200 or not response.text:
+                continue
+
+            parser = LexborHTMLParser(response.text)
+            # Capture JSON-LD article text before stripping non-content nodes.
+            structured_parts = []
+            for node in parser.css('script[type="application/ld+json"]'):
+                raw = node.text(strip=True)
+                if raw and any(token in raw.lower() for token in ('articlebody', 'articlebody', 'description')):
+                    structured_parts.append(raw)
+
+            for selector in ("script", "style", "nav", "header", "footer", "aside", "form"):
+                for node in parser.css(selector):
+                    node.decompose()
+
+            article = parser.css_first("article") or parser.css_first("main") or parser.body
+            article_text = clean_text(article.text(separator=" ", strip=True)) if article else ""
+
+            # Try common publisher content containers if the generic article/main
+            # element was a shell or navigation wrapper.
+            if len(article_text) < 500:
+                chunks = []
+                for selector in (
+                    '[itemprop="articleBody"]', '.article-body', '.article__body',
+                    '.story-body', '.entry-content', '.post-content', '.article-content',
+                    '[data-testid="article-body"]'
+                ):
+                    for node in parser.css(selector):
+                        value = clean_text(node.text(separator=" ", strip=True))
+                        if len(value) > len(article_text):
+                            chunks.append(value)
+                if chunks:
+                    article_text = max(chunks, key=len)
+
+            if len(article_text) < 500:
+                meta_parts = []
+                for selector in (
+                    'meta[property="og:description"]',
+                    'meta[name="description"]',
+                    'meta[name="twitter:description"]'
+                ):
+                    node = parser.css_first(selector)
+                    if node:
+                        value = clean_text(node.attributes.get("content", ""))
+                        if value:
+                            meta_parts.append(value)
+                if meta_parts:
+                    article_text = clean_text(article_text + " " + " ".join(meta_parts))
+
+            if len(article_text) >= 500:
+                print(f"Extracted {len(article_text)} characters from {response.url}")
+                return article_text[:12000]
+
+            # A page may contain structured articleBody even when visible HTML
+            # extraction fails; keep this as a last extraction path.
+            for raw in structured_parts:
+                try:
+                    parsed = json.loads(raw)
+                    objects = parsed if isinstance(parsed, list) else [parsed]
+                    for obj in objects:
+                        if not isinstance(obj, dict):
+                            continue
+                        body = clean_text(obj.get("articleBody") or obj.get("description"))
+                        if len(body) >= 500:
+                            print(f"Extracted {len(body)} characters from JSON-LD at {response.url}")
+                            return body[:12000]
+                except Exception:
+                    continue
+
+        except Exception as exc:
+            print(f"Source extraction failed for {candidate_url}: {type(exc).__name__}")
+
+    return ""
 
 def fetch_strategic_rss_items():
     """Fetch a small, recent, multilingual source pool for strategic topics."""
@@ -259,10 +332,10 @@ def fetch_strategic_rss_items():
 
                     # Follow Google's redirect so published source links point to
                     # the original publisher whenever the redirect is available.
-                    article_url = wrapper_url
+                    article_url = decode_google_news_url(wrapper_url)
                     try:
                         redirected = requests.get(
-                            wrapper_url, timeout=8, headers=headers,
+                            article_url, timeout=8, headers=headers,
                             allow_redirects=True, stream=True
                         )
                         if redirected.url and redirected.url.startswith(("http://", "https://")):
@@ -283,7 +356,8 @@ def fetch_strategic_rss_items():
                         "source": source,
                         "category": "strategic",
                         "_strategic_topic": topic,
-                        "url": article_url
+                        "url": article_url,
+                        "google_news_url": wrapper_url
                     })
             except Exception as exc:
                 print(f"Strategic RSS search failed for {topic}: {type(exc).__name__}")
@@ -340,7 +414,10 @@ def select_candidates(items, checked):
         # results so the generator has enough full-text candidates to try;
         # the strict text-extraction and card-quality gates remain unchanged.
         is_center_search = str(item.get("_strategic_topic", "")).startswith("source_")
-        if score < (1 if is_center_search else 2):
+        # Keep a wider fallback pool. The source-text extraction and strict
+        # model-quality checks below remain mandatory, so broader selection
+        # improves availability without allowing weak snippets to be published.
+        if score < 1:
             continue
         seen_urls.add(url)
         copy = dict(item)
@@ -690,9 +767,19 @@ def main():
         # Do not pretend to summarize a full article if both the extracted
         # body and the publisher's abstract/description are too thin.
         if len(body) < 500 and len(description) < 350:
-            print(f"Skipping source with insufficient readable text; keeping it eligible for a later extraction retry: {title_original[:120]}")
-            reviewed_count += 1
-            continue
+            # Some RSS records carry a canonical publisher URL and a Google
+            # News wrapper URL. Try the alternate link before abandoning it.
+            alternate_url = clean_text(item.get("google_news_url"))
+            if alternate_url and alternate_url != url:
+                body = get_article_text(alternate_url)
+            if len(body) < 500 and len(description) < 350:
+                print(
+                    f"Skipping source with insufficient readable text "
+                    f"(body={len(body)}, description={len(description)}); "
+                    f"will remain eligible for a later run: {title_original[:120]}"
+                )
+                reviewed_count += 1
+                continue
 
         scores = item.get("_type_scores", {})
         likely_types = [
