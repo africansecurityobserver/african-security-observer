@@ -18,7 +18,7 @@ DATA_FILE = ROOT / "strategic_cards.json"
 ARCHIVE_DIR = ROOT / "strategic_cards" / "archive"
 TZ = ZoneInfo("Africa/Tunis")
 MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
-MAX_CANDIDATES = 12
+MAX_CANDIDATES = 18
 MAX_CARD_AGE_DAYS = 7
 MAX_ARCHIVE_CARDS_PER_TYPE = 150
 
@@ -202,9 +202,26 @@ def get_article_text(url):
             for node in parser.css(selector):
                 node.decompose()
         article = parser.css_first("article") or parser.css_first("main") or parser.body
-        if not article:
-            return ""
-        return clean_text(article.text(separator=" ", strip=True))[:6500]
+        article_text = clean_text(article.text(separator=" ", strip=True)) if article else ""
+
+        # Some publishers render a thin article container but expose a meaningful
+        # abstract in OpenGraph or standard description metadata.
+        if len(article_text) < 500:
+            meta_parts = []
+            for selector in (
+                'meta[property="og:description"]',
+                'meta[name="description"]',
+                'meta[name="twitter:description"]'
+            ):
+                node = parser.css_first(selector)
+                if node:
+                    value = clean_text(node.attributes.get("content", ""))
+                    if value:
+                        meta_parts.append(value)
+            if meta_parts:
+                article_text = clean_text(article_text + " " + " ".join(meta_parts))
+
+        return article_text[:9000]
     except Exception as exc:
         print(f"Source extraction failed for {url}: {type(exc).__name__}")
         return ""
@@ -334,8 +351,8 @@ def select_candidates(items, checked):
     source_items = sorted(
         [item for item in candidates if str(item.get("_strategic_topic", "")).startswith("source_")],
         key=lambda item: (
-            parse_date(item.get("published")) or datetime.min.replace(tzinfo=TZ),
-            item["_score"]
+            item["_score"],
+            parse_date(item.get("published")) or datetime.min.replace(tzinfo=TZ)
         ),
         reverse=True
     )
@@ -347,7 +364,9 @@ def select_candidates(items, checked):
         chosen.append(item)
         chosen_urls.add(item["_url"])
         seen_source_topics.add(topic)
-        if len(chosen) >= min(8, MAX_CANDIDATES):
+        # Research-center search results are supplemental, not the main feed.
+        # Limit them so broad site-search hits cannot crowd out concrete news.
+        if len(chosen) >= min(3, MAX_CANDIDATES):
             break
 
     # Fill remaining slots with a balanced mix of strategic topics.
@@ -514,6 +533,36 @@ def filter_items_for_slot(items, slot, now):
     )
     return filtered, slot_label, window_label
 
+def unpack_generated_card(output):
+    """Normalize model output and return fields used by deterministic quality checks."""
+    kind = clean_text(output.get("type"))
+    subject = clean_text(output.get("title"))
+    sections = [
+        {"heading": clean_text(section.get("heading")), "text": clean_text(section.get("text"))}
+        for section in output.get("sections", [])
+        if isinstance(section, dict)
+        and clean_text(section.get("heading"))
+        and clean_text(section.get("text"))
+    ]
+    summary_text = clean_text(output.get("summary"))
+    full_text = " ".join([summary_text] + [section["text"] for section in sections])
+    word_count = len(re.findall(r"\S+", full_text))
+    has_conclusion = any(
+        "خلاصة استراتيجية" in section["heading"]
+        or "الخلاصة الاستراتيجية" in section["heading"]
+        for section in sections
+    )
+    valid = (
+        kind in TYPE_LABELS
+        and bool(subject)
+        and len(summary_text) >= 60
+        and len(sections) >= 5
+        and has_conclusion
+        and word_count >= 650
+    )
+    return kind, subject, sections, summary_text, word_count, has_conclusion, valid
+
+
 def main():
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
@@ -602,6 +651,10 @@ def main():
     # One source article -> one independent strategic card. This prevents a
     # single card from blending unrelated research papers or think-tank essays.
     for index, item in enumerate(candidates, start=1):
+        if published_count >= 1:
+            print("One valid card has been published for this slot; stopping to preserve the two-cards-per-day schedule.")
+            break
+
         url = item["_url"]
         title_original = clean_text(item.get("original_title") or item.get("title"))
         description = clean_text(
@@ -612,11 +665,7 @@ def main():
         # Do not pretend to summarize a full article if both the extracted
         # body and the publisher's abstract/description are too thin.
         if len(body) < 500 and len(description) < 350:
-            print(f"Skipping source with insufficient readable text: {title_original[:120]}")
-            checked.add(url)
-            data["checked_urls"] = list(checked)[-1500:]
-            save_json(DATA_FILE, data)
-            sync_archive(data)
+            print(f"Skipping source with insufficient readable text; keeping it eligible for a later extraction retry: {title_original[:120]}")
             reviewed_count += 1
             continue
 
@@ -637,17 +686,17 @@ def main():
             "article_text": body
         }]
 
+        base_prompt = build_prompt(source_material, slot_label, window_label, date_label)
         try:
             result = client.interactions.create(
                 model=MODEL,
-                input=build_prompt(source_material, slot_label, window_label, date_label),
+                input=base_prompt,
                 response_format={"type": "text", "mime_type": "application/json", "schema": schema},
                 generation_config={"temperature": 0.2, "thinking_level": "low"}
             )
             output = json.loads(result.output_text or "{}")
         except Exception as exc:
-            # Keep processing other articles if one request fails; leave this
-            # URL unchecked so the next scheduled run can retry it if in-window.
+            # A transient model/API error must not permanently blacklist the source.
             print(f"Strategic-card generation failed for one article: {type(exc).__name__}")
             continue
 
@@ -660,35 +709,49 @@ def main():
             print(f"Source rejected as insufficient for a reliable standalone card: {title_original[:120]}")
             continue
 
-        kind = clean_text(output.get("type"))
-        subject = clean_text(output.get("title"))
-        sections = [
-            {"heading": clean_text(section.get("heading")), "text": clean_text(section.get("text"))}
-            for section in output.get("sections", [])
-            if isinstance(section, dict) and clean_text(section.get("heading")) and clean_text(section.get("text"))
-        ]
-        summary_text = clean_text(output.get("summary"))
-        full_text = " ".join([summary_text] + [section["text"] for section in sections])
-        word_count = len(re.findall(r"\S+", full_text))
-        has_conclusion = any(
-            "خلاصة استراتيجية" in section["heading"]
-            or "الخلاصة الاستراتيجية" in section["heading"]
-            for section in sections
-        )
+        kind, subject, sections, summary_text, word_count, has_conclusion, valid = unpack_generated_card(output)
 
-        if (
-            kind not in TYPE_LABELS
-            or not subject
-            or len(summary_text) < 60
-            or len(sections) < 5
-            or not has_conclusion
-            or word_count < 650
-        ):
-            print(f"Generated card failed quality validation (words={word_count}, sections={len(sections)}); no publication.")
-            checked.add(url)
-            data["checked_urls"] = list(checked)[-1500:]
-            save_json(DATA_FILE, data)
-            sync_archive(data)
+        if not valid:
+            print(
+                f"First draft failed quality validation (words={word_count}, sections={len(sections)}); "
+                "requesting one corrective rewrite."
+            )
+            retry_prompt = base_prompt + """
+
+مراجعة تصحيحية إلزامية: المسودة السابقة لم تحقق الحد الأدنى المطلوب من الجودة.
+أعد كتابة البطاقة كاملة، لا تكتفِ بإضافة جمل قصيرة. المطلوب 900 كلمة عربية تقريباً،
+وخمسة أقسام تحليلية على الأقل بما فيها قسم مستقل بعنوان «خلاصة استراتيجية».
+احرص على أن يكون لكل قسم مضمون مختلف، وأن تشرح الخلفية والأدلة والتداعيات والقيود،
+مع فقرة ختامية عن تونس حين تكون ذات صلة. إذا كان المصدر لا يتيح ذلك بصدق، أعد publish=false.
+أخرج JSON المطابق للمخطط فقط.
+"""
+            try:
+                retry_result = client.interactions.create(
+                    model=MODEL,
+                    input=retry_prompt,
+                    response_format={"type": "text", "mime_type": "application/json", "schema": schema},
+                    generation_config={"temperature": 0.15, "thinking_level": "low"}
+                )
+                retry_output = json.loads(retry_result.output_text or "{}")
+                reviewed_count += 1
+                if not retry_output.get("publish"):
+                    checked.add(url)
+                    data["checked_urls"] = list(checked)[-1500:]
+                    save_json(DATA_FILE, data)
+                    sync_archive(data)
+                    print(f"Corrective rewrite rejected as insufficient: {title_original[:120]}")
+                    continue
+                output = retry_output
+                kind, subject, sections, summary_text, word_count, has_conclusion, valid = unpack_generated_card(output)
+            except Exception as exc:
+                print(f"Corrective rewrite failed; source remains eligible for retry: {type(exc).__name__}")
+                continue
+
+        if not valid:
+            print(
+                f"Generated card still failed quality validation (words={word_count}, sections={len(sections)}); "
+                "source remains unchecked for a later retry."
+            )
             continue
 
         existing_cards = [
