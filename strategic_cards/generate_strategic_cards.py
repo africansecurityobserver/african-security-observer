@@ -195,7 +195,7 @@ def decode_google_news_url(url):
     if not url or "news.google.com" not in url or gnewsdecoder is None:
         return url
     try:
-        result = gnewsdecoder(url, interval=0.5, timeout=15)
+        result = gnewsdecoder(url, interval=0.5)
         if result.get("success") and result.get("decoded_url"):
             return result["decoded_url"]
     except Exception as exc:
