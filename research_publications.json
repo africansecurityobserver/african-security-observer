@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T18:51+01:00",
+  "updated": "2026-10-15T06:50+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 73,
@@ -443,7 +443,7 @@
       "site": "https://ifsh.de/"
     }
   ],
-  "count": 27,
+  "count": 29,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -514,6 +514,34 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
+    },
+    {
+      "center": "معهد بروكينغز",
+      "center_short": "Brookings",
+      "title": "Why the intra-African trade share misleads on integration - Brookings",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOOGR6ZWV2dW5DeUVOYXJWeV9nemxHS040Vk9EUklMeUxvbW9NemZfMGt1aXBkZjZEOXhaeU1ray1SdGZMSUhKUjNHNlFPM19ZMGZVd09ta2ZrVG9tQzBvV1VpRG82dHhKRTlxclUwX0REeUdrUmVqb2k1NE52TlFwSFpKWWdiQVFldl9abzdlM0JGUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-13T22:39+01:00",
+      "date": "2026-10-13",
+      "source": "Brookings",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxOOGR6ZWV2dW5DeUVOYXJWeV9nemxHS040Vk9EUklMeUxvbW9NemZfMGt1aXBkZjZEOXhaeU1ray1SdGZMSUhKUjNHNlFPM19ZMGZVd09ta2ZrVG9tQzBvV1VpRG82dHhKRTlxclUwX0REeUdrUmVqb2k1NE52TlFwSFpKWWdiQVFldl9abzdlM0JGUQ?oc=5\" target=\"_blank\">Why the intra-African trade share misleads on integration</a> <font color=\"#6f6f6f\">Brookings</font>",
+      "center_site": "https://brookings.edu/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "لماذا تضلل حصة التجارة البينية الأفريقية بشأن التكامل - بروكينغز"
+    },
+    {
+      "center": "معهد هدسون",
+      "center_short": "Hudson Institute",
+      "title": "Iran and Its Houthi Proxies Target Saudi Airports and Gulf Shipping - Hudson Institute",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNcmgtV3A2eUZ2cnhpLTcwMy1tRVpIVTRKM05FWEs1T1ZuYUliallTWjBHQlRSdW5NSXBOOTEySnRJQ3FDSWNqNjhIXzlOSDBWQ3NnQmw4TmVfNS1peV9CQy1ycWJWUUZWU1F5TDNuN0xRSUlvTjFGbkhyMjhmZTFCZVRYUU9WUTVuOFo2YmNQVzlQUlFUR3RTZ1JSSnk0WDgxWGY4T1g1M0d1aVFEdTh3XzF0Q19tbFAyRmJGZkxvRQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-13T13:00+01:00",
+      "date": "2026-10-13",
+      "source": "Hudson Institute",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNcmgtV3A2eUZ2cnhpLTcwMy1tRVpIVTRKM05FWEs1T1ZuYUliallTWjBHQlRSdW5NSXBOOTEySnRJQ3FDSWNqNjhIXzlOSDBWQ3NnQmw4TmVfNS1peV9CQy1ycWJWUUZWU1F5TDNuN0xRSUlvTjFGbkhyMjhmZTFCZVRYUU9WUTVuOFo2YmNQVzlQUlFUR3RTZ1JSSnk0WDgxWGY4T1g1M0d1aVFEdTh3XzF0Q19tbFAyRmJGZkxvRQ?oc=5\" target=\"_blank\">Iran and Its Houthi Proxies Target Saudi Airports and Gulf Shipping</a> <font color=\"#6f6f6f\">Hudson Institute</font>",
+      "center_site": "https://hudson.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "إيران ووكلاؤها الحوثيون يستهدفون المطارات السعودية والملاحة الخليجية - معهد هدسون"
     },
     {
       "center": "مجلس العلاقات الخارجية",
