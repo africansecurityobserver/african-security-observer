@@ -46,7 +46,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.5-flash-lite
-          CARD_SLOT: ${{ github.event_name == 'workflow_dispatch' && inputs.slot || (github.event.schedule == '55 23 * * *' && 'evening' || 'morning') }}
+          CARD_SLOT: ${{ github.event_name == 'workflow_dispatch' && inputs.slot || (github.event.schedule == '55 22 * * *' && 'evening' || 'morning') }}
         run: |
           python -u strategic_cards/generate_strategic_cards.py
 
@@ -60,6 +60,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No strategic-card changes to commit."
           else
-            git commit -m "Generate ${{ github.event_name == 'workflow_dispatch' && inputs.slot || (github.event.schedule == '55 23 * * *' && 'evening' || 'morning') }} strategic analysis card"
+            git commit -m "Generate ${{ github.event_name == 'workflow_dispatch' && inputs.slot || (github.event.schedule == '55 22 * * *' && 'evening' || 'morning') }} strategic analysis card"
             git push
           fi
