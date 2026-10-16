@@ -40,5 +40,6 @@ jobs:
             echo "No publication-list changes."
           else
             git commit -m "Update research center publication links"
+            git pull --rebase origin main
             git push
           fi
