@@ -24,6 +24,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: daily-security-cards-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   generate-card:
     runs-on: ubuntu-latest
