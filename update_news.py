@@ -1269,6 +1269,42 @@ def is_relevant_security_news(
 # CLASSIFICATION
 # =========================================================
 
+def classify_region(title, description):
+    """Classify a story by geography for the new Africa/World navigation."""
+    text = (str(title or "") + " " + str(description or "")).lower()
+
+    africa_terms = [
+        "africa", "african", "afrique", "africain", "africaine",
+        "tunisia", "tunisian", "tunisie", "tunisien", "tunisienne",
+        "algeria", "algerian", "algérie", "algerien", "algerienne",
+        "morocco", "moroccan", "maroc", "marocain", "marocaine",
+        "libya", "libyan", "libye", "libyen", "libyenne",
+        "egypt", "egyptian", "égypte", "egyptien",
+        "sahel", "mali", "malian", "niger", "nigerien",
+        "burkina faso", "burkinabe", "chad", "chadian", "tchad",
+        "mauritania", "mauritanian", "mauritanie", "senegal",
+        "senegalese", "sénégal", "guinea", "guinée", "ivory coast",
+        "côte d'ivoire", "ghana", "nigeria", "nigerian", "sudan",
+        "soudan", "south sudan", "somalia", "somalie", "ethiopia",
+        "éthiopie", "eritrea", "erythrée", "kenya", "uganda",
+        "tanzania", "mozambique", "zimbabwe", "zambia", "angola",
+        "cameroon", "cameroun", "central african republic",
+        "république centrafricaine", "democratic republic of the congo",
+        "république démocratique du congo", "congo", "gabon",
+        "equatorial guinea", "guinée équatoriale", "rwanda", "burundi",
+        "botswana", "namibia", "namibie", "south africa", "afrique du sud",
+        "lesotho", "eswatini", "madagascar", "mauritius", "seychelles",
+        "تونس", "التونسية", "الجزائر", "الجزائرية", "المغرب", "المغربية",
+        "ليبيا", "الليبية", "مصر", "المصرية", "الساحل", "مالي", "النيجر",
+        "بوركينا فاسو", "تشاد", "موريتانيا", "السنغال", "غينيا",
+        "ساحل العاج", "غانا", "نيجيريا", "السودان", "جنوب السودان",
+        "الصومال", "إثيوبيا", "كينيا", "أوغندا", "تنزانيا", "موزمبيق",
+        "زيمبابوي", "زامبيا", "أنغولا", "الكاميرون", "الكونغو",
+        "الغابون", "رواندا", "بوروندي", "جنوب إفريقيا", "مدغشقر"
+    ]
+    return "africa" if any(term in text for term in africa_terms) else "world"
+
+
 def classify_news(
     title,
     description,
@@ -1562,7 +1598,9 @@ def get_news():
 
                     "published": published,
 
-                    "category": category
+                    "category": category,
+
+                    "region": classify_region(title, description)
                 })
 
                 seen_urls.add(
@@ -1627,6 +1665,14 @@ def normalize_article(article):
         "category": article.get(
             "category",
             "rest"
+        ),
+
+        "region": article.get(
+            "region",
+            classify_region(
+                article.get("original_title") or article.get("title", ""),
+                article.get("original_description") or article.get("description", "")
+            )
         )
     }
 
