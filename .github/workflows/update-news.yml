@@ -21,10 +21,6 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: news-update-${{ github.ref }}
-  cancel-in-progress: false
-
 # Prevent scheduled and push-triggered news updates from writing the same JSON files concurrently.
 concurrency:
   group: update-news-${{ github.ref }}
