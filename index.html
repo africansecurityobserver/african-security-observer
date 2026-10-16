@@ -105,21 +105,27 @@ text-align:left
 
 .nav{
 display:flex;
+flex-wrap:wrap;
 gap:0;
-overflow:auto;
-border-top:1px solid #34516b
+overflow:visible;
+border-top:1px solid #34516b;
+align-items:stretch
 }
 
 .nav button{
 background:none;
 border:0;
 color:#edf3f7;
-padding:13px 16px;
+padding:13px 14px;
 font:inherit;
 font-size:13px;
-white-space:nowrap;
+white-space:normal;
+text-align:center;
+line-height:1.5;
+flex:0 1 auto;
 cursor:pointer;
-border-bottom:3px solid transparent
+border-bottom:3px solid transparent;
+overflow-wrap:anywhere
 }
 
 .nav button.active,
@@ -635,8 +641,19 @@ grid-template-columns:1fr
 display:none
 }
 
+.nav{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+width:100%
+}
+
 .nav button{
-padding:11px 12px
+padding:11px 8px;
+min-width:0;
+width:100%;
+font-size:12px;
+white-space:normal;
+overflow-wrap:anywhere
 }
 
 .article-list{
