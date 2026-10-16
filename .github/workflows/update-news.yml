@@ -21,6 +21,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: news-update-${{ github.ref }}
+  cancel-in-progress: false
+
 # Prevent scheduled and push-triggered news updates from writing the same JSON files concurrently.
 concurrency:
   group: update-news-${{ github.ref }}
@@ -63,7 +67,8 @@ jobs:
           git add .
           git diff --cached --quiet || git commit -m "Update news and articles"
           for attempt in 1 2 3; do
-            git pull --rebase origin main && git push origin main && exit 0
+            if git pull --rebase origin main && git push origin main; then exit 0; fi
+            git rebase --abort || true
             echo "Push attempt $attempt failed; retrying after refreshing main."
             sleep 2
           done
