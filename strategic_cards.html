@@ -230,7 +230,13 @@ const blob=new Blob(['\ufeff',documentHtml],{type:'application/msword;charset=ut
 link.href=url;link.download='بطاقة-استراتيجية-'+String(card.date||'').replace(/[^0-9-]/g,'')+'.doc';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 async function loadArchive(){
+const params=new URLSearchParams(window.location.search);
+const requestedType=params.get('type');
+if(requestedType==='news'||requestedType==='research'){
+await openArchive(requestedType);
+}else{
 showRoot();
+}
 }
 loadArchive();
 
