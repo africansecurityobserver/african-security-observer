@@ -40,6 +40,10 @@ jobs:
             echo "No publication-list changes."
           else
             git commit -m "Update research center publication links"
-            git pull --rebase origin main
-            git push
+            for attempt in 1 2 3; do
+              git pull --rebase origin main && git push origin main && exit 0
+              echo "Push attempt $attempt failed; retrying after refreshing main."
+              sleep 2
+            done
+            exit 1
           fi
