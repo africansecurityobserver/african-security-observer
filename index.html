@@ -1238,7 +1238,7 @@ items.filter(function(item){
 
 if(category === 'africa'){
 return item.region === 'africa' ||
-(['sahel','north','rest'].includes(item.category));
+(!item.region && ['sahel','north','rest'].includes(item.category));
 }
 
 if(category === 'world'){
