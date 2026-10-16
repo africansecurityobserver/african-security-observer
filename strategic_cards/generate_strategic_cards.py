@@ -387,6 +387,28 @@ def score_types(item):
             scores[kind] += 2
         for kind in ("defense_economics", "regional_crisis", "strategic_assessment"):
             scores[kind] += 1
+
+    # Raise stories with direct Tunisian or immediate-neighbour implications.
+    regional_terms = [
+        "تونس", "تونسي", "تونسيّة", "tunisia", "tunisian", "tunisie",
+        "ليبيا", "ليبي", "libya", "libyan", "libye",
+        "الجزائر", "جزائري", "algeria", "algerian", "algérie",
+        "شمال إفريقيا", "north africa", "méditerranée", "mediterranean"
+    ]
+    if any(term in combined for term in regional_terms):
+        scores["strategic_assessment"] += 5
+        scores["regional_crisis"] += 3
+
+    arms_terms = [
+        "صفقة تسلح", "شراء أسلحة", "عقد دفاعي", "تسليم أسلحة",
+        "military procurement", "arms deal", "weapons contract",
+        "defence contract", "defense contract", "fighter jet", "air defence",
+        "air defense", "missile system", "frigate", "submarine", "tank",
+        "contrat d'armement", "contrat de défense", "avion de combat"
+    ]
+    if any(term in combined for term in arms_terms):
+        scores["deals"] += 5
+
     return scores
 
 def candidate_score(item):
@@ -722,8 +744,11 @@ def main():
     # One source article -> one independent card. Process several per run;
     # frequent scheduled runs continue with remaining unchecked candidates.
     for index, item in enumerate(candidates, start=1):
+        if index > 12:
+            print("Per-run source-review limit reached (12); remaining sources stay eligible for the next run.")
+            break
         if published_count >= MAX_CARDS_PER_RUN:
-            print(f"Per-run safety limit reached ({MAX_CARDS_PER_RUN}); remaining sources stay eligible for the next run.")
+            print(f"Per-run publication limit reached ({MAX_CARDS_PER_RUN}); remaining sources stay eligible for the next run.")
             break
 
         url = item["_url"]
