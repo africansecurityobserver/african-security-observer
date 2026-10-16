@@ -59,6 +59,10 @@ jobs:
             git commit -m "Update event-driven strategic news cards"
             # Other site workflows may commit while this job is generating cards.
             # Rebase on the newest main before pushing to avoid a stale-branch push failure.
-            git pull --rebase origin main
-            git push
+            for attempt in 1 2 3; do
+              git pull --rebase origin main && git push origin main && exit 0
+              echo "Push attempt $attempt failed; retrying after refreshing main."
+              sleep 2
+            done
+            exit 1
           fi
