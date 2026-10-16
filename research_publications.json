@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16T12:38+01:00",
+  "updated": "2026-10-16T12:40+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 73,
@@ -443,7 +443,7 @@
       "site": "https://ifsh.de/"
     }
   ],
-  "count": 33,
+  "count": 34,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -556,6 +556,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الكويت: تصاريح الإقامة الصادرة لأول مرة بموجب المادة 23 (الدراسات)، حسب مجموعة الجنسية وجنس الحامل (2019-2024) - أسواق العمل الخليجية والهجرة والسكان"
+    },
+    {
+      "center": "المجلس الأطلسي",
+      "center_short": "Atlantic Council",
+      "title": "Dispatch from Moldova: How to restore NATO’s deterrence against Russia’s escalating drone attacks - Atlantic Council",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPTVlxS3hRdFY5WkYwc1pDOUUyYy1hRTAwV0JQM2N0NkJGTXZjcnVNdGF0YzNHXzc1RUhHX21IYWtLTWVBNHNiVmplWS03QTdqNzA5OVl3S0UxbTR3Y1l3T2FTeHh3MjNnQk1BNUlWdTIyMXdpRnZNaG5UZXlndzZ5SWJXUEllUEV6M3hhU05XUi1VWFFGNm8yb1ZwbGRuUkxGc0ZlcDhfVHF5WWlreTYzTUt6dWhxQXc0MFlZZ09GTklSc0xvWk9MMzF1RTdpQVA0OXIwVw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-14T21:46+01:00",
+      "date": "2026-10-14",
+      "source": "Atlantic Council",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxPTVlxS3hRdFY5WkYwc1pDOUUyYy1hRTAwV0JQM2N0NkJGTXZjcnVNdGF0YzNHXzc1RUhHX21IYWtLTWVBNHNiVmplWS03QTdqNzA5OVl3S0UxbTR3Y1l3T2FTeHh3MjNnQk1BNUlWdTIyMXdpRnZNaG5UZXlndzZ5SWJXUEllUEV6M3hhU05XUi1VWFFGNm8yb1ZwbGRuUkxGc0ZlcDhfVHF5WWlreTYzTUt6dWhxQXc0MFlZZ09GTklSc0xvWk9MMzF1RTdpQVA0OXIwVw?oc=5\" target=\"_blank\">Dispatch from Moldova: How to restore NATO’s deterrence against Russia’s escalating drone attacks</a> <font color=\"#6f6f6f\">Atlantic Council<",
+      "center_site": "https://atlanticcouncil.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "برقية من مولدوفا: كيفية استعادة ردع الناتو ضد هجمات روسيا المتصاعدة بالطائرات بدون طيار - المجلس الأطلسي"
     },
     {
       "center": "معهد بروكينغز",
