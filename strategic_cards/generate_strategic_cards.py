@@ -813,6 +813,35 @@ def main():
         data["checked_urls"] = []
 
     checked = set(clean_text(url) for url in data["checked_urls"] if clean_text(url))
+
+    # One-time migration: older morning/evening runs could mark a recent source
+    # as checked even when no card was published because the article was too
+    # short. Retry current-window sources that have no corresponding saved card,
+    # now that same-event source enrichment is available.
+    if not data.get("event_driven_migration_v1"):
+        saved_source_urls = {
+            clean_text(source.get("url"))
+            for kind in TYPE_ORDER
+            for card in data.get(kind, [])
+            if isinstance(card, dict)
+            for source in card.get("sources", [])
+            if isinstance(source, dict) and clean_text(source.get("url"))
+        }
+        current_source_urls = {
+            clean_text(item.get("url"))
+            for item in items
+            if isinstance(item, dict) and clean_text(item.get("url"))
+        }
+        retryable_recent_urls = checked.intersection(current_source_urls) - saved_source_urls
+        checked.difference_update(retryable_recent_urls)
+        data["event_driven_migration_v1"] = True
+        data["checked_urls"] = sorted(checked)[-1500:]
+        save_json(DATA_FILE, data)
+        print(
+            "One-time event-driven migration complete: "
+            f"re-enabled {len(retryable_recent_urls)} recent sources without saved cards."
+        )
+
     sync_archive(data)
 
     # Duplicate prevention is source-URL based (checked_urls) and subject based;
