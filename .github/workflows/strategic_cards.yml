@@ -7,15 +7,6 @@ on:
       - "strategic_cards/generate_strategic_cards.py"
       - ".github/workflows/strategic_cards.yml"
   workflow_dispatch:
-    inputs:
-      slot:
-        description: "Choose which daily strategic card to generate"
-        required: true
-        type: choice
-        options:
-          - morning
-          - evening
-        default: morning
 
   schedule:
     # Check for new major news and defense/arms stories every 30 minutes.
