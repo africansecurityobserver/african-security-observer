@@ -711,7 +711,7 @@ def build_prompt(source_material, slot_label, window_label, date_label):
 تاريخ اليوم في تونس: {today}
 الفترة الزمنية المعتمدة لهذه البطاقة: {window_label}
 نوع البطاقة المطلوب: {slot_label}
-عنوان الموضوع الذي تقترحه داخل JSON يجب أن يكون عنوانًا تحليليًا يعبّر عن القضية المختارة، لا عنوان النشرة اليومية. سيُحفظ هذا العنوان بوصفه موضوع البطاقة، بينما سيُعتمد عنوان النشر الثابت وفق الفترة: «البطاقة الاستراتيجية {slot_label} ليوم {date_label}».
+اجعل عنوان البطاقة عنواناً تحليلياً واضحاً يعبر عن الحدث أو صفقة التسلح نفسها، ولا تستخدم عنواناً ثابتاً مرتبطاً بالصباح أو المساء. ستُعرض البطاقة في قسم «البطاقات الاستراتيجية من مصدر إخباري» مع حفظ روابط المواد التي استُخدمت.
 لا تستخدم أي خبر خارج الفترة الزمنية المحددة أعلاه، ولا تعتمد على معلومات منشورة قبل بدايتها أو بعدها.
 
 المواد المصدرية:
@@ -885,7 +885,7 @@ def main():
         total_readable = len(body) + sum(
             len(source.get("article_text", "")) for source in related_material
         )
-        if total_readable < 1200 and len(description) < 350:
+        if total_readable < 2000 and len(description) < 350:
             print(
                 f"Skipping source with insufficient readable material "
                 f"(combined_body={total_readable}, description={len(description)}); "
