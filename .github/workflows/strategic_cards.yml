@@ -18,7 +18,7 @@ permissions:
 # Prevent overlapping strategic-news runs from racing to update the same JSON files.
 concurrency:
   group: strategic-news-cards-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   generate-strategic-card:
