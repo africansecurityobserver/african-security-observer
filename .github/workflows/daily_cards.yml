@@ -62,6 +62,10 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Update daily security card"
-            git pull --rebase origin main
-            git push
+            for attempt in 1 2 3; do
+              git pull --rebase origin main && git push origin main && exit 0
+              echo "Push attempt $attempt failed; retrying after refreshing main."
+              sleep 2
+            done
+            exit 1
           fi
