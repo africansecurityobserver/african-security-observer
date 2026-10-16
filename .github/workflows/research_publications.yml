@@ -50,7 +50,8 @@ jobs:
           else
             git commit -m "Update research center publication links"
             for attempt in 1 2 3; do
-              git pull --rebase origin main && git push origin main && exit 0
+              if git pull --rebase origin main && git push origin main; then exit 0; fi
+              git rebase --abort || true
               echo "Push attempt $attempt failed; retrying after refreshing main."
               sleep 2
             done
