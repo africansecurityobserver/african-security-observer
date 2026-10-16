@@ -1266,6 +1266,116 @@ def is_relevant_security_news(
 
 
 # =========================================================
+# DEFENSE SECTION: STRICT EDITORIAL ELIGIBILITY
+# =========================================================
+
+def is_qualifying_defense_story(title, description=""):
+    """
+    The public 'التسليح والدفاع' section is reserved for:
+    (1) confirmed arms deals/contracts,
+    (2) explicitly successful tests of weapon prototypes/systems,
+    (3) explicitly successful manufacture/production of weapons.
+    A mere mention of military equipment is not sufficient.
+    """
+    text = (str(title or "") + " " + str(description or "")).lower()
+
+    if is_sports_related(title, description):
+        return False
+
+    weapon_terms = [
+        # Aircraft, drones, space and missiles
+        "fighter aircraft", "fighter jet", "combat aircraft", "warplane",
+        "military aircraft", "combat drone", "military drone", "unmanned combat",
+        "uav", "ucav", "drone", "drones", "missile", "missiles", "ballistic missile",
+        "cruise missile", "hypersonic", "rocket system", "air defense", "air defence",
+        "surface-to-air", "anti-aircraft", "radar system", "military satellite",
+        "military spacecraft", "military space",
+        # Naval and land systems
+        "submarine", "uncrewed underwater", "unmanned underwater", "warship",
+        "frigate", "corvette", "destroyer", "naval combat", "military vessel",
+        "tank", "armored fighting vehicle", "armoured fighting vehicle",
+        "artillery system", "howitzer", "self-propelled gun",
+        # French
+        "avion de combat", "avion militaire", "drone militaire", "missile",
+        "défense aérienne", "sous-marin", "navire de guerre", "frégate",
+        "corvette", "satellite militaire", "système d'armes", "système d’arme",
+        "véhicule blindé", "artillerie",
+        # Arabic
+        "مقاتلة", "مقاتلات", "طائرة حربية", "طائرات حربية", "طائرة قتالية",
+        "طائرات قتالية", "طائرة مسيرة", "طائرات مسيرة", "طائرة بدون طيار",
+        "طائرات بدون طيار", "مسيّرة قتالية", "صاروخ", "صواريخ", "صاروخ باليستي",
+        "صواريخ باليستية", "صاروخ جوال", "صواريخ جوالة", "فرط صوتي",
+        "منظومة دفاع جوي", "منظومات دفاع جوي", "دفاع جوي", "رادار عسكري",
+        "قمر صناعي عسكري", "أقمار صناعية عسكرية", "غواصة", "غواصات",
+        "غواصة مسيرة", "غواصة غير مأهولة", "سفينة حربية", "سفن حربية",
+        "فرقاطة", "فرقاطات", "كورفيت", "مدمرة بحرية", "دبابة", "دبابات",
+        "مدرعة قتالية", "مدرعات قتالية", "منظومة تسليح", "منظومة سلاح",
+        "مدفعية ذاتية الحركة"
+    ]
+
+    deal_terms = [
+        "arms deal", "weapons deal", "arms contract", "weapons contract",
+        "defense contract", "defence contract", "military procurement contract",
+        "signed a contract", "contract signed", "signs a contract",
+        "signed an agreement to buy", "agreement to purchase", "arms purchase",
+        "sale of", "sells to", "sold to", "will supply", "agreed to supply",
+        "ordered from", "purchase agreement", "procurement deal",
+        "accord d'armement", "contrat d'armement", "contrat de défense",
+        "contrat de défense", "accord de vente", "commande de",
+        "صفقة تسلح", "صفقة تسليح", "صفقة أسلحة", "صفقة سلاح",
+        "أبرمت صفقة", "أبرم صفقة", "إبرام صفقة", "إبرام عقد تسلح",
+        "وقعت عقدا", "وقّعت عقداً", "وقع عقدا", "وقّع عقداً",
+        "توقيع عقد", "عقد تسلح", "عقد تسليح", "عقد شراء أسلحة",
+        "اتفاق لشراء", "اتفاقية شراء", "طلبت شراء", "طلب شراء",
+        "تعاقدت على شراء", "تعاقد على شراء", "تزويد دولة", "بيع مقاتلات",
+        "بيع صواريخ", "شراء مقاتلات", "شراء منظومات دفاع جوي"
+    ]
+
+    successful_test_terms = [
+        "successfully tested", "successful test", "test was successful",
+        "successful maiden flight", "completed a successful test",
+        "successfully test-fired", "successfully launched and tested",
+        "passed its test", "passed a flight test", "successful flight test",
+        "a successful trial", "successfully demonstrated",
+        "a réussi son essai", "essai réussi", "test réussi",
+        "vol d'essai réussi", "a réussi le test",
+        "نجح في اختبار", "نجحت في اختبار", "نجاح اختبار",
+        "اختبار ناجح", "اختباراً ناجحاً", "اختبارا ناجحا",
+        "اجتاز الاختبار بنجاح", "أكمل اختباراً ناجحاً",
+        "أكملت اختباراً ناجحاً", "أتم اختبارا ناجحا",
+        "أتمت اختبارا ناجحا", "اختبار طيران ناجح",
+        "أطلق بنجاح خلال الاختبار", "نجح إطلاق تجريبي"
+    ]
+
+    successful_manufacture_terms = [
+        "began production of", "started production of", "manufacturing completed",
+        "successfully manufactured", "first locally built", "first domestically built",
+        "first produced", "production of the first", "completed construction of",
+        "has manufactured", "now manufactures", "entered serial production",
+        "production line began", "first unit rolled off the production line",
+        "a fabriqué avec succès", "production a commencé", "premier exemplaire fabriqué",
+        "premier exemplaire produit", "production en série",
+        "نجح في تصنيع", "نجحت في تصنيع", "نجاح تصنيع", "صنعت بنجاح",
+        "تم تصنيع أول", "أنتجت أول", "أنتج أول", "بدأ إنتاج",
+        "بدء إنتاج", "دخل مرحلة الإنتاج التسلسلي", "دخل الإنتاج التسلسلي",
+        "اكتمال تصنيع", "استكمل تصنيع", "إنتاج أول نموذج", "تصنيع أول نموذج"
+    ]
+
+    has_weapon = any(term in text for term in weapon_terms)
+    if not has_weapon:
+        return False
+
+    has_deal = any(term in text for term in deal_terms)
+    has_successful_test = any(term in text for term in successful_test_terms)
+    has_successful_manufacture = any(term in text for term in successful_manufacture_terms)
+
+    # Reject vague future intentions and generic development announcements.
+    # The positive terms above must explicitly indicate a deal, successful test,
+    # or completed/commenced manufacture.
+    return has_deal or has_successful_test or has_successful_manufacture
+
+
+# =========================================================
 # CLASSIFICATION
 # =========================================================
 
@@ -1316,6 +1426,11 @@ def classify_news(
         + " "
         + str(description)
     ).lower()
+
+    # Only qualifying arms deals, successful weapon tests, and successful
+    # manufacture announcements belong in the dedicated defense section.
+    if is_qualifying_defense_story(title, description):
+        return "defense"
 
     north_words = [
         "tunisia",
@@ -1374,11 +1489,6 @@ def classify_news(
         "ساحل العاج"
     ]
 
-    defense_words = [
-        word.lower()
-        for word in DEFENSE_TERMS
-    ]
-
     if any(
         word in text
         for word in north_words
@@ -1393,13 +1503,6 @@ def classify_news(
 
         return "sahel"
 
-    if any(
-        word in text
-        for word in defense_words
-    ):
-
-        return "defense"
-
     if feed_category in ("north", "north_leaders"):
         return "north"
 
@@ -1408,9 +1511,6 @@ def classify_news(
 
     if feed_category == "sahel":
         return "sahel"
-
-    if feed_category == "defense":
-        return "defense"
 
     return "rest"
 
@@ -2023,6 +2123,14 @@ def main():
         article = normalize_article(
             article
         )
+
+        # Enforce the new strict rules on older items already labelled defense.
+        if article.get("category") == "defense":
+            article["category"] = classify_news(
+                title_for_check,
+                description_for_check,
+                ""
+            )
 
         # ترجمة الأخبار القديمة إذا كانت لا تزال بالإنجليزية
         if (
