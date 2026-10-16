@@ -22,9 +22,10 @@ DATA_FILE = ROOT / "strategic_cards.json"
 ARCHIVE_DIR = ROOT / "strategic_cards" / "archive"
 TZ = ZoneInfo("Africa/Tunis")
 MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
-MAX_CANDIDATES = 36
+MAX_CANDIDATES = 60
 MAX_CARD_AGE_DAYS = 7
-MAX_ARCHIVE_CARDS_PER_TYPE = 150
+MAX_ARCHIVE_CARDS_PER_TYPE = 300
+MAX_CARDS_PER_RUN = 6
 
 # Supplemental searches widen strategic coverage beyond the existing daily-news
 # feed, especially for diplomacy, defense policy, logistics, and defense economics.
@@ -594,30 +595,28 @@ def arabic_date_label(value):
     return f"{value.day} {ARABIC_MONTHS[value.month]} {value.year}"
 
 def filter_items_for_slot(items, slot, now):
-    """Only use articles published inside the requested Tunisia-local daily window."""
-    if slot == "morning":
-        start = now.replace(hour=0, minute=1, second=0, microsecond=0)
-        end = now.replace(hour=8, minute=55, second=59, microsecond=999999)
-        slot_label = "الصباحية"
-        window_label = "من 00:01 إلى 08:55 بتوقيت تونس"
-    elif slot == "evening":
-        start = now.replace(hour=9, minute=1, second=0, microsecond=0)
-        end = now.replace(hour=23, minute=50, second=59, microsecond=999999)
-        slot_label = "المسائية"
-        window_label = "من 09:01 إلى 23:50 بتوقيت تونس"
-    else:
-        raise ValueError("CARD_SLOT must be either 'morning' or 'evening'.")
+    """Select recent source items for event-driven generation, not fixed daily slots."""
+    end = now
+    start = now - timedelta(hours=48)
+    slot_label = "من مصدر إخباري"
+    window_label = f"آخر 48 ساعة حتى {now.strftime('%Y-%m-%d %H:%M')} بتوقيت تونس"
 
     filtered = []
+    undated = 0
     for item in items:
         if not isinstance(item, dict):
             continue
         published = parse_date(item.get("published"))
-        if published is not None and start <= published <= end:
+        # Keep undated official feed items eligible; their source text and
+        # duplicate checks still apply. Dated items must be within 48 hours.
+        if published is None:
+            undated += 1
+            filtered.append(item)
+        elif start <= published <= end:
             filtered.append(item)
     print(
-        f"Slot={slot}; target_date={now.strftime('%Y-%m-%d')}; "
-        f"window={window_label}; in-window articles={len(filtered)}"
+        f"Mode=event-driven; window={window_label}; "
+        f"recent_items={len(filtered)}; undated_items={undated}"
     )
     return filtered, slot_label, window_label
 
@@ -656,29 +655,11 @@ def main():
     if not api_key:
         raise RuntimeError("GEMINI_API_KEY is missing. The workflow reuses the existing GitHub Actions secret.")
 
-    slot = clean_text(os.getenv("CARD_SLOT", "morning")).lower()
+    # News cards are event-driven: the workflow checks frequently and creates
+    # a separate card for each qualifying source item, rather than fixed morning
+    # and evening slots.
+    slot = "news"
     now = datetime.now(TZ)
-
-    # GitHub scheduled workflows can start late. If the 23:55 Tunis-time
-    # evening run starts shortly after midnight, anchor its publication window
-    # to the scheduled evening's date, not the new calendar day. Only do this
-    # for scheduled runs; a manual evening run keeps the date the user chose.
-    if (
-        slot == "evening"
-        and os.getenv("GITHUB_EVENT_NAME") == "schedule"
-        and now.hour < 4
-    ):
-        scheduled_day = now.date() - timedelta(days=1)
-        now = now.replace(
-            year=scheduled_day.year,
-            month=scheduled_day.month,
-            day=scheduled_day.day
-        )
-        print(
-            "Scheduled evening run crossed midnight; "
-            f"using intended Tunisia date {now.strftime('%Y-%m-%d')}."
-        )
-
     date_label = arabic_date_label(now)
 
     news = load_json(NEWS_FILE, {})
@@ -701,20 +682,8 @@ def main():
     checked = set(clean_text(url) for url in data["checked_urls"] if clean_text(url))
     sync_archive(data)
 
-    # A slot is a publication unit: a manual rerun or code-fix push must not
-    # create a second morning/evening card on the same Tunisia-local date.
-    today_key = now.strftime("%Y-%m-%d")
-    existing_slot_card = any(
-        isinstance(card, dict)
-        and clean_text(card.get("date"))[:10] == today_key
-        and clean_text(card.get("slot")) == slot
-        for kind in TYPE_ORDER
-        for card in data.get(kind, [])
-    )
-    if existing_slot_card:
-        print(f"A {slot_label} strategic card already exists for {today_key}; skipping duplicate slot generation.")
-        return
-
+    # Duplicate prevention is source-URL based (checked_urls) and subject based;
+    # several independent cards may be published on the same day.
     candidates = select_candidates(items, checked)
     if not candidates:
         print(f"No new, sufficiently relevant source articles were found for the {slot_label} period; no card will be fabricated.")
@@ -750,11 +719,11 @@ def main():
 
     published_count = 0
     reviewed_count = 0
-    # One source article -> one independent strategic card. This prevents a
-    # single card from blending unrelated research papers or think-tank essays.
+    # One source article -> one independent card. Process several per run;
+    # frequent scheduled runs continue with remaining unchecked candidates.
     for index, item in enumerate(candidates, start=1):
-        if published_count >= 1:
-            print("One valid card has been published for this slot; stopping to preserve the two-cards-per-day schedule.")
+        if published_count >= MAX_CARDS_PER_RUN:
+            print(f"Per-run safety limit reached ({MAX_CARDS_PER_RUN}); remaining sources stay eligible for the next run.")
             break
 
         url = item["_url"]
@@ -884,7 +853,7 @@ def main():
             sync_archive(data)
             continue
 
-        publication_title = f"البطاقة الاستراتيجية {slot_label} ليوم {date_label}"
+        publication_title = f"بطاقة استراتيجية من مصدر إخباري — {subject}"
         card = {
             "id": datetime.now(TZ).strftime("%Y%m%d%H%M%S") + "_" + re.sub(r"[^a-zA-Z0-9]", "", __import__("hashlib").sha1(url.encode("utf-8")).hexdigest())[:8],
             "slot": slot,
