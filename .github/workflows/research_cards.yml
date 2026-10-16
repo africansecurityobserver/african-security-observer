@@ -15,6 +15,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: research-center-cards-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   generate-research-cards:
     runs-on: ubuntu-latest
