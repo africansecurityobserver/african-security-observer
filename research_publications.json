@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16T00:43+01:00",
+  "updated": "2026-10-16T06:49+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 73,
@@ -443,7 +443,7 @@
       "site": "https://ifsh.de/"
     }
   ],
-  "count": 30,
+  "count": 32,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -530,6 +530,20 @@
       "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
     },
     {
+      "center": "مركز أبحاث الخليج",
+      "center_short": "Gulf Research Center",
+      "title": "Kuwait: Residency permits issued for the first time under article 23 (studies), by nationality group and sex of holder (2019-2024) - Gulf Labour Markets, Migration and Population",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOLVJ6UmljVHRjcktORUFQb1VweWZDUkNSQmVuN295U3E4eWJ3Y0FBT3JORERaUWhTZDB6aVFCVGNTbTYzZWNrTW81Q2FrWU1GemdhbFdrTGlpZDQxWDBzWjFmVmtZQlZLUWxzNndKU0J1TFdHb0hNeG94aW9LUnNqZVNBQlk4THBibjcwcS16dGpqUDBaQUx1OU5ibmcwQ3dqbTlYTGZ5UFJQcU9TOXFPZHQ1MWhBRjRhVlNMWDlTOThGRkFhU3hCdGI2ZDcxUmxRVndPd19maFJiZ2pieDlPenllRmRkcnlScXRN?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-15T23:20+01:00",
+      "date": "2026-10-15",
+      "source": "Gulf Labour Markets, Migration and Population",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxOLVJ6UmljVHRjcktORUFQb1VweWZDUkNSQmVuN295U3E4eWJ3Y0FBT3JORERaUWhTZDB6aVFCVGNTbTYzZWNrTW81Q2FrWU1GemdhbFdrTGlpZDQxWDBzWjFmVmtZQlZLUWxzNndKU0J1TFdHb0hNeG94aW9LUnNqZVNBQlk4THBibjcwcS16dGpqUDBaQUx1OU5ibmcwQ3dqbTlYTGZ5UFJQcU9TOXFPZHQ1MWhBRjRhVlNMWDlTOThGRkFhU3hCdGI2ZDcxUmxRVndPd19maFJiZ2pieDlPenllRmRkcnlScXRN?oc=5\" target=\"_blank\">Kuwait: Residency permits issued for the first time under article 23 (studies), by nationality group and sex of",
+      "center_site": "https://grc.net/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الكويت: تصاريح الإقامة الصادرة لأول مرة بموجب المادة 23 (الدراسات)، حسب مجموعة الجنسية وجنس الحامل (2019-2024) - أسواق العمل الخليجية والهجرة والسكان"
+    },
+    {
       "center": "معهد بروكينغز",
       "center_short": "Brookings",
       "title": "Why the intra-African trade share misleads on integration - Brookings",
@@ -570,6 +584,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الصراع في اليمن والبحر الأحمر | متعقّب النزاعات العالمية"
+    },
+    {
+      "center": "معهد الدراسات الدفاعية والاستراتيجية في إسلام آباد",
+      "center_short": "ISSI",
+      "title": "Press Release – International Conference ‘Pakistan’s Evolving Counterterrorism Landscape: TTP, Cross-Border Threats and Regional Security’ - Institute of Strategic Studies Islamabad (ISSI)",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOZ2FzWllFZGtlU3AxS04zcU8wLXJ4S0JmanBhN002dmFHTHJmUGJPazRWZVYyamJBNFp0U2NkZEZPSk9PVUd4UUhJeTBMSkMtMHpuR0dSMjYxUUlhMWt5a1kwcHktWVlzX1JWdnVZbVk4UUhVR1JMcXJrcWJhVVVlQUh4Zi1tZHRIZzk0anFORF9vYy1BcWlqUUJlR2pNX1Jnc0xfYjJDN1lONHNjSENZaGhIbWFEY3N2aVpWeVpMaVFWMGxhR19oZFRNc3o4WDFmR21hbnZ4R2RPTm9acURtTkRFX0FKcWM?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-13T11:39+01:00",
+      "date": "2026-10-13",
+      "source": "Institute of Strategic Studies Islamabad (ISSI)",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxOZ2FzWllFZGtlU3AxS04zcU8wLXJ4S0JmanBhN002dmFHTHJmUGJPazRWZVYyamJBNFp0U2NkZEZPSk9PVUd4UUhJeTBMSkMtMHpuR0dSMjYxUUlhMWt5a1kwcHktWVlzX1JWdnVZbVk4UUhVR1JMcXJrcWJhVVVlQUh4Zi1tZHRIZzk0anFORF9vYy1BcWlqUUJlR2pNX1Jnc0xfYjJDN1lONHNjSENZaGhIbWFEY3N2aVpWeVpMaVFWMGxhR19oZFRNc3o4WDFmR21hbnZ4R2RPTm9acURtTkRFX0FKcWM?oc=5\" target=\"_blank\">Press Release – International Conference ‘Pakistan’s Evolving Counterterrorism Landscape: TTP, Cross-Border Threats ",
+      "center_site": "https://issi.org.pk/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "بيان صحفي – المؤتمر الدولي \"المشهد الباكستاني المتطور لمكافحة الإرهاب: TTP، التهديدات عبر الحدود والأمن الإقليمي\" - معهد الدراسات الاستراتيجية إسلام أباد (ISSI)"
     },
     {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
