@@ -300,6 +300,117 @@ def get_article_text(url):
 
     return ""
 
+
+def title_tokens(value):
+    """Normalize article headlines into informative tokens for related-story matching."""
+    value = clean_text(value).lower()
+    value = re.sub(r"[^w\s]", " ", value, flags=re.UNICODE)
+    stop = {
+        "the", "and", "for", "with", "from", "into", "after", "amid", "over",
+        "how", "why", "what", "new", "says", "said", "will", "its", "their",
+        "من", "في", "على", "إلى", "الى", "عن", "مع", "بعد", "قبل", "هذا",
+        "هذه", "ذلك", "التي", "الذي", "بين", "ضمن", "أمام", "امام", "حول",
+        "قال", "تقول", "يقول", "خلال", "أكثر", "اكثر"
+    }
+    return {
+        token for token in value.split()
+        if len(token) > 2 and token not in stop
+    }
+
+
+def fetch_related_source_material(title, primary_url, max_sources=2):
+    """Search for independent coverage of the same headline and extract its article text."""
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; AfricanSecurityObserver/1.0)"}
+    base_tokens = title_tokens(title)
+    query_terms = " ".join(clean_text(title).split()[:10])
+    if not query_terms:
+        return []
+
+    try:
+        response = requests.get(
+            "https://news.google.com/rss/search",
+            params={
+                "q": query_terms + " when:7d",
+                "hl": "en-US", "gl": "US", "ceid": "US:en"
+            },
+            timeout=12,
+            headers=headers
+        )
+        if response.status_code != 200:
+            print(f"Related-source search returned HTTP {response.status_code}")
+            return []
+        root = ET.fromstring(response.content)
+    except Exception as exc:
+        print(f"Related-source search failed: {type(exc).__name__}")
+        return []
+
+    candidates = []
+    for entry in root.findall("./channel/item")[:8]:
+        related_title = clean_text(unescape(re.sub(
+            r"<[^>]+>", " ", entry.findtext("title") or ""
+        )))
+        wrapper_url = clean_text(entry.findtext("link") or "")
+        description = clean_text(unescape(re.sub(
+            r"<[^>]+>", " ", entry.findtext("description") or ""
+        )))
+        published = clean_text(entry.findtext("pubDate") or "")
+        source_node = entry.find("source")
+        source_name = clean_text(source_node.text if source_node is not None else "")
+        if not related_title or not wrapper_url:
+            continue
+
+        related_tokens = title_tokens(related_title)
+        shared = base_tokens & related_tokens
+        similarity = len(shared) / max(1, min(len(base_tokens), len(related_tokens)))
+        if len(shared) < 2 and similarity < 0.25:
+            continue
+
+        related_url = decode_google_news_url(wrapper_url)
+        if not related_url or related_url == primary_url or "news.google.com" in related_url:
+            continue
+        candidates.append({
+            "title": related_title,
+            "description": description,
+            "published": published,
+            "source": source_name,
+            "url": related_url,
+            "google_news_url": wrapper_url,
+            "_similarity": similarity,
+            "_shared": len(shared)
+        })
+
+    candidates.sort(
+        key=lambda item: (item["_shared"], item["_similarity"]),
+        reverse=True
+    )
+    collected = []
+    seen_urls = {primary_url}
+    for item in candidates:
+        if item["url"] in seen_urls:
+            continue
+        seen_urls.add(item["url"])
+        body = get_article_text(item["url"])
+        if len(body) < 500 and item.get("google_news_url"):
+            body = get_article_text(item["google_news_url"])
+        if len(body) < 500:
+            continue
+        collected.append({
+            "title": item["title"][:450],
+            "description": item["description"][:1200],
+            "published": item["published"],
+            "source": item["source"],
+            "url": item["url"],
+            "article_text": body[:9000]
+        })
+        print(
+            f"Added related coverage: {item['title'][:100]} "
+            f"({len(body)} chars; headline overlap={item['_shared']})"
+        )
+        if len(collected) >= max_sources:
+            break
+    return collected
+
+
 def fetch_strategic_rss_items():
     """Fetch a small, recent, multilingual source pool for strategic topics."""
     collected = []
@@ -566,7 +677,7 @@ def sync_archive(data):
 def build_prompt(source_material, slot_label, window_label, date_label):
     today = datetime.now(TZ).strftime("%Y-%m-%d")
     return f"""
-أنت رئيس تحرير ومحلل استراتيجي في «المرصد الإفريقي للأمن والدفاع». المطلوب إعداد بطاقة استراتيجية عربية عميقة ومقنعة اعتمادًا على مقال بحثي واحد مرفق في المواد المصدرية. كل بطاقة يجب أن تعالج مقالًا أصليًا واحدًا فقط، وألا تدمج موضوعات مقالات مختلفة في بطاقة واحدة. هذه ليست بطاقة خبرية قصيرة، بل تقدير موقف منظم يشرح أطروحة المقال وأدلته وسياقه ودلالاته وتداعياته. استهدف 900 إلى 1200 كلمة عربية تقريبًا، بما يعادل نحو صفحة ونصف إلى صفحتين عند الطباعة. لا تكرر الفكرة نفسها لإطالة النص؛ إذا كان المقال الأصلي قصيرًا أو لا يتيح تحليلًا موثوقًا بهذا الحجم، أعد publish=false.
+أنت رئيس تحرير ومحلل استراتيجي في «المرصد الإفريقي للأمن والدفاع». المطلوب إعداد بطاقة استراتيجية عربية عميقة حول تطور إخباري واحد مهم أو خبر تسلح محدد. قد تتضمن المواد المصدرية مقالاً أساسياً ومقالات مساندة عُثر عليها عبر البحث عن التغطية المستقلة للخبر نفسه. استخدم المواد المساندة لإثراء الوقائع والسياق والتحقق، بشرط أن تتناول الحدث ذاته؛ لا تخلط أحداثاً مختلفة لمجرد تشابه الكلمات. استهدف 900 إلى 1200 كلمة عربية تقريبًا، بما يعادل نحو صفحة ونصف إلى صفحتين عند الطباعة. إذا لم توفر المصادر مجتمعة معلومات كافية لبطاقة موثوقة، أعد publish=false بدل اختلاق التفاصيل.
 
 اختر تصنيفًا واحدًا فقط من التصنيفات التالية، بحسب جوهر الموضوع. ويشمل strategic_assessment أيضًا استراتيجيات الأمن القومي والسياسة الخارجية عندما لا ينطبق تصنيف أدق:
 - deals: صفقات التسلح الكبرى والعقود والتسليمات والتعاون الصناعي المحدد.
@@ -758,22 +869,30 @@ def main():
         )
         body = get_article_text(url)
 
-        # Do not pretend to summarize a full article if both the extracted
-        # body and the publisher's abstract/description are too thin.
+        # Enrich short articles with independently published coverage of the same
+        # event. Never substitute unrelated articles merely to reach a word count.
+        related_material = []
+        if len(body) < 2500:
+            related_material = fetch_related_source_material(
+                title_original, url, max_sources=2
+            )
+
         if len(body) < 500 and len(description) < 350:
-            # Some RSS records carry a canonical publisher URL and a Google
-            # News wrapper URL. Try the alternate link before abandoning it.
             alternate_url = clean_text(item.get("google_news_url"))
             if alternate_url and alternate_url != url:
                 body = get_article_text(alternate_url)
-            if len(body) < 500 and len(description) < 350:
-                print(
-                    f"Skipping source with insufficient readable text "
-                    f"(body={len(body)}, description={len(description)}); "
-                    f"will remain eligible for a later run: {title_original[:120]}"
-                )
-                reviewed_count += 1
-                continue
+
+        total_readable = len(body) + sum(
+            len(source.get("article_text", "")) for source in related_material
+        )
+        if total_readable < 1200 and len(description) < 350:
+            print(
+                f"Skipping source with insufficient readable material "
+                f"(combined_body={total_readable}, description={len(description)}); "
+                f"will remain eligible for a later run: {title_original[:120]}"
+            )
+            reviewed_count += 1
+            continue
 
         scores = item.get("_type_scores", {})
         likely_types = [
@@ -789,8 +908,18 @@ def main():
             "category_from_feed": clean_text(item.get("category")),
             "possible_topics": likely_types,
             "url": url,
-            "article_text": body
+            "article_text": body[:12000]
         }]
+        for related_index, related in enumerate(related_material, start=1):
+            source_material.append({
+                "id": f"{index}-related-{related_index}",
+                "title": related["title"],
+                "description": related["description"],
+                "published": related["published"],
+                "source": related["source"],
+                "url": related["url"],
+                "article_text": related["article_text"]
+            })
 
         base_prompt = build_prompt(source_material, slot_label, window_label, date_label)
         try:
@@ -891,10 +1020,14 @@ def main():
             "region": clean_text(output.get("region")),
             "summary": f"موضوع البطاقة: {subject}. {summary_text}",
             "sections": sections,
-            "sources": [{
-                "title": clean_text(item.get("source")) or title_original,
-                "url": url
-            }]
+            "sources": [
+                {
+                    "title": source.get("source") or source.get("title") or title_original,
+                    "url": source.get("url") or url
+                }
+                for source in source_material
+                if source.get("url")
+            ]
         }
 
         data[kind].append(card)
