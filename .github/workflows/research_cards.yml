@@ -47,6 +47,10 @@ jobs:
             echo "No research-card changes."
           else
             git commit -m "Generate strategic cards from research center publications"
-            git pull --rebase origin main
-            git push
+            for attempt in 1 2 3; do
+              git pull --rebase origin main && git push origin main && exit 0
+              echo "Push attempt $attempt failed; retrying after refreshing main."
+              sleep 2
+            done
+            exit 1
           fi
