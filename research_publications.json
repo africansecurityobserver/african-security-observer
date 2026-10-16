@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16T06:49+01:00",
+  "updated": "2026-10-16T12:38+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 73,
@@ -443,7 +443,7 @@
       "site": "https://ifsh.de/"
     }
   ],
-  "count": 32,
+  "count": 33,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -486,6 +486,20 @@
       "relevance_tier": 2,
       "relevance_label": "ليبيا والجزائر",
       "title_ar": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا"
+    },
+    {
+      "center": "المعهد الملكي إلكانو",
+      "center_short": "Elcano",
+      "title": "Bilateral relations between Morocco and the US and their implications for Spain - Real Instituto Elcano",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPclp4bHgyUTd4RGlVTXpSTzNZYlNZX3FRS3kzNWpOWGhqNVhhX04ybU1rYnNiaEhjcS1XbUN3TzhWaVBCcHFtTzJ3REFZNHprMmZwTEdPSEJ1UzNURDhlN2dROEk5VlQ2ZktsNzZWZzRaRVROTFpEWXVudU1CVDJ5LXVuV1k1bEpNXzI1LVQtb1dQRV9Yb2k4VVh0ZFMxd1NaSnFuWEFHa1QzZW1lMUlvUW5ndUZlemRGTlFrRFpaSmJzVkFmSmZN?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-16T12:36+01:00",
+      "date": "2026-10-16",
+      "source": "Real Instituto Elcano",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPclp4bHgyUTd4RGlVTXpSTzNZYlNZX3FRS3kzNWpOWGhqNVhhX04ybU1rYnNiaEhjcS1XbUN3TzhWaVBCcHFtTzJ3REFZNHprMmZwTEdPSEJ1UzNURDhlN2dROEk5VlQ2ZktsNzZWZzRaRVROTFpEWXVudU1CVDJ5LXVuV1k1bEpNXzI1LVQtb1dQRV9Yb2k4VVh0ZFMxd1NaSnFuWEFHa1QzZW1lMUlvUW5ndUZlemRGTlFrRFpaSmJzVkFmSmZN?oc=5\" target=\"_blank\">Bilateral relations between Morocco and the US and their implications for Spain</a> <font color=\"#6f6f6f\">Real Instituto Elcano</font>",
+      "center_site": "https://realinstitutoelcano.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "العلاقات الثنائية بين المغرب والولايات المتحدة وآثارها على إسبانيا - Real Instituto Elcano"
     },
     {
       "center": "معهد الدراسات الأمنية والتنمية (ISDP)",
