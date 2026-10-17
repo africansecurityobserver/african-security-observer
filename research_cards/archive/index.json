@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17T20:05:30+01:00",
+  "updated": "2026-10-17T20:19:07+01:00",
   "years": [
     {
       "year": "2026",
@@ -8,12 +8,32 @@
           "month": "10",
           "cards": [
             {
+              "date": "2026-10-14",
+              "title": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
+              "subject": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
+              "path": "2026-10/20261014_6ec677f032cb.json",
+              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+              "source_title": "Libya’s arsenals are a blind spot in the Tripoli agreement - ISS Africa",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
               "date": "2026-10-13",
               "title": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي",
               "subject": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي",
               "path": "2026-10/20261013_ai-cyber-threats.json",
               "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
               "source_title": "Africa must prepare for AI-powered cyber threats at scale - ISS Africa",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-13",
+              "title": "بيان صحفي – المؤتمر الدولي \"المشهد الباكستاني المتطور لمكافحة الإرهاب: TTP، التهديدات عبر الحدود والأمن الإقليمي\" - معهد الدراسات الاستراتيجية إسلام أباد (ISSI)",
+              "subject": "بيان صحفي – المؤتمر الدولي \"المشهد الباكستاني المتطور لمكافحة الإرهاب: TTP، التهديدات عبر الحدود والأمن الإقليمي\" - معهد الدراسات الاستراتيجية إسلام أباد (ISSI)",
+              "path": "2026-10/20261013_3de040c59fbf.json",
+              "center": "معهد الدراسات الدفاعية والاستراتيجية في إسلام آباد",
+              "source_title": "Press Release – International Conference ‘Pakistan’s Evolving Counterterrorism Landscape: TTP, Cross-Border Threats and Regional Security’ - Institute of Strategic Studies Islamabad (ISSI)",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
@@ -28,12 +48,52 @@
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
             {
+              "date": "2026-10-09",
+              "title": "كيف يهدد التصعيد العسكري للحوثيين في البحر الأحمر إفريقيا",
+              "subject": "كيف يهدد التصعيد العسكري للحوثيين في البحر الأحمر إفريقيا",
+              "path": "2026-10/20261009_87e1c110edd2.json",
+              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+              "source_title": "How Houthi military aggression in the Red Sea threatens Africa - ISS Africa",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
               "date": "2026-10-08",
               "title": "الانتقال المتصدع في تونس من منظور مقارن",
               "subject": "الانتقال المتصدع في تونس من منظور مقارن",
               "path": "2026-10/20261013_tunisia-fractured-transition.json",
               "center": "المركز العربي في واشنطن",
               "source_title": "Tunisia’s Fractured Transition in Comparative Perspective - Arab Center Washington DC",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-06",
+              "title": "شبكات التجنيد العسكري الروسية تستغل منصات التكنولوجيا الغربية",
+              "subject": "شبكات التجنيد العسكري الروسية تستغل منصات التكنولوجيا الغربية",
+              "path": "2026-10/20261006_a5b2fed197af.json",
+              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+              "source_title": "Russia’s military recruitment networks exploit Western tech platforms - ISS Africa",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-05",
+              "title": "استعراض عقدين من مراقبة الأسلحة والذخائر على الصعيد دون الإقليمي في أفريقيا - معهد الأمم المتحدة لبحوث نزع السلاح",
+              "subject": "استعراض عقدين من مراقبة الأسلحة والذخائر على الصعيد دون الإقليمي في أفريقيا - معهد الأمم المتحدة لبحوث نزع السلاح",
+              "path": "2026-10/20261005_6686d9d8f658.json",
+              "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
+              "source_title": "Reviewing two decades of subregional arms and ammunition control in Africa - UNIDIR",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-02",
+              "title": "ينبغي لإفريقيا الاستعداد لعصر جديد من الملاحة البحرية في القطب الشمالي",
+              "subject": "ينبغي لإفريقيا الاستعداد لعصر جديد من الملاحة البحرية في القطب الشمالي",
+              "path": "2026-10/20261002_19f0c9079558.json",
+              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+              "source_title": "Africa should prepare for a new Arctic shipping era - ISS Africa",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             }
