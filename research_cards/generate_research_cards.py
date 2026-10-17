@@ -71,7 +71,77 @@ def html_main_text(html):
     return max(candidates, key=len, default="")[:60000]
 
 
-def get_text(url, center_site=""):
+def find_official_article_url(title, center_site):
+    """
+    Resolve Google News wrappers by searching for the exact headline and
+    accepting only links on the named research centre's official domain.
+    This is a fallback when Google's encoded article URL cannot be decoded.
+    """
+    title = clean(title)
+    expected_host = urlparse(center_site).netloc.lower().removeprefix("www.")
+    if not title or not expected_host:
+        return ""
+
+    headers = dict(HEADERS)
+    headers["Accept-Language"] = "en-US,en;q=0.9,fr;q=0.8"
+    searches = [
+        ("https://www.google.com/search", {"q": f'site:{expected_host} "{title}"', "num": "8"}),
+        ("https://www.bing.com/search", {"q": f'site:{expected_host} "{title}"', "count": "8"}),
+    ]
+
+    title_tokens = {
+        token.lower() for token in re.findall(r"[A-Za-z0-9À-ÿ]{3,}", title)
+    }
+    best_url = ""
+    best_score = 0.0
+
+    for search_url, params in searches:
+        try:
+            response = requests.get(
+                search_url, params=params, headers=headers, timeout=18,
+                allow_redirects=True
+            )
+            if response.status_code != 200 or not response.text:
+                continue
+            parser = LexborHTMLParser(response.text)
+            for node in parser.css("a[href]"):
+                href = node.attributes.get("href", "").strip()
+                label = clean(node.text(separator=" "))
+                if href.startswith("/url?q="):
+                    from urllib.parse import parse_qs
+                    href = parse_qs(urlparse(href).query).get("q", [""])[0]
+                parsed = urlparse(href)
+                host = parsed.netloc.lower().removeprefix("www.")
+                if not href.startswith("http") or not (
+                    host == expected_host or host.endswith("." + expected_host)
+                ):
+                    continue
+                path_lower = parsed.path.lower()
+                if path_lower in ("", "/") or any(
+                    part in path_lower for part in (
+                        "/search", "/tag/", "/category/", "/author/",
+                        "/events", "/newsletter", "/contact", "/about"
+                    )
+                ):
+                    continue
+                haystack = (label + " " + parsed.path.replace("-", " ").replace("_", " ")).lower()
+                overlap = sum(1 for token in title_tokens if token in haystack)
+                score = overlap / max(1, len(title_tokens))
+                if label and label.lower() in ("read more", "learn more", "download", "click here"):
+                    score *= 0.25
+                if score > best_score:
+                    best_score, best_url = score, href
+        except Exception as exc:
+            print(f"Official-title search failed ({search_url}): {type(exc).__name__}")
+
+    if best_url and best_score >= 0.20:
+        print(f"Resolved Google News item to official source ({best_score:.2f} title match): {best_url}")
+        return best_url
+    print(f"Could not resolve official article URL for title: {title[:120]}")
+    return ""
+
+
+def get_text(url, center_site="", title=""):
     """
     Prefer the full report/PDF linked from the official publication page.
     A readable abstract is only a fallback after checking the page's download links.
@@ -85,6 +155,14 @@ def get_text(url, center_site=""):
                     url = decoded["decoded_url"]
             except Exception as exc:
                 print(f"Google News URL decode failed: {type(exc).__name__}")
+
+            # Recent Google News RSS links often remain opaque even after
+            # decoding. Search for the exact headline on the official centre
+            # domain rather than repeatedly requesting the unusable wrapper.
+            if "news.google.com" in urlparse(url).netloc.lower():
+                official_url = find_official_article_url(title, center_site)
+                if official_url:
+                    url = official_url
 
         response = fetch_url(url)
         content_type = response.headers.get("content-type", "").lower()
@@ -244,7 +322,7 @@ def main():
     for p in candidates:
         title=clean(p.get("title")); title_ar=clean(p.get("title_ar")); center=clean(p.get("center") or p.get("source") or "مركز بحثي")
         url=clean(p.get("url")); desc=clean(p.get("description")); published=clean(p.get("published") or p.get("date"))
-        resolved,body=get_text(url,clean(p.get("center_site")))
+        resolved,body=get_text(url,clean(p.get("center_site")),title)
 
         # Hard rule: a strategic card may only be written from the publication's
         # accessible full text. A title, snippet, search-result extract, or short
