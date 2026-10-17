@@ -1,9 +1,9 @@
 {
-  "updated": "2026-10-17T02:44:33.796819+00:00",
+  "updated": "2026-10-17T03:43:29.661036+00:00",
   "items": [
     {
-      "title": "بلغاريا تسعى إلى وجود عسكري أقوى لحلف شمال الأطلسي وسط تهديدات متزايدة في البحر الأسود",
-      "description": "تسعى بلغاريا إلى وجود عسكري أقوى لحلف شمال الأطلسي وسط تهديدات متزايدة في البحر الأسود    A News",
+      "title": "بلغاريا تسعى لوجود عسكري أقوى لحلف شمال الأطلسي وسط تهديدات متزايدة في البحر الأسود",
+      "description": "تسعى بلغاريا إلى وجود عسكري أقوى لحلف شمال الأطلسي وسط تهديدات متزايدة في البحر الأسود    خبر",
       "original_title": "Bulgaria seeks stronger NATO military presence amid growing Black Sea threats - A News",
       "original_description": "Bulgaria seeks stronger NATO military presence amid growing Black Sea threats &nbsp;&nbsp; A News",
       "url": "https://www.anews.com.tr/world/2026/10/17/bulgaria-seeks-stronger-nato-military-presence-amid-growing-black-sea-threats",
@@ -33,6 +33,17 @@
       "published": "Sat, 17 Oct 2026 01:00:14 GMT",
       "category": "rest",
       "region": "world"
+    },
+    {
+      "title": "الزيارة الرسمية للملك محمد السادس إلى فرنسا: رمز قوي للعلاقات الفرنسية المغربية - https://horticulture-abadie-pyrenees.com/",
+      "description": "الزيارة الرسمية للملك محمد السادس إلى فرنسا: رمز قوي للعلاقات الفرنسية المغربية   https://horticulture-abadie-pyrenees.com/",
+      "original_title": "Visite officielle du roi Mohammed VI en France : un symbole fort des relations franco-marocaines - https://horticulture-abadie-pyrenees.com/",
+      "original_description": "Visite officielle du roi Mohammed VI en France : un symbole fort des relations franco-marocaines &nbsp;&nbsp; https://horticulture-abadie-pyrenees.com/",
+      "url": "https://horticulture-abadie-pyrenees.com/analyses/20260521-39",
+      "source": "https://horticulture-abadie-pyrenees.com/",
+      "published": "Sat, 17 Oct 2026 00:57:03 GMT",
+      "category": "north",
+      "region": "africa"
     },
     {
       "title": "أوكرانيا بين قيود ستارشيلد ونفاد صواريخ باتريوت.. هل أدار ترمب ظهره لها؟",
@@ -299,6 +310,17 @@
       "region": "world"
     },
     {
+      "title": "الرئيس الأوكراني زيلينسكي يتحدث في قمة الاتحاد الأوروبي وسط خلاف مع دونالد ترامب - DW.com",
+      "description": "الرئيس الأوكراني زيلينسكي يتحدث في قمة الاتحاد الأوروبي وسط خلاف مع دونالد ترامب    DW.com",
+      "original_title": "Ukrainian President Zelenskyy speaks at EU summit amid spat with Donald Trump - DW.com",
+      "original_description": "Ukrainian President Zelenskyy speaks at EU summit amid spat with Donald Trump &nbsp;&nbsp; DW.com",
+      "url": "https://www.dw.com/en/ukrainian-president-zelenskyy-speaks-at-eu-summit-amid-spat-with-donald-trump/a-79684340",
+      "source": "DW.com",
+      "published": "Fri, 16 Oct 2026 22:27:21 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
       "title": "\"فيتو\" القوى الكبرى يهدد المرشحين لخلافة غوتيريش",
       "description": "واجه جميع المرشحين لمنصب الأمين العام للأمم المتحدة، الجمعة، \"فيتو\" من أحد الأعضاء الدائمين في مجلس الأمن الدولي، وفق ما أفاد مصدر دبلوماسي. — تغطية من مصدر واحد: سكاي نيوز عربية.",
       "original_title": "\"فيتو\" القوى الكبرى يهدد المرشحين لخلافة غوتيريش",
@@ -308,6 +330,17 @@
       "published": "Fri, 16 Oct 2026 22:22:26 GMT",
       "category": "international",
       "region": "world"
+    },
+    {
+      "title": "سفير مصر بموريتانيا يبحث مع وزيرة المياه الموريتانية آفاق التعاون الثنائى فى مجال المياه - وزارة الخارجية المصرية",
+      "description": "سفير مصر بموريتانيا يبحث مع وزيرة المياه الموريتانية آفاق التعاون الثنائى فى مجال المياه    وزارة الخارجية المصرية",
+      "original_title": "سفير مصر بموريتانيا يبحث مع وزيرة المياه الموريتانية آفاق التعاون الثنائى فى مجال المياه - وزارة الخارجية المصرية",
+      "original_description": "سفير مصر بموريتانيا يبحث مع وزيرة المياه الموريتانية آفاق التعاون الثنائى فى مجال المياه &nbsp;&nbsp; وزارة الخارجية المصرية",
+      "url": "https://www.mfa.gov.eg/ar/Ministers/Details/MissionsNews/7513",
+      "source": "وزارة الخارجية المصرية",
+      "published": "Fri, 16 Oct 2026 22:17:19 GMT",
+      "category": "north",
+      "region": "africa"
     },
     {
       "title": "الضفة… الجيش الإسرائيلي يعتقل 3 فلسطينيين ويعتدي على 3 آخرين",
@@ -376,7 +409,7 @@
       "region": "africa"
     },
     {
-      "title": "الأمين العام للأمم المتحدة لحفظ السلام يحذر من التهديد بالتصعيد، بينما يسعى لبنان إلى منطقة عازلة تابعة للأمم المتحدة بعد مغادرة اليونيفيل - عرب نيوز",
+      "title": "رئيس عمليات حفظ السلام التابعة للأمم المتحدة يحذر من التهديد بالتصعيد، بينما يسعى لبنان إلى منطقة عازلة تابعة للأمم المتحدة بعد مغادرة اليونيفيل - عرب نيوز",
       "description": "الأمين العام للأمم المتحدة لحفظ السلام يحذر من التهديد بالتصعيد، بينما يسعى لبنان إلى منطقة عازلة تابعة للأمم المتحدة بعد مغادرة اليونيفيل    عرب نيوز",
       "original_title": "UN peacekeeping chief warns of escalation threat, as Lebanon seeks UN buffer after UNIFIL departs - Arab News",
       "original_description": "UN peacekeeping chief warns of escalation threat, as Lebanon seeks UN buffer after UNIFIL departs &nbsp;&nbsp; Arab News",
@@ -761,17 +794,6 @@
       "region": "world"
     },
     {
-      "title": "الرئيس الأوكراني زيلينسكي يتحدث في قمة الاتحاد الأوروبي وسط خلاف مع دونالد ترامب - DW.com",
-      "description": "الرئيس الأوكراني زيلينسكي يتحدث في قمة الاتحاد الأوروبي وسط خلاف مع دونالد ترامب    DW.com",
-      "original_title": "Ukrainian President Zelenskyy speaks at EU summit amid spat with Donald Trump - DW.com",
-      "original_description": "Ukrainian President Zelenskyy speaks at EU summit amid spat with Donald Trump &nbsp;&nbsp; DW.com",
-      "url": "https://www.dw.com/en/ukrainian-president-zelenskyy-speaks-at-eu-summit-amid-spat-with-donald-trump/a-79684340",
-      "source": "DW.com",
-      "published": "Fri, 16 Oct 2026 19:45:35 GMT",
-      "category": "international",
-      "region": "world"
-    },
-    {
       "title": "اتهامات متبادلة بين السودان وإثيوبيا في الأمم المتحدة",
       "description": "مندوب السودان لدى الأمم المتحدة الحارث إدريس يقول إن القوات المسلحة لبلاده أسقطت مسيرة إثيوبية كانت تقوم بمهام عسكرية في الأراضي السودانية #الجزيرة #الأخبار #اثيوبيا #السودان #الدعم_السريع ===================== تابعونا على منصات الجزيرة الرقمية ===================== ▶Facebook▶https://facebook.com/a… — تغطية من مصدر واحد: الجزيرة نت.",
       "original_title": "اتهامات متبادلة بين السودان وإثيوبيا في الأمم المتحدة",
@@ -946,17 +968,6 @@
       "published": "Fri, 16 Oct 2026 21:55:42 +0300",
       "category": "rest",
       "region": "world"
-    },
-    {
-      "title": "سفير مصر بموريتانيا يبحث مع وزيرة المياه الموريتانية آفاق التعاون الثنائى فى مجال المياه - وزارة الخارجية المصرية",
-      "description": "سفير مصر بموريتانيا يبحث مع وزيرة المياه الموريتانية آفاق التعاون الثنائى فى مجال المياه    وزارة الخارجية المصرية",
-      "original_title": "سفير مصر بموريتانيا يبحث مع وزيرة المياه الموريتانية آفاق التعاون الثنائى فى مجال المياه - وزارة الخارجية المصرية",
-      "original_description": "سفير مصر بموريتانيا يبحث مع وزيرة المياه الموريتانية آفاق التعاون الثنائى فى مجال المياه &nbsp;&nbsp; وزارة الخارجية المصرية",
-      "url": "https://www.mfa.gov.eg/ar/Ministers/Details/MissionsNews/7513",
-      "source": "وزارة الخارجية المصرية",
-      "published": "Fri, 16 Oct 2026 18:54:49 GMT",
-      "category": "north",
-      "region": "africa"
     },
     {
       "title": "سفير مصر بموريتانيا يبحث مع وزيرة المياه الموريتانية آفاق التعاون الثنائى فى مجال المياه - وزارة الخارجية المصرية",
@@ -1399,6 +1410,17 @@
       "region": "world"
     },
     {
+      "title": "ملاحظات وكيل الأمين العام ديكارلو أمام مجلس الأمن بشأن السودان [كما ألقاها] - إدارة الشؤون السياسية والأمن",
+      "description": "ملاحظات وكيل الأمين العام ديكارلو أمام مجلس الأمن بشأن السودان [كما وردت]    DPPA",
+      "original_title": "Remarks by USG DiCarlo to the Security Council on Sudan [as delivered] - DPPA",
+      "original_description": "Remarks by USG DiCarlo to the Security Council on Sudan [as delivered] &nbsp;&nbsp; DPPA",
+      "url": "https://dppa.un.org/en/speeches-and-statements/remarks-by-usg-dicarlo-to-the-security-council-on-sudan-as-delivered",
+      "source": "DPPA",
+      "published": "Fri, 16 Oct 2026 17:13:40 GMT",
+      "category": "international",
+      "region": "africa"
+    },
+    {
       "title": "السعودية وسوريا تؤكدان أهمية مواصلة التنسيق لحفظ أمن المنطقة",
       "description": "أكد وزير الخارجية السعودي الأمير فيصل بن فرحان ونظيره السوري أسعد الشيباني أهمية مواصلة التنسيق بين البلدين بما يسهم في الحفاظ على أمن واستقرار المنطقة. — تغطية من مصدر واحد: الشرق الأوسط.",
       "original_title": "السعودية وسوريا تؤكدان أهمية مواصلة التنسيق لحفظ أمن المنطقة",
@@ -1680,7 +1702,7 @@
       "original_description": "Brazen Russian Attacks Are Testing NATO &nbsp;&nbsp; WSJ",
       "url": "https://www.wsj.com/world/europe/brazen-russian-attacks-are-testing-nato-955ff97d",
       "source": "WSJ",
-      "published": "Fri, 16 Oct 2026 16:05:52 GMT",
+      "published": "Fri, 16 Oct 2026 16:05:00 GMT",
       "category": "international",
       "region": "world"
     },
@@ -1825,17 +1847,6 @@
       "source": "مصدر غير معروف",
       "published": "Fri, 16 Oct 2026 18:35:35 +0300",
       "category": "north",
-      "region": "africa"
-    },
-    {
-      "title": "ملاحظات وكيل الأمين العام ديكارلو أمام مجلس الأمن بشأن السودان [كما ألقاها] - إدارة الشؤون السياسية والأمن",
-      "description": "ملاحظات وكيل الأمين العام ديكارلو أمام مجلس الأمن بشأن السودان [كما وردت]    DPPA",
-      "original_title": "Remarks by USG DiCarlo to the Security Council on Sudan [as delivered] - DPPA",
-      "original_description": "Remarks by USG DiCarlo to the Security Council on Sudan [as delivered] &nbsp;&nbsp; DPPA",
-      "url": "https://dppa.un.org/en/speeches-and-statements/remarks-by-usg-dicarlo-to-the-security-council-on-sudan-as-delivered",
-      "source": "DPPA",
-      "published": "Fri, 16 Oct 2026 15:33:45 GMT",
-      "category": "international",
       "region": "africa"
     },
     {
@@ -2257,7 +2268,7 @@
       "region": "world"
     },
     {
-      "title": "زخم دبلوماسي جديد يقود عملية الأمم المتحدة بشأن الصحراء الغربية - العربي ويكلي",
+      "title": "زخم دبلوماسي جديد يقود عملية الأمم المتحدة بشأن الصحراء الغربية - The Arab Weekly",
       "description": "زخم دبلوماسي جديد يقود عملية الأمم المتحدة بشأن الصحراء الغربية    The Arab Weekly",
       "original_title": "New diplomatic momentum driving the UN’s Western Sahara process - The Arab Weekly",
       "original_description": "New diplomatic momentum driving the UN’s Western Sahara process &nbsp;&nbsp; The Arab Weekly",
@@ -2510,7 +2521,7 @@
       "region": "world"
     },
     {
-      "title": "بلغاريا تطلب مساعدة الناتو بينما تغرق طائرات روسية بدون طيار سفنًا قبالة سواحلها - كييف بوست",
+      "title": "بلغاريا تطلب مساعدة الناتو بينما تغرق الطائرات الروسية بدون طيار السفن قبالة سواحلها - كييف بوست",
       "description": "بلغاريا تطلب مساعدة الناتو بينما تغرق الطائرات الروسية بدون طيار السفن قبالة سواحلها    Kyiv Post",
       "original_title": "Bulgaria Seeks NATO Help as Russian Drones Sink Ships Off Its Coast - Kyiv Post",
       "original_description": "Bulgaria Seeks NATO Help as Russian Drones Sink Ships Off Its Coast &nbsp;&nbsp; Kyiv Post",
@@ -7790,7 +7801,7 @@
       "region": "world"
     },
     {
-      "title": "مسلحون مشتبه بهم يقتلون 10 جنود في نيجيريا - ديلي مافريك - UA.NEWS",
+      "title": "مسلحون مشتبه بهم يقتلون 10 جنود في نيجيريا – ديلي مافريك – UA.NEWS",
       "description": "مسلحون مشتبه بهم يقتلون 10 جنود في نيجيريا — ديلي مافريك    UA.NEWS",
       "original_title": "Suspected militants kill 10 soldiers in Nigeria — Daily Maverick - UA.NEWS",
       "original_description": "Suspected militants kill 10 soldiers in Nigeria — Daily Maverick &nbsp;&nbsp; UA.NEWS",
@@ -7989,7 +8000,7 @@
     },
     {
       "title": "Telephone talks between the Egyptian Foreign Minister and his Somali counterpart - صوت الإمارات",
-      "description": "Telephone talks between the Egyptian Foreign Minister and his Somali counterpart &nbsp;&nbsp; صوت الإمارات",
+      "description": "Telephone talks between the Egyptian Foreign Minister and his Somali counterpart    صوت الإمارات",
       "original_title": "Telephone talks between the Egyptian Foreign Minister and his Somali counterpart - صوت الإمارات",
       "original_description": "Telephone talks between the Egyptian Foreign Minister and his Somali counterpart &nbsp;&nbsp; صوت الإمارات",
       "url": "https://www.voiceofemirates.com/en/news/2026/10/15/telephone-talks-between-the-egyptian-foreign-minister-and-his-somali-counterpart/",
@@ -8228,6 +8239,17 @@
       "published": "Thu, 15 Oct 2026 12:21:06 +0300",
       "category": "rest",
       "region": "world"
+    },
+    {
+      "title": "L’Égypte et le PNUD examinent les moyens de renforcer leur coopération - الهيئة العامة للاستعلامات",
+      "description": "L’Égypte et le PNUD examinent les moyens de renforcer leur coopération    الهيئة العامة للاستعلامات",
+      "original_title": "L’Égypte et le PNUD examinent les moyens de renforcer leur coopération - الهيئة العامة للاستعلامات",
+      "original_description": "L’Égypte et le PNUD examinent les moyens de renforcer leur coopération &nbsp;&nbsp; الهيئة العامة للاستعلامات",
+      "url": "https://sis.gov.eg/fr/centre-m%C3%A9diatique/actualit%C3%A9s/l-%C3%A9gypte-et-le-pnud-examinent-les-moyens-de-renforcer-leur-coop%C3%A9ration/",
+      "source": "الهيئة العامة للاستعلامات",
+      "published": "Thu, 15 Oct 2026 09:18:40 GMT",
+      "category": "north",
+      "region": "africa"
     },
     {
       "title": "انتخابات إسرائيل... أيزنكوت يتعهّد بهزيمة \"حماس\" خلال 18 شهراً",
