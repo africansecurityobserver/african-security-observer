@@ -73,9 +73,9 @@ def html_main_text(html):
 
 def find_official_article_url(title, center_site):
     """
-    Resolve Google News wrappers by searching for the exact headline and
-    accepting only links on the named research centre's official domain.
-    This is a fallback when Google's encoded article URL cannot be decoded.
+    Resolve Google News wrappers to a publication page on the research
+    centre's own domain. Try search engines and the centre's native search
+    pages because Google News encoded URLs and external search results can fail.
     """
     title = clean(title)
     expected_host = urlparse(center_site).netloc.lower().removeprefix("www.")
@@ -83,17 +83,32 @@ def find_official_article_url(title, center_site):
         return ""
 
     headers = dict(HEADERS)
-    headers["Accept-Language"] = "en-US,en;q=0.9,fr;q=0.8"
+    headers["Accept-Language"] = "en-US,en;q=0.9,es;q=0.8,fr;q=0.7"
+    # Keep a shorter query too; some centre search pages return nothing for a
+    # long exact-title query.
+    title_words = re.findall(r"[A-Za-z0-9À-ÿ]{3,}", title)
+    short_title = " ".join(title_words[:7])
     searches = [
-        ("https://www.google.com/search", {"q": f'site:{expected_host} "{title}"', "num": "8"}),
-        ("https://www.bing.com/search", {"q": f'site:{expected_host} "{title}"', "count": "8"}),
+        ("https://www.google.com/search", {"q": f'site:{expected_host} "{title}"', "num": "10"}),
+        ("https://www.bing.com/search", {"q": f'site:{expected_host} "{title}"', "count": "10"}),
     ]
+    # Common WordPress and CMS-native search patterns. These search the
+    # official publisher itself and avoid depending exclusively on Google/Bing.
+    base = "https://" + expected_host
+    for query in (title, short_title):
+        if query:
+            searches.extend([
+                (base + "/", {"s": query}),
+                (base + "/en/", {"s": query}),
+                (base + "/search/", {"q": query}),
+            ])
 
     title_tokens = {
         token.lower() for token in re.findall(r"[A-Za-z0-9À-ÿ]{3,}", title)
     }
     best_url = ""
     best_score = 0.0
+    seen_pages = set()
 
     for search_url, params in searches:
         try:
@@ -102,42 +117,63 @@ def find_official_article_url(title, center_site):
                 allow_redirects=True
             )
             if response.status_code != 200 or not response.text:
+                print(f"Publication URL search returned HTTP {response.status_code}: {response.url}")
                 continue
+            page_key = response.url
+            if page_key in seen_pages:
+                continue
+            seen_pages.add(page_key)
             parser = LexborHTMLParser(response.text)
+
+            # Search-result links often have useful text in title/aria-label,
+            # even when their visible text is just an icon.
             for node in parser.css("a[href]"):
                 href = node.attributes.get("href", "").strip()
-                label = clean(node.text(separator=" "))
+                label = clean(" ".join([
+                    node.text(separator=" "),
+                    node.attributes.get("title", ""),
+                    node.attributes.get("aria-label", "")
+                ]))
                 if href.startswith("/url?q="):
                     from urllib.parse import parse_qs
                     href = parse_qs(urlparse(href).query).get("q", [""])[0]
+                href = urljoin(response.url, href)
                 parsed = urlparse(href)
                 host = parsed.netloc.lower().removeprefix("www.")
                 if not href.startswith("http") or not (
                     host == expected_host or host.endswith("." + expected_host)
                 ):
                     continue
-                path_lower = parsed.path.lower()
+                path_lower = parsed.path.lower().rstrip("/")
                 if path_lower in ("", "/") or any(
                     part in path_lower for part in (
                         "/search", "/tag/", "/category/", "/author/",
-                        "/events", "/newsletter", "/contact", "/about"
+                        "/events", "/newsletter", "/contact", "/about",
+                        "/privacy", "/cookie", "/page/"
                     )
                 ):
                     continue
-                haystack = (label + " " + parsed.path.replace("-", " ").replace("_", " ")).lower()
+
+                path_words = parsed.path.replace("-", " ").replace("_", " ")
+                haystack = (label + " " + path_words).lower()
                 overlap = sum(1 for token in title_tokens if token in haystack)
                 score = overlap / max(1, len(title_tokens))
                 if label and label.lower() in ("read more", "learn more", "download", "click here"):
                     score *= 0.25
+                # Prefer a candidate whose visible title closely matches the
+                # publication title, and penalize links to generic landing pages.
+                if len(path_lower.strip("/").split("/")) <= 1:
+                    score *= 0.85
                 if score > best_score:
-                    best_score, best_url = score, href
+                    best_score, best_url = score, href.split("#", 1)[0]
+
         except Exception as exc:
-            print(f"Official-title search failed ({search_url}): {type(exc).__name__}")
+            print(f"Publication URL search failed ({search_url}): {type(exc).__name__}")
 
     if best_url and best_score >= 0.20:
         print(f"Resolved Google News item to official source ({best_score:.2f} title match): {best_url}")
         return best_url
-    print(f"Could not resolve official article URL for title: {title[:120]}")
+    print(f"Could not resolve official article URL after search-engine and publisher-site searches: {title[:120]}")
     return ""
 
 
