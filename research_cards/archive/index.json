@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17T20:19:07+01:00",
+  "updated": "2026-10-18T00:55:00+01:00",
   "years": [
     {
       "year": "2026",
@@ -34,6 +34,16 @@
               "path": "2026-10/20261013_3de040c59fbf.json",
               "center": "معهد الدراسات الدفاعية والاستراتيجية في إسلام آباد",
               "source_title": "Press Release – International Conference ‘Pakistan’s Evolving Counterterrorism Landscape: TTP, Cross-Border Threats and Regional Security’ - Institute of Strategic Studies Islamabad (ISSI)",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-13",
+              "title": "الصراع في اليمن والبحر الأحمر | متعقّب النزاعات العالمية",
+              "subject": "الصراع في اليمن والبحر الأحمر | متعقّب النزاعات العالمية",
+              "path": "2026-10/20261013_6e27a3d8ba36.json",
+              "center": "مجلس العلاقات الخارجية",
+              "source_title": "Conflict in Yemen and the Red Sea | Global Conflict Tracker - Council on Foreign Relations",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
@@ -74,6 +84,16 @@
               "path": "2026-10/20261006_a5b2fed197af.json",
               "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
               "source_title": "Russia’s military recruitment networks exploit Western tech platforms - ISS Africa",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-06",
+              "title": "تحديث بشأن الحرب الروسية الأوكرانية ووجهات نظر من دول الناتو: نقاش مع المجلس الاستشاري العالمي لمجلس العلاقات الخارجية",
+              "subject": "تحديث بشأن الحرب الروسية الأوكرانية ووجهات نظر من دول الناتو: نقاش مع المجلس الاستشاري العالمي لمجلس العلاقات الخارجية",
+              "path": "2026-10/20261006_236ecdb3c1cf.json",
+              "center": "مجلس العلاقات الخارجية",
+              "source_title": "Russia-Ukraine War Update and Perspectives From NATO Member Countries: Lunch and Discussion with CFR's Global Board of Advisors - Council on Foreign Relations",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },

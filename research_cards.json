@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17T20:19:07+01:00",
+  "updated": "2026-10-18T00:55:00+01:00",
   "cards": [
     {
       "id": "6ec677f032cb",
@@ -124,6 +124,46 @@
       "source_url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOZ2FzWllFZGtlU3AxS04zcU8wLXJ4S0JmanBhN002dmFHTHJmUGJPazRWZVYyamJBNFp0U2NkZEZPSk9PVUd4UUhJeTBMSkMtMHpuR0dSMjYxUUlhMWt5a1kwcHktWVlzX1JWdnVZbVk4UUhVR1JMcXJrcWJhVVVlQUh4Zi1tZHRIZzk0anFORF9vYy1BcWlqUUJlR2pNX1Jnc0xfYjJDN1lONHNjSENZaGhIbWFEY3N2aVpWeVpMaVFWMGxhR19oZFRNc3o4WDFmR21hbnZ4R2RPTm9acURtTkRFX0FKcWM?oc=5&hl=en-US&gl=US&ceid=US:en",
       "source_original_url": "https://issi.org.pk/press-release-international-conference-pakistans-evolving-counterterrorism-landscape-ttp-cross-border-threats-and-regional-security/",
       "path": "2026-10/20261013_3de040c59fbf.json"
+    },
+    {
+      "id": "6e27a3d8ba36",
+      "kind": "research_center",
+      "kind_label": "بطاقة استراتيجية من مراكز البحث",
+      "title": "الصراع في اليمن والبحر الأحمر | متعقّب النزاعات العالمية",
+      "source_title": "Conflict in Yemen and the Red Sea | Global Conflict Tracker - Council on Foreign Relations",
+      "subject": "الصراع في اليمن والبحر الأحمر | متعقّب النزاعات العالمية",
+      "center": "مجلس العلاقات الخارجية",
+      "date": "2026-10-13",
+      "published": "2026-10-13T12:30+01:00",
+      "region": "قضايا عالمية قد تؤثر في تونس",
+      "summary": "تلخص النشرية تفاصيل الصراع المستمر في اليمن والبحر الأحمر وتداعياته على أمن الملاحة العالمي والاقتصاد الدولي، مستعرضة أدوار الأطراف الإقليمية والدولية وخيارات البدائل المتاحة.",
+      "sections": [
+        {
+          "heading": "المقدمة",
+          "text": "تتناول هذه النشرية الصادرة عن مركز مجلس العلاقات الخارجية الصراع الدائر في اليمن والبحر الأحمر وتداعياته على الاقتصاد العالمي وأمن الملاحة، وفيما يلي أهم ما ورد فيها."
+        },
+        {
+          "heading": "أولاً: محاور النشرية ومرتكزاتها",
+          "text": "• تشكل منطقة البحر الأحمر ومضيق باب المندب شرياناً حيوياً للتجارة العالمية، حيث يمر عبره بين اثني عشر إلى خمسة عشر بالمائة من التجارة البحرية الدولية وحوالي ثلاثين بالمائة من حركة الحاويات العالمية سنوياً، مما يجعل أي اضطراب مستدام فيه محفزاً لتأخير سلاسل الإمداد وارتفاع أسعار الطاقة عالمياً وفقاً لتقديرات الخبراء.\n• أدى تصاعد الهجمات التي تنفذها جماعة أنصار الله الحوثيون في اليمن ضد السفن التجارية والبحرية إلى تعطيل حركة الملاحة وإعلان الجماعة حصاراً بحرياً على المملكة العربية السعودية، بالتوازي مع سيطرتهم على مدينة المخا الاستراتيجية وعدد من الجزر القريبة من مضيق باب المندب قبل أن تطلق الحكومة اليمنية المدعومة سعودياً هعجوماً مضاداً.\n• يمتد تأثير التوترات في البحر الأحمر ليشمل البنية التحتية الرقمية العالمية، إذ يمر عبر الممر المائي نحو تسعين بالمائة من كابلات الألياف الضوئية تحت البحر التي تربط أوروبا بأسياس، وقد تسبب أي أضرار سابقة لهذه الكابلات في اضطرابات كبرى بخدمات الإنترنت والخدمات السحابية عبر المنطقة وفي إفريقيا وأسيا.\n• تختبر هجمات الحوثيين المتصاعدة اتفاقية الدفاع المشترك المبرمة مؤخراً بين كل من باكستان والمملكة العربية السعودية وتركيا، والتي تتضمن تعهداً على غرار المادة الخامسة لحلف شمال الأطلسي الناتو، حيث يتم اعتبار أي هجوم على دولة عضو هجوماً على جميع الأعضاء، وقد تم تفعيلها للمرة الأولى في أكتوبر ألفين وستة وعشرين."
+        },
+        {
+          "heading": "ثانياً: النتائج والتفاصيل الرئيسية",
+          "text": "• تعتبر إيران الداعم الرئيسي لج جماعة الحوثي، حيث تستخدم تهران البحر الأحمر لاستقطاب النفوذ وتحدي التأثير الغربي في المنطقة عبر تقديم المساعدات الأمنية، بما في ذلك عمليات نقل الأسلحة والتدريب ودعم الاستخبارات، في حين يرى المسؤولون الإيرانيون أن جبهة المقاومة تنظر إلى مضيق باب المندب بنفس أهمية مضيق هرمز.\n• أطلقت الحكومة اليمنية المعترف بها دولياً في أكتوبر ألفين وستة وعشرين عملية فجر اليمن، وهي عملية هجومية واسعة النطاق تهدف إلى استعادة الأراضي التي سيطرت عليها جماعة الحوثي، بما في ذلك مناطق على طول ساحل البحر الأحمر، بدعم مكثف من المملكة العربية السعودية التي تقدم الغوث الجوي والمالي والعسكري.\n• اتخذت الولايات المتحدة الأمريكية وحلفاؤها إجراءات لحماية الملاحة العالمية واستعادة حرية الملاحة، فشهد العام ألفين وثلاثة وعشرين إطلاق إدارة الرئيس الأمريكي جو بايدن عملية حارس الازدهار، تلتها في مارس ألفين وخمسة وعشرين عملية الفارس الخشن التي أطلقتها إدارة ترامب واستهدفت قواعد الحوثيين في اليمن.\n• تخلف اضطرابات البحر الأحمر تداعيات واسعة النطاق تتجاوز الشرق الأوسط لتفاقم الأزمات القائمة في شمال وشرق إفريقيا، حيث تتشكل الصراعات عبر تنافس قوى الشرق الأوسط من خلال الاستثمارات الاستراتيجية والدعم العسكري والتعاون الأمني، مما قد ينتج عنه نزاعات إضافية على الأراضي الإفريقية."
+        },
+        {
+          "heading": "ثالثاً: التداعيات والقيود",
+          "text": "• بالنسبة للبدائل المتاحة عن البحر الأحمر، يشير الخبراء إلى أن إغلاق مضيق باب المندب تماماً يمثل صعوبة مقارنة بمضيق هرمز، إلا أن التزامن في تعطيل الممرين يهدد مسارات عبور النفط التي تحمل نحو أربعة وعشرين بالمائة من إمدادات النفط العالمية، مما يترك الدول بخيارات أقل لنقل النفط الخام.\n• تعتبر الطرق البديلة للشحن أقل كفاءة بكثير، إذ يتطلب شحن النفط من موانئ السعودية على البحر الأحمر نحو آسيا الاتجاه شمالاً عبر قناة السويس والبحر الأبيض المتوسط ثم الالتفاف حول القارة الإفريقية بأكملها للوصول إلى المحيط الهندي، وهي رحلة أطول بكثير وأقل ملاءمة مقارنة بمرور باب المندب.\n• قامت بعض دول الخليج بالاستثمار في ممرات التجارة البرية والخدمات اللوجستية لتقليل الاعتماد على طرق الشحنات عبر البحر الأحمر، مثل الجسر البري بين دولة الإمارات العربية المتحدة والمملكة العربية السعودية، غير أن هذه البدائل تظل مكلفة للغاية وذات قدرات استيعابية محدودة نسبياً.\n• تواجه الدول الآسيوية النصيب الأكبر من الاضطرابات في البحر الأحمر، نظراً لأن آسيا تمثل السوق التصديرية الأساسية لحوالي خمسة وأسبعين بالمائة من إجمالي الصادرات السنوية للنفط الخام السعودي، وتشمل قائمة المشترين الرئيسيين كلاً من الصين والهند和اليابان وكوريا الجنوبية."
+        }
+      ],
+      "sources": [
+        {
+          "title": "مجلس العلاقات الخارجية — Conflict in Yemen and the Red Sea | Global Conflict Tracker - Council on Foreign Relations",
+          "url": "https://www.cfr.org/articles/another-hormuz-the-red-seas-threat-to-the-global-economy"
+        }
+      ],
+      "source_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1wLVlLT0hRb1JoS2NYWXdlLWtBdlJHVjBfUFMzLW04cU9ENTE3VVlwUW5IdHRqdDhfTmFqZ1FiRnBRcDU3a3NUajF4Ny1Wb1UxN2lqR091Q1BETVNSZm5maTVEeGhLM3VySUZuRVc5Yw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source_original_url": "https://www.cfr.org/articles/another-hormuz-the-red-seas-threat-to-the-global-economy",
+      "path": "2026-10/20261013_6e27a3d8ba36.json"
     },
     {
       "id": "foi-beyond-wagner-20261013",
@@ -301,6 +341,46 @@
       "path": "2026-10/20261006_a5b2fed197af.json"
     },
     {
+      "id": "236ecdb3c1cf",
+      "kind": "research_center",
+      "kind_label": "بطاقة استراتيجية من مراكز البحث",
+      "title": "تحديث بشأن الحرب الروسية الأوكرانية ووجهات نظر من دول الناتو: نقاش مع المجلس الاستشاري العالمي لمجلس العلاقات الخارجية",
+      "source_title": "Russia-Ukraine War Update and Perspectives From NATO Member Countries: Lunch and Discussion with CFR's Global Board of Advisors - Council on Foreign Relations",
+      "subject": "تحديث بشأن الحرب الروسية الأوكرانية ووجهات نظر من دول الناتو: نقاش مع المجلس الاستشاري العالمي لمجلس العلاقات الخارجية",
+      "center": "مجلس العلاقات الخارجية",
+      "date": "2026-10-06",
+      "published": "2026-10-06T16:45+01:00",
+      "region": "قضايا عالمية قد تؤثر في تونس",
+      "summary": "تلخص النشرية نقاشاً لمجلس العلاقات الخارجية حول الحرب الروسية الأوكرانية ووجهات نظر دول الناتو، متناولة إخفاقات الهجوم البري الروسي، وتحول موسكو نحو استهداف الاقتصاد الأوكراني والبنية التحتية المدنية، إلى جانب تصاعد الهجمات الرمادية والحملات السيبرانية ضد الدول الأوروبية، مع تأكيد الخبراء على ضرورة استمرار الدعم الغربي لكييف رغم تحديات الاستنزاف.",
+      "sections": [
+        {
+          "heading": "المقدمة",
+          "text": "تسلط هذه البطاقة الاستراتيجية الضوء على نقاش رفيع المستوى نظمه مجلس العلاقات الخارجية (Council on Foreign Relations) بمشاركة خبراء بارزين ومسؤولين سابقين من دول حلف شمال الأطلسي (الناتو)، لبحث مستجدات الحرب الروسية الأوكرانية وتداعياتها الإقليمية والدولية. وفيما يلي أهم ما ورد فيها."
+        },
+        {
+          "heading": "أولاً: محاور النشرية ومرتكزاتها",
+          "text": "• ناقش المشاركون في الفعالية الوضع الميداني للحرب البرية الروسية الأوكرانية، مشيرين إلى أن روسيا لم تتمكن سوى من السيطرة على نسبة محدودة من الأراضي الأوكرانية بعد سنوات من القتال، وهو ما يُعتبر فشلاً استراتيجياً فادحاً للقيادة الروسية مقارنة بحجم الخسائر البشرية والمادية الهائلة التي تكبدتها القوات الروسية منذ بداية العمليات العسكرية.\n• أشار المتحدثون إلى تحول استراتيجي في الهجمات الروسية نحو استهداف الاقتصاد الأوكراني والبنية التحتية الأساسية للموانئ والصناعات الثقيلة، بهدف تقويض موارد الدولة الأوكرانية، مؤكدين في الوقت ذاته أن هذه الضغوط الاقتصادية المكاثفة لن تنجح في كسر إرادة الشعب الأوكراني أو إضعاف عزيمته على مواصلة المقاومة والدفاع عن أراضيه.\n• تطرق النقاش إلى حجم الدعم الأوروبي المتصاعد لتعويض تراجع المساعدات الأمريكية المباشرة خلال العامين الماضيين، حيث برزت دول مثل ألمانيا وبعض الدول الاسكندنافية والبلطيقية كجهات مانحة رئيسية لتقديم المساعدات العسكرية والاقتصادية العاجلة، لتمكين أوكرانيا من مواجهة الهجمات الصواريخية والمسيرات الجوية الروسية خلال فصل الشتاء القادم.\n• أكد الخبراء العسكريون المشاركون أن القوات الأوكرانية أظهرت قدرة عالية على التكيف التكنولوجي والتكتيكي، وتخوض معارك دفاعية ناجحة من خطوط داخلية متصلة، مع تنفيذ هجمات عميقة تستهدف المصافي ومنشآت الطاقة داخل الأراضي الروسية، مما ينقل المعركة تدريجياً نحو الداخل الروسي ويثير مخاوف حقيقية لدى القيادة في موسكو."
+        },
+        {
+          "heading": "ثانياً: النتائج والتفاصيل الرئيسية",
+          "text": "• سلط النقاش الضوء على ما يُعرف بالحرب الرمادية والهجمات الهجينة التي تشنها روسيا ضد دول حلف الناتو، بما في ذلك محاولات التخريب وتعطيل المطارات والمرافق الحيوية في دول أوروبية مثل ألمانيا وإستونيا، فضلاً عن تنفيذ هجمات سيبرانية مكثفة واستخدام تمويل سياسي للتأثير على الأحزاب الشعبوية والسياسية في القارة.\n• حذر المشاركون من مخاطر التأثير الروسي المتزايد عبر وسائل التواصل الاجتماعي واستخدام شبكات الحسابات الوهمية لتضخيم الخطابات المنتقدة لسياسات دعم أوكرانيا، بهدف التأثير على الرأي العام الأوروبي وإثارة الانقسامات المجتمعية والسياسية عشية الاستحقاقات الانتخابية المقبلة في عدد من الدول الأوروبية الرئيسية.\n• أشار دبلوماسيون سابقون إلى التحديات التي تواجه الموازنات الأوروبية الضيقة ومستويات العجز المالي المرتفعة في بعض الدول مثل فرنسا، موضحين أن رهان الرئيس الروسي فلاديمير بوتين الأساسي يعتمد على النفس الطويل واستنزاف الدعم الشعبي الأوروبي على المدى الطويل بفعل الأعباء المعيشية والاقتصادية المتراكمة.\n• أكد ممثلو المجلس الاستشاري أن تماسك الحكومات الأوروبية واستمرار الدعم العسكري والمالي الموجه لكييف يظلان عاملين حاسمين لإحباط الحسابات الروسية، داعين في الوقت ذاته إلى أهمية استعادة الولايات المتحدة لدورها القيادي التقليدي في دعم التحالف الغربي ومواجهة التهديدات المشتركة للأمن الأوروبي الأطلسي."
+        },
+        {
+          "heading": "ثالثاً: التداعيات والقيود",
+          "text": "• استعرض الاجتماع طبيعة الأهداف الاستراتيجية التي يسعى الرئيس الروسي لتحقيقها، مشيرين إلى اعتقاده الخاطئ السابق بأن واشنطن قد تضغط على القيادة الأوكرانية للتنازل عن أراضٍ استراتيجية حيوية في مقاطعات دونباس وجنوب أوكرانيا، وهو ما رفضته واشنطن وكييف بشكل قاطع نظراً لأهميتها الدفاعية البالغة.\n• ناقش الحضور تداعيات الخسائر البشرية الجسيمة في صفوف الجيش الروسي ومعدلات الاستنزاف العالية للقدرات العسكرية التقليدية، مؤكدين أن روسيا تعتمد بشكل متزايد على تجنيد المرتزقة وضخ أموال طائلة لتعويض النقص البشري، مما يحد من قدرتها على شن هجمات واسعة النطاق لتحقيق مكاسب إضافية.\n• أكد التحليل العسكري أن الجيش الأوكراني يكتسب خبرة ميدانية هائلة تجعله مؤهلاً ليكون أحد أكبر وأكفأ الجيوش الأوروبية مستقبلاً، مما يبرر الاستراتيجية الغربية طويلة الأمد المتمثلة في الحفاظ على الشراكة الأمنية الوثيقة مع كييف ودمج قدراتها الدفاعية ضمن المنظومة الأطلسية والأوروبية.\n• اختتم النقاش بالتأكيد على أن أي تسوية محتملة يجب ألا تكافئ المعتدي أو تمنحه مكاسب ترابية غير مشروعة، مع التشديد على أن وحدة الصف بين الحلفاء الغربيين تظل الضمانة الأساسية لردع أي طموحات توسعية مستقبلية تستهدف تقويض الأمن والاستقرار الإقليمي والدولي."
+        }
+      ],
+      "sources": [
+        {
+          "title": "مجلس العلاقات الخارجية — Russia-Ukraine War Update and Perspectives From NATO Member Countries: Lunch and Discussion with CFR's Global Board of Advisors - Council on Foreign Relations",
+          "url": "https://www.cfr.org/event/russia-ukraine-war-update-and-perspectives-from-nato-member-countries-lunch-and-discussion-with-cfrs-global-board-of-advisors"
+        }
+      ],
+      "source_url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOejFlNFo0dW9VdjR0QXdwSE8wZFE3cjgyazZBbE1JMWlJR2hiUTZpY1hQUVJkbFZSbWhHeVVleE0zcjhCNHRhZDF0dGJPZjBwVHV0aXY2eDhPMGNxdFZuMHVKV0lTSkpwSG5xS2I0dG1ZQlp4aXVEbEE1Qk41aEtwTFFKN1B0V0FacUs1XzhQWWlQSVIxZlhCeFhaN29zd3RmcGtlOTFEb0NlWExtTEFOZnFHSmtQempzN25Fd0FveHE4RDlzUVNkaldfVVZnTWJpNV9OLXkyME51dVFPUzBCRXZ6OENxZw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source_original_url": "https://www.cfr.org/event/russia-ukraine-war-update-and-perspectives-from-nato-member-countries-lunch-and-discussion-with-cfrs-global-board-of-advisors",
+      "path": "2026-10/20261006_236ecdb3c1cf.json"
+    },
+    {
       "id": "6686d9d8f658",
       "kind": "research_center",
       "kind_label": "بطاقة استراتيجية من مراكز البحث",
@@ -390,6 +470,8 @@
     "https://news.google.com/rss/articles/CBMimgFBVV95cUxPYjFSN0kxVUF4TFVNNV96YTh4b2FhRTBrNDZwaWp1aUNEaENnX3FGaVJtT0puQWc3TUZIREtpXzlfZ2trZ0RJS3BQMWI0REw5MHA5S1VXeHpTTHI4RHF3Nm93ME1kWWV6U045X2FQUGw0VUlFT0V1NXhVc0sxNWRHSXZ1MWFuZnVlX0ZBZndxMFZ1ZDFGZVAyb3pn?oc=5&hl=en-US&gl=US&ceid=US:en",
     "https://news.google.com/rss/articles/CBMiowFBVV95cUxQWTc2RWxCMWRrYS1MaElENW9OdGxuZ29UV01PT1A0MHZPRnJNU0ZQcjZfbUhGX2swMEozM3Y5M3RfR00yOGNPNHhjUWh5b0pBcWFZbUh3MDFLTGlGOUljR3dwaVk5MEZQdnlIZHpZLWo2aF8ySUFCZ1BPRExYeG0ybF9qQzBhc3NPWERCdEZrMy1pbFJoSjdiSkxVUlkwVndlOHdZ?oc=5&hl=en-US&gl=US&ceid=US:en",
     "https://news.google.com/rss/articles/CBMimgFBVV95cUxQLTBIYzhTN0tZY0s1YWQ3LWMwb3RMSkh2UGdOMWkydnpoNld6YzJ6dVVNc2VrRG5qOW9mV043d1ZVM0FkaFN4Q1VfY1pOYzc5QU5HUmpUZ3QtLU1NNlRYTHVJUWFmR1RQQzlYektsODNpXzVVT3Y0VXQ0aGxBR05GRENJZ3JjaGJoTXBQWmRial85cElwNUE1Vjln?oc=5&hl=en-US&gl=US&ceid=US:en",
-    "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPZTgyVDMxbXM5R3lWLXMxclFUYVNzNzNucV9iOFE3MEdERHBTdVZyc1ExR2N2c29NOHBLcWNzV2k1aUJqeDgwa0V6cExMNEV6d2RxTGxqQWdINmJxSmtVaHNjT2k1aGlfbWY4czlyenJGN2U1WkFEckxjbk1iTENnazZnZVpzQV9zZXNv?oc=5&hl=en-US&gl=US&ceid=US:en"
+    "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPZTgyVDMxbXM5R3lWLXMxclFUYVNzNzNucV9iOFE3MEdERHBTdVZyc1ExR2N2c29NOHBLcWNzV2k1aUJqeDgwa0V6cExMNEV6d2RxTGxqQWdINmJxSmtVaHNjT2k1aGlfbWY4czlyenJGN2U1WkFEckxjbk1iTENnazZnZVpzQV9zZXNv?oc=5&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/articles/CBMib0FVX3lxTE1wLVlLT0hRb1JoS2NYWXdlLWtBdlJHVjBfUFMzLW04cU9ENTE3VVlwUW5IdHRqdDhfTmFqZ1FiRnBRcDU3a3NUajF4Ny1Wb1UxN2lqR091Q1BETVNSZm5maTVEeGhLM3VySUZuRVc5Yw?oc=5&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOejFlNFo0dW9VdjR0QXdwSE8wZFE3cjgyazZBbE1JMWlJR2hiUTZpY1hQUVJkbFZSbWhHeVVleE0zcjhCNHRhZDF0dGJPZjBwVHV0aXY2eDhPMGNxdFZuMHVKV0lTSkpwSG5xS2I0dG1ZQlp4aXVEbEE1Qk41aEtwTFFKN1B0V0FacUs1XzhQWWlQSVIxZlhCeFhaN29zd3RmcGtlOTFEb0NlWExtTEFOZnFHSmtQempzN25Fd0FveHE4RDlzUVNkaldfVVZnTWJpNV9OLXkyME51dVFPUzBCRXZ6OENxZw?oc=5&hl=en-US&gl=US&ceid=US:en"
   ]
 }
