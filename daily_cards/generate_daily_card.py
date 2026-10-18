@@ -1569,6 +1569,36 @@ def route_priority_events(sections):
                 retained.append(event)
         section["events"] = retained
 
+    # Final card-wide deduplication: the same concrete incident should not
+    # appear in multiple sections just because it was classified differently.
+    # Keep the first occurrence in the configured section order; retain other
+    # events from the same country when they describe distinct incidents.
+    seen = []
+    for section in sections:
+        if not isinstance(section, dict):
+            continue
+        kept = []
+        for event in section.get("events", []):
+            if not isinstance(event, dict):
+                continue
+            country = normalize_country_for_match(event.get("country", ""))
+            text_value = str(event.get("text", "")).strip()
+            duplicate = False
+            for prior_country, prior_text in seen:
+                if country and prior_country and country != prior_country:
+                    continue
+                if same_event_text(prior_text, text_value):
+                    duplicate = True
+                    print(
+                        f"Removed cross-section duplicate event: "
+                        f"{text_value[:120]}"
+                    )
+                    break
+            if not duplicate:
+                kept.append(event)
+                seen.append((country, text_value))
+        section["events"] = kept
+
     return sections
 
 
