@@ -526,6 +526,23 @@ Africa/Tunis
 8. اجمع التقارير المتعددة التي تتحدث عن الحدث نفسه في حدث واحد.
    لا تكرر الحدث بسبب اختلاف المصادر.
 
+8-أ. قبل إخراج البطاقة، راجع أحداث كل دولة داخل القسم نفسه وقارن
+     مضمونها لا صياغتها فقط. إذا كان خبران يصفان الواقعة نفسها
+     بعبارات مختلفة، فادمجهما في حدث واحد مع الاحتفاظ بالتفاصيل
+     المؤكدة الإضافية. لا تُبقِ نسختين من الخبر نفسه لمجرد اختلاف
+     العنوان أو المصدر أو الترجمة.
+
+8-ب. لا تدمج الأخبار لمجرد أنها تخص الدولة نفسها أو المسؤول نفسه
+     أو الموضوع العام نفسه. يجوز أن يظهر أكثر من خبر للدولة نفسها
+     إذا كان كل خبر يصف واقعة مستقلة فعلاً، مثل اجتماع منفصل عن
+     هجوم عسكري أو صفقة تسلح منفصلة عن تعيين مسؤول.
+
+8-ج. عند الشك، قارن الفاعل/الأطراف، والفعل أو الإجراء، والمكان،
+     والتوقيت، والأرقام أو المعدات المذكورة. ادمج الخبرين عندما
+     تتطابق مجموعة كافية من هذه العلامات على الواقعة نفسها؛
+     أما إذا اختلفت الواقعة أو المكان أو التوقيت اختلافاً جوهرياً
+     فأبقِ الخبرين منفصلين.
+
 9. إذا كانت عدة مواد تتحدث عن نفس التطور، صغ الحدث في صياغة
    واحدة أكثر دقة واكتمالاً.
 
@@ -1557,8 +1574,9 @@ def route_priority_events(sections):
 
 def same_event_text(left, right):
     """
-    Conservative same-event matching: combine near-duplicate reports when
-    concrete event anchors overlap, but not merely because the topic/country matches.
+    Match duplicate reports of the same concrete event, not merely the
+    same country or broad topic. Use text similarity plus event-specific
+    action, entity, place, and incident-detail anchors.
     """
     from difflib import SequenceMatcher
 
@@ -1566,7 +1584,7 @@ def same_event_text(left, right):
     b = normalize_event_for_match(right)
     if not a or not b:
         return False
-    if a in b or b in a:
+    if a == b:
         return True
 
     tokens_a = {token for token in a.split() if len(token) > 2}
@@ -1575,39 +1593,103 @@ def same_event_text(left, right):
     union = tokens_a | tokens_b
     jaccard = len(common) / max(1, len(union))
     ratio = SequenceMatcher(None, a, b).ratio()
-    if ratio >= 0.70 or (len(common) >= 5 and jaccard >= 0.40):
+
+    # Very similar full descriptions are usually alternate versions of
+    # the same report. Avoid matching just because a short phrase is contained.
+    if ratio >= 0.76 or (len(common) >= 7 and jaccard >= 0.52):
         return True
 
+    # Event anchors are deliberately specific. A country name alone, or
+    # a generic word such as "meeting", "attack", or "agreement", is not enough.
     anchor_groups = [
-        ["صواريخ باليستية", "صاروخ باليستي", "صواريخ بالستية", "صاروخ بالستي"],
-        ["الحوثيون", "الحوثي", "مليشيا الحوثي", "جماعة الحوثي"],
-        ["مطار الملك خالد", "مطار الرياض", "المطار الدولي الرئيسي", "إغلاق المطار", "اغلاق المطار"],
-        ["قصف", "غارة جوية", "غارات جوية", "ضربة جوية", "ضربات جوية"],
-        ["اقتحام", "اقتحامات", "مداهمة", "مداهمات"],
-        ["نسف مبان", "هدم منازل", "هدم مبان", "تدمير مبان سكنية"],
-        ["إطلاق نار", "اطلاق نار", "برصاص", "نيران الجيش"],
-        ["أسرى", "رهائن", "تبادل أسرى", "صفقة تبادل"],
-        ["وقف إطلاق النار", "هدنة", "تمديد الهدنة"],
+        ["صواريخ باليستية", "صاروخ باليستي", "صواريخ بالستية", "صاروخ بالستي",
+         "صواريخ", "missile", "missiles"],
+        ["الحوثيون", "الحوثي", "مليشيا الحوثي", "جماعة الحوثي", "houthis", "houthi"],
+        ["مطار الملك خالد", "مطار الرياض", "king khalid airport", "riyadh airport"],
+        ["قصف", "غارة جوية", "غارات جوية", "ضربة جوية", "ضربات جوية",
+         "airstrike", "air strikes", "bombed"],
+        ["اشتباكات", "اشتباك مسلح", "معارك", "قتال", "clashes", "fighting"],
+        ["اعتراض", "أسقط", "أسقطت", "دمر", "دمرت", "intercepted", "shot down"],
+        ["طائرة شحن", "طائرة عسكرية", "مقاتلة", "cargo aircraft", "military aircraft", "fighter jet"],
+        ["استقبل", "التقى", "بحث مع", "مباحثات", "اجتمع مع", "استعرض مع",
+         "received", "met with", "held talks", "meeting with"],
+        ["وقّع", "وقع", "أبرم", "مذكرة تفاهم", "اتفاقية", "عقد دفاعي",
+         "signed", "agreement", "memorandum of understanding", "defense contract"],
+        ["عيّن", "عين", "تعيين", "أقال", "إقالة", "appointed", "dismissed", "named as"],
+        ["أعلن", "أعلنت", "قرر", "قررت", "وافق", "وافقت",
+         "announced", "decided", "approved"],
+        ["اعتقال", "أوقف", "أوقفت", "احتجز", "arrested", "detained"],
+        ["هدم", "نسف", "تدمير مبان", "demolished", "demolition"],
+        ["إطلاق نار", "برصاص", "نيران الجيش", "gunfire", "shot by"],
+        ["وقف إطلاق النار", "هدنة", "تمديد الهدنة", "ceasefire", "truce"],
+        ["ضحايا", "قتلى", "مصابين", "جرحى", "killed", "wounded", "injured", "casualties"],
     ]
+
     shared_groups = sum(
         1 for group in anchor_groups
         if any(term in a for term in group) and any(term in b for term in group)
     )
+
     place_groups = [
         ["الرياض", "riyadh"], ["مطار الملك خالد", "king khalid"],
         ["غزة", "gaza"], ["رام الله", "ramallah"],
         ["الضفة الغربية", "west bank"], ["جنوب لبنان", "southern lebanon"],
-        ["بيروت", "beirut"], ["البحر الأحمر", "red sea"]
+        ["بيروت", "beirut"], ["البحر الأحمر", "red sea"],
+        ["طرابلس", "tripoli"], ["بنغازي", "benghazi"],
+        ["الجزائر العاصمة", "algiers"], ["الرباط", "rabat"],
+        ["الساحل", "sahel"], ["بحيرة تشاد", "lake chad"],
+        ["مضيق هرمز", "strait of hormuz"], ["باب المندب", "bab al mandab"],
     ]
     shared_place = any(
         any(place in a for place in group) and any(place in b for place in group)
         for group in place_groups
     )
-    shared_specifics = any(
-        term in a and term in b
-        for term in ["ثلاثة صواريخ", "3 صواريخ", "136 اعتداء", "20 شخصا"]
+
+    specifics = [
+        "خليفة حفتر", "صدام حفتر", "خالد حفتر", "عبد الحميد الدبيبة",
+        "محمد المنفي", "عبد المجيد تبون", "السعيد شنقريحة", "محمد السادس",
+        "ناصر بوريطة", "مطار الملك خالد", "f 35", "f 16", "jf 17",
+        "iris t", "s 400", "باتريوت", "tobruk", "misrata",
+    ]
+    shared_named_specific = any(term in a and term in b for term in specifics)
+    number_tokens = set(
+        token for token in tokens_a & tokens_b
+        if any(ch.isdigit() for ch in token)
     )
-    return shared_groups >= 2 and (shared_place or shared_specifics)
+    shared_numbers = bool(number_tokens)
+
+    # Require action overlap plus a location, named entity, or shared details.
+    # This keeps distinct events in one country apart.
+    return (
+        shared_groups >= 2 and
+        (shared_place or shared_named_specific or shared_numbers)
+    )
+
+
+def normalize_country_for_match(value):
+    """Normalize common country-name variants before comparing event records."""
+    value = normalize_event_for_match(value)
+    aliases = {
+        "saudi arabia": "السعوديه",
+        "kingdom of saudi arabia": "السعوديه",
+        "المملكه العربيه السعوديه": "السعوديه",
+        "السعوديه العربيه": "السعوديه",
+        "ksa": "السعوديه",
+        "united states": "الولايات المتحده",
+        "usa": "الولايات المتحده",
+        "us": "الولايات المتحده",
+        "united states of america": "الولايات المتحده",
+        "u s": "الولايات المتحده",
+        "israel": "اسرائيل",
+        "state of israel": "اسرائيل",
+        "palestine": "فلسطين",
+        "state of palestine": "فلسطين",
+        "libya": "ليبيا",
+        "algeria": "الجزائر",
+        "morocco": "المغرب",
+        "tunisia": "تونس",
+    }
+    return aliases.get(value, value)
 
 
 def merge_event_lists(existing_events, incoming_events):
@@ -1639,8 +1721,8 @@ def merge_event_lists(existing_events, incoming_events):
 
         match_index = None
         for index, old_event in enumerate(merged):
-            old_country = normalize_event_for_match(old_event.get("country", ""))
-            new_country = normalize_event_for_match(incoming_country)
+            old_country = normalize_country_for_match(old_event.get("country", ""))
+            new_country = normalize_country_for_match(incoming_country)
             if old_country and new_country and old_country != new_country:
                 continue
             if same_event_text(old_event.get("text", ""), incoming_text):
