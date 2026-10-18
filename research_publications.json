@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T18:42+01:00",
+  "updated": "2026-10-19T00:40+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 73,
@@ -443,7 +443,7 @@
       "site": "https://ifsh.de/"
     }
   ],
-  "count": 34,
+  "count": 35,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -892,6 +892,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "اتساع رقعة الحرب في إثيوبيا يهدد القرن الإفريقي"
+    },
+    {
+      "center": "مؤسسة كونراد أديناور",
+      "center_short": "Konrad Adenauer Stiftung",
+      "title": "Regional Programme Security Policy for West Africa - Konrad-Adenauer-Stiftung",
+      "url": "https://news.google.com/rss/articles/CBMirgRBVV95cUxNaGlYc1dmbl9ELWdTYlF4MmxaanUwZ2daZ2U3VU5oNGhqRE9KOVVjQVV2TFM1TlpRbVBkZnY3cWU3UUZiUnZyalZ1emNKa0hfRkFHVm84TFFuTEhxZ3ZYZm1vbDZSNVZXM0ZreWd1RDN1em5XMnBJblVxQWVLREp1emEySEp3dVp5dFJLalJJS1Q5ZEJZTHNlRUhHZWdmQWZ4a1NDR2N2RnEtbWY3VkN0bzFJdkhaSnVsRzVqSHFLb256WG04enBwMlo5d213RGs2dS1laXJVVkRBRDBhQS1iVE1OUjFsNVpMQW41eHY1cHEtbFJieEY2U3FxNTM0eWdXSXA4elVmYTlZeVIwTllKS1ZSN09GM3JlMXM0V1lRb1B5NkNQX1Etclczc1VScGxCQUxPOEN6bmRpcm9QSmtXbUxXQXowbm5Va2hmMjFwUTlxQU1JSmpsVFVyZnVXUUVlaUpTd3NJcFpvVHF0RjVNRDRmWlNUMnoxUFpOYXhWbThFT3R3dUh5dmhuYTBxTERzNkVERnNJWFV4YjZqbXJXQnV3ZTFIbnpoLXhtRU9xTXJSdTlwdE9mT204XzN5a3Z1alZ3RWc5X1ppQmhOd2g4d0hpM0s0enlHRVdZbFZTbHYzZm1TVi1DSnM5WkNfTzZoTmNJc3haR0Fhc21SenF5RHQwX0k5WURDWkNpbDVlQUtSWElxVnNySF9MNWlXeGtYS1hwRTVpVWctd25PNnc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-02T04:36+01:00",
+      "date": "2026-10-02",
+      "source": "Konrad-Adenauer-Stiftung",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirgRBVV95cUxNaGlYc1dmbl9ELWdTYlF4MmxaanUwZ2daZ2U3VU5oNGhqRE9KOVVjQVV2TFM1TlpRbVBkZnY3cWU3UUZiUnZyalZ1emNKa0hfRkFHVm84TFFuTEhxZ3ZYZm1vbDZSNVZXM0ZreWd1RDN1em5XMnBJblVxQWVLREp1emEySEp3dVp5dFJLalJJS1Q5ZEJZTHNlRUhHZWdmQWZ4a1NDR2N2RnEtbWY3VkN0bzFJdkhaSnVsRzVqSHFLb256WG04enBwMlo5d213RGs2dS1laXJVVkRBRDBhQS1iVE1OUjFsNVpMQW41eHY1cHEtbFJieEY2U3FxNTM0eWdXSXA4elVmYTlZeVIwTllKS1ZSN09GM3JlMXM0V1lRb1B5NkNQX1Etclczc1VScGxCQUxPOEN6bmRpcm9QSmtXbUxXQXowbm5Va2hmMjFwUT",
+      "center_site": "https://kas.de/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "سياسة أمن البرنامج الإقليمي لغرب أفريقيا - مؤسسة كونراد أديناور"
     },
     {
       "center": "مجموعة الأزمات الدولية",
