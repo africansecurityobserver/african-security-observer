@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19T00:40+01:00",
+  "updated": "2026-10-19T06:51+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 73,
@@ -443,7 +443,7 @@
       "site": "https://ifsh.de/"
     }
   ],
-  "count": 35,
+  "count": 36,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -850,6 +850,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "سياسة أمن البرنامج الإقليمي لغرب أفريقيا - مؤسسة كونراد أديناور"
+    },
+    {
+      "center": "مؤسسة أبحاث المراقب (ORF)",
+      "center_short": "ORF",
+      "title": "Whither a New European Security Architecture? - orfonline.org",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQcGxrZ1VLY0V0d3B3aUtFM2tRVk80aUhGQ05ZMWdDcnJsbllOeUx6NzF4OEN6bXJUY0FVNmJIOVFEWmNQM2RJVWZVRlEyQWNwQzB5MjdBX3YxWkM3S2I1Q1lDNWljeExoTkJONUdOZlI1aDNzMDFiTjlibkdtemtFR1pMUVBkdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-04T16:41+01:00",
+      "date": "2026-10-04",
+      "source": "orfonline.org",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxQcGxrZ1VLY0V0d3B3aUtFM2tRVk80aUhGQ05ZMWdDcnJsbllOeUx6NzF4OEN6bXJUY0FVNmJIOVFEWmNQM2RJVWZVRlEyQWNwQzB5MjdBX3YxWkM3S2I1Q1lDNWljeExoTkJONUdOZlI1aDNzMDFiTjlibkdtemtFR1pMUVBkdw?oc=5\" target=\"_blank\">Whither a New European Security Architecture?</a> <font color=\"#6f6f6f\">orfonline.org</font>",
+      "center_site": "https://orfonline.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "أين هي البنية الأمنية الأوروبية الجديدة ؟ - orfonline.org"
     },
     {
       "center": "المعهد الملكي للخدمات المتحدة (RUSI)",
