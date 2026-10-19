@@ -1248,10 +1248,56 @@ empty.classList.remove('hidden');
    CATEGORY DISPLAY
 ===================================================== */
 
+function isDefenseStory(item){
+
+const text = [
+item.title,
+item.description,
+item.original_title,
+item.original_description
+].filter(Boolean).join(' ').toLowerCase();
+
+/*
+   The defense section is thematic, not geographic. Articles can still be
+   tagged north/rest/international for the Africa/World sections, so do not
+   rely on item.category alone.
+*/
+const terms = [
+'صفقة تسلح','صفقات تسلح','صفقة أسلحة','صفقات أسلحة','شراء أسلحة',
+'تصدير أسلحة','تسليم أسلحة','عقد دفاعي','عقود دفاعية','صناعة دفاعية',
+'الصناعات الدفاعية','منظومة دفاع','منظومات دفاع','دفاع جوي','صاروخ',
+'صواريخ','مقاتلة','مقاتلات','طائرة حربية','طائرات حربية','طائرة عسكرية',
+'طائرات عسكرية','طائرة مسيرة','طائرات مسيرة','طائرة دون طيار',
+'طائرات دون طيار','دبابة','دبابات','غواصة','غواصات','فرقاطة','فرقاطات',
+'سفينة حربية','سفن حربية','مدرعة','مدرعات','رادار','رادارات','ذخائر',
+'اختبار صاروخ','اختبارات صاروخية','إنفاق عسكري','ميزانية الدفاع',
+'التصنيع العسكري','تعاون عسكري','تعاون دفاعي','مناورة عسكرية',
+'مناورات عسكرية','تدريبات عسكرية','أنظمة غير مأهولة','حرب إلكترونية',
+'arms deal','arms contract','weapons procurement','weapons purchase',
+'defense contract','defence contract','defense industry','defence industry',
+'air defense','air defence','missile system','missile test','fighter jet',
+'fighter aircraft','military aircraft','combat aircraft','warplane',
+'tank','submarine','frigate','warship','radar system','military drone',
+'unmanned aircraft','military procurement','defense spending',
+'defence spending','military exercise','military drills',
+'electronic warfare','armoured vehicle','armored vehicle',
+'contrat d’armement','contrat d’armement','missile','avion de combat',
+'avion militaire','défense aérienne','industrie de défense','frégate',
+'sous-marin','véhicule blindé'
+];
+
+return item.category === 'defense' || terms.some(term => text.includes(term));
+}
+
+
 function showCategory(category){
 
 const filtered =
 items.filter(function(item){
+
+if(category === 'defense'){
+return isDefenseStory(item);
+}
 
 if(category === 'africa'){
 return item.region === 'africa' ||
