@@ -1250,45 +1250,92 @@ empty.classList.remove('hidden');
 
 function isDefenseStory(item){
 
+/*
+   Strict editorial definition for "التسليح والدفاع":
+   1) Confirmed arms/weapons-system deals between states or organizations.
+   2) An explicit announcement that a state successfully manufactured/developed
+      a weapon or defense system.
+   3) An explicit announcement of a successful first test of a weapon/system.
+   Exclude exercises, general military cooperation, defense budgets, deployments,
+   routine deliveries without a relevant deal, and generic weapons coverage.
+*/
 const text = [
 item.title,
+item.summary,
 item.description,
 item.original_title,
-item.original_description
+item.original_description,
+item.source
 ].filter(Boolean).join(' ').toLowerCase();
 
-/*
-   The defense section is thematic, not geographic. Articles can still be
-   tagged north/rest/international for the Africa/World sections, so do not
-   rely on item.category alone.
-*/
-const terms = [
-'صفقة تسلح','صفقات تسلح','صفقة أسلحة','صفقات أسلحة','شراء أسلحة',
-'تصدير أسلحة','تسليم أسلحة','عقد دفاعي','عقود دفاعية','صناعة دفاعية',
-'الصناعات الدفاعية','منظومة دفاع','منظومات دفاع','دفاع جوي','صاروخ',
-'صواريخ','مقاتلة','مقاتلات','طائرة حربية','طائرات حربية','طائرة عسكرية',
-'طائرات عسكرية','طائرة مسيرة','طائرات مسيرة','طائرة دون طيار',
-'طائرات دون طيار','دبابة','دبابات','غواصة','غواصات','فرقاطة','فرقاطات',
-'سفينة حربية','سفن حربية','مدرعة','مدرعات','رادار','رادارات','ذخائر',
-'اختبار صاروخ','اختبارات صاروخية','إنفاق عسكري','ميزانية الدفاع',
-'التصنيع العسكري','تعاون عسكري','تعاون دفاعي','مناورة عسكرية',
-'مناورات عسكرية','تدريبات عسكرية','أنظمة غير مأهولة','حرب إلكترونية',
-'arms deal','arms contract','weapons procurement','weapons purchase',
-'defense contract','defence contract','defense industry','defence industry',
-'air defense','air defence','missile system','missile test','fighter jet',
-'fighter aircraft','military aircraft','combat aircraft','warplane',
-'tank','submarine','frigate','warship','radar system','military drone',
-'unmanned aircraft','military procurement','defense spending',
-'defence spending','military exercise','military drills',
-'electronic warfare','armoured vehicle','armored vehicle',
-'contrat d’armement','contrat d’armement','missile','avion de combat',
-'avion militaire','défense aérienne','industrie de défense','frégate',
-'sous-marin','véhicule blindé'
+const weaponTerms = [
+  // Arabic systems and equipment
+  'سلاح','أسلحة','اسلحة','تسلح','تسليح','منظومة دفاع','منظومات دفاع',
+  'نظام دفاع','أنظمة دفاع','انظمة دفاع','صاروخ','صواريخ','مقاتلة','مقاتلات',
+  'طائرة حربية','طائرات حربية','طائرة عسكرية','طائرات عسكرية','دبابة','دبابات',
+  'سفينة حربية','سفن حربية','فرقاطة','فرقاطات','غواصة','غواصات','مدرعة','مدرعات',
+  'رادار عسكري','نظام صاروخي','منظومة صاروخية','طائرة مسيرة عسكرية',
+  'مسيّرة قتالية','مسيّرات قتالية','قمر صناعي عسكري',
+  // English
+  'weapon','weapons','arms','armament','missile','missile system','fighter jet',
+  'fighter aircraft','combat aircraft','warplane','military aircraft','tank',
+  'warship','frigate','submarine','air defense system','air defence system',
+  'defense system','defence system','military drone','combat drone',
+  'unmanned combat aircraft','military satellite',
+  // French
+  'armement','armes','missile','avion de combat','avion militaire',
+  'char de combat','navire de guerre','frégate','sous-marin',
+  'système de défense','systeme de defense','drone de combat'
 ];
 
-return item.category === 'defense' || terms.some(term => text.includes(term));
-}
+const dealTerms = [
+  'صفقة تسلح','صفقة تسليح','صفقة أسلحة','صفقة اسلحة','صفقات تسلح',
+  'صفقات تسليح','صفقات أسلحة','صفقات اسلحة','اتفاق لشراء','اتفاقية شراء',
+  'عقد شراء','عقد تسلح','عقد تسليح','شراء من','تشتري من','اشترت من',
+  'اقتناء','تصدير إلى','تصدير اسلحة','بيع أسلحة','بيع اسلحة',
+  'وقعت عقدا لشراء','وقّعت عقدا لشراء','تعاقدت على شراء',
+  'arms deal','arms sale','weapons deal','weapons sale','defense procurement',
+  'defence procurement','purchase agreement','contract to buy','agreed to buy',
+  'orders from','ordered from','will buy from','buys from','sold to','sale to',
+  'export deal','armament contract',
+  'contrat d’armement','contrat d armement','accord d’achat','accord d achat',
+  'commande de','vente d’armes','vente d armes','achat de systèmes d’armes',
+  'achat de systemes d armes'
+];
 
+const successTerms = [
+  'نجاح تصنيع','نجحت في تصنيع','نجح في تصنيع','أتمت تصنيع','اتمت تصنيع',
+  'بدأ الإنتاج التسلسلي','بدء الإنتاج التسلسلي','دخل الإنتاج التسلسلي',
+  'أنتجت محلياً','انتجت محليا','صنعت محلياً','صنعت محليا',
+  'نجاح تطوير','نجحت في تطوير','نجح في تطوير','أكملت تطوير','اكملت تطوير',
+  'successfully developed','successful development','successfully manufactured',
+  'successful manufacture','began serial production','started serial production',
+  'entered serial production','domestically produced','indigenous production',
+  'developed its own','built its first',
+  'a réussi à fabriquer','a réussi le développement','production en série',
+  'développé son propre','developpe son propre'
+];
+
+const firstTestTerms = [
+  'نجاح الاختبار الأول','نجاح أول اختبار','نجح الاختبار الأول','نجح أول اختبار',
+  'أول اختبار ناجح','اول اختبار ناجح','اختبرت بنجاح لأول مرة',
+  'اختبار ناجح لأول مرة','أجرت أول اختبار ناجح','اجرت اول اختبار ناجح',
+  'first successful test','first test was successful','successfully completed its first test',
+  'successful maiden test','first flight test','first successful flight test',
+  'first firing test','first live-fire test',
+  'premier essai réussi','premier test réussi','premier vol d’essai réussi',
+  'premier vol d essai réussi','a réussi son premier essai'
+];
+
+const isWeaponStory = weaponTerms.some(term => text.includes(term));
+if (!isWeaponStory) return false;
+
+const isConfirmedDeal = dealTerms.some(term => text.includes(term));
+const isSuccessfulManufacture = successTerms.some(term => text.includes(term));
+const isSuccessfulFirstTest = firstTestTerms.some(term => text.includes(term));
+
+return isConfirmedDeal || isSuccessfulManufacture || isSuccessfulFirstTest;
+}
 
 function showCategory(category){
 
