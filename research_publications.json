@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19T18:48+01:00",
+  "updated": "2026-10-20T00:48+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 73,
@@ -443,7 +443,7 @@
       "site": "https://ifsh.de/"
     }
   ],
-  "count": 52,
+  "count": 53,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -920,6 +920,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "تجارة المخدرات غير المشروعة بين أمريكا الشمالية وإفريقيا: المسارات والأنماط وسبل المواجهة"
+    },
+    {
+      "center": "وكالة أبحاث الدفاع السويدية (FOI)",
+      "center_short": "FOI",
+      "title": "Beyond Wagner: Russia's Military Engagement in Africa in the 2020s - Executive Summary - Totalförsvarets forskningsinstitut - FOI",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOY0J4bTY3a1RoaEtVNkJ0SFZIVHBWZnhEUjRFLTJUQktCTEdob09kejFQNFZnTlU2Y2dSekhVT1M2a05EZXBkd2VxYnFxWlRTSDJxQ05mQmdMNklhbVFOVVJuNTg4aEluTU41NjJFZFk5V2gzX1dZMDhhMFM5bXNOQXhHNld1a2xyQmU4?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-07T08:00+01:00",
+      "date": "2026-10-07",
+      "source": "Totalförsvarets forskningsinstitut - FOI",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxOY0J4bTY3a1RoaEtVNkJ0SFZIVHBWZnhEUjRFLTJUQktCTEdob09kejFQNFZnTlU2Y2dSekhVT1M2a05EZXBkd2VxYnFxWlRTSDJxQ05mQmdMNklhbVFOVVJuNTg4aEluTU41NjJFZFk5V2gzX1dZMDhhMFM5bXNOQXhHNld1a2xyQmU4?oc=5\" target=\"_blank\">Beyond Wagner: Russia's Military Engagement in Africa in the 2020s - Executive Summary</a> <font color=\"#6f6f6f\">Totalförsvarets forskningsinstitut - FOI</font>",
+      "center_site": "https://foi.se/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "ما وراء فاغنر: المشاركة العسكرية الروسية في أفريقيا في عشرينيات القرن العشرين - ملخص تنفيذي - معهد توتالفورسفاريتس فورسكينج - حرية المعلومات"
     },
     {
       "center": "مجلس العلاقات الخارجية",
