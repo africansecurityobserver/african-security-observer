@@ -103,7 +103,48 @@
   "systems": [],
   "defense_economics": [],
   "military_transformation": [],
-  "defense_strategy": [],
+  "defense_strategy": [
+    {
+      "id": "20261020000008_831e27e6",
+      "slot": "news",
+      "type": "defense_strategy",
+      "kind": "defense_strategy",
+      "kind_label": "الاستراتيجيات والتحالفات والجاهزية الدفاعية",
+      "title": "بطاقة استراتيجية من مصدر إخباري — إعادة بناء المخزونات العسكرية الروسية قرب حدود الناتو: قراءة في صور الأقمار الصناعية",
+      "subject": "إعادة بناء المخزونات العسكرية الروسية قرب حدود الناتو: قراءة في صور الأقمار الصناعية",
+      "date": "2026-10-19",
+      "region": "أوروبا الشرقية",
+      "summary": "موضوع البطاقة: إعادة بناء المخزونات العسكرية الروسية قرب حدود الناتو: قراءة في صور الأقمار الصناعية. تحليل لتقارير استخبارات المصادر المفتوحة وصور الأقمار الصناعية التي كشفت عن إعادة بناء وتخزين لآليات عسكرية روسية جديدة ومُحدثة، بما في ذلك دبابات T-90M ومنظومات مدفعية بالقرب من حدود دول حلف شمال الأطلسي (الناتو) وفنلندا، وسط تقييمات تفيد بأن الآليات لم تُنقل بعد إلى وحدات مقاتلة نشطة.",
+      "sections": [
+        {
+          "heading": "توطئة وتطورات ميدانية رصدتها المصادر المفتوحة",
+          "text": "في تطور لافت يتابع عن قرب التحركات العسكرية الروسية، كشفت تقارير استخباراتية استناداً إلى تحليل صور الأقمار الصناعية أن القوات المسلحة الروسية بدأت في إعادة بناء وتجديد مخزوناتها من الآليات العسكرية في عدة قواعد تخزين مركزية عبر البلاد. وقد أشار محللون من منظومة الاستخبارات المصدرية المفتوحة (OSINT)، بالتعاون مع وسائل إعلام مستقلة مثل موقع «آي ستوريز» (iStories - منصة إخبارية روسية مستقلة للتحقيقات الاستقصائية)، إلى رصد وصول معدات عسكرية جديدة بين خريف عام 2025 وشهر أكتوبر 2026. وتضمنت هذه التعزيزات دبابات طراز T-90M حديثة الصنع، وناقلات جند مدرعة من طراز BTR-82A، ومركبات قتال للمشاة من طراز BMP-3، جرى رصدها في مواقع تخزين استراتيجية تبعد مسافات متفاوتة عن حدود حلف شمال الأطلسي (الناتو)."
+        },
+        {
+          "heading": "توزيع القواعد الاستراتيجية وخصائص التخزين",
+          "text": "تركزت عمليات التخزين وإعادة التجهيز في قواعد رئيسية متعددة. ففي «قاعدة الاحتياط المركزية الثانية والعشرين» في مدينة بوي بمنطقة كوستروما، أظهرت مقارنة صور الأقمار الصناعية التي أجراها الصحفي مارك كروتوف من إذاعة أوروبا الحرة/إذاعة لبراغ (Radio Free Europe/Radio Liberty - مؤسسة إعلامية ممولة من الكونغرس الأمريكي تقدم تغطية إخبارية لأوروبا الشرقية وأسيا) وصول آليات جديدة على بعد نحو خمسمئة كيلومتر (حوالي 310 أميال) من حدود إستونيا ولاتفيا. أما في العمق، ففي «قاعدة تخزين الدبابات المركزية رقم 349» في توبشيكا بإقليم ألتاي، رصد المحللون نحو 78 دبابة طراز T-72B3 مُحدثة وأكثر من مئة مركبة قتال للمشاة من طراز BMP-2 وصلت منذ يونيو 2026. وفي منطقة كاريليا القريبة من فنلندا، تلقت «مركز دعم التعبئة والانتشار رقم 374»، الواقع على بعد نحو 185 كيلومتراً (115 ميلاً) من الحدود الفنلندية، منظومات مدفعية من طراز «مالفا» (Malva) ومدافع ذاتية الحركة من طراز «جياسينت-ك» (Giatsint-K) منذ عام 2025."
+        },
+        {
+          "heading": "طبيعة المعدات وحدود الجاهزية القتالية الفورية",
+          "text": "على الرغم من دلالات هذا التكدس العسكري، شدد الباحثون والمحللون على أن المعدات المرصودة جرى إرسالها إلى منشآت تخزين وإمداد، ولم تُنقل حتى الآن إلى وحدات عسكرية نشطة ميدانياً، مما يعني أنها ليست جاهزة لنشر فوري في عمليات قتالية واسعة النطاق. وتنوعت المعدات المرصودة بين آليات أُنتجت حديثاً في المصانع الحربية الروسية التي واصلت العمل بطاقة إنتاجية مستمرة، وأخرى خضعت لعمليات إعادة تأهيل وتحديث شاملة في ورش الإصلاح العسكرية. ويأتي هذا التوجه في سياق تكييف الجيش الروسي لاستراتيجياته الميدانية بعد الاستنزاف الكبير الذي تعرضت له مركباته المدرعة في مرحلة العمليات الواسعة، لا سيما في ظل التهديدات المستمرة التي فرضتها المسيّرات القتالية على المدرعات التقليدية، مما دفع القوات الروسية إلى الاعتماد بدرجة أكبر على هجمات المشاة والمجموعات المتنقلة الصغيرة."
+        },
+        {
+          "heading": "القراءة الاستراتيجية وسياق العلاقات مع الناتو",
+          "text": "يؤكد المراقبون أن تراكم الآليات في قواعد التخزين الخلفية والمتقدمة لا يمثل دليلاً قطعياً بذاته على وجود خطط روسية وشيكة لمهاجمة دولة عضو في حلف الناتو، خصوصاً في ظل النفي المتكرر من قبل المسؤولين الروس لأي نوايا عدوانية تجاه دول الحلف. ومع ذلك، تشير هذه المؤشرات اللوجستية إلى أن موسكو تعمل على إعادة تعويض خسائرها الاستراتيجية وبناء مخزون استراتيجي طويل الأجل قد يُستخدم في سيناريوهات مواجهة مستقبلية محتملة مع حلف الأطلسي، الذي تدرك قيادته العسكرية التحديات الجديدة التي فرضتها حرب المسيّرات واسعة النطاق. وتجدر الإشارة إلى أن تقارير صحفية استقصائية مشتركة لجهات إعلامية أوروبية من الدنمارك والنرويج والسُّويد وإستونيا كانت قد رصدت في وقت سابق من عام 2026 عمليات بناء وتحديث للبنية التحتية العسكرية بالقرب من الحدود الشمالية للناتو، مما يعزز فرضية التخطيط الاستراتيجي طويل الأمد لإعادة التموضع."
+        },
+        {
+          "heading": "خلاصة استراتيجية",
+          "text": "تمثل إعادة بناء المخزونات العسكرية وتجميع الآليات المدرعة والمدفعية قرب حدود حلف الناتو وفنلندا مؤشراً واضحاً على مساعي المؤسسة العسكرية الروسية لترميم قوتها الاستراتيجية وتعويض ما فقدته في النزاعات الجارية. ورغم أن هذه الترسانة لا تزال حبيسة مستودعات التخزين وغير جاهزة للعمليات الميدانية المباشرة، إلا أنها تعكس عقيدة استباقية لإعادة بناء القدرات تحسباً لأي تصعيد مستقبلي، مما يبقي الجبهة الشمالية والشرقية لأوروبا في حالة ترقب وتوتر لوجستي مستمر. أما على صعيد المصالح الاستراتيجية لتونس، فإن هذه التطورات في سلاسل الإمداد العسكري العالمي وتعافي القدرات الصناعية للدول الكبرى تؤكد أهمية متابعة أسواق السلاح العالمية بدقة والتأقلم مع التحولات التقنية المتسارعة، لا سيما في مجالات الردع الدفاعي وتأمين سلاسل التوريد الحيوية للمعدات العسكرية والتقنيات ذات الاستخدام المزدوج، بما يخدم متطلبات الأمن القومي الوطني دون الانخراط في التجاذبات الجيوسياسية الكبرى."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Kyiv Post",
+          "url": "https://www.kyivpost.com/post/87513"
+        }
+      ]
+    }
+  ],
   "regional_crisis": [
     {
       "id": "20261013100800",
@@ -383,29 +424,30 @@
     }
   ],
   "checked_urls": [
-    "https://www.aljazeera.net/encyclopedia/2026/10/18/%d8%a7%d9%84%d8%ba%d9%88%d8%a7%d8%b5%d8%a9-%d8%b1%d9%8a%d9%85%d9%88%d8%b3-600-%d8%b9%d9%8a%d9%86-%d8%a7%d9%84%d9%85%d8%ad%d9%8a%d8%b7-%d8%a7%d9%84%d9%85%d8%b3%d9%8a%d8%b1%d8%a9?traffic_source=rss",
+    "https://aerospaceglobalnews.com/news/somalia-jf17-saudi-pakistan/",
     "https://united24media.com/world/bulgaria-asks-nato-for-aircraft-air-defenses-and-counter-drone-systems-as-black-sea-attacks-intensify-23513",
-    "https://asharq.com/politics/199763/%D8%AD%D9%88%D8%A7%D8%AF%D8%AB-%D8%A3%D9%85%D9%86%D9%8A%D8%A9-%D8%AA%D9%87%D8%AF%D8%AF-%D8%A8%D8%A7%D9%86%D8%B2%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%AA%D9%88-%D8%A5%D9%84%D9%89-%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9-%D9%85%D8%B9-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7/",
-    "https://ninanews.com/website/News/Details?Key=1320646",
-    "https://www.diplomacyandlaw.com/post/black-sea-drone-attacks-shipping",
-    "https://alikhbariya.net/stories/822cbe7e-234b-4029-b6d1-2a33ab11953e/%D8%AF%D9%8A%D8%AF%D8%A7%D9%86-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%AE%D8%B7%D8%B1-%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%8A%D8%AA%D9%83%D8%A7%D8%AB%D8%B1-%D8%B0%D8%A7%D8%AA%D9%8A%D8%A7-%D9%88%D9%8A%D9%87%D8%AF%D8%AF-%D8%A3%D9%85%D8%A7%D9%86-%D8%A7%D9%84%D8%A3%D8%AC%D9%87%D8%B2%D8%A9",
-    "https://africa.businessinsider.com/local/markets/somalia-may-have-just-purchased-jf-17-thunder-fighter-jets-from-pakistan-once/51mggel",
-    "https://kfgo.com/2026/10/18/romanian-f-16-fighter-jets-shoot-down-two-drones-over-romanian-territorial-waters/",
-    "https://bdnews24.com/world/7e4w426j7y",
-    "https://www.orfonline.org/expert-speak/sahel-s-geopolitical-reset-and-russia-s-strategic-opening",
-    "https://www.leconomistemaghrebin.com/2026/10/19/tunisie-guinee-bissau-vers-cooperation-renforcee-commerce-leducation/",
-    "https://alikhbariya.net/stories/0e8b11a9-1179-4d94-a861-a95d43c51941/%D8%A7%D9%84%D8%AA%D9%88%D9%86%D8%B3%D9%8A%D9%88%D9%86-%D9%8A%D8%AE%D8%B1%D8%AC%D9%88%D9%86-%D9%81%D9%8A-%D8%A3%D9%83%D8%A8%D8%B1-%D8%A7%D8%AD%D8%AA%D8%AC%D8%A7%D8%AC%D8%A7%D8%AA-%D8%B9%D9%84%D9%89-%D8%AD%D9%83%D9%85-%D8%B3%D8%B9%D9%8A%D8%AF-%D9%85%D9%86%D8%B0-%D8%B3%D9%86%D9%88%D8%A7%D8%AA",
-    "https://www.arabnews.jp/en/japan/vice-foreign-minister-ozora-meets-ambassadors-of-tunisia-and-algeria-3000847",
-    "https://defence-industry.eu/sweden-plans-nato-ground-deployments-in-finland-and-latvia-and-continued-patriot-operations-in-poland-in-2027/",
     "https://africa.businessinsider.com/local/markets/china-beats-the-us-in-africas-critical-minerals-race-but-congo-arrests-300-chinese/h72g29b",
+    "https://www.leconomistemaghrebin.com/2026/10/19/tunisie-guinee-bissau-vers-cooperation-renforcee-commerce-leducation/",
+    "https://www.jurist.org/news/2026/10/libyan-armed-forces-execute-31-after-unfair-military-trials-breaking-15-year-moratorium/",
+    "https://www.kyivpost.com/post/87513",
+    "https://defence-industry.eu/sweden-plans-nato-ground-deployments-in-finland-and-latvia-and-continued-patriot-operations-in-poland-in-2027/",
+    "https://alikhbariya.net/stories/822cbe7e-234b-4029-b6d1-2a33ab11953e/%D8%AF%D9%8A%D8%AF%D8%A7%D9%86-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%AE%D8%B7%D8%B1-%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%8A%D8%AA%D9%83%D8%A7%D8%AB%D8%B1-%D8%B0%D8%A7%D8%AA%D9%8A%D8%A7-%D9%88%D9%8A%D9%87%D8%AF%D8%AF-%D8%A3%D9%85%D8%A7%D9%86-%D8%A7%D9%84%D8%A3%D8%AC%D9%87%D8%B2%D8%A9",
     "https://www.tsa-algerie.com/conflit-arabie-saoudite-houthis-legypte-sapprete-a-une-intervention-militaire-directe/",
     "https://alfilahia.net/%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D9%88%D9%83%D9%88%D8%B1%D9%8A%D8%A7-%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8%D9%8A%D8%A9-%D8%AA%D8%B9%D8%B2%D8%B2%D8%A7%D9%86-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7/",
-    "https://www.jurist.org/news/2026/10/libyan-armed-forces-execute-31-after-unfair-military-trials-breaking-15-year-moratorium/",
-    "https://www.algeriedirect.dz/%D9%82%D9%85%D8%A9-%D8%A7%D9%84%D9%82%D8%A7%D8%AF%D8%A9/",
-    "https://www.unmannedairspace.info/counter-uas-systems-and-policies/bulgaria-plans-to-joins-nato-c-uas-initiative-following-black-sea-drone-attacks/",
-    "https://aerospaceglobalnews.com/news/somalia-jf17-saudi-pakistan/",
+    "https://alikhbariya.net/stories/0e8b11a9-1179-4d94-a861-a95d43c51941/%D8%A7%D9%84%D8%AA%D9%88%D9%86%D8%B3%D9%8A%D9%88%D9%86-%D9%8A%D8%AE%D8%B1%D8%AC%D9%88%D9%86-%D9%81%D9%8A-%D8%A3%D9%83%D8%A8%D8%B1-%D8%A7%D8%AD%D8%AA%D8%AC%D8%A7%D8%AC%D8%A7%D8%AA-%D8%B9%D9%84%D9%89-%D8%AD%D9%83%D9%85-%D8%B3%D8%B9%D9%8A%D8%AF-%D9%85%D9%86%D8%B0-%D8%B3%D9%86%D9%88%D8%A7%D8%AA",
     "https://www.echoroukonline.com/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%AA%D8%A8%D9%88%D9%86-%D9%8A%D8%AC%D8%AF%D8%AF-%D8%A7%D9%84%D8%AA%D8%B2%D8%A7%D9%85-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D8%A8%D8%AD%D9%85%D8%A7%D9%8A",
-    "https://warontherocks.com/how-sudan-became-a-laboratory-for-drone-warfare-thanks-to-abu-dhabi/"
+    "https://warontherocks.com/how-sudan-became-a-laboratory-for-drone-warfare-thanks-to-abu-dhabi/",
+    "https://kfgo.com/2026/10/18/romanian-f-16-fighter-jets-shoot-down-two-drones-over-romanian-territorial-waters/",
+    "https://www.arabnews.jp/en/japan/vice-foreign-minister-ozora-meets-ambassadors-of-tunisia-and-algeria-3000847",
+    "https://www.orfonline.org/expert-speak/sahel-s-geopolitical-reset-and-russia-s-strategic-opening",
+    "https://asharq.com/politics/199763/%D8%AD%D9%88%D8%A7%D8%AF%D8%AB-%D8%A3%D9%85%D9%86%D9%8A%D8%A9-%D8%AA%D9%87%D8%AF%D8%AF-%D8%A8%D8%A7%D9%86%D8%B2%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%AA%D9%88-%D8%A5%D9%84%D9%89-%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9-%D9%85%D8%B9-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7/",
+    "https://www.aljazeera.net/encyclopedia/2026/10/18/%d8%a7%d9%84%d8%ba%d9%88%d8%a7%d8%b5%d8%a9-%d8%b1%d9%8a%d9%85%d9%88%d8%b3-600-%d8%b9%d9%8a%d9%86-%d8%a7%d9%84%d9%85%d8%ad%d9%8a%d8%b7-%d8%a7%d9%84%d9%85%d8%b3%d9%8a%d8%b1%d8%a9?traffic_source=rss",
+    "https://www.unmannedairspace.info/counter-uas-systems-and-policies/bulgaria-plans-to-joins-nato-c-uas-initiative-following-black-sea-drone-attacks/",
+    "https://africa.businessinsider.com/local/markets/somalia-may-have-just-purchased-jf-17-thunder-fighter-jets-from-pakistan-once/51mggel",
+    "https://www.algeriedirect.dz/%D9%82%D9%85%D8%A9-%D8%A7%D9%84%D9%82%D8%A7%D8%AF%D8%A9/",
+    "https://www.diplomacyandlaw.com/post/black-sea-drone-attacks-shipping",
+    "https://ninanews.com/website/News/Details?Key=1320646",
+    "https://bdnews24.com/world/7e4w426j7y"
   ],
   "event_driven_migration_v1": true
 }
