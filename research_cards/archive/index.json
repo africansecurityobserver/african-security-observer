@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19T07:07:35+01:00",
+  "updated": "2026-10-19T13:13:22+01:00",
   "years": [
     {
       "year": "2026",
@@ -12,6 +12,16 @@
               "title": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
               "subject": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
               "path": "2026-10/20261014_6ec677f032cb.json",
+              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+              "source_title": "Libya’s arsenals are a blind spot in the Tripoli agreement - ISS Africa",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-14",
+              "title": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
+              "subject": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
+              "path": "2026-10/20261014_ef6c5aafa5c1.json",
               "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
               "source_title": "Libya’s arsenals are a blind spot in the Tripoli agreement - ISS Africa",
               "slot": "research",
@@ -69,6 +79,16 @@
             },
             {
               "date": "2026-10-08",
+              "title": "الانتقال المتصدع في تونس من منظور مقارن - المركز العربي واشنطن العاصمة",
+              "subject": "الانتقال المتصدع في تونس من منظور مقارن - المركز العربي واشنطن العاصمة",
+              "path": "2026-10/20261008_e7d024c00623.json",
+              "center": "المركز العربي في واشنطن",
+              "source_title": "Tunisia’s Fractured Transition in Comparative Perspective - Arab Center Washington DC",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-08",
               "title": "الانتقال المتصدع في تونس من منظور مقارن",
               "subject": "الانتقال المتصدع في تونس من منظور مقارن",
               "path": "2026-10/20261013_tunisia-fractured-transition.json",
@@ -102,6 +122,16 @@
               "title": "استعراض عقدين من مراقبة الأسلحة والذخائر على الصعيد دون الإقليمي في أفريقيا - معهد الأمم المتحدة لبحوث نزع السلاح",
               "subject": "استعراض عقدين من مراقبة الأسلحة والذخائر على الصعيد دون الإقليمي في أفريقيا - معهد الأمم المتحدة لبحوث نزع السلاح",
               "path": "2026-10/20261005_6686d9d8f658.json",
+              "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
+              "source_title": "Reviewing two decades of subregional arms and ammunition control in Africa - UNIDIR",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-05",
+              "title": "استعراض عقدين من مراقبة الأسلحة والذخائر على الصعيد دون الإقليمي في أفريقيا - معهد الأمم المتحدة لبحوث نزع السلاح",
+              "subject": "استعراض عقدين من مراقبة الأسلحة والذخائر على الصعيد دون الإقليمي في أفريقيا - معهد الأمم المتحدة لبحوث نزع السلاح",
+              "path": "2026-10/20261005_24821859d75e.json",
               "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
               "source_title": "Reviewing two decades of subregional arms and ammunition control in Africa - UNIDIR",
               "slot": "research",
