@@ -32,6 +32,37 @@ def clean(value):
     value=re.sub(r"<[^>]+>"," ",str(value or ""))
     return re.sub(r"\s+"," ",value).strip()
 
+def canonical_url(url):
+    """Collapse Google News locale wrappers to one stable article identity."""
+    url = clean(url)
+    try:
+        parsed = urlparse(url)
+        if parsed.netloc.lower().endswith("news.google.com") and parsed.path.startswith("/rss/articles/"):
+            return f"{parsed.scheme}://{parsed.netloc}{parsed.path}"
+    except Exception:
+        pass
+    return url.rstrip("/")
+
+
+def identity_text(value):
+    value = clean(value).casefold()
+    value = re.sub(r"[^\\w]+", " ", value, flags=re.UNICODE)
+    return " ".join(value.split())
+
+
+def publication_identity(item):
+    center = identity_text(item.get("center") or item.get("source") or "")
+    title = identity_text(item.get("title") or item.get("source_title") or "")
+    return (center, title) if center and title else None
+
+
+def is_generic_listing_title(title):
+    return bool(re.match(
+        r"^(?:publications|latest publications|all publications|research publications)\\s*(?:[-|:]|$)",
+        clean(title).casefold()
+    ))
+
+
 def fetch_url(url):
     """Fetch a page or PDF with bounded timeouts and redirects."""
     response = requests.get(url, headers=HEADERS, timeout=30, allow_redirects=True)
@@ -331,9 +362,68 @@ def main():
     data=load(DATA,{"updated":None,"cards":[],"processed_urls":[]})
     if not isinstance(data,dict): data={"updated":None,"cards":[],"processed_urls":[]}
     data.setdefault("cards",[]); data.setdefault("processed_urls",[])
-    known=set(data["processed_urls"])
-    known.update(c.get("source_url","") for c in data["cards"] if isinstance(c,dict))
-    candidates=[p for p in publications if isinstance(p,dict) and p.get("url") and p["url"] not in known]
+
+    # Clean duplicates already stored from Google News locale variants.
+    unique_cards = {}
+    removed_paths = []
+    for card in data["cards"]:
+        if not isinstance(card, dict):
+            continue
+        if is_generic_listing_title(card.get("source_title") or card.get("title", "")):
+            if card.get("path"):
+                removed_paths.append(card["path"])
+            continue
+        identity = publication_identity({
+            "center": card.get("center"),
+            "title": card.get("source_title") or card.get("title")
+        })
+        if not identity:
+            identity = ("url", canonical_url(card.get("source_url", "")))
+        previous = unique_cards.get(identity)
+        if previous is None:
+            unique_cards[identity] = card
+            continue
+        # Keep the richer card if two versions of the same publication exist.
+        score = lambda item: len(clean(item.get("summary", ""))) + sum(
+            len(clean(section.get("text", ""))) for section in item.get("sections", [])
+            if isinstance(section, dict)
+        )
+        if score(card) > score(previous):
+            if previous.get("path"):
+                removed_paths.append(previous["path"])
+            unique_cards[identity] = card
+        elif card.get("path"):
+            removed_paths.append(card["path"])
+
+    data["cards"] = list(unique_cards.values())
+    for relative_path in set(removed_paths):
+        target = (ARCHIVE / relative_path).resolve()
+        if target.is_file() and ARCHIVE.resolve() in target.parents:
+            target.unlink()
+            print("Removed duplicate research-card archive file:", relative_path)
+
+    known = {canonical_url(url) for url in data["processed_urls"] if url}
+    known.update(canonical_url(card.get("source_url", "")) for card in data["cards"] if isinstance(card, dict))
+    # Also mark each publication identity as known, not only its raw RSS URL.
+    known_identities = {publication_identity({
+        "center": card.get("center"),
+        "title": card.get("source_title") or card.get("title")
+    }) for card in data["cards"] if isinstance(card, dict)}
+    candidates = []
+    candidate_ids = set()
+    for publication in publications:
+        if not isinstance(publication, dict) or not publication.get("url"):
+            continue
+        if is_generic_listing_title(publication.get("title", "")):
+            continue
+        url_key = canonical_url(publication["url"])
+        identity = publication_identity(publication)
+        if url_key in known or (identity and identity in known_identities) or (identity and identity in candidate_ids):
+            continue
+        candidates.append(publication)
+        known.add(url_key)
+        if identity:
+            candidate_ids.add(identity)
     # Process highest relevance first, newest first within each relevance tier.
     ordered=[]
     for tier in sorted({int(p.get("relevance_tier",9) or 9) for p in candidates}):
@@ -344,7 +434,14 @@ def main():
         ))
     candidates=ordered
     if not candidates:
-        print("No new research publications to convert."); return
+        data["processed_urls"] = list(dict.fromkeys(
+            canonical_url(url) for url in data["processed_urls"] if url
+        ))
+        data["updated"] = datetime.now(TZ).isoformat(timespec="seconds")
+        save(DATA, data)
+        save(INDEX, make_index(data["cards"]))
+        print("No new research publications to convert; duplicate cleanup saved.")
+        return
     client=genai.Client(api_key=key,http_options=types.HttpOptions(timeout=180000))
     schema={"type":"object","properties":{
       "publish":{"type":"boolean"},"introduction":{"type":"string"},
@@ -427,10 +524,10 @@ publish boolean; introduction string; analysis_one, analysis_two, analysis_three
           "date":date,"published":published,"region":clean(p.get("relevance_label")),"summary":clean(out.get("summary")),
           "sections":sections,"sources":[{"title":f"{center} — {title}","url":resolved if resolved.startswith("http") else url}],
           "source_url":url,"source_original_url":resolved if resolved.startswith("http") else url,"path":path}
-        save(ARCHIVE/path,card); data["cards"].append(card); data["processed_urls"].append(url); count+=1
+        save(ARCHIVE/path,card); data["cards"].append(card); data["processed_urls"].append(canonical_url(url)); count+=1
         print("Published research card:",card["title"][:150])
     data["cards"]=sorted(data["cards"],key=lambda c:(c.get("date",""),c.get("title","")),reverse=True)
-    data["processed_urls"]=list(dict.fromkeys(data["processed_urls"]))
+    data["processed_urls"]=list(dict.fromkeys(canonical_url(url) for url in data["processed_urls"] if url))
     data["updated"]=datetime.now(TZ).isoformat(timespec="seconds")
     save(DATA,data); save(INDEX,make_index(data["cards"]))
     print(f"Research cards total={len(data['cards'])}; generated this run={count}; pending for retry={failed_count}; new candidates seen={len(candidates)}")
