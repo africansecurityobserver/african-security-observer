@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T13:38:31+01:00",
+  "updated": "2026-10-20T14:19:27+01:00",
   "years": [
     {
       "year": "2026",
@@ -32,16 +32,6 @@
               "title": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
               "subject": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
               "path": "2026-10/20261014_6ec677f032cb.json",
-              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-              "source_title": "Libya’s arsenals are a blind spot in the Tripoli agreement - ISS Africa",
-              "slot": "research",
-              "kind_label": "بطاقة استراتيجية من مراكز البحث"
-            },
-            {
-              "date": "2026-10-14",
-              "title": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
-              "subject": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
-              "path": "2026-10/20261014_ef6c5aafa5c1.json",
               "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
               "source_title": "Libya’s arsenals are a blind spot in the Tripoli agreement - ISS Africa",
               "slot": "research",
@@ -119,16 +109,6 @@
             },
             {
               "date": "2026-10-08",
-              "title": "الانتقال المتصدع في تونس من منظور مقارن - المركز العربي واشنطن العاصمة",
-              "subject": "الانتقال المتصدع في تونس من منظور مقارن - المركز العربي واشنطن العاصمة",
-              "path": "2026-10/20261008_e7d024c00623.json",
-              "center": "المركز العربي في واشنطن",
-              "source_title": "Tunisia’s Fractured Transition in Comparative Perspective - Arab Center Washington DC",
-              "slot": "research",
-              "kind_label": "بطاقة استراتيجية من مراكز البحث"
-            },
-            {
-              "date": "2026-10-08",
               "title": "الانتقال المتصدع في تونس من منظور مقارن",
               "subject": "الانتقال المتصدع في تونس من منظور مقارن",
               "path": "2026-10/20261013_tunisia-fractured-transition.json",
@@ -142,16 +122,6 @@
               "title": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
               "subject": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
               "path": "2026-10/20261008_030c9ee7dfc9.json",
-              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-              "source_title": "Africa can see El Niño coming – will countries act in time? - ISS Africa",
-              "slot": "research",
-              "kind_label": "بطاقة استراتيجية من مراكز البحث"
-            },
-            {
-              "date": "2026-10-08",
-              "title": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
-              "subject": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
-              "path": "2026-10/20261008_e1c2c3af9ece.json",
               "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
               "source_title": "Africa can see El Niño coming – will countries act in time? - ISS Africa",
               "slot": "research",
@@ -174,16 +144,6 @@
               "path": "2026-10/20261006_236ecdb3c1cf.json",
               "center": "مجلس العلاقات الخارجية",
               "source_title": "Russia-Ukraine War Update and Perspectives From NATO Member Countries: Lunch and Discussion with CFR's Global Board of Advisors - Council on Foreign Relations",
-              "slot": "research",
-              "kind_label": "بطاقة استراتيجية من مراكز البحث"
-            },
-            {
-              "date": "2026-10-05",
-              "title": "استعراض عقدين من مراقبة الأسلحة والذخائر على الصعيد دون الإقليمي في أفريقيا - معهد الأمم المتحدة لبحوث نزع السلاح",
-              "subject": "استعراض عقدين من مراقبة الأسلحة والذخائر على الصعيد دون الإقليمي في أفريقيا - معهد الأمم المتحدة لبحوث نزع السلاح",
-              "path": "2026-10/20261005_6686d9d8f658.json",
-              "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
-              "source_title": "Reviewing two decades of subregional arms and ammunition control in Africa - UNIDIR",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
