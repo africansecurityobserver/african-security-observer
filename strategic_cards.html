@@ -232,8 +232,26 @@ link.href=url;link.download='بطاقة-استراتيجية-'+String(card.date|
 async function loadArchive(){
 const params=new URLSearchParams(window.location.search);
 const requestedType=params.get('type');
+const requestedCard=params.get('card');
 if(requestedType==='news'||requestedType==='research'){
 await openArchive(requestedType);
+if(requestedCard&&requestedType==='research'){
+const target=requestedCard;
+for(const year of archiveIndex.years||[]){
+ for(const month of year.months||[]){
+  const cards=month.cards||[];
+  const index=cards.findIndex(card=>String(card.path||'')===target);
+  if(index>=0){
+   selectedYear=String(year.year);selectedMonth=String(month.month);
+   window.currentMonthCards=[...cards].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.title||'').localeCompare(a.title||''));
+   const sortedIndex=window.currentMonthCards.findIndex(card=>String(card.path||'')===target);
+   await openArchivedCard(sortedIndex);
+   return;
+  }
+ }
+}
+content.innerHTML='<div class="empty">لم نعثر على البطاقة المطلوبة في الأرشيف.</div>';
+}
 }else{
 showRoot();
 }
