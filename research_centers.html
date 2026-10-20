@@ -31,6 +31,14 @@ h2{color:var(--navy);font-size:22px;margin:0}
 .center{display:inline-block;background:#edf3f7;color:var(--blue);border-radius:4px;padding:2px 8px;font-size:11px;font-weight:bold}
 .source-link{display:inline-block;color:var(--blue);font-size:13px;font-weight:bold;text-decoration:none;margin-top:8px}
 .source-link:hover{text-decoration:underline}
+.strategic-card{margin-top:16px;padding:15px;background:#f7f9fb;border:1px solid #cbd8e2;border-right:4px solid var(--gold);border-radius:7px}
+.strategic-card h4{margin:0 0 8px;color:var(--navy);font-size:17px}
+.strategic-card .card-summary{font-weight:bold;margin:0 0 12px;line-height:1.85}
+.strategic-card .card-section{margin-top:12px}
+.strategic-card .card-section h5{margin:0 0 5px;color:var(--blue);font-size:14px}
+.strategic-card .card-section p{margin:0;line-height:1.9;white-space:pre-line;font-size:14px}
+.strategic-card .card-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.card-label{display:inline-block;background:#e8f0f5;color:var(--blue);border-radius:4px;padding:3px 8px;font-size:11px;font-weight:bold;margin-bottom:8px}
 .empty,.loading{background:#fff;border:1px dashed var(--line);border-radius:8px;text-align:center;padding:28px;color:var(--muted)}
 footer{text-align:center;padding:20px 12px;color:var(--muted);font-size:12px}
 @media(max-width:650px){header h1{font-size:21px}.tools input,.tools select{width:100%;min-width:0}.publication{padding:12px}.publication h3{font-size:15px}}
@@ -51,7 +59,7 @@ footer{text-align:center;padding:20px 12px;color:var(--muted);font-size:12px}
 <h2>أحدث الدراسات والتقارير المنشورة</h2>
 <span id="status">جارٍ تحميل قائمة المنشورات…</span>
 </div>
-<p class="intro">يعرض هذا القسم عناوين الدراسات والتقارير والتحليلات المنشورة على المواقع الأصلية لمراكز البحوث، مع روابط مباشرة لقراءتها. لا يعرض البطاقات الاستراتيجية الصباحية والمسائية؛ فهي موجودة في قسم مستقل.</p>
+<p class="intro">يعرض هذا القسم منشورات مراكز البحوث الاستراتيجية والأمنية، وتظهر البطاقة الاستراتيجية المستخلصة من كل منشور مباشرة ضمن بطاقة المنشور نفسه عند توفرها. وتبقى البطاقات محفوظة في الأرشيف أيضًا.</p><p class="intro"><a href="./strategic_cards.html?type=research" class="source-link">أرشيف البطاقات الاستراتيجية السابقة ↗</a></p>
 <div class="tools">
 <input id="search" type="search" placeholder="ابحث في عنوان المنشور أو اسم المركز" aria-label="البحث في المنشورات">
 <select id="centerFilter" aria-label="تصفية حسب المركز"><option value="">جميع المراكز</option></select>
@@ -70,6 +78,7 @@ const periodEl=document.getElementById('periodFilter');
 const tierEl=document.getElementById('tierFilter');
 const statusEl=document.getElementById('status');
 let publications=[];
+let researchCards=[];
 function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function dateValue(item){const d=new Date(item.published||item.date||'');return Number.isNaN(d.getTime())?null:d;}
 function normalizeText(v){
@@ -94,6 +103,23 @@ function relevanceTier(p){
  if(tierRules[4].some(k=>text.includes(normalizeText(k))))return 4;
  return 0;
 }
+function cardForPublication(p){
+ const title=normalizeText(p.title||'');
+ if(!title)return null;
+ return researchCards.find(c=>normalizeText(c.source_title||'')===title)||researchCards.find(c=>{
+   const sourceTitle=normalizeText(c.source_title||'');
+   return sourceTitle.length>24&&title.length>24&&(sourceTitle.includes(title)||title.includes(sourceTitle));
+ })||null;
+}
+function renderCard(card){
+ const sections=Array.isArray(card.sections)?card.sections:[];
+ const sectionHtml=sections.map(s=>'<div class="card-section"><h5>'+esc(s.heading||'')+'</h5><p>'+esc(s.text||'')+'</p></div>').join('');
+ const sourceLinks=(Array.isArray(card.sources)?card.sources:[]).map(s=>{
+   const u=String(s.url||'').trim();
+   return (u.startsWith('https://')||u.startsWith('http://'))?'<a class="source-link" href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">المصدر الأصلي للبطاقة ↗</a>':'';
+ }).join('');
+ return '<div class="strategic-card"><span class="card-label">البطاقة الاستراتيجية المرتبطة بهذه النشرية</span><h4>'+esc(card.title||'تحليل استراتيجي للنشرية')+'</h4>'+(card.summary?'<p class="card-summary">'+esc(card.summary)+'</p>':'')+sectionHtml+'<div class="card-links">'+sourceLinks+'<a class="source-link" href="./strategic_cards.html?type=research">تصفح أرشيف البطاقات ↗</a></div></div>';
+}
 function render(){
  const q=searchEl.value.trim().toLocaleLowerCase();
  const center=centerEl.value;
@@ -109,21 +135,32 @@ function render(){
  });
  filtered.sort((a,b)=>relevanceTier(a)-relevanceTier(b)||(dateValue(b)?.getTime()||0)-(dateValue(a)?.getTime()||0));
  if(!filtered.length){listEl.innerHTML='<div class="empty">لا توجد منشورات مطابقة لمعايير الأهمية الجغرافية المختارة حاليًا. ستظهر المنشورات الجديدة المؤهلة بعد التحديث الدوري.</div>';return;}
+ const renderedCards=new Set();
  listEl.innerHTML=filtered.map(p=>{
    const d=dateValue(p);
    const dateLabel=d?new Intl.DateTimeFormat('ar-TN',{dateStyle:'medium'}).format(d):(p.date||'تاريخ غير متوفر');
    const candidateUrl=String(p.url||'').trim();
    const url=(candidateUrl.startsWith('https://')||candidateUrl.startsWith('http://'))?candidateUrl:'#';
    const tier=relevanceTier(p);
-   return '<article class="publication"><div class="meta"><span class="center">'+esc(p.center||p.center_short||'مركز أبحاث')+'</span><span class="center">الأولوية '+tier+' · '+esc(tierLabels[tier])+'</span><span>'+esc(dateLabel)+'</span></div><h3><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.title_ar||'جارٍ إعداد العنوان العربي')+'</a></h3><div class="meta">'+(p.source&&p.source!==p.center?'<span>الناشر: '+esc(p.source)+'</span>':'')+'</div><a class="source-link" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">قراءة المنشور في موقعه الأصلي ↗</a></article>';
+   const card=cardForPublication(p);
+   const cardKey=card?normalizeText((card.center||'')+'|'+(card.source_title||card.title||'')):'';
+   const attachedCard=card&&!renderedCards.has(cardKey)?(renderedCards.add(cardKey),renderCard(card)):'';
+   return '<article class="publication"><div class="meta"><span class="center">'+esc(p.center||p.center_short||'مركز أبحاث')+'</span><span class="center">الأولوية '+tier+' · '+esc(tierLabels[tier])+'</span><span>'+esc(dateLabel)+'</span></div><h3><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.title_ar||'جارٍ إعداد العنوان العربي')+'</a></h3><div class="meta">'+(p.source&&p.source!==p.center?'<span>الناشر: '+esc(p.source)+'</span>':'')+'</div><a class="source-link" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">قراءة المنشور في موقعه الأصلي ↗</a>'+attachedCard+'</article>';
  }).join('');
 }
 async function load(){
  try{
-  const r=await fetch('./research_publications.json?t='+Date.now(),{cache:'no-store'});
+  const [r,cardsResponse]=await Promise.all([
+   fetch('./research_publications.json?t='+Date.now(),{cache:'no-store'}),
+   fetch('./research_cards.json?t='+Date.now(),{cache:'no-store'})
+  ]);
   if(!r.ok)throw new Error('publication data unavailable');
   const data=await r.json();
   publications=Array.isArray(data)?data:(Array.isArray(data.publications)?data.publications:[]);
+  if(cardsResponse.ok){
+   const cardsData=await cardsResponse.json();
+   researchCards=Array.isArray(cardsData.cards)?cardsData.cards:[];
+  }
   const directory=Array.isArray(data.centers)?data.centers:[];
   const names=[...new Set([
     ...directory.map(c=>typeof c==='string'?c:c.name),
