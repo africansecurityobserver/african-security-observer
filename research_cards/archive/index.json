@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T07:09:47+01:00",
+  "updated": "2026-10-20T10:44:48+01:00",
   "years": [
     {
       "year": "2026",
@@ -94,6 +94,16 @@
               "path": "2026-10/20261013_tunisia-fractured-transition.json",
               "center": "المركز العربي في واشنطن",
               "source_title": "Tunisia’s Fractured Transition in Comparative Perspective - Arab Center Washington DC",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-08",
+              "title": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
+              "subject": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
+              "path": "2026-10/20261008_030c9ee7dfc9.json",
+              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+              "source_title": "Africa can see El Niño coming – will countries act in time? - ISS Africa",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
