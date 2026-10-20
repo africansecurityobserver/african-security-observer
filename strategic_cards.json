@@ -100,7 +100,48 @@
       ]
     }
   ],
-  "systems": [],
+  "systems": [
+    {
+      "id": "20261020165002_d5a301c4",
+      "slot": "news",
+      "type": "systems",
+      "kind": "systems",
+      "kind_label": "المنظومات والابتكارات العسكرية",
+      "title": "بطاقة استراتيجية من مصدر إخباري — مناورات القمر الاصطناعي كوزموس 2612 واختبار حدود المواجهة في الفضاء",
+      "subject": "مناورات القمر الاصطناعي كوزموس 2612 واختبار حدود المواجهة في الفضاء",
+      "date": "2026-10-20",
+      "region": "الفضاء الخارجي / روسيا / الولايات المتحدة",
+      "summary": "موضوع البطاقة: مناورات القمر الاصطناعي كوزموس 2612 واختبار حدود المواجهة في الفضاء. أثار اقتراب القمر الاصطناعي الروسي 'كوزموس 2612' لمسافات غير مسبوقة من قمر الاستطلاع الراداري التجاري 'آيس آي إكس 36' التابع لشركة 'آيس آي' الفنلندية والمسجل في الولايات المتحدة والمخصص لخدمة الجيش الأوكراني، تساؤلات استراتيجية واسعة حول جاهزية موسكو لتنفيذ عمليات هجومية في الفضاء، وسط ترجيحات بتراجع الكرملين في اللحظات الأخيرة أو اكتفائه باختبار عملياتي لقدراته المدارية.",
+      "sections": [
+        {
+          "heading": "خلفية إطلاق «كوزموس 2612» وسياق المناورات المدارية",
+          "text": "أُطلق القمر الاصطناعي الروسي 'كوزموس 2612' في السادس عشر من أبريل/نيسان 2026 من قاعدة بليسيتسك الفضائية الروسية، برفقة خمسة أقمار اصطناعية أخرى. وفي مرحلة الإطلاق والأشهر اللاحقة، لم تُظهر هذه الأقمار سلوكًا غير معتاد أو مناورات مدارية للبقاء على المسار نفسه مع أقمار أخرى، إلى أن تغير ذلك في الثلاثين من سبتمبر/أيلول الماضي. وبحسب تحليل أعده ثيودور كروتشيك، محلل الرادار والرائد السابق في القوات الجوية الأمريكية، عبر منصة 'كيب تراك' المفتوحة المصدر لتتبع الأقمار الاصطناعية، نفذ القمر الروسي سلسلة تحركات مدارية مدروسة بدقة للوصول إلى موقع محدد في توقيت زمني حرج. وأوضح الكتحليل أن القمر الروسي رفع مداره بمقدار سبعة وأربعين كيلومترا عبر عمليتي دفع في اليوم نفسه، مما أدى إلى انخفاض سرعته مقارنة بالقمر المستهدف 'آيس آي إكس 36'، واتساع المسافة بينهما بآلاف الكيلومترات يوميا، وهو نمط مداري يتيح ضبط توقيت الوصول بدقة بالغة."
+        },
+        {
+          "heading": "طبيعة الاقتراب الحرج والمخاطر الميدانية في المدار الأرضي المنخفض",
+          "text": "كشفت بيانات التتبع المداري أن القمر الروسي 'كوزموس 2612' نجح في تقليص المسافة الفاصلة بينه وبين نظيره الأمريكي التجاري من أكثر من مئتي ميل (نحو ثلاثمائة واثنين وعشرين كيلومترا) إلى نحو ثلاثة أميال (نحو أربعة وثمانية أجزاء من العشرة من الكيلومتر) خلال فترة وجيزة للغاية. ويُعد هذا الاقتراب استثنائيا بكل المقاييس التقنية، وينطوي على مخاطر جسيمة نظرا لندرة وصول قمرين اصطناعيين إلى هذه المسافة المتناهية في القرب ضمن المدار الأرضي منخفض الارتفاع. وأشار خبراء الأمن الفضائي إلى أن هذا السلوك المداري يعكس تخطيطا عسكريا دقيقا استمر أشهرا، بغض النظر عن الهدف النهائي للعملية الذي قد تراوح بين التصوير عن قرب، أو التنصت الإلكتروني، أو التدريب العملياتي على اعتراض الأقمار، أو توجيه رسالة ردع استراتيجية صريحة للجانب الأمريكي والشركاء الغربيين الداعمين لأوكرانيا."
+        },
+        {
+          "heading": "تقاطعات التوتر الفضائي مع الحسابات السياسية والدبلوماسية",
+          "text": "من جانبه، طرح كلايتون سووب، نائب مدير مشروع أمن الفضاء في مركز الدراسات الاستراتيجية والدولية (مركز بحثي أمريكي متخصص في السياسات والدفاع)، احتمال وجود ارتباط وثيق بين التحركات المدارية الخطيرة للقمر الروسي وقرارات السياسة الخارجية الأمريكية. وجاء هذا الاقتراب بالتزامن مع إصدار الرئيس الأمريكي دونالد ترمب أمرا تنفيذيا مساء الجمعة السادس عشر من أكتوبر/تشرين الأول 2026 يقضي بتعليق تطبيق عقوبات ورسوم جمركية جديدة تتعلق بروسيا قبل أيام قليلة من دخولها حيز التنفيذ، وذلك بالتزامن مع اتفاق منفصل يخص صادرات الديزل الروسي. ويرجح محللون أن الكرملين ربما كان على وشك تنفيذ خطوة عدائية كبرى تجاوزت الخطوط الحمراء المرسومة، لكنه فضل التراجع في اللحظات الأخيرة أو الاكتفاء بإنجاز الاختبار العملياتي لتحقيق أهدافه الردعية دون تفجير مواجهة عسكرية مباشرة في الفضاء."
+        },
+        {
+          "heading": "استجابة الشركات التجارية والقدرات العسكرية الموازية",
+          "text": "في تعليقها على الحادثة، أكدت شركة 'آيس آي' الفنلندية المالكة للقمر المستهدف والمزودة للصور الاستخباراتية للجيش الأوكراني عبر فرعها الأمريكي، أنها تتابع التطورات عن كثب. وأوضحت الشركة أن شبكتها الفضائية مصممة هندسيا لضمان استمرارية الخدمات دون انقطاع، مما يقلل إلى حد كبير من التأثير المحتمل لأي تعطل أو استهداف لأي قمر منفرد على تدفق المعلومات الاستخباراتية ورادارات الاستطلاع لعملائها. وفي المقابل، امتنعت قوة الفضاء الأمريكية (الذراع العسكرية المتخصصة بالفضاء ضمن القوات المسلحة الأمريكية) عن تقديم تعليق رسمي على الحادثة. وتكتسب هذه الواقعة أهمية مضاعفة بعد إعلان وزير القوات الجوية الأمريكي تروي مينك، في مؤتمر سنوي عُقد في الرابع عشر من سبتمبر/أيلول 2026، عن امتلاك الولايات المتحدة أسلحة في المدار قادرة على حماية قواتها المشتركة من الأعمال العدائية للخصوم، دون الإفصاح عن تفاصيلها الفنية."
+        },
+        {
+          "heading": "خلاصة استراتيجية",
+          "text": "تُظهر مناورة القمر الروسي 'كوزموس 2612' أن الفضاء الخارجي بات مسرحا رئيسيا للعمليات العسكرية والتنافس الجيوسياسي المباشر، ولم يعد مجرد بيئة مدنية للاتصالات والملاحة والاستطلاع السلبي. إن القدرة على تنفيذ مناورات دقيقة والاقتراب لأمتار معدودة من أصول فضائية حساسة للخصوم تعكس نضج التكنولوجيات الهجومية المدارية لدى القوى الكبرى مثل روسيا والولايات المتحدة. وعلى الرغم من تراجع موسكو عن تنفيذ ضربة تدميرية أو تعطيل مباشر، فإن مجرد إثبات القدرة على الوصول والتهديد يغير قواعد الاشتباك الردعي. بالنسبة لتونس، فإن هذه التطورات المتقدمة في حروب الفضاء وتأثيراتها العميقة على الأمن الاستراتيجي العالمي وسلاسل الإمداد الاستخباراتية تؤكد ضرورة متابعة تحولات الأمن التكنولوجي بدقة، وفهم أبعاد الصراع التقني بين القوى الكبرى وانعكاساته غير المباشرة على الاستقرار الدولي والاقليمي دون الانخراط في معادلات تسليح خارج القدرات الوطنية."
+        }
+      ],
+      "sources": [
+        {
+          "title": "aljazeera.net",
+          "url": "https://www.aljazeera.net/politics/2026/10/20/%d8%b9%d9%85%d9%84%d9%8a%d8%a9-%d9%83%d9%88%d8%b2%d9%85%d9%88%d8%b3-2612-%d9%87%d9%84-%d8%a3%d9%84%d8%ba%d9%89-%d8%a7%d9%84%d9%83%d8%b1%d9%85%d9%84%d9%8a%d9%86-%d9%87%d8%ac%d9%88%d9%85%d8%a7?traffic_source=rss"
+        }
+      ]
+    }
+  ],
   "defense_economics": [
     {
       "id": "20261020120530_2a752ab3",
@@ -139,6 +180,50 @@
         {
           "title": "African Business",
           "url": "https://african.business/2026/10/long-reads/critical-minerals-underpin-washingtons-nigeria-overtures"
+        }
+      ]
+    },
+    {
+      "id": "20261020165148_eb73080d",
+      "slot": "news",
+      "type": "defense_economics",
+      "kind": "defense_economics",
+      "kind_label": "الأمن الاقتصادي والجيو-اقتصادي",
+      "title": "بطاقة استراتيجية من مصدر إخباري — معادلة المعادن الحيوية وإعادة هندسة العلاقات الاستراتيجية بين واشنطن وأبوجا",
+      "subject": "معادلة المعادن الحيوية وإعادة هندسة العلاقات الاستراتيجية بين واشنطن وأبوجا",
+      "date": "2026-10-20",
+      "region": "غرب إفريقيا",
+      "summary": "موضوع البطاقة: معادلة المعادن الحيوية وإعادة هندسة العلاقات الاستراتيجية بين واشنطن وأبوجا. تناول تقرير حديث لـ «أفريكان بيزنس» اتفاقاً جديداً أبرمته الولايات المتحدة ونيجيريا على هامش اجتماعات الجمعية العامة للأمم المتحدة في نيويورك لتعميق الاستثمار الأمريكي في قطاع التعدين النيجيري، في إطار سعي واشنطن لتأمين سلاسل إمداد المعادن الحيوية وربط الدبلوماسية الأمنية والمصالح الاقتصادية الاستراتيجية في القارة.",
+      "sections": [
+        {
+          "heading": "إطار الاتفاق الجيو-اقتصادي ومقومات الثروة المعدنية",
+          "text": "على هامش أعمال الجمعية العامة للأمم المتحدة في نيويورك خلال شهر سبتمبر، توصلت الولايات المتحدة ونيجيريا إلى اتفاق جديد يهدف إلى تعميق الاستثمار الأمريكي في قطاع التعدين النيجيري. يأتي هذا التحرك ضمن توجه متصاعد لواشنطن للاستفادة من علاقاتها الأمنية في القارة الإفريقية لضمان وصول أكبر إلى المعادن الحرجة والاستراتيجية. وأوضح ديلي ألاكي، وزير المعادن الصلبة في نيجيريا، أن هذا الاتفاق يمثل خطوة هامة لتعزيز التعاون الثنائي حول موارد بلاده المعدنية التي تقدر بحوالي 700 مليار دولار. ويشمل الإطار مجالات البيانات الجيولوجية والاستكشاف، وتطوير المعادن ومعالجتها، إلى جانب البنية التحتية والقدرات التقنية. وأكد ألاكي أن الجانبين سيعملان خلال الأشهر القادمة على تحويل هذا الإطار إلى مشاريع واستثمارات ملموسة تخلق قيمة مضافة للشعب النيجيري وللشركاء الأمريكيين على حد سواء."
+        },
+        {
+          "heading": "الخصائص الجيولوجية والفرص الكامنة في قطاع التعدين النيجيري",
+          "text": "تشير تقديرات الخبراء، ومنهم منيرة راجي الباحثة البارزة في المعادن الخضراء وتحول الطاقة في «معهد بحث السياسات الإفريقية» (Africa Policy Research Institute)، إلى وجود إمكانيات هائلة غير مستغلة بالشكل الكافي في قطاع التعدين بنيجيريا. ورغم الإثارة الكبيرة المحيطة بالثروة المعدنية للبلاد، لا تزال مناطق واسعة بحاجة إلى مسوحات جيولوجية أدق وتحديد أفضل للموارد وتصنيف للمعدات قبل ترجمة هذا الإمكان الجيولوجي إلى موارد قابلة للاسترداد اقتصادياً. وتتمتع نيجيريا بقاعدة معدنية متنوعة تشمل الليثيوم الحيوي لبطاريات تخزين الطاقة، إضافة إلى معادن التنتتال والنيوبيوم مثل الكولتان، والقصدير، والعناصر الأرضية النادرة ذات الأهمية القصوى لتقنيات الطاقة النظيفة والتصنيع المتقدم والبنية التحتية الرقمية."
+        },
+        {
+          "heading": "من التوتر الدبلوماسي الحاد إلى التحول الجيوسياسي السريع",
+          "text": "شهدت العلاقات بين واشنطن وأبوجا بداية متوترة مع مطلع ولاية الإدارة الأمريكية الثانية، تأثرت بقطع تمويل الوكالة الأمريكية للتنمية الدولية (USAID) التي أوقفت عملاتها رسمياً في يوليو من العام الماضي، والتي كانت تمول نحو 90% من عمليات علاج مرض نقص المناعة المكتسب في نيجيريا بمساعدات تجاوزت 740 مليون دولار في 2024. كما فرضت واشنطن قيوداً على التأشيرات واجهت رفضاً نيجيرياً لضغوط ترحيل المهاجرين. وتفاقمت الأجسام الدبلوماسية عندما صنفت الإدارة الأمريكية نيجيريا كـ «دولة مثيرة للقلق الخاص» بسبب الحريات الدينية. غير أن هذه الغيمة انقشعت سريعاً بحسب إيبيزير أوباداري الباحث البارز لشؤون إفريقيا في «مجلس العلاقات الخارجية» (Council on Foreign Relations)، حيث استدرك الرئيس الأمريكي دونالد ترامب الموقف ووجه رسالة تقدير للرئيس النيجيري بولا تينوبو، معكسة تحولاً لافتًا في مسار العلاقات الثنائية خلال فترة زمنية قصيرة."
+        },
+        {
+          "heading": "التشابك بين الدبلوماسية الأمنية وتأمين سلاسل الإمداد الاستراتيجية",
+          "text": "تزامن هذا التقارب الدبلوماسي والاقتصادي مع تركيز أمريكي متصاعد على تأمين سلاسل إمداد المعادن الحيوية وتقليص الاعتماد على الصين. وربطت واشنطن في حالات إقليمية أخرى، مثل جمهورية الكونغو الديمقراطية، بين شراكات التعدين وجهود الوساطة والضغوط الأمنية، وهو نمط وإن بدا أقل إعلاناً في الحالة النيجيرية، إلا أنه ترافق مع تعميق ملحوظ للتعاون العسكري ومكافحة الإرهاب؛ حيث نفذت قوات أمريكية ضربات جوية مشتركة ضد أهداف لتنظيم الدولة الإسلامية في سوكوتو، ونشرت فرقاً عسكرية صغيرة لتنفيذ عمليات مشتركة ضد قيادات متطرفة في شمال شرق نيجيريا. ورغم تباين الآراء التحليلية حول وجود ارتباط سببي مباشر بين التعاون الأمني وصفقات المعادن، يرى مراقبون أن الاعتبارات الأمنية والاقتصادية باتت متداخلة لا محالة في ظل سعي واشنطن لضمان استقرار الدول الشريكة ومرونة سلاسل الإمداد."
+        },
+        {
+          "heading": "شروط الاستفادة ومكاسب النفوذ الإفريقي في الشراكات التعدينية",
+          "text": "تؤكد التحليلات الاقتصادية أن على نيجيريا والدول الإفريقية الاستفادة من ورقة تفاوضها لتعظيم المكاسب بما يتجاوز مجرد جذب الاستثمار المالي المباشر في قطاع كثيف رأس المال مثل التعدين. وتشمل المطالب الاستراتيجية ضرورة التفاوض على بناء القدرات الوطنية، وشمل ذلك تحسين بيانات الاستكشاف الجيولوجي، وتطوير تقنيات الفحص والمصادقة والمعالجة والتكرير، ونقل التقنية وتطوير المهارات المهنية والتقنية، وإرساء شراكات بحثية قوية، إلى جانب تعزيز معايير الحوكمة البيئية والاجتماعية لضمان بقاء القيمة المضافة داخل الاقتصاد المحلي حتى بعد استخراج الموارد."
+        },
+        {
+          "heading": "خلاصة استراتيجية",
+          "text": "يعكس الاتفاق الأمريكي النيجيري الأخير تحولاً جوهرياً في استراتيجية واشنطن الإفريقية التي باتت تعتمد مقاربة نفعية براغماتية تربط بين تأمين سلاسل إمداد المعادن الحيوية والتعاون الأمني لمواجهة التنافس الجيوسياسي العالمي وتخفيض الاعتماد على المورد الصيني. وفي المقابل، تملك أبوجا فرصة تاريخية لتحويل ثروتها المعدنية المقدرة بمليارات الدولارات إلى أداة لبناء قدرات صناعية وتكنولوجية مستدامة، شريطة تبني استراتيجية تفاوضية صارمة تضمن نقل المعرفة وتوطين القيمة المضافة محلياً بدلاً من الاكتفاء بدور المورد الخام."
+        }
+      ],
+      "sources": [
+        {
+          "title": "African Business",
+          "url": "https://african.business/2026/10/resources/critical-minerals-underpin-washingtons-nigeria-overtures"
         }
       ]
     }
@@ -465,36 +550,39 @@
     }
   ],
   "checked_urls": [
-    "https://www.orfonline.org/expert-speak/sahel-s-geopolitical-reset-and-russia-s-strategic-opening",
-    "https://bdnews24.com/world/7e4w426j7y",
-    "https://defence-industry.eu/sweden-plans-nato-ground-deployments-in-finland-and-latvia-and-continued-patriot-operations-in-poland-in-2027/",
-    "https://alikhbariya.net/stories/0e8b11a9-1179-4d94-a861-a95d43c51941/%D8%A7%D9%84%D8%AA%D9%88%D9%86%D8%B3%D9%8A%D9%88%D9%86-%D9%8A%D8%AE%D8%B1%D8%AC%D9%88%D9%86-%D9%81%D9%8A-%D8%A3%D9%83%D8%A8%D8%B1-%D8%A7%D8%AD%D8%AA%D8%AC%D8%A7%D8%AC%D8%A7%D8%AA-%D8%B9%D9%84%D9%89-%D8%AD%D9%83%D9%85-%D8%B3%D8%B9%D9%8A%D8%AF-%D9%85%D9%86%D8%B0-%D8%B3%D9%86%D9%88%D8%A7%D8%AA",
-    "https://www.leconomistemaghrebin.com/2026/10/19/tunisie-guinee-bissau-vers-cooperation-renforcee-commerce-leducation/",
-    "https://militarywatchmagazine.com/article/us-bringing-kc10-tankers-back-support-ally-refuelling",
-    "https://www.diplomacyandlaw.com/post/black-sea-drone-attacks-shipping",
-    "https://www.echoroukonline.com/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%AA%D8%A8%D9%88%D9%86-%D9%8A%D8%AC%D8%AF%D8%AF-%D8%A7%D9%84%D8%AA%D8%B2%D8%A7%D9%85-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D8%A8%D8%AD%D9%85%D8%A7%D9%8A",
-    "https://www.kyivpost.com/post/87513",
-    "https://alwasat.ly/news/482128",
-    "https://www.unmannedairspace.info/counter-uas-systems-and-policies/bulgaria-plans-to-joins-nato-c-uas-initiative-following-black-sea-drone-attacks/",
-    "https://ninanews.com/website/News/Details?Key=1320646",
-    "https://africa.businessinsider.com/local/markets/somalia-may-have-just-purchased-jf-17-thunder-fighter-jets-from-pakistan-once/51mggel",
-    "https://kfgo.com/2026/10/18/romanian-f-16-fighter-jets-shoot-down-two-drones-over-romanian-territorial-waters",
-    "https://www.aljazeera.net/encyclopedia/2026/10/18/%d8%a7%d9%84%d8%ba%d9%88%d8%a7%d8%b5%d8%a9-%d8%b1%d9%8a%d9%85%d9%88%d8%b3-600-%d8%b9%d9%8a%d9%86-%d8%a7%d9%84%d9%85%d8%ad%d9%8a%d8%b7-%d8%a7%d9%84%d9%85%d8%b3%d9%8a%d8%b1%d8%a9?traffic_source=rss",
-    "https://kfgo.com/2026/10/18/romanian-f-16-fighter-jets-shoot-down-two-drones-over-romanian-territorial-waters/",
-    "https://asharq.com/politics/199763/%D8%AD%D9%88%D8%A7%D8%AF%D8%AB-%D8%A3%D9%85%D9%86%D9%8A%D8%A9-%D8%AA%D9%87%D8%AF%D8%AF-%D8%A8%D8%A7%D9%86%D8%B2%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%AA%D9%88-%D8%A5%D9%84%D9%89-%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9-%D9%85%D8%B9-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7/",
-    "https://www.arabnews.jp/en/japan/vice-foreign-minister-ozora-meets-ambassadors-of-tunisia-and-algeria-3000847",
-    "https://warontherocks.com/how-sudan-became-a-laboratory-for-drone-warfare-thanks-to-abu-dhabi/",
-    "https://www.aljazeera.net/encyclopedia/2026/10/20/%d9%85%d9%87%d8%b1%d8%af%d8%a7%d8%af-%d8%a3%d8%ae%d9%84%d8%a7%d9%82%d9%8a-%d9%83%d8%aa%d8%a7%d8%a8%d8%ac%d9%8a-%d9%88%d8%b2%d9%8a%d8%b1-%d8%a7%d9%84%d8%af%d9%81%d8%a7%d8%b9?traffic_source=rss",
-    "https://african.business/2026/10/long-reads/critical-minerals-underpin-washingtons-nigeria-overtures",
-    "https://africa.businessinsider.com/local/markets/china-beats-the-us-in-africas-critical-minerals-race-but-congo-arrests-300-chinese/h72g29b",
-    "https://united24media.com/world/bulgaria-asks-nato-for-aircraft-air-defenses-and-counter-drone-systems-as-black-sea-attacks-intensify-23513",
-    "https://alfilahia.net/%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D9%88%D9%83%D9%88%D8%B1%D9%8A%D8%A7-%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8%D9%8A%D8%A9-%D8%AA%D8%B9%D8%B2%D8%B2%D8%A7%D9%86-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7/",
-    "https://www.jurist.org/news/2026/10/libyan-armed-forces-execute-31-after-unfair-military-trials-breaking-15-year-moratorium/",
-    "https://aerospaceglobalnews.com/news/somalia-jf17-saudi-pakistan/",
-    "https://therecord.media/european-defense-contractors-fancy-bear-espionage",
     "https://www.tsa-algerie.com/conflit-arabie-saoudite-houthis-legypte-sapprete-a-une-intervention-militaire-directe/",
+    "https://africa.businessinsider.com/local/markets/somalia-may-have-just-purchased-jf-17-thunder-fighter-jets-from-pakistan-once/51mggel",
+    "https://therecord.media/european-defense-contractors-fancy-bear-espionage",
+    "https://www.orfonline.org/expert-speak/sahel-s-geopolitical-reset-and-russia-s-strategic-opening",
+    "https://ninanews.com/website/News/Details?Key=1320646",
+    "https://www.aljazeera.net/encyclopedia/2026/10/18/%d8%a7%d9%84%d8%ba%d9%88%d8%a7%d8%b5%d8%a9-%d8%b1%d9%8a%d9%85%d9%88%d8%b3-600-%d8%b9%d9%8a%d9%86-%d8%a7%d9%84%d9%85%d8%ad%d9%8a%d8%b7-%d8%a7%d9%84%d9%85%d8%b3%d9%8a%d8%b1%d8%a9?traffic_source=rss",
+    "https://alfilahia.net/%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D9%88%D9%83%D9%88%D8%B1%D9%8A%D8%A7-%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8%D9%8A%D8%A9-%D8%AA%D8%B9%D8%B2%D8%B2%D8%A7%D9%86-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7/",
+    "https://www.arabnews.jp/en/japan/vice-foreign-minister-ozora-meets-ambassadors-of-tunisia-and-algeria-3000847",
+    "https://africa.businessinsider.com/local/markets/china-beats-the-us-in-africas-critical-minerals-race-but-congo-arrests-300-chinese/h72g29b",
+    "https://www.leconomistemaghrebin.com/2026/10/19/tunisie-guinee-bissau-vers-cooperation-renforcee-commerce-leducation/",
+    "https://african.business/2026/10/resources/critical-minerals-underpin-washingtons-nigeria-overtures",
+    "https://defence-industry.eu/sweden-plans-nato-ground-deployments-in-finland-and-latvia-and-continued-patriot-operations-in-poland-in-2027/",
+    "https://warontherocks.com/how-sudan-became-a-laboratory-for-drone-warfare-thanks-to-abu-dhabi/",
+    "https://united24media.com/world/bulgaria-asks-nato-for-aircraft-air-defenses-and-counter-drone-systems-as-black-sea-attacks-intensify-23513",
+    "https://www.jurist.org/news/2026/10/libyan-armed-forces-execute-31-after-unfair-military-trials-breaking-15-year-moratorium/",
+    "https://bdnews24.com/world/7e4w426j7y",
+    "https://alikhbariya.net/stories/0e8b11a9-1179-4d94-a861-a95d43c51941/%D8%A7%D9%84%D8%AA%D9%88%D9%86%D8%B3%D9%8A%D9%88%D9%86-%D9%8A%D8%AE%D8%B1%D8%AC%D9%88%D9%86-%D9%81%D9%8A-%D8%A3%D9%83%D8%A8%D8%B1-%D8%A7%D8%AD%D8%AA%D8%AC%D8%A7%D8%AC%D8%A7%D8%AA-%D8%B9%D9%84%D9%89-%D8%AD%D9%83%D9%85-%D8%B3%D8%B9%D9%8A%D8%AF-%D9%85%D9%86%D8%B0-%D8%B3%D9%86%D9%88%D8%A7%D8%AA",
+    "https://alikhbariya.net/stories/822cbe7e-234b-4029-b6d1-2a33ab11953e/%D8%AF%D9%8A%D8%AF%D8%A7%D9%86-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%AE%D8%B7%D8%B1-%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%8A%D8%AA%D9%83%D8%A7%D8%AB%D8%B1-%D8%B0%D8%A7%D8%AA%D9%8A%D8%A7-%D9%88%D9%8A%D9%87%D8%AF%D8%AF-%D8%A3%D9%85%D8%A7%D9%86-%D8%A7%D9%84%D8%A3%D8%AC%D9%87%D8%B2%D8%A9",
+    "https://alwasat.ly/news/482128",
+    "https://militarywatchmagazine.com/article/us-bringing-kc10-tankers-back-support-ally-refuelling",
+    "https://asharq.com/politics/199763/%D8%AD%D9%88%D8%A7%D8%AF%D8%AB-%D8%A3%D9%85%D9%86%D9%8A%D8%A9-%D8%AA%D9%87%D8%AF%D8%AF-%D8%A8%D8%A7%D9%86%D8%B2%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%AA%D9%88-%D8%A5%D9%84%D9%89-%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9-%D9%85%D8%B9-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7/",
+    "https://www.kyivpost.com/post/87513",
+    "https://kfgo.com/2026/10/18/romanian-f-16-fighter-jets-shoot-down-two-drones-over-romanian-territorial-waters/",
+    "https://www.diplomacyandlaw.com/post/black-sea-drone-attacks-shipping",
     "https://www.algeriedirect.dz/%D9%82%D9%85%D8%A9-%D8%A7%D9%84%D9%82%D8%A7%D8%AF%D8%A9/",
-    "https://alikhbariya.net/stories/822cbe7e-234b-4029-b6d1-2a33ab11953e/%D8%AF%D9%8A%D8%AF%D8%A7%D9%86-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%AE%D8%B7%D8%B1-%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%8A%D8%AA%D9%83%D8%A7%D8%AB%D8%B1-%D8%B0%D8%A7%D8%AA%D9%8A%D8%A7-%D9%88%D9%8A%D9%87%D8%AF%D8%AF-%D8%A3%D9%85%D8%A7%D9%86-%D8%A7%D9%84%D8%A3%D8%AC%D9%87%D8%B2%D8%A9"
+    "https://www.aljazeera.net/politics/2026/10/20/%d8%b9%d9%85%d9%84%d9%8a%d8%a9-%d9%83%d9%88%d8%b2%d9%85%d9%88%d8%b3-2612-%d9%87%d9%84-%d8%a3%d9%84%d8%ba%d9%89-%d8%a7%d9%84%d9%83%d8%b1%d9%85%d9%84%d9%8a%d9%86-%d9%87%d8%ac%d9%88%d9%85%d8%a7?traffic_source=rss",
+    "https://african.business/2026/10/long-reads/critical-minerals-underpin-washingtons-nigeria-overtures",
+    "https://kfgo.com/2026/10/18/romanian-f-16-fighter-jets-shoot-down-two-drones-over-romanian-territorial-waters",
+    "https://www.aljazeera.net/encyclopedia/2026/10/20/%d9%85%d9%87%d8%b1%d8%af%d8%a7%d8%af-%d8%a3%d8%ae%d9%84%d8%a7%d9%82%d9%8a-%d9%83%d8%aa%d8%a7%d8%a8%d8%ac%d9%8a-%d9%88%d8%b2%d9%8a%d8%b1-%d8%a7%d9%84%d8%af%d9%81%d8%a7%d8%b9?traffic_source=rss",
+    "https://aerospaceglobalnews.com/news/somalia-jf17-saudi-pakistan/",
+    "https://news50.sa/politics/eurofighter-typhoon-fighter-jet-capabilities",
+    "https://www.echoroukonline.com/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%AA%D8%A8%D9%88%D9%86-%D9%8A%D8%AC%D8%AF%D8%AF-%D8%A7%D9%84%D8%AA%D8%B2%D8%A7%D9%85-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D8%A8%D8%AD%D9%85%D8%A7%D9%8A",
+    "https://www.unmannedairspace.info/counter-uas-systems-and-policies/bulgaria-plans-to-joins-nato-c-uas-initiative-following-black-sea-drone-attacks/"
   ],
   "event_driven_migration_v1": true
 }
