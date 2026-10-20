@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T12:00+01:00",
+  "updated": "2026-10-20T12:51+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 81,
+  "count": 82,
   "publications": [
     {
       "center": "مركز برشلونة للشؤون الدولية",
@@ -718,6 +718,20 @@
       "relevance_tier": 1,
       "relevance_label": "تونس مباشرة",
       "title_ar": "ملتقى ابن خلدون: الأدب التونسي والنماذج الصوفية: تحية لمحمود المسعدي - mecam.tn"
+    },
+    {
+      "center": "مركز الدراسات المتقدمة حول المغرب العربي (MECAM)",
+      "center_short": "MECAM",
+      "title": "Entering Critical Conversation: Literary, Cultural, and Religious Studies in Dialogue between Tunisia and Germany MECAM Short-T - mecam.tn",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPNml5Nk9mUFVYMHBzRkd5cWVTb0ZVTGI2Z0t1TU1WbVlkZmVrTUlqZWpBbjZBMTJzaVVvM2JsMFZFeVplNUJVOGRFR1lRYTBMRmtfclNXYzZfbmJCUmJkb3ZQU3ZoUTM5cDR0R2JFOHFEdmRmVTlHZTNjVVdmal82RFpHWi1weFdHT0V5OEgyYmpDY0UyMEdGU0ZBYmJqQTg?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-10T21:59+01:00",
+      "date": "2026-10-10",
+      "source": "mecam.tn",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPNml5Nk9mUFVYMHBzRkd5cWVTb0ZVTGI2Z0t1TU1WbVlkZmVrTUlqZWpBbjZBMTJzaVVvM2JsMFZFeVplNUJVOGRFR1lRYTBMRmtfclNXYzZfbmJCUmJkb3ZQU3ZoUTM5cDR0R2JFOHFEdmRmVTlHZTNjVVdmal82RFpHWi1weFdHT0V5OEgyYmpDY0UyMEdGU0ZBYmJqQTg?oc=5\" target=\"_blank\">Entering Critical Conversation: Literary, Cultural, and Religious Studies in Dialogue between Tunisia and Germany MECAM Short-T</a> <font color=\"#6f6f6f\">mecam.tn</font>",
+      "center_site": "https://mecam.tn/",
+      "relevance_tier": 1,
+      "relevance_label": "تونس مباشرة",
+      "title_ar": "الدخول في محادثة نقدية: الدراسات الأدبية والثقافية والدينية في حوار بين تونس وألمانيا MECAM Short - T - mecam.tn"
     },
     {
       "center": "المركز العربي في واشنطن",
