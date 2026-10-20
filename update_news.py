@@ -722,6 +722,20 @@ RSS_FEEDS = {
         for country in REST_OF_AFRICA_COUNTRIES
     ],
 
+    # Dedicated multilingual coverage of major African counter-terrorism
+    # operations, including ISWAP/Boko Haram attacks and military claims.
+    "terrorism_africa": [
+        "https://news.google.com/rss/search?q="
+        + quote_plus('("Nigeria" OR Nigerian OR Borno OR Adamawa) ("ISWAP" OR "Islamic State West Africa Province" OR "Boko Haram" OR "air strike" OR "airstrike") when:2d')
+        + "&hl=en-US&gl=US&ceid=US:en",
+        "https://news.google.com/rss/search?q="
+        + quote_plus('("Nigeria" OR Borno OR Adamawa) (ISWAP OR "État islamique en Afrique de l’Ouest" OR "Boko Haram" OR jihadistes OR terroristes) when:2d')
+        + "&hl=fr&gl=FR&ceid=FR:fr",
+        "https://news.google.com/rss/search?q="
+        + quote_plus('("نيجيريا" OR "ولاية بورنو" OR "ولاية أداماوا") (داعش OR "تنظيم الدولة الإسلامية في غرب إفريقيا" OR بوكو حرام OR مسلحون OR إرهابيون OR غارات) when:2d')
+        + "&hl=ar&gl=EG&ceid=EG:ar"
+    ],
+
     "defense": [
         (
             "https://news.google.com/rss/search?q="
