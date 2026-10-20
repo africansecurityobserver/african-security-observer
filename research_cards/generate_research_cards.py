@@ -343,13 +343,19 @@ def get_text(url, center_site="", title=""):
                     deep_seen.add(candidate)
         title_query = clean(title or "")
         if title_query:
+            # Search the exact publication across the wider web, not only the
+            # publisher domain. Full reports are often mirrored by universities,
+            # think tanks, repositories, partner organizations, or other outlets.
             queries = [
+                f'"{title_query}"',
+                f'"{title_query}" PDF',
+                f'"{title_query}" full text',
                 f'"{title_query}" filetype:pdf',
-                f'"{title_query}" full text PDF',
-                f'"{title_query}" report PDF',
+                f'"{title_query}" report download',
             ]
-            # If a publisher blocks automated search or uses a dynamic site,
-            # search engines may expose a repository or direct document copy.
+            # Add an unquoted title query to find mirrors whose metadata or
+            # punctuation differs from the original title.
+            queries.append(title_query)
             for engine, base_url, key, extra in (
                 ("Google", "https://www.google.com/search", "q", {"num": "10"}),
                 ("Bing", "https://www.bing.com/search", "q", {"count": "10"}),
@@ -377,8 +383,6 @@ def get_text(url, center_site="", title=""):
                                 continue
                             if href in deep_seen:
                                 continue
-                            # Skip obvious navigation, but allow repositories and
-                            # third-party PDF hosts because reports are often mirrored.
                             if any(term in parsed_href.path.lower() for term in (
                                 "/search", "/login", "/signup", "/privacy", "/cookie"
                             )):
@@ -388,13 +392,16 @@ def get_text(url, center_site="", title=""):
                             score = 0
                             if parsed_href.path.lower().endswith(".pdf") or "pdf" in combined:
                                 score += 8
-                            if any(term in combined for term in ("full text", "full report", "download", "repository", "handle/", "bitstream", "document")):
+                            if any(term in combined for term in (
+                                "full text", "full report", "download", "repository",
+                                "handle/", "bitstream", "document", "working paper"
+                            )):
                                 score += 4
-                            # Prefer title-matching search results, while allowing
-                            # direct repository URLs with sparse anchor labels.
                             title_tokens = set(re.findall(r"[a-z0-9À-ÿ]{4,}", title_query.lower()))
                             overlap = sum(1 for token in title_tokens if token in combined)
-                            score += min(5, overlap)
+                            score += min(8, overlap)
+                            # A mirror can be on any domain, but the result must
+                            # still be fetched and checked for substantive text.
                             deep_candidates.append((score, href))
                             deep_seen.add(href)
                     except Exception as exc:
@@ -402,7 +409,7 @@ def get_text(url, center_site="", title=""):
         deep_candidates.sort(key=lambda item: item[0], reverse=True)
         tried_deep = 0
         for score, candidate_url in deep_candidates:
-            if tried_deep >= 18:
+            if tried_deep >= 30:
                 break
             tried_deep += 1
             try:
