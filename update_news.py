@@ -1803,54 +1803,50 @@ def get_news():
 # =========================================================
 
 def normalize_article(article):
+    description = str(article.get("description") or "")
+    original_description = str(article.get("original_description") or "")
+    source = str(article.get("source") or "").strip()
+
+    # Repair existing items created by the aggregator before source recovery
+    # was added, so the source label and summary improve on the next refresh.
+    for candidate in (original_description, description):
+        match = re.search(
+            r"(?:—|–|-)\s*تغطية من مصدر واحد:\s*([^.!؟]+)",
+            candidate,
+            flags=re.IGNORECASE
+        )
+        if match:
+            if not source or source.casefold() in ("مصدر غير معروف", "unknown source"):
+                source = match.group(1).strip()
+            break
+
+    description = re.sub(
+        r"\s*(?:—|–|-)\s*تغطية من مصدر واحد:.*$",
+        "",
+        description,
+        flags=re.IGNORECASE
+    ).strip()
+    original_description = re.sub(
+        r"\s*(?:—|–|-)\s*تغطية من مصدر واحد:.*$",
+        "",
+        original_description,
+        flags=re.IGNORECASE
+    ).strip()
 
     return {
-
-        "title": article.get(
-            "title",
-            ""
-        ),
-
-        "description": article.get(
-            "description",
-            ""
-        ),
-
-        "original_title": article.get(
-            "original_title",
-            ""
-        ),
-
-        "original_description": article.get(
-            "original_description",
-            ""
-        ),
-
-        "url": article.get(
-            "url",
-            ""
-        ),
-
-        "source": article.get(
-            "source",
-            "مصدر غير معروف"
-        ),
-
-        "published": article.get(
-            "published",
-            ""
-        ),
-
-        "category": article.get(
-            "category",
-            "rest"
-        ),
-
+        "title": article.get("title", ""),
+        "description": description,
+        "original_title": article.get("original_title", ""),
+        "original_description": original_description,
+        "url": normalize_url(article.get("url", "")),
+        "source": source or "مصدر غير معروف",
+        "published": article.get("published", ""),
+        "category": article.get("category", "rest"),
         "region": article.get(
             "region",
             classify_region(
                 article.get("original_title") or article.get("title", ""),
-                article.get("original_description") or article.get("description", "")
+                original_description or description
             )
         )
     }
