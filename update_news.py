@@ -5,7 +5,7 @@ import re
 import time
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
-from urllib.parse import quote_plus, quote
+from urllib.parse import quote_plus, quote, urlsplit, urlunsplit, parse_qsl, urlencode
 from googlenewsdecoder import gnewsdecoder
 from deep_translator import GoogleTranslator
 from urllib.request import Request, urlopen
@@ -1048,10 +1048,37 @@ def translate_article(title, description):
 # URL DECODER
 # =========================================================
 
+def normalize_url(url):
+    """Remove common tracking parameters while preserving the article destination."""
+    if not url:
+        return ""
+    try:
+        parts = urlsplit(str(url).strip())
+        if parts.scheme.lower() not in ("http", "https") or not parts.netloc:
+            return str(url).strip()
+        tracking = {
+            "fbclid", "gclid", "dclid", "mc_cid", "mc_eid", "ref",
+            "ref_src", "ocid", "cmpid", "output", "guccounter"
+        }
+        query = [
+            (key, value) for key, value in parse_qsl(parts.query, keep_blank_values=True)
+            if key.casefold() not in tracking and not key.casefold().startswith("utm_")
+        ]
+        return urlunsplit((
+            parts.scheme.lower(),
+            parts.netloc.lower(),
+            parts.path.rstrip("/") or "/",
+            urlencode(query, doseq=True),
+            ""  # Fragments do not identify a different news article.
+        ))
+    except Exception:
+        return str(url).strip()
+
+
 def decode_url(url):
 
     if not url or "news.google.com" not in url:
-        return url
+        return normalize_url(url)
 
     try:
 
@@ -1063,10 +1090,7 @@ def decode_url(url):
 
         if result.get("success"):
 
-            return result.get(
-                "decoded_url",
-                url
-            )
+            return normalize_url(result.get("decoded_url", url))
 
     except Exception as e:
 
@@ -1074,7 +1098,7 @@ def decode_url(url):
             f"Could not decode URL: {e}"
         )
 
-    return url
+    return normalize_url(url)
 
 
 # =========================================================
@@ -1202,18 +1226,31 @@ def is_priority_named_official_news(title, description):
 
 
 def is_sports_related(title, description=""):
-    """Reject sports stories even when they contain generic words like attack/هجوم."""
-    text = (str(title) + " " + str(description)).lower()
-    sports_terms = [
+    """Reject clear sports coverage without treating every sports-related word in a long summary as decisive."""
+    title_text = clean_html(str(title or "")).casefold()
+    combined_text = (title_text + " " + clean_html(str(description or ""))).casefold()
+    title_sports_terms = [
         "football", "soccer", "كرة القدم", "كروي", "كروية", "الدوري",
         "مباراة", "مباريات", "لاعب", "لاعبين", "لاعبو", "نادي", "أندية",
-        "مدرب", "مدربه", "هدف", "أهداف", "مهاجم", "مهاجمون", "ركلة جزاء",
+        "مدرب", "مدربه", "هدف", "أهداف", "ركلة جزاء", "مهرجان رياضي",
+        "مهرجاناً رياضياً", "مهرجان رياضيا", "بطولة رياضية", "مسابقة رياضية",
+        "كرة السلة", "كرة اليد", "كرة الطائرة", "كأس العالم", "سباق سيارات",
         "champions league", "premier league", "la liga", "serie a", "bundesliga",
         "matchday", "footballer", "striker", "goalkeeper", "scored", "scores",
         "league table", "transfer window", "coach", "soccer player",
-        "match de football", "club de football", "championnat", "buteur", "attaquant"
+        "match de football", "club de football", "championnat", "buteur", "attaquant",
+        "sports festival", "sporting event", "basketball game", "volleyball match"
     ]
-    return any(term in text for term in sports_terms)
+    if any(term in title_text for term in title_sports_terms):
+        return True
+    # Catch articles whose title is generic, but whose title/description clearly
+    # identifies a sporting competition or team rather than a security event.
+    strong_context = [
+        "كرة القدم", "الدوري", "مباراة", "مباريات", "لاعب", "نادي", "أندية",
+        "champions league", "premier league", "football club", "league table",
+        "match de football", "club de football", "basketball game", "volleyball match"
+    ]
+    return any(term in combined_text for term in strong_context)
 
 
 def is_relevant_security_news(
@@ -1242,6 +1279,30 @@ def is_relevant_security_news(
 
     if is_priority_global_organization_news(title, description):
         return True
+
+    title_text = clean_html(str(title or "")).casefold()
+
+    # Keep routine consumer scams out of this security/military publication.
+    # Cyber operations, espionage, attacks on infrastructure, and state-linked
+    # incidents remain eligible through their explicit security terminology.
+    consumer_fraud_terms = [
+        "الاحتيال الرقمي", "الاحتيال الإلكتروني", "احتيال عبر المنصات",
+        "عمليات النصب", "scam warning", "consumer scam", "online shopping fraud",
+        "digital fraud", "online fraud", "phishing scam"
+    ]
+    cyber_security_signals = [
+        "cyberattack", "cyber attack", "cyber-attack", "ransomware", "hacking",
+        "hacker", "espionage", "state-sponsored", "critical infrastructure",
+        "government systems", "military network", "cybercrime network",
+        "هجوم سيبراني", "هجوم إلكتروني", "هجمات إلكترونية", "قرصنة",
+        "تجسس إلكتروني", "فدية إلكترونية", "بنية تحتية حيوية", "أنظمة حكومية",
+        "شبكات عسكرية", "مجموعة قرصنة"
+    ]
+    if (
+        any(term in title_text for term in consumer_fraud_terms)
+        and not any(term in title_text for term in cyber_security_signals)
+    ):
+        return False
 
     for word in EXCLUDED_TERMS:
 
@@ -1632,41 +1693,56 @@ def get_news():
                 if article_url in seen_urls:
                     continue
 
-                normalized_title = (
-                    title.lower()
-                    .replace(" ", "")
-                    .replace("-", "")
-                    .replace(".", "")
+                normalized_title = re.sub(
+                    r"[\W_]+",
+                    "",
+                    title.casefold(),
+                    flags=re.UNICODE
                 )
 
                 if normalized_title in seen_titles:
                     continue
 
-                published = entry.get(
-                    "published",
-                    ""
+                published = entry.get("published") or entry.get("updated") or ""
+                published_dt = parse_published_datetime(published)
+
+                # Freshness cannot be verified without a usable publication date.
+                if published_dt is None:
+                    print(f"Skipping undated RSS item: {title}")
+                    continue
+
+                age = datetime.now(timezone.utc) - published_dt
+                if age > timedelta(hours=MAX_NEWS_AGE_HOURS):
+                    continue
+
+                # Reject clearly future-dated feed entries.
+                if age < -timedelta(hours=24):
+                    continue
+
+                source_obj = entry.get("source") or {}
+                source = source_obj.get("title", "") if hasattr(source_obj, "get") else ""
+                source = str(source or "").strip()
+
+                # Some curated Arabic RSS feeds carry the original publisher in
+                # their own summary instead of the RSS <source> field.
+                source_match = re.search(
+                    r"(?:—|–|-)\s*تغطية من مصدر واحد:\s*([^.!؟]+)",
+                    description,
+                    flags=re.IGNORECASE
                 )
+                if source_match:
+                    if not source or source.casefold() in ("مصدر غير معروف", "unknown source"):
+                        source = source_match.group(1).strip()
+                    description = re.sub(
+                        r"\s*(?:—|–|-)\s*تغطية من مصدر واحد:.*$",
+                        "",
+                        description,
+                        flags=re.IGNORECASE
+                    ).strip()
 
-                if published:
-                    published_dt = parse_published_datetime(published)
-
-                    if published_dt is not None:
-                        age = datetime.now(timezone.utc) - published_dt
-
-                        if age > timedelta(hours=MAX_NEWS_AGE_HOURS):
-                            continue
-
-                        # Reject clearly future-dated feed entries.
-                        if age < -timedelta(hours=24):
-                            continue
-
-                source = entry.get(
-                    "source",
-                    {}
-                ).get(
-                    "title",
-                    "مصدر غير معروف"
-                )
+                if not source:
+                    host = urlsplit(article_url).hostname or ""
+                    source = host.removeprefix("www.").strip() or "مصدر غير معروف"
 
                 category = classify_news(
                     title,
@@ -1786,7 +1862,7 @@ def article_key(article):
 
     if url:
 
-        return "url:" + url
+        return "url:" + normalize_url(url)
 
     title = article.get(
         "original_title",
