@@ -2,6 +2,8 @@ name: Generate Research-Center Strategic Cards
 
 on:
   push:
+    branches:
+      - main
     paths:
       - "research_cards/generate_research_cards.py"
       - "research_publications.json"
