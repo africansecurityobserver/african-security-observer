@@ -100,14 +100,12 @@ function render(){
  const q=searchEl.value.trim().toLocaleLowerCase();
  const center=centerEl.value;
  const days=periodEl.value;
- const selectedTier=tierEl.value;
  const now=Date.now();
  const filtered=publications.filter(p=>{
    const date=dateValue(p);
    const matchesDate=days==='all'||!date||now-date.getTime()<=Number(days)*86400000;
    const matchesText=(String(p.title_ar||p.title||'')+' '+String(p.title||'')+' '+String(p.center||'')+' '+String(p.source||'')).toLocaleLowerCase().includes(q);
-   const tier=relevanceTier(p);
-   return tier>0&&(selectedTier==='all'||tier===Number(selectedTier))&&(!center||p.center===center)&&matchesDate&&matchesText;
+    return (!center||p.center===center)&&matchesDate&&matchesText;
  });
  filtered.sort((a,b)=>relevanceTier(a)-relevanceTier(b)||(dateValue(b)?.getTime()||0)-(dateValue(a)?.getTime()||0));
  if(!filtered.length){listEl.innerHTML='<div class="empty">لا توجد منشورات مطابقة لخيارات البحث أو المركز أو الفترة المحددة حاليًا.</div>';return;}
