@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>أرشيف البطاقات الاستراتيجية | المرصد الإفريقي</title>
+<title>أرشيف التقديرات الاستراتيجية | المرصد الإفريقي</title>
 <style>
 :root{--navy:#102b46;--blue:#174d75;--gold:#d7a849;--paper:#f4f6f8;--ink:#172535;--muted:#687887;--line:#dce3e9}
 *{box-sizing:border-box}
@@ -68,13 +68,13 @@ body *{visibility:hidden!important}
 <header>
 <div class="header-inner">
 <h1>المرصد الإفريقي للأمن والدفاع</h1>
-<p>أرشيف البطاقات الاستراتيجية</p>
+<p>أرشيف التقديرات الاستراتيجية</p>
 <div class="header-links"><a href="./">← العودة إلى الموقع الرئيسي</a></div>
 </div>
 </header>
 <main class="container">
-<div id="breadcrumb" class="breadcrumb"><span>البطاقات الاستراتيجية</span></div>
-<h2 id="pageTitle" class="page-title">أرشيف البطاقات الاستراتيجية</h2>
+<div id="breadcrumb" class="breadcrumb"><span>التقديرات الاستراتيجية</span></div>
+<h2 id="pageTitle" class="page-title">أرشيف التقديرات الاستراتيجية</h2>
 <p id="pageDescription" class="description">اختر السنة، ثم الشهر، لعرض البطاقات المحفوظة.</p>
 <div id="content"><div class="loading">جارٍ تحميل أرشيف البطاقات…</div></div>
 </main>
@@ -112,9 +112,9 @@ if(p.length!==3)return value||'تاريخ غير معروف';
 return Number(p[2])+' '+monthLabel(p[1])+' '+p[0];
 }
 function setBreadcrumb(level){
-let html='<button onclick="showRoot()">البطاقات الاستراتيجية</button>';
+let html='<button onclick="showRoot()">التقديرات الاستراتيجية</button>';
 if(level!=='root'){
-html+='<span>‹</span><button onclick="showYears()">'+(archiveType==='research'?'البطاقات الاستراتيجية من مراكز البحث':'البطاقات الاستراتيجية من مصدر إخباري')+'</button>';
+html+='<span>‹</span><button onclick="showYears()">'+(archiveType==='research'?'التقديرات الاستراتيجية من مراكز البحث':'التقديرات الاستراتيجية من مصدر إخباري')+'</button>';
 }
 if(level!=='years'&&selectedYear){
 html+='<span>‹</span><button onclick="showMonths(\''+selectedYear+'\')">'+esc(selectedYear)+'</button>';
@@ -129,11 +129,11 @@ function findYear(year){return archiveIndex.years.find(y=>String(y.year)===Strin
 function showRoot(){
 currentView='root';selectedYear=null;selectedMonth=null;
 setBreadcrumb('root');
-pageTitle.textContent='البطاقات الاستراتيجية';
+pageTitle.textContent='التقديرات الاستراتيجية';
 pageDescription.textContent='اختر نوع البطاقات التي تريد تصفحها.';
 content.innerHTML='<div class="folder-grid">'+
-'<button class="folder" onclick="openArchive(\'news\')"><div class="folder-icon">📰</div><div class="folder-title">البطاقات الاستراتيجية من مصدر إخباري</div><div class="folder-meta">بطاقات تُنشأ عند ورود خبر استراتيجي مهم أو خبر تسلّح</div></button>'+
-'<button class="folder" onclick="openArchive(\'research\')"><div class="folder-icon">📚</div><div class="folder-title">البطاقات الاستراتيجية من مراكز البحث</div><div class="folder-meta">تلخيصات منشورات مراكز الدراسات الاستراتيجية</div></button>'+
+'<button class="folder" onclick="openArchive(\'news\')"><div class="folder-icon">📰</div><div class="folder-title">التقديرات الاستراتيجية من مصدر إخباري</div><div class="folder-meta">بطاقات تُنشأ عند ورود خبر استراتيجي مهم أو خبر تسلّح</div></button>'+
+'<button class="folder" onclick="openArchive(\'research\')"><div class="folder-icon">📚</div><div class="folder-title">التقديرات الاستراتيجية من مراكز البحث</div><div class="folder-meta">تلخيصات منشورات مراكز الدراسات الاستراتيجية</div></button>'+
 '</div>';
 }
 async function openArchive(type){
@@ -156,7 +156,7 @@ content.innerHTML='<div class="error">تعذر تحميل هذا الأرشيف 
 function showYears(){
 currentView='years';
 selectedYear=null;selectedMonth=null;setBreadcrumb('years');
-pageTitle.textContent=archiveType==='research'?'البطاقات الاستراتيجية من مراكز البحث':'البطاقات الاستراتيجية من مصدر إخباري';
+pageTitle.textContent=archiveType==='research'?'التقديرات الاستراتيجية من مراكز البحث':'التقديرات الاستراتيجية من مصدر إخباري';
 pageDescription.textContent='اختر السنة، ثم الشهر، لعرض البطاقات المحفوظة.';
 if(!archiveIndex.years.length){content.innerHTML='<div class="empty">لا توجد بطاقات مؤرشفة في هذا الملف حتى الآن.</div>';return;}
 content.innerHTML='<div class="folder-grid">'+archiveIndex.years.map(y=>{
@@ -182,7 +182,7 @@ pageTitle.textContent='بطاقات '+monthLabel(month)+' '+year;
 pageDescription.textContent=archiveType==='research'?'اختر بطاقة لقراءة تلخيص النشرية الأصلية.':'اختر بطاقة لقراءة التحليل الاستراتيجي المستخلص من الأخبار.';
 if(!m||!(m.cards||[]).length){content.innerHTML='<div class="empty">لا توجد بطاقات محفوظة في هذا الشهر.</div>';return;}
 const cards=[...m.cards].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.title||'').localeCompare(a.title||''));
-content.innerHTML='<div class="cards-grid">'+cards.map((c,i)=>'<button class="card-link" onclick="openArchivedCard('+i+')"><div class="card-date">'+esc(dateLabel(c.date))+'</div><div class="card-period">'+(c.slot==='morning'?'البطاقة الاستراتيجية الصباحية':c.slot==='evening'?'البطاقة الاستراتيجية المسائية':esc(c.kind_label||'بطاقة استراتيجية'))+'</div><div class="card-subtitle">'+esc(c.subject||c.title||'')+'</div></button>').join('')+'</div>';
+content.innerHTML='<div class="cards-grid">'+cards.map((c,i)=>'<button class="card-link" onclick="openArchivedCard('+i+')"><div class="card-date">'+esc(dateLabel(c.date))+'</div><div class="card-period">'+(c.slot==='morning'?'التقدير الاستراتيجي الصباحي':c.slot==='evening'?'التقدير الاستراتيجي المسائي':esc(c.kind_label||'تقدير استراتيجي'))+'</div><div class="card-subtitle">'+esc(c.subject||c.title||'')+'</div></button>').join('')+'</div>';
 window.currentMonthCards=cards;
 }
 async function openArchivedCard(index){
@@ -209,7 +209,7 @@ content.innerHTML='<div class="error">تعذر فتح هذه البطاقة. أ�
 function renderCard(card){
 currentCardData=card;
 let html='<div class="export-tools"><button class="export-button" onclick="saveCardPdf()">حفظ البطاقة بصيغة PDF</button><button class="export-button word" onclick="saveCardWord()">تحميل البطاقة بصيغة Word</button></div>';
-html+='<div class="card-view"><div class="card-head"><h2>'+esc(card.title||'بطاقة استراتيجية')+'</h2>'+(card.subject?'<h3 style="margin:8px 0;color:var(--blue);font-size:19px">'+esc(card.subject)+'</h3>':'')+'<div class="period">'+esc(dateLabel(card.date))+(card.region?' — '+esc(card.region):'')+'</div></div>';
+html+='<div class="card-view"><div class="card-head"><h2>'+esc(card.title||'تقدير استراتيجي')+'</h2>'+(card.subject?'<h3 style="margin:8px 0;color:var(--blue);font-size:19px">'+esc(card.subject)+'</h3>':'')+'<div class="period">'+esc(dateLabel(card.date))+(card.region?' — '+esc(card.region):'')+'</div></div>';
 if(card.summary)html+='<p style="font-weight:bold;margin-bottom:22px">'+esc(card.summary)+'</p>';
 (card.sections||[]).forEach(section=>{html+='<section class="section"><div class="section-title">'+esc(section.heading||'')+'</div><div class="event-text" style="white-space:pre-line">'+esc(section.text||'')+'</div></section>';});
 if((card.sources||[]).length){html+='<section class="section"><div class="section-title">المصادر</div><ul>'+(card.sources||[]).map(s=>'<li style="margin:8px 0"><a href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.title||s.url)+'</a></li>').join('')+'</ul></section>';}
@@ -227,7 +227,7 @@ const sections=(card.sections||[]).map(section=>'<h2 style="color:#102b46;border
 const sources=(card.sources||[]).length?'<h2>المصادر</h2><ul>'+(card.sources||[]).map(s=>'<li>'+esc(s.title||s.url)+'<br>'+esc(s.url)+'</li>').join('')+'</ul>':'';
 const documentHtml='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>'+esc(card.title||'البطاقة الاستراتيجية')+'</title></head><body dir="rtl" style="font-family:Tahoma,Arial,sans-serif;color:#172535;line-height:1.8"><h1 style="color:#102b46">'+esc(card.title||'البطاقة الاستراتيجية')+'</h1>'+(card.subject?'<h2>'+esc(card.subject)+'</h2>':'')+'<p style="color:#687887">'+esc(dateLabel(card.date))+(card.region?' — '+esc(card.region):'')+'</p><p><b>'+esc(card.summary||'')+'</b></p>'+sections+sources+'<p style="margin-top:24px;font-size:10pt;color:#687887">المرصد الإفريقي للأمن والدفاع</p></body></html>';
 const blob=new Blob(['\ufeff',documentHtml],{type:'application/msword;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');
-link.href=url;link.download='بطاقة-استراتيجية-'+String(card.date||'').replace(/[^0-9-]/g,'')+'.doc';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+link.href=url;link.download='تقدير-استراتيجي-'+String(card.date||'').replace(/[^0-9-]/g,'')+'.doc';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 async function loadArchive(){
 const params=new URLSearchParams(window.location.search);
