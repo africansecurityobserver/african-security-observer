@@ -205,6 +205,52 @@ GLOBAL_IMPACT_PATH_TERMS = [
 ]
 
 
+
+# A publication must have a clear security, defence, or state-strategy subject.
+# Geography or the publisher's identity alone is not enough to qualify it.
+STRATEGIC_TOPIC_TERMS = [
+    "security", "national security", "regional security", "defence", "defense",
+    "military", "armed forces", "army", "navy", "air force", "arms deal",
+    "arms transfer", "weapons", "missile", "drone", "war", "warfare",
+    "armed conflict", "conflict", "battlefield", "ceasefire", "coup",
+    "terrorism", "counterterrorism", "insurgency", "militia", "intelligence",
+    "espionage", "cybersecurity", "cyber security", "hybrid threats",
+    "border security", "maritime security", "naval", "piracy", "organized crime",
+    "smuggling networks", "critical infrastructure", "nuclear deterrence",
+    "deterrence", "military spending", "defence industry", "defense industry",
+    "peacekeeping", "peace operations", "war crimes", "genocide",
+    "foreign policy", "international relations", "geopolitics", "geopolitical",
+    "strategic competition", "grand strategy", "national strategy",
+    "defence policy", "defense policy", "strategic autonomy", "military doctrine",
+    "alliances", "alliance", "nato", "diplomatic crisis", "diplomatic tensions",
+    "bilateral relations", "regional power", "great power", "sanctions",
+    "export controls", "arms control", "non-proliferation", "proliferation",
+    "energy security", "food security", "water security", "supply chain security",
+    "maritime routes", "shipping lanes", "critical minerals", "strategic resources",
+    "migration security", "irregular migration routes", "border management",
+    "political violence", "state fragility", "state collapse", "regional stability",
+    "sécurité", "défense", "militaire", "forces armées", "conflit armé",
+    "guerre", "terrorisme", "renseignement", "cybersécurité", "géopolitique",
+    "politique étrangère", "relations internationales", "industrie de défense",
+    "transferts d'armes", "dissuasion", "sécurité énergétique", "sécurité maritime",
+    "prolifération", "sanctions internationales", "stabilité régionale",
+    "الأمن", "الأمني", "أمن قومي", "الأمن القومي", "الأمن الإقليمي",
+    "الدفاع", "عسكري", "عسكرية", "القوات المسلحة", "الجيش", "البحرية",
+    "القوات الجوية", "التسلح", "صفقات السلاح", "نقل الأسلحة", "الصواريخ",
+    "المسيرات", "الحرب", "الحروب", "النزاع المسلح", "الصراع المسلح",
+    "الإرهاب", "مكافحة الإرهاب", "الاستخبارات", "التجسس", "الأمن السيبراني",
+    "التهديدات السيبرانية", "أمن الحدود", "الأمن البحري", "القرصنة",
+    "الجريمة المنظمة", "التهريب", "البنية التحتية الحيوية", "الردع النووي",
+    "السياسة الخارجية", "العلاقات الدولية", "الجغرافيا السياسية",
+    "التنافس الاستراتيجي", "الاستراتيجية الوطنية", "العقيدة العسكرية",
+    "التحالفات", "أزمة دبلوماسية", "التوترات الدبلوماسية", "القوى الكبرى",
+    "العقوبات الدولية", "ضبط التسلح", "منع الانتشار", "أمن الطاقة",
+    "الأمن الغذائي", "أمن المياه", "الموارد الاستراتيجية", "الاستقرار الإقليمي",
+    "العنف السياسي", "هشاشة الدولة", "انهيار الدولة", "جرائم الحرب",
+    "جرائم ضد الإنسانية", "الانقلابات العسكرية"
+]
+
+
 def normalize_relevance_text(value):
     text = str(value or "").lower()
     text = text.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا")
@@ -240,6 +286,14 @@ def classify_relevance(item):
         3: "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
         4: "قضايا عالمية قد تؤثر في تونس"
     }
+
+    # Exclude standalone domestic politics, human-rights-only coverage,
+    # labour unions and other social topics unless a clear security,
+    # defence or state-strategy subject is present.
+    if not has_any(text, STRATEGIC_TOPIC_TERMS):
+        item["relevance_tier"] = 0
+        item["relevance_label"] = "خارج نطاق الأمن والدفاع والاستراتيجية"
+        return 0
 
     if has_any(text, TUNISIA_TERMS):
         item["relevance_tier"] = 1
