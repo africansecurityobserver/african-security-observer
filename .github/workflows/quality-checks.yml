@@ -1,4 +1,4 @@
-name: News Quality Checks
+name: Site Quality Checks
 
 on:
   pull_request:
@@ -7,6 +7,7 @@ on:
       - "build_news.py"
       - "build_articles.py"
       - "index.html"
+      - "strategic_cards/**"
       - "tests/**"
       - "requirements.txt"
       - ".github/workflows/quality-checks.yml"
