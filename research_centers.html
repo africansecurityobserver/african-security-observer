@@ -31,6 +31,10 @@ h2{color:var(--navy);font-size:22px;margin:0}
 .center{display:inline-block;background:#edf3f7;color:var(--blue);border-radius:4px;padding:2px 8px;font-size:11px;font-weight:bold}
 .source-link{display:inline-block;color:var(--blue);font-size:13px;font-weight:bold;text-decoration:none;margin-top:8px}
 .source-link:hover{text-decoration:underline}
+.publication-heading{margin:0 0 12px;font-size:17px;line-height:1.8;color:var(--navy);font-weight:700}
+.publication-links{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.strategic-link{font-weight:700}
+.card-pending{font-size:13px;color:#777}
 .strategic-card{margin-top:16px;padding:15px;background:#f7f9fb;border:1px solid #cbd8e2;border-right:4px solid var(--gold);border-radius:7px}
 .strategic-card h4{margin:0 0 8px;color:var(--navy);font-size:17px}
 .strategic-card .card-summary{font-weight:bold;margin:0 0 12px;line-height:1.85}
@@ -111,15 +115,6 @@ function cardForPublication(p){
    return sourceTitle.length>24&&title.length>24&&(sourceTitle.includes(title)||title.includes(sourceTitle));
  })||null;
 }
-function renderCard(card){
- const sections=Array.isArray(card.sections)?card.sections:[];
- const sectionHtml=sections.map(s=>'<div class="card-section"><h5>'+esc(s.heading||'')+'</h5><p>'+esc(s.text||'')+'</p></div>').join('');
- const sourceLinks=(Array.isArray(card.sources)?card.sources:[]).map(s=>{
-   const u=String(s.url||'').trim();
-   return (u.startsWith('https://')||u.startsWith('http://'))?'<a class="source-link" href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">المصدر الأصلي للبطاقة ↗</a>':'';
- }).join('');
- return '<div class="strategic-card"><span class="card-label">البطاقة الاستراتيجية المرتبطة بهذه النشرية</span><h4>'+esc(card.title||'تحليل استراتيجي للنشرية')+'</h4>'+(card.summary?'<p class="card-summary">'+esc(card.summary)+'</p>':'')+sectionHtml+'<div class="card-links">'+sourceLinks+'<a class="source-link" href="./strategic_cards.html?type=research">تصفح أرشيف البطاقات ↗</a></div></div>';
-}
 function render(){
  const q=searchEl.value.trim().toLocaleLowerCase();
  const center=centerEl.value;
@@ -135,17 +130,16 @@ function render(){
  });
  filtered.sort((a,b)=>relevanceTier(a)-relevanceTier(b)||(dateValue(b)?.getTime()||0)-(dateValue(a)?.getTime()||0));
  if(!filtered.length){listEl.innerHTML='<div class="empty">لا توجد منشورات مطابقة لمعايير الأهمية الجغرافية المختارة حاليًا. ستظهر المنشورات الجديدة المؤهلة بعد التحديث الدوري.</div>';return;}
- const renderedCards=new Set();
  listEl.innerHTML=filtered.map(p=>{
    const d=dateValue(p);
    const dateLabel=d?new Intl.DateTimeFormat('ar-TN',{dateStyle:'medium'}).format(d):(p.date||'تاريخ غير متوفر');
    const candidateUrl=String(p.url||'').trim();
    const url=(candidateUrl.startsWith('https://')||candidateUrl.startsWith('http://'))?candidateUrl:'#';
-   const tier=relevanceTier(p);
+   const title=p.title_ar||p.title||'عنوان غير متوفر';
+   const centerName=p.center||p.center_short||'مركز أبحاث';
    const card=cardForPublication(p);
-   const cardKey=card?normalizeText((card.center||'')+'|'+(card.source_title||card.title||'')):'';
-   const attachedCard=card&&!renderedCards.has(cardKey)?(renderedCards.add(cardKey),renderCard(card)):'';
-   return '<article class="publication"><div class="meta"><span class="center">'+esc(p.center||p.center_short||'مركز أبحاث')+'</span><span class="center">الأولوية '+tier+' · '+esc(tierLabels[tier])+'</span><span>'+esc(dateLabel)+'</span></div><h3><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.title_ar||'جارٍ إعداد العنوان العربي')+'</a></h3><div class="meta">'+(p.source&&p.source!==p.center?'<span>الناشر: '+esc(p.source)+'</span>':'')+'</div><a class="source-link" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">قراءة المنشور في موقعه الأصلي ↗</a>'+attachedCard+'</article>';
+   const cardLink=card&&card.path?'./strategic_cards.html?type=research&card='+encodeURIComponent(card.path):'';
+   return '<article class="publication"><h3 class="publication-heading">'+esc(centerName)+': '+esc(title)+' ('+esc(dateLabel)+')</h3><div class="publication-links"><a class="source-link" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">قراءة المقال الأصلي ↗</a>'+(cardLink?'<a class="source-link strategic-link" href="'+esc(cardLink)+'">قراءة البطاقة الاستراتيجية الخاصة به ↗</a>':'<span class="card-pending">البطاقة الاستراتيجية غير متاحة في الأرشيف حاليًا</span>')+'</div></article>';
  }).join('');
 }
 async function load(){
