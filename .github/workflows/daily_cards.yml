@@ -13,8 +13,8 @@ on:
     - cron: "0 6 * * *"
       timezone: "Africa/Tunis"
 
-    # Refresh it hourly after the news feed has had time to update.
-    - cron: "10 6-23 * * *"
+    # Refresh it every 30 minutes after the news feed has had time to update.
+    - cron: "0,30 6-23 * * *"
       timezone: "Africa/Tunis"
 
     # Final refresh close to midnight.
