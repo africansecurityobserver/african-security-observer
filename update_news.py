@@ -261,7 +261,22 @@ DEFENSE_TERMS = [
     "helicopters",
     "radar",
     "aircraft carrier",
-    "military vehicle"
+    "military vehicle",
+    # Arabic/French equipment names must pass the first relevance gate too.
+    "fighter aircraft", "fighter jet", "combat aircraft", "warplane",
+    "air defense system", "air defence system", "electronic warfare",
+    "avion de combat", "avion militaire", "défense aérienne", "guerre électronique",
+    "مقاتلة", "مقاتلات", "طائرة حربية", "طائرات حربية", "طائرة قتالية",
+    "طائرات قتالية", "طائرة مقاتلة", "طائرات مقاتلة", "طائرة مسيرة",
+    "طائرات مسيرة", "طائرة بدون طيار", "طائرات بدون طيار", "صاروخ باليستي",
+    "صواريخ باليستية", "صاروخ جوال", "صواريخ جوالة", "منظومة دفاع جوي",
+    "منظومات دفاع جوي", "رادار عسكري", "رادارات عسكرية", "قمر صناعي عسكري",
+    "أقمار صناعية عسكرية", "سفينة حربية", "سفن حربية", "فرقاطة", "فرقاطات",
+    "كورفيت", "مدمرة بحرية", "دبابة", "دبابات", "مدرعة قتالية",
+    "مدرعات قتالية", "منظومة تسليح", "منظومة سلاح", "منظومات تسليح",
+    "مدفعية ذاتية الحركة", "مركبة مدرعة", "مركبات مدرعة", "مروحية عسكرية",
+    "مروحيات عسكرية", "حرب إلكترونية", "منظومة رادار", "منظومات رادار",
+    "نظام تسليح", "أنظمة تسليح", "أسلحة خفيفة"
 ]
 
 
@@ -1332,47 +1347,56 @@ def is_relevant_security_news(
 
 def is_qualifying_defense_story(title, description=""):
     """
-    The public 'التسليح والدفاع' section is reserved for:
-    (1) confirmed arms deals/contracts,
-    (2) explicitly successful tests of weapon prototypes/systems,
-    (3) explicitly successful manufacture/production of weapons.
-    A mere mention of military equipment is not sufficient.
+    Keep the dedicated arms-and-defense section focused on concrete equipment
+    developments: confirmed procurement/sales, deliveries and acceptance,
+    entry into service, significant upgrades, public unveiling, successful
+    tests, and real production milestones. A generic military/security mention
+    alone is not enough.
     """
-    text = (str(title or "") + " " + str(description or "")).lower()
+    text = (str(title or "") + " " + str(description or "")).casefold()
 
     if is_sports_related(title, description):
         return False
 
     weapon_terms = [
-        # Aircraft, drones, space and missiles
+        # Air, space, missile and sensor systems
         "fighter aircraft", "fighter jet", "combat aircraft", "warplane",
         "military aircraft", "combat drone", "military drone", "unmanned combat",
         "uav", "ucav", "drone", "drones", "missile", "missiles", "ballistic missile",
         "cruise missile", "hypersonic", "rocket system", "air defense", "air defence",
         "surface-to-air", "anti-aircraft", "radar system", "military satellite",
-        "military spacecraft", "military space",
+        "military spacecraft", "military space", "electronic warfare", "sonar",
+        "air defense system", "air defence system", "combat system",
         # Naval and land systems
         "submarine", "uncrewed underwater", "unmanned underwater", "warship",
         "frigate", "corvette", "destroyer", "naval combat", "military vessel",
         "tank", "armored fighting vehicle", "armoured fighting vehicle",
-        "artillery system", "howitzer", "self-propelled gun",
+        "artillery system", "howitzer", "self-propelled gun", "military helicopter",
+        "military vehicle", "armored vehicle", "armoured vehicle", "small arms",
+        "weapons system", "weapon system", "defense system", "defence system",
         # French
         "avion de combat", "avion militaire", "drone militaire", "missile",
         "défense aérienne", "sous-marin", "navire de guerre", "frégate",
         "corvette", "satellite militaire", "système d'armes", "système d’arme",
-        "véhicule blindé", "artillerie",
+        "véhicule blindé", "artillerie", "guerre électronique", "système radar",
         # Arabic
         "مقاتلة", "مقاتلات", "طائرة حربية", "طائرات حربية", "طائرة قتالية",
-        "طائرات قتالية", "طائرة مسيرة", "طائرات مسيرة", "طائرة بدون طيار",
-        "طائرات بدون طيار", "مسيّرة قتالية", "صاروخ", "صواريخ", "صاروخ باليستي",
-        "صواريخ باليستية", "صاروخ جوال", "صواريخ جوالة", "فرط صوتي",
-        "منظومة دفاع جوي", "منظومات دفاع جوي", "دفاع جوي", "رادار عسكري",
-        "قمر صناعي عسكري", "أقمار صناعية عسكرية", "غواصة", "غواصات",
-        "غواصة مسيرة", "غواصة غير مأهولة", "سفينة حربية", "سفن حربية",
-        "فرقاطة", "فرقاطات", "كورفيت", "مدمرة بحرية", "دبابة", "دبابات",
-        "مدرعة قتالية", "مدرعات قتالية", "منظومة تسليح", "منظومة سلاح",
-        "مدفعية ذاتية الحركة"
+        "طائرات قتالية", "طائرة مقاتلة", "طائرات مقاتلة", "طائرة مسيرة",
+        "طائرات مسيرة", "طائرة بدون طيار", "طائرات بدون طيار", "مسيّرة قتالية",
+        "صاروخ", "صواريخ", "صاروخ باليستي", "صواريخ باليستية", "صاروخ جوال",
+        "صواريخ جوالة", "فرط صوتي", "منظومة دفاع جوي", "منظومات دفاع جوي",
+        "دفاع جوي", "رادار عسكري", "رادارات عسكرية", "قمر صناعي عسكري",
+        "أقمار صناعية عسكرية", "غواصة", "غواصات", "غواصة مسيرة",
+        "غواصة غير مأهولة", "سفينة حربية", "سفن حربية", "فرقاطة", "فرقاطات",
+        "كورفيت", "مدمرة بحرية", "دبابة", "دبابات", "مدرعة قتالية",
+        "مدرعات قتالية", "منظومة تسليح", "منظومة سلاح", "منظومات تسليح",
+        "مدفعية ذاتية الحركة", "مركبة مدرعة", "مركبات مدرعة", "مروحية عسكرية",
+        "مروحيات عسكرية", "حرب إلكترونية", "منظومة رادار", "منظومات رادار",
+        "نظام تسليح", "أنظمة تسليح", "أسلحة خفيفة"
     ]
+
+    if not any(term in text for term in weapon_terms):
+        return False
 
     deal_terms = [
         "arms deal", "weapons deal", "arms contract", "weapons contract",
@@ -1382,7 +1406,7 @@ def is_qualifying_defense_story(title, description=""):
         "sale of", "sells to", "sold to", "will supply", "agreed to supply",
         "ordered from", "purchase agreement", "procurement deal",
         "accord d'armement", "contrat d'armement", "contrat de défense",
-        "contrat de défense", "accord de vente", "commande de",
+        "accord de vente", "commande de",
         "صفقة تسلح", "صفقة تسليح", "صفقة أسلحة", "صفقة سلاح",
         "أبرمت صفقة", "أبرم صفقة", "إبرام صفقة", "إبرام عقد تسلح",
         "وقعت عقدا", "وقّعت عقداً", "وقع عقدا", "وقّع عقداً",
@@ -1422,18 +1446,47 @@ def is_qualifying_defense_story(title, description=""):
         "اكتمال تصنيع", "استكمل تصنيع", "إنتاج أول نموذج", "تصنيع أول نموذج"
     ]
 
-    has_weapon = any(term in text for term in weapon_terms)
-    if not has_weapon:
-        return False
+    # Additional concrete milestones that the previous filter wrongly excluded.
+    equipment_milestone_terms = [
+        # Delivery, acceptance, commissioning and operational service
+        "delivered", "delivery of", "deliveries of", "received its first",
+        "received the first", "took delivery", "accepted delivery",
+        "handed over", "commissioned", "entered service", "entered into service",
+        "operational service", "put into service", "deployed its new",
+        "deployment of the", "first deployment of", "inducted into service",
+        "delivery ceremony", "final acceptance",
+        "livré", "livraison de", "réceptionné", "mis en service",
+        "entre en service", "entrée en service", "remis à",
+        "تسليم", "تسلّم", "تسلمت", "استلمت", "استلام", "تسلّم أول",
+        "دخل الخدمة", "دخلت الخدمة", "إدخال الخدمة", "إدخاله الخدمة",
+        "وضع في الخدمة", "وُضع في الخدمة", "تدشين", "تشغيل منظومة",
+        "نشر منظومة", "نشر نظام", "بدأ تشغيل",
+        # New system unveiling, substantive upgrades and integration
+        "unveiled", "unveils", "revealed", "reveals", "introduced a new",
+        "newly developed", "prototype of", "first images of",
+        "announced a new system", "showcased its new", "demonstrated its new",
+        "upgrade of", "upgraded its", "modernization of", "modernisation de",
+        "integrated into", "integration of", "retrofit of", "refit of",
+        "a dévoilé", "a présenté", "nouveau système", "modernisation de",
+        "كشف عن", "كشفت عن", "يكشف عن", "تكشف عن", "عرض منظومة",
+        "عرضت منظومة", "استعرضت منظومة", "أعلن عن منظومة", "الإعلان عن منظومة",
+        "منظومة جديدة", "نظام جديد", "تطوير منظومة", "تطوير نظام",
+        "تحديث منظومة", "تحديث نظام", "تحديث أسطول", "تحديث الرادار",
+        "دمج منظومة", "دمج نظام", "تركيب منظومة", "تجهيزها بمنظومة",
+        "رفع قدرات", "تعزيز قدرات المنظومة", "تسليح جديد",
+        "تطوير مقاتلة", "تحديث مقاتلة", "تحديث دبابة", "تحديث سفينة",
+        "نموذج أولي", "الكشف عن", "إطلاق منظومة", "إطلاق نظام"
+    ]
 
-    has_deal = any(term in text for term in deal_terms)
-    has_successful_test = any(term in text for term in successful_test_terms)
-    has_successful_manufacture = any(term in text for term in successful_manufacture_terms)
-
-    # Reject vague future intentions and generic development announcements.
-    # The positive terms above must explicitly indicate a deal, successful test,
-    # or completed/commenced manufacture.
-    return has_deal or has_successful_test or has_successful_manufacture
+    return any(
+        term in text
+        for term in (
+            deal_terms
+            + successful_test_terms
+            + successful_manufacture_terms
+            + equipment_milestone_terms
+        )
+    )
 
 
 # =========================================================
