@@ -1582,7 +1582,11 @@ const filtered =
 items.filter(function(item){
 
 if(category === 'defense'){
-return isDefenseStory(item);
+// update_news.py is the single source of truth for strict defense eligibility.
+// It classifies items only after checking for a qualifying deal, successful test,
+// or successful manufacture. Re-running a second, narrower browser filter caused
+// valid classified stories to disappear from this section.
+return item.category === 'defense';
 }
 
 if(category === 'africa'){
