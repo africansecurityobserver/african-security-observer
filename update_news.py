@@ -1058,7 +1058,7 @@ def normalize_url(url):
             return str(url).strip()
         tracking = {
             "fbclid", "gclid", "dclid", "mc_cid", "mc_eid", "ref",
-            "ref_src", "ocid", "cmpid", "output", "guccounter"
+            "ref_src", "ocid", "cmpid", "guccounter"
         }
         query = [
             (key, value) for key, value in parse_qsl(parts.query, keep_blank_values=True)
@@ -1232,7 +1232,7 @@ def is_sports_related(title, description=""):
     title_sports_terms = [
         "football", "soccer", "كرة القدم", "كروي", "كروية", "الدوري",
         "مباراة", "مباريات", "لاعب", "لاعبين", "لاعبو", "نادي", "أندية",
-        "مدرب", "مدربه", "هدف", "أهداف", "ركلة جزاء", "مهرجان رياضي",
+        "مدرب", "مدربه", "هدف", "أهداف", "ركلة جزاء", "رياضي", "رياضيا", "رياضيًا", "مهرجان رياضي",
         "مهرجاناً رياضياً", "مهرجان رياضيا", "بطولة رياضية", "مسابقة رياضية",
         "كرة السلة", "كرة اليد", "كرة الطائرة", "كأس العالم", "سباق سيارات",
         "champions league", "premier league", "la liga", "serie a", "bundesliga",
@@ -2106,6 +2106,10 @@ def build_current_news(all_articles):
 
         keep = True
         published_dt = parse_published_datetime(published)
+
+        # Do not surface undated records as if they were current news.
+        if published_dt is None:
+            continue
 
         if published_dt is not None:
             age = now - published_dt
