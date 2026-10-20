@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-20T10:40+01:00",
+  "updated": "2026-10-20T12:00+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
-  "center_count": 73,
+  "center_count": 100,
   "centers": [
     {
       "name": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
@@ -437,14 +437,288 @@
       "site": "https://isdp.eu/"
     },
     {
-      "name": "معهد أبحاث السلام والسياسة الأمنية في هامبورغ (IFSH)",
-      "short": "IFSH",
-      "domain": "ifsh.de",
-      "site": "https://ifsh.de/"
+      "name": "المعهد التونسي للدراسات الاستراتيجية",
+      "short": "ITES Tunisia",
+      "domain": "ites.tn",
+      "site": "https://ites.tn/"
+    },
+    {
+      "name": "المركز العربي للأبحاث ودراسة السياسات - تونس",
+      "short": "CAREP Tunisia",
+      "domain": "carep.tn",
+      "site": "https://carep.tn/"
+    },
+    {
+      "name": "مركز الدراسات المتقدمة حول المغرب العربي (MECAM)",
+      "short": "MECAM",
+      "domain": "mecam.tn",
+      "site": "https://mecam.tn/"
+    },
+    {
+      "name": "المنتدى التونسي للحقوق الاقتصادية والاجتماعية",
+      "short": "FTDES",
+      "domain": "ftdes.net",
+      "site": "https://ftdes.net/"
+    },
+    {
+      "name": "المعهد التونسي للقدرة التنافسية والدراسات الكمية",
+      "short": "ITCEQ",
+      "domain": "itceq.tn",
+      "site": "https://itceq.tn/"
+    },
+    {
+      "name": "مركز الدراسات الاستراتيجية والدبلوماسية التونسي",
+      "short": "CSDS Tunisia",
+      "domain": "csds-center.com",
+      "site": "https://csds-center.com/"
+    },
+    {
+      "name": "مبادرة الإصلاح العربي",
+      "short": "Arab Reform Initiative",
+      "domain": "arab-reform.net",
+      "site": "https://arab-reform.net/"
+    },
+    {
+      "name": "مؤسسة هاينريش بول - مكتب تونس",
+      "short": "Heinrich Böll Tunisia",
+      "domain": "tn.boell.org",
+      "site": "https://tn.boell.org/"
+    },
+    {
+      "name": "مؤسسة روزا لوكسمبورغ - شمال إفريقيا",
+      "short": "Rosa Luxemburg North Africa",
+      "domain": "rosaluxna.org",
+      "site": "https://rosaluxna.org/"
+    },
+    {
+      "name": "منظمة البوصلة",
+      "short": "Al Bawsala",
+      "domain": "al-bawsala.com",
+      "site": "https://al-bawsala.com/"
+    },
+    {
+      "name": "المعهد العربي لحقوق الإنسان",
+      "short": "Arab Institute for Human Rights",
+      "domain": "aihr.tn",
+      "site": "https://aihr.tn/"
+    },
+    {
+      "name": "المعهد العربي لرؤساء المؤسسات",
+      "short": "IACE",
+      "domain": "iace.tn",
+      "site": "https://iace.tn/"
+    },
+    {
+      "name": "مركز المرأة العربية للتدريب والبحوث",
+      "short": "CAWTAR",
+      "domain": "cawtar.org",
+      "site": "https://cawtar.org/"
+    },
+    {
+      "name": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "short": "MENA Rights Group",
+      "domain": "menarights.org",
+      "site": "https://menarights.org/"
+    },
+    {
+      "name": "المعهد الدولي للديمقراطية والمساعدة الانتخابية",
+      "short": "International IDEA",
+      "domain": "idea.int",
+      "site": "https://idea.int/"
+    },
+    {
+      "name": "الباروميتر العربي",
+      "short": "Arab Barometer",
+      "domain": "arabbarometer.org",
+      "site": "https://arabbarometer.org/"
+    },
+    {
+      "name": "أفروباروميتر",
+      "short": "Afrobarometer",
+      "domain": "afrobarometer.org",
+      "site": "https://afrobarometer.org/"
+    },
+    {
+      "name": "المركز الدولي للعدالة الانتقالية",
+      "short": "ICTJ",
+      "domain": "ictj.org",
+      "site": "https://ictj.org/"
+    },
+    {
+      "name": "فريدوم هاوس",
+      "short": "Freedom House",
+      "domain": "freedomhouse.org",
+      "site": "https://freedomhouse.org/"
+    },
+    {
+      "name": "معهد V-Dem للديمقراطية",
+      "short": "V-Dem Institute",
+      "domain": "v-dem.net",
+      "site": "https://v-dem.net/"
+    },
+    {
+      "name": "منتدى الشرق الأوسط للسياسة",
+      "short": "POMEPS",
+      "domain": "pomeps.org",
+      "site": "https://pomeps.org/"
+    },
+    {
+      "name": "معهد التحرير لسياسة الشرق الأوسط",
+      "short": "TIMEP",
+      "domain": "timep.org",
+      "site": "https://timep.org/"
+    },
+    {
+      "name": "مركز الجزيرة للدراسات",
+      "short": "Al Jazeera Centre for Studies",
+      "domain": "studies.aljazeera.net",
+      "site": "https://studies.aljazeera.net/"
+    },
+    {
+      "name": "المعهد الأوروبي للبحر الأبيض المتوسط",
+      "short": "IEMed",
+      "domain": "iemed.org",
+      "site": "https://iemed.org/"
+    },
+    {
+      "name": "شبكة أوروميسكو للدراسات الأورومتوسطية",
+      "short": "EuroMeSCo",
+      "domain": "euromesco.net",
+      "site": "https://euromesco.net/"
+    },
+    {
+      "name": "مركز برشلونة للشؤون الدولية",
+      "short": "CIDOB",
+      "domain": "cidob.org",
+      "site": "https://cidob.org/"
+    },
+    {
+      "name": "منظمة ACAPS للتحليل الإنساني",
+      "short": "ACAPS",
+      "domain": "acaps.org",
+      "site": "https://acaps.org/"
+    },
+    {
+      "name": "مركز التكامل المتوسطي",
+      "short": "Center for Mediterranean Integration",
+      "domain": "cmimarseille.org",
+      "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 56,
+  "count": 81,
   "publications": [
+    {
+      "center": "مركز برشلونة للشؤون الدولية",
+      "center_short": "CIDOB",
+      "title": "Tunisia’s water-energy nexus: institutional path dependence and asymmetric adaptation - CIDOB",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPdlFRUjgxcmZKdlUxa1FDVjE1ZWtIVUIxYUtFMXNad2ZwSUJUMTZMNTBpYWVUUm9Rc3BMRncxUGJBS05ldGFqVm45cGw2d1VaaGl6am8xVXFWMjhLR3F1aF9MZS0tdmtqX211VU9oUGlTVTJZUVQ4c0pocGx3a1hGMGFBeklkeHFmUXVpVkNCUDZkQmwzOFFPWlFpSkZsZEYxRjFXMVVBdlRqMnNPb3NvNFRDNGhlMGhXc2Z0YW5R?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-17T04:48+01:00",
+      "date": "2026-10-17",
+      "source": "CIDOB",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPdlFRUjgxcmZKdlUxa1FDVjE1ZWtIVUIxYUtFMXNad2ZwSUJUMTZMNTBpYWVUUm9Rc3BMRncxUGJBS05ldGFqVm45cGw2d1VaaGl6am8xVXFWMjhLR3F1aF9MZS0tdmtqX211VU9oUGlTVTJZUVQ4c0pocGx3a1hGMGFBeklkeHFmUXVpVkNCUDZkQmwzOFFPWlFpSkZsZEYxRjFXMVVBdlRqMnNPb3NvNFRDNGhlMGhXc2Z0YW5R?oc=5\" target=\"_blank\">Tunisia’s water-energy nexus: institutional path dependence and asymmetric adaptation</a> <font color=\"#6f6f6f\">CIDOB</font>",
+      "center_site": "https://cidob.org/",
+      "relevance_tier": 1,
+      "relevance_label": "تونس مباشرة",
+      "title_ar": "العلاقة بين المياه والطاقة في تونس: الاعتماد على المسار المؤسسي والتكيف غير المتماثل - CIDOB"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "Adoption of state of emergency draft bill in Tunisia would undermine fundamental human rights - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQUzA0QmtZa3k3LWxnOUNGQlBDZjRaMWp0NFRkekdHSk16ZWhQY3Z2bW1xbTNBa0lsZ0lOX2lNNlZVQTNKVXpISy1NaER0ZHpmZm40WE1RV1ZqYnp1bWRydFlTQVZ4d181UDktOWxFLXpjRW80aDZDc011bU5nTDFhZlhXTXZpWlIxT3VIMkNid2dXQjFtQllUU0N5ekdXN2U5S0s0YklFajVhMHc5VENzWkR3SEdpZ0xWQWxZZw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-16T13:56+01:00",
+      "date": "2026-10-16",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQUzA0QmtZa3k3LWxnOUNGQlBDZjRaMWp0NFRkekdHSk16ZWhQY3Z2bW1xbTNBa0lsZ0lOX2lNNlZVQTNKVXpISy1NaER0ZHpmZm40WE1RV1ZqYnp1bWRydFlTQVZ4d181UDktOWxFLXpjRW80aDZDc011bU5nTDFhZlhXTXZpWlIxT3VIMkNid2dXQjFtQllUU0N5ekdXN2U5S0s0YklFajVhMHc5VENzWkR3SEdpZ0xWQWxZZw?oc=5\" target=\"_blank\">Adoption of state of emergency draft bill in Tunisia would undermine fundamental human rights</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 1,
+      "relevance_label": "تونس مباشرة",
+      "title_ar": "اعتماد مشروع قانون حالة الطوارئ في تونس من شأنه أن يقوض حقوق الإنسان الأساسية - مينا رايتس جروب"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "State of emergency draft bill in Tunisia still not in line with international standards - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNQlBYY3JLMnVIQzNDZVlKbE44UmJ1NXdLZjFPeG9MVnY3Tk9Jck9nVV9BcXRESjVoZkRqSmxzZ3hBbjlhdjRVbl9TTE1DSXJmUzhZY2FMU2dzRjV0Rjg4V3B5aWI4X0Q0QTNuTV9KWGw4cG1OODNuclhsMzlFX1pDV08yajhwYlpVanA0NlM3WW9NcWVvVGdDN1VWd3Z2aFZVRkdNTXUtc29RQzV0MVE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-16T13:27+01:00",
+      "date": "2026-10-16",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNQlBYY3JLMnVIQzNDZVlKbE44UmJ1NXdLZjFPeG9MVnY3Tk9Jck9nVV9BcXRESjVoZkRqSmxzZ3hBbjlhdjRVbl9TTE1DSXJmUzhZY2FMU2dzRjV0Rjg4V3B5aWI4X0Q0QTNuTV9KWGw4cG1OODNuclhsMzlFX1pDV08yajhwYlpVanA0NlM3WW9NcWVvVGdDN1VWd3Z2aFZVRkdNTXUtc29RQzV0MVE?oc=5\" target=\"_blank\">State of emergency draft bill in Tunisia still not in line with international standards</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 1,
+      "relevance_label": "تونس مباشرة",
+      "title_ar": "مشروع قانون حالة الطوارئ في تونس لا يزال غير متوافق مع المعايير الدولية - MENA Rights Group"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "Algerian human rights defender Zaki Hannache no longer at risk of forcible return from Tunisia - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9PaGJjZGRzOF9LTlpMSGU4VmlaUDROc1JHWFJsWjNGVzVPaHRWTlA3RjFGOXJSLWR4c1hCQzhzM29JWEY2TWx5OVEzRlJqcC0yYlJCajNYNFd2eGFYMndr?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-14T21:53+01:00",
+      "date": "2026-10-14",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTE9PaGJjZGRzOF9LTlpMSGU4VmlaUDROc1JHWFJsWjNGVzVPaHRWTlA3RjFGOXJSLWR4c1hCQzhzM29JWEY2TWx5OVEzRlJqcC0yYlJCajNYNFd2eGFYMndr?oc=5\" target=\"_blank\">Algerian human rights defender Zaki Hannache no longer at risk of forcible return from Tunisia</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 1,
+      "relevance_label": "تونس مباشرة",
+      "title_ar": "لم يعد المدافع الجزائري عن حقوق الإنسان زكي حناش معرضًا لخطر الإعادة القسرية من تونس - مينا رايتس جروب"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "Tunisia: Conviction of Sihem Bensedrine threatens transitional justice and deepens restrictions on civic space - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdThRSnYtLWl2LU8yZjhMWWVmZUYyZVd1ODJ2N3RhSFRyZkY3YTlIaHQ0NUtLZ2JvdDJWUkFjMDFMRzdzVkdkcGp4eGJ3UjlKSE5Xay1PUE40SnlxUERFRGdZeVZna05Od2VOOWw0VHkwSFdnQkp6VFBiYUxJWTdaUVpwdTRYX2M0dWtuVnhJb0N6dU1nenZObW9EU21oRDE4ektWaQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-14T13:32+01:00",
+      "date": "2026-10-14",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxQdThRSnYtLWl2LU8yZjhMWWVmZUYyZVd1ODJ2N3RhSFRyZkY3YTlIaHQ0NUtLZ2JvdDJWUkFjMDFMRzdzVkdkcGp4eGJ3UjlKSE5Xay1PUE40SnlxUERFRGdZeVZna05Od2VOOWw0VHkwSFdnQkp6VFBiYUxJWTdaUVpwdTRYX2M0dWtuVnhJb0N6dU1nenZObW9EU21oRDE4ektWaQ?oc=5\" target=\"_blank\">Tunisia: Conviction of Sihem Bensedrine threatens transitional justice and deepens restrictions on civic space</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 1,
+      "relevance_label": "تونس مباشرة",
+      "title_ar": "تونس: إدانة سهام بن سدرين تهدد العدالة الانتقالية وتعمق القيود المفروضة على الحيز المدني - MENA Rights Group"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "Country: Tunisia - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA1blF6ZXpUVm1aSWVlSFU1d2FIQXgyZ21Cd2RpaXFaS1JyQ2hfdW5PY1FwdW9PNmtqWUlrZzJKcmdhc3RJU1k1NVFqMTRZc29h?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-14T12:37+01:00",
+      "date": "2026-10-14",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTFA1blF6ZXpUVm1aSWVlSFU1d2FIQXgyZ21Cd2RpaXFaS1JyQ2hfdW5PY1FwdW9PNmtqWUlrZzJKcmdhc3RJU1k1NVFqMTRZc29h?oc=5\" target=\"_blank\">Country: Tunisia</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 1,
+      "relevance_label": "تونس مباشرة",
+      "title_ar": "البلد: تونس - مجموعة مينا للحقوق"
+    },
+    {
+      "center": "المنتدى التونسي للحقوق الاقتصادية والاجتماعية",
+      "center_short": "FTDES",
+      "title": "(العربية) إعلام بالمؤتمر الوطني الرابع للمنتدى التونسي للحقوق الاقتصادية والاجتماعية - ftdes.net",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1jaDNuUVgzV25iQy1BYXdaTjRGam52SWhhcGlQQU9lM2xySWFpRDhrYkxpNHNhWjE4RDRjV00tVGx4OXM4bi1Pd2c2Q21fajBC?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-14T08:09+01:00",
+      "date": "2026-10-14",
+      "source": "ftdes.net",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE1jaDNuUVgzV25iQy1BYXdaTjRGam52SWhhcGlQQU9lM2xySWFpRDhrYkxpNHNhWjE4RDRjV00tVGx4OXM4bi1Pd2c2Q21fajBC?oc=5\" target=\"_blank\">(العربية) إعلام بالمؤتمر الوطني الرابع للمنتدى التونسي للحقوق الاقتصادية والاجتماعية</a> <font color=\"#6f6f6f\">ftdes.net</font>",
+      "center_site": "https://ftdes.net/",
+      "relevance_tier": 1,
+      "relevance_label": "تونس مباشرة",
+      "title_ar": "(العربية) إعلام بالمؤتمر الوطني الرابع للمنتدى التونسي للحقوق الاقتصادية والاجتماعية - ftdes.net"
+    },
+    {
+      "center": "مركز الدراسات المتقدمة حول المغرب العربي (MECAM)",
+      "center_short": "MECAM",
+      "title": "Rencontre Ibn Khaldun: Tunisian Literature and Sufi Archetypes: A Homage to Mahmoud El Miss’adi - mecam.tn",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUmpJeGd0MkxtZ1lQeHY5NEhSMElRUmFSYzJVdWlpX3B1Xy1McUt0MG9DTHZYQlF4eGdGVHBXSEFGZllZLWJDVThlemktb05Zd1dUbHdCMzZoUmJYWlpJQVFCb19YSVhfM3NZcTZ3WGplZDRLSWNvd05OZUwwa0NSOXAzb2lLNkdONEQ0a0N5RG1reWdSRXMzQ3VYZ3NxdXlnaWlnd2tpS2FkcG0wd2JrWTNTbEg1a0ZrZkR3b2N0Z2VGTGc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-13T10:27+01:00",
+      "date": "2026-10-13",
+      "source": "mecam.tn",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUmpJeGd0MkxtZ1lQeHY5NEhSMElRUmFSYzJVdWlpX3B1Xy1McUt0MG9DTHZYQlF4eGdGVHBXSEFGZllZLWJDVThlemktb05Zd1dUbHdCMzZoUmJYWlpJQVFCb19YSVhfM3NZcTZ3WGplZDRLSWNvd05OZUwwa0NSOXAzb2lLNkdONEQ0a0N5RG1reWdSRXMzQ3VYZ3NxdXlnaWlnd2tpS2FkcG0wd2JrWTNTbEg1a0ZrZkR3b2N0Z2VGTGc?oc=5\" target=\"_blank\">Rencontre Ibn Khaldun: Tunisian Literature and Sufi Archetypes: A Homage to Mahmoud El Miss’adi</a> <font color=\"#6f6f6f\">mecam.tn</font>",
+      "center_site": "https://mecam.tn/",
+      "relevance_tier": 1,
+      "relevance_label": "تونس مباشرة",
+      "title_ar": "ملتقى ابن خلدون: الأدب التونسي والنماذج الصوفية: تحية لمحمود المسعدي - mecam.tn"
+    },
     {
       "center": "المركز العربي في واشنطن",
       "center_short": "Arab Center Washington DC",
@@ -474,6 +748,34 @@
       "title_ar": "الانتقال المتصدع في تونس من منظور مقارن - المركز العربي واشنطن العاصمة"
     },
     {
+      "center": "المعهد التونسي للقدرة التنافسية والدراسات الكمية",
+      "center_short": "ITCEQ",
+      "title": "Climate Change, Loss of Agricultural Output and the Macro-Economy : The Case of Tunisia - ITCEQ",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPd2F6UWM1U1U3VF9kSHFiNjctaFQ5ck9zZGE0VVhOSlQ0eHFYUElDSVlPamlZdmN3dUVCai13bzVnSjBpd283MlA3ek1FTjNLZ0tlYmV1Si1CRzhxN1VrUElXcEZYRE05Mk1vY2kwS1JOQ0x1dmctZlBsZjdQTllQSVpxb2JIRFE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-08T14:36+01:00",
+      "date": "2026-10-08",
+      "source": "ITCEQ",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxPd2F6UWM1U1U3VF9kSHFiNjctaFQ5ck9zZGE0VVhOSlQ0eHFYUElDSVlPamlZdmN3dUVCai13bzVnSjBpd283MlA3ek1FTjNLZ0tlYmV1Si1CRzhxN1VrUElXcEZYRE05Mk1vY2kwS1JOQ0x1dmctZlBsZjdQTllQSVpxb2JIRFE?oc=5\" target=\"_blank\">Climate Change, Loss of Agricultural Output and the Macro-Economy : The Case of Tunisia</a> <font color=\"#6f6f6f\">ITCEQ</font>",
+      "center_site": "https://itceq.tn/",
+      "relevance_tier": 1,
+      "relevance_label": "تونس مباشرة",
+      "title_ar": "تغير المناخ وفقدان الإنتاج الزراعي والاقتصاد الكلي : حالة تونس - ITCEQ"
+    },
+    {
+      "center": "منتدى الشرق الأوسط للسياسة",
+      "center_short": "POMEPS",
+      "title": "Where Have All the Salafis Gone? The Evolution and Decline of Salafism in Post-Jasmine Revolution Tunisia - Project on Middle East Political Science",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNTXlIMEhNZEhvRDItV0VaQ2NTaGxJNkQ3eWFyZUZuM1d4TWttcmRoRlRscDJSUTdIaUU1dC1qVExDdkN4Tm10QjRxNFY0OGludUdGdzNPeE5OX24zNzZSZjRtQ1JPeVdnQ2loRDg4TTUzSnJ3bTlOZ2VYMEJHMzVmVjRWYjNNNXh5SnJIUXYtMThTNHI4MGJ3c2V0SmpHR2xJQWpUckY2T2Fwanl4b3lwNkM4V3B2SGVtTmV2Vll5WkE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-08T08:00+01:00",
+      "date": "2026-10-08",
+      "source": "Project on Middle East Political Science",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNTXlIMEhNZEhvRDItV0VaQ2NTaGxJNkQ3eWFyZUZuM1d4TWttcmRoRlRscDJSUTdIaUU1dC1qVExDdkN4Tm10QjRxNFY0OGludUdGdzNPeE5OX24zNzZSZjRtQ1JPeVdnQ2loRDg4TTUzSnJ3bTlOZ2VYMEJHMzVmVjRWYjNNNXh5SnJIUXYtMThTNHI4MGJ3c2V0SmpHR2xJQWpUckY2T2Fwanl4b3lwNkM4V3B2SGVtTmV2Vll5WkE?oc=5\" target=\"_blank\">Where Have All the Salafis Gone? The Evolution and Decline of Salafism in Post-Jasmine Revolution Tunisia</a> <font color=\"#6f6f6f\">Project on Middle East Political Sci",
+      "center_site": "https://pomeps.org/",
+      "relevance_tier": 1,
+      "relevance_label": "تونس مباشرة",
+      "title_ar": "أين ذهب كل السلفيين ؟ تطور وتراجع السلفية في تونس ما بعد ثورة الياسمين - مشروع العلوم السياسية في الشرق الأوسط"
+    },
+    {
       "center": "معهد كلينغندايل",
       "center_short": "Clingendael",
       "title": "Emerging ICT Talent and the Dutch Market: Nearshoring to Morocco, Egypt, Tunisia and Nigeria - Clingendael",
@@ -500,6 +802,188 @@
       "relevance_tier": 1,
       "relevance_label": "تونس مباشرة",
       "title_ar": "المواهب الناشئة في تكنولوجيا المعلومات والاتصالات والسوق الهولندية: نقل الخدمات إلى المغرب ومصر وتونس ونيجيريا"
+    },
+    {
+      "center": "مركز الدراسات المتقدمة حول المغرب العربي (MECAM)",
+      "center_short": "MECAM",
+      "title": "Entering Critical Conversation: Literary, Cultural, and Religious Studies in Dialogue between Tunisia and Germany MECAM Short-T - mecam.tn",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPc05OTDdzQ2ZfZ1pYWmRpSV9HaVFIdThic01pWEdwTkJLdXBhVUY4UUdYRldiTENWd1ZTd2o0OGpKWkhkX0JlQ05LNTNNcHhaWmQtekVQWUMxempxV295bkYwSTlSTzdKN1R3SG5ZUXRWcGNCOWt5V21JMXBoLS1qQ1lmWUR6OVFPN09jdHUwYThmZU12WDhz?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-01T11:55+01:00",
+      "date": "2026-10-01",
+      "source": "mecam.tn",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxPc05OTDdzQ2ZfZ1pYWmRpSV9HaVFIdThic01pWEdwTkJLdXBhVUY4UUdYRldiTENWd1ZTd2o0OGpKWkhkX0JlQ05LNTNNcHhaWmQtekVQWUMxempxV295bkYwSTlSTzdKN1R3SG5ZUXRWcGNCOWt5V21JMXBoLS1qQ1lmWUR6OVFPN09jdHUwYThmZU12WDhz?oc=5\" target=\"_blank\">Entering Critical Conversation: Literary, Cultural, and Religious Studies in Dialogue between Tunisia and Germany MECAM Short-T</a> <font color=\"#6f6f6f\">mecam.tn</font>",
+      "center_site": "https://mecam.tn/",
+      "relevance_tier": 1,
+      "relevance_label": "تونس مباشرة",
+      "title_ar": "الدخول في محادثة نقدية: الدراسات الأدبية والثقافية والدينية في حوار بين تونس وألمانيا MECAM Short - T - mecam.tn"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "82 civil society organisations call on states to take action to address the Algerian authorities’ alarming crackdown on pro-democracy forces during HRC 47 - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOclpJcVNMZHJBVFQ2UWl1cWt0UHpLSk1OYm5POG45aG9wY2owa0hpUDViaE81TFFxZ0ZESkFkcmc2RU1zSFMydUdmWWg5eGxDLXp5Z000QlFvVzRWMWpSTTZwY1V4ZVdQU3RPZjhXS1V0alY3eTNmWEZPSmY3aHNncGkyYlNtcnlxQWxsMERWTFJNMzUxZDBjR3BFQzR0NUJWNEpmR2J5ZjRVRHM?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-19T07:47+01:00",
+      "date": "2026-10-19",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOclpJcVNMZHJBVFQ2UWl1cWt0UHpLSk1OYm5POG45aG9wY2owa0hpUDViaE81TFFxZ0ZESkFkcmc2RU1zSFMydUdmWWg5eGxDLXp5Z000QlFvVzRWMWpSTTZwY1V4ZVdQU3RPZjhXS1V0alY3eTNmWEZPSmY3aHNncGkyYlNtcnlxQWxsMERWTFJNMzUxZDBjR3BFQzR0NUJWNEpmR2J5ZjRVRHM?oc=5\" target=\"_blank\">82 civil society organisations call on states to take action to address the Algerian authorities’ alarming crackdown on pro-democracy forces during HRC 47</a> <font color=\"#6f6f6f\">MENA Rights Gro",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "82 منظمة من منظمات المجتمع المدني تدعو الدول إلى اتخاذ إجراءات للتصدي للحملة المقلقة التي شنتها السلطات الجزائرية على القوى المؤيدة للديمقراطية خلال الدورة السابعة والأربعين لمجلس حقوق الإنسان - مجموعة مينا لحقوق الإنسان"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "NotACrime: Online campaign calls on Algerian authorities to stop their assault on civic space and fundamental freedoms - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTmVUSzFMeHgwOFZfU1oyZWh3bklYMU9qSkY5dFdKR0dWdXdXSGY5WW1aQlB2YWZOSVdQS280OHlEdzFQdC1ueXJKSnFhWDZKYWNIZzB4bjlnZURIeDV4LU1wdm5STXgySl9ITF9EVzZkUXRkQ2tVdURLc3dIUlRKNmNZOFBxMC1sRVFvaUQ0Qm1iYVh6Y2tRZE41S21wQ2JBTm4tNVFVY1ZwU2RyeG81WQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-17T03:39+01:00",
+      "date": "2026-10-17",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOTmVUSzFMeHgwOFZfU1oyZWh3bklYMU9qSkY5dFdKR0dWdXdXSGY5WW1aQlB2YWZOSVdQS280OHlEdzFQdC1ueXJKSnFhWDZKYWNIZzB4bjlnZURIeDV4LU1wdm5STXgySl9ITF9EVzZkUXRkQ2tVdURLc3dIUlRKNmNZOFBxMC1sRVFvaUQ0Qm1iYVh6Y2tRZE41S21wQ2JBTm4tNVFVY1ZwU2RyeG81WQ?oc=5\" target=\"_blank\">NotACrime: Online campaign calls on Algerian authorities to stop their assault on civic space and fundamental freedoms</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "NotACrime: حملة على الإنترنت تدعو السلطات الجزائرية إلى وقف اعتداءاتها على الحيز المدني والحريات الأساسية - MENA Rights Group"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "Human rights organizations tell Libyan House of Representatives to immediately repeal anti-cybercrime law - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMWJJbGFHcXpUdFJzTXltV25vY2o5Sm1qVXlsWnZZUEcyS2dFemtYSkQyTXAtN3UwWmc4S0dlZXJzSWlveDdCRk9iQlBPcXJ3QmpfY3JuUzU5Snlvel9seFhoQWVEN0JOTENHZ2JUOUxWUkZ0bFRGb1dqTnRINzRYdENoWTNzb1hkcHBQTEQxOXBRemhFd0dEV3hXWXBNVUFLbXp5NkgyZDJGaV9a?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-16T15:01+01:00",
+      "date": "2026-10-16",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxOMWJJbGFHcXpUdFJzTXltV25vY2o5Sm1qVXlsWnZZUEcyS2dFemtYSkQyTXAtN3UwWmc4S0dlZXJzSWlveDdCRk9iQlBPcXJ3QmpfY3JuUzU5Snlvel9seFhoQWVEN0JOTENHZ2JUOUxWUkZ0bFRGb1dqTnRINzRYdENoWTNzb1hkcHBQTEQxOXBRemhFd0dEV3hXWXBNVUFLbXp5NkgyZDJGaV9a?oc=5\" target=\"_blank\">Human rights organizations tell Libyan House of Representatives to immediately repeal anti-cybercrime law</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "منظمات حقوق الإنسان تطلب من مجلس النواب الليبي الإلغاء الفوري لقانون مكافحة الجرائم الإلكترونية - MENA Rights Group"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "Algeria: Penal code amendments restrict freedoms of expression and association - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOeFQ1aG0xQ3BHa09JQmI0M0lmdjlDTXd0NnI0Q280bjBSRndUR0t0amJiRGlIQS0tdHZzZUs2RVRMc05BUnlxS3lUcy12aWxLSmd1SkxhZUpiM29hTjY5TXNwWTRpMUx4QTJHYWhoSC1xZjA3Y3I2OUVKQUVOdDE2N0dCV2ljNFB3V011TVJMaFl4YlNSS2RRZDdlVXhNbUJsYllFV1pSSXBEZEZGd3Jj?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-16T14:45+01:00",
+      "date": "2026-10-16",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOeFQ1aG0xQ3BHa09JQmI0M0lmdjlDTXd0NnI0Q280bjBSRndUR0t0amJiRGlIQS0tdHZzZUs2RVRMc05BUnlxS3lUcy12aWxLSmd1SkxhZUpiM29hTjY5TXNwWTRpMUx4QTJHYWhoSC1xZjA3Y3I2OUVKQUVOdDE2N0dCV2ljNFB3V011TVJMaFl4YlNSS2RRZDdlVXhNbUJsYllFV1pSSXBEZEZGd3Jj?oc=5\" target=\"_blank\">Algeria: Penal code amendments restrict freedoms of expression and association</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "الجزائر: تعديلات قانون العقوبات تقيد حرية التعبير وتكوين الجمعيات - مينا رايتس جروب"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "Algeria: Authorities must not allow another preventable death in detention - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQNmZ6VHkyUkFjcjFlS3hWM3JVWW0zMkV2eU5NZENNVnhFRWFXYkNhQTVyQU5iMF9XOTk3WHdqdjdhRE1iTkJidEw5b3hfWXJBZmxfZW9vWlVPbFMyZ1hPalFJTDAycU9ZVV82ckhjQl9hdEFBNjdQeVVKc1hyX3BKUERsMWxRS2xockgtRnBSR0RGXzBVYTlSSFlB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-16T14:45+01:00",
+      "date": "2026-10-16",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxQNmZ6VHkyUkFjcjFlS3hWM3JVWW0zMkV2eU5NZENNVnhFRWFXYkNhQTVyQU5iMF9XOTk3WHdqdjdhRE1iTkJidEw5b3hfWXJBZmxfZW9vWlVPbFMyZ1hPalFJTDAycU9ZVV82ckhjQl9hdEFBNjdQeVVKc1hyX3BKUERsMWxRS2xockgtRnBSR0RGXzBVYTlSSFlB?oc=5\" target=\"_blank\">Algeria: Authorities must not allow another preventable death in detention</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "الجزائر: يجب على السلطات عدم السماح بوفاة أخرى يمكن تجنبها أثناء الاحتجاز - MENA Rights Group"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "Human rights organisations call on Libyan authorities to rescind the new cybercrime law - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOSnJsQm9rZzduOWluUWdidFRuVGdqeVVhZjM4eWQ5QTJHTUR1dFkyZ0MtMkxrYlRJTDNLTWVSZlZpQzZnaXFqUUNoa2UwRmxmWUllR3Y2MFY0bkVOWjVrNlJyYTlkbGxRNmh0OHcyaVMtdkRNYVFseU50aFg5QkRyWDVDX05ldmhzRE9vUXZtT2hteXJ1Rk9WUGd5MTduQXh1MjRB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-16T12:08+01:00",
+      "date": "2026-10-16",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOSnJsQm9rZzduOWluUWdidFRuVGdqeVVhZjM4eWQ5QTJHTUR1dFkyZ0MtMkxrYlRJTDNLTWVSZlZpQzZnaXFqUUNoa2UwRmxmWUllR3Y2MFY0bkVOWjVrNlJyYTlkbGxRNmh0OHcyaVMtdkRNYVFseU50aFg5QkRyWDVDX05ldmhzRE9vUXZtT2hteXJ1Rk9WUGd5MTduQXh1MjRB?oc=5\" target=\"_blank\">Human rights organisations call on Libyan authorities to rescind the new cybercrime law</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "تدعو منظمات حقوق الإنسان السلطات الليبية إلى إلغاء قانون الجرائم الإلكترونية الجديد - MENA Rights Group"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "Algeria: New media laws are a setback for freedom of expression - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQRDczUjJsbzFNRF9MeV8wN1pCYWpHSkpXTXVvb0NGUVRsM2prVFlxQmxyako5d0tjTERYQXVfalF5b0ZhYVQ3VnM0MHIwVXE2S3pVVlhsSy1XZmwteGtXcFJvc3NkMzh4dTlBNVd5MDIyRHJ1Y0RKdGU0WWF0R201VUxsV0ZTeFh1VHdVRFZrZ0xsbWM?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-16T11:32+01:00",
+      "date": "2026-10-16",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxQRDczUjJsbzFNRF9MeV8wN1pCYWpHSkpXTXVvb0NGUVRsM2prVFlxQmxyako5d0tjTERYQXVfalF5b0ZhYVQ3VnM0MHIwVXE2S3pVVlhsSy1XZmwteGtXcFJvc3NkMzh4dTlBNVd5MDIyRHJ1Y0RKdGU0WWF0R201VUxsV0ZTeFh1VHdVRFZrZ0xsbWM?oc=5\" target=\"_blank\">Algeria: New media laws are a setback for freedom of expression</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "الجزائر: قوانين الإعلام الجديدة انتكاسة لحرية التعبير - مينا رايتس جروب"
+    },
+    {
+      "center": "منتدى الشرق الأوسط للسياسة",
+      "center_short": "POMEPS",
+      "title": "Religion, International Relations, and the Post-9/11 Era: The Case of Algeria’s Religious Diplomacy in the Sahel - Project on Middle East Political Science",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNZlYzQnNqd0JCd25OaGc1SzNUeHJXR2ZpaGx6Zlg0SmJGRVR5ZmVHcFlZOTczdGxiTjBsYnlJcmRyWWdzNVkxZ3FKSEtocHAycTlSOGJfd09nMWE0bERXSUFNbzFueWtqeHlndnRwRDBKOHlaYng4NDcxNC1Hc3dRWlp2UGNNQUZlYUhyNFJzejFDU3BUajJWYnBVWnUyemxQLXI1WnlIZmQ5YUZZaTBTazd3elNNdnFHdUpBNVlvTFFqc2RmTkE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-16T08:00+01:00",
+      "date": "2026-10-16",
+      "source": "Project on Middle East Political Science",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNZlYzQnNqd0JCd25OaGc1SzNUeHJXR2ZpaGx6Zlg0SmJGRVR5ZmVHcFlZOTczdGxiTjBsYnlJcmRyWWdzNVkxZ3FKSEtocHAycTlSOGJfd09nMWE0bERXSUFNbzFueWtqeHlndnRwRDBKOHlaYng4NDcxNC1Hc3dRWlp2UGNNQUZlYUhyNFJzejFDU3BUajJWYnBVWnUyemxQLXI1WnlIZmQ5YUZZaTBTazd3elNNdnFHdUpBNVlvTFFqc2RmTkE?oc=5\" target=\"_blank\">Religion, International Relations, and the Post-9/11 Era: The Case of Algeria’s Religious Diplomacy in the Sahel</a> <font color=\"#6f6f6f\">Project on Middle Eas",
+      "center_site": "https://pomeps.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "الدين والعلاقات الدولية وعصر ما بعد 11 سبتمبر: حالة الدبلوماسية الدينية للجزائر في منطقة الساحل - مشروع العلوم السياسية للشرق الأوسط"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "Algeria: Escalating repression threatens the survival of independent civil society - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZnk1RzgyZTNXUkJqYTRuek9ZcVhPZmhiazE5ZXRYUU5JdTdMSFczVmwxZWdGUmpVb3RIVUNKLXFWMGxMcmNxV0plb2JIOEVKMVJGaENqRkszcVN3bm9RRVFIWE5ILWRaZkNjYWc1LXZNOGxJYTBndHNoejNqQXNfLUJ4dEd2WUJSRFFUcVByYXdBY3UzOXZYbFZ0aG1jUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-16T02:23+01:00",
+      "date": "2026-10-16",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxQZnk1RzgyZTNXUkJqYTRuek9ZcVhPZmhiazE5ZXRYUU5JdTdMSFczVmwxZWdGUmpVb3RIVUNKLXFWMGxMcmNxV0plb2JIOEVKMVJGaENqRkszcVN3bm9RRVFIWE5ILWRaZkNjYWc1LXZNOGxJYTBndHNoejNqQXNfLUJ4dEd2WUJSRFFUcVByYXdBY3UzOXZYbFZ0aG1jUQ?oc=5\" target=\"_blank\">Algeria: Escalating repression threatens the survival of independent civil society</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "الجزائر: تصاعد القمع يهدد بقاء المجتمع المدني المستقل - MENA Rights Group"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "Algeria: Marked regression in human rights underscored by proliferation of baseless terrorism prosecutions - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQYzcwT2ZXdk5jUkJsV2lQdjZob0Z3T2hteEhnSGJlRDQyNEg5OEdZTHBiMENZeXhLME5WWHRqVWpMekFMekRXRmhkOFl2TzFQbm1nNG9oUHVYRDE2RDJWNHhMc1hVXzg3cG4zYWlIeU91eHJGWXAxbmoxSWF2cmhvUUlKTzJETVlwYThLN3NyYkFveEg3TmZmSjFiMVROWHQ5d01iSXY2SnRzVmc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-14T20:08+01:00",
+      "date": "2026-10-14",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQYzcwT2ZXdk5jUkJsV2lQdjZob0Z3T2hteEhnSGJlRDQyNEg5OEdZTHBiMENZeXhLME5WWHRqVWpMekFMekRXRmhkOFl2TzFQbm1nNG9oUHVYRDE2RDJWNHhMc1hVXzg3cG4zYWlIeU91eHJGWXAxbmoxSWF2cmhvUUlKTzJETVlwYThLN3NyYkFveEg3TmZmSjFiMVROWHQ5d01iSXY2SnRzVmc?oc=5\" target=\"_blank\">Algeria: Marked regression in human rights underscored by proliferation of baseless terrorism prosecutions</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "الجزائر: تراجع ملحوظ في حقوق الإنسان يؤكده انتشار محاكمات الإرهاب التي لا أساس لها - مينا رايتس جروب"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "Algeria’s Universal Periodic Review: hope for change meets setback of civil and political rights - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTGRFOEpPY2NsTGNQSnpPZXNFNC0wQlJVbG9McWZza3U3amF4czRoVXRXTkdDOFRFekhGS1BfYnZHR3JuWF9JSEZTTEJ6M0RRYWR1YmtQeHE0TUpkTU53SlBleTJSQmsxYk16V1MxSk14cHBEaDBtRmdhTUtLb3pST3RqRU1TZGZqeWdyeUsydVNGUFhwUHliNWRpMDN4eXhMdVVjZmpqWGptVTdZdWpfbDlYZGk2WjRrX2hheDNn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-14T16:15+01:00",
+      "date": "2026-10-14",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNTGRFOEpPY2NsTGNQSnpPZXNFNC0wQlJVbG9McWZza3U3amF4czRoVXRXTkdDOFRFekhGS1BfYnZHR3JuWF9JSEZTTEJ6M0RRYWR1YmtQeHE0TUpkTU53SlBleTJSQmsxYk16V1MxSk14cHBEaDBtRmdhTUtLb3pST3RqRU1TZGZqeWdyeUsydVNGUFhwUHliNWRpMDN4eXhMdVVjZmpqWGptVTdZdWpfbDlYZGk2WjRrX2hheDNn?oc=5\" target=\"_blank\">Algeria’s Universal Periodic Review: hope for change meets setback of civil and political rights</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "الاستعراض الدوري الشامل للجزائر: الأمل في التغيير يواجه انتكاسة في الحقوق المدنية والسياسية - مجموعة مينا للحقوق"
+    },
+    {
+      "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+      "center_short": "MENA Rights Group",
+      "title": "Country: Algeria - MENA Rights Group",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB6czhxck9PcFFkZDJ2T0hMbjR2X2FyX1lvTFBBa1FYS090bThCWlk1a1BsVUMySVdzbHRSU2pNT3JraGV0a1RiUGJSNjdjMWJP?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-14T13:12+01:00",
+      "date": "2026-10-14",
+      "source": "MENA Rights Group",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTFB6czhxck9PcFFkZDJ2T0hMbjR2X2FyX1lvTFBBa1FYS090bThCWlk1a1BsVUMySVdzbHRSU2pNT3JraGV0a1RiUGJSNjdjMWJP?oc=5\" target=\"_blank\">Country: Algeria</a> <font color=\"#6f6f6f\">MENA Rights Group</font>",
+      "center_site": "https://menarights.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "البلد: الجزائر - مجموعة مينا للحقوق"
     },
     {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
@@ -668,6 +1152,34 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
+    },
+    {
+      "center": "المعهد الأوروبي للبحر الأبيض المتوسط",
+      "center_short": "IEMed",
+      "title": "From Cooperation as Aspiration to Externalization as Reality: The Securitization of Euro-Mediterranean Migration Governance - IEMed",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPVXdvelEtWGRXakMtcXNCT1Q4eThSdDk1ZTUzTUZoYlBvSkhSU0lubXFrRkNOSWxGUzRrR1UzQkMxbWwtaEUwQ0dGeldhSEtPVTh6Q0NkYmJENTJ6aEZ1dlU4UkFtMTBZQ0FsUGM1bTYtS2xRNmJXX0NoT1NMZ1JvVXhzN0RCRjdWWnltMjQ1MFk5V1E1MXpLaUdIZi1rTkZPc2lRdFphNzU3YkhxbXFEellERlh1UG1QN1NNcEtCUU5EZk9VTl9IcmNoVTNDVFo5MDNwbl8zeWMwY1BBdDlaT1FHZEhDem8?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-06T16:55+01:00",
+      "date": "2026-10-06",
+      "source": "IEMed",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxPVXdvelEtWGRXakMtcXNCT1Q4eThSdDk1ZTUzTUZoYlBvSkhSU0lubXFrRkNOSWxGUzRrR1UzQkMxbWwtaEUwQ0dGeldhSEtPVTh6Q0NkYmJENTJ6aEZ1dlU4UkFtMTBZQ0FsUGM1bTYtS2xRNmJXX0NoT1NMZ1JvVXhzN0RCRjdWWnltMjQ1MFk5V1E1MXpLaUdIZi1rTkZPc2lRdFphNzU3YkhxbXFEellERlh1UG1QN1NNcEtCUU5EZk9VTl9IcmNoVTNDVFo5MDNwbl8zeWMwY1BBdDlaT1FHZEhDem8?oc=5\" target=\"_blank\">From Cooperation as Aspiration to Externalization as Reality: The Securitization of Euro-Mediterranean Migration Gov",
+      "center_site": "https://iemed.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "من التعاون كطموح إلى الخارجية كحقيقة واقعة: توريق حوكمة الهجرة الأورومتوسطية - IEMed"
+    },
+    {
+      "center": "المعهد الدولي لمكافحة الإرهاب (ICT)",
+      "center_short": "ICT",
+      "title": "Africa’s Gold Resources are Tempting Targets for Jihadists - International Institute for Counter-Terrorism",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9QMnZMYzZPX3N5SWh6V1JhV3d3bnRfQ0E5YXRUZGI3eEgwWGpGTkRjOFZsQkhfZjFqQ0RpaERQcDc5SzRva0Y2NUtWX3VaeENqTEFhSkU0dmFiZldmc1R5WFBPeVBZVWZn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-20T10:59+01:00",
+      "date": "2026-10-20",
+      "source": "International Institute for Counter-Terrorism",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE9QMnZMYzZPX3N5SWh6V1JhV3d3bnRfQ0E5YXRUZGI3eEgwWGpGTkRjOFZsQkhfZjFqQ0RpaERQcDc5SzRva0Y2NUtWX3VaeENqTEFhSkU0dmFiZldmc1R5WFBPeVBZVWZn?oc=5\" target=\"_blank\">Africa’s Gold Resources are Tempting Targets for Jihadists</a> <font color=\"#6f6f6f\">International Institute for Counter-Terrorism</font>",
+      "center_site": "https://ict.org.il/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الموارد الذهبية في أفريقيا هي أهداف مغرية للجهاديين - المعهد الدولي لمكافحة الإرهاب"
     },
     {
       "center": "معهد اليابان للشؤون الدولية (JIIA)",
