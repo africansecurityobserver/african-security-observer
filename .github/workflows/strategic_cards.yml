@@ -11,8 +11,8 @@ on:
   workflow_dispatch:
 
   schedule:
-    # Check for new major news and defense/arms stories every 30 minutes.
-    - cron: "*/30 * * * *"
+    # Check for new major news and defense/arms stories every 15 minutes.
+    - cron: "*/15 * * * *"
 
 permissions:
   contents: write
