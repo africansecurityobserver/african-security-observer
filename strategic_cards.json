@@ -101,7 +101,48 @@
     }
   ],
   "systems": [],
-  "defense_economics": [],
+  "defense_economics": [
+    {
+      "id": "20261020120530_2a752ab3",
+      "slot": "news",
+      "type": "defense_economics",
+      "kind": "defense_economics",
+      "kind_label": "الأمن الاقتصادي والجيو-اقتصادي",
+      "title": "بطاقة استراتيجية من مصدر إخباري — معادن التعدين الاستراتيجية تعيد صياغة التعاون الأمني والاقتصادي بين واشنطن وأبوجا",
+      "subject": "معادن التعدين الاستراتيجية تعيد صياغة التعاون الأمني والاقتصادي بين واشنطن وأبوجا",
+      "date": "2026-10-20",
+      "region": "غرب إفريقيا",
+      "summary": "موضوع البطاقة: معادن التعدين الاستراتيجية تعيد صياغة التعاون الأمني والاقتصادي بين واشنطن وأبوجا. تشهد العلاقات الأمريكية النيجيرية تحولاً استراتيجياً بارزاً عبر إبرام اتفاق جديد لتعزيز الاستثمار في قطاع المعادن الحيوية النيجيرية، في خطوة تربط بين الدبلوماسية الاقتصادية وتأمين سلاسل الإمداد ومواجهة النفوذ الصيني، بالتوازي مع تعميق التعاون العسكري لمكافحة الإرهاب بعد مرحلة توتر د الدبلوماسي.",
+      "sections": [
+        {
+          "heading": "إطار الاتفاق الجديد وخلفيته الجيوسياسية",
+          "text": "على هامش اجتماعات الجمعية العامة للأمم المتحدة في نيويورك خلال شهر سبتمبر، اتفقت الولايات المتحدة ونيجيريا على إبرام اتفاق جديد يهدف إلى تعميق الاستثمار الأمريكي في قطاع التعدين النيجيري. ويأتي هذا التطور في وقت تسعى فيه واشنطن بشكل متزايد إلى توظيف علاقاتها الأمنية في القارة الإفريقية لتأمين وصول أكبر إلى المعادن الحيوية والحرجة. وأوضح ديلي ألاكي (Dele Alake)، وزير المعادن الصلبة في نيجيريا، أن الاتفاق يمثل خطوة مهمة لتعزيز التعاون الثنائي حول الموارد المعدنية للبلاد التي تقدر قيمتها بنحو 700 مليار دولار. ويغطي الإطار مجالات البيانات الجيولوجية والاستكشاف، وتطوير المعادن ومعالجتها، والبنية التحتية، والقدرات التقنية. وأكد ألاكي أن الجانبين سيعملان في الأشهر القادمة على تحويل هذا الإطار إلى مشاريع واستثماراتی حقيقية تخلق قيمة مضافة للشعب النيجيري والشركاء الأمريكيين على حد سواء."
+        },
+        {
+          "heading": "القدرات الكامنة وأهمية المعادن النيجيرية",
+          "text": "تتمتع نيجيريا بقاعدة معدنية متنوعة وغير مستكشفة بالكامل بعد، مما يوفر فرصاً معتبرة للولايات المتحدة وشركاء دوليين آخرين. وفي هذا السياق، تشير منيرة راجي (Munira Raji)، البنية الرئيسية المتاحة للبحث في المعادن الخضراء ومشاريع تحول الطاقة في معهد بحوث السياسات الإفريقية (Africa Policy Research Institute)، إلى وجود حماسة كبيرة حول الثروة المعدنية النيجيرية، مع الحاجة المستمرة لتحسين البيانات الجيوسعيّة وتعريف الموارد وتوصيف المعادن قبل ترجمة الإمكانات الجيولوجية إلى موارد قابلة للاسترداد اقتصادياً. وبرز الليثيوم كأحد أهم المعادن جذباً للانتباه لأهميته في صناعة البطاريات وتخزين الطاقة، إلى جانب المعادن الحاملة للتانتالوم والنيوبيوم مثل الكولتان، فضلاً عن القصدير والعناصر الأرضية النادرة نظراً لدورها الحاسم في تقنيات الطاقة النظيفة والتصنيع المتقدم والبنية التحتية الرقمية."
+        },
+        {
+          "heading": "من الجفاء الدبلوماسي إلى الانفراجة السريعة",
+          "text": "مرت العلاقات بين واشنطن وأبوجا بمد وجزر وتوتر واضح مع بداية ولاية الإدارة الأمريكية الثانية، حيث تأثرت نيجيريا سلبياً بوقف تمويل الوكالة الأمريكية للتنمية الدولية (USAID) التي أوقفت عملياتها رسمياً في شهر يوليو من العام الماضي، علما بأن واشنطن كانت تمول نحو 90% من عمليات علاج مرض نقص المناعة المكتسب (الإيدز) في نيجيريا، وقد بلغت المساعدات الأمريكية السابقة نحو 740 مليون دولار في عام 2024. كما فرضت الولايات المتحدة في يوليو الماضي قيوداً على تأشيرات الدخول للمواطنين النيجيريين تضمنت منح تصاريح دخول لمرة واحدة لمدة ثلاثة أشهر بدلاً من التأشيرات متعددة الدخول لخمس سنوات. وعلاوة على ذلك، رفضت أبوجا علناً الضغوط الأمريكية لاستقبال مرحلي للمبعدين من دول ثالثة ضمن أجندة الهجرة. وبحلول نهاية عام 2025، ازدادت العلاقات برودة بعد تصنيف واشنطن لنيجيريا كـ«دولة مثيرة للقلق الخاص» على خلفية حرية الأديان. غير أن المشهد شهد انقلاباً ملحوظاً؛ إذ أشار إبينيزر أوباداري (Ebenezer Obadare)، الباحث البارز لشؤون إفريقيا في مجلس العلاقات الخارجية (CFR) بنيويورك، إلى أن نيجيريا نجحت في تهدئة الأجواء، لافتاً إلى أن الرئيس الأمريكي دونالد ترامب الذي كان يطلق التهديدات في ديسمبر الماضي، بعث برسالة إلى الرئيس النيجيري بولا تينوبو (Bola Tinubu) قبل أشهر قليلة يشيد فيها بالأداء المميز، في انعكاس دراماتيكي لطبيعة العلاقات خلال فترة زمنية قصيرة."
+        },
+        {
+          "heading": "التداخل الاستراتيجي بين الأمن وتأمين سلاسل الإمداد",
+          "text": "يتزامن هذا الانفراج الدبلوماسي والاقتصادي مع تركيز أمريكي متصاعد على تأمين الوصول إلى المعادن الحيوية في إفريقيا وتقليص الاعتماد على الصين في سلاسل الإمداد الاستراتيجية. وفي هذا الإطار، عمدت واشنطن إلى ربط الدبلوماسية الأمنية والتعاون العسكري بجهود توسيع النفوذ الاقتصادي واستخراج المعادن، على غرار اتفاق الشراكة الاستراتيجية المبرم في ديسمبر الماضي مع جمهورية الكونغو الديمقراطية. وفي الحالة النيجيرية، تعمق التعاون العسكري بشكل ملحوظ، شمل تنفيذ قوات أمريكية ضربات جوية ضد أهداف لتنظيم «الدولة الإسلامية» في سوكوتو يوم عيد الميلاد الماضي بالتنسيق مع النيجيريين، وتواجد فريق عسكري أمريكي صغير، وتنفيذ مهمة مشتركة في شهر مايو لتحييد قيادات إرهابية بارزة شمال شرق نيجيريا. ويرى مراقبون مثل أوباداري أن التعاون العسكري والاقتصادي يمثلان وجهين لعملة استراتيجية واحدة، بينما تدعو الخبيرة منيرة راجي إلى توخي الحذر في افتراض علاقة سببية مباشرة، مشيرة إلى وجود شراكة أمنية طويلة الأمد بين البلدين لمكافحة الإرهاب والأمن الحدودي، مع التسليم بأن الاعتبارات الاقتصادية والأمنية ستتداخل حتماً مع تزايد الأهمية الجيوسياسية للمعادن الحيوية واستقرار سلاسل الإمداد."
+        },
+        {
+          "heading": "خلاصة استراتيجية",
+          "text": "تُظهر التطورات الأخيرة بين واشنطن وأبوجا تحولاً نوعياً في المقاربة الأمريكية نحو القارة الإفريقية، حيث أصبحت الشراكات الأمنية ومكافحة الإرهاب أدوات متقدمة لتأمين المصالح الاقتصادية الجيوسياسية الحيوية، وتحديداً سلاسل إمداد المعادن النادرة والحرجة اللازمة لتكنولوجيا المستقبل. وفي المقابل، تملك نيجيريا فرصة حقيقية لاستثمار موقعها التفاوضي لعدم الاكتفاء بالاستثمارات المالية الرأسمالية العابرة، بل للضغط باتجاه نقل التكنولوجيا، وتطوير القدرات الجيولوجية والبنية التحتية، وبناء مهارات تقنية مستدامة تعود بالنفع الفعلي على اقتصادها المحلي على المدى الطويل. تكمن دلالات هذا التحول بالنسبة لتونس في أهمية رصد تنامي الصراع الدولي العابر للقارات على المعادن الحرجة وموارد الطاقة النظيفة، وكيفية توظيف الدول النامية لتعاونها الأمني والدبلوماسي كرافعة لتحقيق مكاسب اقتصادية وتكنولوجية هيكلية بدلاً من الاكتفاء بالأدوار التقليدية المجرّدة من القيمة المضافة."
+        }
+      ],
+      "sources": [
+        {
+          "title": "African Business",
+          "url": "https://african.business/2026/10/long-reads/critical-minerals-underpin-washingtons-nigeria-overtures"
+        }
+      ]
+    }
+  ],
   "military_transformation": [],
   "defense_strategy": [
     {
@@ -424,31 +465,33 @@
     }
   ],
   "checked_urls": [
-    "https://www.diplomacyandlaw.com/post/black-sea-drone-attacks-shipping",
-    "https://www.jurist.org/news/2026/10/libyan-armed-forces-execute-31-after-unfair-military-trials-breaking-15-year-moratorium/",
-    "https://africa.businessinsider.com/local/markets/somalia-may-have-just-purchased-jf-17-thunder-fighter-jets-from-pakistan-once/51mggel",
-    "https://alfilahia.net/%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D9%88%D9%83%D9%88%D8%B1%D9%8A%D8%A7-%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8%D9%8A%D8%A9-%D8%AA%D8%B9%D8%B2%D8%B2%D8%A7%D9%86-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7/",
-    "https://www.leconomistemaghrebin.com/2026/10/19/tunisie-guinee-bissau-vers-cooperation-renforcee-commerce-leducation/",
-    "https://defence-industry.eu/sweden-plans-nato-ground-deployments-in-finland-and-latvia-and-continued-patriot-operations-in-poland-in-2027/",
-    "https://asharq.com/politics/199763/%D8%AD%D9%88%D8%A7%D8%AF%D8%AB-%D8%A3%D9%85%D9%86%D9%8A%D8%A9-%D8%AA%D9%87%D8%AF%D8%AF-%D8%A8%D8%A7%D9%86%D8%B2%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%AA%D9%88-%D8%A5%D9%84%D9%89-%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9-%D9%85%D8%B9-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7/",
-    "https://alikhbariya.net/stories/822cbe7e-234b-4029-b6d1-2a33ab11953e/%D8%AF%D9%8A%D8%AF%D8%A7%D9%86-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%AE%D8%B7%D8%B1-%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%8A%D8%AA%D9%83%D8%A7%D8%AB%D8%B1-%D8%B0%D8%A7%D8%AA%D9%8A%D8%A7-%D9%88%D9%8A%D9%87%D8%AF%D8%AF-%D8%A3%D9%85%D8%A7%D9%86-%D8%A7%D9%84%D8%A3%D8%AC%D9%87%D8%B2%D8%A9",
-    "https://alikhbariya.net/stories/0e8b11a9-1179-4d94-a861-a95d43c51941/%D8%A7%D9%84%D8%AA%D9%88%D9%86%D8%B3%D9%8A%D9%88%D9%86-%D9%8A%D8%AE%D8%B1%D8%AC%D9%88%D9%86-%D9%81%D9%8A-%D8%A3%D9%83%D8%A8%D8%B1-%D8%A7%D8%AD%D8%AA%D8%AC%D8%A7%D8%AC%D8%A7%D8%AA-%D8%B9%D9%84%D9%89-%D8%AD%D9%83%D9%85-%D8%B3%D8%B9%D9%8A%D8%AF-%D9%85%D9%86%D8%B0-%D8%B3%D9%86%D9%88%D8%A7%D8%AA",
-    "https://www.unmannedairspace.info/counter-uas-systems-and-policies/bulgaria-plans-to-joins-nato-c-uas-initiative-following-black-sea-drone-attacks/",
-    "https://www.aljazeera.net/encyclopedia/2026/10/18/%d8%a7%d9%84%d8%ba%d9%88%d8%a7%d8%b5%d8%a9-%d8%b1%d9%8a%d9%85%d9%88%d8%b3-600-%d8%b9%d9%8a%d9%86-%d8%a7%d9%84%d9%85%d8%ad%d9%8a%d8%b7-%d8%a7%d9%84%d9%85%d8%b3%d9%8a%d8%b1%d8%a9?traffic_source=rss",
-    "https://kfgo.com/2026/10/18/romanian-f-16-fighter-jets-shoot-down-two-drones-over-romanian-territorial-waters/",
-    "https://aerospaceglobalnews.com/news/somalia-jf17-saudi-pakistan/",
-    "https://warontherocks.com/how-sudan-became-a-laboratory-for-drone-warfare-thanks-to-abu-dhabi/",
-    "https://www.kyivpost.com/post/87513",
-    "https://africa.businessinsider.com/local/markets/china-beats-the-us-in-africas-critical-minerals-race-but-congo-arrests-300-chinese/h72g29b",
-    "https://www.arabnews.jp/en/japan/vice-foreign-minister-ozora-meets-ambassadors-of-tunisia-and-algeria-3000847",
-    "https://ninanews.com/website/News/Details?Key=1320646",
-    "https://www.orfonline.org/expert-speak/sahel-s-geopolitical-reset-and-russia-s-strategic-opening",
-    "https://www.algeriedirect.dz/%D9%82%D9%85%D8%A9-%D8%A7%D9%84%D9%82%D8%A7%D8%AF%D8%A9/",
     "https://united24media.com/world/bulgaria-asks-nato-for-aircraft-air-defenses-and-counter-drone-systems-as-black-sea-attacks-intensify-23513",
-    "https://www.tsa-algerie.com/conflit-arabie-saoudite-houthis-legypte-sapprete-a-une-intervention-militaire-directe/",
+    "https://www.jurist.org/news/2026/10/libyan-armed-forces-execute-31-after-unfair-military-trials-breaking-15-year-moratorium/",
+    "https://warontherocks.com/how-sudan-became-a-laboratory-for-drone-warfare-thanks-to-abu-dhabi/",
+    "https://african.business/2026/10/long-reads/critical-minerals-underpin-washingtons-nigeria-overtures",
+    "https://www.leconomistemaghrebin.com/2026/10/19/tunisie-guinee-bissau-vers-cooperation-renforcee-commerce-leducation/",
+    "https://ninanews.com/website/News/Details?Key=1320646",
+    "https://alfilahia.net/%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D9%88%D9%83%D9%88%D8%B1%D9%8A%D8%A7-%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8%D9%8A%D8%A9-%D8%AA%D8%B9%D8%B2%D8%B2%D8%A7%D9%86-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7/",
+    "https://asharq.com/politics/199763/%D8%AD%D9%88%D8%A7%D8%AF%D8%AB-%D8%A3%D9%85%D9%86%D9%8A%D8%A9-%D8%AA%D9%87%D8%AF%D8%AF-%D8%A8%D8%A7%D9%86%D8%B2%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%AA%D9%88-%D8%A5%D9%84%D9%89-%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9-%D9%85%D8%B9-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7/",
+    "https://www.aljazeera.net/encyclopedia/2026/10/18/%d8%a7%d9%84%d8%ba%d9%88%d8%a7%d8%b5%d8%a9-%d8%b1%d9%8a%d9%85%d9%88%d8%b3-600-%d8%b9%d9%8a%d9%86-%d8%a7%d9%84%d9%85%d8%ad%d9%8a%d8%b7-%d8%a7%d9%84%d9%85%d8%b3%d9%8a%d8%b1%d8%a9?traffic_source=rss",
+    "https://alwasat.ly/news/482128",
+    "https://africa.businessinsider.com/local/markets/somalia-may-have-just-purchased-jf-17-thunder-fighter-jets-from-pakistan-once/51mggel",
     "https://www.echoroukonline.com/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%AA%D8%A8%D9%88%D9%86-%D9%8A%D8%AC%D8%AF%D8%AF-%D8%A7%D9%84%D8%AA%D8%B2%D8%A7%D9%85-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D8%A8%D8%AD%D9%85%D8%A7%D9%8A",
+    "https://alikhbariya.net/stories/822cbe7e-234b-4029-b6d1-2a33ab11953e/%D8%AF%D9%8A%D8%AF%D8%A7%D9%86-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%AE%D8%B7%D8%B1-%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%8A%D8%AA%D9%83%D8%A7%D8%AB%D8%B1-%D8%B0%D8%A7%D8%AA%D9%8A%D8%A7-%D9%88%D9%8A%D9%87%D8%AF%D8%AF-%D8%A3%D9%85%D8%A7%D9%86-%D8%A7%D9%84%D8%A3%D8%AC%D9%87%D8%B2%D8%A9",
+    "https://www.kyivpost.com/post/87513",
+    "https://defence-industry.eu/sweden-plans-nato-ground-deployments-in-finland-and-latvia-and-continued-patriot-operations-in-poland-in-2027/",
+    "https://www.tsa-algerie.com/conflit-arabie-saoudite-houthis-legypte-sapprete-a-une-intervention-militaire-directe/",
+    "https://www.orfonline.org/expert-speak/sahel-s-geopolitical-reset-and-russia-s-strategic-opening",
     "https://bdnews24.com/world/7e4w426j7y",
-    "https://alwasat.ly/news/482128"
+    "https://alikhbariya.net/stories/0e8b11a9-1179-4d94-a861-a95d43c51941/%D8%A7%D9%84%D8%AA%D9%88%D9%86%D8%B3%D9%8A%D9%88%D9%86-%D9%8A%D8%AE%D8%B1%D8%AC%D9%88%D9%86-%D9%81%D9%8A-%D8%A3%D9%83%D8%A8%D8%B1-%D8%A7%D8%AD%D8%AA%D8%AC%D8%A7%D8%AC%D8%A7%D8%AA-%D8%B9%D9%84%D9%89-%D8%AD%D9%83%D9%85-%D8%B3%D8%B9%D9%8A%D8%AF-%D9%85%D9%86%D8%B0-%D8%B3%D9%86%D9%88%D8%A7%D8%AA",
+    "https://therecord.media/european-defense-contractors-fancy-bear-espionage",
+    "https://kfgo.com/2026/10/18/romanian-f-16-fighter-jets-shoot-down-two-drones-over-romanian-territorial-waters/",
+    "https://africa.businessinsider.com/local/markets/china-beats-the-us-in-africas-critical-minerals-race-but-congo-arrests-300-chinese/h72g29b",
+    "https://www.unmannedairspace.info/counter-uas-systems-and-policies/bulgaria-plans-to-joins-nato-c-uas-initiative-following-black-sea-drone-attacks/",
+    "https://www.diplomacyandlaw.com/post/black-sea-drone-attacks-shipping",
+    "https://aerospaceglobalnews.com/news/somalia-jf17-saudi-pakistan/",
+    "https://www.arabnews.jp/en/japan/vice-foreign-minister-ozora-meets-ambassadors-of-tunisia-and-algeria-3000847",
+    "https://www.algeriedirect.dz/%D9%82%D9%85%D8%A9-%D8%A7%D9%84%D9%82%D8%A7%D8%AF%D8%A9/"
   ],
   "event_driven_migration_v1": true
 }
