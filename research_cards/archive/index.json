@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T10:44:48+01:00",
+  "updated": "2026-10-20T13:22:02+01:00",
   "years": [
     {
       "year": "2026",
@@ -7,6 +7,26 @@
         {
           "month": "10",
           "cards": [
+            {
+              "date": "2026-10-20",
+              "title": "الوضع في منطقة الساحل - المعهد الدولي لمكافحة الإرهاب",
+              "subject": "الوضع في منطقة الساحل - المعهد الدولي لمكافحة الإرهاب",
+              "path": "2026-10/20261020_c96234c57503.json",
+              "center": "المعهد الدولي لمكافحة الإرهاب (ICT)",
+              "source_title": "The Situation in the Sahel - International Institute for Counter-Terrorism",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-20",
+              "title": "الموارد الذهبية في أفريقيا هي أهداف مغرية للجهاديين - المعهد الدولي لمكافحة الإرهاب",
+              "subject": "الموارد الذهبية في أفريقيا هي أهداف مغرية للجهاديين - المعهد الدولي لمكافحة الإرهاب",
+              "path": "2026-10/20261020_0c26e99172c8.json",
+              "center": "المعهد الدولي لمكافحة الإرهاب (ICT)",
+              "source_title": "Africa’s Gold Resources are Tempting Targets for Jihadists - International Institute for Counter-Terrorism",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
             {
               "date": "2026-10-14",
               "title": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
@@ -24,6 +44,26 @@
               "path": "2026-10/20261014_ef6c5aafa5c1.json",
               "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
               "source_title": "Libya’s arsenals are a blind spot in the Tripoli agreement - ISS Africa",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-14",
+              "title": "البلد: تونس - مجموعة مينا للحقوق",
+              "subject": "البلد: تونس - مجموعة مينا للحقوق",
+              "path": "2026-10/20261014_a784ab184736.json",
+              "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+              "source_title": "Country: Tunisia - MENA Rights Group",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-14",
+              "title": "البلد: الجزائر - مجموعة مينا للحقوق",
+              "subject": "البلد: الجزائر - مجموعة مينا للحقوق",
+              "path": "2026-10/20261014_cbf122d4d202.json",
+              "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+              "source_title": "Country: Algeria - MENA Rights Group",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
@@ -102,6 +142,16 @@
               "title": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
               "subject": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
               "path": "2026-10/20261008_030c9ee7dfc9.json",
+              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+              "source_title": "Africa can see El Niño coming – will countries act in time? - ISS Africa",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-08",
+              "title": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
+              "subject": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
+              "path": "2026-10/20261008_e1c2c3af9ece.json",
               "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
               "source_title": "Africa can see El Niño coming – will countries act in time? - ISS Africa",
               "slot": "research",
