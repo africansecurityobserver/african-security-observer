@@ -486,6 +486,29 @@ def translate_titles_to_arabic(items):
     if failed_titles:
         print("Some titles could not be translated and will be retried next run.")
 
+def normalize_publication_title(value):
+    """Normalize a source title for duplicate detection across RSS locales."""
+    value = unescape(str(value or "")).lower()
+    value = re.sub(r"\\s*[-|:]\\s*(?:konrad-adenauer-stiftung|iss africa|nupi|real instituto elcano|institute for security & development policy)\\s*$", "", value)
+    value = re.sub(r"[^\\w]+", " ", value, flags=re.UNICODE)
+    return " ".join(value.split())
+
+
+def is_generic_listing_title(title):
+    """Reject search results that point to a center's listing/archive page, not a publication."""
+    value = unescape(str(title or "")).strip().lower()
+    return bool(re.match(
+        r"^(?:publications|latest publications|all publications|research publications)\\s*(?:[-|:]|$)",
+        value
+    ))
+
+
+def publication_identity(item):
+    center = str(item.get("center_short") or item.get("center") or "").strip().casefold()
+    title = normalize_publication_title(item.get("title") or item.get("title_ar"))
+    return (center, title) if center and title else None
+
+
 def direct_url(url):
     if not url:
         return ""
@@ -550,7 +573,7 @@ def main():
             wrapper = clean(entry.findtext("link"))
             published_raw = clean(entry.findtext("pubDate"))
             published_dt = parse_date(published_raw)
-            if not title or not wrapper:
+            if not title or not wrapper or is_generic_listing_title(title):
                 continue
             if published_dt and published_dt < cutoff:
                 continue
@@ -603,10 +626,27 @@ def main():
                 merged[url] = item
 
     publications = list(merged.values())
-    publications = [
-        item for item in publications
-        if classify_relevance(item) > 0
-    ]
+
+    # Deduplicate the same publication even when Google News returns different
+    # locale wrappers or dates for the same center/title. Keep the newest record.
+    unique = {}
+    for item in publications:
+        if is_generic_listing_title(item.get("title", "")):
+            continue
+        if classify_relevance(item) <= 0:
+            continue
+        identity = publication_identity(item)
+        if not identity:
+            continue
+        current = unique.get(identity)
+        if current is None:
+            unique[identity] = item
+            continue
+        new_dt = parse_date(item.get("published") or item.get("date"))
+        old_dt = parse_date(current.get("published") or current.get("date"))
+        if new_dt and (not old_dt or new_dt > old_dt):
+            unique[identity] = item
+    publications = list(unique.values())
     # Sort by the requested relevance hierarchy, then newest first within each tier.
     publications.sort(
         key=lambda x: (
