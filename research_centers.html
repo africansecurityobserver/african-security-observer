@@ -107,7 +107,11 @@ function render(){
    const matchesText=(String(p.title_ar||p.title||'')+' '+String(p.title||'')+' '+String(p.center||'')+' '+String(p.source||'')).toLocaleLowerCase().includes(q);
     return (!center||p.center===center)&&matchesDate&&matchesText;
  });
- filtered.sort((a,b)=>relevanceTier(a)-relevanceTier(b)||(dateValue(b)?.getTime()||0)-(dateValue(a)?.getTime()||0));
+ filtered.sort((a,b)=>{
+    const dateA=dateValue(a)?.getTime()??-Infinity;
+    const dateB=dateValue(b)?.getTime()??-Infinity;
+    return dateB-dateA;
+  });
  if(!filtered.length){listEl.innerHTML='<div class="empty">لا توجد منشورات مطابقة لخيارات البحث أو المركز أو الفترة المحددة حاليًا.</div>';return;}
  listEl.innerHTML=filtered.map(p=>{
    const d=dateValue(p);
