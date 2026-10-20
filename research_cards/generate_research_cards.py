@@ -322,6 +322,109 @@ def get_text(url, center_site="", title=""):
             except Exception as exc:
                 print(f"Official full-text candidate failed ({candidate_url}): {type(exc).__name__}")
 
+        # Deep fallback search: do not declare full text unavailable merely because
+        # the first publisher page has no obvious PDF. Search for the exact title,
+        # PDF variants, and repository copies; inspect actual candidate pages/files,
+        # never use search snippets as evidence for a card.
+        deep_candidates = []
+        deep_seen = {page_url, url, original_url}
+        # Publisher metadata sometimes points directly to a PDF even when no
+        # visible download button exists.
+        for node in parser.css('meta[content]'):
+            meta_name = (node.attributes.get("name") or node.attributes.get("property") or "").lower()
+            meta_value = node.attributes.get("content", "").strip()
+            if meta_value and any(term in meta_name for term in (
+                "citation_pdf_url", "eprints.document_url", "dc.identifier",
+                "og:pdf", "pdf_url", "fulltext_url"
+            )):
+                candidate = urljoin(page_url, meta_value)
+                if candidate.startswith("http") and candidate not in deep_seen:
+                    deep_candidates.append((10 if ".pdf" in candidate.lower() else 6, candidate))
+                    deep_seen.add(candidate)
+        title_query = clean(title or "")
+        if title_query:
+            queries = [
+                f'"{title_query}" filetype:pdf',
+                f'"{title_query}" full text PDF',
+                f'"{title_query}" report PDF',
+            ]
+            # If a publisher blocks automated search or uses a dynamic site,
+            # search engines may expose a repository or direct document copy.
+            for engine, base_url, key, extra in (
+                ("Google", "https://www.google.com/search", "q", {"num": "10"}),
+                ("Bing", "https://www.bing.com/search", "q", {"count": "10"}),
+            ):
+                for query in queries:
+                    try:
+                        params = {key: query, **extra}
+                        search_response = requests.get(
+                            base_url, params=params, headers=HEADERS, timeout=15,
+                            allow_redirects=True
+                        )
+                        if search_response.status_code != 200 or not search_response.text:
+                            print(f"Deep full-text search {engine} returned HTTP {search_response.status_code}")
+                            continue
+                        search_parser = LexborHTMLParser(search_response.text)
+                        for anchor in search_parser.css("a[href]"):
+                            href = anchor.attributes.get("href", "").strip()
+                            if href.startswith("/url?q="):
+                                from urllib.parse import parse_qs
+                                href = parse_qs(urlparse(href).query).get("q", [""])[0]
+                            href = urljoin(search_response.url, href).split("#", 1)[0]
+                            parsed_href = urlparse(href)
+                            host = parsed_href.netloc.lower()
+                            if not href.startswith("http") or host.endswith(("google.com", "bing.com")):
+                                continue
+                            if href in deep_seen:
+                                continue
+                            # Skip obvious navigation, but allow repositories and
+                            # third-party PDF hosts because reports are often mirrored.
+                            if any(term in parsed_href.path.lower() for term in (
+                                "/search", "/login", "/signup", "/privacy", "/cookie"
+                            )):
+                                continue
+                            label = clean(anchor.text(separator=" ") + " " + anchor.attributes.get("title", ""))
+                            combined = (label + " " + href).lower()
+                            score = 0
+                            if parsed_href.path.lower().endswith(".pdf") or "pdf" in combined:
+                                score += 8
+                            if any(term in combined for term in ("full text", "full report", "download", "repository", "handle/", "bitstream", "document")):
+                                score += 4
+                            # Prefer title-matching search results, while allowing
+                            # direct repository URLs with sparse anchor labels.
+                            title_tokens = set(re.findall(r"[a-z0-9À-ÿ]{4,}", title_query.lower()))
+                            overlap = sum(1 for token in title_tokens if token in combined)
+                            score += min(5, overlap)
+                            deep_candidates.append((score, href))
+                            deep_seen.add(href)
+                    except Exception as exc:
+                        print(f"Deep full-text search failed ({engine}): {type(exc).__name__}")
+        deep_candidates.sort(key=lambda item: item[0], reverse=True)
+        tried_deep = 0
+        for score, candidate_url in deep_candidates:
+            if tried_deep >= 18:
+                break
+            tried_deep += 1
+            try:
+                linked = fetch_url(candidate_url)
+                ctype = linked.headers.get("content-type", "").lower()
+                final_url = linked.url
+                if "pdf" in ctype or final_url.lower().split("?")[0].endswith(".pdf"):
+                    body = extract_pdf_text(linked)
+                elif "html" in ctype or "text" in ctype or not ctype:
+                    body = html_main_text(linked.text)
+                else:
+                    continue
+                if len(body.strip()) >= 1800:
+                    print(
+                        f"Deep search found accessible full text ({len(body.strip())} chars): "
+                        f"{final_url}"
+                    )
+                    return final_url, body
+                print(f"Deep-search candidate was not full text ({len(body.strip())} chars): {final_url}")
+            except Exception as exc:
+                print(f"Deep-search candidate failed ({candidate_url}): {type(exc).__name__}")
+
         # Only fall back to the publication page after attempting its linked
         # full report. The card generator still rejects pages under 1,800 chars.
         if len(page_text.strip()) >= 1800:
