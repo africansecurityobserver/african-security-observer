@@ -158,10 +158,20 @@ font-weight:bold;
 white-space:nowrap
 }
 
-.tickertext{
+ .tickertext{
+display:block;
+flex:1;
+min-width:0;
 overflow:hidden;
 white-space:nowrap;
-text-overflow:ellipsis
+text-overflow:ellipsis;
+color:var(--ink);
+text-decoration:none
+}
+
+.tickertext:hover{
+color:var(--blue);
+text-decoration:underline
 }
 
 .main{
@@ -215,11 +225,32 @@ grid-template-columns:repeat(2,minmax(0,1fr));
 gap:16px
 }
 
-.story{
+ .story{
 background:#fff;
 border:1px solid var(--line);
 border-radius:7px;
-padding:14px 15px
+padding:14px 15px;
+min-width:0;
+overflow-wrap:anywhere
+}
+
+#news-list .story:first-child{
+grid-column:1 / -1;
+padding:22px 24px;
+border-right:5px solid var(--gold);
+background:linear-gradient(115deg,#fff 0%,#f8fafc 100%)
+}
+
+#news-list .story:first-child h3{
+font-size:22px;
+line-height:1.65;
+margin:8px 0 12px
+}
+
+#news-list .story:first-child .summary{
+font-size:15px;
+line-height:1.9;
+max-width:900px
 }
 
 .story h3{
@@ -637,6 +668,15 @@ max-height:none
 grid-template-columns:1fr
 }
 
+#news-list .story:first-child{
+grid-column:auto;
+padding:17px
+}
+
+#news-list .story:first-child h3{
+font-size:19px
+}
+
 .tagline{
 display:none
 }
@@ -770,11 +810,11 @@ onclick="window.location.href='./daily_cards.html'">
 
 <div class="wrap">
 
-<span class="live">عاجل</span>
+<span class="live">آخر خبر</span>
 
-<span class="tickertext">
-تحديث دوري من خلاصات الأخبار — راجع المصدر الأصلي لكل خبر.
-</span>
+<a class="tickertext" id="tickerHeadline" href="./">
+جارٍ تحميل أحدث خبر…
+</a>
 
 </div>
 
@@ -1220,6 +1260,23 @@ updated.textContent =
 
 newsList.innerHTML =
 items.map(card).join('');
+
+const tickerHeadline = document.getElementById('tickerHeadline');
+if(tickerHeadline){
+    const latest = items.find(item => item && item.title && item.url);
+    if(latest){
+        tickerHeadline.textContent = latest.title;
+        tickerHeadline.href = latest.url;
+        tickerHeadline.target = '_blank';
+        tickerHeadline.rel = 'noopener noreferrer';
+        tickerHeadline.title = 'فتح الخبر في مصدره الأصلي';
+    }else{
+        tickerHeadline.textContent = 'لا توجد أخبار حديثة متاحة حاليًا.';
+        tickerHeadline.href = './';
+        tickerHeadline.removeAttribute('target');
+        tickerHeadline.removeAttribute('rel');
+    }
+}
 
 
 empty.classList.toggle(
