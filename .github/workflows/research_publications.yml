@@ -8,7 +8,7 @@ on:
       - "collect_research_publications.py"
       - ".github/workflows/research_publications.yml"
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 */3 * * *"
       timezone: "Africa/Tunis"
   workflow_dispatch:
 
