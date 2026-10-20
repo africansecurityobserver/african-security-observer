@@ -1,0 +1,45 @@
+name: Site Quality Checks
+
+on:
+  pull_request:
+    paths:
+      - "update_news.py"
+      - "build_news.py"
+      - "build_articles.py"
+      - "index.html"
+      - "strategic_cards/**"
+      - "tests/**"
+      - "requirements.txt"
+      - ".github/workflows/quality-checks.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "update_news.py"
+      - "build_news.py"
+      - "build_articles.py"
+      - "index.html"
+      - "tests/**"
+      - "requirements.txt"
+      - ".github/workflows/quality-checks.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run news quality tests
+        run: python -m unittest discover -s tests -v
+      - name: Check Python syntax
+        run: python -m compileall -q update_news.py build_news.py build_articles.py daily_cards strategic_cards research_cards

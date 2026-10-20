@@ -2,6 +2,8 @@ name: Update Research Center Publications
 
 on:
   push:
+    branches:
+      - main
     paths:
       - "collect_research_publications.py"
       - ".github/workflows/research_publications.yml"
