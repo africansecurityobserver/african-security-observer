@@ -291,9 +291,25 @@ def get_news_for_period(slot, reference_date):
             if item.get("category") == "international"
         ][-20:]
 
+        # Reserve input capacity for major African counter-terrorism reports
+        # so a high volume of unrelated feeds cannot crowd them out.
+        terrorism_terms = (
+            "iswap", "islamic state west africa province", "boko haram",
+            "ولاية غرب أفريقيا", "الدولة الإسلامية في غرب أفريقيا",
+            "داعش", "بوكو حرام", "terroristes", "jihadistes",
+            "état islamique en afrique de l’ouest"
+        )
+        priority_terrorism_items = [
+            item for item in selected
+            if any(
+                term in news_item_search_text(item).casefold()
+                for term in terrorism_terms
+            )
+        ][-30:]
+
         chosen = []
         chosen_ids = set()
-        for item in priority_people_items + priority_org_items:
+        for item in priority_people_items + priority_org_items + priority_terrorism_items:
             marker = id(item)
             if marker not in chosen_ids:
                 chosen.append(item)
