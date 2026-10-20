@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>أرشيف البطاقات اليومية | المرصد الإفريقي</title>
+<title>أرشيف الحوصلة الإخبارية | المرصد الإفريقي</title>
 <style>
 :root{--navy:#102b46;--blue:#174d75;--gold:#d7a849;--paper:#f4f6f8;--ink:#172535;--muted:#687887;--line:#dce3e9}
 *{box-sizing:border-box}
@@ -68,13 +68,13 @@ body *{visibility:hidden!important}
 <header>
 <div class="header-inner">
 <h1>المرصد الإفريقي للأمن والدفاع</h1>
-<p>أرشيف البطاقات اليومية</p>
+<p>أرشيف الحوصلة الإخبارية</p>
 <div class="header-links"><a href="./">← العودة إلى الموقع الرئيسي</a></div>
 </div>
 </header>
 <main class="container">
-<div id="breadcrumb" class="breadcrumb"><span>البطاقات اليومية</span></div>
-<h2 id="pageTitle" class="page-title">أرشيف البطاقات اليومية</h2>
+<div id="breadcrumb" class="breadcrumb"><span>الحوصلة الإخبارية</span></div>
+<h2 id="pageTitle" class="page-title">أرشيف الحوصلة الإخبارية</h2>
 <p id="pageDescription" class="description">اختر السنة، ثم الشهر، لعرض البطاقات المحفوظة.</p>
 <div id="content"><div class="loading">جارٍ تحميل أرشيف البطاقات…</div></div>
 </main>
@@ -109,7 +109,7 @@ if(p.length!==3)return value||'تاريخ غير معروف';
 return Number(p[2])+' '+monthLabel(p[1])+' '+p[0];
 }
 function setBreadcrumb(level){
-let html='<button onclick="showYears()">البطاقات اليومية</button>';
+let html='<button onclick="showYears()">الحوصلة الإخبارية</button>';
 if(level!=='years'&&selectedYear){
 html+='<span>‹</span><button onclick="showMonths(\''+selectedYear+'\')">'+esc(selectedYear)+'</button>';
 }
@@ -123,7 +123,7 @@ function findYear(year){return archiveIndex.years.find(y=>String(y.year)===Strin
 function showYears(){
 currentView='years';
 selectedYear=null;selectedMonth=null;setBreadcrumb('years');
-pageTitle.textContent='أرشيف البطاقات اليومية';
+pageTitle.textContent='أرشيف الحوصلة الإخبارية';
 pageDescription.textContent='اختر السنة لعرض أشهرها والبطاقات المحفوظة فيها.';
 if(!archiveIndex.years.length){content.innerHTML='<div class="empty">لا توجد بطاقات مؤرشفة حتى الآن.</div>';return;}
 content.innerHTML='<div class="folder-grid">'+archiveIndex.years.map(y=>{
@@ -153,7 +153,7 @@ if(!m||!(m.cards||[]).length){content.innerHTML='<div class="empty">لا توج�
 const cards=[...m.cards].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||String(b.slot||'').localeCompare(String(a.slot||'')));
 content.innerHTML='<div class="cards-grid">'+cards.map((c,i)=>{
 const label=slotNames[String(c.slot)]||c.period||'';
-return '<button class="card-link" onclick="openArchivedCard('+i+')"><div class="card-date">'+esc(dateLabel(c.date))+'</div><div class="card-period">الفترة: '+esc(label)+(c.period&&label!==c.period?' · '+esc(c.period):'')+'</div><div class="card-subtitle">بطاقة الأحداث اليومية</div></button>';
+return '<button class="card-link" onclick="openArchivedCard('+i+')"><div class="card-date">'+esc(dateLabel(c.date))+'</div><div class="card-period">الفترة: '+esc(label)+(c.period&&label!==c.period?' · '+esc(c.period):'')+'</div><div class="card-subtitle">الحوصلة الإخبارية</div></button>';
 }).join('')+'</div>';
 window.currentMonthCards=cards;
 }
@@ -181,7 +181,7 @@ content.innerHTML='<div class="error">تعذر فتح هذه البطاقة. أ�
 function renderCard(card){
 currentCardData=card;
 let html='<div class="export-tools"><button class="export-button" onclick="saveCardPdf()">حفظ البطاقة بصيغة PDF</button><button class="export-button word" onclick="saveCardWord()">تحميل البطاقة بصيغة Word</button></div>';
-html+='<div class="card-view"><div class="card-head"><h2>'+esc(card.title||'بطاقة الأحداث اليومية')+'</h2><div class="period">'+esc(dateLabel(card.date))+' — '+esc(card.period||'')+'</div></div>';
+html+='<div class="card-view"><div class="card-head"><h2>'+esc(card.title||'الحوصلة الإخبارية')+'</h2><div class="period">'+esc(dateLabel(card.date))+' — '+esc(card.period||'')+'</div></div>';
 (card.sections||[]).forEach(section=>{
 html+='<section class="section"><div class="section-title">'+esc(section.title||'')+'</div>';
 const events=section.events||[];
@@ -205,13 +205,13 @@ const events=(section.events||[]).map(event=>
 ).join('');
 return '<h2 style="background:#102b46;color:#fff;padding:8px 12px;font-size:16pt">'+esc(section.title||'')+'</h2>'+events;
 }).join('');
-const documentHtml='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>'+esc(card.title||'البطاقة اليومية')+'</title></head><body dir="rtl" style="font-family:Tahoma,Arial,sans-serif;color:#172535;line-height:1.8"><h1 style="color:#102b46">'+esc(card.title||'بطاقة الأحداث اليومية')+'</h1><p style="color:#687887">'+esc(dateLabel(card.date))+' — '+esc(card.period||'')+'</p>'+sections+'<p style="margin-top:24px;font-size:10pt;color:#687887">المرصد الإفريقي للأمن والدفاع</p></body></html>';
+const documentHtml='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>'+esc(card.title||'الحوصلة الإخبارية')+'</title></head><body dir="rtl" style="font-family:Tahoma,Arial,sans-serif;color:#172535;line-height:1.8"><h1 style="color:#102b46">'+esc(card.title||'الحوصلة الإخبارية')+'</h1><p style="color:#687887">'+esc(dateLabel(card.date))+' — '+esc(card.period||'')+'</p>'+sections+'<p style="margin-top:24px;font-size:10pt;color:#687887">المرصد الإفريقي للأمن والدفاع</p></body></html>';
 const blob=new Blob(['\ufeff',documentHtml],{type:'application/msword;charset=utf-8'});
 const url=URL.createObjectURL(blob);
 const link=document.createElement('a');
-const filename='بطاقة-يومية-'+String(card.date||'').replace(/[^0-9-]/g,'')+'-'+String(card.slot||card.period||'').replace(/[^0-9A-Za-z-]/g,'-');
+const filename='الحوصلة-الإخبارية-'+String(card.date||'').replace(/[^0-9-]/g,'')+'-'+String(card.slot||card.period||'').replace(/[^0-9A-Za-z-]/g,'-');
 link.href=url;
-link.download=(filename||'البطاقة-اليومية')+'.doc';
+link.download=(filename||'الحوصلة-الإخبارية')+'.doc';
 document.body.appendChild(link);
 link.click();
 link.remove();
