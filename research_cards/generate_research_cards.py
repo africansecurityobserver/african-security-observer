@@ -46,7 +46,7 @@ def canonical_url(url):
 
 def identity_text(value):
     value = clean(value).casefold()
-    value = re.sub(r"[^\\w]+", " ", value, flags=re.UNICODE)
+    value = re.sub(r"[^\w]+", " ", value, flags=re.UNICODE)
     return " ".join(value.split())
 
 
@@ -58,7 +58,7 @@ def publication_identity(item):
 
 def is_generic_listing_title(title):
     return bool(re.match(
-        r"^(?:publications|latest publications|all publications|research publications)\\s*(?:[-|:]|$)",
+        r"^(?:publications|latest publications|all publications|research publications)\s*(?:[-|:]|$)",
         clean(title).casefold()
     ))
 
