@@ -2120,7 +2120,7 @@ def main():
             "date": reference_date.isoformat(),
             "slot": slot,
             "period": PERIODS[slot]["label"],
-            "title": f"بطاقة أحداث يوم {reference_date.strftime('%d/%m/%Y')}",
+            "title": f"الحوصلة الإخبارية ليوم {reference_date.strftime('%d/%m/%Y')}",
             "generated_at": now.isoformat(),
             "sections": empty_sections
         }
@@ -2195,7 +2195,7 @@ def main():
 
         "period": PERIODS[slot]["label"],
 
-        "title": f"بطاقة أحداث يوم {reference_date.strftime('%d/%m/%Y')}",
+        "title": f"الحوصلة الإخبارية ليوم {reference_date.strftime('%d/%m/%Y')}",
 
         "generated_at": now.isoformat(),
 
