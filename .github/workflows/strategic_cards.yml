@@ -3,6 +3,8 @@ name: Generate Strategic Cards
 on:
   # Run a validation/generation pass when the generator or its schedule changes.
   push:
+    branches:
+      - main
     paths:
       - "strategic_cards/generate_strategic_cards.py"
       - ".github/workflows/strategic_cards.yml"
