@@ -1,6 +1,13 @@
 name: Generate Daily Cards
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - "daily_cards/generate_daily_card.py"
+      - ".github/workflows/daily_cards.yml"
+
   workflow_dispatch:
     inputs:
       slot:
