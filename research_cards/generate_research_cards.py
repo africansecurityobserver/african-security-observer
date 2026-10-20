@@ -497,7 +497,7 @@ publish boolean; introduction string; analysis_one, analysis_two, analysis_three
         if not out.get("publish"):
             # Never mark a relevant publication as permanently processed just
             # because one model response judged its content insufficient.
-            # It stays pending and is retried on a later six-hour run.
+            # It stays pending and is retried on the next scheduled three-hour run.
             print("Model could not yet produce a reliable card; leaving publication pending:",title[:100])
             failed_count+=1
             continue
