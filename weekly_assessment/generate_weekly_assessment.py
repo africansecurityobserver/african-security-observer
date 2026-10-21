@@ -67,30 +67,53 @@ def fetch_items():
         regional_items = []
         queries = [query, f'{unrest_queries.get(region, query)} {unrest_topics}']
         for search_query in queries:
-            url = "https://news.google.com/rss/search?q=" + quote_plus(search_query + " when:8d") + "&hl=en-US&gl=US&ceid=US:en"
-            try:
-                response = requests.get(url, headers=HEADERS, timeout=18)
-                response.raise_for_status()
-                root = ET.fromstring(response.content)
-                for node in root.findall(".//item"):
-                    title = clean(node.findtext("title"))
-                    link = clean(node.findtext("link"))
-                    description = clean(node.findtext("description"))
-                    source_node = node.find("source")
-                    source = clean(source_node.text if source_node is not None else "")
-                    published = clean(node.findtext("pubDate"))
-                    dt = parse_date(published)
-                    if not title or not link or (dt and dt < cutoff):
-                        continue
-                    key = link.split("&")[0]
-                    if key in seen:
-                        continue
-                    seen.add(key)
-                    regional_items.append({"region": region, "title": title, "summary": description[:900],
-                                           "url": link, "source": source or "Google News RSS",
-                                           "published": dt.isoformat(timespec="minutes") if dt else published})
-            except Exception as exc:
-                print(f"RSS query failed ({region}; {search_query[:70]}): {type(exc).__name__}: {exc}")
+            encoded_query = quote_plus(search_query + " when:8d")
+            feeds = [
+                ("Google News RSS", "https://news.google.com/rss/search?q=" + encoded_query + "&hl=en-US&gl=US&ceid=US:en"),
+                ("Bing News RSS", "https://www.bing.com/news/search?q=" + encoded_query + "&format=rss")
+            ]
+            feed_succeeded = False
+            for feed_name, url in feeds:
+                try:
+                    # Google News occasionally returns transient 503 errors. Fall back to Bing RSS
+                    # for this same query rather than abandoning the region entirely.
+                    response = None
+                    for attempt in range(2):
+                        try:
+                            response = requests.get(url, headers=HEADERS, timeout=18)
+                            response.raise_for_status()
+                            break
+                        except requests.RequestException:
+                            if attempt == 1:
+                                raise
+                            import time
+                            time.sleep(1.5)
+                    root = ET.fromstring(response.content)
+                    feed_succeeded = True
+                    for node in root.findall(".//item"):
+                        title = clean(node.findtext("title"))
+                        link = clean(node.findtext("link"))
+                        description = clean(node.findtext("description"))
+                        source_node = node.find("source")
+                        source = clean(source_node.text if source_node is not None else "")
+                        published = clean(node.findtext("pubDate"))
+                        dt = parse_date(published)
+                        if not title or not link or (dt and dt < cutoff):
+                            continue
+                        key = link.split("&")[0]
+                        if key in seen:
+                            continue
+                        seen.add(key)
+                        regional_items.append({"region": region, "title": title, "summary": description[:900],
+                                               "url": link, "source": source or feed_name,
+                                               "published": dt.isoformat(timespec="minutes") if dt else published})
+                    if feed_name == "Bing News RSS":
+                        print(f"Used fallback feed for {region}: {feed_name}")
+                    break
+                except Exception as exc:
+                    print(f"RSS query failed ({feed_name}; {region}; {search_query[:60]}): {type(exc).__name__}: {exc}")
+            if not feed_succeeded:
+                print(f"No RSS feed available ({region}; {search_query[:60]})")
         regional_items.sort(key=lambda x: x["published"], reverse=True)
         if len(regional_items) > MAX_ITEMS_PER_REGION:
             print(f"Regional source cap applied ({region}): {len(regional_items)} -> {MAX_ITEMS_PER_REGION}")
