@@ -174,8 +174,8 @@ def main():
 اكتب أقسامًا تحليلية موسعة: استهدف 150-220 كلمة لكل قسم إقليمي، و120-170 كلمة للمقدمة، و130-200 كلمة للخلاصة. إذا كانت الأدلة محدودة، اذكر حدود المعلومات بدل الحشو.
 في كل قسم، اربط الوقائع المؤكدة بدلالتها الأمنية/العسكرية والاستراتيجية، ثم الاتجاهات المحتملة ومؤشرات المتابعة. ميّز بين الواقعة والتحليل والاحتمال. لا تعرض التوقعات كحقائق، ولا تستنتج نوايا غير مثبتة، ولا تخترع أرقاماً أو أحداثاً أو صفقات.
 اجعل تونس وشمال إفريقيا محورا مهما: الآثار على تونس، الحدود، ليبيا والجزائر والمغرب، الساحل، المتوسط، التعاون الدفاعي والهجرة والأمن البحري عند الصلة. لا تفرض موضوع تونس على أقسام غير مناسبة.
-استخدم أرقام المصادر بين معقوفين مثل [3] عند إسناد الوقائع. الأرقام تشير إلى قائمة المصادر التي ستضاف لاحقاً. اعتمد فقط على المواد أدناه، ولا تدّع الاطلاع على نصوص كاملة إذا كانت مجرد عناوين ومقتطفات.
-اكتب عربية صحفية رصينة وتحليلاً مترابطاً، وعرّف الاختصارات عند أول ورودها، وتجنب التكرار.
+لا تضع أي أرقام إحالة أو علامات مراجع داخل النص النهائي. اعتمد فقط على المواد أدناه، ولا تدّع الاطلاع على نصوص كاملة إذا كانت مجرد عناوين ومقتطفات.
+اكتب عربية صحفية رصينة وتحليلاً مترابطاً، وعرّف الاختصارات عند أول ورودها، وتجنب التكرار. المقدمة والخلاصة الاستراتيجية نثر مترابط بلا نقاط تعداد. أما الأقسام الإقليمية الستة (تونس وشمال إفريقيا، بقية دول إفريقيا، أوروبا، الشرق الأوسط، الولايات المتحدة، بقية مناطق العالم) فيجب أن يتكون كل منها من أربع نقاط تحليلية بالضبط، كل نقطة في سطر مستقل وتبدأ بشرطة (-)، ثم سطر مستقل يبدأ حرفياً بـ«خلاصة القسم:» يتضمن خلاصة قصيرة مركزة. لا تضع أي كلام تمهيدي خارج الأقسام الثمانية.
 أعد JSON بالحقول title وsubject وsummary (100-150 كلمة) وsections (ثمانية عناصر بالضبط، كل عنصر heading وtext وبالعناوين المحددة حرفياً).
 المواد المجمعة خلال الفترة:
 {source_block}
@@ -188,10 +188,19 @@ def main():
     expected = ["المقدمة", "تونس وشمال إفريقيا", "بقية دول إفريقيا", "أوروبا", "الشرق الأوسط", "الولايات المتحدة", "بقية مناطق العالم", "الخلاصة الاستراتيجية"]
     if len(sections) != 8 or [clean(x.get("heading")) for x in sections] != expected:
         raise RuntimeError("Model output failed the exact eight-section structure check.")
+    # Remove numeric source markers from the visible section text.
+    for section in sections:
+        section["text"] = re.sub(r"\s*\[\d+\]", "", str(section.get("text") or "")).strip()
     word_counts = [len(clean(s.get("text")).split()) for s in sections]
     minimums = [85, 125, 125, 125, 125, 125, 125, 120]
     if any(count < minimum for count, minimum in zip(word_counts, minimums)):
         raise RuntimeError(f"Section word-count validation failed: {word_counts}; minimums={minimums}. Refusing to publish an incomplete assessment.")
+    for section in sections[1:7]:
+        lines = [line.strip() for line in str(section.get("text") or "").splitlines() if line.strip()]
+        bullets = [line for line in lines if re.match(r"^[-–—•]\s+", line)]
+        conclusions = [line for line in lines if line.startswith("خلاصة القسم:")]
+        if len(bullets) != 4 or len(conclusions) != 1:
+            raise RuntimeError(f"Regional section format invalid for {section.get('heading')}: expected exactly four bullet points and one 'خلاصة القسم:' line; got {len(bullets)} bullets and {len(conclusions)} conclusions.")
     title = clean(output.get("title")) or "التقدير الاستراتيجي الأسبوعي"
     card = {"id": slug, "kind": "weekly_assessment", "kind_label": "التقدير الاستراتيجي الأسبوعي",
         "title": title, "subject": clean(output.get("subject")) or title, "date": date_tag,
