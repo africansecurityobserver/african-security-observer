@@ -1,0 +1,63 @@
+name: Generate Weekly Strategic Assessment
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "weekly_assessment/generate_weekly_assessment.py"
+      - ".github/workflows/weekly_assessment.yml"
+  schedule:
+    # Sunday at 21:00 UTC = 22:00 in Tunisia during October (UTC+1).
+    - cron: "0 21 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-strategic-assessment-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  generate-weekly-assessment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Refresh checkout to latest main
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
+          git reset --hard origin/main
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-genai requests
+      - name: Generate weekly assessment
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.5-flash-lite
+        run: python -u weekly_assessment/generate_weekly_assessment.py
+      - name: Commit and publish weekly assessment
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add weekly_assessments/archive/
+          if git diff --cached --quiet; then
+            echo "No weekly-assessment changes."
+          else
+            git commit -m "Publish weekly global strategic assessment"
+            for attempt in 1 2 3; do
+              if git pull --rebase origin main && git push origin main; then exit 0; fi
+              git rebase --abort || true
+              echo "Push attempt $attempt failed; refreshing main."
+              sleep 2
+            done
+            exit 1
+          fi
