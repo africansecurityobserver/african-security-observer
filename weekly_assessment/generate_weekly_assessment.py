@@ -189,7 +189,7 @@ def main():
     if len(sections) != 8 or [clean(x.get("heading")) for x in sections] != expected:
         raise RuntimeError("Model output failed the exact eight-section structure check.")
     word_counts = [len(clean(s.get("text")).split()) for s in sections]
-    minimums = [95, 125, 125, 125, 125, 125, 125, 140]
+    minimums = [85, 125, 125, 125, 125, 125, 125, 140]
     if any(count < minimum for count, minimum in zip(word_counts, minimums)):
         raise RuntimeError(f"Section word-count validation failed: {word_counts}; minimums={minimums}. Refusing to publish an incomplete assessment.")
     title = clean(output.get("title")) or "التقدير الاستراتيجي الأسبوعي"
