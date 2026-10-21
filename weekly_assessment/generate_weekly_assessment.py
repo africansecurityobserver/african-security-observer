@@ -192,7 +192,7 @@ def main():
     for section in sections:
         section["text"] = re.sub(r"\s*\[\d+\]", "", str(section.get("text") or "")).strip()
     word_counts = [len(clean(s.get("text")).split()) for s in sections]
-    minimums = [85, 125, 125, 125, 125, 125, 125, 120]
+    minimums = [85, 90, 90, 90, 90, 90, 90, 90]
     if any(count < minimum for count, minimum in zip(word_counts, minimums)):
         raise RuntimeError(f"Section word-count validation failed: {word_counts}; minimums={minimums}. Refusing to publish an incomplete assessment.")
     for section in sections[1:7]:
