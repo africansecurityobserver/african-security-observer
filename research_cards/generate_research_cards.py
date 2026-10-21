@@ -215,7 +215,7 @@ def find_official_article_url(title, center_site):
 
     # Require a meaningful title match. A low threshold previously accepted
     # unrelated pages as the source.
-    if best_url and best_score >= 0.50:
+    if best_url and best_score >= 0.35:
         print(f"Resolved Google News item to official source ({best_score:.2f} title match): {best_url}")
         return best_url
     if best_url:
@@ -300,7 +300,11 @@ def get_text(url, center_site="", title=""):
                         direct_type = direct.headers.get("content-type", "").lower()
                         if "pdf" in direct_type or direct.url.lower().split("?")[0].endswith(".pdf"):
                             body = extract_pdf_text(direct)
-                            if len(body) >= 1800:
+                            if len(body) < 1200:
+                                reader_body = fetch_reader_text(direct.url)
+                                if len(reader_body) > len(body):
+                                    body = reader_body
+                            if len(body) >= 1200:
                                 return direct.url, body
                         page_url, html = direct.url, direct.text
                         page_text = html_main_text(html)
