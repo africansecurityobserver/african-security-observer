@@ -24,6 +24,8 @@ concurrency:
 jobs:
   generate-research-cards:
     runs-on: ubuntu-latest
+    # Prevent one pathological article from occupying a runner indefinitely.
+    timeout-minutes: 30
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -44,6 +46,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.5-flash-lite
+          MAX_RESEARCH_CARDS_PER_RUN: "2"
         run: python -u research_cards/generate_research_cards.py
       - name: Commit research cards and archive
         run: |
