@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T15:49+01:00",
+  "updated": "2026-10-21T18:45+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 24,
+  "count": 25,
   "publications": [
     {
       "center": "معهد اليابان للشؤون الدولية (JIIA)",
@@ -676,6 +676,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
+    },
+    {
+      "center": "معهد الدراسات الدفاعية والاستراتيجية الهندي (MP-IDSA)",
+      "center_short": "MP-IDSA",
+      "title": "Abhishek Mishra’s Article ‘Cheap drones, Costly wars: India can reshape Africa's new battlefield’ Published in Firstpost - MP-IDSA",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeGNQLWc3UndoNnltY2lsQW9qZnB1ZWJpNF9pM003cEFPYVZyaHk1ZkVyZzMxTWwwNlpVaXBIV1B2dGxLWlRSVVRUZWszU2dyNDM3RDBQeDJrWGwzclBxaTJRd2VqbmYzb3dyajNTWWtvYTJrX0JBc3JkQnhwLVNiOVRTNG81MGZ5MkZxaW9DTjZ1UGVWZmJwbw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-21T11:04+01:00",
+      "date": "2026-10-21",
+      "source": "MP-IDSA",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOeGNQLWc3UndoNnltY2lsQW9qZnB1ZWJpNF9pM003cEFPYVZyaHk1ZkVyZzMxTWwwNlpVaXBIV1B2dGxLWlRSVVRUZWszU2dyNDM3RDBQeDJrWGwzclBxaTJRd2VqbmYzb3dyajNTWWtvYTJrX0JBc3JkQnhwLVNiOVRTNG81MGZ5MkZxaW9DTjZ1UGVWZmJwbw?oc=5\" target=\"_blank\">Abhishek Mishra’s Article ‘Cheap drones, Costly wars: India can reshape Africa's new battlefield’ Published in Firstpost</a> <font color=\"#6f6f6f\">MP-IDSA</font>",
+      "center_site": "https://idsa.in/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "مقالة أبيشيك ميشرا \"طائرات بدون طيار رخيصة، حروب مكلفة: يمكن للهند إعادة تشكيل ساحة المعركة الجديدة في إفريقيا\" نشرت في Firstpost - MP - IDSA"
     },
     {
       "center": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
