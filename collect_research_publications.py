@@ -548,51 +548,61 @@ def main():
         # Google News RSS supports after: dates; this gives the initial
         # 1–13 October backfill and then includes newer posts on every run.
         after_date = (cutoff.date() - timedelta(days=1)).isoformat()
-        # Search the publisher's domain broadly, then apply the local
-        # strategic-relevance classifier below. Combining long OR expressions
-        # with site: filters made Google News omit many recent publisher items.
-        # A domain-wide date search is more reliable for discovering today's
-        # publications; the classifier still excludes irrelevant material.
-        query = f"site:{center['domain']} after:{after_date}"
-        params = {"q": query, "hl": "en-US", "gl": "US", "ceid": "US:en"}
-        try:
-            response = session.get("https://news.google.com/rss/search", params=params, timeout=22)
-            response.raise_for_status()
-            root = ET.fromstring(response.content)
-        except Exception as exc:
-            print(f"Search failed for {center['short']}: {type(exc).__name__}")
-            continue
-
+        # Use independent Google News queries per centre: a broad domain query
+        # maximizes discovery, while a topic-focused query can surface relevant
+        # publications omitted from the broad index. Merge before relevance filtering.
+        queries = [
+            f"site:{center['domain']} after:{after_date}",
+            f"site:{center['domain']} after:{after_date} (Africa OR security OR military OR defence OR defense OR strategy OR conflict OR geopolitics OR arms)",
+        ]
         center_items = []
-        for entry in root.findall("./channel/item"):
-            title = clean(entry.findtext("title"))
-            wrapper = clean(entry.findtext("link"))
-            published_raw = clean(entry.findtext("pubDate"))
-            published_dt = parse_date(published_raw)
-            if not title or not wrapper or is_generic_listing_title(title):
+        center_seen = set()
+        successful_queries = 0
+        for query in queries:
+            params = {"q": query, "hl": "en-US", "gl": "US", "ceid": "US:en"}
+            try:
+                response = session.get("https://news.google.com/rss/search", params=params, timeout=22)
+                response.raise_for_status()
+                root = ET.fromstring(response.content)
+                successful_queries += 1
+            except Exception as exc:
+                print(f"Search failed for {center['short']} ({query[:70]}): {type(exc).__name__}")
                 continue
-            if published_dt and published_dt < cutoff:
-                continue
-            url = direct_url(wrapper)
-            if not url or url in seen:
-                continue
-            source_node = entry.find("source")
-            source_name = clean(source_node.text if source_node is not None else center["short"])
-            description = clean(entry.findtext("description"))
-            item = {
-                "center": center["name"],
-                "center_short": center["short"],
-                "title": title,
-                "url": url,
-                "published": published_dt.isoformat(timespec="minutes") if published_dt else published_raw,
-                "date": published_dt.strftime("%Y-%m-%d") if published_dt else "",
-                "source": source_name,
-                "description": description[:500],
-                "center_site": "https://" + center["domain"] + "/"
-            }
-            classify_relevance(item)
-            if item.get("relevance_tier", 0) > 0:
-                center_items.append(item)
+
+            for entry in root.findall("./channel/item"):
+                title = clean(entry.findtext("title"))
+                wrapper = clean(entry.findtext("link"))
+                published_raw = clean(entry.findtext("pubDate"))
+                published_dt = parse_date(published_raw)
+                if not title or not wrapper or is_generic_listing_title(title):
+                    continue
+                if published_dt and published_dt < cutoff:
+                    continue
+                url = direct_url(wrapper)
+                if not url or url in seen or url in center_seen:
+                    continue
+                source_node = entry.find("source")
+                source_name = clean(source_node.text if source_node is not None else center["short"])
+                description = clean(entry.findtext("description"))
+                item = {
+                    "center": center["name"],
+                    "center_short": center["short"],
+                    "title": title,
+                    "url": url,
+                    "published": published_dt.isoformat(timespec="minutes") if published_dt else published_raw,
+                    "date": published_dt.strftime("%Y-%m-%d") if published_dt else "",
+                    "source": source_name,
+                    "description": description[:500],
+                    "center_site": "https://" + center["domain"] + "/"
+                }
+                classify_relevance(item)
+                center_seen.add(url)
+                if item.get("relevance_tier", 0) > 0:
+                    center_items.append(item)
+
+        if successful_queries == 0:
+            print(f"All publication searches failed for {center['short']}; retained prior records.")
+            continue
 
         center_items.sort(key=lambda x: x.get("published", ""), reverse=True)
         for item in center_items[:MAX_PER_CENTER]:
