@@ -145,10 +145,12 @@ def find_official_article_url(title, center_site):
     best_score = 0.0
     seen_pages = set()
 
-    for search_url, params in searches:
+    # Keep source resolution bounded: the broader full-text search below is the
+    # fallback, and an individual publication must not monopolize an Actions run.
+    for search_url, params in searches[:4]:
         try:
             response = requests.get(
-                search_url, params=params, headers=headers, timeout=18,
+                search_url, params=params, headers=headers, timeout=10,
                 allow_redirects=True
             )
             if response.status_code != 200 or not response.text:
@@ -404,16 +406,9 @@ def get_text(url, center_site="", title=""):
             # Search the exact publication across the wider web, not only the
             # publisher domain. Full reports are often mirrored by universities,
             # think tanks, repositories, partner organizations, or other outlets.
-            queries = [
-                f'"{title_query}"',
-                f'"{title_query}" PDF',
-                f'"{title_query}" full text',
-                f'"{title_query}" filetype:pdf',
-                f'"{title_query}" report download',
-            ]
-            # Add an unquoted title query to find mirrors whose metadata or
-            # punctuation differs from the original title.
-            queries.append(title_query)
+            # A compact set of searches is more reliable operationally than
+            # repeating six queries against three engines for every article.
+            queries = [f'"{title_query}"', f'"{title_query}" PDF', title_query]
             for engine, base_url, key, extra in (
                 ("Google", "https://www.google.com/search", "q", {"num": "10"}),
                 ("Bing", "https://www.bing.com/search", "q", {"count": "10"}),
@@ -423,7 +418,7 @@ def get_text(url, center_site="", title=""):
                     try:
                         params = {key: query, **extra}
                         search_response = requests.get(
-                            base_url, params=params, headers=HEADERS, timeout=15,
+                            base_url, params=params, headers=HEADERS, timeout=10,
                             allow_redirects=True
                         )
                         if search_response.status_code != 200 or not search_response.text:
@@ -473,7 +468,7 @@ def get_text(url, center_site="", title=""):
         deep_candidates.sort(key=lambda item: item[0], reverse=True)
         tried_deep = 0
         for score, candidate_url in deep_candidates:
-            if tried_deep >= 30:
+            if tried_deep >= 4:
                 break
             tried_deep += 1
             try:
@@ -611,6 +606,14 @@ def main():
             reverse=True
         ))
     candidates=ordered
+    total_candidates = len(candidates)
+    # Work in small batches so a difficult article cannot block the entire queue.
+    # Unprocessed publications remain absent from processed_urls and are retried
+    # automatically by the next scheduled run.
+    max_per_run = max(1, int(os.getenv("MAX_RESEARCH_CARDS_PER_RUN", "2")))
+    candidates = candidates[:max_per_run]
+    if total_candidates > len(candidates):
+        print(f"Batch limit: processing {len(candidates)} of {total_candidates} pending publications; the rest stay queued.")
     if not candidates:
         data["processed_urls"] = list(dict.fromkeys(
             canonical_url(url) for url in data["processed_urls"] if url
@@ -708,6 +711,6 @@ publish boolean; introduction string; analysis_one, analysis_two, analysis_three
     data["processed_urls"]=list(dict.fromkeys(canonical_url(url) for url in data["processed_urls"] if url))
     data["updated"]=datetime.now(TZ).isoformat(timespec="seconds")
     save(DATA,data); save(INDEX,make_index(data["cards"]))
-    print(f"Research cards total={len(data['cards'])}; generated this run={count}; pending for retry={failed_count}; new candidates seen={len(candidates)}")
+    print(f"Research cards total={len(data['cards'])}; generated this run={count}; failed this run={failed_count}; processed this run={len(candidates)}; queued before batch limit={total_candidates}")
 
 if __name__=="__main__": main()
