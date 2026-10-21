@@ -122,6 +122,10 @@ def find_official_article_url(title, center_site):
     searches = [
         ("https://www.google.com/search", {"q": f'site:{expected_host} "{title}"', "num": "10"}),
         ("https://www.bing.com/search", {"q": f'site:{expected_host} "{title}"', "count": "10"}),
+        # GitHub-hosted runners are often blocked by Google/Bing and publisher
+        # site-search endpoints. DuckDuckGo HTML is an independent fallback.
+        ("https://html.duckduckgo.com/html/", {"q": f'site:{expected_host} "{title}"'}),
+        ("https://html.duckduckgo.com/html/", {"q": f'site:{expected_host} {short_title}'}),
     ]
     # Common WordPress and CMS-native search patterns. These search the
     # official publisher itself and avoid depending exclusively on Google/Bing.
@@ -160,6 +164,14 @@ def find_official_article_url(title, center_site):
             # even when their visible text is just an icon.
             for node in parser.css("a[href]"):
                 href = node.attributes.get("href", "").strip()
+                # DuckDuckGo wraps outbound links; unwrap before checking the
+                # destination domain, otherwise valid results look like DDG URLs.
+                if "duckduckgo.com/l/?" in href:
+                    from urllib.parse import parse_qs, unquote
+                    href = parse_qs(urlparse(href).query).get("uddg", [""])[0]
+                    href = unquote(href)
+                elif href.startswith("//"):
+                    href = "https:" + href
                 label = clean(" ".join([
                     node.text(separator=" "),
                     node.attributes.get("title", ""),
@@ -201,9 +213,13 @@ def find_official_article_url(title, center_site):
         except Exception as exc:
             print(f"Publication URL search failed ({search_url}): {type(exc).__name__}")
 
-    if best_url and best_score >= 0.20:
+    # Require a meaningful title match. A low threshold previously accepted
+    # unrelated pages as the source.
+    if best_url and best_score >= 0.50:
         print(f"Resolved Google News item to official source ({best_score:.2f} title match): {best_url}")
         return best_url
+    if best_url:
+        print(f"Rejected weak official-source match ({best_score:.2f}); will keep searching: {best_url}")
     print(f"Could not resolve official article URL after search-engine and publisher-site searches: {title[:120]}")
     return ""
 
@@ -359,6 +375,7 @@ def get_text(url, center_site="", title=""):
             for engine, base_url, key, extra in (
                 ("Google", "https://www.google.com/search", "q", {"num": "10"}),
                 ("Bing", "https://www.bing.com/search", "q", {"count": "10"}),
+                ("DuckDuckGo", "https://html.duckduckgo.com/html/", "q", {}),
             ):
                 for query in queries:
                     try:
@@ -376,10 +393,15 @@ def get_text(url, center_site="", title=""):
                             if href.startswith("/url?q="):
                                 from urllib.parse import parse_qs
                                 href = parse_qs(urlparse(href).query).get("q", [""])[0]
+                            elif "duckduckgo.com/l/?" in href:
+                                from urllib.parse import parse_qs, unquote
+                                href = unquote(parse_qs(urlparse(href).query).get("uddg", [""])[0])
+                            elif href.startswith("//"):
+                                href = "https:" + href
                             href = urljoin(search_response.url, href).split("#", 1)[0]
                             parsed_href = urlparse(href)
                             host = parsed_href.netloc.lower()
-                            if not href.startswith("http") or host.endswith(("google.com", "bing.com")):
+                            if not href.startswith("http") or host.endswith(("google.com", "bing.com", "duckduckgo.com")):
                                 continue
                             if href in deep_seen:
                                 continue
