@@ -269,6 +269,46 @@
           "url": "https://www.kyivpost.com/post/87513"
         }
       ]
+    },
+    {
+      "id": "20261021081733_2a3565b5",
+      "slot": "news",
+      "type": "defense_strategy",
+      "kind": "defense_strategy",
+      "kind_label": "الاستراتيجيات والتحالفات والجاهزية الدفاعية",
+      "title": "بطاقة استراتيجية من مصدر إخباري — معركة تمويل التنقل العسكري الأوروبي تتعثر بسبب الرئاسة الأيرلندية والبرلمان يتمسك بموقف المفوضية",
+      "subject": "معركة تمويل التنقل العسكري الأوروبي تتعثر بسبب الرئاسة الأيرلندية والبرلمان يتمسك بموقف المفوضية",
+      "date": "2026-10-21",
+      "region": "أوروبا",
+      "summary": "موضوع البطاقة: معركة تمويل التنقل العسكري الأوروبي تتعثر بسبب الرئاسة الأيرلندية والبرلمان يتمسك بموقف المفوضية. يواجه حزمة التنقل العسكري الأوروبية عقبات تمويلية وتشريعية مع اقتراب جولة الحوار الثلاثي الحاسمة في 9 ديسمبر 2026، حيث وجه أعضاء البرلمان الأوروبي انتقادات حادة للرئاسة الأيرلندية بسبب اقتراحها خفض موازنة مرفق ربط أوروبا بنسبة 11 بالمئة، بينما تتمسك المؤسسة التشريعية برفع المخصصات للوصول إلى منطقة تنقل عسكري موحدة بحلول عام 2027.",
+      "sections": [
+        {
+          "heading": "خلفية الخلاف المالي حول حزمة التنقل العسكري",
+          "text": "تخوض مؤسسات الاتحاد الأوروبي نقاشات معقدة بشأن تمويل حزمة التنقل العسكري (EU Military Mobility Package)، التي تسعى المفوضية الأوروبية من خلالها إلى تسريع نقل القوات والعتاد عبر القارة. وفي مؤتمر صحفي عقده مقررا البرلمان الأوروبي ميخال شيربا (Michal Szczerba) وروبرتس زيله (Roberts Zīle)، ظهرت الخلافات إلى السطح بشأن موقف الرئاسة الأيرلندية الدورية لمجلس الاتحاد الأوروبي. فقد اقترحت أيرلندا خلال مناقشات الموازنة خفض مخصصات مرفق ربط أوروبا (Connecting Europe Facility) بنسبة بلغت نحو 11 بالمئة، وهو ما يشمل تمويل البنى التحتية ذات الاستخدام المزدوج المدني والعسكري. يأتي هذا في وقت ترصد فيه المفوضية الأوروبية موازنة طموحة للفترة 2028-2034 تقدر بنحو 17.65 مليار أورو، مقارنة بنحو 1.69 مليار أورو فقط في فترة الموازنة الحالية 2021-2027، بينما يدافع البرلمان عن رقم يبلغ 18 مليار أورو لضمان تنفيذ التشريعات باستثمارات حقيقية."
+        },
+        {
+          "heading": "مواقف المؤسسات الأوروبية وتعقيدات الحوار الثلاثي",
+          "text": "تتوزع المواقف بين أقطاب الاتحاد الأوروبي الثلاثة الرئيسية؛ حيث تقف المفوضية الأوروبية كجهة مصاغة للنص وداعمة للتوسع المالي، بينما يتبنى البرلمان الأوروبي موقفاً هجومياً للدفاع عن زيادة الموازنة وتوحيد الصف التشريعي، مدعوماً بأغلبية واسعة حصل عليها النص في شهر يوليو. في المقابل، يمثل مجلس الاتحاد الأوروبي الجهة الأكثر تعقيداً في المفاوضات، نظراً لتداخل صلاحيات وزارات الدفاع والنقل في الدول الأعضاء وحرص كل دولة على حماية سيادتها الوطنية في الشؤون العسكرية. وأكد المقررون أن الفرق الفنية تعمل بتناغم وتفهم جيد لموقف البرلمان، مع الإشارة إلى أن مفوض الدفاع أندريوس كوبيليوس (Andrius Kubilius) قدّم إحاطات حول حجم المتطلبات اللوجستية، مثل حساب عدد العربات وأكياس السكك الحديدية اللازمة لنقل ألوية عسكرية تضم 5000 فرد أو فرق عسكرية تصل إلى 15000 عنصر، مما يؤكد أن التنقل العسكري ليس مجرد إطار نظري بل حاجة تشييد ملحة."
+        },
+        {
+          "heading": "الأولويات التشريعية ومستهدفات منطقة \"شنغن العسكرية\"",
+          "text": "ترتكز أجندة البرلمان الأوروبي في هذه المفاوضات على أولويات محددة تتضمن تبسيط الإجراءات البیوقراطية، وتحقيق قابلية التشغيل البيني مع حلف شمال الأطلسي (الناتو)، وتعزيز رقمنة الأنظمة الآمنة، وبناء بنية تحتية مرنة تشمل الطرق والسكك الحديدية والجسور والموانئ والمطارات. ويهدف هذا الحراك إلى تحقيق ما يُعرف بـ \"شنغن العسكرية\"، حيث تضع المفوضية الأوروبية هدفاً لإرساء منطقة تنقل عسكري أوروبية متكاملة بحلول عام 2027. كما يتضمن المسار قيد المناقشة شق الطوارئ (EMERS) المقرر حسمه في ديسمبر المقبل، والذي يهدف إلى إعطاء الأولوية للحركات العسكرية في حالات الأزمات الاستثنائية. من جهة أخرى، تشمل النقاشات إمكانية انضمام دول حلف الناتو غير الأعضاء في الاتحاد الأوروبي مثل النرويج، إلى جانب فتح آفاق التعاون مع أوكرانيا ومولدوفا، وسط إصرار برلماني على عدم إغفال مسألة التعويضات والمسؤولية القانونية للشركات المدنية المستعان بها في النقل العسكري."
+        },
+        {
+          "heading": "القيود والمخاطر والسيناريوهات المحتملة حتى موعد ديسمبر",
+          "text": "تظل الشكوك قائمة بشأن قدرة الأطراف على التوصل إلى اتفاق نهائي قبل الموعد المقرر لجولة الحوار الثلاثي الأخيرة (التريولوغ) في 9 ديسمبر 2026. ويُذكر التاريخ المالي للاتحاد الأوروبي بأن زعماء التكتل سبق وأن خفضوا مخصصات التنقل العسكري من نحو 6 مليارات أورو إلى الصفر طوال ليلة واحدة خلال مفاوضات الموازنة طويلة الأجل السابقة، قبل إعادتها إلى 1.7 مليار أورو، وهو ما يترك الباب مفتوحاً أمام مفاجآت مشابهة في قمة منتصف ديسمبر القادمة. وتتمثل العقبة الأساسية في تضارب الأولويات المالية الوطنية لدول الاتحاد مع الطموحات المركزية لبراتسلاف وبراسيل، حيث تترقب الأطراف المعنية مدى نجاح هذا الاختبار التجريبي وسط بيئة أمنية إقليمية متوترة تفرضها الحرب في أوكرانيا، مع قاعدة تفاوض صارمة تحكمها مقولة إن \"لا شيء متفق عليه حتى يتم الاتفاق على كل شيء\"."
+        },
+        {
+          "heading": "خلاصة استراتيجية",
+          "text": "تُظهر معركة تمويل حزمة التنقل العسكري الأوروبية التباين المستمر بين الطموحات الجيوسياسية الكبرى للاتحاد الأوروبي والواقع البيروقراطي والمالي للدول الأعضاء. فبينما تسعى المفوضية والبرلمان إلى فرض واقع استراتيجي جديد يضمن النشر السريع للقوات لمواجهة التهديدات عبر \"شنغن العسكرية\"، تصطدم هذه الخطط بحسابات تقليص الموازنات الوطنية كما تجلى في موقف الرئاسة الأيرلندية. إن نجاح الاتحاد في الالتزام بموعد 2027 لإتمام هذه المنظومة يعتمد كلياً على قدرة قادة الدول على تجاوز الحسابات القومية الضيقة وتوفير الغطاء الاستثماري والتشريعي اللازم لتحويل البنى التحتية المدنية إلى شبكات لوجستية عسكرية قادرة على الصدمات. تنعكس هذه التطورات الاستراتيجية على محيط تونس الإقليمي والأورومتوسطي في كونها تبرز الأهمية المتزايدة للوجستيات البنية التحتية والممرات الآمنة في العقائد العسكرية الحديثة. كما أن التوجه الأوروبي نحو تعزيز القدرات العسكرية العابرة للحدود والتركيز على المرونة الرقمية والتشغيل البيني يفرض قراءة دقيقة لمستوى التعاون اللوجستي والتكنولوجي المتبادل، لا سيما في مجالات تأمين سلاسل الإمداد ومراقبة المعابر الحيوية المشتركة في فضاء البحر الأبيض المتوسط."
+        }
+      ],
+      "sources": [
+        {
+          "title": "EU Perspectives",
+          "url": "https://euperspectives.eu/2026/10/military-mobility-not-moving/"
+        }
+      ]
     }
   ],
   "regional_crisis": [
@@ -550,40 +590,41 @@
     }
   ],
   "checked_urls": [
-    "https://militarywatchmagazine.com/article/us-bringing-kc10-tankers-back-support-ally-refuelling",
-    "https://africa.businessinsider.com/local/markets/china-beats-the-us-in-africas-critical-minerals-race-but-congo-arrests-300-chinese/h72g29b",
-    "https://african.business/2026/10/long-reads/critical-minerals-underpin-washingtons-nigeria-overtures",
-    "https://warontherocks.com/how-sudan-became-a-laboratory-for-drone-warfare-thanks-to-abu-dhabi/",
-    "https://africa.businessinsider.com/local/markets/somalia-may-have-just-purchased-jf-17-thunder-fighter-jets-from-pakistan-once/51mggel",
-    "https://fr.apanews.net/society/tunisie-la-securite-alimentaire-au-defi-du-changement-climatique",
-    "https://www.unmannedairspace.info/counter-uas-systems-and-policies/bulgaria-plans-to-joins-nato-c-uas-initiative-following-black-sea-drone-attacks/",
-    "https://united24media.com/world/bulgaria-asks-nato-for-aircraft-air-defenses-and-counter-drone-systems-as-black-sea-attacks-intensify-23513",
-    "https://www.aljazeera.net/encyclopedia/2026/10/20/%d9%85%d9%87%d8%b1%d8%af%d8%a7%d8%af-%d8%a3%d8%ae%d9%84%d8%a7%d9%82%d9%8a-%d9%83%d8%aa%d8%a7%d8%a8%d8%ac%d9%8a-%d9%88%d8%b2%d9%8a%d8%b1-%d8%a7%d9%84%d8%af%d9%81%d8%a7%d8%b9?traffic_source=rss",
-    "https://www.algeriedirect.dz/%D9%82%D9%85%D8%A9-%D8%A7%D9%84%D9%82%D8%A7%D8%AF%D8%A9/",
-    "https://african.business/2026/10/resources/critical-minerals-underpin-washingtons-nigeria-overtures",
-    "https://bdnews24.com/world/7e4w426j7y",
-    "https://www.diplomacyandlaw.com/post/black-sea-drone-attacks-shipping",
-    "https://www.echoroukonline.com/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%AA%D8%A8%D9%88%D9%86-%D9%8A%D8%AC%D8%AF%D8%AF-%D8%A7%D9%84%D8%AA%D8%B2%D8%A7%D9%85-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D8%A8%D8%AD%D9%85%D8%A7%D9%8A",
-    "https://therecord.media/european-defense-contractors-fancy-bear-espionage",
-    "https://news50.sa/politics/eurofighter-typhoon-fighter-jet-capabilities",
-    "https://kfgo.com/2026/10/18/romanian-f-16-fighter-jets-shoot-down-two-drones-over-romanian-territorial-waters/",
-    "https://ninanews.com/website/News/Details?Key=1320646",
-    "https://defence-industry.eu/sweden-plans-nato-ground-deployments-in-finland-and-latvia-and-continued-patriot-operations-in-poland-in-2027/",
-    "https://kfgo.com/2026/10/18/romanian-f-16-fighter-jets-shoot-down-two-drones-over-romanian-territorial-waters",
-    "https://www.tsa-algerie.com/conflit-arabie-saoudite-houthis-legypte-sapprete-a-une-intervention-militaire-directe/",
-    "https://alikhbariya.net/stories/822cbe7e-234b-4029-b6d1-2a33ab11953e/%D8%AF%D9%8A%D8%AF%D8%A7%D9%86-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%AE%D8%B7%D8%B1-%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%8A%D8%AA%D9%83%D8%A7%D8%AB%D8%B1-%D8%B0%D8%A7%D8%AA%D9%8A%D8%A7-%D9%88%D9%8A%D9%87%D8%AF%D8%AF-%D8%A3%D9%85%D8%A7%D9%86-%D8%A7%D9%84%D8%A3%D8%AC%D9%87%D8%B2%D8%A9",
-    "https://asharq.com/politics/199763/%D8%AD%D9%88%D8%A7%D8%AF%D8%AB-%D8%A3%D9%85%D9%86%D9%8A%D8%A9-%D8%AA%D9%87%D8%AF%D8%AF-%D8%A8%D8%A7%D9%86%D8%B2%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%AA%D9%88-%D8%A5%D9%84%D9%89-%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9-%D9%85%D8%B9-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7/",
-    "https://www.kyivpost.com/post/87513",
-    "https://aerospaceglobalnews.com/news/somalia-jf17-saudi-pakistan/",
-    "https://www.orfonline.org/expert-speak/sahel-s-geopolitical-reset-and-russia-s-strategic-opening",
-    "https://www.leconomistemaghrebin.com/2026/10/19/tunisie-guinee-bissau-vers-cooperation-renforcee-commerce-leducation/",
-    "https://www.aljazeera.net/politics/2026/10/20/%d8%b9%d9%85%d9%84%d9%8a%d8%a9-%d9%83%d9%88%d8%b2%d9%85%d9%88%d8%b3-2612-%d9%87%d9%84-%d8%a3%d9%84%d8%ba%d9%89-%d8%a7%d9%84%d9%83%d8%b1%d9%85%d9%84%d9%8a%d9%86-%d9%87%d8%ac%d9%88%d9%85%d8%a7?traffic_source=rss",
-    "https://alikhbariya.net/stories/0e8b11a9-1179-4d94-a861-a95d43c51941/%D8%A7%D9%84%D8%AA%D9%88%D9%86%D8%B3%D9%8A%D9%88%D9%86-%D9%8A%D8%AE%D8%B1%D8%AC%D9%88%D9%86-%D9%81%D9%8A-%D8%A3%D9%83%D8%A8%D8%B1-%D8%A7%D8%AD%D8%AA%D8%AC%D8%A7%D8%AC%D8%A7%D8%AA-%D8%B9%D9%84%D9%89-%D8%AD%D9%83%D9%85-%D8%B3%D8%B9%D9%8A%D8%AF-%D9%85%D9%86%D8%B0-%D8%B3%D9%86%D9%88%D8%A7%D8%AA",
-    "https://www.aljazeera.net/encyclopedia/2026/10/18/%d8%a7%d9%84%d8%ba%d9%88%d8%a7%d8%b5%d8%a9-%d8%b1%d9%8a%d9%85%d9%88%d8%b3-600-%d8%b9%d9%8a%d9%86-%d8%a7%d9%84%d9%85%d8%ad%d9%8a%d8%b7-%d8%a7%d9%84%d9%85%d8%b3%d9%8a%d8%b1%d8%a9?traffic_source=rss",
-    "https://alfilahia.net/%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D9%88%D9%83%D9%88%D8%B1%D9%8A%D8%A7-%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8%D9%8A%D8%A9-%D8%AA%D8%B9%D8%B2%D8%B2%D8%A7%D9%86-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7/",
-    "https://www.jurist.org/news/2026/10/libyan-armed-forces-execute-31-after-unfair-military-trials-breaking-15-year-moratorium/",
     "https://www.arabnews.jp/en/japan/vice-foreign-minister-ozora-meets-ambassadors-of-tunisia-and-algeria-3000847",
-    "https://alwasat.ly/news/482128"
+    "https://www.aljazeera.net/encyclopedia/2026/10/20/%d9%85%d9%87%d8%b1%d8%af%d8%a7%d8%af-%d8%a3%d8%ae%d9%84%d8%a7%d9%82%d9%8a-%d9%83%d8%aa%d8%a7%d8%a8%d8%ac%d9%8a-%d9%88%d8%b2%d9%8a%d8%b1-%d8%a7%d9%84%d8%af%d9%81%d8%a7%d8%b9?traffic_source=rss",
+    "https://aerospaceglobalnews.com/news/somalia-jf17-saudi-pakistan/",
+    "https://warontherocks.com/how-sudan-became-a-laboratory-for-drone-warfare-thanks-to-abu-dhabi/",
+    "https://bdnews24.com/world/7e4w426j7y",
+    "https://www.unmannedairspace.info/counter-uas-systems-and-policies/bulgaria-plans-to-joins-nato-c-uas-initiative-following-black-sea-drone-attacks/",
+    "https://kfgo.com/2026/10/18/romanian-f-16-fighter-jets-shoot-down-two-drones-over-romanian-territorial-waters",
+    "https://www.diplomacyandlaw.com/post/black-sea-drone-attacks-shipping",
+    "https://ninanews.com/website/News/Details?Key=1320646",
+    "https://www.leconomistemaghrebin.com/2026/10/19/tunisie-guinee-bissau-vers-cooperation-renforcee-commerce-leducation/",
+    "https://www.kyivpost.com/post/87513",
+    "https://asharq.com/politics/199763/%D8%AD%D9%88%D8%A7%D8%AF%D8%AB-%D8%A3%D9%85%D9%86%D9%8A%D8%A9-%D8%AA%D9%87%D8%AF%D8%AF-%D8%A8%D8%A7%D9%86%D8%B2%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%AA%D9%88-%D8%A5%D9%84%D9%89-%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9-%D9%85%D8%B9-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7/",
+    "https://africa.businessinsider.com/local/markets/somalia-may-have-just-purchased-jf-17-thunder-fighter-jets-from-pakistan-once/51mggel",
+    "https://africa.businessinsider.com/local/markets/china-beats-the-us-in-africas-critical-minerals-race-but-congo-arrests-300-chinese/h72g29b",
+    "https://www.jurist.org/news/2026/10/libyan-armed-forces-execute-31-after-unfair-military-trials-breaking-15-year-moratorium/",
+    "https://therecord.media/european-defense-contractors-fancy-bear-espionage",
+    "https://united24media.com/world/bulgaria-asks-nato-for-aircraft-air-defenses-and-counter-drone-systems-as-black-sea-attacks-intensify-23513",
+    "https://african.business/2026/10/long-reads/critical-minerals-underpin-washingtons-nigeria-overtures",
+    "https://alikhbariya.net/stories/0e8b11a9-1179-4d94-a861-a95d43c51941/%D8%A7%D9%84%D8%AA%D9%88%D9%86%D8%B3%D9%8A%D9%88%D9%86-%D9%8A%D8%AE%D8%B1%D8%AC%D9%88%D9%86-%D9%81%D9%8A-%D8%A3%D9%83%D8%A8%D8%B1-%D8%A7%D8%AD%D8%AA%D8%AC%D8%A7%D8%AC%D8%A7%D8%AA-%D8%B9%D9%84%D9%89-%D8%AD%D9%83%D9%85-%D8%B3%D8%B9%D9%8A%D8%AF-%D9%85%D9%86%D8%B0-%D8%B3%D9%86%D9%88%D8%A7%D8%AA",
+    "https://african.business/2026/10/resources/critical-minerals-underpin-washingtons-nigeria-overtures",
+    "https://alikhbariya.net/stories/822cbe7e-234b-4029-b6d1-2a33ab11953e/%D8%AF%D9%8A%D8%AF%D8%A7%D9%86-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%AE%D8%B7%D8%B1-%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%8A%D8%AA%D9%83%D8%A7%D8%AB%D8%B1-%D8%B0%D8%A7%D8%AA%D9%8A%D8%A7-%D9%88%D9%8A%D9%87%D8%AF%D8%AF-%D8%A3%D9%85%D8%A7%D9%86-%D8%A7%D9%84%D8%A3%D8%AC%D9%87%D8%B2%D8%A9",
+    "https://www.orfonline.org/expert-speak/sahel-s-geopolitical-reset-and-russia-s-strategic-opening",
+    "https://alfilahia.net/%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D9%88%D9%83%D9%88%D8%B1%D9%8A%D8%A7-%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8%D9%8A%D8%A9-%D8%AA%D8%B9%D8%B2%D8%B2%D8%A7%D9%86-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7/",
+    "https://www.echoroukonline.com/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%AA%D8%A8%D9%88%D9%86-%D9%8A%D8%AC%D8%AF%D8%AF-%D8%A7%D9%84%D8%AA%D8%B2%D8%A7%D9%85-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D8%A8%D8%AD%D9%85%D8%A7%D9%8A",
+    "https://news50.sa/politics/eurofighter-typhoon-fighter-jet-capabilities",
+    "https://defence-industry.eu/sweden-plans-nato-ground-deployments-in-finland-and-latvia-and-continued-patriot-operations-in-poland-in-2027/",
+    "https://www.tsa-algerie.com/conflit-arabie-saoudite-houthis-legypte-sapprete-a-une-intervention-militaire-directe/",
+    "https://fr.apanews.net/society/tunisie-la-securite-alimentaire-au-defi-du-changement-climatique",
+    "https://www.algeriedirect.dz/%D9%82%D9%85%D8%A9-%D8%A7%D9%84%D9%82%D8%A7%D8%AF%D8%A9/",
+    "https://www.aljazeera.net/politics/2026/10/20/%d8%b9%d9%85%d9%84%d9%8a%d8%a9-%d9%83%d9%88%d8%b2%d9%85%d9%88%d8%b3-2612-%d9%87%d9%84-%d8%a3%d9%84%d8%ba%d9%89-%d8%a7%d9%84%d9%83%d8%b1%d9%85%d9%84%d9%8a%d9%86-%d9%87%d8%ac%d9%88%d9%85%d8%a7?traffic_source=rss",
+    "https://kfgo.com/2026/10/18/romanian-f-16-fighter-jets-shoot-down-two-drones-over-romanian-territorial-waters/",
+    "https://militarywatchmagazine.com/article/us-bringing-kc10-tankers-back-support-ally-refuelling",
+    "https://alwasat.ly/news/482128",
+    "https://www.aljazeera.net/encyclopedia/2026/10/18/%d8%a7%d9%84%d8%ba%d9%88%d8%a7%d8%b5%d8%a9-%d8%b1%d9%8a%d9%85%d9%88%d8%b3-600-%d8%b9%d9%8a%d9%86-%d8%a7%d9%84%d9%85%d8%ad%d9%8a%d8%b7-%d8%a7%d9%84%d9%85%d8%b3%d9%8a%d8%b1%d8%a9?traffic_source=rss",
+    "https://euperspectives.eu/2026/10/military-mobility-not-moving/"
   ],
   "event_driven_migration_v1": true
 }
