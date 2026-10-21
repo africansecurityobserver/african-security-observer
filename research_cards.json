@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T13:05:09+01:00",
+  "updated": "2026-10-21T15:28:26+01:00",
   "cards": [
     {
       "id": "c96234c57503",
@@ -678,5 +678,9 @@
     "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB6czhxck9PcFFkZDJ2T0hMbjR2X2FyX1lvTFBBa1FYS090bThCWlk1a1BsVUMySVdzbHRSU2pNT3JraGV0a1RiUGJSNjdjMWJP",
     "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5rMy1VWDFrelRpNnRwSC1jZFNETXRIMVY4WVFFOE05WnlKTEszc1A5TG4wWGt4MDlENllWa1BzNGlaZDg0R19VZG5mY3lGZ0YzdXZfMFZtaENyZw",
     "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9QMnZMYzZPX3N5SWh6V1JhV3d3bnRfQ0E5YXRUZGI3eEgwWGpGTkRjOFZsQkhfZjFqQ0RpaERQcDc5SzRva0Y2NUtWX3VaeENqTEFhSkU0dmFiZldmc1R5WFBPeVBZVWZn"
-  ]
+  ],
+  "failed_urls": {
+    "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBoLXF5ZjlDQWhEcnRsdG1DQ2VEYjFMbkZyR2MwSXAwQm04dnQtLXA1ZDFxRUY5OVcyb04xRU9mVmZPQ1ZGY0g1a2J4UWxOUm1PU19KclZWWjA2SVFlaDNVV1k0XzE": "2026-10-21T15:27:48+01:00",
+    "https://news.google.com/rss/articles/CBMixwFBVV95cUxPclp4bHgyUTd4RGlVTXpSTzNZYlNZX3FRS3kzNWpOWGhqNVhhX04ybU1rYnNiaEhjcS1XbUN3TzhWaVBCcHFtTzJ3REFZNHprMmZwTEdPSEJ1UzNURDhlN2dROEk5VlQ2ZktsNzZWZzRaRVROTFpEWXVudU1CVDJ5LXVuV1k1bEpNXzI1LVQtb1dQRV9Yb2k4VVh0ZFMxd1NaSnFuWEFHa1QzZW1lMUlvUW5ndUZlemRGTlFrRFpaSmJzVkFmSmZN": "2026-10-21T15:28:08+01:00"
+  }
 }
