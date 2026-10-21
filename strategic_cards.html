@@ -107,6 +107,15 @@ function monthLabel(month){
 const n=Number(month);
 return monthNames[n-1]||month;
 }
+function weeklyCardTitle(card){
+const months=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','اكتوبر','نوفمبر','ديسمبر'];
+const parse=value=>String(value||'').split('-').map(Number);
+const a=parse(card.period_start),b=parse(card.period_end);
+if(a.length!==3||b.length!==3||!a.every(Number.isFinite)||!b.every(Number.isFinite))return 'بطاقة التقدير الاستراتيجي العالمي';
+if(a[0]===b[0]&&a[1]===b[1])return 'بطاقة التقدير الاستراتيجي العالمي للفترة من '+a[2]+' الى '+b[2]+' '+months[b[1]-1]+' '+b[0]+'.';
+if(a[0]===b[0])return 'بطاقة التقدير الاستراتيجي العالمي للفترة من '+a[2]+' '+months[a[1]-1]+' الى '+b[2]+' '+months[b[1]-1]+' '+b[0]+'.';
+return 'بطاقة التقدير الاستراتيجي العالمي للفترة من '+a[2]+' '+months[a[1]-1]+' '+a[0]+' الى '+b[2]+' '+months[b[1]-1]+' '+b[0]+'.';
+}
 function dateLabel(value){
 const p=String(value||'').split('-');
 if(p.length!==3)return value||'تاريخ غير معروف';
@@ -215,6 +224,7 @@ if(isWeekly){pageTitle.textContent='';pageDescription.textContent='';}
 let html='';
 if(!isWeekly)html+='<div class="export-tools"><button class="export-button" onclick="saveCardPdf()">حفظ البطاقة بصيغة PDF</button><button class="export-button word" onclick="saveCardWord()">تحميل البطاقة بصيغة Word</button></div>';
 html+='<div class="card-view">';
+if(isWeekly)html+='<h2 class="weekly-card-title" style="text-align:center;color:var(--navy);font-size:23px;margin:0 0 24px">'+esc(weeklyCardTitle(card))+'</h2>';
 if(!isWeekly){
 html+='<div class="card-head"><h2>'+esc(card.title||'تقدير استراتيجي')+'</h2>'+(card.subject?'<h3 style="margin:8px 0;color:var(--blue);font-size:19px">'+esc(card.subject)+'</h3>':'')+'<div class="period">'+esc(dateLabel(card.date))+(card.region?' — '+esc(card.region):'')+'</div></div>';
 if(card.summary)html+='<p style="font-weight:bold;margin-bottom:22px">'+esc(card.summary)+'</p>';
@@ -235,7 +245,7 @@ const card=currentCardData;
 const isWeekly=archiveType==='weekly'||card.kind==='weekly_assessment';
 const sections=(card.sections||[]).map(section=>'<h2 style="color:#102b46;border-right:4px solid #d7a849;padding:4px 10px">'+esc(section.heading||'')+'</h2><p style="line-height:2;white-space:pre-line">'+esc((section.text||'').replace(/\s*\[\d+\]/g,''))+'</p>').join('');
 const sources=!isWeekly&&(card.sources||[]).length?'<h2>المصادر</h2><ul>'+(card.sources||[]).map(s=>'<li>'+esc(s.title||s.url)+'<br>'+esc(s.url)+'</li>').join('')+'</ul>':'';
-const header=isWeekly?'':'<h1 style="color:#102b46">'+esc(card.title||'البطاقة الاستراتيجية')+'</h1>'+(card.subject?'<h2>'+esc(card.subject)+'</h2>':'')+'<p style="color:#687887">'+esc(dateLabel(card.date))+(card.region?' — '+esc(card.region):'')+'</p><p><b>'+esc(card.summary||'')+'</b></p>';
+const header=isWeekly?'<h1 style="color:#102b46;text-align:center">'+esc(weeklyCardTitle(card))+'</h1>':'<h1 style="color:#102b46">'+esc(card.title||'البطاقة الاستراتيجية')+'</h1>'+(card.subject?'<h2>'+esc(card.subject)+'</h2>':'')+'<p style="color:#687887">'+esc(dateLabel(card.date))+(card.region?' — '+esc(card.region):'')+'</p><p><b>'+esc(card.summary||'')+'</b></p>';
 const documentHtml='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>'+esc(isWeekly?'التقدير الاستراتيجي الأسبوعي':card.title||'البطاقة الاستراتيجية')+'</title></head><body dir="rtl" style="font-family:Tahoma,Arial,sans-serif;color:#172535;line-height:1.8">'+header+sections+sources+(isWeekly?'':'<p style="margin-top:24px;font-size:10pt;color:#687887">المرصد الإفريقي للأمن والدفاع</p>')+'</body></html>';
 const blob=new Blob(['\ufeff',documentHtml],{type:'application/msword;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');
 link.href=url;link.download='تقدير-استراتيجي-'+String(card.date||'').replace(/[^0-9-]/g,'')+'.doc';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
