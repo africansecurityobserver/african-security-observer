@@ -181,7 +181,7 @@ function showMonthCards(year,month){
 currentView='cards';selectedYear=String(year);selectedMonth=String(month);setBreadcrumb('cards');
 const y=findYear(year),m=y&&(y.months||[]).find(x=>String(x.month)===String(month));
 pageTitle.textContent='بطاقات '+monthLabel(month)+' '+year;
-pageDescription.textContent=archiveType==='research'?'اختر منشورًا لقراءة البطاقة المرتبطة به.':archiveType==='weekly'?'اختر التقدير الأسبوعي لقراءة الأقسام الثمانية والمصادر.':'اختر بطاقة من الأرشيف الإخباري السابق.';
+pageDescription.textContent=archiveType==='research'?'اختر منشورًا لقراءة البطاقة المرتبطة به.':archiveType==='weekly'?'اختر التقدير الأسبوعي لقراءة الأقسام الثمانية.':'اختر بطاقة من الأرشيف الإخباري السابق.';
 if(!m||!(m.cards||[]).length){content.innerHTML='<div class="empty">لا توجد بطاقات محفوظة في هذا الشهر.</div>';return;}
 const cards=[...m.cards].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.title||'').localeCompare(a.title||''));
 content.innerHTML='<div class="cards-grid">'+cards.map((c,i)=>'<button class="card-link" onclick="openArchivedCard('+i+')"><div class="card-date">'+esc(dateLabel(c.date))+'</div><div class="card-period">'+(c.slot==='morning'?'التقدير الاستراتيجي الصباحي':c.slot==='evening'?'التقدير الاستراتيجي المسائي':esc(c.kind_label||'تقدير استراتيجي'))+'</div><div class="card-subtitle">'+esc(c.subject||c.title||'')+'</div></button>').join('')+'</div>';
@@ -211,6 +211,7 @@ content.innerHTML='<div class="error">تعذر فتح هذه البطاقة. أ�
 function renderCard(card){
 currentCardData=card;
 const isWeekly=archiveType==='weekly'||card.kind==='weekly_assessment';
+if(isWeekly){pageTitle.textContent='';pageDescription.textContent='';}
 let html='';
 if(!isWeekly)html+='<div class="export-tools"><button class="export-button" onclick="saveCardPdf()">حفظ البطاقة بصيغة PDF</button><button class="export-button word" onclick="saveCardWord()">تحميل البطاقة بصيغة Word</button></div>';
 html+='<div class="card-view">';
