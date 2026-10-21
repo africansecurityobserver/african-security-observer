@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T09:51+01:00",
+  "updated": "2026-10-21T10:59+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 14,
+  "count": 23,
   "publications": [
     {
       "center": "معهد اليابان للشؤون الدولية (JIIA)",
@@ -678,6 +678,62 @@
       "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
     },
     {
+      "center": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
+      "center_short": "IISS",
+      "title": "Russia’s political and military network in Africa - The International Institute for Strategic Studies",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRFBCaERpWDZGVm5VUU9tcVRCTVpIZmhVdjhDUnRjdnFFeGxtLThwejMxLWNqM25NRExYd0xiU2JiaWRTelVVMmRCYzAxa3ZwZklXUDNkbVhpVllXWFRGZWg5M3FwdnMxbDNFZ1RrUVVMMWxZckVtNEdxeHdwYk04ZDVGS01Wdm03bG4wWEk1MzJTT2xkc2paTDFQZElKRUtHaFVqZkR1cjBPUm16RklZ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-20T17:00+01:00",
+      "date": "2026-10-20",
+      "source": "The International Institute for Strategic Studies",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPRFBCaERpWDZGVm5VUU9tcVRCTVpIZmhVdjhDUnRjdnFFeGxtLThwejMxLWNqM25NRExYd0xiU2JiaWRTelVVMmRCYzAxa3ZwZklXUDNkbVhpVllXWFRGZWg5M3FwdnMxbDNFZ1RrUVVMMWxZckVtNEdxeHdwYk04ZDVGS01Wdm03bG4wWEk1MzJTT2xkc2paTDFQZElKRUtHaFVqZkR1cjBPUm16RklZ?oc=5\" target=\"_blank\">Russia’s political and military network in Africa</a> <font color=\"#6f6f6f\">The International Institute for Strategic Studies</font>",
+      "center_site": "https://iiss.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الشبكة السياسية والعسكرية الروسية في أفريقيا - المعهد الدولي للدراسات الاستراتيجية"
+    },
+    {
+      "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
+      "center_short": "SWP",
+      "title": "Sea Lanes at Risk, Maritime Order under Threat. Between Collective Defence and Global Power Projection - Stiftung Wissenschaft und Politik (SWP)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPY1JCdlRBOGtySFRGRGV0alE5VXVsY045bHV3VGtlQXRmLV9fMUhGZ1YybkhrdC0tWE5qdi1QUkQzSDZ4UGFWMWN4a1R4cTJJbG9QM3JULWlzUXkzYkRYcmlGOW5LSktUbkJ4TmFxalJfM2NrV0dBOXJmN19tWmZ5SkpBRmJZaUNjaXlzeFU2Q08?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-15T19:56+01:00",
+      "date": "2026-10-15",
+      "source": "Stiftung Wissenschaft und Politik (SWP)",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxPY1JCdlRBOGtySFRGRGV0alE5VXVsY045bHV3VGtlQXRmLV9fMUhGZ1YybkhrdC0tWE5qdi1QUkQzSDZ4UGFWMWN4a1R4cTJJbG9QM3JULWlzUXkzYkRYcmlGOW5LSktUbkJ4TmFxalJfM2NrV0dBOXJmN19tWmZ5SkpBRmJZaUNjaXlzeFU2Q08?oc=5\" target=\"_blank\">Sea Lanes at Risk, Maritime Order under Threat. Between Collective Defence and Global Power Projection</a> <font color=\"#6f6f6f\">Stiftung Wissenschaft und Politik (SWP)</font>",
+      "center_site": "https://swp-berlin.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الممرات البحرية في خطر، والنظام البحري تحت التهديد. بين الدفاع الجماعي وإسقاط القوة العالمية - Stiftung Wissenschaft und Politik (SWP)"
+    },
+    {
+      "center": "معهد كوينسي للحكم المسؤول",
+      "center_short": "Quincy Institute",
+      "title": "War in Ethiopia Begins Anew: Stakes for Africa and Beyond - Quincy Institute for Responsible Statecraft",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPWWQ2ZC02cE5fOV8xUWhvajVnbnlhZlhOeUsxWklfeGlpQnE5TWl2WXFCZkJNME8zX3cxVFJZcUx2b3dhd2ZPb1A0bktjX2c3ajVKWWRIWG9vREdSb1hGYUI4Qk16YWNDbFZrSFd4WjZsaGh4QVpJYnd6NXdYSGJrdkhRNEpaanJ5b3FhTmxCcS0?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-15T17:54+01:00",
+      "date": "2026-10-15",
+      "source": "Quincy Institute for Responsible Statecraft",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxPWWQ2ZC02cE5fOV8xUWhvajVnbnlhZlhOeUsxWklfeGlpQnE5TWl2WXFCZkJNME8zX3cxVFJZcUx2b3dhd2ZPb1A0bktjX2c3ajVKWWRIWG9vREdSb1hGYUI4Qk16YWNDbFZrSFd4WjZsaGh4QVpJYnd6NXdYSGJrdkhRNEpaanJ5b3FhTmxCcS0?oc=5\" target=\"_blank\">War in Ethiopia Begins Anew: Stakes for Africa and Beyond</a> <font color=\"#6f6f6f\">Quincy Institute for Responsible Statecraft</font>",
+      "center_site": "https://quincyinst.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الحرب في إثيوبيا تبدأ من جديد: رهانات لأفريقيا وما وراءها - معهد كوينسي لفن الدولة المسؤول"
+    },
+    {
+      "center": "معهد العلاقات الدولية والاستراتيجية (IRIS)",
+      "center_short": "IRIS",
+      "title": "Cyberattacks on the Supply Chain: What Are the Implications for Food Security? - IRIS - Institut de relations internationales et stratégiques",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNaGx0Tkh2TTlDX0xXemd1ODBuWGIxOHR2SjhkNWRNTHFwR1JQVVh0dmdlRjFGMXJubFF3SXVWRU5DeExHZlVnckJhLTRoQThCZ294RFVFazJKU0ZjRXVoenRQTFdNaU1JRmR2VjUzUFBGaHpNelBxdjNkM25BZGJ2N2FSbnF3Zjd5NlZRMS1tU0NSdXhzZ2lnZldrUy1rTk9CbFV1bzhIb0NoUFdK?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-15T08:00+01:00",
+      "date": "2026-10-15",
+      "source": "IRIS - Institut de relations internationales et stratégiques",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNaGx0Tkh2TTlDX0xXemd1ODBuWGIxOHR2SjhkNWRNTHFwR1JQVVh0dmdlRjFGMXJubFF3SXVWRU5DeExHZlVnckJhLTRoQThCZ294RFVFazJKU0ZjRXVoenRQTFdNaU1JRmR2VjUzUFBGaHpNelBxdjNkM25BZGJ2N2FSbnF3Zjd5NlZRMS1tU0NSdXhzZ2lnZldrUy1rTk9CbFV1bzhIb0NoUFdK?oc=5\" target=\"_blank\">Cyberattacks on the Supply Chain: What Are the Implications for Food Security?</a> <font color=\"#6f6f6f\">IRIS - Institut de relations internationales et stratégiques</font>",
+      "center_site": "https://iris-france.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الهجمات الإلكترونية على سلسلة التوريد: ما هي الآثار المترتبة على الأمن الغذائي ؟ - IRIS - معهد العلاقات الدولية والاستراتيجية"
+    },
+    {
       "center": "المجلس الأطلسي",
       "center_short": "Atlantic Council",
       "title": "Dispatch from Moldova: How to restore NATO’s deterrence against Russia’s escalating drone attacks - Atlantic Council",
@@ -690,6 +746,34 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "برقية من مولدوفا: كيفية استعادة ردع الناتو ضد هجمات روسيا المتصاعدة بالطائرات بدون طيار - المجلس الأطلسي"
+    },
+    {
+      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+      "center_short": "ISS Africa",
+      "title": "How Africa is becoming a new theatre for adaptive drone warfare - ISS Africa",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPQVZDanhVOWlOLXFzdmVJTGJYS3IzOUlWM1JqdGd2ODN5MzRJZ0I2U1NlM1Jqa3R0RWN2ZTRGVGZoaTc2bTBieEJabWZGMWN3NmtHcmcyRzJqaElENnFpeVBIOXB0d3VvbU13QW9zSVdyNlZEbzJjVnZKNk1BQ2taZjVKXzZBSDlueklKQkVuM2FlVnQ0WWhiOUZzQjY5ZnpHT1JYNFdCTzRqYU5q?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-14T16:31+01:00",
+      "date": "2026-10-14",
+      "source": "ISS Africa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPQVZDanhVOWlOLXFzdmVJTGJYS3IzOUlWM1JqdGd2ODN5MzRJZ0I2U1NlM1Jqa3R0RWN2ZTRGVGZoaTc2bTBieEJabWZGMWN3NmtHcmcyRzJqaElENnFpeVBIOXB0d3VvbU13QW9zSVdyNlZEbzJjVnZKNk1BQ2taZjVKXzZBSDlueklKQkVuM2FlVnQ0WWhiOUZzQjY5ZnpHT1JYNFdCTzRqYU5q?oc=5\" target=\"_blank\">How Africa is becoming a new theatre for adaptive drone warfare</a> <font color=\"#6f6f6f\">ISS Africa</font>",
+      "center_site": "https://issafrica.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "كيف أصبحت أفريقيا مسرحًا جديدًا لحرب الطائرات بدون طيار التكيفية - ISS Africa"
+    },
+    {
+      "center": "معهد الدراسات الأمنية والتنمية (ISDP)",
+      "center_short": "ISDP",
+      "title": "Genevieve Donnellon-May was interviewed by Deutsche Welle about food security in China - Institute for Security & Development Policy",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNejEzYlZFcFlOQzc3STlOeW9oZUxRcnB2RWxMQ05sTUMwNnZtU2RndVpCUTZUd09SVkg1eEUzeUZVbHJOSXBmVlpjMzZzMXJKdEN4eDJoemlxSmZ6bWp1RjAwejMtdC1tc1hjd1FYVmZBRUtMclVoLVlaQjM5MXRrc0dLenFoV3ljVmxhUWxqU1Bfc2xCRzJySXRPSEJHVEprcnpwRW16ZDZ6akFJdWdrWFh3?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-12T17:25+01:00",
+      "date": "2026-10-12",
+      "source": "Institute for Security & Development Policy",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNejEzYlZFcFlOQzc3STlOeW9oZUxRcnB2RWxMQ05sTUMwNnZtU2RndVpCUTZUd09SVkg1eEUzeUZVbHJOSXBmVlpjMzZzMXJKdEN4eDJoemlxSmZ6bWp1RjAwejMtdC1tc1hjd1FYVmZBRUtMclVoLVlaQjM5MXRrc0dLenFoV3ljVmxhUWxqU1Bfc2xCRzJySXRPSEJHVEprcnpwRW16ZDZ6akFJdWdrWFh3?oc=5\" target=\"_blank\">Genevieve Donnellon-May was interviewed by Deutsche Welle about food security in China</a> <font color=\"#6f6f6f\">Institute for Security & Development Policy</font>",
+      "center_site": "https://isdp.eu/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "أجرت دويتشه فيله مقابلة مع جينيفيف دونيلون ماي حول الأمن الغذائي في الصين - معهد سياسة الأمن والتنمية"
     },
     {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
@@ -718,6 +802,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "هل يمكن أن يؤدي القتال في إثيوبيا إلى اندلاع حرب إقليمية في القرن الإفريقي؟"
+    },
+    {
+      "center": "تشاتام هاوس",
+      "center_short": "Chatham House",
+      "title": "Towards just transition in Africa: Continental coordination on green financing and job creation - Chatham House",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNMExvXzRSeXZrVjFhWVp4MnRpUTlySmI2MWlfck1XdmVLc1R5aHlBVGJPRDBPam5wRzNMdlJOcTExc0ZvbWhNWVVvOVJJNEphbjdMTnhGSXVfbkI3N09LdnNDYUtFVWluOFpFekxEc01nMTdHbHlPeDNUZmVvOGdYQ1hIWkEwUDhYQmxzWkdQaUNaR1A4bXJnaTFpdW4xeE44VkRyaGR3Nno5eUxuY1lzbTQ0dkRJUVFpQ29LWloxb3NMYXJ6?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-08T08:00+01:00",
+      "date": "2026-10-08",
+      "source": "Chatham House",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNMExvXzRSeXZrVjFhWVp4MnRpUTlySmI2MWlfck1XdmVLc1R5aHlBVGJPRDBPam5wRzNMdlJOcTExc0ZvbWhNWVVvOVJJNEphbjdMTnhGSXVfbkI3N09LdnNDYUtFVWluOFpFekxEc01nMTdHbHlPeDNUZmVvOGdYQ1hIWkEwUDhYQmxzWkdQaUNaR1A4bXJnaTFpdW4xeE44VkRyaGR3Nno5eUxuY1lzbTQ0dkRJUVFpQ29LWloxb3NMYXJ6?oc=5\" target=\"_blank\">Towards just transition in Africa: Continental coordination on green financing and job creation</a> <font color=\"#6f6f6f\">Chatham House</font>",
+      "center_site": "https://chathamhouse.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "نحو انتقال عادل في أفريقيا: التنسيق القاري بشأن التمويل الأخضر وخلق فرص العمل - تشاتام هاوس"
     },
     {
       "center": "وكالة أبحاث الدفاع السويدية (FOI)",
@@ -762,6 +860,20 @@
       "title_ar": "شبكات التجنيد العسكري الروسية تستغل منصات التكنولوجيا الغربية"
     },
     {
+      "center": "مركز برشلونة للشؤون الدولية",
+      "center_short": "CIDOB",
+      "title": "A Southern European approach to the New European Security Strategy - CIDOB",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQUzNGbHZhODRyZUQyaVBKTlg4bDhaYTQ1Wl9YUDB5S1BBU05uSEpEWXFHQVhGd3ZiM3JzaTdjdDlaOU9nclR3TnFONTlnOFBwbXJTMDQzaUZST184MXAxbGNRU2VjMjFkd3Y1enBWaE50WHJKUUl5WGNNSUtXQk1KR0xjQThFR0dyTXd3OTFGOEhnLVpQaDlnb09XTmV6VGprbzd4V3lVcURaeWhyZVE5SnpMSmp1Z0k0SVdGdVEyMk9mTWNCdzJYbkpOb2FFN25wLS1UVTQyNVVQWkJFNlVVM2dR?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-06T08:00+01:00",
+      "date": "2026-10-06",
+      "source": "CIDOB",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxQUzNGbHZhODRyZUQyaVBKTlg4bDhaYTQ1Wl9YUDB5S1BBU05uSEpEWXFHQVhGd3ZiM3JzaTdjdDlaOU9nclR3TnFONTlnOFBwbXJTMDQzaUZST184MXAxbGNRU2VjMjFkd3Y1enBWaE50WHJKUUl5WGNNSUtXQk1KR0xjQThFR0dyTXd3OTFGOEhnLVpQaDlnb09XTmV6VGprbzd4V3lVcURaeWhyZVE5SnpMSmp1Z0k0SVdGdVEyMk9mTWNCdzJYbkpOb2FFN25wLS1UVTQyNVVQWkJFNlVVM2dR?oc=5\" target=\"_blank\">A Southern European approach to the New European Security Strategy</a> <font color=\"#6f6f6f\">CIDOB</font>",
+      "center_site": "https://cidob.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "نهج جنوب أوروبا للاستراتيجية الأمنية الأوروبية الجديدة - CIDOB"
+    },
+    {
       "center": "مؤسسة أبحاث المراقب (ORF)",
       "center_short": "ORF",
       "title": "Whither a New European Security Architecture? - orfonline.org",
@@ -774,6 +886,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "أين هي البنية الأمنية الأوروبية الجديدة ؟ - orfonline.org"
+    },
+    {
+      "center": "مركز الأمن الأمريكي الجديد (CNAS)",
+      "center_short": "CNAS",
+      "title": "The Pentagon’s Plan for a Smaller Group of NATO Allies - Center for a New American Security | CNAS",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOaThaMmZwQnRxNmdMVDBZZHNaVVh6by1wNW1QQUpMMjZEUFAtM2x5SDE2aDhBTXZvWGZtd1ZlbHpyU3I2eW1OZDNtbnI4RGpDMnp3QU5GQUMzczhvbGI4Nl9IcFUtZUZXOUE3ODFUS3J1cVBVNlJoMXBsY0lQM2VBMGhkWmh1TnAtcXR1aHppUHZHQ0lhdlVMNw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-03T08:00+01:00",
+      "date": "2026-10-03",
+      "source": "Center for a New American Security | CNAS",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOaThaMmZwQnRxNmdMVDBZZHNaVVh6by1wNW1QQUpMMjZEUFAtM2x5SDE2aDhBTXZvWGZtd1ZlbHpyU3I2eW1OZDNtbnI4RGpDMnp3QU5GQUMzczhvbGI4Nl9IcFUtZUZXOUE3ODFUS3J1cVBVNlJoMXBsY0lQM2VBMGhkWmh1TnAtcXR1aHppUHZHQ0lhdlVMNw?oc=5\" target=\"_blank\">The Pentagon’s Plan for a Smaller Group of NATO Allies</a> <font color=\"#6f6f6f\">Center for a New American Security | CNAS</font>",
+      "center_site": "https://cnas.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "خطة البنتاغون لمجموعة أصغر من حلفاء الناتو - مركز للأمن الأمريكي الجديد | CNAS"
     },
     {
       "center": "معهد كلينغندايل",
