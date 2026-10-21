@@ -548,16 +548,12 @@ def main():
         # Google News RSS supports after: dates; this gives the initial
         # 1–13 October backfill and then includes newer posts on every run.
         after_date = (cutoff.date() - timedelta(days=1)).isoformat()
-        # Combine each center's core themes with Tunisia's strategic
-        # neighbourhood so regional work is discoverable across all providers.
-        regional_terms = (
-            "Tunisia OR Tunisian OR Libya OR Libyan OR Algeria OR Algerian "
-            "OR Morocco OR Maghreb OR Mediterranean OR Sahel OR North Africa"
-        )
-        query = (
-            f"site:{center['domain']} ({center['query']} OR {regional_terms}) "
-            f"after:{after_date}"
-        )
+        # Search the publisher's domain broadly, then apply the local
+        # strategic-relevance classifier below. Combining long OR expressions
+        # with site: filters made Google News omit many recent publisher items.
+        # A domain-wide date search is more reliable for discovering today's
+        # publications; the classifier still excludes irrelevant material.
+        query = f"site:{center['domain']} after:{after_date}"
         params = {"q": query, "hl": "en-US", "gl": "US", "ceid": "US:en"}
         try:
             response = session.get("https://news.google.com/rss/search", params=params, timeout=22)
