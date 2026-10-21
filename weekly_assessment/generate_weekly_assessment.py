@@ -20,7 +20,8 @@ ARCHIVE = ROOT / "weekly_assessments" / "archive"
 INDEX = ARCHIVE / "index.json"
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; AfricanSecurityObserver/1.0)"}
 WINDOW_DAYS = 8
-MAX_ITEMS = 55
+MAX_ITEMS_PER_REGION = 12
+MAX_ITEMS = 84
 REGIONS = [
     ("تونس وشمال إفريقيا", '"Tunisia" OR "Libya" OR "Algeria" OR "Morocco" OR "North Africa" security military defense'),
     ("بقية دول إفريقيا", 'Africa OR Sahel OR Sudan OR Somalia OR Ethiopia OR Congo military security conflict'),
@@ -47,34 +48,56 @@ def parse_date(value):
         return None
 
 def fetch_items():
+    """Collect a balanced set of recent stories by region and topic, not just the newest global headlines."""
     cutoff = datetime.now(TZ) - timedelta(days=WINDOW_DAYS)
     items, seen = [], set()
+    unrest_queries = {
+        "تونس وشمال إفريقيا": 'Tunisia OR Libya OR Algeria OR Morocco OR Egypt OR "North Africa"',
+        "بقية دول إفريقيا": 'Sahel OR Sudan OR Somalia OR Ethiopia OR Congo OR Nigeria OR "West Africa"',
+        "أوروبا": 'France OR Germany OR Britain OR UK OR Belgium OR Spain OR Italy OR Portugal OR Europe',
+        "الشرق الأوسط": '"Middle East" OR Israel OR Iran OR Lebanon OR Syria OR Iraq OR Yemen OR Gulf',
+        "الولايات المتحدة": '"United States" OR US OR America OR Washington',
+        "بقية مناطق العالم": 'China OR Taiwan OR Japan OR Korea OR India OR Pakistan OR Brazil OR Mexico',
+        "الأمن والتحالفات الدولية": 'NATO OR "United Nations" OR "European Union" OR "African Union" OR "security alliance"'
+    }
+    unrest_topics = '(protest OR protests OR demonstration OR demonstrations OR riot OR riots OR strike OR strikes OR "civil unrest" OR "public disorder" OR "political crisis" OR terrorism OR coup OR "state of emergency")'
     for region, query in REGIONS:
-        url = "https://news.google.com/rss/search?q=" + quote_plus(query + " when:8d") + "&hl=en-US&gl=US&ceid=US:en"
-        try:
-            response = requests.get(url, headers=HEADERS, timeout=18)
-            response.raise_for_status()
-            root = ET.fromstring(response.content)
-            for node in root.findall(".//item"):
-                title = clean(node.findtext("title"))
-                link = clean(node.findtext("link"))
-                description = clean(node.findtext("description"))
-                source_node = node.find("source")
-                source = clean(source_node.text if source_node is not None else "")
-                published = clean(node.findtext("pubDate"))
-                dt = parse_date(published)
-                if not title or not link or (dt and dt < cutoff):
-                    continue
-                key = link.split("&")[0]
-                if key in seen:
-                    continue
-                seen.add(key)
-                items.append({"region": region, "title": title, "summary": description[:900],
-                              "url": link, "source": source or "Google News RSS",
-                              "published": dt.isoformat(timespec="minutes") if dt else published})
-        except Exception as exc:
-            print(f"RSS query failed ({region}): {type(exc).__name__}: {exc}")
+        # Run a general security/defense search and a separate domestic-instability search
+        # so civil unrest is not crowded out by military headlines.
+        regional_items = []
+        queries = [query, f'{unrest_queries.get(region, query)} {unrest_topics}']
+        for search_query in queries:
+            url = "https://news.google.com/rss/search?q=" + quote_plus(search_query + " when:8d") + "&hl=en-US&gl=US&ceid=US:en"
+            try:
+                response = requests.get(url, headers=HEADERS, timeout=18)
+                response.raise_for_status()
+                root = ET.fromstring(response.content)
+                for node in root.findall(".//item"):
+                    title = clean(node.findtext("title"))
+                    link = clean(node.findtext("link"))
+                    description = clean(node.findtext("description"))
+                    source_node = node.find("source")
+                    source = clean(source_node.text if source_node is not None else "")
+                    published = clean(node.findtext("pubDate"))
+                    dt = parse_date(published)
+                    if not title or not link or (dt and dt < cutoff):
+                        continue
+                    key = link.split("&")[0]
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    regional_items.append({"region": region, "title": title, "summary": description[:900],
+                                           "url": link, "source": source or "Google News RSS",
+                                           "published": dt.isoformat(timespec="minutes") if dt else published})
+            except Exception as exc:
+                print(f"RSS query failed ({region}; {search_query[:70]}): {type(exc).__name__}: {exc}")
+        regional_items.sort(key=lambda x: x["published"], reverse=True)
+        if len(regional_items) > MAX_ITEMS_PER_REGION:
+            print(f"Regional source cap applied ({region}): {len(regional_items)} -> {MAX_ITEMS_PER_REGION}")
+        items.extend(regional_items[:MAX_ITEMS_PER_REGION])
     items.sort(key=lambda x: x["published"], reverse=True)
+    print("Regional source distribution: " + ", ".join(
+        f"{region}={sum(1 for item in items if item['region'] == region)}" for region, _ in REGIONS))
     return items[:MAX_ITEMS]
 
 def load_index():
@@ -126,8 +149,11 @@ def main():
         return
     items = fetch_items()
     regions_present = {item["region"] for item in items}
-    if len(items) < 12 or len(regions_present) < 5:
+    if len(items) < 20 or len(regions_present) < 5:
         raise RuntimeError(f"Insufficient current source material: {len(items)} items across {len(regions_present)} regions; refusing to publish a weak assessment.")
+    missing_core_regions = [region for region in ("تونس وشمال إفريقيا", "بقية دول إفريقيا", "أوروبا", "الشرق الأوسط", "بقية مناطق العالم") if region not in regions_present]
+    if missing_core_regions:
+        raise RuntimeError(f"Missing source coverage for core regions: {missing_core_regions}; refusing to publish an assessment with geographic blind spots.")
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         raise RuntimeError("GEMINI_API_KEY is missing; no assessment was published.")
