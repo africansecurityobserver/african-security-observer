@@ -43,6 +43,8 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.5-flash-lite
+          # Rebuild the current card after generator changes; scheduled runs preserve existing cards.
+          FORCE_REGENERATE: ${{ github.event_name == 'push' && '1' || '0' }}
         run: python -u weekly_assessment/generate_weekly_assessment.py
       - name: Commit and publish weekly assessment
         run: |
