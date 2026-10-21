@@ -81,6 +81,7 @@ body *{visibility:hidden!important}
 <footer>المرصد الإفريقي للأمن والدفاع</footer>
 <script>
 const newsIndexUrl='./strategic_cards/archive/index.json';
+const weeklyIndexUrl='./weekly_assessments/archive/index.json';
 const researchIndexUrl='./research_cards/archive/index.json';
 const content=document.getElementById('content');
 const pageTitle=document.getElementById('pageTitle');
@@ -114,7 +115,7 @@ return Number(p[2])+' '+monthLabel(p[1])+' '+p[0];
 function setBreadcrumb(level){
 let html='<button onclick="showRoot()">التقديرات الاستراتيجية</button>';
 if(level!=='root'){
-html+='<span>‹</span><button onclick="showYears()">'+(archiveType==='research'?'التقديرات الاستراتيجية من مراكز البحث':'التقديرات الاستراتيجية من مصدر إخباري')+'</button>';
+html+='<span>‹</span><button onclick="showYears()">'+(archiveType==='research'?'منشورات مراكز البحث':archiveType==='weekly'?'التقدير الاستراتيجي الأسبوعي':'أرشيف البطاقات الاستراتيجية الإخبارية السابقة')+'</button>';
 }
 if(level!=='years'&&selectedYear){
 html+='<span>‹</span><button onclick="showMonths(\''+selectedYear+'\')">'+esc(selectedYear)+'</button>';
@@ -132,17 +133,18 @@ setBreadcrumb('root');
 pageTitle.textContent='التقديرات الاستراتيجية';
 pageDescription.textContent='اختر نوع البطاقات التي تريد تصفحها.';
 content.innerHTML='<div class="folder-grid">'+
-'<button class="folder" onclick="openArchive(\'news\')"><div class="folder-icon">📰</div><div class="folder-title">التقديرات الاستراتيجية من مصدر إخباري</div><div class="folder-meta">بطاقات تُنشأ عند ورود خبر استراتيجي مهم أو خبر تسلّح</div></button>'+
-'<button class="folder" onclick="openArchive(\'research\')"><div class="folder-icon">📚</div><div class="folder-title">التقديرات الاستراتيجية من مراكز البحث</div><div class="folder-meta">تلخيصات منشورات مراكز الدراسات الاستراتيجية</div></button>'+
+'<button class="folder" onclick="openArchive(\'weekly\')"><div class="folder-icon">🌐</div><div class="folder-title">التقدير الاستراتيجي الأسبوعي</div><div class="folder-meta">قراءة عالمية موسعة كل يوم أحد، من تونس وشمال إفريقيا إلى بقية العالم</div></button>'+
+'<button class="folder" onclick="openArchive(\'news\')"><div class="folder-icon">🗂️</div><div class="folder-title">أرشيف البطاقات الاستراتيجية الإخبارية السابقة</div><div class="folder-meta">البطاقات السابقة المنشأة انطلاقًا من الأخبار، محفوظة كما هي</div></button>'+
+'<button class="folder" onclick="openArchive(\'research\')"><div class="folder-icon">📚</div><div class="folder-title">منشورات مراكز البحث</div><div class="folder-meta">قسم مستقل لمنشورات مراكز الدراسات، دون تغيير في آلية عمله</div></button>'+
 '</div>';
 }
 async function openArchive(type){
 archiveType=type;
-archiveBase=type==='research'?'./research_cards/archive/':'./strategic_cards/archive/';
+archiveBase=type==='research'?'./research_cards/archive/':type==='weekly'?'./weekly_assessments/archive/':'./strategic_cards/archive/';
 currentView='years';selectedYear=null;selectedMonth=null;
 content.innerHTML='<div class="loading">جارٍ تحميل الأرشيف…</div>';
 try{
-const url=(type==='research'?researchIndexUrl:newsIndexUrl)+'?t='+Date.now();
+const url=(type==='research'?researchIndexUrl:type==='weekly'?weeklyIndexUrl:newsIndexUrl)+'?t='+Date.now();
 const response=await fetch(url,{cache:'no-store'});
 if(!response.ok)throw new Error('Archive index unavailable');
 archiveIndex=await response.json();
@@ -156,7 +158,7 @@ content.innerHTML='<div class="error">تعذر تحميل هذا الأرشيف 
 function showYears(){
 currentView='years';
 selectedYear=null;selectedMonth=null;setBreadcrumb('years');
-pageTitle.textContent=archiveType==='research'?'التقديرات الاستراتيجية من مراكز البحث':'التقديرات الاستراتيجية من مصدر إخباري';
+pageTitle.textContent=archiveType==='research'?'منشورات مراكز البحث':archiveType==='weekly'?'التقدير الاستراتيجي الأسبوعي':'أرشيف البطاقات الاستراتيجية الإخبارية السابقة';
 pageDescription.textContent='اختر السنة، ثم الشهر، لعرض البطاقات المحفوظة.';
 if(!archiveIndex.years.length){content.innerHTML='<div class="empty">لا توجد بطاقات مؤرشفة في هذا الملف حتى الآن.</div>';return;}
 content.innerHTML='<div class="folder-grid">'+archiveIndex.years.map(y=>{
@@ -169,7 +171,7 @@ currentView='months';
 selectedYear=String(year);selectedMonth=null;setBreadcrumb('months');
 const entry=findYear(year);
 pageTitle.textContent='السنة '+year;
-pageDescription.textContent=archiveType==='research'?'بطاقات استراتيجية مستخلصة من منشورات مراكز البحث.':'بطاقات استراتيجية مستخلصة من الأخبار اليومية.';
+pageDescription.textContent=archiveType==='research'?'منشورات وتحليلات مراكز البحث كما كانت، دون تغيير في هذا القسم.':archiveType==='weekly'?'تقدير عالمي تحليلي موسع يغطي الأسبوع السابق في ثمانية أقسام مترابطة.':'أرشيف البطاقات السابقة المستخلصة من الأخبار اليومية.';
 if(!entry||!(entry.months||[]).length){content.innerHTML='<div class="empty">لا توجد أشهر مؤرشفة في هذه السنة.</div>';return;}
 content.innerHTML='<div class="folder-grid">'+entry.months.map(m=>{
 return '<button class="folder" onclick="showMonthCards(\''+esc(year)+'\',\''+esc(m.month)+'\')"><div class="folder-icon">📂</div><div class="folder-title">'+esc(monthLabel(m.month))+'</div><div class="folder-meta">'+(m.cards||[]).length+' بطاقة محفوظة</div></button>';
@@ -179,7 +181,7 @@ function showMonthCards(year,month){
 currentView='cards';selectedYear=String(year);selectedMonth=String(month);setBreadcrumb('cards');
 const y=findYear(year),m=y&&(y.months||[]).find(x=>String(x.month)===String(month));
 pageTitle.textContent='بطاقات '+monthLabel(month)+' '+year;
-pageDescription.textContent=archiveType==='research'?'اختر بطاقة لقراءة تلخيص النشرية الأصلية.':'اختر بطاقة لقراءة التحليل الاستراتيجي المستخلص من الأخبار.';
+pageDescription.textContent=archiveType==='research'?'اختر منشورًا لقراءة البطاقة المرتبطة به.':archiveType==='weekly'?'اختر التقدير الأسبوعي لقراءة الأقسام الثمانية والمصادر.':'اختر بطاقة من الأرشيف الإخباري السابق.';
 if(!m||!(m.cards||[]).length){content.innerHTML='<div class="empty">لا توجد بطاقات محفوظة في هذا الشهر.</div>';return;}
 const cards=[...m.cards].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.title||'').localeCompare(a.title||''));
 content.innerHTML='<div class="cards-grid">'+cards.map((c,i)=>'<button class="card-link" onclick="openArchivedCard('+i+')"><div class="card-date">'+esc(dateLabel(c.date))+'</div><div class="card-period">'+(c.slot==='morning'?'التقدير الاستراتيجي الصباحي':c.slot==='evening'?'التقدير الاستراتيجي المسائي':esc(c.kind_label||'تقدير استراتيجي'))+'</div><div class="card-subtitle">'+esc(c.subject||c.title||'')+'</div></button>').join('')+'</div>';
@@ -233,7 +235,7 @@ async function loadArchive(){
 const params=new URLSearchParams(window.location.search);
 const requestedType=params.get('type');
 const requestedCard=params.get('card');
-if(requestedType==='news'||requestedType==='research'){
+if(requestedType==='news'||requestedType==='research'||requestedType==='weekly'){
 await openArchive(requestedType);
 if(requestedCard&&requestedType==='research'){
 const target=requestedCard;
@@ -263,7 +265,7 @@ loadArchive();
 async function refreshLiveData(){
 try{
 if(currentView==='root')return;
-const activeIndexUrl=(archiveType==='research'?researchIndexUrl:newsIndexUrl);
+const activeIndexUrl=(archiveType==='research'?researchIndexUrl:archiveType==='weekly'?weeklyIndexUrl:newsIndexUrl);
 const response=await fetch(activeIndexUrl+'?t='+Date.now(),{cache:'no-store'});
 if(!response.ok)return;
 const freshIndex=await response.json();
