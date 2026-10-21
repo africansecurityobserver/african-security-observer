@@ -373,6 +373,13 @@ def get_text(url, center_site="", title=""):
             except Exception as exc:
                 print(f"Official full-text candidate failed ({candidate_url}): {type(exc).__name__}")
 
+        # If the official page already exposes a substantial article, the
+        # official download links have been checked above; avoid wasting several
+        # minutes searching the whole web for a duplicate copy of the same text.
+        if len(page_text.strip()) >= 5000:
+            print(f"Using substantial official publication text ({len(page_text.strip())} chars): {page_url}")
+            return page_url, page_text
+
         # Deep fallback search: do not declare full text unavailable merely because
         # the first publisher page has no obvious PDF. Search for the exact title,
         # PDF variants, and repository copies; inspect actual candidate pages/files,
