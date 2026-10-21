@@ -535,6 +535,8 @@ def main():
     data=load(DATA,{"updated":None,"cards":[],"processed_urls":[]})
     if not isinstance(data,dict): data={"updated":None,"cards":[],"processed_urls":[]}
     data.setdefault("cards",[]); data.setdefault("processed_urls",[])
+    if not isinstance(data.get("failed_urls"), dict):
+        data["failed_urls"] = {}
 
     # Clean duplicates already stored from Google News locale variants.
     unique_cards = {}
@@ -584,6 +586,10 @@ def main():
     }) for card in data["cards"] if isinstance(card, dict)}
     candidates = []
     candidate_ids = set()
+    failed_urls = data["failed_urls"]
+    retry_window = timedelta(hours=12)
+    now_for_retry = datetime.now(TZ)
+    recently_failed_count = 0
     for publication in publications:
         if not isinstance(publication, dict) or not publication.get("url"):
             continue
@@ -593,6 +599,19 @@ def main():
         identity = publication_identity(publication)
         if url_key in known or (identity and identity in known_identities) or (identity and identity in candidate_ids):
             continue
+        # Do not let inaccessible full-text pages monopolize every small batch.
+        # Failed publications remain pending, but are retried after a 12-hour cooldown.
+        last_attempt = failed_urls.get(url_key)
+        if last_attempt:
+            try:
+                last_attempt_dt = datetime.fromisoformat(str(last_attempt))
+                if last_attempt_dt.tzinfo is None:
+                    last_attempt_dt = last_attempt_dt.replace(tzinfo=TZ)
+                if last_attempt_dt > now_for_retry - retry_window:
+                    recently_failed_count += 1
+                    continue
+            except (TypeError, ValueError):
+                pass
         candidates.append(publication)
         known.add(url_key)
         if identity:
@@ -607,9 +626,10 @@ def main():
         ))
     candidates=ordered
     total_candidates = len(candidates)
-    # Work in small batches so a difficult article cannot block the entire queue.
-    # Unprocessed publications remain absent from processed_urls and are retried
-    # automatically by the next scheduled run.
+    if recently_failed_count:
+        print(f"Deferred {recently_failed_count} recently failed publications until their retry cooldown expires.")
+    # Work in small batches. Recent failures are deferred so the queue advances
+    # to other publications; they remain pending and are retried after 12 hours.
     max_per_run = max(1, int(os.getenv("MAX_RESEARCH_CARDS_PER_RUN", "2")))
     candidates = candidates[:max_per_run]
     if total_candidates > len(candidates):
@@ -636,6 +656,9 @@ def main():
     for p in candidates:
         title=clean(p.get("title")); title_ar=clean(p.get("title_ar")); center=clean(p.get("center") or p.get("source") or "مركز بحثي")
         url=clean(p.get("url")); desc=clean(p.get("description")); published=clean(p.get("published") or p.get("date"))
+        # Record an attempt before network/model work so interrupted runs also
+        # get a cooldown instead of repeatedly selecting the same item.
+        data["failed_urls"][canonical_url(url)] = datetime.now(TZ).isoformat(timespec="seconds")
         resolved,body=get_text(url,clean(p.get("center_site")),title)
 
         # Hard rule: a strategic card may only be written from the publication's
@@ -705,7 +728,9 @@ publish boolean; introduction string; analysis_one, analysis_two, analysis_three
           "date":date,"published":published,"region":clean(p.get("relevance_label")),"summary":clean(out.get("summary")),
           "sections":sections,"sources":[{"title":f"{center} — {title}","url":resolved if resolved.startswith("http") else url}],
           "source_url":url,"source_original_url":resolved if resolved.startswith("http") else url,"path":path}
-        save(ARCHIVE/path,card); data["cards"].append(card); data["processed_urls"].append(canonical_url(url)); count+=1
+        save(ARCHIVE/path,card); data["cards"].append(card); data["processed_urls"].append(canonical_url(url))
+        data["failed_urls"].pop(canonical_url(url), None)
+        count+=1
         print("Published research card:",card["title"][:150])
     data["cards"]=sorted(data["cards"],key=lambda c:(c.get("date",""),c.get("title","")),reverse=True)
     data["processed_urls"]=list(dict.fromkeys(canonical_url(url) for url in data["processed_urls"] if url))
