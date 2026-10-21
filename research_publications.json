@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T11:19+01:00",
+  "updated": "2026-10-21T12:48+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 23,
+  "count": 24,
   "publications": [
     {
       "center": "معهد اليابان للشؤون الدولية (JIIA)",
@@ -900,6 +900,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "خطة البنتاغون لمجموعة أصغر من حلفاء الناتو - مركز للأمن الأمريكي الجديد | CNAS"
+    },
+    {
+      "center": "المعهد الجنوب إفريقي للشؤون الدولية (SAIIA)",
+      "center_short": "SAIIA",
+      "title": "2nd Africa Annual Conference on Credit Ratings Towards Developing African Capital Markets - SAIIA",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOaG5BZTl2YUxZLUEzY19NVlRNdUY2Y1BVbnZnTmlTNE9LV3ZEc3JrUG9PaTE4WVhrVVpVVFJETGZxb2tMT3l0SUNwZWVnaDgteWw5aWVSeTBRd0JOTklhZlQtRzBURDN4N1dIM0F2LXljUWpDWTZmc0tVWmVsLUdvdXpfOVIxOC1NSkNEN0wyeERtVnoxWlpIYjZoUXB3QTE4eXYzeHhyTGhFUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-02T14:44+01:00",
+      "date": "2026-10-02",
+      "source": "SAIIA",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOaG5BZTl2YUxZLUEzY19NVlRNdUY2Y1BVbnZnTmlTNE9LV3ZEc3JrUG9PaTE4WVhrVVpVVFJETGZxb2tMT3l0SUNwZWVnaDgteWw5aWVSeTBRd0JOTklhZlQtRzBURDN4N1dIM0F2LXljUWpDWTZmc0tVWmVsLUdvdXpfOVIxOC1NSkNEN0wyeERtVnoxWlpIYjZoUXB3QTE4eXYzeHhyTGhFUQ?oc=5\" target=\"_blank\">2nd Africa Annual Conference on Credit Ratings Towards Developing African Capital Markets</a> <font color=\"#6f6f6f\">SAIIA</font>",
+      "center_site": "https://saiia.org.za/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "المؤتمر السنوي الأفريقي الثاني حول التصنيفات الائتمانية نحو تطوير أسواق رأس المال الأفريقية - SAIIA"
     },
     {
       "center": "معهد كلينغندايل",
