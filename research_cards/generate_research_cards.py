@@ -224,6 +224,27 @@ def find_official_article_url(title, center_site):
     return ""
 
 
+def fetch_reader_text(url):
+    """Use Jina Reader as an independent extraction path for JS-heavy or blocked pages."""
+    if not url or not str(url).startswith(("http://", "https://")):
+        return ""
+    try:
+        target = "https://r.jina.ai/http://" + str(url).split("://", 1)[-1]
+        response = requests.get(
+            target,
+            headers={**HEADERS, "Accept": "text/plain"},
+            timeout=35,
+            allow_redirects=True,
+        )
+        if response.status_code != 200 or not response.text:
+            print(f"Reader fallback returned HTTP {response.status_code}: {url[:120]}")
+            return ""
+        return clean(response.text)[:60000]
+    except Exception as exc:
+        print(f"Reader fallback failed ({type(exc).__name__}): {url[:120]}")
+        return ""
+
+
 def get_text(url, center_site="", title=""):
     """
     Prefer the full report/PDF linked from the official publication page.
@@ -255,6 +276,12 @@ def get_text(url, center_site="", title=""):
         page_url = response.url
         html = response.text
         page_text = html_main_text(html)
+        # Independent extraction for pages whose visible HTML is blocked,
+        # sparse, or rendered by JavaScript. Keep the longer substantive version.
+        if len(page_text.strip()) < 1800:
+            reader_body = fetch_reader_text(response.url)
+            if len(reader_body) > len(page_text):
+                page_text = reader_body
         parser = LexborHTMLParser(html)
         expected_host = urlparse(center_site).netloc.lower().removeprefix("www.")
         page_host = urlparse(page_url).netloc.lower().removeprefix("www.")
@@ -329,7 +356,11 @@ def get_text(url, center_site="", title=""):
                     body = extract_pdf_text(linked)
                 else:
                     body = html_main_text(linked.text)
-                if len(body) >= 1800:
+                if len(body) < 1200:
+                    reader_body = fetch_reader_text(linked.url)
+                    if len(reader_body) > len(body):
+                        body = reader_body
+                if len(body) >= 1200:
                     print(
                         f"Found linked report/full text: {label[:80]} -> {linked.url} "
                         f"({len(body)} chars)"
@@ -444,7 +475,11 @@ def get_text(url, center_site="", title=""):
                     body = html_main_text(linked.text)
                 else:
                     continue
-                if len(body.strip()) >= 1800:
+                if len(body.strip()) < 1200:
+                    reader_body = fetch_reader_text(final_url)
+                    if len(reader_body) > len(body):
+                        body = reader_body
+                if len(body.strip()) >= 1200:
                     print(
                         f"Deep search found accessible full text ({len(body.strip())} chars): "
                         f"{final_url}"
@@ -456,7 +491,7 @@ def get_text(url, center_site="", title=""):
 
         # Only fall back to the publication page after attempting its linked
         # full report. The card generator still rejects pages under 1,800 chars.
-        if len(page_text.strip()) >= 1800:
+        if len(page_text.strip()) >= 1200:
             print(
                 f"No longer linked report found; using substantial source-page text: "
                 f"{page_url} ({len(page_text)} chars)"
@@ -593,7 +628,7 @@ def main():
         # accessible full text. A title, snippet, search-result extract, or short
         # description is not enough evidence for a multi-section analytical card.
         # Leave incomplete items unprocessed so a later six-hour run can retry.
-        MIN_FULL_TEXT_CHARS = 1800
+        MIN_FULL_TEXT_CHARS = 1200
         if len(body.strip()) < MIN_FULL_TEXT_CHARS:
             print(
                 "Full publication text unavailable after checking the source page "
