@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T03:47+01:00",
+  "updated": "2026-10-22T06:45+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 25,
+  "count": 26,
   "publications": [
     {
       "center": "معهد اليابان للشؤون الدولية (JIIA)",
@@ -704,6 +704,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الشبكة السياسية والعسكرية الروسية في أفريقيا - المعهد الدولي للدراسات الاستراتيجية"
+    },
+    {
+      "center": "معهد الشرق الأوسط",
+      "center_short": "Middle East Institute",
+      "title": "The ‘navalization’ of economic warfare sees trade routes become zones of force rather than rules - Middle East Institute",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNF96bFBQa0s0NWF2ekRIUldTZUk3THJ3VXc4TFpseGJBbi1YdmlrRms1NzVETVdzVnF3ZDRpTU9kWFhNbTdiU0hSdllUUU12NHhuYWRQaTVOS0NTVlgyZ3JpTUVieWJmdEJrYXJqN0Z4eFlHYTNTMU1tTVZGY0ZuQjM3TEp0bUFpaUlZY0Z5Mmd0OExxZHh0aGxfdHVPbHdvYlNlWk5ub3pydFVxRmFKYVQ3Sjd2MUZBX0NFeGlBUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-19T20:08+01:00",
+      "date": "2026-10-19",
+      "source": "Middle East Institute",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPNF96bFBQa0s0NWF2ekRIUldTZUk3THJ3VXc4TFpseGJBbi1YdmlrRms1NzVETVdzVnF3ZDRpTU9kWFhNbTdiU0hSdllUUU12NHhuYWRQaTVOS0NTVlgyZ3JpTUVieWJmdEJrYXJqN0Z4eFlHYTNTMU1tTVZGY0ZuQjM3TEp0bUFpaUlZY0Z5Mmd0OExxZHh0aGxfdHVPbHdvYlNlWk5ub3pydFVxRmFKYVQ3Sjd2MUZBX0NFeGlBUQ?oc=5\" target=\"_blank\">The ‘navalization’ of economic warfare sees trade routes become zones of force rather than rules</a> <font color=\"#6f6f6f\">Middle East Institute</font>",
+      "center_site": "https://mei.edu/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "يرى \"إضفاء الطابع البحري\" على الحرب الاقتصادية أن طرق التجارة تصبح مناطق قوة بدلاً من قواعد - معهد الشرق الأوسط"
     },
     {
       "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
