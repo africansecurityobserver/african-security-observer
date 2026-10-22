@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T18:44+01:00",
+  "updated": "2026-10-22T21:46+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 27,
+  "count": 28,
   "publications": [
     {
       "center": "معهد اليابان للشؤون الدولية (JIIA)",
@@ -732,6 +732,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "يرى \"إضفاء الطابع البحري\" على الحرب الاقتصادية أن طرق التجارة تصبح مناطق قوة بدلاً من قواعد - معهد الشرق الأوسط"
+    },
+    {
+      "center": "مؤسسة كارنيغي للسلام الدولي",
+      "center_short": "Carnegie Endowment",
+      "title": "Non-Western Powers and Security in Africa - Carnegie Endowment for International Peace",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOVjBaX0I3YTNsQk92MDkyUFUxVnJvTEFqeEJhUERPVW0xUjhHV0VvUlhpYk5lbjVBcEVYZ3o5R18wbXM3d1c2OTB0bUR2b3M0QVFIRVlkbzMxbjZiVUpibGV5eS1ic0lGUHB5d2p0SDU1UWRnWWFnNHN2Y3E1Nl9mRXYzUjFHZzExbGI4TU5sOFp2UQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-19T08:00+01:00",
+      "date": "2026-10-19",
+      "source": "Carnegie Endowment for International Peace",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxOVjBaX0I3YTNsQk92MDkyUFUxVnJvTEFqeEJhUERPVW0xUjhHV0VvUlhpYk5lbjVBcEVYZ3o5R18wbXM3d1c2OTB0bUR2b3M0QVFIRVlkbzMxbjZiVUpibGV5eS1ic0lGUHB5d2p0SDU1UWRnWWFnNHN2Y3E1Nl9mRXYzUjFHZzExbGI4TU5sOFp2UQ?oc=5\" target=\"_blank\">Non-Western Powers and Security in Africa</a> <font color=\"#6f6f6f\">Carnegie Endowment for International Peace</font>",
+      "center_site": "https://carnegieendowment.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "القوى غير الغربية والأمن في أفريقيا - مؤسسة كارنيغي للسلام الدولي"
     },
     {
       "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
