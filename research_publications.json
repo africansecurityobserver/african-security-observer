@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T06:45+01:00",
+  "updated": "2026-10-22T09:53+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 26,
+  "count": 27,
   "publications": [
     {
       "center": "معهد اليابان للشؤون الدولية (JIIA)",
@@ -676,6 +676,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
+    },
+    {
+      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+      "center_short": "ISS Africa",
+      "title": "Are bilateral ties the route to renewed West African security cooperation? - ISS Africa",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOM2V4MWFmWU95amYzSmJuUWFqWUgzSjJ6RGdDTHNMWTl5YWdYN3dEbGpwQkdXMjZzQTJhUWZWLWtPeGVTT0VBOFg1X3d0N1JWVUZTeXdDdEFSZkpLWV9NWnp3ZmpYS2ZKV3lMWTZSeEE3YlphQlM1Tk90VzUwdTBnWWhKeHotb3JEQVg4amo4b09YZkNwdVVLMVF0UXNicGR4MGxZOXVndVk?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-22T09:29+01:00",
+      "date": "2026-10-22",
+      "source": "ISS Africa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOM2V4MWFmWU95amYzSmJuUWFqWUgzSjJ6RGdDTHNMWTl5YWdYN3dEbGpwQkdXMjZzQTJhUWZWLWtPeGVTT0VBOFg1X3d0N1JWVUZTeXdDdEFSZkpLWV9NWnp3ZmpYS2ZKV3lMWTZSeEE3YlphQlM1Tk90VzUwdTBnWWhKeHotb3JEQVg4amo4b09YZkNwdVVLMVF0UXNicGR4MGxZOXVndVk?oc=5\" target=\"_blank\">Are bilateral ties the route to renewed West African security cooperation?</a> <font color=\"#6f6f6f\">ISS Africa</font>",
+      "center_site": "https://issafrica.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "هل العلاقات الثنائية هي الطريق إلى تجديد التعاون الأمني في غرب أفريقيا ؟ - محطة الفضاء الدولية في أفريقيا"
     },
     {
       "center": "معهد الدراسات الدفاعية والاستراتيجية الهندي (MP-IDSA)",
@@ -760,6 +774,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الهجمات الإلكترونية على سلسلة التوريد: ما هي الآثار المترتبة على الأمن الغذائي ؟ - IRIS - معهد العلاقات الدولية والاستراتيجية"
+    },
+    {
+      "center": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
+      "center_short": "IISS",
+      "title": "Spoil of War: How Conflict Shapes Myanmar’s Gold Supply Chain - The International Institute for Strategic Studies",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcWxHVkpfU25yV2dFc1lWSURCd0lxWVZEd1FoUWV4THpSbDd2SlRoQkRLdzY1SENJQXl4NkptZjg4Vy1nR0cwLW51UzltZjNtY3Zsc2VRTy01RmI5VTJ1MkxoOXVudFVLLUwwWHMtbmdoTGtGOWEzaTRNc2FXRDFKUm5wUTZ1cjBtUVVnRVFJT3VUdHo1a0Q3WFQ4eDM?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-15T08:00+01:00",
+      "date": "2026-10-15",
+      "source": "The International Institute for Strategic Studies",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNcWxHVkpfU25yV2dFc1lWSURCd0lxWVZEd1FoUWV4THpSbDd2SlRoQkRLdzY1SENJQXl4NkptZjg4Vy1nR0cwLW51UzltZjNtY3Zsc2VRTy01RmI5VTJ1MkxoOXVudFVLLUwwWHMtbmdoTGtGOWEzaTRNc2FXRDFKUm5wUTZ1cjBtUVVnRVFJT3VUdHo1a0Q3WFQ4eDM?oc=5\" target=\"_blank\">Spoil of War: How Conflict Shapes Myanmar’s Gold Supply Chain</a> <font color=\"#6f6f6f\">The International Institute for Strategic Studies</font>",
+      "center_site": "https://iiss.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "غنائم الحرب: كيف يشكل الصراع سلسلة توريد الذهب في ميانمار - المعهد الدولي للدراسات الاستراتيجية"
     },
     {
       "center": "المجلس الأطلسي",
@@ -872,20 +900,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "تحديث بشأن الحرب الروسية الأوكرانية ووجهات نظر من دول الناتو: نقاش مع المجلس الاستشاري العالمي لمجلس العلاقات الخارجية"
-    },
-    {
-      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-      "center_short": "ISS Africa",
-      "title": "Russia’s military recruitment networks exploit Western tech platforms - ISS Africa",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQWTc2RWxCMWRrYS1MaElENW9OdGxuZ29UV01PT1A0MHZPRnJNU0ZQcjZfbUhGX2swMEozM3Y5M3RfR00yOGNPNHhjUWh5b0pBcWFZbUh3MDFLTGlGOUljR3dwaVk5MEZQdnlIZHpZLWo2aF8ySUFCZ1BPRExYeG0ybF9qQzBhc3NPWERCdEZrMy1pbFJoSjdiSkxVUlkwVndlOHdZ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-06T09:49+01:00",
-      "date": "2026-10-06",
-      "source": "ISS Africa",
-      "description": "Russia’s military recruitment networks exploit Western tech platforms ISS Africa",
-      "center_site": "https://issafrica.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "شبكات التجنيد العسكري الروسية تستغل منصات التكنولوجيا الغربية"
     },
     {
       "center": "مركز برشلونة للشؤون الدولية",
