@@ -145,9 +145,11 @@ def find_official_article_url(title, center_site):
     best_score = 0.0
     seen_pages = set()
 
-    # Keep source resolution bounded: the broader full-text search below is the
-    # fallback, and an individual publication must not monopolize an Actions run.
-    for search_url, params in searches[:4]:
+    # Search every configured endpoint. The publisher-native CMS searches are
+    # deliberately included after external engines because GitHub-hosted runners
+    # often receive HTTP 202/403 from public search engines; slicing to the first
+    # four entries silently disabled all publisher-native fallbacks.
+    for search_url, params in searches:
         try:
             response = requests.get(
                 search_url, params=params, headers=headers, timeout=10,
