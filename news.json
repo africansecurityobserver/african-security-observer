@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T02:00:08.739868+00:00",
+  "updated": "2026-10-23T02:49:44.342241+00:00",
   "items": [
     {
       "title": "ترمب يطالب إلهان عمر بالاستقالة من الكونغرس",
@@ -43,6 +43,17 @@
       "source": "العربية",
       "published": "Fri, 23 Oct 2026 00:41:37 GMT",
       "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "المبعوث الصيني: إصلاح مجلس الأمن التابع للأمم المتحدة يجب أن يعالج التمثيل الزائد للدول المتقدمة",
+      "description": "يجب أن يعالج إصلاح مجلس الأمن التابع للأمم المتحدة التمثيل الزائد للدول المتقدمة: المبعوث الصيني    جلوبال تايمز",
+      "original_title": "UN Security Council reform should address over-representation of developed countries: Chinese envoy - Global Times",
+      "original_description": "UN Security Council reform should address over-representation of developed countries: Chinese envoy &nbsp;&nbsp; Global Times",
+      "url": "https://www.globaltimes.cn/page/202610/1372836.shtml",
+      "source": "Global Times",
+      "published": "Fri, 23 Oct 2026 00:40:00 GMT",
+      "category": "international",
       "region": "world"
     },
     {
@@ -916,7 +927,7 @@
     },
     {
       "title": "مصر تدعو إلى مفاوضات بشأن اليمن وبرلمانها يدرس الدعم العسكري للسعودية - لوريان لو جور",
-      "description": "مصر تدعو إلى مفاوضات بشأن اليمن وبرلمانها يبحث الدعم العسكري للسعودية لوريان لو جور",
+      "description": "مصر تدعو إلى مفاوضات بشأن اليمن وبرلمانها يدرس الدعم العسكري للسعودية لوريان لو جور",
       "original_title": "L'Égypte appelle à des négociations sur le Yémen, son Parlement examine un soutien militaire à l'Arabie saoudite - L'Orient-Le Jour",
       "original_description": "L'Égypte appelle à des négociations sur le Yémen, son Parlement examine un soutien militaire à l'Arabie saoudite &nbsp;&nbsp; L'Orient-Le Jour",
       "url": "https://www.lorientlejour.com/article/1551752/legypte-appelle-a-des-negociations-sur-le-yemen-tandis-que-le-parlement-examine-un-soutien-militaire-a-larabie-saoudite.html",
@@ -2158,6 +2169,17 @@
       "region": "world"
     },
     {
+      "title": "الجزائر - بنجلاديش: بحث سبل تعزيز التعاون التجاري والاقتصادي - الإذاعة الجزائرية |",
+      "description": "الجزائر - بنجلاديش: بحث سبل تعزيز التعاون التجاري والاقتصادي الإذاعة الجزائرية |",
+      "original_title": "Algérie-Bangladesh : examen des moyens de renforcer la coopération commerciale et économique - الإذاعة الجزائرية |",
+      "original_description": "Algérie-Bangladesh : examen des moyens de renforcer la coopération commerciale et économique &nbsp;&nbsp; الإذاعة الجزائرية |",
+      "url": "https://news.radioalgerie.dz/fr/node/97132",
+      "source": "الإذاعة الجزائرية |",
+      "published": "Thu, 22 Oct 2026 13:39:56 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
       "title": "أردوغان يستقبل رئيس الوزراء الكندي بمراسم رسمية",
       "description": "من المقرر أن يعقد الجانبان مؤتمرا صحفيا عقب انتهاء مباحثات ثنائية وعلى مستوى الوفود..",
       "original_title": "أردوغان يستقبل رئيس الوزراء الكندي بمراسم رسمية",
@@ -2587,7 +2609,7 @@
       "region": "world"
     },
     {
-      "title": "هجمات البحر الأسود: أعضاء البرلمان الأوروبي يقولون إن الاتحاد الأوروبي يجب أن يفكر في عملية بحرية في المنطقة - البرلمان الأوروبي",
+      "title": "هجمات البحر الأسود: يقول أعضاء البرلمان الأوروبي إن الاتحاد الأوروبي يجب أن يفكر في عملية بحرية في المنطقة - البرلمان الأوروبي",
       "description": "هجمات البحر الأسود: يقول أعضاء البرلمان الأوروبي إن الاتحاد الأوروبي يجب أن يفكر في عملية بحرية في المنطقة    البرلمان الأوروبي",
       "original_title": "Black Sea attacks: MEPs say the EU must consider a naval operation in the region - European Parliament",
       "original_description": "Black Sea attacks: MEPs say the EU must consider a naval operation in the region &nbsp;&nbsp; European Parliament",
@@ -2972,6 +2994,17 @@
       "region": "world"
     },
     {
+      "title": "الجزائر والنيجر: مذكرة تفاهم لتعزيز التعاون العسكري - https://malijet.com/",
+      "description": "الجزائر والنيجر : مذكرة تفاهم لتعزيز التعاون العسكري https://malijet.com/",
+      "original_title": "Algérie-Niger : un protocole d’accord pour renforcer la coopération militaire - https://malijet.com/",
+      "original_description": "Algérie-Niger : un protocole d’accord pour renforcer la coopération militaire &nbsp;&nbsp; https://malijet.com/",
+      "url": "https://malijet.com/actualite-sur-afrique/312451-algerie-niger-un-protocole-daccord-pour-renforcer-la-coop.html",
+      "source": "https://malijet.com/",
+      "published": "Thu, 22 Oct 2026 10:44:02 GMT",
+      "category": "sahel",
+      "region": "africa"
+    },
+    {
       "title": "الهروب الجماعي نحو سبتة.. رئيس المدينة يتهم المغرب: “عملية مدبرة”",
       "description": "اتهم رئيس مدينة سبتة، خوان خيسوس فيفاس، المخزن بالوقوف وراء أزمة الهجرة التي شهدتها المدينة نهاية يوليو الماضي, واصفا إياه بـ “الفاعل الرئيسي” في هذه الأزمة, التي اعتبرها عملية مدبرة استهدفت أمن المدينة واستقرارها. وأوضح فيفاس, وفق ما أوردته وسائل إعلام إسبانية, أن التدفق الجماعي للمهاجرين من الأرا…",
       "original_title": "الهروب الجماعي نحو سبتة.. رئيس المدينة يتهم المغرب: “عملية مدبرة”",
@@ -2995,7 +3028,7 @@
     },
     {
       "title": "الأمن، الموضوع الرئيسي لاجتماع شبكة تبادل المعلومات الحيوية للبنية التحتية تحت الماء التابعة لمنظمة حلف شمال الأطلسي – منظمة حلف شمال الأطلسي | الناتو",
-      "description": "الأمن، الموضوع الرئيسي لاجتماع شبكة تبادل معلومات البنية التحتية الحيوية تحت الماء التابعة لمنظمة حلف شمال الأطلسي    منظمة حلف شمال الأطلسي | الناتو",
+      "description": "الأمن، الموضوع الرئيسي لاجتماع شبكة تبادل المعلومات الحيوية للبنية التحتية تحت الماء التابعة لمنظمة حلف شمال الأطلسي   منظمة حلف شمال الأطلسي | الناتو",
       "original_title": "La sécurité, thème central de la réunion du réseau OTAN d’échange d’informations sur les infrastructures sous-marines critiques - North Atlantic Treaty Organization | NATO",
       "original_description": "La sécurité, thème central de la réunion du réseau OTAN d’échange d’informations sur les infrastructures sous-marines critiques &nbsp;&nbsp; North Atlantic Treaty Organization | NATO",
       "url": "https://www.nato.int/fr/news-and-events/articles/news/2026/10/21/natos-critical-undersea-infrastructure-network-focuses-on-delivering-security",
@@ -3170,7 +3203,7 @@
       "region": "world"
     },
     {
-      "title": "الاتحاد الأوروبي يمنح المحكمة الجنائية الدولية أعلى جائزة حقوقية بعد أيام من عقوبات ترامب - KSAT",
+      "title": "الاتحاد الأوروبي يمنح أعلى جائزة حقوقية للمحكمة الجنائية الدولية بعد أيام من عقوبات ترامب - KSAT",
       "description": "الاتحاد الأوروبي يمنح جائزة الحقوق الأولى للمحكمة الجنائية الدولية بعد أيام من عقوبات ترامب    KSAT",
       "original_title": "European Union awards top rights prize to International Criminal Court days after Trump sanctions - KSAT",
       "original_description": "European Union awards top rights prize to International Criminal Court days after Trump sanctions &nbsp;&nbsp; KSAT",
@@ -4249,7 +4282,7 @@
     },
     {
       "title": "أوكرانيا ستتمكن من شراء الإمدادات العسكرية عبر وكالة حلف شمال الأطلسي (الناتو) - رويترز",
-      "description": "أوكرانيا ستكون قادرة على شراء الإمدادات العسكرية عبر وكالة حلف شمال الأطلسي، حسبما ذكرت فايننشال تايمز    رويترز",
+      "description": "أوكرانيا ستكون قادرة على شراء الإمدادات العسكرية عبر وكالة حلف شمال الأطلسي، حسبما ذكرت صحيفة فايننشال تايمز    رويترز",
       "original_title": "Ukraine to be able to buy military supplies via NATO agency, FT reports - Reuters",
       "original_description": "Ukraine to be able to buy military supplies via NATO agency, FT reports &nbsp;&nbsp; Reuters",
       "url": "https://www.reuters.com/business/aerospace-defense/ukraine-be-able-buy-military-supplies-via-nato-agency-ft-reports-2026-10-22",
@@ -5124,7 +5157,7 @@
       "url": "https://www.stimson.org/2026/beyond-short-term-intervention-peacekeepings-child-protection-legacy-in-liberia",
       "source": "Stimson Center",
       "published": "Wed, 21 Oct 2026 20:18:49 GMT",
-      "category": "international",
+      "category": "rest",
       "region": "world"
     },
     {
@@ -5700,7 +5733,7 @@
       "region": "world"
     },
     {
-      "title": "العقوبات الأمريكية جعلت الهند في مأزق. البريكس ترسم طريقا للهروب - صحيفة إيكونوميك تايمز",
+      "title": "العقوبات الأمريكية جعلت الهند في مأزق. البريكس ترسم طريقا للهروب",
       "description": "العقوبات الأمريكية جعلت الهند في مأزق. مجموعة البريكس ترسم طريقًا للهروب    ذا إيكونوميك تايمز",
       "original_title": "US sanctions have India cornered. BRICS charts an escape route - The Economic Times",
       "original_description": "US sanctions have India cornered. BRICS charts an escape route &nbsp;&nbsp; The Economic Times",
@@ -6460,7 +6493,7 @@
     },
     {
       "title": "غارة بطائرة بدون طيار تقتل أكثر من 150 شخصًا في أبيي في الحرب الأهلية السودانية - نيويورك تايمز",
-      "description": "غارة بطائرة بدون طيار تقتل أكثر من 150 شخصًا في أبيي في الحرب الأهلية السودانية    نيويورك تايمز تقول مصادر إن طائرات الجيش السوداني بدون طيار قصفت المشيعين وسوق الوقود مما أسفر عن مقتل أكثر من 300 شخص    بي بي سي غارة بطائرة بدون طيار تقتل أكثر من 150 شخصًا في السوق في الحرب السودانية    الغارديان",
+      "description": "غارة بطائرة بدون طيار تقتل أكثر من 150 شخصًا في أبيي في الحرب الأهلية السودانية    نيويورك تايمز تقول مصادر إن طائرات بدون طيار تابعة للجيش السوداني قصفت المعزين وسوق الوقود مما أسفر عن مقتل أكثر من 300 شخص    غارة بطائرة بدون طيار بي بي سي تقتل أكثر من 150 شخصًا في السوق في الحرب السودانية    الغارديان",
       "original_title": "Drone Strike Kills More Than 150 in Abyei in Sudan’s Civil War - The New York Times",
       "original_description": "Drone Strike Kills More Than 150 in Abyei in Sudan’s Civil War &nbsp;&nbsp; The New York Times Sudan army drones hit mourners and fuel market killing more than 300 people, sources say &nbsp;&nbsp; BBC Drone strike kills more than 150 at market in Sudanese war &nbsp;&nbsp; The Guardian",
       "url": "https://www.nytimes.com/2026/10/21/world/africa/sudan-drone-strikes.html",
@@ -7208,7 +7241,7 @@
     },
     {
       "title": "حرب الطائرات بدون طيار في السودان تصل إلى أبيي وتضع الانتخابات في جنوب السودان على المحك – مراجعة قرنية",
-      "description": "حرب الطائرات بدون طيار في السودان تصل إلى أبيي وتضع الانتخابات في جنوب السودان على المحك    مراجعة قرنية",
+      "description": "حرب الطائرات بدون طيار في السودان تصل إلى أبيي وتضع انتخابات جنوب السودان على المحك    مراجعة قرنية",
       "original_title": "Sudan’s Drone War Reaches Abyei and Puts South Sudan’s Election on Notice - horn review",
       "original_description": "Sudan’s Drone War Reaches Abyei and Puts South Sudan’s Election on Notice &nbsp;&nbsp; horn review",
       "url": "https://hornreview.org/2026/10/21/sudans-drone-war-reaches-abyei-and-puts-south-sudans-election-on-notice",
@@ -7801,7 +7834,7 @@
       "region": "world"
     },
     {
-      "title": "غارات جوية جديدة تقتل 103 إرهابيين في أداماوا، بورنو - صحيفة ديلي شامبيون",
+      "title": "غارات جوية جديدة تقتل 103 إرهابيين في أداماوا، بورنو - صحيفة ديلي تشامبيون",
       "description": "غارات جوية جديدة تقتل 103 إرهابيين في أداماوا، بورنو    صحيفة ديلي شامبيون",
       "original_title": "Fresh air strikes kill 103 terrorists in Adamawa, Borno - Daily Champion Newspaper",
       "original_description": "Fresh air strikes kill 103 terrorists in Adamawa, Borno &nbsp;&nbsp; Daily Champion Newspaper",
@@ -8913,7 +8946,7 @@
     },
     {
       "title": "حادث خلال رحلة تدريبية ومقتل ومفقود.. ماذا نعرف عن سقوط الطائرة العسكرية قرب نانسي - L’Humanité",
-      "description": "حادث أثناء رحلة تدريبية ومقتل وآخر مفقود.. ماذا نعرف عن سقوط الطائرة العسكرية قرب نانسي   L’Humanité",
+      "description": "حادث خلال رحلة تدريبية ومقتل وآخر مفقود.. ماذا نعرف عن سقوط الطائرة العسكرية قرب نانسي   L’Humanité",
       "original_title": "Un accident au cours d’un vol d’entraînement, un mort et un disparu… Ce que l’on sait du crash de l’avion militaire près de Nancy - L'Humanité",
       "original_description": "Un accident au cours d’un vol d’entraînement, un mort et un disparu… Ce que l’on sait du crash de l’avion militaire près de Nancy &nbsp;&nbsp; L'Humanité",
       "url": "https://www.humanite.fr/societe/accidents/un-accident-au-cours-dun-vol-dentrainement-un-mort-et-un-disparu-ce-que-lon-sait-du-crash-de-lavion-militaire-pres-de-nancy",
@@ -9407,7 +9440,7 @@
       "region": "africa"
     },
     {
-      "title": "الاتحاد الأوروبي يعلن عدم شرعية الاتفاقية البحرية التركية الليبية - كردستان24",
+      "title": "الاتحاد الأوروبي يعلن عدم قانونية الاتفاقية البحرية التركية الليبية - كردستان24",
       "description": "الاتحاد الأوروبي يعلن عدم شرعية الاتفاقية البحرية التركية الليبية    كردستان24",
       "original_title": "European Union Declares Turkey-Libya Maritime Agreement Illegal - Kurdistan24",
       "original_description": "European Union Declares Turkey-Libya Maritime Agreement Illegal &nbsp;&nbsp; Kurdistan24",
@@ -9757,72 +9790,6 @@
       "published": "Wed, 21 Oct 2026 05:51:13 +0300",
       "category": "rest",
       "region": "world"
-    },
-    {
-      "title": "باكستاني يكبّد خدمة البريد الأميركية خسائر بعشرات الملايين من الدولارات بسبب طوابع مزيفة",
-      "description": "ألقت باكستان القبض على رجل بناء على معلومات استخباراتية، يُتهم بإدارة نشاط عبر الإنترنت لبيع ملصقات بريدية مزيفة، تسبب في خسائر كبيرة لخدمة البريد الأميركية.",
-      "original_title": "باكستاني يكبّد خدمة البريد الأميركية خسائر بعشرات الملايين من الدولارات بسبب طوابع مزيفة",
-      "original_description": "ألقت باكستان القبض على رجل بناء على معلومات استخباراتية، يُتهم بإدارة نشاط عبر الإنترنت لبيع ملصقات بريدية مزيفة، تسبب في خسائر كبيرة لخدمة البريد الأميركية.",
-      "url": "https://alikhbariya.net/stories/aa8f3415-64ee-40e0-a957-f9e2c005d073/%D8%A8%D8%A7%D9%83%D8%B3%D8%AA%D8%A7%D9%86%D9%8A-%D9%8A%D9%83%D8%A8%D8%AF-%D8%AE%D8%AF%D9%85%D8%A9-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A%D8%AF-%D8%A7%D9%84%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D9%8A%D8%A9-%D8%AE%D8%B3%D8%A7%D8%A6%D8%B1-%D8%A8%D8%B9%D8%B4%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D9%84%D8%A7%D9%8A%D9%8A%D9%86-%D9%85%D9%86-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A8%D8%B3%D8%A8%D8%A8",
-      "source": "الشرق الأوسط",
-      "published": "Wed, 21 Oct 2026 02:42:44 GMT",
-      "category": "rest",
-      "region": "world"
-    },
-    {
-      "title": "ترمب: سنحسم قرارنا النهائي بكيفية الانتصار.. هل بالطريقة اللينة أم بالطريقة القاسية؟",
-      "description": "وصف وزير الخارجية الأمريكي ماركو روبيو التوصل لاتفاق مع إيران بالبالغ الصعوبة، بينما أكد دونالد ترمب ووزير حربه الجاهزية لضربات إضافية. وشدد ترمب على أن إنهاء الحرب مشروط بضمان عدم امتلاك طهران سلاحاً نووياً مستقبلاً، بالتزامن مع بحث التعاون الهجومي والدفاعي مع نتنياهو. ونفت القيادة المركزية الأمري…",
-      "original_title": "ترمب: سنحسم قرارنا النهائي بكيفية الانتصار.. هل بالطريقة اللينة أم بالطريقة القاسية؟",
-      "original_description": "وصف وزير الخارجية الأمريكي ماركو روبيو التوصل لاتفاق مع إيران بالبالغ الصعوبة، بينما أكد دونالد ترمب ووزير حربه الجاهزية لضربات إضافية. وشدد ترمب على أن إنهاء الحرب مشروط بضمان عدم امتلاك طهران سلاحاً نووياً مستقبلاً، بالتزامن مع بحث التعاون الهجومي والدفاعي مع نتنياهو. ونفت القيادة المركزية الأمري…",
-      "url": "https://alikhbariya.net/stories/28758d01-65ca-4391-bcc1-3149c4d099ed/%D8%AA%D8%B1%D9%85%D8%A8-%D8%B3%D9%86%D8%AD%D8%B3%D9%85-%D9%82%D8%B1%D8%A7%D8%B1%D9%86%D8%A7-%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A-%D8%A8%D9%83%D9%8A%D9%81%D9%8A%D8%A9-%D8%A7%D9%84%D8%A7%D9%86%D8%AA%D8%B5%D8%A7%D8%B1-%D9%87%D9%84-%D8%A8%D8%A7%D9%84%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D8%A7%D9%84%D9%84%D9%8A%D9%86%D8%A9-%D8%A3%D9%85-%D8%A8%D8%A7%D9%84%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D8%A7%D9%84%D9%82%D8%A7%D8%B3%D9%8A%D8%A9",
-      "source": "الجزيرة نت",
-      "published": "Wed, 21 Oct 2026 02:30:20 GMT",
-      "category": "rest",
-      "region": "world"
-    },
-    {
-      "title": "مقتل 150 شخصا في غارة بطائرة بدون طيار على سوق أبيي قرب الحدود بين السودان وجنوب السودان",
-      "description": "مقتل 150 شخصاً في غارة بطائرة بدون طيار على سوق أبيي بالقرب من الحدود بين السودان وجنوب السودان    الجزيرة",
-      "original_title": "Drone strike on Abyei market near Sudan-South Sudan border kills 150 - Al Jazeera",
-      "original_description": "Drone strike on Abyei market near Sudan-South Sudan border kills 150 &nbsp;&nbsp; Al Jazeera",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/10/21/drone-strike-on-abyei-market-near-sudan-south-sudan-border-kills-150",
-      "source": "Al Jazeera",
-      "published": "Wed, 21 Oct 2026 02:28:15 GMT",
-      "category": "rest",
-      "region": "africa"
-    },
-    {
-      "title": "الناتو يعزز وجوده في البحر الأسود بطائرات دورية وطائرات بدون طيار بعد الهجمات على السفن التجارية - كييف إندبندنت",
-      "description": "الناتو يعزز وجوده في البحر الأسود بطائرات الدورية والطائرات بدون طيار بعد الهجمات على السفن التجارية    كييف إندبندنت",
-      "original_title": "NATO to bolster Black Sea presence with patrol aircraft, drones after attacks on commercial ships - The Kyiv Independent",
-      "original_description": "NATO to bolster Black Sea presence with patrol aircraft, drones after attacks on commercial ships &nbsp;&nbsp; The Kyiv Independent",
-      "url": "https://kyivindependent.com/nato-to-bolster-black-sea-presence-with-patrol-aircraft-drones-after-attacks-on-commercial-ships",
-      "source": "The Kyiv Independent",
-      "published": "Wed, 21 Oct 2026 02:23:44 GMT",
-      "category": "international",
-      "region": "world"
-    },
-    {
-      "title": "ما هو \"ستارشيلد\" الذي أمر ماسك بتقييد استخدامه في أوكرانيا؟",
-      "description": "ذكرت صحيفة وول ستريت جورنال، أن إيلون ماسك أمر بفرض قيود على خدمة الاتصالات الفضائية العسكرية التي تعتمد عليها أوكرانيا، ما عطّل عمل بعض طائراتها المسيّرة الهجومية والاعتراضية، وأثار تساؤلات حول منظومة ستارشيلد ودورها في الحرب.وبحسب الصحيفة، نقلاً عن مسؤولين أميركيين ومصادر مطلعة، وضع ماسك سقفاً لس… — تغطية من 3 مصادر: العربية، النهار، فرانس 24 عربي.",
-      "original_title": "ما هو \"ستارشيلد\" الذي أمر ماسك بتقييد استخدامه في أوكرانيا؟",
-      "original_description": "ذكرت صحيفة وول ستريت جورنال، أن إيلون ماسك أمر بفرض قيود على خدمة الاتصالات الفضائية العسكرية التي تعتمد عليها أوكرانيا، ما عطّل عمل بعض طائراتها المسيّرة الهجومية والاعتراضية، وأثار تساؤلات حول منظومة ستارشيلد ودورها في الحرب.وبحسب الصحيفة، نقلاً عن مسؤولين أميركيين ومصادر مطلعة، وضع ماسك سقفاً لس… — تغطية من 3 مصادر: العربية، النهار، فرانس 24 عربي.",
-      "url": "https://alikhbariya.net/stories/b1fa9f4e-356e-4e31-8759-f0693a43fbc9/%D9%85%D8%A7-%D9%87%D9%88-%D8%B3%D8%AA%D8%A7%D8%B1%D8%B4%D9%8A%D9%84%D8%AF-%D8%A7%D9%84%D8%B0%D9%8A-%D8%A3%D9%85%D8%B1-%D9%85%D8%A7%D8%B3%D9%83-%D8%A8%D8%AA%D9%82%D9%8A%D9%8A%D8%AF-%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85%D9%87-%D9%81%D9%8A-%D8%A3%D9%88%D9%83%D8%B1%D8%A7%D9%86%D9%8A%D8%A7",
-      "source": "alikhbariya.net",
-      "published": "Wed, 21 Oct 2026 02:06:00 GMT",
-      "category": "rest",
-      "region": "world"
-    },
-    {
-      "title": "حصار تعز يدخل يومه الـ17 وسط تحذيرات من شلل المرافق الطبية والتعليمية",
-      "description": "أعلنت القوات الحكومية في تعز مقتل 98 حوثياً وإصابة 148 آخرين وصد هجمات بالجبهة الشمالية والشقب، بالتزامن مع غارات استهدفت مخازن أسلحة بالضباب ودبابة وتجمعات بالمسراخ والأقروض. وفي المقابل، وثق مركز تعز الحقوقي مقتل 6 مدنيين وإصابة 17 بقصف حوثي عشوائي طال الأحياء السكنية. وحذر مكتب شؤون الحصار من تو…",
-      "original_title": "حصار تعز يدخل يومه الـ17 وسط تحذيرات من شلل المرافق الطبية والتعليمية",
-      "original_description": "أعلنت القوات الحكومية في تعز مقتل 98 حوثياً وإصابة 148 آخرين وصد هجمات بالجبهة الشمالية والشقب، بالتزامن مع غارات استهدفت مخازن أسلحة بالضباب ودبابة وتجمعات بالمسراخ والأقروض. وفي المقابل، وثق مركز تعز الحقوقي مقتل 6 مدنيين وإصابة 17 بقصف حوثي عشوائي طال الأحياء السكنية. وحذر مكتب شؤون الحصار من تو…",
-      "url": "https://alikhbariya.net/stories/35ffe259-5b37-463c-b9ca-d374b6549518/%D8%AD%D8%B5%D8%A7%D8%B1-%D8%AA%D8%B9%D8%B2-%D9%8A%D8%AF%D8%AE%D9%84-%D9%8A%D9%88%D9%85%D9%87-%D8%A7%D9%8417-%D9%88%D8%B3%D8%B7-%D8%AA%D8%AD%D8%B0%D9%8A%D8%B1%D8%A7%D8%AA-%D9%85%D9%86-%D8%B4%D9%84%D9%84-%D8%A7%D9%84%D9%85%D8%B1%D8%A7%D9%81%D9%82-%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D9%8A%D8%A9",
-      "source": "الجزيرة نت",
-      "published": "Wed, 21 Oct 2026 02:00:20 GMT",
-      "category": "sahel",
-      "region": "africa"
     }
   ]
 }
