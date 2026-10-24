@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T18:41+01:00",
+  "updated": "2026-10-24T21:42+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 28,
+  "count": 29,
   "publications": [
     {
       "center": "معهد اليابان للشؤون الدولية (JIIA)",
@@ -706,6 +706,20 @@
       "title_ar": "مقالة أبيشيك ميشرا \"طائرات بدون طيار رخيصة، حروب مكلفة: يمكن للهند إعادة تشكيل ساحة المعركة الجديدة في إفريقيا\" نشرت في Firstpost - MP - IDSA"
     },
     {
+      "center": "معهد الشرق الأوسط",
+      "center_short": "Middle East Institute",
+      "title": "The ‘navalization’ of economic warfare sees trade routes become zones of force rather than rules - Middle East Institute",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOWUpweGxjYTN4WVVSamlaeEFzSTR4Y1NHSHBOR2l6VDNtcFJXNS1oQUFZbXNGYllTUzJ4ekotelVQbGdEMnd4NHVjd3l0aldGZXFaa3B1SktlVTNDVHFubHBjblJya2lnQmpyQnJXaV9yZndQa3NBb3J2QVdkOVpwakxMcFBHUG50WjNNSXFhSXdhTlJ0YXljMjc2MWNWOU5RQWVCM001WnprRXhxV3dmSWs3NDF2RUVpTzY4LXBSSXRLMjA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-21T08:00+01:00",
+      "date": "2026-10-21",
+      "source": "Middle East Institute",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOWUpweGxjYTN4WVVSamlaeEFzSTR4Y1NHSHBOR2l6VDNtcFJXNS1oQUFZbXNGYllTUzJ4ekotelVQbGdEMnd4NHVjd3l0aldGZXFaa3B1SktlVTNDVHFubHBjblJya2lnQmpyQnJXaV9yZndQa3NBb3J2QVdkOVpwakxMcFBHUG50WjNNSXFhSXdhTlJ0YXljMjc2MWNWOU5RQWVCM001WnprRXhxV3dmSWs3NDF2RUVpTzY4LXBSSXRLMjA?oc=5\" target=\"_blank\">The ‘navalization’ of economic warfare sees trade routes become zones of force rather than rules</a> <font color=\"#6f6f6f\">Middle East Institute</font>",
+      "center_site": "https://mei.edu/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "يرى \"إضفاء الطابع البحري\" على الحرب الاقتصادية أن طرق التجارة تصبح مناطق قوة بدلاً من قواعد - معهد الشرق الأوسط"
+    },
+    {
       "center": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
       "center_short": "IISS",
       "title": "Russia’s political and military network in Africa - The International Institute for Strategic Studies",
@@ -718,20 +732,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الشبكة السياسية والعسكرية الروسية في أفريقيا - المعهد الدولي للدراسات الاستراتيجية"
-    },
-    {
-      "center": "معهد الشرق الأوسط",
-      "center_short": "Middle East Institute",
-      "title": "The ‘navalization’ of economic warfare sees trade routes become zones of force rather than rules - Middle East Institute",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNF96bFBQa0s0NWF2ekRIUldTZUk3THJ3VXc4TFpseGJBbi1YdmlrRms1NzVETVdzVnF3ZDRpTU9kWFhNbTdiU0hSdllUUU12NHhuYWRQaTVOS0NTVlgyZ3JpTUVieWJmdEJrYXJqN0Z4eFlHYTNTMU1tTVZGY0ZuQjM3TEp0bUFpaUlZY0Z5Mmd0OExxZHh0aGxfdHVPbHdvYlNlWk5ub3pydFVxRmFKYVQ3Sjd2MUZBX0NFeGlBUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-19T20:08+01:00",
-      "date": "2026-10-19",
-      "source": "Middle East Institute",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPNF96bFBQa0s0NWF2ekRIUldTZUk3THJ3VXc4TFpseGJBbi1YdmlrRms1NzVETVdzVnF3ZDRpTU9kWFhNbTdiU0hSdllUUU12NHhuYWRQaTVOS0NTVlgyZ3JpTUVieWJmdEJrYXJqN0Z4eFlHYTNTMU1tTVZGY0ZuQjM3TEp0bUFpaUlZY0Z5Mmd0OExxZHh0aGxfdHVPbHdvYlNlWk5ub3pydFVxRmFKYVQ3Sjd2MUZBX0NFeGlBUQ?oc=5\" target=\"_blank\">The ‘navalization’ of economic warfare sees trade routes become zones of force rather than rules</a> <font color=\"#6f6f6f\">Middle East Institute</font>",
-      "center_site": "https://mei.edu/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "يرى \"إضفاء الطابع البحري\" على الحرب الاقتصادية أن طرق التجارة تصبح مناطق قوة بدلاً من قواعد - معهد الشرق الأوسط"
     },
     {
       "center": "مؤسسة كارنيغي للسلام الدولي",
@@ -830,6 +830,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "كيف أصبحت أفريقيا مسرحًا جديدًا لحرب الطائرات بدون طيار التكيفية - ISS Africa"
+    },
+    {
+      "center": "مؤسسة فريدريش إيبرت",
+      "center_short": "Friedrich Ebert Stiftung",
+      "title": "Toward a New Deal for Global Trade - A Progressive Agenda - FES Geneva",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNTHgyWXppRzJsMXZYUy1vM0owUXNQdjlGSGFnOGZTeDhBc19qc3o0TWpNRnd5bW1oQnpfMWc1by1Uc3N5QjJnVHd6eEx2Q2lNbFFHZ21XZmxOZVJQc2tSeXplcjdxWFdYeHNEbk4zRmROYXRvQU1lemh3REJFTm1mbjJLYTQxTkRQWWZCUkUwZ3M?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-14T08:00+01:00",
+      "date": "2026-10-14",
+      "source": "FES Geneva",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxNTHgyWXppRzJsMXZYUy1vM0owUXNQdjlGSGFnOGZTeDhBc19qc3o0TWpNRnd5bW1oQnpfMWc1by1Uc3N5QjJnVHd6eEx2Q2lNbFFHZ21XZmxOZVJQc2tSeXplcjdxWFdYeHNEbk4zRmROYXRvQU1lemh3REJFTm1mbjJLYTQxTkRQWWZCUkUwZ3M?oc=5\" target=\"_blank\">Toward a New Deal for Global Trade - A Progressive Agenda</a> <font color=\"#6f6f6f\">FES Geneva</font>",
+      "center_site": "https://fes.de/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "نحو صفقة جديدة للتجارة العالمية - أجندة تقدمية - مؤسسة فريدريش إيبرت جنيف"
     },
     {
       "center": "معهد الدراسات الأمنية والتنمية (ISDP)",
