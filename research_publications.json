@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26T06:49+01:00",
+  "updated": "2026-10-26T09:58+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -608,6 +608,20 @@
   "count": 29,
   "publications": [
     {
+      "center": "مؤسسة كونراد أديناور",
+      "center_short": "Konrad Adenauer Stiftung",
+      "title": "Partner - Regional Programme Security Policy for West Africa - Sahel - Konrad-Adenauer-Stiftung",
+      "url": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxOSVVxUnZ5QnE2cmdWeTdOeUMzUHpjLTh1RkpGUVd2QUM2TTl5dkVKM1dDN2hCWHVocU5FX3RUM1J5d3VKVDc3a1IyUVFTV1FWUFBPakNMS0pVN255RU5yX2tSZWl1VmJqYUVBWFpnRkxhaWNIeEppek0xQjRzR3JnclhMN3R1OHVEM2lKUENKZjVLdEVtWVZRWkFtdzVtbjJhMGVuTzlnbE1aMms2UmNWZXQzVi1TSXJOT2Nya1p0WWJNNXZiWXQtRlJvTXR0bGlFdTBETW4yUFg0QVYwY2ZwanpXUllwSzBrSmUwTWdnQTFZRExuQnB4QlBDV19jOVlyQW5kQXpZa1lDd3N1R2FZSENUdVYwdlRLek1kVlhIQ2dCWGhOSFRIUVpBWGFJamtIT0tKeVg2Zlh1dWx2YVhENVljTVNpTldWODRSTmxWTkxMN0NNc2UtZzQwbnRfai1Gc3RZNA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-25T14:24+01:00",
+      "date": "2026-10-25",
+      "source": "Konrad-Adenauer-Stiftung",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi5AJBVV95cUxOSVVxUnZ5QnE2cmdWeTdOeUMzUHpjLTh1RkpGUVd2QUM2TTl5dkVKM1dDN2hCWHVocU5FX3RUM1J5d3VKVDc3a1IyUVFTV1FWUFBPakNMS0pVN255RU5yX2tSZWl1VmJqYUVBWFpnRkxhaWNIeEppek0xQjRzR3JnclhMN3R1OHVEM2lKUENKZjVLdEVtWVZRWkFtdzVtbjJhMGVuTzlnbE1aMms2UmNWZXQzVi1TSXJOT2Nya1p0WWJNNXZiWXQtRlJvTXR0bGlFdTBETW4yUFg0QVYwY2ZwanpXUllwSzBrSmUwTWdnQTFZRExuQnB4QlBDV19jOVlyQW5kQXpZa1lDd3N1R2FZSENUdVYwdlRLek1kVlhIQ2dCWGhOSFRIUVpBWGFJamtIT0tKeVg2Zlh1dWx2YVhENVljTVNpTldWODRSTmxWTk",
+      "center_site": "https://kas.de/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "شريك - سياسة أمن البرنامج الإقليمي لغرب أفريقيا - الساحل - مؤسسة كونراد أديناور"
+    },
+    {
       "center": "معهد اليابان للشؤون الدولية (JIIA)",
       "center_short": "JIIA",
       "title": "49th Conference on Oceans Law & Policy (COLP49), Athens, Greece: “Maritime Security in the Mediterranean Sea & Beyond” | Events | The Japan Institute of International Affairs - 公益財団法人日本国際問題研究所",
@@ -634,20 +648,6 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "العلاقات الثنائية بين المغرب والولايات المتحدة وآثارها على إسبانيا - Real Instituto Elcano"
-    },
-    {
-      "center": "مؤسسة كونراد أديناور",
-      "center_short": "Konrad Adenauer Stiftung",
-      "title": "Events - Regional Programme Security Policy for West Africa - Sahel - Konrad-Adenauer-Stiftung",
-      "url": "https://news.google.com/rss/articles/CBMiywRBVV95cUxNbHJFamU5VGt6T1lfeXk0U3RfLVo3U0V5aUJjLUQyb2FNRlhCSVVIWmN2RkVHbGhQanMzZDUwRzg5VDVJZGRIQ2F0UnB1MXhRekdnbG1RSmtsaGZzdURTT19SeUI2V1NhR1VLZGsycU5EUHJ2dHltbzUxVi1QQWt0cjRDZGlpZEhZTmxUb1RaY0d6OGdjU0JZUm1vS2FBaEgyTDJDaDlwS2p5d3g2eDZKTXVJRXd5a0dLVy0wakVHc3h4UVI0YnAyMHFiSHZ5TzR2NTRXanBMSnkyR1BUQjdpZndsbTA0YzQ4QXBKLTlEM0x1SXhROHpyUHhudldZa05pWVp0VXBjUDNLUEhxdFpsd3BUdHlHRW1RbjNBeGxsUmdLbm02RGIyNGpvVzFtaXNWaFplVkhCU2Z0b2ZQaVd4QlVaMzVKUXR1N2pKVmZFS2czQmtpa2ZnRXNiZVQ2SjBMR3RYQTBSb1RqckVmcHk1MTh0WHNVeHM3V2wxNTA1WVNpWjNCRk9KSmxlalZTaTVHR1ZGYVhVNDY1SFkzR3NfLXJXTXNFQ2VPdWVvbkVyTlQ1RTRpdERGaXhvQnJjRGNvWVE5dGhPS3oxRGNmZ3RNV25SeGJYMXJUdTRJQ05EZHdfZUVfcUVURU96akN6VzluSHlLZjNVTjVDbU5CR0tWZVh4Y1VNM1doc1lNbmFCQ1BoNFBSUUdRdWVScWVCUEN2RlB4cHV3cVNNV2VNM0x2VmpSSnpRQXRwOElKaDdrTjV0M2NTVEpHOWRPVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-16T03:25+01:00",
-      "date": "2026-10-16",
-      "source": "Konrad-Adenauer-Stiftung",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiywRBVV95cUxNbHJFamU5VGt6T1lfeXk0U3RfLVo3U0V5aUJjLUQyb2FNRlhCSVVIWmN2RkVHbGhQanMzZDUwRzg5VDVJZGRIQ2F0UnB1MXhRekdnbG1RSmtsaGZzdURTT19SeUI2V1NhR1VLZGsycU5EUHJ2dHltbzUxVi1QQWt0cjRDZGlpZEhZTmxUb1RaY0d6OGdjU0JZUm1vS2FBaEgyTDJDaDlwS2p5d3g2eDZKTXVJRXd5a0dLVy0wakVHc3h4UVI0YnAyMHFiSHZ5TzR2NTRXanBMSnkyR1BUQjdpZndsbTA0YzQ4QXBKLTlEM0x1SXhROHpyUHhudldZa05pWVp0VXBjUDNLUEhxdFpsd3BUdHlHRW1RbjNBeGxsUmdLbm02RGIyNGpvVzFtaXNWaFplVkhCU2Z0b2ZQaVd4QlVaMzVKUXR1N2pKVmZFS2",
-      "center_site": "https://kas.de/",
-      "relevance_tier": 3,
-      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "الأحداث - سياسة أمن البرنامج الإقليمي لغرب أفريقيا - الساحل - مؤسسة كونراد أديناور"
     },
     {
       "center": "معهد الدراسات الأمنية والتنمية (ISDP)",
