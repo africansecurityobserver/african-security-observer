@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27T21:49+01:00",
+  "updated": "2026-10-28T00:43+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,8 +605,22 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 29,
+  "count": 30,
   "publications": [
+    {
+      "center": "المركز العربي في واشنطن",
+      "center_short": "Arab Center Washington DC",
+      "title": "Egypt Weighs Diplomacy and Military Intervention in the Red Sea - Arab Center Washington DC",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNQTAwQS1MVzczNmQ3T1lILU13VncxN3EwVTFFU2prNVl6YjdxOEFRNDVwa0lfWi1DSjFwWHhnQ2NLSkE1azZvTEhqdzB5ZmxlVzRvRjlzV0pOSGdQVkxqelB2UWFtS3ZZU015YlFnUFotZTJKTmRuZXNPUkc2MXNBaU1hbmZ2b2h1aDhLMmtsdVBVaHdzcTl6VlVoM09wMmc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-27T20:28+01:00",
+      "date": "2026-10-27",
+      "source": "Arab Center Washington DC",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNQTAwQS1MVzczNmQ3T1lILU13VncxN3EwVTFFU2prNVl6YjdxOEFRNDVwa0lfWi1DSjFwWHhnQ2NLSkE1azZvTEhqdzB5ZmxlVzRvRjlzV0pOSGdQVkxqelB2UWFtS3ZZU015YlFnUFotZTJKTmRuZXNPUkc2MXNBaU1hbmZ2b2h1aDhLMmtsdVBVaHdzcTl6VlVoM09wMmc?oc=5\" target=\"_blank\">Egypt Weighs Diplomacy and Military Intervention in the Red Sea</a> <font color=\"#6f6f6f\">Arab Center Washington DC</font>",
+      "center_site": "https://arabcenterdc.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "مصر تزن الدبلوماسية والتدخل العسكري في البحر الأحمر - المركز العربي واشنطن العاصمة"
+    },
     {
       "center": "مؤسسة كونراد أديناور",
       "center_short": "Konrad Adenauer Stiftung",
