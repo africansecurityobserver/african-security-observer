@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T06:55+01:00",
+  "updated": "2026-10-28T10:02+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -612,7 +612,7 @@
       "center_short": "Arab Center Washington DC",
       "title": "Egypt Weighs Diplomacy and Military Intervention in the Red Sea - Arab Center Washington DC",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNQTAwQS1MVzczNmQ3T1lILU13VncxN3EwVTFFU2prNVl6YjdxOEFRNDVwa0lfWi1DSjFwWHhnQ2NLSkE1azZvTEhqdzB5ZmxlVzRvRjlzV0pOSGdQVkxqelB2UWFtS3ZZU015YlFnUFotZTJKTmRuZXNPUkc2MXNBaU1hbmZ2b2h1aDhLMmtsdVBVaHdzcTl6VlVoM09wMmc?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-28T01:45+01:00",
+      "published": "2026-10-28T01:53+01:00",
       "date": "2026-10-28",
       "source": "Arab Center Washington DC",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNQTAwQS1MVzczNmQ3T1lILU13VncxN3EwVTFFU2prNVl6YjdxOEFRNDVwa0lfWi1DSjFwWHhnQ2NLSkE1azZvTEhqdzB5ZmxlVzRvRjlzV0pOSGdQVkxqelB2UWFtS3ZZU015YlFnUFotZTJKTmRuZXNPUkc2MXNBaU1hbmZ2b2h1aDhLMmtsdVBVaHdzcTl6VlVoM09wMmc?oc=5\" target=\"_blank\">Egypt Weighs Diplomacy and Military Intervention in the Red Sea</a> <font color=\"#6f6f6f\">Arab Center Washington DC</font>",
@@ -634,6 +634,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "شريك - سياسة أمن البرنامج الإقليمي لغرب أفريقيا - الساحل - مؤسسة كونراد أديناور"
+    },
+    {
+      "center": "مؤسسة أبحاث المراقب (ORF)",
+      "center_short": "ORF",
+      "title": "Towards a New Security Architecture in the Indo-Mediterranean - orfonline.org",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPZWY5N3dWVzZxNXY2eDJwalZxeVhPQkxWNGZ4dEJ4X2hlS3BZYTM2dUc1NmRHWW1CSmkxOWIxWWpkbVdrR0xmVW1NMzc2VTJvWWtCNkdYTFctQk9RYkFDa2Zqa3lZMWZkeGUta1dMUVh1SlVwUFdyMFJiVTJvdU9QSjN5MGdsd2ZsM3NXMXZPYnczdEhfdnB3cmNJYVl0ZTJULVE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-22T12:04+01:00",
+      "date": "2026-10-22",
+      "source": "orfonline.org",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPZWY5N3dWVzZxNXY2eDJwalZxeVhPQkxWNGZ4dEJ4X2hlS3BZYTM2dUc1NmRHWW1CSmkxOWIxWWpkbVdrR0xmVW1NMzc2VTJvWWtCNkdYTFctQk9RYkFDa2Zqa3lZMWZkeGUta1dMUVh1SlVwUFdyMFJiVTJvdU9QSjN5MGdsd2ZsM3NXMXZPYnczdEhfdnB3cmNJYVl0ZTJULVE?oc=5\" target=\"_blank\">Towards a New Security Architecture in the Indo-Mediterranean</a> <font color=\"#6f6f6f\">orfonline.org</font>",
+      "center_site": "https://orfonline.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "هيكل أمني جديد في الشرق الأوسط"
     },
     {
       "center": "معهد اليابان للشؤون الدولية (JIIA)",
@@ -956,20 +970,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "نهج جنوب أوروبا للاستراتيجية الأمنية الأوروبية الجديدة - CIDOB"
-    },
-    {
-      "center": "مؤسسة أبحاث المراقب (ORF)",
-      "center_short": "ORF",
-      "title": "Whither a New European Security Architecture? - orfonline.org",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQcGxrZ1VLY0V0d3B3aUtFM2tRVk80aUhGQ05ZMWdDcnJsbllOeUx6NzF4OEN6bXJUY0FVNmJIOVFEWmNQM2RJVWZVRlEyQWNwQzB5MjdBX3YxWkM3S2I1Q1lDNWljeExoTkJONUdOZlI1aDNzMDFiTjlibkdtemtFR1pMUVBkdw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-05T08:00+01:00",
-      "date": "2026-10-05",
-      "source": "orfonline.org",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxQcGxrZ1VLY0V0d3B3aUtFM2tRVk80aUhGQ05ZMWdDcnJsbllOeUx6NzF4OEN6bXJUY0FVNmJIOVFEWmNQM2RJVWZVRlEyQWNwQzB5MjdBX3YxWkM3S2I1Q1lDNWljeExoTkJONUdOZlI1aDNzMDFiTjlibkdtemtFR1pMUVBkdw?oc=5\" target=\"_blank\">Whither a New European Security Architecture?</a> <font color=\"#6f6f6f\">orfonline.org</font>",
-      "center_site": "https://orfonline.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "أين هي البنية الأمنية الأوروبية الجديدة ؟ - orfonline.org"
     },
     {
       "center": "مركز الأمن الأمريكي الجديد (CNAS)",
