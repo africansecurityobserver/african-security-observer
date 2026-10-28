@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T18:57+01:00",
+  "updated": "2026-10-28T21:55+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 30,
+  "count": 31,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -704,6 +704,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
+    },
+    {
+      "center": "مؤسسة أبحاث المراقب (ORF)",
+      "center_short": "ORF",
+      "title": "NATO Cannot Afford Ambiguity in the Face of Russia’s Hybrid Warfare - orfonline.org",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOM3p3SnB1QmF2UVFtVTRjeXlkREs0ZHE0TF81WVZLUFpSR1padG5xZnZCOTdXQXc3TGlFemlzRHdWQlZKaWxuS0VXRWtUQlJSOVM0TTYwZXhWZHVkcDlmZ3V3enhIQndJV3R5WlBGUlNzcnJEMF9naUFJRS1wTHZBUU5hMVNHR3VIM0N0S0JfbUxhbERUTnpMQ1dzSC05b2tGWS1QWjkyR0dxQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-28T16:07+01:00",
+      "date": "2026-10-28",
+      "source": "orfonline.org",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOM3p3SnB1QmF2UVFtVTRjeXlkREs0ZHE0TF81WVZLUFpSR1padG5xZnZCOTdXQXc3TGlFemlzRHdWQlZKaWxuS0VXRWtUQlJSOVM0TTYwZXhWZHVkcDlmZ3V3enhIQndJV3R5WlBGUlNzcnJEMF9naUFJRS1wTHZBUU5hMVNHR3VIM0N0S0JfbUxhbERUTnpMQ1dzSC05b2tGWS1QWjkyR0dxQQ?oc=5\" target=\"_blank\">NATO Cannot Afford Ambiguity in the Face of Russia’s Hybrid Warfare</a> <font color=\"#6f6f6f\">orfonline.org</font>",
+      "center_site": "https://orfonline.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "لا يمكن لحلف الناتو تحمل الغموض في مواجهة الحرب الهجينة الروسية - orfonline.org"
     },
     {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
