@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T09:10:00+01:00",
+  "updated": "2026-10-29T10:23:53+01:00",
   "years": [
     {
       "year": "2026",
@@ -19,16 +19,6 @@
             },
             {
               "date": "2026-10-20",
-              "title": "الموارد الذهبية في أفريقيا هي أهداف مغرية للجهاديين - المعهد الدولي لمكافحة الإرهاب",
-              "subject": "الموارد الذهبية في أفريقيا هي أهداف مغرية للجهاديين - المعهد الدولي لمكافحة الإرهاب",
-              "path": "2026-10/20261020_0c26e99172c8.json",
-              "center": "المعهد الدولي لمكافحة الإرهاب (ICT)",
-              "source_title": "Africa’s Gold Resources are Tempting Targets for Jihadists - International Institute for Counter-Terrorism",
-              "slot": "research",
-              "kind_label": "بطاقة استراتيجية من مراكز البحث"
-            },
-            {
-              "date": "2026-10-20",
               "title": "الوضع في منطقة الساحل - المعهد الدولي لمكافحة الإرهاب",
               "subject": "الوضع في منطقة الساحل - المعهد الدولي لمكافحة الإرهاب",
               "path": "2026-10/20261020_c96234c57503.json",
@@ -38,12 +28,22 @@
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
             {
+              "date": "2026-10-20",
+              "title": "الموارد الذهبية في أفريقيا هي أهداف مغرية للجهاديين - المعهد الدولي لمكافحة الإرهاب",
+              "subject": "الموارد الذهبية في أفريقيا هي أهداف مغرية للجهاديين - المعهد الدولي لمكافحة الإرهاب",
+              "path": "2026-10/20261020_0c26e99172c8.json",
+              "center": "المعهد الدولي لمكافحة الإرهاب (ICT)",
+              "source_title": "Africa’s Gold Resources are Tempting Targets for Jihadists - International Institute for Counter-Terrorism",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
               "date": "2026-10-14",
-              "title": "البلد: الجزائر - مجموعة مينا للحقوق",
-              "subject": "البلد: الجزائر - مجموعة مينا للحقوق",
-              "path": "2026-10/20261014_cbf122d4d202.json",
-              "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
-              "source_title": "Country: Algeria - MENA Rights Group",
+              "title": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
+              "subject": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
+              "path": "2026-10/20261014_6ec677f032cb.json",
+              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+              "source_title": "Libya’s arsenals are a blind spot in the Tripoli agreement - ISS Africa",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
@@ -59,31 +59,21 @@
             },
             {
               "date": "2026-10-14",
-              "title": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
-              "subject": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
-              "path": "2026-10/20261014_6ec677f032cb.json",
+              "title": "البلد: الجزائر - مجموعة مينا للحقوق",
+              "subject": "البلد: الجزائر - مجموعة مينا للحقوق",
+              "path": "2026-10/20261014_cbf122d4d202.json",
+              "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+              "source_title": "Country: Algeria - MENA Rights Group",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-13",
+              "title": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي",
+              "subject": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي",
+              "path": "2026-10/20261013_ai-cyber-threats.json",
               "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-              "source_title": "Libya’s arsenals are a blind spot in the Tripoli agreement - ISS Africa",
-              "slot": "research",
-              "kind_label": "بطاقة استراتيجية من مراكز البحث"
-            },
-            {
-              "date": "2026-10-13",
-              "title": "Beyond Wagner: Russia’s Military Engagement in Africa in the 2020s",
-              "subject": "ما بعد فاغنر: الانخراط العسكري الروسي في إفريقيا خلال عشرينيات القرن الحادي والعشرين",
-              "path": "2026-10/20261013_beyond-wagner-russia-africa.json",
-              "center": "الوكالة السويدية لأبحاث الدفاع (FOI)",
-              "source_title": "Beyond Wagner: Russia’s Military Engagement in Africa in the 2020s — Swedish Defence Research Agency (FOI)",
-              "slot": "research",
-              "kind_label": "بطاقة استراتيجية من مراكز البحث"
-            },
-            {
-              "date": "2026-10-13",
-              "title": "الصراع في اليمن والبحر الأحمر | متعقّب النزاعات العالمية",
-              "subject": "الصراع في اليمن والبحر الأحمر | متعقّب النزاعات العالمية",
-              "path": "2026-10/20261013_6e27a3d8ba36.json",
-              "center": "مجلس العلاقات الخارجية",
-              "source_title": "Conflict in Yemen and the Red Sea | Global Conflict Tracker - Council on Foreign Relations",
+              "source_title": "Africa must prepare for AI-powered cyber threats at scale - ISS Africa",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
@@ -99,11 +89,21 @@
             },
             {
               "date": "2026-10-13",
-              "title": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي",
-              "subject": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي",
-              "path": "2026-10/20261013_ai-cyber-threats.json",
-              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-              "source_title": "Africa must prepare for AI-powered cyber threats at scale - ISS Africa",
+              "title": "الصراع في اليمن والبحر الأحمر | متعقّب النزاعات العالمية",
+              "subject": "الصراع في اليمن والبحر الأحمر | متعقّب النزاعات العالمية",
+              "path": "2026-10/20261013_6e27a3d8ba36.json",
+              "center": "مجلس العلاقات الخارجية",
+              "source_title": "Conflict in Yemen and the Red Sea | Global Conflict Tracker - Council on Foreign Relations",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-13",
+              "title": "Beyond Wagner: Russia’s Military Engagement in Africa in the 2020s",
+              "subject": "ما بعد فاغنر: الانخراط العسكري الروسي في إفريقيا خلال عشرينيات القرن الحادي والعشرين",
+              "path": "2026-10/20261013_beyond-wagner-russia-africa.json",
+              "center": "الوكالة السويدية لأبحاث الدفاع (FOI)",
+              "source_title": "Beyond Wagner: Russia’s Military Engagement in Africa in the 2020s — Swedish Defence Research Agency (FOI)",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
@@ -119,16 +119,6 @@
             },
             {
               "date": "2026-10-08",
-              "title": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
-              "subject": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
-              "path": "2026-10/20261008_030c9ee7dfc9.json",
-              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-              "source_title": "Africa can see El Niño coming – will countries act in time? - ISS Africa",
-              "slot": "research",
-              "kind_label": "بطاقة استراتيجية من مراكز البحث"
-            },
-            {
-              "date": "2026-10-08",
               "title": "الانتقال المتصدع في تونس من منظور مقارن",
               "subject": "الانتقال المتصدع في تونس من منظور مقارن",
               "path": "2026-10/20261013_tunisia-fractured-transition.json",
@@ -138,12 +128,12 @@
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
             {
-              "date": "2026-10-06",
-              "title": "تحديث بشأن الحرب الروسية الأوكرانية ووجهات نظر من دول الناتو: نقاش مع المجلس الاستشاري العالمي لمجلس العلاقات الخارجية",
-              "subject": "تحديث بشأن الحرب الروسية الأوكرانية ووجهات نظر من دول الناتو: نقاش مع المجلس الاستشاري العالمي لمجلس العلاقات الخارجية",
-              "path": "2026-10/20261006_236ecdb3c1cf.json",
-              "center": "مجلس العلاقات الخارجية",
-              "source_title": "Russia-Ukraine War Update and Perspectives From NATO Member Countries: Lunch and Discussion with CFR's Global Board of Advisors - Council on Foreign Relations",
+              "date": "2026-10-08",
+              "title": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
+              "subject": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
+              "path": "2026-10/20261008_030c9ee7dfc9.json",
+              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+              "source_title": "Africa can see El Niño coming – will countries act in time? - ISS Africa",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
@@ -154,6 +144,16 @@
               "path": "2026-10/20261006_a5b2fed197af.json",
               "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
               "source_title": "Russia’s military recruitment networks exploit Western tech platforms - ISS Africa",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-06",
+              "title": "تحديث بشأن الحرب الروسية الأوكرانية ووجهات نظر من دول الناتو: نقاش مع المجلس الاستشاري العالمي لمجلس العلاقات الخارجية",
+              "subject": "تحديث بشأن الحرب الروسية الأوكرانية ووجهات نظر من دول الناتو: نقاش مع المجلس الاستشاري العالمي لمجلس العلاقات الخارجية",
+              "path": "2026-10/20261006_236ecdb3c1cf.json",
+              "center": "مجلس العلاقات الخارجية",
+              "source_title": "Russia-Ukraine War Update and Perspectives From NATO Member Countries: Lunch and Discussion with CFR's Global Board of Advisors - Council on Foreign Relations",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
