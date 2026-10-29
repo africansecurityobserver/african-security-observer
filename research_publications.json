@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T10:04+01:00",
+  "updated": "2026-10-29T12:56+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -706,6 +706,20 @@
       "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
     },
     {
+      "center": "تشاتام هاوس",
+      "center_short": "Chatham House",
+      "title": "Africa Aware: 10 years of Cameroon’s Anglophone Crisis - Chatham House",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPNmFLaURmTVFnY0xMVWtEampqVEFTbWoxQmtsVFhvWGF1TEh6TTZmWEM5UmNWVVpPMzlabnRnWWZsUzV5THNWSXFQNVdYM2lrR09aY2RxVWZhYUIydkRZWDNudG5IU1l3QmNjRC1aZW1QdkVxYjlQM3dPQ3BSRk95MlhWXzFlaUZSOExxZ0VPNA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-29T11:14+01:00",
+      "date": "2026-10-29",
+      "source": "Chatham House",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxPNmFLaURmTVFnY0xMVWtEampqVEFTbWoxQmtsVFhvWGF1TEh6TTZmWEM5UmNWVVpPMzlabnRnWWZsUzV5THNWSXFQNVdYM2lrR09aY2RxVWZhYUIydkRZWDNudG5IU1l3QmNjRC1aZW1QdkVxYjlQM3dPQ3BSRk95MlhWXzFlaUZSOExxZ0VPNA?oc=5\" target=\"_blank\">Africa Aware: 10 years of Cameroon’s Anglophone Crisis</a> <font color=\"#6f6f6f\">Chatham House</font>",
+      "center_site": "https://chathamhouse.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "أفريقيا على علم: 10 سنوات من أزمة الكاميرون الناطقة باللغة الإنجليزية - تشاتام هاوس"
+    },
+    {
       "center": "مركز إفريقيا للدراسات الاستراتيجية",
       "center_short": "Africa Center for Strategic Studies",
       "title": "Lessons from Africa’s Drone Wars - Africa Center for Strategic Studies",
@@ -956,20 +970,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "هل يمكن أن يؤدي القتال في إثيوبيا إلى اندلاع حرب إقليمية في القرن الإفريقي؟"
-    },
-    {
-      "center": "تشاتام هاوس",
-      "center_short": "Chatham House",
-      "title": "Towards just transition in Africa: Continental coordination on green financing and job creation - Chatham House",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNMExvXzRSeXZrVjFhWVp4MnRpUTlySmI2MWlfck1XdmVLc1R5aHlBVGJPRDBPam5wRzNMdlJOcTExc0ZvbWhNWVVvOVJJNEphbjdMTnhGSXVfbkI3N09LdnNDYUtFVWluOFpFekxEc01nMTdHbHlPeDNUZmVvOGdYQ1hIWkEwUDhYQmxzWkdQaUNaR1A4bXJnaTFpdW4xeE44VkRyaGR3Nno5eUxuY1lzbTQ0dkRJUVFpQ29LWloxb3NMYXJ6?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-08T08:00+01:00",
-      "date": "2026-10-08",
-      "source": "Chatham House",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNMExvXzRSeXZrVjFhWVp4MnRpUTlySmI2MWlfck1XdmVLc1R5aHlBVGJPRDBPam5wRzNMdlJOcTExc0ZvbWhNWVVvOVJJNEphbjdMTnhGSXVfbkI3N09LdnNDYUtFVWluOFpFekxEc01nMTdHbHlPeDNUZmVvOGdYQ1hIWkEwUDhYQmxzWkdQaUNaR1A4bXJnaTFpdW4xeE44VkRyaGR3Nno5eUxuY1lzbTQ0dkRJUVFpQ29LWloxb3NMYXJ6?oc=5\" target=\"_blank\">Towards just transition in Africa: Continental coordination on green financing and job creation</a> <font color=\"#6f6f6f\">Chatham House</font>",
-      "center_site": "https://chathamhouse.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "نحو انتقال عادل في أفريقيا: التنسيق القاري بشأن التمويل الأخضر وخلق فرص العمل - تشاتام هاوس"
     },
     {
       "center": "وكالة أبحاث الدفاع السويدية (FOI)",
