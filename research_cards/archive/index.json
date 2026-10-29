@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T07:15:42+01:00",
+  "updated": "2026-10-29T09:10:00+01:00",
   "years": [
     {
       "year": "2026",
@@ -8,12 +8,12 @@
           "month": "10",
           "cards": [
             {
-              "date": "2026-10-20",
-              "title": "الوضع في منطقة الساحل - المعهد الدولي لمكافحة الإرهاب",
-              "subject": "الوضع في منطقة الساحل - المعهد الدولي لمكافحة الإرهاب",
-              "path": "2026-10/20261020_c96234c57503.json",
-              "center": "المعهد الدولي لمكافحة الإرهاب (ICT)",
-              "source_title": "The Situation in the Sahel - International Institute for Counter-Terrorism",
+              "date": "2026-10-28",
+              "title": "الدروس المستفادة من حروب الطائرات المسيّرة في إفريقيا – مركز إفريقيا للدراسات الاستراتيجية",
+              "subject": "تحولات حرب الطائرات المسيّرة في إفريقيا وانعكاساتها على الأمن التونسي",
+              "path": "2026-10/20261028_06b7c1d0e2dd.json",
+              "center": "مركز إفريقيا للدراسات الاستراتيجية",
+              "source_title": "Lessons from Africa’s Drone Wars - Africa Center for Strategic Studies",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
@@ -28,12 +28,22 @@
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
             {
+              "date": "2026-10-20",
+              "title": "الوضع في منطقة الساحل - المعهد الدولي لمكافحة الإرهاب",
+              "subject": "الوضع في منطقة الساحل - المعهد الدولي لمكافحة الإرهاب",
+              "path": "2026-10/20261020_c96234c57503.json",
+              "center": "المعهد الدولي لمكافحة الإرهاب (ICT)",
+              "source_title": "The Situation in the Sahel - International Institute for Counter-Terrorism",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
               "date": "2026-10-14",
-              "title": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
-              "subject": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
-              "path": "2026-10/20261014_6ec677f032cb.json",
-              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-              "source_title": "Libya’s arsenals are a blind spot in the Tripoli agreement - ISS Africa",
+              "title": "البلد: الجزائر - مجموعة مينا للحقوق",
+              "subject": "البلد: الجزائر - مجموعة مينا للحقوق",
+              "path": "2026-10/20261014_cbf122d4d202.json",
+              "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
+              "source_title": "Country: Algeria - MENA Rights Group",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
@@ -49,31 +59,21 @@
             },
             {
               "date": "2026-10-14",
-              "title": "البلد: الجزائر - مجموعة مينا للحقوق",
-              "subject": "البلد: الجزائر - مجموعة مينا للحقوق",
-              "path": "2026-10/20261014_cbf122d4d202.json",
-              "center": "مجموعة حقوق الشرق الأوسط وشمال إفريقيا",
-              "source_title": "Country: Algeria - MENA Rights Group",
-              "slot": "research",
-              "kind_label": "بطاقة استراتيجية من مراكز البحث"
-            },
-            {
-              "date": "2026-10-13",
-              "title": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي",
-              "subject": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي",
-              "path": "2026-10/20261013_ai-cyber-threats.json",
+              "title": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
+              "subject": "ترسانات ليبيا هي نقطة عمياء في اتفاق طرابلس - محطة الفضاء الدولية في أفريقيا",
+              "path": "2026-10/20261014_6ec677f032cb.json",
               "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-              "source_title": "Africa must prepare for AI-powered cyber threats at scale - ISS Africa",
+              "source_title": "Libya’s arsenals are a blind spot in the Tripoli agreement - ISS Africa",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
             {
               "date": "2026-10-13",
-              "title": "بيان صحفي – المؤتمر الدولي \"المشهد الباكستاني المتطور لمكافحة الإرهاب: TTP، التهديدات عبر الحدود والأمن الإقليمي\" - معهد الدراسات الاستراتيجية إسلام أباد (ISSI)",
-              "subject": "بيان صحفي – المؤتمر الدولي \"المشهد الباكستاني المتطور لمكافحة الإرهاب: TTP، التهديدات عبر الحدود والأمن الإقليمي\" - معهد الدراسات الاستراتيجية إسلام أباد (ISSI)",
-              "path": "2026-10/20261013_3de040c59fbf.json",
-              "center": "معهد الدراسات الدفاعية والاستراتيجية في إسلام آباد",
-              "source_title": "Press Release – International Conference ‘Pakistan’s Evolving Counterterrorism Landscape: TTP, Cross-Border Threats and Regional Security’ - Institute of Strategic Studies Islamabad (ISSI)",
+              "title": "Beyond Wagner: Russia’s Military Engagement in Africa in the 2020s",
+              "subject": "ما بعد فاغنر: الانخراط العسكري الروسي في إفريقيا خلال عشرينيات القرن الحادي والعشرين",
+              "path": "2026-10/20261013_beyond-wagner-russia-africa.json",
+              "center": "الوكالة السويدية لأبحاث الدفاع (FOI)",
+              "source_title": "Beyond Wagner: Russia’s Military Engagement in Africa in the 2020s — Swedish Defence Research Agency (FOI)",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
@@ -89,11 +89,21 @@
             },
             {
               "date": "2026-10-13",
-              "title": "Beyond Wagner: Russia’s Military Engagement in Africa in the 2020s",
-              "subject": "ما بعد فاغنر: الانخراط العسكري الروسي في إفريقيا خلال عشرينيات القرن الحادي والعشرين",
-              "path": "2026-10/20261013_beyond-wagner-russia-africa.json",
-              "center": "الوكالة السويدية لأبحاث الدفاع (FOI)",
-              "source_title": "Beyond Wagner: Russia’s Military Engagement in Africa in the 2020s — Swedish Defence Research Agency (FOI)",
+              "title": "بيان صحفي – المؤتمر الدولي \"المشهد الباكستاني المتطور لمكافحة الإرهاب: TTP، التهديدات عبر الحدود والأمن الإقليمي\" - معهد الدراسات الاستراتيجية إسلام أباد (ISSI)",
+              "subject": "بيان صحفي – المؤتمر الدولي \"المشهد الباكستاني المتطور لمكافحة الإرهاب: TTP، التهديدات عبر الحدود والأمن الإقليمي\" - معهد الدراسات الاستراتيجية إسلام أباد (ISSI)",
+              "path": "2026-10/20261013_3de040c59fbf.json",
+              "center": "معهد الدراسات الدفاعية والاستراتيجية في إسلام آباد",
+              "source_title": "Press Release – International Conference ‘Pakistan’s Evolving Counterterrorism Landscape: TTP, Cross-Border Threats and Regional Security’ - Institute of Strategic Studies Islamabad (ISSI)",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-13",
+              "title": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي",
+              "subject": "ينبغي لإفريقيا الاستعداد لتهديدات سيبرانية واسعة النطاق مدعومة بالذكاء الاصطناعي",
+              "path": "2026-10/20261013_ai-cyber-threats.json",
+              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+              "source_title": "Africa must prepare for AI-powered cyber threats at scale - ISS Africa",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
@@ -109,16 +119,6 @@
             },
             {
               "date": "2026-10-08",
-              "title": "الانتقال المتصدع في تونس من منظور مقارن",
-              "subject": "الانتقال المتصدع في تونس من منظور مقارن",
-              "path": "2026-10/20261013_tunisia-fractured-transition.json",
-              "center": "المركز العربي في واشنطن",
-              "source_title": "Tunisia’s Fractured Transition in Comparative Perspective - Arab Center Washington DC",
-              "slot": "research",
-              "kind_label": "بطاقة استراتيجية من مراكز البحث"
-            },
-            {
-              "date": "2026-10-08",
               "title": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
               "subject": "إفريقيا قادرة على توقّع ظاهرة النينيو؛ فهل تتحرك الدول في الوقت المناسب؟",
               "path": "2026-10/20261008_030c9ee7dfc9.json",
@@ -128,12 +128,12 @@
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
             {
-              "date": "2026-10-06",
-              "title": "شبكات التجنيد العسكري الروسية تستغل منصات التكنولوجيا الغربية",
-              "subject": "شبكات التجنيد العسكري الروسية تستغل منصات التكنولوجيا الغربية",
-              "path": "2026-10/20261006_a5b2fed197af.json",
-              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-              "source_title": "Russia’s military recruitment networks exploit Western tech platforms - ISS Africa",
+              "date": "2026-10-08",
+              "title": "الانتقال المتصدع في تونس من منظور مقارن",
+              "subject": "الانتقال المتصدع في تونس من منظور مقارن",
+              "path": "2026-10/20261013_tunisia-fractured-transition.json",
+              "center": "المركز العربي في واشنطن",
+              "source_title": "Tunisia’s Fractured Transition in Comparative Perspective - Arab Center Washington DC",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
@@ -144,6 +144,16 @@
               "path": "2026-10/20261006_236ecdb3c1cf.json",
               "center": "مجلس العلاقات الخارجية",
               "source_title": "Russia-Ukraine War Update and Perspectives From NATO Member Countries: Lunch and Discussion with CFR's Global Board of Advisors - Council on Foreign Relations",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-06",
+              "title": "شبكات التجنيد العسكري الروسية تستغل منصات التكنولوجيا الغربية",
+              "subject": "شبكات التجنيد العسكري الروسية تستغل منصات التكنولوجيا الغربية",
+              "path": "2026-10/20261006_a5b2fed197af.json",
+              "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+              "source_title": "Russia’s military recruitment networks exploit Western tech platforms - ISS Africa",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
