@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T18:58+01:00",
+  "updated": "2026-10-29T21:57+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 32,
+  "count": 33,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -706,6 +706,20 @@
       "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
     },
     {
+      "center": "مجلس العلاقات الخارجية",
+      "center_short": "CFR",
+      "title": "From the Iran War to Gas Prices: How Foreign Policy Is Driving the 2026 Midterms - Council on Foreign Relations",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPLVlPVkVnYnAxQlg3WXpENjk5YlhnM1M5eXYwYm9hektFZjNEeHU5ZkI0NVZCVzBZR25jdmJSdVFnVW1jOUZnUVV6Tm1aVFpMdG9MVGpMYjNPeGxDX19RSWxEdFRQc3BXenktMkpMVUhPNHZHNURzek1sdmgxemwtYmtLTmduSzdlZTA0UG12YTFhc3ZOT0pmRjkyTXBNRXJyWTgxeFg3MnN2VmNN?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-29T20:33+01:00",
+      "date": "2026-10-29",
+      "source": "Council on Foreign Relations",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPLVlPVkVnYnAxQlg3WXpENjk5YlhnM1M5eXYwYm9hektFZjNEeHU5ZkI0NVZCVzBZR25jdmJSdVFnVW1jOUZnUVV6Tm1aVFpMdG9MVGpMYjNPeGxDX19RSWxEdFRQc3BXenktMkpMVUhPNHZHNURzek1sdmgxemwtYmtLTmduSzdlZTA0UG12YTFhc3ZOT0pmRjkyTXBNRXJyWTgxeFg3MnN2VmNN?oc=5\" target=\"_blank\">From the Iran War to Gas Prices: How Foreign Policy Is Driving the 2026 Midterms</a> <font color=\"#6f6f6f\">Council on Foreign Relations</font>",
+      "center_site": "https://cfr.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "من حرب إيران إلى أسعار الغاز: كيف تقود السياسة الخارجية انتخابات التجديد النصفي لعام 2026 - مجلس العلاقات الخارجية"
+    },
+    {
       "center": "تشاتام هاوس",
       "center_short": "Chatham House",
       "title": "Africa Aware: 10 years of Cameroon’s Anglophone Crisis - Chatham House",
@@ -746,6 +760,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "لا يمكن لحلف الناتو تحمل الغموض في مواجهة الحرب الهجينة الروسية - orfonline.org"
+    },
+    {
+      "center": "معهد الدراسات الدفاعية والاستراتيجية الهندي (MP-IDSA)",
+      "center_short": "MP-IDSA",
+      "title": "RK Narang Quoted in South China Morning Post Report ‘Can India turn wartime ammo sales into lasting European defence ties?’ - MP-IDSA",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQa2ctMTFfaWZhTVQydjV0RFRuelVNdUhOQU1rSkhkSnlEb01zcHdyLWJDLWlQVndBMDhCYVJxODB5STFpVncybTd3SkxaQlNTdmpZTVVRSEVwaksyR0k2Skt0azBPSU5QeWQ5aDNPZXZ4YXEwNDJkLVByeGsxTzBqSXpDQzY?oc=5",
+      "published": "2026-10-28T08:00+01:00",
+      "date": "2026-10-28",
+      "source": "MP-IDSA",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMihAFBVV95cUxQa2ctMTFfaWZhTVQydjV0RFRuelVNdUhOQU1rSkhkSnlEb01zcHdyLWJDLWlQVndBMDhCYVJxODB5STFpVncybTd3SkxaQlNTdmpZTVVRSEVwaksyR0k2Skt0azBPSU5QeWQ5aDNPZXZ4YXEwNDJkLVByeGsxTzBqSXpDQzY?oc=5\" target=\"_blank\">RK Narang Quoted in South China Morning Post Report ‘Can India turn wartime ammo sales into lasting European defence ties?’</a> <font color=\"#6f6f6f\">MP-IDSA</font>",
+      "center_site": "https://idsa.in/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "RK Narang مقتبس في تقرير جنوب الصين الصباحي \"هل يمكن للهند تحويل مبيعات الذخيرة في زمن الحرب إلى علاقات دفاعية أوروبية دائمة ؟\" - MP - IDSA"
     },
     {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
@@ -928,20 +956,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "أجرت دويتشه فيله مقابلة مع جينيفيف دونيلون ماي حول الأمن الغذائي في الصين - معهد سياسة الأمن والتنمية"
-    },
-    {
-      "center": "مجلس العلاقات الخارجية",
-      "center_short": "CFR",
-      "title": "Russia-Ukraine War Update and Perspectives From NATO Member Countries: Lunch and Discussion with CFR's Global Board of Advisors - Council on Foreign Relations",
-      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOejFlNFo0dW9VdjR0QXdwSE8wZFE3cjgyazZBbE1JMWlJR2hiUTZpY1hQUVJkbFZSbWhHeVVleE0zcjhCNHRhZDF0dGJPZjBwVHV0aXY2eDhPMGNxdFZuMHVKV0lTSkpwSG5xS2I0dG1ZQlp4aXVEbEE1Qk41aEtwTFFKN1B0V0FacUs1XzhQWWlQSVIxZlhCeFhaN29zd3RmcGtlOTFEb0NlWExtTEFOZnFHSmtQempzN25Fd0FveHE4RDlzUVNkaldfVVZnTWJpNV9OLXkyME51dVFPUzBCRXZ6OENxZw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-12T17:04+01:00",
-      "date": "2026-10-12",
-      "source": "Council on Foreign Relations",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi5gFBVV95cUxOejFlNFo0dW9VdjR0QXdwSE8wZFE3cjgyazZBbE1JMWlJR2hiUTZpY1hQUVJkbFZSbWhHeVVleE0zcjhCNHRhZDF0dGJPZjBwVHV0aXY2eDhPMGNxdFZuMHVKV0lTSkpwSG5xS2I0dG1ZQlp4aXVEbEE1Qk41aEtwTFFKN1B0V0FacUs1XzhQWWlQSVIxZlhCeFhaN29zd3RmcGtlOTFEb0NlWExtTEFOZnFHSmtQempzN25Fd0FveHE4RDlzUVNkaldfVVZnTWJpNV9OLXkyME51dVFPUzBCRXZ6OENxZw?oc=5\" target=\"_blank\">Russia-Ukraine War Update and Perspectives From NATO Member Countries: Lunch and Discussion with CFR's Global Board o",
-      "center_site": "https://cfr.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "تحديث بشأن الحرب الروسية الأوكرانية ووجهات نظر من دول الناتو: نقاش مع المجلس الاستشاري العالمي لمجلس العلاقات الخارجية"
     },
     {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
