@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T06:56+01:00",
+  "updated": "2026-11-01T09:58+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 34,
+  "count": 33,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -1068,20 +1068,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "المؤتمر السنوي الأفريقي الثاني حول التصنيفات الائتمانية نحو تطوير أسواق رأس المال الأفريقية - SAIIA"
-    },
-    {
-      "center": "معهد كلينغندايل",
-      "center_short": "Clingendael",
-      "title": "Ethiopia’s widening war threatens the Horn of Africa - Clingendael",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQNUEyeFF6TFVvRERlOHplU3gwVXNQQlE5VzUyNXFnczROQ0RiTzNqTkptOWFuVXViY2VDSkkxdnp6aHltSjlSb3JKVXVQWHc0bzFGeU94S183QkZURGRnRmJZa1VWV2E0c3dERkRuN0ZzdTF0UnJVRllZWWlzcXNBY3FQOHFZRkswZnNicw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-02T08:00+01:00",
-      "date": "2026-10-02",
-      "source": "Clingendael",
-      "description": "Ethiopia’s widening war threatens the Horn of Africa Clingendael",
-      "center_site": "https://clingendael.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "اتساع رقعة الحرب في إثيوبيا يهدد القرن الإفريقي"
     }
   ]
 }
