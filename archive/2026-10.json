@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T02:17:16.882067+00:00",
+  "updated": "2026-11-01T03:07:07.526457+00:00",
   "items": [
     {
       "title": "بوريطة: الفيتو الروسي بمجلس الأمن خلق واقعا جديدا في الصحراء",
@@ -11,6 +11,17 @@
       "published": "Sat, 31 Oct 2026 23:47:17 GMT",
       "category": "north",
       "region": "africa"
+    },
+    {
+      "title": "إسرائيل تنزاح يمينا.. تراجع نتنياهو يكشف مأزق المعارضة وتحالفاتها المستحيلة",
+      "description": "قالت صحيفة فايننشال تايمز إن المعارضة الإسرائيلية تواجه معضلة سياسية تتمثل في ترددها الشديد رغم حاجتها الملحة إلى التعاون مع الأحزاب العربية لتشكيل حكومة بديلة، تطيح بنتنياهو الذي فقد أغلبيته.",
+      "original_title": "إسرائيل تنزاح يمينا.. تراجع نتنياهو يكشف مأزق المعارضة وتحالفاتها المستحيلة",
+      "original_description": "قالت صحيفة فايننشال تايمز إن المعارضة الإسرائيلية تواجه معضلة سياسية تتمثل في ترددها الشديد رغم حاجتها الملحة إلى التعاون مع الأحزاب العربية لتشكيل حكومة بديلة، تطيح بنتنياهو الذي فقد أغلبيته.",
+      "url": "https://www.aljazeera.net/politics/2026/11/1/%d8%a5%d8%b3%d8%b1%d8%a7%d8%a6%d9%8a%d9%84-%d8%aa%d9%86%d8%b2%d8%a7%d8%ad-%d9%8a%d9%85%d9%8a%d9%86%d8%a7-%d8%aa%d8%b1%d8%a7%d8%ac%d8%b9-%d9%86%d8%aa%d9%86%d9%8a%d8%a7%d9%87%d9%88?traffic_source=rss",
+      "source": "aljazeera.net",
+      "published": "Sun, 01 Nov 2026 02:33:45 +0300",
+      "category": "rest",
+      "region": "world"
     },
     {
       "title": "معركة مقاعد الكونغرس تمتد إلى نزاع إعادة رسم الدوائر الانتخابية - نافذة خاصة",
@@ -2136,7 +2147,7 @@
       "region": "world"
     },
     {
-      "title": "بعثة حفظ السلام التابعة للأمم المتحدة في الصحراء الغربية تُركت في طي النسيان بعد المواجهة بين الولايات المتحدة وروسيا حول حق النقض - ​​ميدل إيست آي",
+      "title": "بعثة حفظ السلام التابعة للأمم المتحدة في الصحراء الغربية تُركت في طي النسيان بعد المواجهة بين الولايات المتحدة وروسيا بشأن الفيتو - ميدل إيست آي",
       "description": "بعثة حفظ السلام التابعة للأمم المتحدة في الصحراء الغربية تُركت في طي النسيان بعد المواجهة بين الولايات المتحدة وروسيا    ميدل إيست آي",
       "original_title": "UN Western Sahara peacekeeping mission left in limbo after US-Russia veto standoff - Middle East Eye",
       "original_description": "UN Western Sahara peacekeeping mission left in limbo after US-Russia veto standoff &nbsp;&nbsp; Middle East Eye",
@@ -2489,7 +2500,7 @@
     },
     {
       "title": "اشتباكات بين الولايات المتحدة وروسيا في مجلس الأمن التابع للأمم المتحدة، مما يترك مهمة حفظ السلام في شمال أفريقيا على شفا التوقف التام",
-      "description": "اشتباك الولايات المتحدة وروسيا في مجلس الأمن التابع للأمم المتحدة، مما يترك مهمة حفظ السلام في شمال أفريقيا على شفا التوقف التام    Business Insider Africa",
+      "description": "اشتباك الولايات المتحدة وروسيا في مجلس الأمن التابع للأمم المتحدة، مما يترك مهمة حفظ السلام في شمال إفريقيا على شفا التوقف التام    Business Insider Africa",
       "original_title": "US and Russia clash at UN Security Council, leaving North Africa peacekeeping mission on brink of total shutdown - Business Insider Africa",
       "original_description": "US and Russia clash at UN Security Council, leaving North Africa peacekeeping mission on brink of total shutdown &nbsp;&nbsp; Business Insider Africa",
       "url": "https://africa.businessinsider.com/local/lifestyle/us-and-russia-clash-at-un-security-council-leaving-north-africa-peacekeeping-mission/4s6vpt3",
@@ -2587,7 +2598,7 @@
       "region": "africa"
     },
     {
-      "title": "مشاة البحرية البحرية تقتل 34 إرهابيًا وتعطل عمليات تنظيم الدولة الإسلامية في غرب أفريقيا وبوكو حرام في بحيرة تشاد من المصدر",
+      "title": "مشاة البحرية البحرية تقتل 34 إرهابيًا وتعطل عمليات تنظيم الدولة الإسلامية في غرب أفريقيا/بوكو حرام في بحيرة تشاد - مقالات اليوم - News.tn",
       "description": "مشاة البحرية البحرية تقتل 34 إرهابيًا، وتعطل عمليات داعش/بوكو حرام في بحيرة تشاد    فانجارد نيوز",
       "original_title": "Navy marines kill 34 terrorists, disrupt ISWAP/Boko Haram operations in Lake Chad - Vanguard News",
       "original_description": "Navy marines kill 34 terrorists, disrupt ISWAP/Boko Haram operations in Lake Chad &nbsp;&nbsp; Vanguard News",
@@ -2830,7 +2841,7 @@
     },
     {
       "title": "#موجز_يومي: زعيم ولاية جنوب غرب الصومال يسعى للحصول على دعم عسكري إثيوبي مع استمرار تصاعد التوترات في بيدوا. تولى مادوبي السيطرة على إدارة ولاية جنوب غرب الصومال في مارس بعد أن استولت القوات الفيدرالية الصومالية على بيدوا، مما أجبر لافتاغار - Facebook",
-      "description": "#موجز_يومي: زعيم ولاية جنوب غرب #الصومال يسعى للحصول على دعم عسكري #إثيوبي مع استمرار تصاعد التوترات في #بيدوا. تولى مادوبي السيطرة على إدارة ولاية #جنوب_غرب_الصومال في مارس بعد أن استولت القوات الفيدرالية الصومالية على بيدوا، مما أجبر لافتاغاري    Facebook",
+      "description": "#موجز_يومي: زعيم ولاية جنوب غرب الصومال يسعى للحصول على دعم عسكري إثيوبي مع استمرار تصاعد التوترات في بيدوا. تولى مادوبي السيطرة على إدارة ولاية جنوب غرب الصومال في مارس بعد أن استولت القوات الفيدرالية الصومالية على بيدوا، مما أجبر لافتاغاري    Facebook",
       "original_title": "#Daily_Brief: #Somalia’s South West State leader seeks #Ethiopian military support as tensions continue to rise in #Baidoa Madobe assumed control of the #South_West State administration in March after Somali federal forces seized Baidoa, forcing Laftagare - Facebook",
       "original_description": "#Daily_Brief: #Somalia’s South West State leader seeks #Ethiopian military support as tensions continue to rise in #Baidoa Madobe assumed control of the #South_West State administration in March after Somali federal forces seized Baidoa, forcing Laftagare &nbsp;&nbsp; Facebook",
       "url": "https://www.facebook.com/AddisstandardEng/posts/daily_brief-somalias-south-west-state-leader-seeks-ethiopian-military-support-as/1558817569616807",
@@ -2863,7 +2874,7 @@
     },
     {
       "title": "تونس-ساحل العاج: تعزيز التعاون الأكاديمي والعلمي - Webmanagercenter",
-      "description": "تونس-ساحل العاج: تعزيز التعاون الأكاديمي والعلمي Webmanagercenter",
+      "description": "تونس وساحل العاج: تعزيز التعاون الأكاديمي والعلمي Webmanagercenter",
       "original_title": "Tunisie-Côte d’Ivoire : renforcer la coopération universitaire et scientifique - Webmanagercenter",
       "original_description": "Tunisie-Côte d’Ivoire : renforcer la coopération universitaire et scientifique &nbsp;&nbsp; Webmanagercenter",
       "url": "https://www.webmanagercenter.com/2026/10/31/575846/tunisie-cote-divoire-renforcer-la-cooperation-universitaire-et-scientifique",
@@ -2901,6 +2912,17 @@
       "original_description": "Egypt fears escalation in Iran war would be more destructive, foreign minister says &nbsp;&nbsp; Yahoo News Singapore",
       "url": "https://sg.news.yahoo.com/egypt-fears-escalation-iran-war-082028484.html",
       "source": "Yahoo News Singapore",
+      "published": "Sat, 31 Oct 2026 08:20:28 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "وزير الخارجية المصري: مصر تخشى أن يكون التصعيد في الحرب مع إيران أكثر تدميراً، بحسب ما قاله وزير الخارجية - المونيتور",
+      "description": "وزير الخارجية المصري: مصر تخشى أن يكون التصعيد في الحرب مع إيران أكثر تدميراً    المونيتور",
+      "original_title": "Egypt fears escalation in Iran war would be more destructive, foreign minister says - Al-Monitor",
+      "original_description": "Egypt fears escalation in Iran war would be more destructive, foreign minister says &nbsp;&nbsp; Al-Monitor",
+      "url": "https://www.al-monitor.com/originals/2026/10/egypt-fears-escalation-iran-war-would-be-more-destructive-foreign-minister-says",
+      "source": "Al-Monitor",
       "published": "Sat, 31 Oct 2026 08:20:28 GMT",
       "category": "north",
       "region": "africa"
@@ -2994,7 +3016,7 @@
       "region": "world"
     },
     {
-      "title": "القوات الروسية تستخدم مرتزقة من أفريقيا وآسيا في هجماتها على جبهة هوليايبول – عسكرية – أوكرينفورم",
+      "title": "القوات الروسية تستعين بالمرتزقة من أفريقيا وآسيا في هجماتها على جبهة هوليبول – عسكرية – أوكرينفورم",
       "description": "القوات الروسية تستعين بالمرتزقة من أفريقيا وآسيا في هجماتها على جبهة هوليبول – عسكري    Ukrinform",
       "original_title": "Russian forces using mercenaries form Africa and Asia in assaults on Huliaipole front – military - Ukrinform",
       "original_description": "Russian forces using mercenaries form Africa and Asia in assaults on Huliaipole front – military &nbsp;&nbsp; Ukrinform",
@@ -3368,6 +3390,17 @@
       "region": "world"
     },
     {
+      "title": "انتهاء مهمة الأمم المتحدة لحفظ السلام في الصحراء الغربية وسط الفيتو الأمريكي والروسي - DW.com",
+      "description": "انتهاء مهمة حفظ السلام التابعة للأمم المتحدة في الصحراء الغربية وسط الفيتو الأمريكي والروسي    DW.com",
+      "original_title": "UN peacekeeping mission in Western Sahara to expire amid US, Russia vetoes - DW.com",
+      "original_description": "UN peacekeeping mission in Western Sahara to expire amid US, Russia vetoes &nbsp;&nbsp; DW.com",
+      "url": "https://www.dw.com/en/un-peacekeeping-mission-in-western-sahara-to-expire-amid-us-russia-vetoes/a-79814338",
+      "source": "DW.com",
+      "published": "Sat, 31 Oct 2026 06:21:36 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
       "title": "مباشر: السعودية تعلن تدمير مسيرة تابعة للحوثيين فوق المدينة المنورة",
       "description": "أعلن التحالف الذي تقوده السعودية في اليمن اليوم الجمعة أنه اعترض ودمر طائرة مسيرة أطلقتها جماعة الحوثي المتحالفة مع إيران في اليمن فوق منطقة المدينة المنورة لكن الحوثيين نفوا شن أي هجوم على المملكة. تابعوا تغطيتنا المباشر",
       "original_title": "مباشر: السعودية تعلن تدمير مسيرة تابعة للحوثيين فوق المدينة المنورة",
@@ -3553,17 +3586,6 @@
       "published": "Sat, 31 Oct 2026 04:36:49 GMT",
       "category": "sahel",
       "region": "africa"
-    },
-    {
-      "title": "انتهاء مهمة الأمم المتحدة لحفظ السلام في الصحراء الغربية وسط الفيتو الأمريكي والروسي - DW.com",
-      "description": "انتهاء مهمة حفظ السلام التابعة للأمم المتحدة في الصحراء الغربية وسط الفيتو الأمريكي والروسي    DW.com",
-      "original_title": "UN peacekeeping mission in Western Sahara to expire amid US, Russia vetoes - DW.com",
-      "original_description": "UN peacekeeping mission in Western Sahara to expire amid US, Russia vetoes &nbsp;&nbsp; DW.com",
-      "url": "https://www.dw.com/en/un-peacekeeping-mission-in-western-sahara-to-expire-amid-us-russia-vetoes/a-79814338",
-      "source": "DW.com",
-      "published": "Sat, 31 Oct 2026 04:26:47 GMT",
-      "category": "international",
-      "region": "world"
     },
     {
       "title": "الجيش يقتل 48 من مقاتلي تنظيم الدولة الإسلامية في غرب أفريقيا بعد صد هجمات في شمال شرق نيجيريا - The Eastleigh Voice",
@@ -4325,12 +4347,12 @@
       "region": "africa"
     },
     {
-      "title": "ليبيا.. مجموعة مسلحة تغلق صمام خط الحمادة » أوبينيا تايمز - www.opinyatimes.com",
-      "description": "ليبيا.. مجموعة مسلحة تغلق صمام خط الحمادة » أوبينيا تايمز    www.opinyatimes.com",
-      "original_title": "ليبيا.. مجموعة مسلحة تغلق صمام خط الحمادة » أوبينيا تايمز - www.opinyatimes.com",
-      "original_description": "ليبيا.. مجموعة مسلحة تغلق صمام خط الحمادة » أوبينيا تايمز &nbsp;&nbsp; www.opinyatimes.com",
+      "title": "ليبيا.. مجموعة مسلحة تغلق صمام خط الحمادة - https://www.opinyatimes.com/",
+      "description": "ليبيا.. مجموعة مسلحة تغلق صمام خط الحمادة    https://www.opinyatimes.com/",
+      "original_title": "ليبيا.. مجموعة مسلحة تغلق صمام خط الحمادة - https://www.opinyatimes.com/",
+      "original_description": "ليبيا.. مجموعة مسلحة تغلق صمام خط الحمادة &nbsp;&nbsp; https://www.opinyatimes.com/",
       "url": "https://www.opinyatimes.com/%D9%84%D9%8A%D8%A8%D9%8A%D8%A7-%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9-%D9%85%D8%B3%D9%84%D8%AD%D8%A9-%D8%AA%D8%BA%D9%84%D9%82-%D8%B5%D9%85%D8%A7%D9%85-%D8%AE%D8%B7-%D8%A7%D9%84%D8%AD%D9%85%D8%A7%D8%AF",
-      "source": "www.opinyatimes.com",
+      "source": "https://www.opinyatimes.com/",
       "published": "Fri, 30 Oct 2026 21:31:48 GMT",
       "category": "north",
       "region": "africa"
@@ -4589,7 +4611,7 @@
       "region": "africa"
     },
     {
-      "title": "هزيمة قرارات الولايات المتحدة وروسيا المتنافسة بشأن الصحراء الغربية في مجلس الأمن الدولي - رويترز",
+      "title": "هزيمة القرارات الأمريكية الروسية المتنافسة بشأن الصحراء الغربية في مجلس الأمن الدولي - رويترز",
       "description": "هزيمة القرارات الأمريكية الروسية المتنافسة بشأن الصحراء الغربية في مجلس الأمن التابع للأمم المتحدة    رويترز",
       "original_title": "Competing US, Russia resolutions on Western Sahara defeated in UN Security Council - Reuters",
       "original_description": "Competing US, Russia resolutions on Western Sahara defeated in UN Security Council &nbsp;&nbsp; Reuters",
@@ -5591,7 +5613,7 @@
     },
     {
       "title": "\"دولة مثالية من الناحية الأمنية\": لماذا سيتم التنافس على رالي داكار في المغرب عام 2027 - لو باريزيان",
-      "description": "\"بلد مثالي من الناحية الأمنية\": لماذا سيتم التنافس على داكار بشكل أساسي في المغرب عام 2027    لو باريزيان",
+      "description": "\"دولة مثالية من الناحية الأمنية\": لماذا سيتم التنافس على داكار بشكل أساسي في المغرب عام 2027    لو باريزيان",
       "original_title": "« Un pays idéal en termes de sécurité » : pourquoi le Dakar se disputera majoritairement au Maroc en 2027 - Le Parisien",
       "original_description": "« Un pays idéal en termes de sécurité » : pourquoi le Dakar se disputera majoritairement au Maroc en 2027 &nbsp;&nbsp; Le Parisien",
       "url": "https://www.leparisien.fr/sports/un-pays-ideal-en-termes-de-securite-pourquoi-le-dakar-se-disputera-majoritairement-au-maroc-en-2027-30-10-2026-RBLJ5PQOSREP7CK32FY2SITCCQ.php",
@@ -6745,7 +6767,7 @@
       "region": "world"
     },
     {
-      "title": "نيجيريا تؤكد مقتل 15 \"إرهابيا\" بينهم اثنان من قادة تنظيم الدولة الإسلامية في غرب أفريقيا - ديمقراطي",
+      "title": "نيجيريا تؤكد مقتل 15 إرهابيا بينهم اثنان من قادة تنظيم الدولة الإسلامية في غرب أفريقيا - ديمقراطي",
       "description": "نيجيريا تؤكد مقتل 15 \"إرهابيا\" بينهم اثنان من قادة تنظيم الدولة الإسلامية في غرب أفريقيا    Demócrata",
       "original_title": "Nigeria confirme la mort de 15 \"terroristes\", parmi lesquels deux commandants de l'État islamique en Afrique de l'Ouest - Demócrata",
       "original_description": "Nigeria confirme la mort de 15 \"terroristes\", parmi lesquels deux commandants de l'État islamique en Afrique de l'Ouest &nbsp;&nbsp; Demócrata",
@@ -7031,7 +7053,7 @@
       "region": "world"
     },
     {
-      "title": "القائد العسكري لحلف شمال الأطلسي: لا يوجد تأخير في تسليم صواريخ باتريوت إلى كييف - بلومبرج.كوم",
+      "title": "القائد العسكري لحلف شمال الأطلسي لا يرى أي تأخير في تسليم صواريخ باتريوت إلى كييف - بلومبرج.كوم",
       "description": "القائد العسكري لحلف شمال الأطلسي لا يرى أي تأخير في تسليم صواريخ باتريوت إلى كييف    Bloomberg.com",
       "original_title": "NATO Military Chief Sees No Delays to Patriot Deliveries to Kyiv - Bloomberg.com",
       "original_description": "NATO Military Chief Sees No Delays to Patriot Deliveries to Kyiv &nbsp;&nbsp; Bloomberg.com",
@@ -7768,8 +7790,8 @@
       "region": "world"
     },
     {
-      "title": "هل يستطيع النموذج الشمالي إنقاذ حلف شمال الأطلسي؟ - الشؤون الخارجية",
-      "description": "هل يستطيع النموذج الشمالي إنقاذ حلف شمال الأطلسي؟    الشؤون الخارجية",
+      "title": "هل يستطيع نموذج الشمال إنقاذ حلف شمال الأطلسي؟ - الشؤون الخارجية",
+      "description": "هل يستطيع نموذج الشمال إنقاذ حلف شمال الأطلسي؟    الشؤون الخارجية",
       "original_title": "Can the Nordic Model Save NATO? - Foreign Affairs",
       "original_description": "Can the Nordic Model Save NATO? &nbsp;&nbsp; Foreign Affairs",
       "url": "https://www.foreignaffairs.com/northern-europe/can-nordic-model-save-nato",
@@ -8143,7 +8165,7 @@
     },
     {
       "title": "الأمم المتحدة والأزمة في السودان - أونريك",
-      "description": "الأمم المتحدة والأزمة في السودان   Unric",
+      "description": "الأمم المتحدة والأزمة في السودان    Unric",
       "original_title": "L’ONU et la crise au Soudan - Unric",
       "original_description": "L’ONU et la crise au Soudan &nbsp;&nbsp; Unric",
       "url": "https://unric.org/fr/crise-au-soudan-la-reponse-de-lonu",
