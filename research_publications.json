@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T07:15+01:00",
+  "updated": "2026-11-02T10:20+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 32,
+  "count": 31,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -1040,20 +1040,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "نهج جنوب أوروبا للاستراتيجية الأمنية الأوروبية الجديدة - CIDOB"
-    },
-    {
-      "center": "مركز الأمن الأمريكي الجديد (CNAS)",
-      "center_short": "CNAS",
-      "title": "The Pentagon’s Plan for a Smaller Group of NATO Allies - Center for a New American Security | CNAS",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOaThaMmZwQnRxNmdMVDBZZHNaVVh6by1wNW1QQUpMMjZEUFAtM2x5SDE2aDhBTXZvWGZtd1ZlbHpyU3I2eW1OZDNtbnI4RGpDMnp3QU5GQUMzczhvbGI4Nl9IcFUtZUZXOUE3ODFUS3J1cVBVNlJoMXBsY0lQM2VBMGhkWmh1TnAtcXR1aHppUHZHQ0lhdlVMNw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-03T08:00+01:00",
-      "date": "2026-10-03",
-      "source": "Center for a New American Security | CNAS",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOaThaMmZwQnRxNmdMVDBZZHNaVVh6by1wNW1QQUpMMjZEUFAtM2x5SDE2aDhBTXZvWGZtd1ZlbHpyU3I2eW1OZDNtbnI4RGpDMnp3QU5GQUMzczhvbGI4Nl9IcFUtZUZXOUE3ODFUS3J1cVBVNlJoMXBsY0lQM2VBMGhkWmh1TnAtcXR1aHppUHZHQ0lhdlVMNw?oc=5\" target=\"_blank\">The Pentagon’s Plan for a Smaller Group of NATO Allies</a> <font color=\"#6f6f6f\">Center for a New American Security | CNAS</font>",
-      "center_site": "https://cnas.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "خطة البنتاغون لمجموعة أصغر من حلفاء الناتو - مركز للأمن الأمريكي الجديد | CNAS"
     }
   ]
 }
