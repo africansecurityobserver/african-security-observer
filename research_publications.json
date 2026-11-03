@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T04:02+01:00",
+  "updated": "2026-11-03T07:06+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 31,
+  "count": 32,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -676,6 +676,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "العلاقات الثنائية بين المغرب والولايات المتحدة وآثارها على إسبانيا - Real Instituto Elcano"
+    },
+    {
+      "center": "مؤسسة سيتا التركية",
+      "center_short": "SETA",
+      "title": "SETA Workshop Examines Baltic-Black Sea-Mediterranean Security Links - SETA - Siyaset, Ekonomi ve Toplum Araştırmaları Vakfı",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOLUMtSlE1M1RDSkYzZzZhZmdyTV9YdnM1MVpiYmtiR3U1YzRjRkk2a1cxUDNVektEQ0NiT0NIOW02UkFaOXdqcDlRdzBZZHNCM2JvdHd6UTB3ODJFVXFQSU1WNDljNlBxY25GUDZReFVvRGVBdnZBR01lQjNWLVNjTWF0WWw1SFZ4TFlEYVhvd2VwVXg3Vm95UQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-10-16T08:00+01:00",
+      "date": "2026-10-16",
+      "source": "SETA - Siyaset, Ekonomi ve Toplum Araştırmaları Vakfı",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOLUMtSlE1M1RDSkYzZzZhZmdyTV9YdnM1MVpiYmtiR3U1YzRjRkk2a1cxUDNVektEQ0NiT0NIOW02UkFaOXdqcDlRdzBZZHNCM2JvdHd6UTB3ODJFVXFQSU1WNDljNlBxY25GUDZReFVvRGVBdnZBR01lQjNWLVNjTWF0WWw1SFZ4TFlEYVhvd2VwVXg3Vm95UQ?oc=5\" target=\"_blank\">SETA Workshop Examines Baltic-Black Sea-Mediterranean Security Links</a> <font color=\"#6f6f6f\">SETA - Siyaset, Ekonomi ve Toplum Araştırmaları Vakfı</font>",
+      "center_site": "https://setav.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "ورشة عمل SETA تفحص الروابط الأمنية بين بحر البلطيق والبحر الأسود والبحر الأبيض المتوسط - SETA - Siyaset, Ekonomi ve Toplum Araştırmaları Vakfı"
     },
     {
       "center": "معهد الدراسات الأمنية والتنمية (ISDP)",
