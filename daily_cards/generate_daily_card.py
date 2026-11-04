@@ -1690,6 +1690,15 @@ def route_priority_events(sections):
             text_value = str(event.get("text", "")).strip()
             duplicate = False
             for prior_country, prior_text in seen:
+                # Exact normalized text is always a duplicate, even when
+                # the same cross-border event was tagged with two countries.
+                if normalize_event_for_match(prior_text) == normalize_event_for_match(text_value):
+                    duplicate = True
+                    print(
+                        f"Removed exact cross-section duplicate event: "
+                        f"{text_value[:120]}"
+                    )
+                    break
                 if country and prior_country and country != prior_country:
                     continue
                 if same_event_text(prior_text, text_value):
@@ -1856,11 +1865,18 @@ def merge_event_lists(existing_events, incoming_events):
 
         match_index = None
         for index, old_event in enumerate(merged):
+            old_text_for_match = str(old_event.get("text", ""))
+            # Exact descriptions identify the same incident regardless of
+            # whether sources tagged a cross-border event under two countries.
+            if normalize_event_for_match(old_text_for_match) == normalize_event_for_match(incoming_text):
+                match_index = index
+                break
+
             old_country = normalize_country_for_match(old_event.get("country", ""))
             new_country = normalize_country_for_match(incoming_country)
             if old_country and new_country and old_country != new_country:
                 continue
-            if same_event_text(old_event.get("text", ""), incoming_text):
+            if same_event_text(old_text_for_match, incoming_text):
                 match_index = index
                 break
 
