@@ -31,7 +31,7 @@ MONTHS = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "�
 
 
 def clean(value):
-    return re.sub(r"\\s+", " ", str(value or "")).strip()
+    return re.sub(r"\s+", " ", str(value or "")).strip()
 
 
 def target_month():
@@ -62,7 +62,7 @@ def load_json(path, default):
 
 def save_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def weekly_entries():
@@ -137,7 +137,7 @@ def build_prompt(first, last, reports):
             f"الفترة: {report.get('period_start')} إلى {report.get('period_end')}\\n"
             f"الحوصلة: {str(report.get('summary') or '')[:1800]}\\n{sections}"
         )
-    source_block = "\\n\\n".join(blocks)
+    source_block = "\n\n".join(blocks)
     return f"""
 أنت رئيس تحرير قسم التقديرات الاستراتيجية في «المرصد الإفريقي للأمن والدفاع».
 أعد تقديراً استراتيجياً شهرياً شاملاً باللغة العربية للفترة من {first.isoformat()} إلى {last.isoformat()}، بالاستناد حصراً إلى التقديرات الاستراتيجية الأسبوعية المرفقة أدناه.
