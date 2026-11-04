@@ -45,7 +45,7 @@ UNREST = '(protest OR protests OR demonstration OR riot OR "civil unrest" OR "po
 
 def clean(value):
     value = re.sub(r"<[^>]+>", " ", str(value or ""))
-    return re.sub(r"\\s+", " ", value).strip()
+    return re.sub(r"\s+", " ", value).strip()
 
 
 def target_month():
@@ -75,7 +75,7 @@ def load_json(path, default):
 
 def save_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def weekly_entries():
@@ -224,17 +224,17 @@ def add_to_index(card):
 def build_prompt(first, last, reports, news):
     blocks = []
     for number, report in enumerate(reports, 1):
-        sections = "\\n".join(
+        sections = "\n".join(
             f"- {clean(section.get('heading'))}: {str(section.get('text') or '')[:2200]}"
             for section in report.get("sections", [])
         )
         blocks.append(
             f"تقدير أسبوعي {number}: {report.get('title')} | "
-            f"الفترة: {report.get('period_start')} إلى {report.get('period_end')}\\n"
-            f"الحوصلة: {str(report.get('summary') or '')[:1800]}\\n{sections}"
+            f"الفترة: {report.get('period_start')} إلى {report.get('period_end')}\n"
+            f"الحوصلة: {str(report.get('summary') or '')[:1800]}\n{sections}"
         )
-    weekly_block = "\\n\\n".join(blocks) or "لم يتوفر أي تقدير أسبوعي منشور لهذه الفترة."
-    news_block = "\\n".join(
+    weekly_block = "\n\n".join(blocks) or "لم يتوفر أي تقدير أسبوعي منشور لهذه الفترة."
+    news_block = "\n".join(
         f"- [{item.get('published')}] [{item.get('region')}] {item.get('title')} — "
         f"{item.get('summary', '')[:650]} (المصدر: {item.get('source')}; الرابط: {item.get('url')})"
         for item in news
