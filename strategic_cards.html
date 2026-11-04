@@ -248,6 +248,7 @@ function saveCardWord(){
 if(!currentCardData)return;
 const card=currentCardData;
 const isWeekly=archiveType==='weekly'||card.kind==='weekly_assessment';
+const isMonthly=archiveType==='monthly'||card.kind==='monthly_assessment';
 const sections=(card.sections||[]).map(section=>'<h2 style="color:#102b46;border-right:4px solid #d7a849;padding:4px 10px">'+esc(section.heading||'')+'</h2><p style="line-height:2;white-space:pre-line">'+esc((section.text||'').replace(/\s*\[\d+\]/g,''))+'</p>').join('');
 const sources=!isWeekly&&(card.sources||[]).length?'<h2>المصادر</h2><ul>'+(card.sources||[]).map(s=>'<li>'+esc(s.title||s.url)+'<br>'+esc(s.url)+'</li>').join('')+'</ul>':'';
 const weeklyRefs=isMonthly&&(card.weekly_reports||[]).length?'<h2>التقديرات الأسبوعية المعتمدة</h2><ul>'+card.weekly_reports.map(x=>'<li>'+esc(x.title||'تقدير أسبوعي')+' ('+esc(x.period_start||'')+' – '+esc(x.period_end||'')+')</li>').join('')+'</ul>':'';
