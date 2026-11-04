@@ -589,7 +589,7 @@ def main():
     candidates = []
     candidate_ids = set()
     failed_urls = data["failed_urls"]
-    retry_window = timedelta(hours=12)
+    retry_window = timedelta(hours=6)
     now_for_retry = datetime.now(TZ)
     recently_failed_count = 0
     for publication in publications:
@@ -632,7 +632,7 @@ def main():
         print(f"Deferred {recently_failed_count} recently failed publications until their retry cooldown expires.")
     # Work in small batches. Recent failures are deferred so the queue advances
     # to other publications; they remain pending and are retried after 12 hours.
-    max_per_run = max(1, int(os.getenv("MAX_RESEARCH_CARDS_PER_RUN", "2")))
+    max_per_run = max(1, int(os.getenv("MAX_RESEARCH_CARDS_PER_RUN", "6")))
     candidates = candidates[:max_per_run]
     if total_candidates > len(candidates):
         print(f"Batch limit: processing {len(candidates)} of {total_candidates} pending publications; the rest stay queued.")
@@ -644,6 +644,10 @@ def main():
         save(DATA, data)
         save(INDEX, make_index(data["cards"]))
         print("No new research publications to convert; duplicate cleanup saved.")
+        summary_path = os.getenv("GITHUB_STEP_SUMMARY")
+        if summary_path:
+            with open(summary_path, "a", encoding="utf-8") as summary:
+                summary.write("## بطاقات مراكز البحوث\\n\\nلا توجد منشورات جديدة في قائمة الانتظار حالياً.\\n")
         return
     client=genai.Client(api_key=key,http_options=types.HttpOptions(timeout=180000))
     schema={"type":"object","properties":{
@@ -738,6 +742,18 @@ publish boolean; introduction string; analysis_one, analysis_two, analysis_three
     data["processed_urls"]=list(dict.fromkeys(canonical_url(url) for url in data["processed_urls"] if url))
     data["updated"]=datetime.now(TZ).isoformat(timespec="seconds")
     save(DATA,data); save(INDEX,make_index(data["cards"]))
-    print(f"Research cards total={len(data['cards'])}; generated this run={count}; failed this run={failed_count}; processed this run={len(candidates)}; queued before batch limit={total_candidates}")
+    pending_after_run = max(0, total_candidates - len(candidates)) + failed_count
+    print(f"Research cards total={len(data['cards'])}; generated this run={count}; failed this run={failed_count}; processed this run={len(candidates)}; queued before batch limit={total_candidates}; estimated pending after run={pending_after_run}")
+    summary_path = os.getenv("GITHUB_STEP_SUMMARY")
+    if summary_path:
+        with open(summary_path, "a", encoding="utf-8") as summary:
+            summary.write(
+                "## بطاقات مراكز البحوث\\n\\n"
+                f"- إجمالي البطاقات: {len(data['cards'])}\\n"
+                f"- البطاقات الجديدة في هذا التشغيل: {count}\\n"
+                f"- المنشورات التي تعذرت معالجتها وستعاد محاولتها: {failed_count}\\n"
+                f"- المنشورات التي كانت في قائمة الانتظار: {total_candidates}\\n"
+                f"- المنشورات المتبقية تقديرياً بعد التشغيل: {pending_after_run}\\n"
+            )
 
 if __name__=="__main__": main()
