@@ -559,9 +559,9 @@ def read_center_feed(session, feed_url, center, cutoff):
         root = ET.fromstring(response.content)
         entries = root.findall(".//item") + root.findall(".//{*}entry")
         for entry in entries:
-            title_node = entry.find("title")
+            title_node = entry.find("{*}title") or entry.find("title")
             title = clean(title_node.text if title_node is not None else "")
-            link_node = entry.find("link")
+            link_node = entry.find("{*}link") or entry.find("link")
             link = ""
             if link_node is not None:
                 link = clean(link_node.attrib.get("href") or link_node.text or "")
@@ -571,6 +571,8 @@ def read_center_feed(session, feed_url, center, cutoff):
             date_value = ""
             for tag in ("pubDate", "published", "updated", "{*}date"):
                 node = entry.find(tag)
+                if node is None and not tag.startswith("{*}"):
+                    node = entry.find("{*}" + tag)
                 if node is not None and node.text:
                     date_value = clean(node.text)
                     break
@@ -582,6 +584,8 @@ def read_center_feed(session, feed_url, center, cutoff):
             description = ""
             for tag in ("description", "summary", "{*}encoded", "{*}content"):
                 node = entry.find(tag)
+                if node is None and not tag.startswith("{*}"):
+                    node = entry.find("{*}" + tag)
                 if node is not None and node.text:
                     description = clean(node.text)
                     if description:
