@@ -9,8 +9,8 @@ on:
       - "research_publications.json"
       - ".github/workflows/research_cards.yml"
   schedule:
-    # Run shortly after the publication collector, every three hours in Tunis time.
-    - cron: "37 */3 * * *"
+    # Process the publication backlog hourly; the collector refreshes the queue every three hours.
+    - cron: "37 * * * *"
       timezone: "Africa/Tunis"
   workflow_dispatch:
 
@@ -19,13 +19,13 @@ permissions:
 
 concurrency:
   group: research-center-cards-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   generate-research-cards:
     runs-on: ubuntu-latest
     # Prevent one pathological article from occupying a runner indefinitely.
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -46,7 +46,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.5-flash-lite
-          MAX_RESEARCH_CARDS_PER_RUN: "2"
+          MAX_RESEARCH_CARDS_PER_RUN: "6"
         run: python -u research_cards/generate_research_cards.py
       - name: Commit research cards and archive
         run: |
