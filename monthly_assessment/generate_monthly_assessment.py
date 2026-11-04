@@ -282,6 +282,11 @@ def build_prompt(first, last, reports, news):
 def main():
     first = target_month()
     last = month_end(first)
+    month_slug = hashlib.sha1(f"{first:%Y-%m}".encode()).hexdigest()[:10]
+    month_path = ARCHIVE / f"{first:%Y-%m}/{last:%Y%m%d}_{month_slug}.json"
+    if month_path.exists() and os.getenv("FORCE_MONTHLY") != "1":
+        print(f"Monthly assessment already exists for {first:%Y-%m}; skipping duplicate scheduled run.")
+        return
     reports = collect_reports(first, last)
     news = fetch_month_news(first, last)
     print(f"Monthly inputs: weekly_assessments={len(reports)}, news_items={len(news)}")
