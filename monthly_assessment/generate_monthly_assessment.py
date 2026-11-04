@@ -2,10 +2,14 @@ import json
 import os
 import re
 import hashlib
+import xml.etree.ElementTree as ET
 from datetime import date, datetime, timedelta
+from email.utils import parsedate_to_datetime
 from pathlib import Path
+from urllib.parse import quote_plus
 from zoneinfo import ZoneInfo
 
+import requests
 from google import genai
 from google.genai import types
 
@@ -13,25 +17,35 @@ ROOT = Path(__file__).resolve().parent.parent
 TZ = ZoneInfo("Africa/Tunis")
 MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 WEEKLY_INDEX = ROOT / "weekly_assessments" / "archive" / "index.json"
+NEWS_FILE = ROOT / "news.json"
 ARCHIVE = ROOT / "monthly_assessments" / "archive"
 INDEX = ARCHIVE / "index.json"
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; AfricanSecurityObserver/1.0)"}
+MAX_ITEMS_PER_REGION = 22
 
 EXPECTED = [
-    "المقدمة",
-    "تونس وشمال إفريقيا",
-    "بقية إفريقيا",
-    "أوروبا والفضاء الأطلسي",
-    "الشرق الأوسط",
+    "المقدمة", "تونس وشمال إفريقيا", "بقية إفريقيا",
+    "أوروبا والفضاء الأطلسي", "الشرق الأوسط",
     "الولايات المتحدة والقوى الدولية الأخرى",
     "الاتجاهات الاستراتيجية العابرة للأقاليم",
     "الحوصلة الاستراتيجية والسيناريوهات وانعكاساتها على تونس",
 ]
 MONTHS = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
           "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"]
+REGIONS = [
+    ("تونس وشمال إفريقيا", '"Tunisia" OR "Libya" OR "Algeria" OR "Morocco" OR "Egypt" OR "North Africa"'),
+    ("بقية إفريقيا", 'Africa OR Sahel OR Sudan OR Somalia OR Ethiopia OR Congo OR Nigeria OR "West Africa"'),
+    ("أوروبا والفضاء الأطلسي", 'Europe OR NATO OR Ukraine OR Russia OR France OR Germany OR Britain OR "European Union"'),
+    ("الشرق الأوسط", '"Middle East" OR Israel OR Iran OR Lebanon OR Syria OR Iraq OR Yemen OR Gulf'),
+    ("الولايات المتحدة والقوى الدولية الأخرى", '"United States" OR Pentagon OR China OR Taiwan OR Japan OR India OR Brazil OR "global security"'),
+    ("الأمن والتحالفات الدولية", 'NATO OR "United Nations" OR "African Union" OR "arms control" OR "defense industry" OR "military technology"'),
+]
+UNREST = '(protest OR protests OR demonstration OR riot OR "civil unrest" OR "political crisis" OR terrorism OR coup OR "state of emergency")'
 
 
 def clean(value):
-    return re.sub(r"\s+", " ", str(value or "")).strip()
+    value = re.sub(r"<[^>]+>", " ", str(value or ""))
+    return re.sub(r"\\s+", " ", value).strip()
 
 
 def target_month():
@@ -42,9 +56,8 @@ def target_month():
             return date(year, month, 1)
         except Exception as exc:
             raise RuntimeError("ASSESSMENT_MONTH must use YYYY-MM.") from exc
-    now = datetime.now(TZ).date()
-    first = now.replace(day=1)
-    return (first - timedelta(days=1)).replace(day=1)
+    today = datetime.now(TZ).date()
+    return (today.replace(day=1) - timedelta(days=1)).replace(day=1)
 
 
 def month_end(first):
@@ -62,7 +75,7 @@ def load_json(path, default):
 
 def save_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
 
 
 def weekly_entries():
@@ -79,20 +92,103 @@ def weekly_entries():
 def collect_reports(first, last):
     reports = []
     for entry in weekly_entries():
-        path = ROOT / "weekly_assessments" / "archive" / entry["path"]
-        card = load_json(path, None)
+        card = load_json(ROOT / "weekly_assessments" / "archive" / entry["path"], None)
         if not isinstance(card, dict):
-            print(f"Skipping unreadable weekly report: {path}")
             continue
         try:
-            start = date.fromisoformat(card["period_start"])
-            end = date.fromisoformat(card["period_end"])
+            start, end = date.fromisoformat(card["period_start"]), date.fromisoformat(card["period_end"])
         except Exception:
             continue
         if start <= last and end >= first:
             reports.append(card)
     reports.sort(key=lambda x: (x.get("period_start", ""), x.get("period_end", "")))
     return reports
+
+
+def parse_date(value):
+    if not value:
+        return None
+    try:
+        parsed = parsedate_to_datetime(value)
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=TZ)
+        return parsed.astimezone(TZ)
+    except Exception:
+        try:
+            return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(TZ)
+        except Exception:
+            return None
+
+
+def fetch_month_news(first, last):
+    """Fetch region-balanced news for the entire target month from Google/Bing RSS."""
+    start_dt = datetime.combine(first, datetime.min.time(), TZ)
+    end_dt = datetime.combine(last + timedelta(days=1), datetime.min.time(), TZ)
+    collected, seen = [], set()
+    for region, query in REGIONS:
+        regional = []
+        queries = [query, f"{query} {UNREST}"]
+        for search_query in queries:
+            encoded = quote_plus(f"({search_query}) after:{first.isoformat()} before:{(last + timedelta(days=1)).isoformat()}")
+            feeds = [
+                ("Google News RSS", "https://news.google.com/rss/search?q=" + encoded + "&hl=en-US&gl=US&ceid=US:en"),
+                ("Bing News RSS", "https://www.bing.com/news/search?q=" + encoded + "&format=rss"),
+            ]
+            for feed_name, url in feeds:
+                try:
+                    response = requests.get(url, headers=HEADERS, timeout=18)
+                    response.raise_for_status()
+                    root = ET.fromstring(response.content)
+                    for node in root.findall(".//item"):
+                        title = clean(node.findtext("title"))
+                        link = clean(node.findtext("link"))
+                        description = clean(node.findtext("description"))
+                        published_raw = clean(node.findtext("pubDate"))
+                        published_dt = parse_date(published_raw)
+                        if not title or not link:
+                            continue
+                        if published_dt and not (start_dt <= published_dt < end_dt):
+                            continue
+                        key = link.split("&")[0]
+                        if key in seen:
+                            continue
+                        seen.add(key)
+                        source_node = node.find("source")
+                        source = clean(source_node.text if source_node is not None else "") or feed_name
+                        regional.append({
+                            "region": region, "title": title, "summary": description[:1000],
+                            "url": link, "source": source,
+                            "published": published_dt.isoformat(timespec="minutes") if published_dt else published_raw
+                        })
+                    # A successful provider response is enough for this query; retain fallback for failures.
+                    break
+                except Exception as exc:
+                    print(f"Monthly RSS query failed ({feed_name}; {region}): {type(exc).__name__}: {exc}")
+        regional.sort(key=lambda x: x.get("published", ""), reverse=True)
+        collected.extend(regional[:MAX_ITEMS_PER_REGION])
+
+    # Add recent stories already collected by the site's news pipeline when their dates
+    # fall within the target month. This is a supplemental source, not the only news input.
+    existing = load_json(NEWS_FILE, {})
+    for item in existing.get("items", []) if isinstance(existing, dict) else []:
+        published = parse_date(item.get("published"))
+        if not published or not (start_dt <= published < end_dt):
+            continue
+        url = item.get("url", "")
+        key = url.split("&")[0]
+        if not url or key in seen:
+            continue
+        seen.add(key)
+        collected.append({
+            "region": item.get("region") or item.get("category") or "أخبار دولية",
+            "title": clean(item.get("title") or item.get("original_title")),
+            "summary": clean(item.get("description") or item.get("original_description"))[:1000],
+            "url": url, "source": clean(item.get("source")),
+            "published": published.isoformat(timespec="minutes")
+        })
+    collected.sort(key=lambda x: x.get("published", ""), reverse=True)
+    print(f"Monthly news collected: {len(collected)}")
+    return collected[:180]
 
 
 def load_monthly_index():
@@ -125,24 +221,31 @@ def add_to_index(card):
     save_json(INDEX, index)
 
 
-def build_prompt(first, last, reports):
+def build_prompt(first, last, reports, news):
     blocks = []
     for number, report in enumerate(reports, 1):
-        sections = "\n".join(
+        sections = "\\n".join(
             f"- {clean(section.get('heading'))}: {str(section.get('text') or '')[:2200]}"
             for section in report.get("sections", [])
         )
         blocks.append(
-            f"التقرير الأسبوعي {number}: {report.get('title')} | "
-            f"الفترة: {report.get('period_start')} إلى {report.get('period_end')}\n"
-            f"الحوصلة: {str(report.get('summary') or '')[:1800]}\n{sections}"
+            f"تقدير أسبوعي {number}: {report.get('title')} | "
+            f"الفترة: {report.get('period_start')} إلى {report.get('period_end')}\\n"
+            f"الحوصلة: {str(report.get('summary') or '')[:1800]}\\n{sections}"
         )
-    source_block = "\n\n".join(blocks)
+    weekly_block = "\\n\\n".join(blocks) or "لم يتوفر أي تقدير أسبوعي منشور لهذه الفترة."
+    news_block = "\\n".join(
+        f"- [{item.get('published')}] [{item.get('region')}] {item.get('title')} — "
+        f"{item.get('summary', '')[:650]} (المصدر: {item.get('source')}; الرابط: {item.get('url')})"
+        for item in news
+    ) or "لم تتوفر نتائج إخبارية قابلة للتحقق للفترة المستهدفة."
     return f"""
 أنت رئيس تحرير قسم التقديرات الاستراتيجية في «المرصد الإفريقي للأمن والدفاع».
-أعد تقديراً استراتيجياً شهرياً شاملاً باللغة العربية للفترة من {first.isoformat()} إلى {last.isoformat()}، بالاستناد حصراً إلى التقديرات الاستراتيجية الأسبوعية المرفقة أدناه.
+أنجز تقديراً استراتيجياً شهرياً شاملاً باللغة العربية للفترة {first.isoformat()} إلى {last.isoformat()}.
 
-هذه الوثيقة ليست تجميعاً ولا تلخيصاً متتابعاً للتقارير الأسبوعية. أعد تركيب المعطيات عبر الشهر، واكشف الاتجاهات المتواصلة والتحولات النوعية والعلاقات بين المسارات الإقليمية والدولية، وميّز بين الحدث العابر والتحول الاستراتيجي. لا تكرر الوقائع لمجرد ورودها في أكثر من تقرير. لا تضف أحداثاً أو أرقاماً أو صفقات أو نوايا غير واردة في المادة. إذا لم تغطّ التقارير جزءاً من الشهر أو كان الدليل محدوداً، صرّح بذلك بوضوح ولا تملأ الفراغ بالتخمين.
+قاعدة إلزامية: يجب إعداد التقرير وإكمال أقسامه الثمانية حتى لو لم تتوفر أي تقديرات أسبوعية أو كانت التغطية الأسبوعية جزئية. لا تعتبر نقص التقارير الأسبوعية سبباً للإلغاء أو التأجيل. استند إلى كل ما توفر من التقديرات الأسبوعية وإلى الأخبار الإقليمية والدولية المرفقة. استكمل الفجوات بالبحث الإخباري المرفق، لا بالاختلاق. إذا لم تتوفر معطيات كافية في محور أو فترة، اذكر حدود المعلومات بوضوح وقدّم تحليلاً متحفظاً بدلاً من اختراع وقائع. لا تدّعِ أن التغطية كاملة إذا لم تكن كذلك.
+
+هذا ليس تجميعاً زمنياً للتقارير الأسبوعية. أعد تركيب الأحداث عبر الشهر، واستخرج الاتجاهات والتحولات وروابطها الاستراتيجية. ميّز بين الوقائع الواردة في المواد والاستنتاجات التحليلية والسيناريوهات الاحتمالية. لا تكرر الأحداث، ولا تضف أرقاماً أو صفقات أو نوايا غير مسندة إلى المواد. لا تعامل عنوان الخبر وحده كدليل على كل تفاصيله.
 
 يجب أن يتضمن التقدير ثمانية أقسام بالضبط وبالترتيب والعناوين الحرفية التالية:
 1. المقدمة
@@ -154,27 +257,25 @@ def build_prompt(first, last, reports):
 7. الاتجاهات الاستراتيجية العابرة للأقاليم
 8. الحوصلة الاستراتيجية والسيناريوهات وانعكاساتها على تونس
 
-المطلوب في كل قسم:
-- المقدمة: تقديم صورة تركيبية للمشهد خلال الشهر، لا سرداً للأحداث.
-- تونس وشمال إفريقيا: تحليل موقع تونس، ليبيا والجزائر والمغرب، الساحل، المتوسط، الحدود، التعاون الدفاعي والهجرة والأمن البحري عند ورودها في المعطيات.
-- بقية إفريقيا: تحليل بؤر النزاع والتحولات السياسية والأمنية والتنافس الخارجي.
-- أوروبا والفضاء الأطلسي: تحليل الدفاع الأوروبي والناتو وأوكرانيا وروسيا والعلاقات عبر الأطلسي، وفق المادة المتاحة.
-- الشرق الأوسط: تحليل توازنات القوى والنزاعات والممرات البحرية والطاقة.
-- الولايات المتحدة والقوى الدولية الأخرى: تحليل خيارات القوى الكبرى وأثرها على النظام الدولي.
-- الاتجاهات العابرة للأقاليم: ربط المسارات المشتركة مثل التحالفات، التسلح، عسكرة السياسة، أمن الطاقة والملاحة، والتنافس على النفوذ.
-- الحوصلة: استخلاص أهم النتائج، ثم عرض سيناريوهين أو ثلاثة للمرحلة التالية مع مؤشرات تحققها، وتحديد الانعكاسات العملية المحتملة على الأمن القومي التونسي. لا تقدم السيناريوهات كحقائق أو تنبؤات يقينية.
+توجيهات الأقسام:
+- المقدمة: صورة تركيبية للمشهد الاستراتيجي خلال الشهر.
+- تونس وشمال إفريقيا: تونس وليبيا والجزائر والمغرب والساحل والمتوسط والحدود والتعاون الدفاعي والهجرة والأمن البحري.
+- بقية إفريقيا: النزاعات والتحولات السياسية والأمنية والتنافس الدولي.
+- أوروبا والفضاء الأطلسي: الدفاع الأوروبي والناتو وأوكرانيا وروسيا والعلاقات عبر الأطلسي.
+- الشرق الأوسط: توازنات القوى والنزاعات والممرات البحرية والطاقة.
+- الولايات المتحدة والقوى الدولية الأخرى: خيارات القوى الكبرى وأثرها على النظام الدولي.
+- الاتجاهات العابرة للأقاليم: التحالفات والتسلح والتنافس على النفوذ وأمن الطاقة والملاحة.
+- الخلاصة: النتائج الأساسية، وسيناريوهان أو ثلاثة للمرحلة التالية مع مؤشرات تحققها، وانعكاساتها المحتملة على الأمن القومي التونسي.
 
-اكتب تحليلاً معمقاً ومتماسكاً. استهدف 130-190 كلمة لكل قسم، مع إعطاء الأولوية للدقة على الحشو. المقدمة والخلاصة نثر مترابط. ميّز بوضوح بين الوقائع المنقولة والاستنتاج التحليلي والسيناريو الاحتمالي. لا تستخدم عبارات قطعية عندما لا تسمح الأدلة بذلك. لا تضع علامات إحالة رقمية داخل النص. لا تذكر أن لديك إمكانية الاطلاع على مصادر غير موجودة في المادة. اكتب بلغة عربية صحفية رصينة، وعرّف الاختصارات عند أول ورودها.
+استهدف 110-170 كلمة لكل قسم، مع إعطاء الأولوية للدقة لا للحشو. الملخص التنفيذي 90-140 كلمة. إذا كانت المادة ضعيفة، لا تملأ المساحة بكلام عام أو حقائق غير موثقة؛ بيّن النقص وحدود التقدير. عرّف الاختصارات عند أول ورودها.
 
-أعد JSON فقط بالحقول التالية:
-- title: عنوان عربي واضح يتضمن الشهر والسنة.
-- subject: موضوع التقدير.
-- summary: حوصلة تنفيذية من 120 إلى 170 كلمة.
-- sections: ثمانية عناصر بالضبط، وكل عنصر يتضمن heading وtext.
-- coverage_note: ملاحظة قصيرة وصريحة عن مدى تغطية التقارير الأسبوعية للفترة الشهرية، إذا كانت هناك فجوات.
+أعد JSON فقط بالحقول title وsubject وsummary وsections وcoverage_note. يجب أن تحتوي sections على ثمانية عناصر بالضبط، وكل عنصر heading وtext. اجعل coverage_note تشرح عدد التقديرات الأسبوعية المتاحة ومقدار التغطية، وما إذا كان استكمال الصورة اعتمد على الأخبار.
 
-المواد المستخلصة من التقديرات الأسبوعية:
-{source_block}
+التقديرات الأسبوعية المتاحة ({len(reports)}):
+{weekly_block}
+
+الأخبار المجمعة للفترة ({len(news)} مادة):
+{news_block}
 """
 
 
@@ -182,66 +283,52 @@ def main():
     first = target_month()
     last = month_end(first)
     reports = collect_reports(first, last)
-    if len(reports) < 3:
-        raise RuntimeError(
-            f"Only {len(reports)} weekly assessments overlap {first:%Y-%m}; "
-            "at least 3 are required for a meaningful monthly synthesis."
-        )
-    intervals = sorted(
-        (date.fromisoformat(x["period_start"]), date.fromisoformat(x["period_end"]))
-        for x in reports
-    )
-    earliest = intervals[0][0]
-    latest = max(end for _, end in intervals)
-    if earliest > first + timedelta(days=7) or latest < last - timedelta(days=1):
-        raise RuntimeError(
-            f"Weekly coverage is incomplete for {first:%Y-%m}: "
-            f"covered {earliest} to {latest}; refusing to publish a misleading monthly report."
-        )
-    covered_until = intervals[0][1]
-    for start, end in intervals[1:]:
-        if start > covered_until + timedelta(days=1):
-            raise RuntimeError(
-                f"Weekly assessments leave a coverage gap from {covered_until} to {start}; "
-                "refusing to publish an incomplete monthly synthesis."
-            )
-        covered_until = max(covered_until, end)
+    news = fetch_month_news(first, last)
+    print(f"Monthly inputs: weekly_assessments={len(reports)}, news_items={len(news)}")
 
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        raise RuntimeError("GEMINI_API_KEY is missing; no monthly assessment was published.")
+        raise RuntimeError("GEMINI_API_KEY is missing; cannot generate the analytical monthly report.")
     client = genai.Client(api_key=api_key)
     schema = {
         "type": "object",
         "properties": {
-            "title": {"type": "string"},
-            "subject": {"type": "string"},
-            "summary": {"type": "string"},
-            "coverage_note": {"type": "string"},
+            "title": {"type": "string"}, "subject": {"type": "string"},
+            "summary": {"type": "string"}, "coverage_note": {"type": "string"},
             "sections": {"type": "array", "items": {"type": "object",
                 "properties": {"heading": {"type": "string"}, "text": {"type": "string"}},
                 "required": ["heading", "text"]}}
         },
         "required": ["title", "subject", "summary", "coverage_note", "sections"]
     }
-    response = client.models.generate_content(
-        model=MODEL,
-        contents=build_prompt(first, last, reports),
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json", response_schema=schema,
-            temperature=0.2, max_output_tokens=14000
-        )
-    )
-    output = json.loads(response.text or "{}")
+    last_error = None
+    output = None
+    for attempt in range(1, 4):
+        try:
+            response = client.models.generate_content(
+                model=MODEL,
+                contents=build_prompt(first, last, reports, news),
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json", response_schema=schema,
+                    temperature=0.2, max_output_tokens=14000
+                )
+            )
+            output = json.loads(response.text or "{}")
+            break
+        except Exception as exc:
+            last_error = exc
+            print(f"Gemini generation attempt {attempt}/3 failed: {type(exc).__name__}: {exc}")
+    if output is None:
+        raise RuntimeError(f"Monthly report generation failed after 3 attempts: {last_error}")
+
     sections = output.get("sections", [])
     if len(sections) != 8 or [clean(x.get("heading")) for x in sections] != EXPECTED:
         raise RuntimeError("Monthly assessment failed the exact eight-section structure check.")
-    counts = [len(clean(x.get("text")).split()) for x in sections]
-    if any(n < 85 for n in counts):
-        raise RuntimeError(f"Monthly section word-count validation failed: {counts}.")
+    if any(len(clean(x.get("text")).split()) < 35 for x in sections):
+        raise RuntimeError("Monthly section validation failed: one or more sections are empty or too short.")
     summary = clean(output.get("summary"))
-    if len(summary.split()) < 80:
-        raise RuntimeError("Monthly executive summary is too short; refusing to publish.")
+    if len(summary.split()) < 45:
+        raise RuntimeError("Monthly executive summary is too short.")
 
     date_tag = last.isoformat()
     slug = hashlib.sha1(f"{first:%Y-%m}".encode()).hexdigest()[:10]
@@ -250,15 +337,23 @@ def main():
     weekly_refs = [{
         "title": x.get("title", "التقدير الاستراتيجي الأسبوعي"),
         "date": x.get("date"), "period_start": x.get("period_start"),
-        "period_end": x.get("period_end"),
-        "path": x.get("path", "")
+        "period_end": x.get("period_end"), "path": x.get("path", "")
     } for x in reports]
     source_map = {}
+    for item in news:
+        url = item.get("url")
+        if url and url not in source_map:
+            source_map[url] = {"title": item.get("title", url), "url": url}
     for report in reports:
         for source in report.get("sources", []):
             url = source.get("url")
             if url and url not in source_map:
                 source_map[url] = {"title": source.get("title", url), "url": url}
+    coverage = clean(output.get("coverage_note"))
+    if not reports:
+        coverage = (coverage + " " if coverage else "") + "لم يتوفر أي تقدير أسبوعي منشور للشهر؛ استند التقرير إلى المواد الإخبارية التي أمكن جمعها، مع بيان حدود التغطية."
+    elif len(reports) < 4:
+        coverage = (coverage + " " if coverage else "") + f"اعتمد التقرير على {len(reports)} تقدير/تقديرات أسبوعية فقط، واستُكملت المعطيات بالأخبار المتاحة."
     card = {
         "id": slug, "kind": "monthly_assessment",
         "kind_label": "التقدير الاستراتيجي الشهري",
@@ -266,13 +361,14 @@ def main():
         "subject": clean(output.get("subject")) or "التقدير الاستراتيجي الشهري للتطورات الأمنية والدفاعية والجيوسياسية",
         "date": date_tag, "period_start": first.isoformat(), "period_end": last.isoformat(),
         "region": "تقدير استراتيجي شامل — تونس وشمال إفريقيا وإفريقيا والعالم",
-        "summary": summary, "coverage_note": clean(output.get("coverage_note")),
+        "summary": summary, "coverage_note": coverage,
         "sections": sections, "weekly_reports": weekly_refs,
-        "sources": list(source_map.values())[:60], "path": relative_path
+        "sources": list(source_map.values())[:100], "news_items_count": len(news),
+        "path": relative_path
     }
     save_json(ARCHIVE / relative_path, card)
     add_to_index(card)
-    print(f"Published monthly assessment: {title}; weekly_reports={len(reports)}; sources={len(card['sources'])}; path={relative_path}")
+    print(f"Published monthly assessment: {title}; weekly_reports={len(reports)}; news={len(news)}; sources={len(card['sources'])}; path={relative_path}")
 
 
 if __name__ == "__main__":
