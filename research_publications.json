@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T10:37+01:00",
+  "updated": "2026-11-04T14:01+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 38,
+  "count": 39,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -732,6 +732,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
+    },
+    {
+      "center": "المجلس الأوروبي للعلاقات الخارجية (ECFR)",
+      "center_short": "ECFR",
+      "title": "Western Sahara miscalculation: How Europe can stop a war in North Africa - European Council on Foreign Relations",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNemt1YkU0bUsxaU9Ma0lhcVNZRmNvbkhrODA3QWZ2RkpDRDR0NVZUaE5sUDd5Nml3OGJYa0wtWDd3X1p5czhBdmU0VklIMlpoMXFMR295cFczM081T2RqMXNOc1hadHNxLXpaYnVpSnUwdjBuMFlFcFpFM3V6cWE5TWxtblRJeEF6c2lvM0ZLVTV4dkFUM0lpQUwxUDJnV2ZsVEHSAaIBQVVfeXFMTXprdWJFNG1LMWlPTGtJYXFTWUZjb25IazgwN0FmdkZKQ0Q0dDVWVGhObFA3eTZpdzhiWGtMLVg3d19aeXM4QXZlNFZJSDJaaDFxTEdveXBXMzNPNU9kajFzTnNYWnRzcS16WmJ1aUp1MHYwbjBZRXBaRTN1enFhOU1sbW5USXhBenNpbzNGS1U1eHZBVDNJaUFMMVAyZ1dmbFRB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-04T09:48+01:00",
+      "date": "2026-11-04",
+      "source": "European Council on Foreign Relations",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxNemt1YkU0bUsxaU9Ma0lhcVNZRmNvbkhrODA3QWZ2RkpDRDR0NVZUaE5sUDd5Nml3OGJYa0wtWDd3X1p5czhBdmU0VklIMlpoMXFMR295cFczM081T2RqMXNOc1hadHNxLXpaYnVpSnUwdjBuMFlFcFpFM3V6cWE5TWxtblRJeEF6c2lvM0ZLVTV4dkFUM0lpQUwxUDJnV2ZsVEHSAaIBQVVfeXFMTXprdWJFNG1LMWlPTGtJYXFTWUZjb25IazgwN0FmdkZKQ0Q0dDVWVGhObFA3eTZpdzhiWGtMLVg3d19aeXM4QXZlNFZJSDJaaDFxTEdveXBXMzNPNU9kajFzTnNYWnRzcS16WmJ1aUp1MHYwbjBZRXBaRTN1enFhOU1sbW5USXhBenNpbzNGS1U1eHZBVDNJaUFMMVAyZ1dmbFRB?oc=5\" tar",
+      "center_site": "https://ecfr.eu/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "سوء تقدير الصحراء الغربية: كيف يمكن لأوروبا وقف الحرب في شمال أفريقيا - المجلس الأوروبي للعلاقات الخارجية"
     },
     {
       "center": "مركز أولويات الدفاع",
