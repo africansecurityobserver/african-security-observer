@@ -1,12 +1,6 @@
 name: Generate Monthly Strategic Assessment
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "monthly_assessment/generate_monthly_assessment.py"
-      - ".github/workflows/monthly_assessment.yml"
   schedule:
     # Run on the 8th of each month at 04:00 Tunisia time (03:00 UTC).
     # This allows the final weekly assessment of the previous month to be published first.
