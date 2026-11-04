@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T14:01+01:00",
+  "updated": "2026-11-04T21:50+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 39,
+  "count": 40,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -732,6 +732,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
+    },
+    {
+      "center": "مركز أولويات الدفاع",
+      "center_short": "Defense Priorities",
+      "title": "How a Little-Known Company Dominated the Persian Gulf Oil Trade",
+      "url": "https://www.defensepriorities.org/in-the-media/how-a-little-known-company-dominated-the-persian-gulf-oil-trade/",
+      "published": "2026-11-04T19:29+01:00",
+      "date": "2026-11-04",
+      "source": "Defense Priorities",
+      "description": "<p>“It’s never going to be back to its prewar days, when shipping through the strait was cheap and easy and […]</p> <p>The post <a href=\"https://www.defensepriorities.org/in-the-media/how-a-little-known-company-dominated-the-persian-gulf-oil-trade/\">How a Little-Known Company Dominated the Persian Gulf Oil Trade</a> appeared first on <a href=\"https://www.defensepriorities.org\">Defense Priorities</a>.</p>",
+      "center_site": "https://defensepriorities.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "كيف هيمنت شركة غير معروفة على تجارة نفط الخليج الفارسي"
     },
     {
       "center": "المجلس الأوروبي للعلاقات الخارجية (ECFR)",
