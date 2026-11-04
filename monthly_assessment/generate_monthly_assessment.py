@@ -187,13 +187,25 @@ def main():
             f"Only {len(reports)} weekly assessments overlap {first:%Y-%m}; "
             "at least 3 are required for a meaningful monthly synthesis."
         )
-    earliest = min(date.fromisoformat(x["period_start"]) for x in reports)
-    latest = max(date.fromisoformat(x["period_end"]) for x in reports)
+    intervals = sorted(
+        (date.fromisoformat(x["period_start"]), date.fromisoformat(x["period_end"]))
+        for x in reports
+    )
+    earliest = intervals[0][0]
+    latest = max(end for _, end in intervals)
     if earliest > first + timedelta(days=7) or latest < last - timedelta(days=1):
         raise RuntimeError(
             f"Weekly coverage is incomplete for {first:%Y-%m}: "
             f"covered {earliest} to {latest}; refusing to publish a misleading monthly report."
         )
+    covered_until = intervals[0][1]
+    for start, end in intervals[1:]:
+        if start > covered_until + timedelta(days=1):
+            raise RuntimeError(
+                f"Weekly assessments leave a coverage gap from {covered_until} to {start}; "
+                "refusing to publish an incomplete monthly synthesis."
+            )
+        covered_until = max(covered_until, end)
 
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
