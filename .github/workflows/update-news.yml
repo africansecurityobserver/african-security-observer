@@ -14,7 +14,7 @@ on:
       - '.github/workflows/update-news.yml'
 
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/15 * * * *'
 
   workflow_dispatch:
 
