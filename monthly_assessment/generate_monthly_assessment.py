@@ -128,14 +128,14 @@ def add_to_index(card):
 def build_prompt(first, last, reports):
     blocks = []
     for number, report in enumerate(reports, 1):
-        sections = "\\n".join(
+        sections = "\n".join(
             f"- {clean(section.get('heading'))}: {str(section.get('text') or '')[:2200]}"
             for section in report.get("sections", [])
         )
         blocks.append(
             f"التقرير الأسبوعي {number}: {report.get('title')} | "
-            f"الفترة: {report.get('period_start')} إلى {report.get('period_end')}\\n"
-            f"الحوصلة: {str(report.get('summary') or '')[:1800]}\\n{sections}"
+            f"الفترة: {report.get('period_start')} إلى {report.get('period_end')}\n"
+            f"الحوصلة: {str(report.get('summary') or '')[:1800]}\n{sections}"
         )
     source_block = "\n\n".join(blocks)
     return f"""
