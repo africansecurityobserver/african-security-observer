@@ -16,15 +16,12 @@ on:
         default: "daily"
 
   schedule:
-    # Create the single daily card at 06:00, Tunisia time.
-    - cron: "0 6 * * *"
+    # Create the daily card at 06:00, then refresh it every 15 minutes.
+    # All times use Tunisia local time.
+    - cron: "*/15 6-23 * * *"
       timezone: "Africa/Tunis"
 
-    # Refresh it every 30 minutes after the news feed has had time to update.
-    - cron: "0,30 6-23 * * *"
-      timezone: "Africa/Tunis"
-
-    # Final refresh close to midnight.
+    # Final catch-up shortly before the day closes.
     - cron: "59 23 * * *"
       timezone: "Africa/Tunis"
 
