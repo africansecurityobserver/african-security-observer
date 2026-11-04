@@ -1869,13 +1869,28 @@ def merge_event_lists(existing_events, incoming_events):
             continue
 
         old_event = merged[match_index]
-        old_text = old_event.get("text", "")
-        # A fuller version replaces the shorter one; otherwise preserve the
-        # existing text so a sparse regeneration cannot erase useful details.
-        if len(incoming_text) > len(old_text) * 1.08:
+        old_text = str(old_event.get("text", "")).strip()
+        old_tokens = set(normalize_event_for_match(old_text).split())
+        incoming_tokens = set(normalize_event_for_match(incoming_text).split())
+
+        # Prefer a genuinely enriched update even when its wording is not
+        # substantially longer. This lets new dates, figures, actors and
+        # operational details update the existing event instead of creating
+        # a second copy or leaving stale wording in place.
+        incoming_is_richer = (
+            len(incoming_text) > len(old_text) * 1.08
+            or (
+                len(incoming_text) >= len(old_text) * 0.85
+                and len(incoming_tokens) > len(old_tokens)
+                and len(incoming_tokens - old_tokens) >= 2
+            )
+        )
+
+        if incoming_is_richer and incoming_text != old_text:
             old_event["text"] = incoming_text
             if incoming_country:
                 old_event["country"] = incoming_country
+            print(f"Enriched existing event with new details: {incoming_text[:120]}")
         elif not old_event.get("country") and incoming_country:
             old_event["country"] = incoming_country
 
@@ -2208,13 +2223,11 @@ def main():
             and item.get("slot") == slot
         ), None)
 
-        # A failed/empty feed must never replace a populated card with emptiness.
-        if existing_card and any(
-            section.get("events")
-            for section in existing_card.get("sections", [])
-            if isinstance(section, dict)
-        ):
-            print("Keeping the existing populated card unchanged; no empty overwrite.")
+        # Keep the first scheduled card as a placeholder if the feed is not
+        # ready yet. The next 15-minute run will enrich it when news arrives.
+        # Never rewrite an existing card merely because a feed run is empty.
+        if existing_card:
+            print("Keeping the existing daily card unchanged; no news candidates in this run.")
             return
 
         empty_sections = [
