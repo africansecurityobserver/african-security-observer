@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T04:02+01:00",
+  "updated": "2026-11-04T10:21+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 32,
+  "count": 38,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -706,6 +706,20 @@
       "title_ar": "من هرمز إلى شرق البحر الأبيض المتوسط: الهند وإسرائيل والجناح الغربي لمنطقة المحيطين الهندي والهادئ - معهد سياسة الأمن والتنمية"
     },
     {
+      "center": "معهد التحرير لسياسة الشرق الأوسط",
+      "center_short": "TIMEP",
+      "title": "How European Surveillance Technology Facilitates Repression in Egypt and MENA",
+      "url": "https://timep.org/2026/10/13/how-european-surveillance-technology-facilitates-repression-in-egypt-and-mena/?utm_source=rss&utm_medium=rss&utm_campaign=how-european-surveillance-technology-facilitates-repression-in-egypt-and-mena",
+      "published": "2026-10-13T14:47+01:00",
+      "date": "2026-10-13",
+      "source": "TIMEP",
+      "description": "<p>European surveillance technology continues to enable repression across MENA, as weak EU export controls leave the trade largely unchecked.</p> <p>The post <a href=\"https://timep.org/2026/10/13/how-european-surveillance-technology-facilitates-repression-in-egypt-and-mena/\">How European Surveillance Technology Facilitates Repression in Egypt and MENA</a> first appeared on <a href=\"https://timep.org\">The Tahrir Institute for Middle East Policy</a>.</p>",
+      "center_site": "https://timep.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "كيف تُسهّل تكنولوجيا المراقبة الأوروبية القمع في مصر ومنطقة الشرق الأوسط وشمال أفريقيا"
+    },
+    {
       "center": "مجموعة الأزمات الدولية",
       "center_short": "International Crisis Group",
       "title": "The U.S. and UN Will Need More Patience to Resolve Western Sahara Conflict - International Crisis Group",
@@ -718,6 +732,34 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
+    },
+    {
+      "center": "مركز أولويات الدفاع",
+      "center_short": "Defense Priorities",
+      "title": "Allies fear Trump will target NATO in case of midterm loss",
+      "url": "https://www.defensepriorities.org/in-the-media/allies-fear-trump-will-target-nato-in-case-of-midterm-loss/",
+      "published": "2026-11-02T22:09+01:00",
+      "date": "2026-11-02",
+      "source": "Defense Priorities",
+      "description": "<p>In theory, a Democrat majority in the House and Senate would restrain Trump’s maneuverability even on foreign and defense issues, […]</p> <p>The post <a href=\"https://www.defensepriorities.org/in-the-media/allies-fear-trump-will-target-nato-in-case-of-midterm-loss/\">Allies fear Trump will target NATO in case of midterm loss</a> appeared first on <a href=\"https://www.defensepriorities.org\">Defense Priorities</a>.</p>",
+      "center_site": "https://defensepriorities.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "يخشى الحلفاء أن يستهدف ترامب حلف الناتو في حالة خسارة منتصف المدة"
+    },
+    {
+      "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
+      "center_short": "UNIDIR",
+      "title": "Weapons and Ammunition Management in Africa Insight: 2022 Update",
+      "url": "https://unidir.org/publication/weapons-and-ammunition-management-in-africa-insight-2022-update/",
+      "published": "2026-11-02T10:15+01:00",
+      "date": "2026-11-02",
+      "source": "UNIDIR",
+      "description": "",
+      "center_site": "https://unidir.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "إدارة الأسلحة والذخائر في أفريقيا: نظرة معمقة - تحديث 2022"
     },
     {
       "center": "مركز الدراسات الاستراتيجية في جامعة أديس أبابا",
@@ -764,16 +806,16 @@
     {
       "center": "مجلس العلاقات الخارجية",
       "center_short": "CFR",
-      "title": "From the Iran War to Gas Prices: How Foreign Policy Is Driving the 2026 Midterms - Council on Foreign Relations",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPLVlPVkVnYnAxQlg3WXpENjk5YlhnM1M5eXYwYm9hektFZjNEeHU5ZkI0NVZCVzBZR25jdmJSdVFnVW1jOUZnUVV6Tm1aVFpMdG9MVGpMYjNPeGxDX19RSWxEdFRQc3BXenktMkpMVUhPNHZHNURzek1sdmgxemwtYmtLTmduSzdlZTA0UG12YTFhc3ZOT0pmRjkyTXBNRXJyWTgxeFg3MnN2VmNN?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-29T20:33+01:00",
-      "date": "2026-10-29",
-      "source": "Council on Foreign Relations",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPLVlPVkVnYnAxQlg3WXpENjk5YlhnM1M5eXYwYm9hektFZjNEeHU5ZkI0NVZCVzBZR25jdmJSdVFnVW1jOUZnUVV6Tm1aVFpMdG9MVGpMYjNPeGxDX19RSWxEdFRQc3BXenktMkpMVUhPNHZHNURzek1sdmgxemwtYmtLTmduSzdlZTA0UG12YTFhc3ZOT0pmRjkyTXBNRXJyWTgxeFg3MnN2VmNN?oc=5\" target=\"_blank\">From the Iran War to Gas Prices: How Foreign Policy Is Driving the 2026 Midterms</a> <font color=\"#6f6f6f\">Council on Foreign Relations</font>",
+      "title": "An Economic Shield of the Americas: How Washington Can Counter China and Build a More Prosperous Hemisphere",
+      "url": "https://www.cfr.org/articles/an-economic-shield-of-the-americas-how-washington-can-counter-china-and-build-a-more-prosperous-hemisphere",
+      "published": "2026-10-30T02:59+01:00",
+      "date": "2026-10-30",
+      "source": "CFR",
+      "description": "EXECUTIVE SUMMARY No region matters more to the future prosperity and security of the United States than the Western Hemisphere. Deeply integrated supply chains connect the United States with Canada and Mexico, while the wider region possesses the energy, critical minerals, agricultural capacity, and technological and industrial bases that the U.S. economy will require over […]",
       "center_site": "https://cfr.org/",
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "من حرب إيران إلى أسعار الغاز: كيف تقود السياسة الخارجية انتخابات التجديد النصفي لعام 2026 - مجلس العلاقات الخارجية"
+      "title_ar": "درع اقتصادي للأمريكتين: كيف يمكن لواشنطن مواجهة الصين وبناء نصف كرة أرضية أكثر ازدهاراً"
     },
     {
       "center": "مجموعة الأزمات الدولية",
@@ -860,6 +902,20 @@
       "title_ar": "لا يمكن لحلف الناتو تحمل الغموض في مواجهة الحرب الهجينة الروسية - orfonline.org"
     },
     {
+      "center": "المعهد الأسترالي للسياسة الاستراتيجية (ASPI)",
+      "center_short": "ASPI",
+      "title": "To secure supply, Australia needs to engage with Africa’s mineral sovereignty",
+      "url": "https://www.aspistrategist.org.au/to-secure-supply-australia-needs-to-engage-with-africas-mineral-sovereignty/",
+      "published": "2026-10-26T20:00+01:00",
+      "date": "2026-10-26",
+      "source": "ASPI",
+      "description": "Africa’s push for greater control over its minerals is a national security question for Australia, not just a commercial one for its miners. Canberra should coordinate more directly with African governments, both nationally and regionally ...",
+      "center_site": "https://aspistrategist.org.au/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "لضمان الإمدادات، تحتاج أستراليا إلى الانخراط مع الدول الأفريقية فيما يتعلق بسيادتها على المعادن."
+    },
+    {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
       "center_short": "ISS Africa",
       "title": "Are bilateral ties the route to renewed West African security cooperation? - ISS Africa",
@@ -900,6 +956,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "يرى \"إضفاء الطابع البحري\" على الحرب الاقتصادية أن طرق التجارة تصبح مناطق قوة بدلاً من قواعد - معهد الشرق الأوسط"
+    },
+    {
+      "center": "مركز الدراسات الاستراتيجية والأمنية في بنغلادش",
+      "center_short": "BIPSS",
+      "title": "The Invisible Battlefield Beneath the Sea: Undersea Cables, Critical Infrastructure and the New Geopolitics of Maritime Power",
+      "url": "https://bipss.org.bd/the-invisible-battlefield-beneath-the-sea-undersea-cables-critical-infrastructure-and-the-new-geopolitics-of-maritime-power/",
+      "published": "2026-10-19T11:39+01:00",
+      "date": "2026-10-19",
+      "source": "BIPSS",
+      "description": "In this commentary, BIPSS Research Assistant Farhana Rashid explores how submarine cables are emerging as strategic assets amid intensifying great-power competition, grey-zone operations, and growing threats to critical undersea infrastructure. The commentary examines the vulnerabilities of global cable networks, the challenges of protecting them under existing international legal frameworks, and the strategic significance of the …",
+      "center_site": "https://bipss.org.bd/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "ساحة المعركة الخفية تحت سطح البحر: الكابلات البحرية، والبنية التحتية الحيوية، والجغرافيا السياسية الجديدة للقوة البحرية"
     },
     {
       "center": "مؤسسة كارنيغي للسلام الدولي",
@@ -998,6 +1068,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "أجرت دويتشه فيله مقابلة مع جينيفيف دونيلون ماي حول الأمن الغذائي في الصين - معهد سياسة الأمن والتنمية"
+    },
+    {
+      "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
+      "center_short": "UNIDIR",
+      "title": "UNIDIR and WANEP support communities on the frontline of early warning",
+      "url": "https://unidir.org/unidir-and-wanep-support-communities-on-the-frontline-of-early-warning/",
+      "published": "2026-10-09T13:51+01:00",
+      "date": "2026-10-09",
+      "source": "UNIDIR",
+      "description": "<p>UNIDIR, in partnership with the West Africa Network for Peacebuilding (WANEP), brought together community early-warning monitors and local stakeholders for a training in Ouangolodougou, Côte d’Ivoire, taking place from 22 to 24 September. Participants strengthened their capacity to identify, monitor, document and report risks associated with ammunition diversion and trafficking. The training, supported by the<span class=\"excerpt-read-more\">... <a class=\"btn--link\" href=\"https://unidir.org/uni",
+      "center_site": "https://unidir.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "يقدم معهد الأمم المتحدة لبحوث نزع السلاح (UNIDIR) وشبكة غرب آسيا للإنذار المبكر (WANEP) الدعم للمجتمعات التي تقف في الخطوط الأمامية للإنذار المبكر."
     },
     {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
