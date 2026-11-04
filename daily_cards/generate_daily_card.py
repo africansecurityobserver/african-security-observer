@@ -11,6 +11,7 @@ from google.genai import types
 
 # ============================================================
 # CONFIGURATION
+# Refreshed after the news-ingestion recovery on 2026-11-04.
 # ============================================================
 
 BASE_DIR = Path(__file__).resolve().parent.parent
