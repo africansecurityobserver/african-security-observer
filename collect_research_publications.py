@@ -7,6 +7,7 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 from html import unescape
+from urllib.parse import urljoin
 
 import requests
 from deep_translator import GoogleTranslator
@@ -521,6 +522,86 @@ def direct_url(url):
     except Exception:
         return url
 
+
+def discover_center_feed_urls(session, center):
+    """Discover publisher-owned RSS/Atom feeds without relying on Google News."""
+    homepage = "https://" + center["domain"].strip("/") + "/"
+    feeds = []
+    try:
+        response = session.get(homepage, timeout=12, allow_redirects=True)
+        if response.ok and response.text:
+            for tag in re.findall(r"<link\\b[^>]*>", response.text, flags=re.I):
+                attrs = {}
+                for match in re.finditer(r"""([\\w:-]+)\\s*=\\s*["']([^"']*)["']""", tag):
+                    attrs[match.group(1).lower()] = unescape(match.group(2))
+                rel = attrs.get("rel", "").lower().split()
+                feed_type = attrs.get("type", "").lower()
+                href = attrs.get("href", "")
+                if "alternate" in rel and ("rss" in feed_type or "atom" in feed_type) and href:
+                    candidate = urljoin(response.url, href)
+                    if candidate.startswith("http") and candidate not in feeds:
+                        feeds.append(candidate)
+    except Exception as exc:
+        print(f"Feed discovery failed for {center['short']}: {type(exc).__name__}")
+
+    if not feeds:
+        feeds.extend([urljoin(homepage, "feed/"), urljoin(homepage, "rss.xml"),
+                      urljoin(homepage, "feed.xml")])
+    return feeds[:2]
+
+
+def read_center_feed(session, feed_url, center, cutoff):
+    """Read RSS 2.0 or Atom entries and return recent, relevant publications."""
+    found = []
+    try:
+        response = session.get(feed_url, timeout=15, allow_redirects=True)
+        response.raise_for_status()
+        root = ET.fromstring(response.content)
+        entries = root.findall(".//item") + root.findall(".//{*}entry")
+        for entry in entries:
+            title_node = entry.find("title")
+            title = clean(title_node.text if title_node is not None else "")
+            link_node = entry.find("link")
+            link = ""
+            if link_node is not None:
+                link = clean(link_node.attrib.get("href") or link_node.text or "")
+            if not link:
+                continue
+            link = urljoin(response.url, link)
+            date_value = ""
+            for tag in ("pubDate", "published", "updated", "{*}date"):
+                node = entry.find(tag)
+                if node is not None and node.text:
+                    date_value = clean(node.text)
+                    break
+            published_dt = parse_date(date_value)
+            if published_dt and published_dt < cutoff:
+                continue
+            if not title or is_generic_listing_title(title):
+                continue
+            description = ""
+            for tag in ("description", "summary", "{*}encoded", "{*}content"):
+                node = entry.find(tag)
+                if node is not None and node.text:
+                    description = clean(node.text)
+                    if description:
+                        break
+            item = {
+                "center": center["name"], "center_short": center["short"],
+                "title": title, "url": link,
+                "published": published_dt.isoformat(timespec="minutes") if published_dt else date_value,
+                "date": published_dt.strftime("%Y-%m-%d") if published_dt else "",
+                "source": center["short"], "description": description[:500],
+                "center_site": "https://" + center["domain"] + "/"
+            }
+            classify_relevance(item)
+            if item.get("relevance_tier", 0) > 0:
+                found.append(item)
+    except Exception as exc:
+        print(f"Publisher feed failed for {center['short']} ({feed_url}): {type(exc).__name__}")
+    return found
+
+
 def main():
     now = datetime.now(TZ)
     rolling_cutoff = now - timedelta(days=MAX_AGE_DAYS)
@@ -600,8 +681,22 @@ def main():
                 if item.get("relevance_tier", 0) > 0:
                     center_items.append(item)
 
-        if successful_queries == 0:
-            print(f"All publication searches failed for {center['short']}; retained prior records.")
+        # Supplement Google News with publisher-owned RSS/Atom feeds. This catches
+        # items missed by news indexing and supplies direct article URLs.
+        feed_count = 0
+        for feed_url in discover_center_feed_urls(session, center):
+            for item in read_center_feed(session, feed_url, center, cutoff):
+                key = item["url"]
+                if key in center_seen or key in seen:
+                    continue
+                center_seen.add(key)
+                center_items.append(item)
+                feed_count += 1
+        if feed_count:
+            print(f"{center['short']}: added {feed_count} relevant items from publisher feeds")
+
+        if successful_queries == 0 and not center_items:
+            print(f"All publication searches and feeds failed for {center['short']}; retained prior records.")
             continue
 
         center_items.sort(key=lambda x: x.get("published", ""), reverse=True)
