@@ -1,6 +1,7 @@
 import json
 import os
 import sys
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -1239,68 +1240,78 @@ def generate_with_gemini(prompt):
         ]
     }
 
-    # Try several current Gemini models.
-    # If one is temporarily overloaded, automatically try the next one.
-    models = [
-    "gemini-3.5-flash-lite"
-    ]
+    # Try the configured model first, then independent fallback models.
+    # Retry transient capacity / rate-limit errors before switching models.
+    models = list(dict.fromkeys([
+        MODEL_NAME,
+        "gemini-3.5-flash-lite",
+        "gemini-2.5-flash",
+    ]))
 
     last_error = None
 
     for model_name in models:
+        for attempt in range(1, 3):
 
-        print("=" * 70)
-        print(f"Trying Gemini model: {model_name}")
-        print("Timeout: 180 seconds")
-        print("=" * 70)
+            print("=" * 70)
+            print(f"Trying Gemini model: {model_name} (attempt {attempt}/2)")
+            print("Timeout: 180 seconds")
+            print("=" * 70)
 
-        try:
-
-            client = genai.Client(
-                api_key=api_key,
-                http_options=types.HttpOptions(timeout=180000)
-            )
-
-            interaction = client.interactions.create(
-                model=model_name,
-                input=prompt,
-                response_format={
-                    "type": "text",
-                    "mime_type": "application/json",
-                    "schema": response_schema
-                },
-                generation_config={
-                    "temperature": 0.2,
-                    "thinking_level": "low"
-                }
-            )
-
-            output_text = interaction.output_text
-
-            if not output_text:
-                raise RuntimeError(
-                    f"Gemini returned an empty response from {model_name}."
+            try:
+                client = genai.Client(
+                    api_key=api_key,
+                    http_options=types.HttpOptions(timeout=180000)
                 )
 
-            result = json.loads(output_text)
+                interaction = client.interactions.create(
+                    model=model_name,
+                    input=prompt,
+                    response_format={
+                        "type": "text",
+                        "mime_type": "application/json",
+                        "schema": response_schema
+                    },
+                    generation_config={
+                        "temperature": 0.2,
+                        "thinking_level": "low"
+                    }
+                )
 
-            print("=" * 70)
-            print(f"Gemini generation succeeded with: {model_name}")
-            print("=" * 70)
+                output_text = interaction.output_text
+                if not output_text:
+                    raise RuntimeError(
+                        f"Gemini returned an empty response from {model_name}."
+                    )
 
-            return result
+                result = json.loads(output_text)
 
-        except Exception as e:
+                print("=" * 70)
+                print(f"Gemini generation succeeded with: {model_name}")
+                print("=" * 70)
+                return result
 
-            last_error = e
+            except Exception as e:
+                last_error = e
+                error_text = str(e)
 
-            print("=" * 70)
-            print(f"Gemini model failed: {model_name}")
-            print(f"Error: {type(e).__name__}: {e}")
-            print("=" * 70)
+                print("=" * 70)
+                print(f"Gemini model failed: {model_name}, attempt {attempt}/2")
+                print(f"Error: {type(e).__name__}: {e}")
+                print("=" * 70)
 
-            # Continue automatically with the next model.
-            continue
+                transient = any(
+                    code in error_text
+                    for code in ("429", "500", "502", "503", "504")
+                )
+                if transient and attempt < 2:
+                    print("Transient Gemini service error; retrying in 12 seconds.")
+                    time.sleep(12)
+                    continue
+
+                # Switch to the next model after a permanent error or
+                # after the retry budget for a transient error is exhausted.
+                break
 
     raise RuntimeError(
         "All Gemini models failed. Last error: "
@@ -2191,6 +2202,15 @@ def main():
         slot,
         reference_date
     )
+
+    # A scheduled run that starts before 06:00 must not publish an empty
+    # placeholder for the current day. Wait for the first valid daily window.
+    if now < start:
+        print(
+            f"Daily card window has not started yet ({start.isoformat()}); "
+            "skipping without writing an empty card."
+        )
+        return
 
     print("=" * 70)
     print("AFRICAN SECURITY OBSERVER - DAILY CARD")
