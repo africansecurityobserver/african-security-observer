@@ -1,6 +1,941 @@
 {
-  "updated": "2026-11-05T11:18:05.619909+00:00",
+  "updated": "2026-11-05T18:58:01.510145+00:00",
   "items": [
+    {
+      "title": "الجيش النيجيري يستبعد التهدئة ويؤكد مواصلة العمليات ضد الجماعات المسلحة - جريدة القدس",
+      "description": "الجيش النيجيري يستبعد التهدئة ويؤكد مواصلة العمليات ضد الجماعات المسلحة    جريدة القدس",
+      "original_title": "الجيش النيجيري يستبعد التهدئة ويؤكد مواصلة العمليات ضد الجماعات المسلحة - جريدة القدس",
+      "original_description": "الجيش النيجيري يستبعد التهدئة ويؤكد مواصلة العمليات ضد الجماعات المسلحة &nbsp;&nbsp; جريدة القدس",
+      "url": "https://alquds.com/ar/posts/269882-nigeria-military-rejects-ceasefire-insurgency",
+      "source": "جريدة القدس",
+      "published": "Thu, 05 Nov 2026 18:36:27 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "الجيش النيجيري يستبعد وقف إطلاق النار مع بوكو حرام وتنظيم الدولة في غرب أفريقيا - صوت بيروت إنترناشونال",
+      "description": "الجيش النيجيري يستبعد وقف إطلاق النار مع بوكو حرام وتنظيم الدولة في غرب أفريقيا    صوت بيروت إنترناشونال",
+      "original_title": "الجيش النيجيري يستبعد وقف إطلاق النار مع بوكو حرام وتنظيم الدولة في غرب أفريقيا - صوت بيروت إنترناشونال",
+      "original_description": "الجيش النيجيري يستبعد وقف إطلاق النار مع بوكو حرام وتنظيم الدولة في غرب أفريقيا &nbsp;&nbsp; صوت بيروت إنترناشونال",
+      "url": "https://www.sawtbeirut.com/world-news/%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D9%86%D9%8A%D8%AC%D9%8A%D8%B1%D9%8A-%D9%8A%D8%B3%D8%AA%D8%A8%D8%B9%D8%AF-%D9%88%D9%82%D9%81-%D8%A5%D8%B7%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%B1",
+      "source": "صوت بيروت إنترناشونال",
+      "published": "Thu, 05 Nov 2026 18:35:03 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "الزيدي: نرفض استخدام أراضي العراق لشن هجمات على الجوار",
+      "description": "رئيس الوزراء العراقي دعا في اتصال هاتفي مع الرئيس الأمريكي إلى احترام سيادة الدول وتغليب الحوار والدبلوماسية لاحتواء التوترات الإقليمية..",
+      "original_title": "الزيدي: نرفض استخدام أراضي العراق لشن هجمات على الجوار",
+      "original_description": "رئيس الوزراء العراقي دعا في اتصال هاتفي مع الرئيس الأمريكي إلى احترام سيادة الدول وتغليب الحوار والدبلوماسية لاحتواء التوترات الإقليمية..",
+      "url": "https://alikhbariya.net/stories/cc26603f-109d-4d5f-b0f0-0cde468563fd/%D8%A7%D9%84%D8%B2%D9%8A%D8%AF%D9%8A-%D9%86%D8%B1%D9%81%D8%B6-%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A3%D8%B1%D8%A7%D8%B6%D9%8A-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82-%D9%84%D8%B4%D9%86-%D9%87%D8%AC%D9%85%D8%A7%D8%AA-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%AC%D9%88%D8%A7%D8%B1",
+      "source": "وكالة الأناضول",
+      "published": "Thu, 05 Nov 2026 18:30:23 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "اشتعال محاور القتال مجدداً في شرق السودان وغربه",
+      "description": "سيطر الجيش السوداني والقوات المتحالفة معه على منطقتي كازقيل وأبو قعود في شمال كردفان، في حين سيطرت «قوات الدعم السريع» على بلدة الكيلي في إقليم النيل الأزرق.",
+      "original_title": "اشتعال محاور القتال مجدداً في شرق السودان وغربه",
+      "original_description": "سيطر الجيش السوداني والقوات المتحالفة معه على منطقتي كازقيل وأبو قعود في شمال كردفان، في حين سيطرت «قوات الدعم السريع» على بلدة الكيلي في إقليم النيل الأزرق.",
+      "url": "https://alikhbariya.net/stories/413b3136-4aa6-4a4f-8b95-c3026a1718ae/%D8%A7%D8%B4%D8%AA%D8%B9%D8%A7%D9%84-%D9%85%D8%AD%D8%A7%D9%88%D8%B1-%D8%A7%D9%84%D9%82%D8%AA%D8%A7%D9%84-%D9%85%D8%AC%D8%AF%D8%AF%D8%A7-%D9%81%D9%8A-%D8%B4%D8%B1%D9%82-%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86-%D9%88%D8%BA%D8%B1%D8%A8%D9%87",
+      "source": "الشرق الأوسط",
+      "published": "Thu, 05 Nov 2026 18:27:46 GMT",
+      "category": "rest",
+      "region": "africa"
+    },
+    {
+      "title": "أزمة دبلوماسية بين السودان وإثيوبيا وطرد متبادل للدبلوماسيين - ما وراء الخبر",
+      "description": "أزمة دبلوماسية متصاعدة بين السودان وإثيوبيا وسط مخاوف متزايدة من اتساع رقعة الصراعات في منطقة القرن الإفريقي. الخرطوم وأديس أبابا تتبادلان طرد دبلوماسيين بعد إمهالهم 48 ساعة لمغادرة البلدين. تصعيد يأتي في سياق اتهام كل بلد للآخر بدعم جماعة مسلحة تخوض صراعا مسلحا ضد الحكومة المركزية. مجلس السيادة ال…",
+      "original_title": "أزمة دبلوماسية بين السودان وإثيوبيا وطرد متبادل للدبلوماسيين - ما وراء الخبر",
+      "original_description": "أزمة دبلوماسية متصاعدة بين السودان وإثيوبيا وسط مخاوف متزايدة من اتساع رقعة الصراعات في منطقة القرن الإفريقي. الخرطوم وأديس أبابا تتبادلان طرد دبلوماسيين بعد إمهالهم 48 ساعة لمغادرة البلدين. تصعيد يأتي في سياق اتهام كل بلد للآخر بدعم جماعة مسلحة تخوض صراعا مسلحا ضد الحكومة المركزية. مجلس السيادة ال…",
+      "url": "https://alikhbariya.net/stories/c7849158-faef-4c6f-b683-83238aa65c1d/%D8%A3%D8%B2%D9%85%D8%A9-%D8%AF%D8%A8%D9%84%D9%88%D9%85%D8%A7%D8%B3%D9%8A%D8%A9-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86-%D9%88%D8%A5%D8%AB%D9%8A%D9%88%D8%A8%D9%8A%D8%A7-%D9%88%D8%B7%D8%B1%D8%AF-%D9%85%D8%AA%D8%A8%D8%A7%D8%AF%D9%84-%D9%84%D9%84%D8%AF%D8%A8%D9%84%D9%88%D9%85%D8%A7%D8%B3%D9%8A%D9%8A%D9%86-%D9%85%D8%A7-%D9%88%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D8%AE%D8%A8%D8%B1",
+      "source": "الجزيرة نت",
+      "published": "Thu, 05 Nov 2026 18:21:35 GMT",
+      "category": "rest",
+      "region": "africa"
+    },
+    {
+      "title": "السودان وإثيوبيا.. أهم ما حدث بين البلدين في 90 ثانية",
+      "description": "قنصليتان مغلقتان، وشكوى أمام مجلس الأمن، واتهامات متبادلة بين السودان وإثيوبيا.. أهم ما حدث بين البلدين في 90 ثانية #الجزيرة ِ#الجزيرة_أخبار #السودان #إثيوبيا #مجلس_الأمن ===================== تابعونا على منصات الجزيرة الرقمية ▶Facebook▶https://facebook.com/aljazeerachannel ▶Instagram▶ https://inst…",
+      "original_title": "السودان وإثيوبيا.. أهم ما حدث بين البلدين في 90 ثانية",
+      "original_description": "قنصليتان مغلقتان، وشكوى أمام مجلس الأمن، واتهامات متبادلة بين السودان وإثيوبيا.. أهم ما حدث بين البلدين في 90 ثانية #الجزيرة ِ#الجزيرة_أخبار #السودان #إثيوبيا #مجلس_الأمن ===================== تابعونا على منصات الجزيرة الرقمية ▶Facebook▶https://facebook.com/aljazeerachannel ▶Instagram▶ https://inst…",
+      "url": "https://alikhbariya.net/stories/bd7345ce-5f3f-42bf-9827-3d0524efb577/%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86-%D9%88%D8%A5%D8%AB%D9%8A%D9%88%D8%A8%D9%8A%D8%A7-%D8%A3%D9%87%D9%85-%D9%85%D8%A7-%D8%AD%D8%AF%D8%AB-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%A8%D9%84%D8%AF%D9%8A%D9%86-%D9%81%D9%8A-90-%D8%AB%D8%A7%D9%86%D9%8A%D8%A9",
+      "source": "الجزيرة نت",
+      "published": "Thu, 05 Nov 2026 18:15:20 GMT",
+      "category": "international",
+      "region": "africa"
+    },
+    {
+      "title": "اليمن: قتلى بغارات في صعدة ومكاسب برية في الجوف ولحج و«أنصار الله» تنفي حصار تعز",
+      "description": "صنعاء – «القدس العربي»: على وقع نزيف بشري متسارع واشتباكات ومعارك مفتوحة على جبهات عدة، تحافظ الأزمة اليمنية على خطها التصاعدي بين الميدان والسياسة، بالتزامن مع سجال محتدم حول واقع الحصار الإنساني في مدينة تعز. ميدانيًا، تجسد هذا الغليان في حصيلة ثقيلة خلفتها الضربات الجوية الأخيرة، حيث أسفرت غارات…",
+      "original_title": "اليمن: قتلى بغارات في صعدة ومكاسب برية في الجوف ولحج و«أنصار الله» تنفي حصار تعز",
+      "original_description": "صنعاء – «القدس العربي»: على وقع نزيف بشري متسارع واشتباكات ومعارك مفتوحة على جبهات عدة، تحافظ الأزمة اليمنية على خطها التصاعدي بين الميدان والسياسة، بالتزامن مع سجال محتدم حول واقع الحصار الإنساني في مدينة تعز. ميدانيًا، تجسد هذا الغليان في حصيلة ثقيلة خلفتها الضربات الجوية الأخيرة، حيث أسفرت غارات…",
+      "url": "https://alikhbariya.net/stories/d6fa1074-b63a-4b2e-a583-ffd8f38b18c4/%D8%A7%D9%84%D9%8A%D9%85%D9%86-%D9%82%D8%AA%D9%84%D9%89-%D8%A8%D8%BA%D8%A7%D8%B1%D8%A7%D8%AA-%D9%81%D9%8A-%D8%B5%D8%B9%D8%AF%D8%A9-%D9%88%D9%85%D9%83%D8%A7%D8%B3%D8%A8-%D8%A8%D8%B1%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%AC%D9%88%D9%81-%D9%88%D9%84%D8%AD%D8%AC-%D9%88-%D8%A3%D9%86%D8%B5%D8%A7%D8%B1-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D9%86%D9%81%D9%8A-%D8%AD%D8%B5%D8%A7%D8%B1-%D8%AA%D8%B9%D8%B2",
+      "source": "القدس العربي",
+      "published": "Thu, 05 Nov 2026 18:11:56 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "وزير الخارجية: مشاريع بناء وترميم لسفارات وقنصليات بعدة عواصم دولية",
+      "description": "تعتزم وزارة الشؤون الخارجية والهجرة والتونسيين بالخارج تنفيذ برنامج لتثمين رصيدها العقاري بالإدارة المركزية وبالخارج.",
+      "original_title": "وزير الخارجية: مشاريع بناء وترميم لسفارات وقنصليات بعدة عواصم دولية",
+      "original_description": "تعتزم وزارة الشؤون الخارجية والهجرة والتونسيين بالخارج تنفيذ برنامج لتثمين رصيدها العقاري بالإدارة المركزية وبالخارج.",
+      "url": "https://alikhbariya.net/stories/66103619-4155-4fb2-a0a0-f639a1882b31/%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9-%D8%A8%D9%86%D8%A7%D8%A1-%D9%88%D8%AA%D8%B1%D9%85%D9%8A%D9%85-%D9%84%D8%B3%D9%81%D8%A7%D8%B1%D8%A7%D8%AA-%D9%88%D9%82%D9%86%D8%B5%D9%84%D9%8A%D8%A7%D8%AA-%D8%A8%D8%B9%D8%AF%D8%A9-%D8%B9%D9%88%D8%A7%D8%B5%D9%85-%D8%AF%D9%88%D9%84%D9%8A%D8%A9",
+      "source": "موزاييك إف إم",
+      "published": "Thu, 05 Nov 2026 18:11:00 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "أزالت بروكسل الحديث عن التصديق على اتفاق التجارة الكندي في نص قمة الاتحاد الأوروبي: ويلكنسون – سي تي في نيوز",
+      "description": "أزالت بروكسل الحديث عن التصديق على اتفاق التجارة الكندي في نص قمة الاتحاد الأوروبي: ويلكنسون    CTV News",
+      "original_title": "Brussels removed talk of ratifying Canada trade deal in EU summit text: Wilkinson - CTV News",
+      "original_description": "Brussels removed talk of ratifying Canada trade deal in EU summit text: Wilkinson &nbsp;&nbsp; CTV News",
+      "url": "https://www.ctvnews.ca/politics/article/brussels-removed-talk-of-ratifying-canada-trade-deal-in-eu-summit-text-wilkinson",
+      "source": "CTV News",
+      "published": "Thu, 05 Nov 2026 18:07:35 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "ملك إسبانيا يهنئ الرئيس تبون بمناسبة الذكرى الـ 72 لاندلاع الثورة المجيدة",
+      "description": "تلقى رئيس الجمهورية عبد المجيد تبون رسالة تهان بعيد الثورة المجيدة في ذكراها الثانية والسبعين من ملك مملكة إسبانيا فيليبي السادس. وأعرب ملك إسبانيا للرئيس تبون في رسالته عن ارتياحه لروابط الصداقة الوثيقة وحسن الجوار، بين الجزائر وإسبانيا والتطور الحاصل مؤخرا في مجالات التعاون المختلفة. كما تمنى الم…",
+      "original_title": "ملك إسبانيا يهنئ الرئيس تبون بمناسبة الذكرى الـ 72 لاندلاع الثورة المجيدة",
+      "original_description": "تلقى رئيس الجمهورية عبد المجيد تبون رسالة تهان بعيد الثورة المجيدة في ذكراها الثانية والسبعين من ملك مملكة إسبانيا فيليبي السادس. وأعرب ملك إسبانيا للرئيس تبون في رسالته عن ارتياحه لروابط الصداقة الوثيقة وحسن الجوار، بين الجزائر وإسبانيا والتطور الحاصل مؤخرا في مجالات التعاون المختلفة. كما تمنى الم…",
+      "url": "https://alikhbariya.net/stories/5c373f16-26ad-4378-89f9-c2f1f6bc90fc/%D9%85%D9%84%D9%83-%D8%A5%D8%B3%D8%A8%D8%A7%D9%86%D9%8A%D8%A7-%D9%8A%D9%87%D9%86%D8%A6-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%AA%D8%A8%D9%88%D9%86-%D8%A8%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9-%D8%A7%D9%84%D8%B0%D9%83%D8%B1%D9%89-%D8%A7%D9%84-72-%D9%84%D8%A7%D9%86%D8%AF%D9%84%D8%A7%D8%B9-%D8%A7%D9%84%D8%AB%D9%88%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%AC%D9%8A%D8%AF%D8%A9",
+      "source": "الشروق أونلاين",
+      "published": "Thu, 05 Nov 2026 18:06:17 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "نزوح أكثر من 300 ألف شخص في اليمن منذ أغسطس الماضي",
+      "description": "وسط أزمة إنسانية متفاقمة ونقص حاد في السلع وارتفاع الأسعار وانتشار الأمراض في تعز..",
+      "original_title": "نزوح أكثر من 300 ألف شخص في اليمن منذ أغسطس الماضي",
+      "original_description": "وسط أزمة إنسانية متفاقمة ونقص حاد في السلع وارتفاع الأسعار وانتشار الأمراض في تعز..",
+      "url": "https://alikhbariya.net/stories/996ce364-fc72-488b-8287-955c47caeb61/%D9%86%D8%B2%D9%88%D8%AD-%D8%A3%D9%83%D8%AB%D8%B1-%D9%85%D9%86-300-%D8%A3%D9%84%D9%81-%D8%B4%D8%AE%D8%B5-%D9%81%D9%8A-%D8%A7%D9%84%D9%8A%D9%85%D9%86-%D9%85%D9%86%D8%B0-%D8%A3%D8%BA%D8%B3%D8%B7%D8%B3-%D8%A7%D9%84%D9%85%D8%A7%D8%B6%D9%8A",
+      "source": "العربية",
+      "published": "Thu, 05 Nov 2026 18:05:25 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "الدوحة: ندعم حلاً يضمن حرية الملاحة البحرية ويمهد لاتفاق سلام",
+      "description": "بحث وزيرا خارجية قطر وإيران جهود خفض التصعيد الإقليمي، فيما أكدت الدوحة دعم المساعي الدبلوماسية لضمان حرية الملاحة البحرية والتوصل إلى اتفاق",
+      "original_title": "الدوحة: ندعم حلاً يضمن حرية الملاحة البحرية ويمهد لاتفاق سلام",
+      "original_description": "بحث وزيرا خارجية قطر وإيران جهود خفض التصعيد الإقليمي، فيما أكدت الدوحة دعم المساعي الدبلوماسية لضمان حرية الملاحة البحرية والتوصل إلى اتفاق",
+      "url": "https://alikhbariya.net/stories/4a836a86-38c0-4539-ba63-bd9967688db3/%D8%A7%D9%84%D8%AF%D9%88%D8%AD%D8%A9-%D9%86%D8%AF%D8%B9%D9%85-%D8%AD%D9%84%D8%A7-%D9%8A%D8%B6%D9%85%D9%86-%D8%AD%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D9%84%D8%A7%D8%AD%D8%A9-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9-%D9%88%D9%8A%D9%85%D9%87%D8%AF-%D9%84%D8%A7%D8%AA%D9%81%D8%A7%D9%82-%D8%B3%D9%84%D8%A7%D9%85",
+      "source": "العربي الجديد",
+      "published": "Thu, 05 Nov 2026 18:02:05 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "نشرة إخبارية | ضربات يمنية تكبد الحوثيين خسائر كبيرة.. ورسالة إيرانية إلى بوتين",
+      "description": "أعلنت القوات المسلحة اليمنية تحييد نحو 440 عنصراً وقيادياً من مليشيا الحوثي، خلال 1382 عملية استهداف ضمن عملية «فجر اليمن»، استهدفت مواقع وتجمعات وتعزيزات للمليشيا على جبهات عدة، بينها تعز والجوف وباب المندب وذو باب. وأفادت القوات بتدمير وإعطاب 146 آلية ومعدة عسكرية، مؤكدة تحقيق تقدم ميداني والسيطر…",
+      "original_title": "نشرة إخبارية | ضربات يمنية تكبد الحوثيين خسائر كبيرة.. ورسالة إيرانية إلى بوتين",
+      "original_description": "أعلنت القوات المسلحة اليمنية تحييد نحو 440 عنصراً وقيادياً من مليشيا الحوثي، خلال 1382 عملية استهداف ضمن عملية «فجر اليمن»، استهدفت مواقع وتجمعات وتعزيزات للمليشيا على جبهات عدة، بينها تعز والجوف وباب المندب وذو باب. وأفادت القوات بتدمير وإعطاب 146 آلية ومعدة عسكرية، مؤكدة تحقيق تقدم ميداني والسيطر…",
+      "url": "https://alikhbariya.net/stories/b36cc2e5-8ebe-4ba9-a5bb-725f074ad44c/%D9%86%D8%B4%D8%B1%D8%A9-%D8%A5%D8%AE%D8%A8%D8%A7%D8%B1%D9%8A%D8%A9-%D8%B6%D8%B1%D8%A8%D8%A7%D8%AA-%D9%8A%D9%85%D9%86%D9%8A%D8%A9-%D8%AA%D9%83%D8%A8%D8%AF-%D8%A7%D9%84%D8%AD%D9%88%D8%AB%D9%8A%D9%8A%D9%86-%D8%AE%D8%B3%D8%A7%D8%A6%D8%B1-%D9%83%D8%A8%D9%8A%D8%B1%D8%A9-%D9%88%D8%B1%D8%B3%D8%A7%D9%84%D8%A9-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86%D9%8A%D8%A9-%D8%A5%D9%84%D9%89-%D8%A8%D9%88%D8%AA%D9%8A%D9%86",
+      "source": "العربية",
+      "published": "Thu, 05 Nov 2026 18:00:18 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "المتحدث العسكري: نحذر من الانخراط في الأنشطة الإجرامية",
+      "description": "حذر العقيد أركان حرب أحمد عتمان، المتحدث العسكري باسم القوات المسلحة من الانخراط في الأنشطة الإجرامية",
+      "original_title": "المتحدث العسكري: نحذر من الانخراط في الأنشطة الإجرامية",
+      "original_description": "حذر العقيد أركان حرب أحمد عتمان، المتحدث العسكري باسم القوات المسلحة من الانخراط في الأنشطة الإجرامية",
+      "url": "https://alikhbariya.net/stories/7c757768-b949-481d-9305-30738f62d3b6/%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%AB-%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A-%D9%86%D8%AD%D8%B0%D8%B1-%D9%85%D9%86-%D8%A7%D9%84%D8%A7%D9%86%D8%AE%D8%B1%D8%A7%D8%B7-%D9%81%D9%8A-%D8%A7%D9%84%D8%A3%D9%86%D8%B4%D8%B7%D8%A9-%D8%A7%D9%84%D8%A5%D8%AC%D8%B1%D8%A7%D9%85%D9%8A%D8%A9",
+      "source": "اليوم السابع",
+      "published": "Thu, 05 Nov 2026 18:00:10 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "حسين عيسى يلتقي وزير التجارة الخارجية الإماراتي لبحث تعزيز التعاون المشترك",
+      "description": "التقى الدكتور حسين عيسى، نائب رئيس مجلس الوزراء للشؤون الاقتصادية، الدكتور ثاني بن أحمد الزيودي، وزير التجارة الخارجية بدولة الإمارات العربية المتحدة الشقيق..",
+      "original_title": "حسين عيسى يلتقي وزير التجارة الخارجية الإماراتي لبحث تعزيز التعاون المشترك",
+      "original_description": "التقى الدكتور حسين عيسى، نائب رئيس مجلس الوزراء للشؤون الاقتصادية، الدكتور ثاني بن أحمد الزيودي، وزير التجارة الخارجية بدولة الإمارات العربية المتحدة الشقيق..",
+      "url": "https://alikhbariya.net/stories/96829bcd-24bc-4f95-ad35-6163d4cbf690/%D8%AD%D8%B3%D9%8A%D9%86-%D8%B9%D9%8A%D8%B3%D9%89-%D9%8A%D9%84%D8%AA%D9%82%D9%8A-%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA%D9%8A-%D9%84%D8%A8%D8%AD%D8%AB-%D8%AA%D8%B9%D8%B2%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%88%D9%86-%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%83",
+      "source": "اليوم السابع",
+      "published": "Thu, 05 Nov 2026 18:00:10 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "تمرين \"وطن\" القطري يختبر تنسيق الأمن والجيش والجهات المدنية في الأزمات",
+      "description": "تمرين \"وطن\" في قطر يختبر جاهزية الاستجابة القصوى بسيناريو تصادم حافلة طلاب بشاحنة كيميائية، محاكياً إنقاذاً معقداً وتطهيراً شاملاً بمشاركة عسكرية ومدنية وفرنسا ضيف شرف #الجزيرة #قطر #الاستجابة #تدريبات #الجزيرة_أخبار ===================== تابعونا على منصات الجزيرة الرقمية ▶Facebook▶https://facebook…",
+      "original_title": "تمرين \"وطن\" القطري يختبر تنسيق الأمن والجيش والجهات المدنية في الأزمات",
+      "original_description": "تمرين \"وطن\" في قطر يختبر جاهزية الاستجابة القصوى بسيناريو تصادم حافلة طلاب بشاحنة كيميائية، محاكياً إنقاذاً معقداً وتطهيراً شاملاً بمشاركة عسكرية ومدنية وفرنسا ضيف شرف #الجزيرة #قطر #الاستجابة #تدريبات #الجزيرة_أخبار ===================== تابعونا على منصات الجزيرة الرقمية ▶Facebook▶https://facebook…",
+      "url": "https://alikhbariya.net/stories/bb9842fa-c6ad-4a64-95be-67c1e16280d1/%D8%AA%D9%85%D8%B1%D9%8A%D9%86-%D9%88%D8%B7%D9%86-%D8%A7%D9%84%D9%82%D8%B7%D8%B1%D9%8A-%D9%8A%D8%AE%D8%AA%D8%A8%D8%B1-%D8%AA%D9%86%D8%B3%D9%8A%D9%82-%D8%A7%D9%84%D8%A3%D9%85%D9%86-%D9%88%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D9%88%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%A3%D8%B2%D9%85%D8%A7%D8%AA",
+      "source": "الجزيرة نت",
+      "published": "Thu, 05 Nov 2026 18:00:05 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "نيويورك تايمز: انفراجة محتملة في مفاوضات إيران وواشنطن",
+      "description": "ذكرت صحيفة \"نيويورك تايمز\"، الخميس، أن إيران تراجع مجموعة من المقترحات التي قدمها الوسطاء بشأن مستقبل برنامجها النووي، في خطوة قد تمثل تقدما في الجهود الدبلوماسية الرامية إلى إنهاء الحرب مع الولايات المتحدة وتجنب تجدد المواجهة العسكرية بين البلدين.",
+      "original_title": "نيويورك تايمز: انفراجة محتملة في مفاوضات إيران وواشنطن",
+      "original_description": "ذكرت صحيفة \"نيويورك تايمز\"، الخميس، أن إيران تراجع مجموعة من المقترحات التي قدمها الوسطاء بشأن مستقبل برنامجها النووي، في خطوة قد تمثل تقدما في الجهود الدبلوماسية الرامية إلى إنهاء الحرب مع الولايات المتحدة وتجنب تجدد المواجهة العسكرية بين البلدين.",
+      "url": "https://alikhbariya.net/stories/397b3d0d-051c-446d-beb1-df1a1558ad37/%D9%86%D9%8A%D9%88%D9%8A%D9%88%D8%B1%D9%83-%D8%AA%D8%A7%D9%8A%D9%85%D8%B2-%D8%A7%D9%86%D9%81%D8%B1%D8%A7%D8%AC%D8%A9-%D9%85%D8%AD%D8%AA%D9%85%D9%84%D8%A9-%D9%81%D9%8A-%D9%85%D9%81%D8%A7%D9%88%D8%B6%D8%A7%D8%AA-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86-%D9%88%D9%88%D8%A7%D8%B4%D9%86%D8%B7%D9%86",
+      "source": "سكاي نيوز عربية",
+      "published": "Thu, 05 Nov 2026 17:55:34 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "أزالت بروكسل الحديث عن التصديق على اتفاق التجارة الكندي في نص قمة الاتحاد الأوروبي: ويلكنسون - تورونتو ستار",
+      "description": "أزالت بروكسل الحديث عن التصديق على اتفاق التجارة الكندي في نص قمة الاتحاد الأوروبي: ويلكنسون    تورونتو ستار",
+      "original_title": "Brussels removed talk of ratifying Canada trade deal in EU summit text: Wilkinson - Toronto Star",
+      "original_description": "Brussels removed talk of ratifying Canada trade deal in EU summit text: Wilkinson &nbsp;&nbsp; Toronto Star",
+      "url": "https://www.thestar.com/news/canada/brussels-removed-talk-of-ratifying-canada-trade-deal-in-eu-summit-text-wilkinson/article_0e5f5048-e296-5722-8884-38e03c7a58b9.html",
+      "source": "Toronto Star",
+      "published": "Thu, 05 Nov 2026 17:55:09 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "أزالت بروكسل الحديث عن التصديق على اتفاق التجارة الكندي في نص قمة الاتحاد الأوروبي: ويلكنسون - المواصفات",
+      "description": "أزالت بروكسل الحديث عن التصديق على اتفاق التجارة الكندي في نص قمة الاتحاد الأوروبي: ويلكنسون    المواصفات",
+      "original_title": "Brussels removed talk of ratifying Canada trade deal in EU summit text: Wilkinson - The Spec",
+      "original_description": "Brussels removed talk of ratifying Canada trade deal in EU summit text: Wilkinson &nbsp;&nbsp; The Spec",
+      "url": "https://www.thespec.com/business/brussels-removed-talk-of-ratifying-canada-trade-deal-in-eu-summit-text-wilkinson/article_0671ed4b-f273-5abd-997e-e39b66d810ea.html",
+      "source": "The Spec",
+      "published": "Thu, 05 Nov 2026 17:55:09 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "بيرول يجتمع مع روتي من حلف شمال الأطلسي في بروكسل لبحث أمن الطاقة - تركيا اليوم",
+      "description": "رئيس وكالة الطاقة الدولية بيرول يجتمع مع روتي من حلف شمال الأطلسي في بروكسل لمناقشة أمن الطاقة    تركيا اليوم",
+      "original_title": "IEA chief Birol meets NATO’s Rutte in Brussels to discuss energy security - Türkiye Today",
+      "original_description": "IEA chief Birol meets NATO’s Rutte in Brussels to discuss energy security &nbsp;&nbsp; Türkiye Today",
+      "url": "https://www.turkiyetoday.com/business/iea-chief-birol-meets-natos-rutte-in-brussels-to-discuss-energy-security-3231813",
+      "source": "Türkiye Today",
+      "published": "Thu, 05 Nov 2026 17:53:54 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "الجزائر تحصل على تصنيف “ممتثل إلى حد كبير” للمعيار الدولي للشفافية وتبادل المعلومات لأغراض جبائية",
+      "description": "حصلت الجزائر على تصنيف “ممتثل إلى حد كبير” للمعيار الدولي للشفافية وتبادل المعلومات لأغراض جبائية، عقب نشر المنتدى العالمي للشفافية وتبادل المعلومات لأغراض جبائية، التابع لمنظمة التعاون والتنمية الاقتصادية، تقرير التقييم من طرف النظراء حول الشفافية وتبادل المعلومات بالطلب الخاص بالجزائر (الدورة الث…",
+      "original_title": "الجزائر تحصل على تصنيف “ممتثل إلى حد كبير” للمعيار الدولي للشفافية وتبادل المعلومات لأغراض جبائية",
+      "original_description": "حصلت الجزائر على تصنيف “ممتثل إلى حد كبير” للمعيار الدولي للشفافية وتبادل المعلومات لأغراض جبائية، عقب نشر المنتدى العالمي للشفافية وتبادل المعلومات لأغراض جبائية، التابع لمنظمة التعاون والتنمية الاقتصادية، تقرير التقييم من طرف النظراء حول الشفافية وتبادل المعلومات بالطلب الخاص بالجزائر (الدورة الث…",
+      "url": "https://alikhbariya.net/stories/a98af630-413f-4e04-9216-463f3e36e5fb/%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D8%AA%D8%AD%D8%B5%D9%84-%D8%B9%D9%84%D9%89-%D8%AA%D8%B5%D9%86%D9%8A%D9%81-%D9%85%D9%85%D8%AA%D8%AB%D9%84-%D8%A5%D9%84%D9%89-%D8%AD%D8%AF-%D9%83%D8%A8%D9%8A%D8%B1-%D9%84%D9%84%D9%85%D8%B9%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A-%D9%84%D9%84%D8%B4%D9%81%D8%A7%D9%81%D9%8A%D8%A9-%D9%88%D8%AA%D8%A8%D8%A7%D8%AF%D9%84",
+      "source": "الشروق أونلاين",
+      "published": "Thu, 05 Nov 2026 17:47:11 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "أوكرانيا تطالب بدورٍ أوروبي جديد بعد انتخابات أميركا",
+      "description": "ذكر وزير الخارجية الأوكراني أندريه سيبيها، اليوم الخميس، أنّه يتوقع اتخاذ خطوات جديدة لدعم أوكرانيا بعد انتخابات التجديد النصفي في الولايات المتحدة.وأضاف أنّ رغم عدم إمكان إنهاء الحرب بمنأى عن الولايات المتحدة، فإن هناك حاجة لأن تلعب أوروبا دوراً جديداً.أوكرانيا تدعو لدورٍ أوروبيٍ جديدوقال سيبيها خ…",
+      "original_title": "أوكرانيا تطالب بدورٍ أوروبي جديد بعد انتخابات أميركا",
+      "original_description": "ذكر وزير الخارجية الأوكراني أندريه سيبيها، اليوم الخميس، أنّه يتوقع اتخاذ خطوات جديدة لدعم أوكرانيا بعد انتخابات التجديد النصفي في الولايات المتحدة.وأضاف أنّ رغم عدم إمكان إنهاء الحرب بمنأى عن الولايات المتحدة، فإن هناك حاجة لأن تلعب أوروبا دوراً جديداً.أوكرانيا تدعو لدورٍ أوروبيٍ جديدوقال سيبيها خ…",
+      "url": "https://alikhbariya.net/stories/786893ba-097f-4598-ae4e-c2fdf0fbdb4f/%D8%A3%D9%88%D9%83%D8%B1%D8%A7%D9%86%D9%8A%D8%A7-%D8%AA%D8%B7%D8%A7%D9%84%D8%A8-%D8%A8%D8%AF%D9%88%D8%B1-%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A-%D8%AC%D8%AF%D9%8A%D8%AF-%D8%A8%D8%B9%D8%AF-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D8%A7",
+      "source": "النهار",
+      "published": "Thu, 05 Nov 2026 17:47:00 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "إسرائيل تقصف أطراف بلدة غربي دمشق بقذيفتي مدفعية",
+      "description": "وفق قناة \"الإخبارية السورية\"...",
+      "original_title": "إسرائيل تقصف أطراف بلدة غربي دمشق بقذيفتي مدفعية",
+      "original_description": "وفق قناة \"الإخبارية السورية\"...",
+      "url": "https://alikhbariya.net/stories/0fd0786a-0e7c-485d-890b-70b79e7b8282/%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%AA%D9%82%D8%B5%D9%81-%D8%A3%D8%B7%D8%B1%D8%A7%D9%81-%D8%A8%D9%84%D8%AF%D8%A9-%D8%BA%D8%B1%D8%A8%D9%8A-%D8%AF%D9%85%D8%B4%D9%82-%D8%A8%D9%82%D8%B0%D9%8A%D9%81%D8%AA%D9%8A-%D9%85%D8%AF%D9%81%D8%B9%D9%8A%D8%A9",
+      "source": "وكالة الأناضول",
+      "published": "Thu, 05 Nov 2026 17:45:58 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "بولندا تعتقل 6 أشخاص بشبهة التجسس لحساب الاستخبارات الروسية",
+      "description": "أعلن جهاز الأمن الداخلي البولندي الخميس اعتقال 6 أشخاص يُشتبه بأنهم عملوا لحساب أجهزة الاستخبارات الروسية وشاركوا في شبكة تدعم القدرات العسكرية لروسيا",
+      "original_title": "بولندا تعتقل 6 أشخاص بشبهة التجسس لحساب الاستخبارات الروسية",
+      "original_description": "أعلن جهاز الأمن الداخلي البولندي الخميس اعتقال 6 أشخاص يُشتبه بأنهم عملوا لحساب أجهزة الاستخبارات الروسية وشاركوا في شبكة تدعم القدرات العسكرية لروسيا",
+      "url": "https://alikhbariya.net/stories/730fc875-9dcf-4b48-bc8c-95fd1cc064c7/%D8%A8%D9%88%D9%84%D9%86%D8%AF%D8%A7-%D8%AA%D8%B9%D8%AA%D9%82%D9%84-6-%D8%A3%D8%B4%D8%AE%D8%A7%D8%B5-%D8%A8%D8%B4%D8%A8%D9%87%D8%A9-%D8%A7%D9%84%D8%AA%D8%AC%D8%B3%D8%B3-%D9%84%D8%AD%D8%B3%D8%A7%D8%A8-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AE%D8%A8%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9",
+      "source": "الشرق الأوسط",
+      "published": "Thu, 05 Nov 2026 17:41:01 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "قطر واليونان تعتزمان إطلاق حوار استراتيجي لتعزيز التعاون الثنائي",
+      "description": "أعلنت قطر واليونان إطلاق حوار استراتيجي سنوي لتعزيز التعاون في مجالات التجارة والاستثمار والدفاع والأمن، وتنسيق المواقف بشأن القضايا الإقليمية والدولية",
+      "original_title": "قطر واليونان تعتزمان إطلاق حوار استراتيجي لتعزيز التعاون الثنائي",
+      "original_description": "أعلنت قطر واليونان إطلاق حوار استراتيجي سنوي لتعزيز التعاون في مجالات التجارة والاستثمار والدفاع والأمن، وتنسيق المواقف بشأن القضايا الإقليمية والدولية",
+      "url": "https://alikhbariya.net/stories/1925a166-8716-4a1b-8268-c2d4c1c9caff/%D9%82%D8%B7%D8%B1-%D9%88%D8%A7%D9%84%D9%8A%D9%88%D9%86%D8%A7%D9%86-%D8%AA%D8%B9%D8%AA%D8%B2%D9%85%D8%A7%D9%86-%D8%A5%D8%B7%D9%84%D8%A7%D9%82-%D8%AD%D9%88%D8%A7%D8%B1-%D8%A7%D8%B3%D8%AA%D8%B1%D8%A7%D8%AA%D9%8A%D8%AC%D9%8A-%D9%84%D8%AA%D8%B9%D8%B2%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%88%D9%86-%D8%A7%D9%84%D8%AB%D9%86%D8%A7%D8%A6%D9%8A",
+      "source": "العربي الجديد",
+      "published": "Thu, 05 Nov 2026 17:40:37 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "قصف إسرائيلي لمحيط بيت جن وتوغل في ريف القنيطرة",
+      "description": "قصفت قوات الاحتلال الإسرائيلي، اليوم الخميس، بلدة في ريف دمشق، بالتزامن مع توغل دورية عسكرية إسرائيلية بريف القنيطرة الشمالي.",
+      "original_title": "قصف إسرائيلي لمحيط بيت جن وتوغل في ريف القنيطرة",
+      "original_description": "قصفت قوات الاحتلال الإسرائيلي، اليوم الخميس، بلدة في ريف دمشق، بالتزامن مع توغل دورية عسكرية إسرائيلية بريف القنيطرة الشمالي.",
+      "url": "https://alikhbariya.net/stories/ad872505-bf47-4de6-a78f-1bfc4e0130a9/%D9%82%D8%B5%D9%81-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D9%84%D9%85%D8%AD%D9%8A%D8%B7-%D8%A8%D9%8A%D8%AA-%D8%AC%D9%86-%D9%88%D8%AA%D9%88%D8%BA%D9%84-%D9%81%D9%8A-%D8%B1%D9%8A%D9%81-%D8%A7%D9%84%D9%82%D9%86%D9%8A%D8%B7%D8%B1%D8%A9",
+      "source": "العربي الجديد",
+      "published": "Thu, 05 Nov 2026 17:40:01 GMT",
+      "category": "sahel",
+      "region": "africa"
+    },
+    {
+      "title": "الحوثيون يدّعون استهداف مطار شرقي السعودية وتعطيل الملاحة فيه",
+      "description": "الجماعة ادعت أنها استهدفت مطار الملك فهد الدولي بالدمام بطائرة مسيّرة، دون تقديم أدلة على نتائج الهجوم، فيما لم يصدر تعليق فوري من السلطات السعودية",
+      "original_title": "الحوثيون يدّعون استهداف مطار شرقي السعودية وتعطيل الملاحة فيه",
+      "original_description": "الجماعة ادعت أنها استهدفت مطار الملك فهد الدولي بالدمام بطائرة مسيّرة، دون تقديم أدلة على نتائج الهجوم، فيما لم يصدر تعليق فوري من السلطات السعودية",
+      "url": "https://alikhbariya.net/stories/fb5e0fd7-0907-4683-ab69-265f5dd44898/%D8%A7%D9%84%D8%AD%D9%88%D8%AB%D9%8A%D9%88%D9%86-%D9%8A%D8%AF%D8%B9%D9%88%D9%86-%D8%A7%D8%B3%D8%AA%D9%87%D8%AF%D8%A7%D9%81-%D9%85%D8%B7%D8%A7%D8%B1-%D8%B4%D8%B1%D9%82%D9%8A-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-%D9%88%D8%AA%D8%B9%D8%B7%D9%8A%D9%84-%D8%A7%D9%84%D9%85%D9%84%D8%A7%D8%AD%D8%A9-%D9%81%D9%8A%D9%87",
+      "source": "وكالة الأناضول",
+      "published": "Thu, 05 Nov 2026 17:39:40 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "بوتين يلتقي أمين مجلس الأمن القومي الإيراني في موسكو",
+      "description": "وفق بيان صادر عن الكرملين..",
+      "original_title": "بوتين يلتقي أمين مجلس الأمن القومي الإيراني في موسكو",
+      "original_description": "وفق بيان صادر عن الكرملين..",
+      "url": "https://alikhbariya.net/stories/8efa45a9-77d0-4b86-86b6-e8e6035fbfc2/%D8%A8%D9%88%D8%AA%D9%8A%D9%86-%D9%8A%D9%84%D8%AA%D9%82%D9%8A-%D8%A3%D9%85%D9%8A%D9%86-%D9%85%D8%AC%D9%84%D8%B3-%D8%A7%D9%84%D8%A3%D9%85%D9%86-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A-%D8%A7%D9%84%D8%A5%D9%8A%D8%B1%D8%A7%D9%86%D9%8A-%D9%81%D9%8A-%D9%85%D9%88%D8%B3%D9%83%D9%88",
+      "source": "وكالة الأناضول",
+      "published": "Thu, 05 Nov 2026 17:39:26 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "وتستبعد نيجيريا أي وقف لإطلاق النار مع الإسلاميين وتتعهد بمواصلة هجومها العسكري في منطقة زونبورس سويس",
+      "description": "وتستبعد نيجيريا أي وقف لإطلاق النار مع الإسلاميين وتتعهد بمواصلة هجومها العسكري في منطقة زونبورس السويسرية",
+      "original_title": "Le Nigeria exclut tout cessez-le-feu avec les islamistes et promet de poursuivre son offensive militaire - Zonebourse Suisse",
+      "original_description": "Le Nigeria exclut tout cessez-le-feu avec les islamistes et promet de poursuivre son offensive militaire &nbsp;&nbsp; Zonebourse Suisse",
+      "url": "https://ch.zonebourse.com/actualite-bourse/le-nigeria-exclut-tout-cessez-le-feu-avec-les-islamistes-et-promet-de-poursuivre-son-offensive-milit-ce785fddd981f025",
+      "source": "Zonebourse Suisse",
+      "published": "Thu, 05 Nov 2026 17:39:17 GMT",
+      "category": "sahel",
+      "region": "africa"
+    },
+    {
+      "title": "نيجيريا تستبعد وقف إطلاق النار مع الإسلاميين وتتعهد بشن هجوم عسكري متواصل - رويترز",
+      "description": "نيجيريا تستبعد وقف إطلاق النار مع الإسلاميين وتتعهد بشن هجوم عسكري متواصل    رويترز",
+      "original_title": "Nigeria rules out ceasefire with Islamists, vows sustained military offensive - Reuters",
+      "original_description": "Nigeria rules out ceasefire with Islamists, vows sustained military offensive &nbsp;&nbsp; Reuters",
+      "url": "https://www.reuters.com/world/africa/nigeria-rules-out-ceasefire-with-islamists-vows-sustained-military-offensive-2026-11-05",
+      "source": "Reuters",
+      "published": "Thu, 05 Nov 2026 17:36:09 GMT",
+      "category": "sahel",
+      "region": "africa"
+    },
+    {
+      "title": "نيجيريا تستبعد وقف إطلاق النار مع الإسلاميين وتتعهد بشن هجوم عسكري متواصل - إنترناسيونالي",
+      "description": "نيجيريا تستبعد وقف إطلاق النار مع الإسلاميين وتتعهد بشن هجوم عسكري متواصل    إنترناسيونالي",
+      "original_title": "Nigeria rules out ceasefire with Islamists, vows sustained military offensive - Internazionale",
+      "original_description": "Nigeria rules out ceasefire with Islamists, vows sustained military offensive &nbsp;&nbsp; Internazionale",
+      "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/11/05/nigeria-rules-out-ceasefire-with-islamists-vows-sustained-military-offensive",
+      "source": "Internazionale",
+      "published": "Thu, 05 Nov 2026 17:35:48 GMT",
+      "category": "sahel",
+      "region": "africa"
+    },
+    {
+      "title": "نيجيريا تستبعد وقف إطلاق النار مع الإسلاميين وتتعهد بشن هجوم عسكري متواصل",
+      "description": "نيجيريا تستبعد وقف إطلاق النار مع الإسلاميين وتتعهد بشن هجوم عسكري متواصل    خطاب ديفد",
+      "original_title": "Nigeria rules out ceasefire with Islamists, vows sustained military offensive - Devdiscourse",
+      "original_description": "Nigeria rules out ceasefire with Islamists, vows sustained military offensive &nbsp;&nbsp; Devdiscourse",
+      "url": "https://www.devdiscourse.com/article/international/4002267-nigeria-rules-out-ceasefire-with-islamists-vows-sustained-military-offensive?amp=",
+      "source": "Devdiscourse",
+      "published": "Thu, 05 Nov 2026 17:33:16 GMT",
+      "category": "sahel",
+      "region": "africa"
+    },
+    {
+      "title": "لفتيت: خطر الإرهاب ما زال قائما.. والأمن المغربي يعتمد اليقظة والاستباق",
+      "description": "كشف عبد الوافي لفتيت، وزير الداخلية، أن مصالح الوزارة تعتمد مقاربة أمنية قائمة على اليقظة والاستباق، من خلال رصد التهديدات والتدخل لإبطال مفعولها قبل أن تتحول إلى اعتداءات تطال سلامة الأشخاص أو المنشآت، مع الالتزام بمقتضيات القانون وتحت إشراف السلطة القضائية المختصة. وأوضح لفتيت خلال اجتماع لجنة ال…",
+      "original_title": "لفتيت: خطر الإرهاب ما زال قائما.. والأمن المغربي يعتمد اليقظة والاستباق",
+      "original_description": "كشف عبد الوافي لفتيت، وزير الداخلية، أن مصالح الوزارة تعتمد مقاربة أمنية قائمة على اليقظة والاستباق، من خلال رصد التهديدات والتدخل لإبطال مفعولها قبل أن تتحول إلى اعتداءات تطال سلامة الأشخاص أو المنشآت، مع الالتزام بمقتضيات القانون وتحت إشراف السلطة القضائية المختصة. وأوضح لفتيت خلال اجتماع لجنة ال…",
+      "url": "https://alikhbariya.net/stories/444ca18a-307b-4dc2-ae54-bf2e7b8467ec/%D9%84%D9%81%D8%AA%D9%8A%D8%AA-%D8%AE%D8%B7%D8%B1-%D8%A7%D9%84%D8%A5%D8%B1%D9%87%D8%A7%D8%A8-%D9%85%D8%A7-%D8%B2%D8%A7%D9%84-%D9%82%D8%A7%D8%A6%D9%85%D8%A7-%D9%88%D8%A7%D9%84%D8%A3%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%D9%8A-%D9%8A%D8%B9%D8%AA%D9%85%D8%AF-%D8%A7%D9%84%D9%8A%D9%82%D8%B8%D8%A9-%D9%88%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%A8%D8%A7%D9%82",
+      "source": "هسبريس",
+      "published": "Thu, 05 Nov 2026 17:30:54 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "حرب كورية جديدة قد تكون أكثر شراسة من سابقتها.. كيف غيّرت الأسلحة النووية موازين القوة؟",
+      "description": "حرب كورية جديدة قد تكون أكثر شراسة من سابقتها.. كيف غيّرت الأسلحة النووية والصواريخ المتطورة موازين القوة بين الشمال والجنوب؟",
+      "original_title": "حرب كورية جديدة قد تكون أكثر شراسة من سابقتها.. كيف غيّرت الأسلحة النووية موازين القوة؟",
+      "original_description": "حرب كورية جديدة قد تكون أكثر شراسة من سابقتها.. كيف غيّرت الأسلحة النووية والصواريخ المتطورة موازين القوة بين الشمال والجنوب؟",
+      "url": "https://alikhbariya.net/stories/c69e916a-7975-4065-8c18-040613e599a1/%D8%AD%D8%B1%D8%A8-%D9%83%D9%88%D8%B1%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%82%D8%AF-%D8%AA%D9%83%D9%88%D9%86-%D8%A3%D9%83%D8%AB%D8%B1-%D8%B4%D8%B1%D8%A7%D8%B3%D8%A9-%D9%85%D9%86-%D8%B3%D8%A7%D8%A8%D9%82%D8%AA%D9%87%D8%A7-%D9%83%D9%8A%D9%81-%D8%BA%D9%8A%D8%B1%D8%AA-%D8%A7%D9%84%D8%A3%D8%B3%D9%84%D8%AD%D8%A9-%D8%A7%D9%84%D9%86%D9%88%D9%88%D9%8A%D8%A9-%D9%85%D9%88%D8%A7%D8%B2%D9%8A%D9%86",
+      "source": "العربية",
+      "published": "Thu, 05 Nov 2026 17:30:40 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "فرنسا تنفي نيتها الاعتراف بطالبان.. ومباحثات تقنية لترحيل أفغان يقيمون بصورة غير قانونية",
+      "description": "أثارت الخطوة الفرنسية اعتراضات سياسية وحقوقية، خصوصاً في ظل غياب الاعتراف الرسمي بحكومة طالبان التي استولت على السلطة في أفغانستان عام 2021.",
+      "original_title": "فرنسا تنفي نيتها الاعتراف بطالبان.. ومباحثات تقنية لترحيل أفغان يقيمون بصورة غير قانونية",
+      "original_description": "أثارت الخطوة الفرنسية اعتراضات سياسية وحقوقية، خصوصاً في ظل غياب الاعتراف الرسمي بحكومة طالبان التي استولت على السلطة في أفغانستان عام 2021.",
+      "url": "https://alikhbariya.net/stories/401387fe-2a42-4424-bf66-63b92e853b0a/%D9%81%D8%B1%D9%86%D8%B3%D8%A7-%D8%AA%D9%86%D9%81%D9%8A-%D9%86%D9%8A%D8%AA%D9%87%D8%A7-%D8%A7%D9%84%D8%A7%D8%B9%D8%AA%D8%B1%D8%A7%D9%81-%D8%A8%D8%B7%D8%A7%D9%84%D8%A8%D8%A7%D9%86-%D9%88%D9%85%D8%A8%D8%A7%D8%AD%D8%AB%D8%A7%D8%AA-%D8%AA%D9%82%D9%86%D9%8A%D8%A9-%D9%84%D8%AA%D8%B1%D8%AD%D9%8A%D9%84-%D8%A3%D9%81%D8%BA%D8%A7%D9%86-%D9%8A%D9%82%D9%8A%D9%85%D9%88%D9%86-%D8%A8%D8%B5%D9%88%D8%B1%D8%A9-%D8%BA%D9%8A%D8%B1",
+      "source": "يورونيوز عربي",
+      "published": "Thu, 05 Nov 2026 17:30:33 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "الصحراء الغربية: \"فشل الدبلوماسية يهدد بتعزيز هامش جبهة البوليساريو المؤيد للتصعيد العسكري مع المغرب\" - لوموند.فر",
+      "description": "الصحراء الغربية: \"فشل الدبلوماسية يهدد بتعزيز هامش جبهة البوليساريو المؤيد للتصعيد العسكري مع المغرب\"    Le Monde.fr",
+      "original_title": "Sahara occidental : « L’échec de la diplomatie risque de renforcer la frange du Front Polisario favorable à l’escalade militaire avec le Maroc » - Le Monde.fr",
+      "original_description": "Sahara occidental : « L’échec de la diplomatie risque de renforcer la frange du Front Polisario favorable à l’escalade militaire avec le Maroc » &nbsp;&nbsp; Le Monde.fr",
+      "url": "https://www.lemonde.fr/afrique/article/2026/11/05/sahara-occidental-l-echec-de-la-diplomatie-risque-de-renforcer-la-frange-du-front-polisario-favorable-a-l-escalade-militaire-avec-le-maroc_6807189_3212.html",
+      "source": "Le Monde.fr",
+      "published": "Thu, 05 Nov 2026 17:30:06 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "خطأ: لا يُظهر هذا الفيديو طائرات مقاتلة من طراز F-16 تحلق فوق منطقة بورهاكابا في أكتوبر 2026 - PesaCheck",
+      "description": "خطأ: لا يُظهر هذا الفيديو طائرات مقاتلة من طراز F-16 تحلق فوق منطقة بورهاكابا في أكتوبر 2026    PesaCheck",
+      "original_title": "FALSE: This video doesn’t show F-16 fighter jets flying over Buurhakaba District in October 2026 - PesaCheck",
+      "original_description": "FALSE: This video doesn’t show F-16 fighter jets flying over Buurhakaba District in October 2026 &nbsp;&nbsp; PesaCheck",
+      "url": "https://pesacheck.org/false-this-video-doesnt-show-f-16-fighter-jets-flying-over-buurhakaba-district-in-october-2026",
+      "source": "PesaCheck",
+      "published": "Thu, 05 Nov 2026 17:26:15 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "\"ما زلت حيًا\": يوميات بصرية لميسرة بارود توثق جحيم غزة",
+      "description": "في هذا العدد من ثقافة، تستضيف ليانا صالح الفنان التشكيلي الفلسطيني ميسرة بارود، التي من قلب الحرب على غزة، وصلت رسوماته إلى العالم عبر مشروعه «ما زلت حياً»، الذي حوّل فيه تفاصيل الحياة تحت القصف والنزوح إلى يوميات بصرية بالحبر الأسود على الورق، وثّق من خلالها الخوف والفقد ومحاولات التشبث بالحياة...…",
+      "original_title": "\"ما زلت حيًا\": يوميات بصرية لميسرة بارود توثق جحيم غزة",
+      "original_description": "في هذا العدد من ثقافة، تستضيف ليانا صالح الفنان التشكيلي الفلسطيني ميسرة بارود، التي من قلب الحرب على غزة، وصلت رسوماته إلى العالم عبر مشروعه «ما زلت حياً»، الذي حوّل فيه تفاصيل الحياة تحت القصف والنزوح إلى يوميات بصرية بالحبر الأسود على الورق، وثّق من خلالها الخوف والفقد ومحاولات التشبث بالحياة...…",
+      "url": "https://alikhbariya.net/stories/02272f8e-2cc4-4d23-b919-f2b6d5e6feb5/%D9%85%D8%A7-%D8%B2%D9%84%D8%AA-%D8%AD%D9%8A%D8%A7-%D9%8A%D9%88%D9%85%D9%8A%D8%A7%D8%AA-%D8%A8%D8%B5%D8%B1%D9%8A%D8%A9-%D9%84%D9%85%D9%8A%D8%B3%D8%B1%D8%A9-%D8%A8%D8%A7%D8%B1%D9%88%D8%AF-%D8%AA%D9%88%D8%AB%D9%82-%D8%AC%D8%AD%D9%8A%D9%85-%D8%BA%D8%B2%D8%A9",
+      "source": "فرانس 24 عربي",
+      "published": "Thu, 05 Nov 2026 17:19:27 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "الأمين العام للأمم المتحدة لحفظ السلام يقول إن مهمة أبيي حققت \"نتائج ملموسة\" في المنطقة الحدودية المتنازع عليها بين السودان وجنوب السودان - Anadolu Ajansı",
+      "description": "الأمين العام للأمم المتحدة لحفظ السلام يقول إن مهمة أبيي حققت \"نتائج ملموسة\" في المنطقة الحدودية المتنازع عليها بين السودان وجنوب السودان    Anadolu Ajansı",
+      "original_title": "UN peacekeeping chief says Abyei mission delivering 'tangible results' in disputed Sudan, South Sudan border region - Anadolu Ajansı",
+      "original_description": "UN peacekeeping chief says Abyei mission delivering 'tangible results' in disputed Sudan, South Sudan border region &nbsp;&nbsp; Anadolu Ajansı",
+      "url": "https://www.aa.com.tr/en/middle-east/un-peacekeeping-chief-says-abyei-mission-delivering-tangible-results-in-disputed-sudan-south-sudan-border-region/4113294",
+      "source": "Anadolu Ajansı",
+      "published": "Thu, 05 Nov 2026 17:17:45 GMT",
+      "category": "international",
+      "region": "africa"
+    },
+    {
+      "title": "الجيش اليمني: تحييد 440 حوثيا في 1298 عملية ضد الجماعة",
+      "description": "متحدث القوات المسلحة اليمنية أعلن أيضا تدمير وإعطاب 132 آلية وقطعة سلاح خلال العمليات والسيطرة على مواقع في تعز، دون تعليق فوري من الحوثيين",
+      "original_title": "الجيش اليمني: تحييد 440 حوثيا في 1298 عملية ضد الجماعة",
+      "original_description": "متحدث القوات المسلحة اليمنية أعلن أيضا تدمير وإعطاب 132 آلية وقطعة سلاح خلال العمليات والسيطرة على مواقع في تعز، دون تعليق فوري من الحوثيين",
+      "url": "https://alikhbariya.net/stories/6555cd36-eb64-4a79-9e24-fd916c0f244f/%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D9%8A%D9%85%D9%86%D9%8A-%D8%AA%D8%AD%D9%8A%D9%8A%D8%AF-440-%D8%AD%D9%88%D8%AB%D9%8A%D8%A7-%D9%81%D9%8A-1298-%D8%B9%D9%85%D9%84%D9%8A%D8%A9-%D8%B6%D8%AF-%D8%A7%D9%84%D8%AC%D9%85%D8%A7%D8%B9%D8%A9",
+      "source": "وكالة الأناضول",
+      "published": "Thu, 05 Nov 2026 17:11:40 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "الناتو والعراق يعقدان حواراً سياسياً رفيع المستوى - حلف شمال الأطلسي | الناتو",
+      "description": "الناتو والعراق يعقدان حواراً سياسياً رفيع المستوى    منظمة حلف شمال الأطلسي | الناتو",
+      "original_title": "NATO and Iraq hold high-level political dialogue - North Atlantic Treaty Organization | NATO",
+      "original_description": "NATO and Iraq hold high-level political dialogue &nbsp;&nbsp; North Atlantic Treaty Organization | NATO",
+      "url": "https://www.nato.int/en/news-and-events/articles/news/2026/11/05/nato-and-iraq-hold-high-level-political-dialogue",
+      "source": "North Atlantic Treaty Organization | NATO",
+      "published": "Thu, 05 Nov 2026 17:11:18 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "كيف خسرت إسرائيل رهاناتها في 4 انتخابات خلال أقل من أسبوعين؟",
+      "description": "أربكت نتائج أربع انتخابات جرت خلال عشرة أيام في صربيا والبرازيل وإسرائيل والولايات المتحدة الحسابات السياسية والدبلوماسية لتل أبيب، وقد رأى الكاتب هيرب كينون، في تحليل نشرته صحيفة \"جيروساليم بوست\"، أن هذه الاستحقاقات أفرزت نتائج غير مواتية للمصالح الإسرائيلية، وأثارت تساؤلات بشأن مستقبل تحالفاتها.",
+      "original_title": "كيف خسرت إسرائيل رهاناتها في 4 انتخابات خلال أقل من أسبوعين؟",
+      "original_description": "أربكت نتائج أربع انتخابات جرت خلال عشرة أيام في صربيا والبرازيل وإسرائيل والولايات المتحدة الحسابات السياسية والدبلوماسية لتل أبيب، وقد رأى الكاتب هيرب كينون، في تحليل نشرته صحيفة \"جيروساليم بوست\"، أن هذه الاستحقاقات أفرزت نتائج غير مواتية للمصالح الإسرائيلية، وأثارت تساؤلات بشأن مستقبل تحالفاتها.",
+      "url": "https://alikhbariya.net/stories/ffec4539-0007-4716-99b7-879b73bebdc2/%D9%83%D9%8A%D9%81-%D8%AE%D8%B3%D8%B1%D8%AA-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%B1%D9%87%D8%A7%D9%86%D8%A7%D8%AA%D9%87%D8%A7-%D9%81%D9%8A-4-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-%D8%AE%D9%84%D8%A7%D9%84-%D8%A3%D9%82%D9%84-%D9%85%D9%86-%D8%A3%D8%B3%D8%A8%D9%88%D8%B9%D9%8A%D9%86",
+      "source": "يورونيوز عربي",
+      "published": "Thu, 05 Nov 2026 17:06:48 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "يونيفيل: تنتهي ولايتنا بلبنان في 31 ديسمبر المقبل",
+      "description": "أعلنت قوة الأمم المتحدة المؤقتة في لبنان، الخميس، أنه \"وفقاً لقرار مجلس الأمن 2790 (2025)، تنتهي ولاية اليونيفيل في 31 ديسمبر/كانون الأول 2026.",
+      "original_title": "يونيفيل: تنتهي ولايتنا بلبنان في 31 ديسمبر المقبل",
+      "original_description": "أعلنت قوة الأمم المتحدة المؤقتة في لبنان، الخميس، أنه \"وفقاً لقرار مجلس الأمن 2790 (2025)، تنتهي ولاية اليونيفيل في 31 ديسمبر/كانون الأول 2026.",
+      "url": "https://alikhbariya.net/stories/3c710407-eb08-4467-8c02-037fda34470c/%D9%8A%D9%88%D9%86%D9%8A%D9%81%D9%8A%D9%84-%D8%AA%D9%86%D8%AA%D9%87%D9%8A-%D9%88%D9%84%D8%A7%D9%8A%D8%AA%D9%86%D8%A7-%D8%A8%D9%84%D8%A8%D9%86%D8%A7%D9%86-%D9%81%D9%8A-31-%D8%AF%D9%8A%D8%B3%D9%85%D8%A8%D8%B1-%D8%A7%D9%84%D9%85%D9%82%D8%A8%D9%84",
+      "source": "العربي الجديد",
+      "published": "Thu, 05 Nov 2026 17:03:23 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "رسالة من المرشد الإيراني إلى الرئيس الروسي",
+      "description": "التلفزيون الإيراني: أمين مجلس الأمن القومي الإيراني سلم الرئيس الروسي رسالة من المرشد مجتبى خامنئي #الجزيرة #الأخبار #إيران #روسيا #الحرب_الإيرانية ===================== تابعونا على منصات الجزيرة الرقمية ===================== ▶Facebook▶https://facebook.com/aljazeerachannel ▶Instagram▶ https://insta…",
+      "original_title": "رسالة من المرشد الإيراني إلى الرئيس الروسي",
+      "original_description": "التلفزيون الإيراني: أمين مجلس الأمن القومي الإيراني سلم الرئيس الروسي رسالة من المرشد مجتبى خامنئي #الجزيرة #الأخبار #إيران #روسيا #الحرب_الإيرانية ===================== تابعونا على منصات الجزيرة الرقمية ===================== ▶Facebook▶https://facebook.com/aljazeerachannel ▶Instagram▶ https://insta…",
+      "url": "https://alikhbariya.net/stories/165dd910-1839-488c-9a93-338240eb9076/%D8%B1%D8%B3%D8%A7%D9%84%D8%A9-%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%B1%D8%B4%D8%AF-%D8%A7%D9%84%D8%A5%D9%8A%D8%B1%D8%A7%D9%86%D9%8A-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A",
+      "source": "الجزيرة نت",
+      "published": "Thu, 05 Nov 2026 17:00:33 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "السعودية ومصر تطالبان بمنح الدبلوماسية وقتاً لتجنب تداعيات التصعيد بالمنطقة",
+      "description": "طالبت المملكة العربية السعودية ومصر بمنح مزيد من الوقت للمسارات السياسية والدبلوماسية لتجنب تجدد المواجهات العسكرية وخفض التصعيد بالمنطقة.",
+      "original_title": "السعودية ومصر تطالبان بمنح الدبلوماسية وقتاً لتجنب تداعيات التصعيد بالمنطقة",
+      "original_description": "طالبت المملكة العربية السعودية ومصر بمنح مزيد من الوقت للمسارات السياسية والدبلوماسية لتجنب تجدد المواجهات العسكرية وخفض التصعيد بالمنطقة.",
+      "url": "https://aawsat.com/node/5338033",
+      "source": "aawsat.com",
+      "published": "Thu, 05 Nov 2026 16:57:06 +0000",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "تونس والاتحاد الأوروبي: من ميثاق المتوسط ​​إلى إلميد، شراكة استراتيجية بين ضفتي البحر الأبيض المتوسط - Agenzia Nova",
+      "description": "تونس والاتحاد الأوروبي: من ميثاق المتوسط ​​إلى إلميد، شراكة استراتيجية بين ضفتي البحر الأبيض المتوسط    Agenzia Nova",
+      "original_title": "تونس والاتحاد الأوروبي: من ميثاق المتوسط ​​إلى إلميد، شراكة استراتيجية بين ضفتي البحر الأبيض المتوسط - Agenzia Nova",
+      "original_description": "تونس والاتحاد الأوروبي: من ميثاق المتوسط ​​إلى إلميد، شراكة استراتيجية بين ضفتي البحر الأبيض المتوسط &nbsp;&nbsp; Agenzia Nova",
+      "url": "https://www.agenzianova.com/ar/news/%D8%AA%D9%88%D9%86%D8%B3-%D9%88%D8%A7%D9%84%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A-%D9%88%D9%85%D9%8A%D8%AB%D8%A7%D9%82-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1-%D8%A7%D9%84%D8%A3%D8%A8%D9%8A%D8%B6-%D8%A7%D9%84%D9%85%D8%AA%D9%88%D8%B3%D8%B7-%E2%80%8B%E2%80%8B%D9%88%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D9%83%D8%A9-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B1%D8%A7%D8%AA%D9%8A%D8%AC%D9%8A%D8%A9-%D8%A8%D9%8A%D9%86-%D8%B6%D9%81%D8%AA%D9%8A-%D8%A7%D9%84%D9%85%D8%AA%D9%88%D8%B3%D8%B7",
+      "source": "Agenzia Nova",
+      "published": "Thu, 05 Nov 2026 16:56:41 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "قادة وملوك ورؤساء دول يهنئون يهنئون الرئيس تبون بذكرى ثورة نوفمبر - www.algeriedirect.dz",
+      "description": "قادة وملوك ورؤساء دول يهنئون يهنئون الرئيس تبون بذكرى ثورة نوفمبر    www.algeriedirect.dz",
+      "original_title": "قادة وملوك ورؤساء دول يهنئون يهنئون الرئيس تبون بذكرى ثورة نوفمبر - www.algeriedirect.dz",
+      "original_description": "قادة وملوك ورؤساء دول يهنئون يهنئون الرئيس تبون بذكرى ثورة نوفمبر &nbsp;&nbsp; www.algeriedirect.dz",
+      "url": "https://www.algeriedirect.dz/%D8%AB%D9%88%D8%B1%D8%A9-%D9%86%D9%88%D9%81%D9%85%D8%A8%D8%B1",
+      "source": "www.algeriedirect.dz",
+      "published": "Thu, 05 Nov 2026 16:51:07 GMT",
+      "category": "north",
+      "region": "world"
+    },
+    {
+      "title": "أوروبا: هبوط اضطراري وتغيير مسار.. إنذارات بوجود قنابل تربك حركة الطيران",
+      "description": "إنذارات بوجود قنابل في طائرات ركاب أربكت حركة الطيران في عدة مدن أوروبية. يُظهر هذا المقطع، مثلًا، مقاتلات تابعة لسلاح الجو الإيطالي ترافق طائرة مدنية في الجو،عقب بلاغ عن وجود قنبلة بداخلها. أصابع الاتهام أشارت إلى روسيا، عقب هبوط 25 طائرة اضطراريًا في عدة مدن أوروبية. ونفت موسكو هذه الادعاءات.",
+      "original_title": "أوروبا: هبوط اضطراري وتغيير مسار.. إنذارات بوجود قنابل تربك حركة الطيران",
+      "original_description": "إنذارات بوجود قنابل في طائرات ركاب أربكت حركة الطيران في عدة مدن أوروبية. يُظهر هذا المقطع، مثلًا، مقاتلات تابعة لسلاح الجو الإيطالي ترافق طائرة مدنية في الجو،عقب بلاغ عن وجود قنبلة بداخلها. أصابع الاتهام أشارت إلى روسيا، عقب هبوط 25 طائرة اضطراريًا في عدة مدن أوروبية. ونفت موسكو هذه الادعاءات.",
+      "url": "https://alikhbariya.net/stories/5582c3b4-cad3-4515-8d9c-69666785e193/%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D8%A7-%D9%87%D8%A8%D9%88%D8%B7-%D8%A7%D8%B6%D8%B7%D8%B1%D8%A7%D8%B1%D9%8A-%D9%88%D8%AA%D8%BA%D9%8A%D9%8A%D8%B1-%D9%85%D8%B3%D8%A7%D8%B1-%D8%A5%D9%86%D8%B0%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A8%D9%88%D8%AC%D9%88%D8%AF-%D9%82%D9%86%D8%A7%D8%A8%D9%84-%D8%AA%D8%B1%D8%A8%D9%83-%D8%AD%D8%B1%D9%83%D8%A9-%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86",
+      "source": "فرانس 24 عربي",
+      "published": "Thu, 05 Nov 2026 16:45:58 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "تجدد المعارك في تعز ومخاوف من تفاقم الأزمة الإنسانية والصحية",
+      "description": "“القدس العربي”: تجددت المعارك بين القوات الحكومية وجماعة الحوثي، الخميس، في محافظة تعز جنوب غربي اليمن، وسط تصعيد تشهده الجبهات الجنوبية للمدينة منذ أسابيع. وتركزت المواجهات في مديرية المسراخ جنوبي المحافظة، على جبهتي الأقروض وكحلان، اللتين تشهدان اشتباكات متقطعة منذ أسابيع، وتكتسبان أهمية عسكرية ل…",
+      "original_title": "تجدد المعارك في تعز ومخاوف من تفاقم الأزمة الإنسانية والصحية",
+      "original_description": "“القدس العربي”: تجددت المعارك بين القوات الحكومية وجماعة الحوثي، الخميس، في محافظة تعز جنوب غربي اليمن، وسط تصعيد تشهده الجبهات الجنوبية للمدينة منذ أسابيع. وتركزت المواجهات في مديرية المسراخ جنوبي المحافظة، على جبهتي الأقروض وكحلان، اللتين تشهدان اشتباكات متقطعة منذ أسابيع، وتكتسبان أهمية عسكرية ل…",
+      "url": "https://alikhbariya.net/stories/b2af888a-c272-47ef-92fc-53ecf4a79039/%D8%AA%D8%AC%D8%AF%D8%AF-%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%B1%D9%83-%D9%81%D9%8A-%D8%AA%D8%B9%D8%B2-%D9%88%D9%85%D8%AE%D8%A7%D9%88%D9%81-%D9%85%D9%86-%D8%AA%D9%81%D8%A7%D9%82%D9%85-%D8%A7%D9%84%D8%A3%D8%B2%D9%85%D8%A9-%D8%A7%D9%84%D8%A5%D9%86%D8%B3%D8%A7%D9%86%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%B5%D8%AD%D9%8A%D8%A9",
+      "source": "القدس العربي",
+      "published": "Thu, 05 Nov 2026 16:28:35 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "هجوم يودي بحياة رجل أمن بالعاصمة عمّان والحكومة تصف العمل بالإرهابي",
+      "description": "هجوم يودي بحياة رجل أمن بالعاصمة عمّان والحكومة تصف العمل بالإرهابي.. التفاصيل مع غدير أبو سنينة من أمام السفارة السريلانكية في العاصمة عمان #الجزيرة #مراسلو_الجزيرة #عمان #سريلانكا #السفارة_السريلانكية ===================== تابعونا على منصات الجزيرة الرقمية ▶Facebook▶https://facebook.com/aljazeera…",
+      "original_title": "هجوم يودي بحياة رجل أمن بالعاصمة عمّان والحكومة تصف العمل بالإرهابي",
+      "original_description": "هجوم يودي بحياة رجل أمن بالعاصمة عمّان والحكومة تصف العمل بالإرهابي.. التفاصيل مع غدير أبو سنينة من أمام السفارة السريلانكية في العاصمة عمان #الجزيرة #مراسلو_الجزيرة #عمان #سريلانكا #السفارة_السريلانكية ===================== تابعونا على منصات الجزيرة الرقمية ▶Facebook▶https://facebook.com/aljazeera…",
+      "url": "https://alikhbariya.net/stories/493f7489-e846-49af-b068-2a8d9adc3dbe/%D9%87%D8%AC%D9%88%D9%85-%D9%8A%D9%88%D8%AF%D9%8A-%D8%A8%D8%AD%D9%8A%D8%A7%D8%A9-%D8%B1%D8%AC%D9%84-%D8%A3%D9%85%D9%86-%D8%A8%D8%A7%D9%84%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D8%B9%D9%85%D8%A7%D9%86-%D9%88%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D8%A9-%D8%AA%D8%B5%D9%81-%D8%A7%D9%84%D8%B9%D9%85%D9%84-%D8%A8%D8%A7%D9%84%D8%A5%D8%B1%D9%87%D8%A7%D8%A8%D9%8A",
+      "source": "الجزيرة نت",
+      "published": "Thu, 05 Nov 2026 16:23:20 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "الخامسة | معارك تعز تقلب الموازين.. الجيش ينتزع مواقع من الحوثيين",
+      "description": "أعلنت قوات الجيش اليمني تحقيق تقدم ميداني في منطقة الأقروض بمحافظة تعز، عقب صد هجوم لمليشيا الحوثي والسيطرة على منطقة الصانمات وعدد من القرى، مؤكدة استمرار العمليات لتأمين مناطق كحلان والشقب. وفي المقابل، تتفاقم الأوضاع الإنسانية داخل المدينة مع استمرار الحصار ومنع دخول المواد الغذائية والمستلزمات…",
+      "original_title": "الخامسة | معارك تعز تقلب الموازين.. الجيش ينتزع مواقع من الحوثيين",
+      "original_description": "أعلنت قوات الجيش اليمني تحقيق تقدم ميداني في منطقة الأقروض بمحافظة تعز، عقب صد هجوم لمليشيا الحوثي والسيطرة على منطقة الصانمات وعدد من القرى، مؤكدة استمرار العمليات لتأمين مناطق كحلان والشقب. وفي المقابل، تتفاقم الأوضاع الإنسانية داخل المدينة مع استمرار الحصار ومنع دخول المواد الغذائية والمستلزمات…",
+      "url": "https://alikhbariya.net/stories/65873de7-4405-408e-8f6e-43391d97166b/%D8%A7%D9%84%D8%AE%D8%A7%D9%85%D8%B3%D8%A9-%D9%85%D8%B9%D8%A7%D8%B1%D9%83-%D8%AA%D8%B9%D8%B2-%D8%AA%D9%82%D9%84%D8%A8-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B2%D9%8A%D9%86-%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D9%8A%D9%86%D8%AA%D8%B2%D8%B9-%D9%85%D9%88%D8%A7%D9%82%D8%B9-%D9%85%D9%86-%D8%A7%D9%84%D8%AD%D9%88%D8%AB%D9%8A%D9%8A%D9%86",
+      "source": "العربية",
+      "published": "Thu, 05 Nov 2026 16:20:06 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "تعاون عسكري متصاعد بين قطر والولايات المتحدة ومباحثات لتطوير القدرات الجوية - أخبار الغد",
+      "description": "تعاون عسكري متصاعد بين قطر والولايات المتحدة ومباحثات لتطوير القدرات الجوية    أخبار الغد",
+      "original_title": "تعاون عسكري متصاعد بين قطر والولايات المتحدة ومباحثات لتطوير القدرات الجوية - أخبار الغد",
+      "original_description": "تعاون عسكري متصاعد بين قطر والولايات المتحدة ومباحثات لتطوير القدرات الجوية &nbsp;&nbsp; أخبار الغد",
+      "url": "https://www.ghadnews.net/2026/11/05/%D8%AA%D8%B9%D8%A7%D9%88%D9%86-%D8%B9%D8%B3%D9%83%D8%B1%D9%8A-%D9%85%D8%AA%D8%B5%D8%A7%D8%B9%D8%AF-%D8%A8%D9%8A%D9%86-%D9%82%D8%B7%D8%B1-%D9%88%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA-%D8%A7",
+      "source": "أخبار الغد",
+      "published": "Thu, 05 Nov 2026 16:18:09 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "قذيفة المدفعية المضبوطة عسكرية: قائد شرطة بابوا غينيا الجديدة - تايبيه تايمز",
+      "description": "قذيفة المدفعية المضبوطة عسكرية: قائد شرطة بابوا غينيا الجديدة    تايبيه تايمز",
+      "original_title": "Seized artillery shell is military: PNG police chief - Taipei Times",
+      "original_description": "Seized artillery shell is military: PNG police chief &nbsp;&nbsp; Taipei Times",
+      "url": "https://www.taipeitimes.com/News/world/archives/2026/11/06/2003867271",
+      "source": "Taipei Times",
+      "published": "Thu, 05 Nov 2026 16:00:00 GMT",
+      "category": "sahel",
+      "region": "world"
+    },
+    {
+      "title": "إسرائيل تستعرض «فريق القتال الروبوتي» في جنوب لبنان",
+      "description": "يتجه الجيش الإسرائيلي إلى توسيع استخدام «الروبوتات» والوسائل غير المأهولة في عملياته البرية بجنوب لبنان، في موازاة شهادات عن دخول مسيّرات صغيرة إلى منازل.",
+      "original_title": "إسرائيل تستعرض «فريق القتال الروبوتي» في جنوب لبنان",
+      "original_description": "يتجه الجيش الإسرائيلي إلى توسيع استخدام «الروبوتات» والوسائل غير المأهولة في عملياته البرية بجنوب لبنان، في موازاة شهادات عن دخول مسيّرات صغيرة إلى منازل.",
+      "url": "https://aawsat.com/node/5338002",
+      "source": "aawsat.com",
+      "published": "Thu, 05 Nov 2026 15:58:21 +0000",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "استهداف ناقلة نفط قبالة قطر بمقذوفين",
+      "description": "أعلن الجيش البريطاني، الخميس، أن ناقلة نفط تعرضت للاستهداف بمقذوفين قبالة سواحل قطر في الخليج العربي، الأربعاء، مشيرا إلى أن حالة أفراد الطاقم لم تتأكد بعد، كما لم يتسن معرفة طبيعة الأضرار التي لحقت بالسفينة.",
+      "original_title": "استهداف ناقلة نفط قبالة قطر بمقذوفين",
+      "original_description": "أعلن الجيش البريطاني، الخميس، أن ناقلة نفط تعرضت للاستهداف بمقذوفين قبالة سواحل قطر في الخليج العربي، الأربعاء، مشيرا إلى أن حالة أفراد الطاقم لم تتأكد بعد، كما لم يتسن معرفة طبيعة الأضرار التي لحقت بالسفينة.",
+      "url": "https://alikhbariya.net/stories/1224c5f4-28e3-4df1-b3eb-9a07137a9004/%D8%A7%D8%B3%D8%AA%D9%87%D8%AF%D8%A7%D9%81-%D9%86%D8%A7%D9%82%D9%84%D8%A9-%D9%86%D9%81%D8%B7-%D9%82%D8%A8%D8%A7%D9%84%D8%A9-%D9%82%D8%B7%D8%B1-%D8%A8%D9%85%D9%82%D8%B0%D9%88%D9%81%D9%8A%D9%86",
+      "source": "سكاي نيوز عربية",
+      "published": "Thu, 05 Nov 2026 15:38:35 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "أزمة الخرطوم وأديس أبابا تبلغ ذروتها بطرد متبادل للدبلوماسيين",
+      "description": "ناقش برنامج \"ما وراء الخبر\" في حلقة يوم (5 نوفمبر/تشرين الثاني 2026) أبعاد الأزمة الدبلوماسية المتصاعدة بين السودان وإثيوبيا عقب تبادل طرد الدبلوماسيين وإغلاق القنصليات.",
+      "original_title": "أزمة الخرطوم وأديس أبابا تبلغ ذروتها بطرد متبادل للدبلوماسيين",
+      "original_description": "ناقش برنامج &quot;ما وراء الخبر&quot; في حلقة يوم (5 نوفمبر/تشرين الثاني 2026) أبعاد الأزمة الدبلوماسية المتصاعدة بين السودان وإثيوبيا عقب تبادل طرد الدبلوماسيين وإغلاق القنصليات.",
+      "url": "https://www.aljazeera.net/video/behindthenews/2026/11/5/%d8%a3%d8%b2%d9%85%d8%a9-%d8%af%d8%a8%d9%84%d9%88%d9%85%d8%a7%d8%b3%d9%8a%d8%a9-%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d8%b3%d9%88%d8%af%d8%a7%d9%86-%d9%88%d8%a5%d8%ab%d9%8a%d9%88%d8%a8%d9%8a%d8%a7?traffic_source=rss",
+      "source": "aljazeera.net",
+      "published": "Thu, 05 Nov 2026 18:37:53 +0300",
+      "category": "rest",
+      "region": "africa"
+    },
+    {
+      "title": "إردوغان يعتزم زيارة أذربيجان وسط مساعٍ لتجاوز الخلاف بشأن قيود باكو على ارتداء الحجاب",
+      "description": "يزور الرئيس التركي رجب طيب إردوغان اذربيجان يوم الأحد المقبل في مسعى لتجنب أزمة حادة في العلاقات... كما يتحرك لقعد قمة ثلاثة لإنهاء حرب روسيا وأوكرانيا — تغطية من مصدرين: الشرق الأوسط، يورونيوز عربي.",
+      "original_title": "إردوغان يعتزم زيارة أذربيجان وسط مساعٍ لتجاوز الخلاف بشأن قيود باكو على ارتداء الحجاب",
+      "original_description": "يزور الرئيس التركي رجب طيب إردوغان اذربيجان يوم الأحد المقبل في مسعى لتجنب أزمة حادة في العلاقات... كما يتحرك لقعد قمة ثلاثة لإنهاء حرب روسيا وأوكرانيا — تغطية من مصدرين: الشرق الأوسط، يورونيوز عربي.",
+      "url": "https://alikhbariya.net/stories/2ceb5b06-c3f5-4cee-b8eb-a4ce3f1c3373/%D8%A5%D8%B1%D8%AF%D9%88%D8%BA%D8%A7%D9%86-%D9%8A%D8%B9%D8%AA%D8%B2%D9%85-%D8%B2%D9%8A%D8%A7%D8%B1%D8%A9-%D8%A3%D8%B0%D8%B1%D8%A8%D9%8A%D8%AC%D8%A7%D9%86-%D9%88%D8%B3%D8%B7-%D9%85%D8%B3%D8%A7%D8%B9-%D9%84%D8%AA%D8%AC%D8%A7%D9%88%D8%B2-%D8%A7%D9%84%D8%AE%D9%84%D8%A7%D9%81-%D8%A8%D8%B4%D8%A3%D9%86-%D9%82%D9%8A%D9%88%D8%AF-%D8%A8%D8%A7%D9%83%D9%88-%D8%B9%D9%84%D9%89-%D8%A7%D8%B1%D8%AA%D8%AF%D8%A7%D8%A1",
+      "source": "alikhbariya.net",
+      "published": "Thu, 05 Nov 2026 15:30:45 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "الجيش النيجيري ينفي اتفاق وقف إطلاق النار مع بوكو حرام - بريميوم تايمز نيجيريا",
+      "description": "الجيش النيجيري ينفي اتفاق وقف إطلاق النار مع بوكو حرام    Premium Times Nigeria",
+      "original_title": "Nigerian military denies ceasefire deal with Boko Haram - Premium Times Nigeria",
+      "original_description": "Nigerian military denies ceasefire deal with Boko Haram &nbsp;&nbsp; Premium Times Nigeria",
+      "url": "https://www.premiumtimesng.com/news/headlines/922989-nigerian-military-denies-ceasefire-deal-with-boko-haram.html",
+      "source": "Premium Times Nigeria",
+      "published": "Thu, 05 Nov 2026 15:29:19 GMT",
+      "category": "sahel",
+      "region": "africa"
+    },
+    {
+      "title": "إندبندنت: روبيو يدرس مغادرة إدارة ترمب تمهيدا لخوض سباق الرئاسة",
+      "description": "كشفت صحيفة \"إندبندنت\" البريطانية أن وزير الخارجية الأمريكي ماركو روبيو يدرس الاستقالة من منصبه والنأي بنفسه عن دونالد ترمب تمهيدا لخوض سباق الرئاسة عام 2028 ومنافسة جيه دي فانس على ترشيح الجمهوريين.",
+      "original_title": "إندبندنت: روبيو يدرس مغادرة إدارة ترمب تمهيدا لخوض سباق الرئاسة",
+      "original_description": "كشفت صحيفة &quot;إندبندنت&quot; البريطانية أن وزير الخارجية الأمريكي ماركو روبيو يدرس الاستقالة من منصبه والنأي بنفسه عن دونالد ترمب تمهيدا لخوض سباق الرئاسة عام 2028 ومنافسة جيه دي فانس على ترشيح الجمهوريين.",
+      "url": "https://www.aljazeera.net/news/2026/11/5/%d8%b0%d8%a7-%d8%a5%d9%86%d8%af%d8%a8%d9%86%d8%af%d9%86%d8%aa-%d8%b1%d9%88%d8%a8%d9%8a%d9%88-%d9%8a%d8%af%d8%b1%d8%b3-%d9%85%d8%ba%d8%a7%d8%af%d8%b1%d8%a9-%d8%a5%d8%af%d8%a7%d8%b1%d8%a9?traffic_source=rss",
+      "source": "aljazeera.net",
+      "published": "Thu, 05 Nov 2026 18:25:27 +0300",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "إنذارات بوجود قنابل.. بلاغات مجهولة تربك الطيران الأوروبي وتستنفر الأجهزة الأمنية",
+      "description": "استُهدِفَت 12 طائرة مدنية في أوروبا الخميس بتهديدات بوجود قنابل، وتولت مقاتلات حربية مواكبة بعضها، وحُوَِل مسار اثنتين على الاقل منها، وفق ما أفادت السلطات وشركات الطيران المعنية. ودخلت ظاهرة الإنذارات الكثيرة بوجود قنابل على طائرات يومها الثالث على التوالي، واستهدف معظمها رحلات في أوروبا لشركات طي…",
+      "original_title": "إنذارات بوجود قنابل.. بلاغات مجهولة تربك الطيران الأوروبي وتستنفر الأجهزة الأمنية",
+      "original_description": "استُهدِفَت 12 طائرة مدنية في أوروبا الخميس بتهديدات بوجود قنابل، وتولت مقاتلات حربية مواكبة بعضها، وحُوَِل مسار اثنتين على الاقل منها، وفق ما أفادت السلطات وشركات الطيران المعنية. ودخلت ظاهرة الإنذارات الكثيرة بوجود قنابل على طائرات يومها الثالث على التوالي، واستهدف معظمها رحلات في أوروبا لشركات طي…",
+      "url": "https://alikhbariya.net/stories/fe6cb96c-07e0-449c-b0d1-baba5509c00d/%D8%A5%D9%86%D8%B0%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A8%D9%88%D8%AC%D9%88%D8%AF-%D9%82%D9%86%D8%A7%D8%A8%D9%84-%D8%A8%D9%84%D8%A7%D8%BA%D8%A7%D8%AA-%D9%85%D8%AC%D9%87%D9%88%D9%84%D8%A9-%D8%AA%D8%B1%D8%A8%D9%83-%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A-%D9%88%D8%AA%D8%B3%D8%AA%D9%86%D9%81%D8%B1-%D8%A7%D9%84%D8%A3%D8%AC%D9%87%D8%B2%D8%A9-%D8%A7%D9%84%D8%A3%D9%85%D9%86%D9%8A%D8%A9",
+      "source": "فرانس 24 عربي",
+      "published": "Thu, 05 Nov 2026 15:15:30 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "الأمم المتحدة تنهي مهمة حفظ السلام في الصحراء الغربية - الديمقراطية الآن!",
+      "description": "الأمم المتحدة تنهي مهمة حفظ السلام في الصحراء الغربية    الديمقراطية الآن!",
+      "original_title": "United Nations Ends Peacekeeping Mission in Western Sahara - Democracy Now!",
+      "original_description": "United Nations Ends Peacekeeping Mission in Western Sahara &nbsp;&nbsp; Democracy Now!",
+      "url": "https://www.democracynow.org/2026/11/5/headlines/united_nations_ends_peacekeeping_mission_in_western_sahara",
+      "source": "Democracy Now!",
+      "published": "Thu, 05 Nov 2026 15:12:17 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "أمين مجلس الأمن القومي الإيراني: الرئيس الروسي أكد لي أنه سيقدم أي مساعدة لإنهاء الحرب",
+      "description": "التفاصيل بعد قليل..",
+      "original_title": "أمين مجلس الأمن القومي الإيراني: الرئيس الروسي أكد لي أنه سيقدم أي مساعدة لإنهاء الحرب",
+      "original_description": "التفاصيل بعد قليل..",
+      "url": "https://www.aljazeera.net/news/2026/11/5/%d8%a3%d9%85%d9%8a%d9%86-%d9%85%d8%ac%d9%84%d8%b3-%d8%a7%d9%84%d8%a3%d9%85%d9%86-%d8%a7%d9%84%d9%82%d9%88%d9%85%d9%8a-%d8%a7%d9%84%d8%a5%d9%8a%d8%b1%d8%a7%d9%86%d9%8a?traffic_source=rss",
+      "source": "aljazeera.net",
+      "published": "Thu, 05 Nov 2026 18:09:24 +0300",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "الجيش السوداني يستعيد السيطرة على كازقيل وأبو قعود بشمال كردفان",
+      "description": "أعلنت القوة المشتركة في السودان تحقيق تقدم عسكري جديد بشمال كردفان، مؤكدة تكبيد قوات الدعم السريع خسائر بشرية ومادية خلال المواجهات الأخيرة.",
+      "original_title": "الجيش السوداني يستعيد السيطرة على كازقيل وأبو قعود بشمال كردفان",
+      "original_description": "أعلنت القوة المشتركة في السودان تحقيق تقدم عسكري جديد بشمال كردفان، مؤكدة تكبيد قوات الدعم السريع خسائر بشرية ومادية خلال المواجهات الأخيرة.",
+      "url": "https://www.aljazeera.net/news/2026/11/5/%d8%a7%d9%84%d8%ac%d9%8a%d8%b4-%d8%a7%d9%84%d8%b3%d9%88%d8%af%d8%a7%d9%86%d9%8a-%d9%8a%d8%b3%d8%aa%d8%b9%d9%8a%d8%af-%d8%a7%d9%84%d8%b3%d9%8a%d8%b7%d8%b1%d8%a9-%d8%b9%d9%84%d9%89-5?traffic_source=rss",
+      "source": "aljazeera.net",
+      "published": "Thu, 05 Nov 2026 17:59:41 +0300",
+      "category": "rest",
+      "region": "africa"
+    },
+    {
+      "title": "كيف تعمل الألغام اللاصقة في مضيق هرمز؟ • فرانس 24 / FRANCE 24",
+      "description": "استُهدفت ناقلة نفط بلغمين لاصقين في مضيق هرمز، في أول هجوم ناجح من نوعه منذ بدء التصعيد الأميركي الإيراني. فما هي الألغام اللاصقة، وكيف تعمل؟ تعرّفوا إلى خصائصها في هذا التقرير. #الغام #مضيق هرمز #الغام لاصقة 🔔 انضموا إلى قناتنا الخاصة على اليوتيوب: https://f24.my/YTar 🔴 تابعونا مباشرة: https://f…",
+      "original_title": "كيف تعمل الألغام اللاصقة في مضيق هرمز؟ • فرانس 24 / FRANCE 24",
+      "original_description": "استُهدفت ناقلة نفط بلغمين لاصقين في مضيق هرمز، في أول هجوم ناجح من نوعه منذ بدء التصعيد الأميركي الإيراني. فما هي الألغام اللاصقة، وكيف تعمل؟ تعرّفوا إلى خصائصها في هذا التقرير. #الغام #مضيق هرمز #الغام لاصقة 🔔 انضموا إلى قناتنا الخاصة على اليوتيوب: https://f24.my/YTar 🔴 تابعونا مباشرة: https://f…",
+      "url": "https://alikhbariya.net/stories/1d1d0ce3-0e54-45dd-bee6-6842ae0f6484/%D9%83%D9%8A%D9%81-%D8%AA%D8%B9%D9%85%D9%84-%D8%A7%D9%84%D8%A3%D9%84%D8%BA%D8%A7%D9%85-%D8%A7%D9%84%D9%84%D8%A7%D8%B5%D9%82%D8%A9-%D9%81%D9%8A-%D9%85%D8%B6%D9%8A%D9%82-%D9%87%D8%B1%D9%85%D8%B2-%D9%81%D8%B1%D8%A7%D9%86%D8%B3-24-france-24",
+      "source": "فرانس 24 عربي",
+      "published": "Thu, 05 Nov 2026 14:58:55 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "احتجاجات نقابية في ليون تجمع حتى 55 ألف متظاهر وسط صدامات وغاز مسيل للدموع",
+      "description": "شارك عشرات الآلاف في مسيرة عبر منطقة ليون خلال إضراب وطني احتجاجًا على الأجور وتراجع القدرة الشرائية. هاجمت الشرطة المتظاهرين واستخدمت الغاز المسيل للدموع بعد اندلاع اشتباكات على طول مسار الاحتجاج.",
+      "original_title": "احتجاجات نقابية في ليون تجمع حتى 55 ألف متظاهر وسط صدامات وغاز مسيل للدموع",
+      "original_description": "شارك عشرات الآلاف في مسيرة عبر منطقة ليون خلال إضراب وطني احتجاجًا على الأجور وتراجع القدرة الشرائية. هاجمت الشرطة المتظاهرين واستخدمت الغاز المسيل للدموع بعد اندلاع اشتباكات على طول مسار الاحتجاج.",
+      "url": "https://alikhbariya.net/stories/edf30fd6-7d5b-40dc-b1b2-5833937de2d8/%D8%A7%D8%AD%D8%AA%D8%AC%D8%A7%D8%AC%D8%A7%D8%AA-%D9%86%D9%82%D8%A7%D8%A8%D9%8A%D8%A9-%D9%81%D9%8A-%D9%84%D9%8A%D9%88%D9%86-%D8%AA%D8%AC%D9%85%D8%B9-%D8%AD%D8%AA%D9%89-55-%D8%A3%D9%84%D9%81-%D9%85%D8%AA%D8%B8%D8%A7%D9%87%D8%B1-%D9%88%D8%B3%D8%B7-%D8%B5%D8%AF%D8%A7%D9%85%D8%A7%D8%AA-%D9%88%D8%BA%D8%A7%D8%B2-%D9%85%D8%B3%D9%8A%D9%84-%D9%84%D9%84%D8%AF%D9%85%D9%88%D8%B9",
+      "source": "يورونيوز عربي",
+      "published": "Thu, 05 Nov 2026 14:09:43 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "بعثة الأمم المتحدة لحفظ السلام في الصحراء الغربية تدخل مرحلة التصفية بعد انتهاء ولايتها - WRAL",
+      "description": "بعثة الأمم المتحدة لحفظ السلام في الصحراء الغربية تدخل مرحلة التصفية بعد انتهاء ولايتها    WRAL",
+      "original_title": "UN's peacekeeping mission in Western Sahara enters liquidation phase after mandate expires - WRAL",
+      "original_description": "UN's peacekeeping mission in Western Sahara enters liquidation phase after mandate expires &nbsp;&nbsp; WRAL",
+      "url": "https://www.wral.com/news/ap/f7ded-uns-peacekeeping-mission-in-western-sahara-enters-liquidation-phase-after-mandate-expires",
+      "source": "WRAL",
+      "published": "Thu, 05 Nov 2026 14:02:24 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "بعثة الأمم المتحدة لحفظ السلام في الصحراء الغربية تدخل مرحلة التصفية بعد انتهاء ولايتها - كيلين ديلي هيرالد",
+      "description": "بعثة الأمم المتحدة لحفظ السلام في الصحراء الغربية تدخل مرحلة التصفية بعد انتهاء ولايتها    The Killeen Daily Herald",
+      "original_title": "UN's peacekeeping mission in Western Sahara enters liquidation phase after mandate expires - The Killeen Daily Herald",
+      "original_description": "UN's peacekeeping mission in Western Sahara enters liquidation phase after mandate expires &nbsp;&nbsp; The Killeen Daily Herald",
+      "url": "https://kdhnews.com/news/world/uns-peacekeeping-mission-in-western-sahara-enters-liquidation-phase-after-mandate-expires/article_026ccea4-6a4c-5a0b-ba58-452efe449d9f.html",
+      "source": "The Killeen Daily Herald",
+      "published": "Thu, 05 Nov 2026 13:54:51 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "بعثة الأمم المتحدة لحفظ السلام في الصحراء الغربية تدخل مرحلة التصفية بعد انتهاء ولايتها - أوتوموا كوريير",
+      "description": "بعثة الأمم المتحدة لحفظ السلام في الصحراء الغربية تدخل مرحلة التصفية بعد انتهاء ولايتها    Ottumwa Courier",
+      "original_title": "UN's peacekeeping mission in Western Sahara enters liquidation phase after mandate expires - Ottumwa Courier",
+      "original_description": "UN's peacekeeping mission in Western Sahara enters liquidation phase after mandate expires &nbsp;&nbsp; Ottumwa Courier",
+      "url": "https://www.ottumwacourier.com/news/national_news/uns-peacekeeping-mission-in-western-sahara-enters-liquidation-phase-after-mandate-expires/article_1875116c-806b-50c7-b0b1-15cd2498ddf9.html",
+      "source": "Ottumwa Courier",
+      "published": "Thu, 05 Nov 2026 13:54:51 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "البيان الرئاسي لمجلس الأمن التابع للأمم المتحدة بشأن دور الدبلوماسية أثناء الأعمال العدائية الفعلية - commonspace.eu",
+      "description": "البيان الرئاسي لمجلس الأمن التابع للأمم المتحدة بشأن دور الدبلوماسية أثناء الأعمال العدائية النشطة    commonspace.eu",
+      "original_title": "UN Security Council Presidential Statement on the Role of Diplomacy during Active Hostilities - commonspace.eu",
+      "original_description": "UN Security Council Presidential Statement on the Role of Diplomacy during Active Hostilities &nbsp;&nbsp; commonspace.eu",
+      "url": "https://www.commonspace.eu/news/un-security-council-presidential-statement-role-diplomacy-during-active-hostilities",
+      "source": "commonspace.eu",
+      "published": "Thu, 05 Nov 2026 13:54:43 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "موجز يومي: بعد #روسيا، #إثيوبيا تسعى إلى توسيع التعاون العسكري مع #فرنسا و #الصين – أديس ستاندرد",
+      "description": "موجز يومي: بعد #روسيا، #إثيوبيا تسعى إلى توسيع التعاون العسكري مع #فرنسا و #الصين    أديس ستاندرد",
+      "original_title": "Daily_Brief: After #Russia, #Ethiopia seeks expanded military cooperation with #France, #China - Addis Standard",
+      "original_description": "Daily_Brief: After #Russia, #Ethiopia seeks expanded military cooperation with #France, #China &nbsp;&nbsp; Addis Standard",
+      "url": "https://addisstandard.com/brief/n-60982",
+      "source": "Addis Standard",
+      "published": "Thu, 05 Nov 2026 13:42:11 GMT",
+      "category": "rest",
+      "region": "africa"
+    },
+    {
+      "title": "مقتل 7 أشخاص على الأقل في هجوم لبوكو حرام في الكاميرون - آخر الأخبار من أذربيجان",
+      "description": "مقتل 7 أشخاص على الأقل في هجوم لبوكو حرام في الكاميرون    آخر الأخبار من أذربيجان",
+      "original_title": "At least 7 killed in Boko Haram attack in Cameroon - Latest news from Azerbaijan",
+      "original_description": "At least 7 killed in Boko Haram attack in Cameroon &nbsp;&nbsp; Latest news from Azerbaijan",
+      "url": "https://news.az/news/at-least-7-killed-in-boko-haram-attack-in-cameroon",
+      "source": "Latest news from Azerbaijan",
+      "published": "Thu, 05 Nov 2026 13:40:53 GMT",
+      "category": "rest",
+      "region": "africa"
+    },
+    {
+      "title": "عدسات مصور أمريكي ترصد نشر منظومات دفاع جوي في إقامة دونالد ترامب بمارالاغو",
+      "description": "في فقرة تكنو نتحدث اليوم عن تحول أمني يشهده منتجع \"مارا لاغو\"، مقر إقامة الرئيس الأمريكي دونالد ترامب في فلوريدا..بعض الصحافيين رصدوا نشر منظومات دفاع جوي مضادة لطائرات الدرونز. 🔔 انضموا إلى قناتنا الخاصة على اليوتيوب: https://f24.my/YTar 🔴 تابعونا مباشرة: https://f24.my/YTliveAR 🌍 زوروا موقعنا:…",
+      "original_title": "عدسات مصور أمريكي ترصد نشر منظومات دفاع جوي في إقامة دونالد ترامب بمارالاغو",
+      "original_description": "في فقرة تكنو نتحدث اليوم عن تحول أمني يشهده منتجع \"مارا لاغو\"، مقر إقامة الرئيس الأمريكي دونالد ترامب في فلوريدا..بعض الصحافيين رصدوا نشر منظومات دفاع جوي مضادة لطائرات الدرونز. 🔔 انضموا إلى قناتنا الخاصة على اليوتيوب: https://f24.my/YTar 🔴 تابعونا مباشرة: https://f24.my/YTliveAR 🌍 زوروا موقعنا:…",
+      "url": "https://alikhbariya.net/stories/b4e228e4-902a-4ff1-af15-8f384f0691a9/%D8%B9%D8%AF%D8%B3%D8%A7%D8%AA-%D9%85%D8%B5%D9%88%D8%B1-%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A-%D8%AA%D8%B1%D8%B5%D8%AF-%D9%86%D8%B4%D8%B1-%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A7%D8%AA-%D8%AF%D9%81%D8%A7%D8%B9-%D8%AC%D9%88%D9%8A-%D9%81%D9%8A-%D8%A5%D9%82%D8%A7%D9%85%D8%A9-%D8%AF%D9%88%D9%86%D8%A7%D9%84%D8%AF-%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D8%A8%D9%85%D8%A7%D8%B1%D8%A7%D9%84%D8%A7%D8%BA%D9%88",
+      "source": "فرانس 24 عربي",
+      "published": "Thu, 05 Nov 2026 13:37:16 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "خمسينة اقتصاد. . خلال ساعات.. الوفود الثقيلة في الطريقة لـ مصر؟! قمة سرية ماذا ينوي السيسي؟! حدث فجرًا على حدود مصر؟! #خمسينة_اقتصاد #مصر #السيسي #السعودية #السودان #ايران #إيران #الإمارات #اليمن #جيش_مصر #إثيوبيا #اثيوبيا #الصين #ترامب #الجيش_الم - Facebook",
+      "description": "خمسينة اقتصاد. . خلال ساعات.. الوفود الثقيلة في الطريقة لـ مصر؟! قمة سرية ماذا ينوي السيسي؟! حدث فجرًا على حدود مصر؟! #خمسينة_اقتصاد #مصر #السيسي #السعودية #السودان #ايران #إيران #الإمارات #اليمن #جيش_مصر #إثيوبيا #اثيوبيا #الصين #ترامب #الجيش_الم    Facebook",
+      "original_title": "خمسينة اقتصاد. . خلال ساعات.. الوفود الثقيلة في الطريقة لـ مصر؟! قمة سرية ماذا ينوي السيسي؟! حدث فجرًا على حدود مصر؟! #خمسينة_اقتصاد #مصر #السيسي #السعودية #السودان #ايران #إيران #الإمارات #اليمن #جيش_مصر #إثيوبيا #اثيوبيا #الصين #ترامب #الجيش_الم - Facebook",
+      "original_description": "خمسينة اقتصاد. . خلال ساعات.. الوفود الثقيلة في الطريقة لـ مصر؟! قمة سرية ماذا ينوي السيسي؟! حدث فجرًا على حدود مصر؟! #خمسينة_اقتصاد #مصر #السيسي #السعودية #السودان #ايران #إيران #الإمارات #اليمن #جيش_مصر #إثيوبيا #اثيوبيا #الصين #ترامب #الجيش_الم &nbsp;&nbsp; Facebook",
+      "url": "https://www.facebook.com/khamsenetektesad/videos/%D8%AE%D9%84%D8%A7%D9%84-%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%88%D9%81%D9%88%D8%AF-%D8%A7%D9%84%D8%AB%D9%82%D9%8A%D9%84%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D9%84%D9%80-%D9%85%D8%B5%D8%B1-%D9%82%D9%85%D8%A9-%D8%B3%D8%B1%D9%8A%D8%A9-%D9%85%D8%A7%D8%B0%D8%A7-%D9%8A%D9%86%D9%88%D9%8A-%D8%A7%D9%84%D8%B3%D9%8A%D8%B3%D9%8A-%D8%AD%D8%AF%D8%AB-%D9%81%D8%AC%D8%B1%D9%8B%D8%A7-/1434693406394201",
+      "source": "Facebook",
+      "published": "Thu, 05 Nov 2026 13:35:35 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "فو كونغ، الممثل الدائم للصين لدى الأمم المتحدة - بيان أمام مجلس الأمن الدولي بشأن القضية النووية الإيرانية - The America Times",
+      "description": "فو كونغ، الممثل الدائم للصين لدى الأمم المتحدة - بيان أمام مجلس الأمن التابع للأمم المتحدة بشأن القضية النووية الإيرانية    The America Times",
+      "original_title": "Fu Cong, Permanent Representative of China to the United Nations — Statement at the UN Security Council on the Iranian Nuclear Issue - The America Times",
+      "original_description": "Fu Cong, Permanent Representative of China to the United Nations — Statement at the UN Security Council on the Iranian Nuclear Issue &nbsp;&nbsp; The America Times",
+      "url": "https://www.america-times.com/fu-cong-permanent-representative-of-china-to-the-united-nations-statement-at-the-un-security-council-on-the-iranian-nuclear-issue",
+      "source": "The America Times",
+      "published": "Thu, 05 Nov 2026 13:23:48 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "هل يدفع وزير الدفاع الأمريكي ثمن خسائر الجمهوريين؟",
+      "description": "رغم التكهنات بشأن إقالة وزير الدفاع الأمريكي بيت هيغسيث عقب خسارة الجمهوريين في انتخابات التجديد النصفي، أعلن دونالد ترامب تمسكه به. يأتي ذلك في ظل اتهامات بارتباط الخسارة بالحرب على إيران، ووعود ديمقراطية بفتح تحقيقات مع هيغسيث بشأن إدارته للحرب، بعد استعادة السيطرة على الكونغرس. #بي_بي_سي -------…",
+      "original_title": "هل يدفع وزير الدفاع الأمريكي ثمن خسائر الجمهوريين؟",
+      "original_description": "رغم التكهنات بشأن إقالة وزير الدفاع الأمريكي بيت هيغسيث عقب خسارة الجمهوريين في انتخابات التجديد النصفي، أعلن دونالد ترامب تمسكه به. يأتي ذلك في ظل اتهامات بارتباط الخسارة بالحرب على إيران، ووعود ديمقراطية بفتح تحقيقات مع هيغسيث بشأن إدارته للحرب، بعد استعادة السيطرة على الكونغرس. #بي_بي_سي -------…",
+      "url": "https://alikhbariya.net/stories/c44dc4ce-740d-49f1-9b5b-b80cc4524d87/%D9%87%D9%84-%D9%8A%D8%AF%D9%81%D8%B9-%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%AF%D9%81%D8%A7%D8%B9-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A-%D8%AB%D9%85%D9%86-%D8%AE%D8%B3%D8%A7%D8%A6%D8%B1-%D8%A7%D9%84%D8%AC%D9%85%D9%87%D9%88%D8%B1%D9%8A%D9%8A%D9%86",
+      "source": "بي بي سي عربي",
+      "published": "Thu, 05 Nov 2026 13:13:29 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "المغرب والملك محمد السادس يترأسان اجتماعا بشأن مرحلة ما بعد المينورسو بعد انتهاء ولاية البعثة",
+      "description": "المغرب والملك محمد السادس يترأسان اجتماعا حول مرحلة ما بعد المينورسو بعد انتهاء ولاية البعثة    Italpress",
+      "original_title": "Morocco, King Mohammed VI chairs meeting on post-Minurso phase following end of mission’s mandate - Italpress",
+      "original_description": "Morocco, King Mohammed VI chairs meeting on post-Minurso phase following end of mission’s mandate &nbsp;&nbsp; Italpress",
+      "url": "https://www.italpress.com/morocco-king-mohammed-vi-chairs-meeting-on-post-minurso-phase-following-end-of-missions-mandate",
+      "source": "Italpress",
+      "published": "Thu, 05 Nov 2026 13:10:17 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "مالاوي تكافح انتشار الكوليرا باستخدام طائرات بدون طيار - رويترز",
+      "description": "مالاوي تكافح انتشار الكوليرا باستخدام طائرات بدون طيار    رويترز",
+      "original_title": "Malawi fights cholera spread using drones - Reuters",
+      "original_description": "Malawi fights cholera spread using drones &nbsp;&nbsp; Reuters",
+      "url": "https://www.reuters.com/video/watch/idOV837WFA3",
+      "source": "Reuters",
+      "published": "Thu, 05 Nov 2026 13:06:46 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "\"قرار الحكومات المتعاقبة منذ عام 2017 بزيادة الموارد كان جيدًا\": لا يريد إدوارد فيليب أن تكون الجهود الدفاعية \"مسترخية\" ويدعو إلى \"ركيزة أوروبية لحلف شمال الأطلسي\" - BFM",
+      "description": "\"كان قرار الحكومات المتعاقبة منذ عام 2017 بزيادة الموارد جيدًا\": لا يريد إدوارد فيليب أن تكون الجهود الدفاعية \"مسترخية\" ويدعو إلى \"ركيزة أوروبية لحلف شمال الأطلسي\"   BFM",
+      "original_title": "\"La décision des gouvernements successifs depuis 2017 d'augmenter les moyens était bonne\": Édouard Philippe ne veut pas que l'effort de défense soit \"relâché\" et plaide pour \"un pilier européen de l'Otan\" - BFM",
+      "original_description": "\"La décision des gouvernements successifs depuis 2017 d'augmenter les moyens était bonne\": Édouard Philippe ne veut pas que l'effort de défense soit \"relâché\" et plaide pour \"un pilier européen de l'Otan\" &nbsp;&nbsp; BFM",
+      "url": "https://www.bfmtv.com/economie/entreprises/defense/la-decision-des-gouvernements-successifs-depuis-2017-d-augmenter-les-moyens-etait-bonne-edouard-philippe-ne-veut-pas-que-l-effort-de-defense-soit-relache-et-plaide-pour-un-pilier-europeen-de-l-otan_AD-202611050491.html",
+      "source": "BFM",
+      "published": "Thu, 05 Nov 2026 12:53:58 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
+      "title": "اختبار هيكل قيادة تنظيم الدولة الإسلامية في غرب أفريقيا عندما تقتل القوات كبار القادة في كوكاوا - تروث نيجيريا",
+      "description": "اختبار هيكل قيادة ISWAP عندما تقتل القوات كبار القادة في كوكاوا    الحقيقة نيجيريا",
+      "original_title": "ISWAP Command Structure Tested as Troops Kill Senior Leaders in Kukawa - Truth Nigeria",
+      "original_description": "ISWAP Command Structure Tested as Troops Kill Senior Leaders in Kukawa &nbsp;&nbsp; Truth Nigeria",
+      "url": "https://truthnigeria.com/2026/11/iswap-command-structure-tested-as-troops-kill-senior-leaders-in-kukawa",
+      "source": "Truth Nigeria",
+      "published": "Thu, 05 Nov 2026 12:37:52 GMT",
+      "category": "sahel",
+      "region": "africa"
+    },
+    {
+      "title": "جبهات الحوثيين تحت الضغط العسكري في الجوف وشمال لحج",
+      "description": "القوات الحكومية اليمنية تتقدم في الجوف وتواصل هجوماً مضاداً في لحج، بالتزامن مع إحباط هجمات حوثية في مأرب وتعز ومقتل أربعة مدنيين بقصف باليستي حوثي في حيفان.",
+      "original_title": "جبهات الحوثيين تحت الضغط العسكري في الجوف وشمال لحج",
+      "original_description": "القوات الحكومية اليمنية تتقدم في الجوف وتواصل هجوماً مضاداً في لحج، بالتزامن مع إحباط هجمات حوثية في مأرب وتعز ومقتل أربعة مدنيين بقصف باليستي حوثي في حيفان.",
+      "url": "https://aawsat.com/node/5337917",
+      "source": "aawsat.com",
+      "published": "Thu, 05 Nov 2026 12:35:22 +0000",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "لماذا تحصل إثيوبيا على الطائرات الروسية التي حرمتها واشنطن من مصر؟ - منتدى الشرق الأوسط",
+      "description": "لماذا تحصل إثيوبيا على الطائرات الروسية التي حرمتها واشنطن من مصر؟    منتدى الشرق الأوسط",
+      "original_title": "Why Does Ethiopia Get the Russian Jets Washington Denied Egypt? - Middle East Forum",
+      "original_description": "Why Does Ethiopia Get the Russian Jets Washington Denied Egypt? &nbsp;&nbsp; Middle East Forum",
+      "url": "https://www.meforum.org/mef-observer/why-does-ethiopia-get-the-russian-jets-washington-denied-egypt",
+      "source": "Middle East Forum",
+      "published": "Thu, 05 Nov 2026 12:33:57 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "مصر والولايات المتحدة توقعان اتفاقية تعاون اقتصادي جديدة - افريكا نيوز",
+      "description": "مصر والولايات المتحدة توقعان اتفاقية تعاون اقتصادي جديدة",
+      "original_title": "L’Égypte et les États-Unis scellent un nouvel accord de coopération économique - Africanews",
+      "original_description": "L’Égypte et les États-Unis scellent un nouvel accord de coopération économique &nbsp;&nbsp; Africanews",
+      "url": "https://fr.africanews.com/2026/11/05/legypte-et-les-etats-unis-scellent-un-nouvel-accord-de-cooperation-economique",
+      "source": "Africanews",
+      "published": "Thu, 05 Nov 2026 12:29:01 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "ليبيا-مصر: مباحثات حول تعزيز التعاون العسكري والأمني ​​- آبا نيوز - وكالة الأنباء الأفريقية",
+      "description": "ليبيا-مصر: مباحثات حول تعزيز التعاون العسكري والأمني ​​آبا نيوز - وكالة الأنباء الإفريقية",
+      "original_title": "Libye–Égypte : discussions sur le renforcement de la coopération militaire et sécuritaire - APAnews - Agence de Presse Africaine",
+      "original_description": "Libye–Égypte : discussions sur le renforcement de la coopération militaire et sécuritaire &nbsp;&nbsp; APAnews - Agence de Presse Africaine",
+      "url": "https://fr.apanews.net/diplomacy/libye-egypte-discussions-sur-le-renforcement-de-la-cooperation-militaire-et-securitaire",
+      "source": "APAnews - Agence de Presse Africaine",
+      "published": "Thu, 05 Nov 2026 12:26:18 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "إثيوبيا تتسلم 12 مقاتلة روسية متطورة وتترقب منظومات «إس 400» وسط تساؤلات عن التوازن العسكري مع مصر - أخبار الغد",
+      "description": "إثيوبيا تتسلم 12 مقاتلة روسية متطورة وتترقب منظومات «إس 400» وسط تساؤلات عن التوازن العسكري مع مصر    أخبار الغد",
+      "original_title": "إثيوبيا تتسلم 12 مقاتلة روسية متطورة وتترقب منظومات «إس 400» وسط تساؤلات عن التوازن العسكري مع مصر - أخبار الغد",
+      "original_description": "إثيوبيا تتسلم 12 مقاتلة روسية متطورة وتترقب منظومات «إس 400» وسط تساؤلات عن التوازن العسكري مع مصر &nbsp;&nbsp; أخبار الغد",
+      "url": "https://www.ghadnews.net/2026/11/05/%D8%A5%D8%AB%D9%8A%D9%88%D8%A8%D9%8A%D8%A7-%D8%AA%D8%AA%D8%B3%D9%84%D9%85-12-%D9%85%D9%82%D8%A7%D8%AA%D9%84%D8%A9-%D8%B1%D9%88%D8%B3%D9%8A%D8%A9-%D9%85%D8%AA%D8%B7%D9%88%D8%B1%D8%A9-%D9%88%D8%AA%D8%AA",
+      "source": "أخبار الغد",
+      "published": "Thu, 05 Nov 2026 12:17:07 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "إطلاق منصة رقمية لمتابعة أسعار المواد الاستهلاكية ووفرتها",
+      "description": "أشرف الوزير الأول، سيفي غريب اليوم الخميس، على عقد اجتماع وزاري مشترك، خصص للإطلاق الرسمي للمنصة الرقمية الجديدة للمتابعة اليومية لأسعار المواد الاستهلاكية الأساسية ووفرتها عبر كافة الولايات. وأفاد بيان للوزارة الأولى أن الوزير الأول جدد التزام الحكومة بتنفيذ تعليمات رئيس الجمهورية المتعلقة بالمراف…",
+      "original_title": "إطلاق منصة رقمية لمتابعة أسعار المواد الاستهلاكية ووفرتها",
+      "original_description": "أشرف الوزير الأول، سيفي غريب اليوم الخميس، على عقد اجتماع وزاري مشترك، خصص للإطلاق الرسمي للمنصة الرقمية الجديدة للمتابعة اليومية لأسعار المواد الاستهلاكية الأساسية ووفرتها عبر كافة الولايات. وأفاد بيان للوزارة الأولى أن الوزير الأول جدد التزام الحكومة بتنفيذ تعليمات رئيس الجمهورية المتعلقة بالمراف…",
+      "url": "https://alikhbariya.net/stories/f7e684fb-7ae3-44b6-869f-d50c688578ca/%D8%A5%D8%B7%D9%84%D8%A7%D9%82-%D9%85%D9%86%D8%B5%D8%A9-%D8%B1%D9%82%D9%85%D9%8A%D8%A9-%D9%84%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A9-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%AF-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%87%D9%84%D8%A7%D9%83%D9%8A%D8%A9-%D9%88%D9%88%D9%81%D8%B1%D8%AA%D9%87%D8%A7",
+      "source": "الشروق أونلاين",
+      "published": "Thu, 05 Nov 2026 12:10:32 GMT",
+      "category": "rest",
+      "region": "world"
+    },
     {
       "title": "اليونيسف: الهجمات على أنظمة المياه في مناطق النزاع تضاعفت ثلاث مرات",
       "description": "دعت منظمة اليونيسف إلى حماية أنظمة المياه والصرف الصحي خلال النزاعات، وذلك في ظل زيادة الهجمات التي أدت إلى تضرر هذه الأنظمة أو تدميرها بمقدار ثلاث مرات بين عامي 2021 و2025، مما زاد من مخاطر تعرض الأطفال لتفشي الأمراض، وسوء التغذية، والعنف.",
@@ -13,6 +948,72 @@
       "region": "world"
     },
     {
+      "title": "مجلس الأمن، الاجتماع 10266 السودان، جنوب السودان - تغطية اجتماعات الأمم المتحدة والبيانات الصحفية",
+      "description": "مجلس الأمن، الاجتماع 10266 (AM) السودان وجنوب السودان    تغطية اجتماعات الأمم المتحدة والبيانات الصحفية",
+      "original_title": "Security Council, 10266th Meeting (AM) Sudan, South Sudan - UN Meetings Coverage and Press Releases",
+      "original_description": "Security Council, 10266th Meeting (AM) Sudan, South Sudan &nbsp;&nbsp; UN Meetings Coverage and Press Releases",
+      "url": "https://press.un.org/en/blog/sc16502",
+      "source": "UN Meetings Coverage and Press Releases",
+      "published": "Thu, 05 Nov 2026 12:00:00 GMT",
+      "category": "rest",
+      "region": "africa"
+    },
+    {
+      "title": "زامبيا تسعى للحصول على دعم من الجيش للحد من التعدين غير القانوني في مبيكا - AfricaBrief",
+      "description": "زامبيا تسعى للحصول على دعم الجيش للحد من التعدين غير القانوني في مبيكا    AfricaBrief",
+      "original_title": "Zambia Seeks Army Support to Curb Illegal Mining in Mpika - AfricaBrief",
+      "original_description": "Zambia Seeks Army Support to Curb Illegal Mining in Mpika &nbsp;&nbsp; AfricaBrief",
+      "url": "https://africabrief.substack.com/p/zambia-seeks-army-support-to-curb",
+      "source": "AfricaBrief",
+      "published": "Thu, 05 Nov 2026 11:43:50 GMT",
+      "category": "rest",
+      "region": "africa"
+    },
+    {
+      "title": "وكالة تونس إفريقيا للأنباء تبحث مع «تاس» الروسية توقيع اتفاقية لتعزيز التعاون الإعلامي - OSBU",
+      "description": "وكالة تونس إفريقيا للأنباء تبحث مع «تاس» الروسية توقيع اتفاقية لتعزيز التعاون الإعلامي    OSBU",
+      "original_title": "وكالة تونس إفريقيا للأنباء تبحث مع «تاس» الروسية توقيع اتفاقية لتعزيز التعاون الإعلامي - OSBU",
+      "original_description": "وكالة تونس إفريقيا للأنباء تبحث مع «تاس» الروسية توقيع اتفاقية لتعزيز التعاون الإعلامي &nbsp;&nbsp; OSBU",
+      "url": "https://osbu-oic.org/?p=42225",
+      "source": "OSBU",
+      "published": "Thu, 05 Nov 2026 11:30:31 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "نيجيريا الهجوم الجهادي - مجلة الغارات",
+      "description": "نيجيريا الجهاديون يهاجمون مجلة الغارات",
+      "original_title": "NIGERIA Attaque jihadiste - Magazine Raids",
+      "original_description": "NIGERIA Attaque jihadiste &nbsp;&nbsp; Magazine Raids",
+      "url": "https://raids.fr/2026/11/05/nigeria-attaque-jihadiste",
+      "source": "Magazine Raids",
+      "published": "Thu, 05 Nov 2026 11:25:55 GMT",
+      "category": "sahel",
+      "region": "africa"
+    },
+    {
+      "title": "مصر وأميركا توقعان اتفاقية بـ 125 مليون دولار لتعزيز نمو القطاع الخاص - العربية",
+      "description": "مصر وأميركا توقعان اتفاقية بـ 125 مليون دولار لتعزيز نمو القطاع الخاص    العربية",
+      "original_title": "مصر وأميركا توقعان اتفاقية بـ 125 مليون دولار لتعزيز نمو القطاع الخاص - العربية",
+      "original_description": "مصر وأميركا توقعان اتفاقية بـ 125 مليون دولار لتعزيز نمو القطاع الخاص &nbsp;&nbsp; العربية",
+      "url": "https://www.alarabiya.net/aswaq/egypt-economy/2026/11/05/%D9%85%D8%B5%D8%B1-%D9%88%D8%A7%D9%85%D9%8A%D8%B1%D9%83%D8%A7-%D8%AA%D9%88%D9%82%D8%B9%D8%A7%D9%86-%D8%A7%D8%AA%D9%81%D8%A7%D9%82%D9%8A%D8%A9-%D8%A8%D9%80-125-%D9%85%D9%84%D9%8A%D9%88%D9%86-%D8%AF%D9%88%D9%84%D8%A7%D8%B1-%D9%84%D8%AA%D8%B9%D8%B2%D9%8A%D8%B2-%D9%86%D9%85%D9%88-%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B5",
+      "source": "العربية",
+      "published": "Thu, 05 Nov 2026 11:16:00 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "مشروع طاقة بقيمة 2.1 مليار دولار معرض للخطر مع اشتباك حلفاء الناتو حول مياه البحر الأبيض المتوسط، مما يجتذب أقوى جيش أمريكي وإفريقي",
+      "description": "أكثر من 2.1 مليار دولار من مشاريع الطاقة معرضة للخطر مع اشتباك حلفاء الناتو حول مياه البحر الأبيض المتوسط، مما يجذب أقوى جيش أمريكي وإفريقي    Business Insider Africa",
+      "original_title": "Over $2.1 billion energy project at risk as NATO allies clash over Mediterranean waters, drawing in US and Africa's most powerful military - Business Insider Africa",
+      "original_description": "Over $2.1 billion energy project at risk as NATO allies clash over Mediterranean waters, drawing in US and Africa's most powerful military &nbsp;&nbsp; Business Insider Africa",
+      "url": "https://africa.businessinsider.com/local/markets/over-dollar21-billion-energy-project-at-risk-as-nato-allies-clash-over-mediterranean/dc7r1nk",
+      "source": "Business Insider Africa",
+      "published": "Thu, 05 Nov 2026 11:00:50 GMT",
+      "category": "international",
+      "region": "africa"
+    },
+    {
       "title": "فرنسا تؤكد مساندتها لتونس في مراجعة اتفاقية الشراكة مع الاتحاد الأوروبي - Babnet",
       "description": "فرنسا تؤكد مساندتها لتونس في مراجعة اتفاقية الشراكة مع الاتحاد الأوروبي    Babnet",
       "original_title": "فرنسا تؤكد مساندتها لتونس في مراجعة اتفاقية الشراكة مع الاتحاد الأوروبي - Babnet",
@@ -21,6 +1022,17 @@
       "source": "Babnet",
       "published": "Thu, 05 Nov 2026 10:48:26 GMT",
       "category": "north",
+      "region": "africa"
+    },
+    {
+      "title": "قائد الجيش الصومالي يحث القوات على تكثيف العمليات ضد حركة الشباب بالقرب من براوة - شبكة شابيلي الإعلامية",
+      "description": "قائد الجيش الصومالي يحث القوات على تكثيف العمليات ضد حركة الشباب بالقرب من براوة    شبكة شابيلي الإعلامية",
+      "original_title": "Somali Army Chief Urges Troops to Intensify Operations Against Al-Shabaab Near Barawe - Shabelle Media Network",
+      "original_description": "Somali Army Chief Urges Troops to Intensify Operations Against Al-Shabaab Near Barawe &nbsp;&nbsp; Shabelle Media Network",
+      "url": "https://shabellemedia.com/somali-army-chief-urges-troops-to-intensify-operations-against-al-shabaab-near-barawe",
+      "source": "Shabelle Media Network",
+      "published": "Thu, 05 Nov 2026 10:43:02 GMT",
+      "category": "sahel",
       "region": "africa"
     },
     {
@@ -79,6 +1091,17 @@
       "region": "world"
     },
     {
+      "title": "تصعيد عسكري في تعز.. الجيش اليمني يصد هجومًا للحوثيين وتعزيزات جديدة تصل إلى جبهات القتال - أخبار الغد",
+      "description": "تصعيد عسكري في تعز.. الجيش اليمني يصد هجومًا للحوثيين وتعزيزات جديدة تصل إلى جبهات القتال    أخبار الغد",
+      "original_title": "تصعيد عسكري في تعز.. الجيش اليمني يصد هجومًا للحوثيين وتعزيزات جديدة تصل إلى جبهات القتال - أخبار الغد",
+      "original_description": "تصعيد عسكري في تعز.. الجيش اليمني يصد هجومًا للحوثيين وتعزيزات جديدة تصل إلى جبهات القتال &nbsp;&nbsp; أخبار الغد",
+      "url": "https://www.ghadnews.net/2026/11/05/%D8%AA%D8%B5%D8%B9%D9%8A%D8%AF-%D8%B9%D8%B3%D9%83%D8%B1%D9%8A-%D9%81%D9%8A-%D8%AA%D8%B9%D8%B2-%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D9%8A%D9%85%D9%86%D9%8A-%D9%8A%D8%B5%D8%AF-%D9%87%D8%AC",
+      "source": "أخبار الغد",
+      "published": "Thu, 05 Nov 2026 10:24:37 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
       "title": "ارتفاع الجنيه الاسترليني علامة ترحيب قبل قمة المملكة المتحدة والاتحاد الأوروبي - الأفضل لبريطانيا",
       "description": "إشارة ترحيب بارتفاع الجنيه الاسترليني قبل قمة المملكة المتحدة والاتحاد الأوروبي    الأفضل لبريطانيا",
       "original_title": "Rallying pound welcome sign ahead of UK-EU summit - Best for Britain",
@@ -110,6 +1133,17 @@
       "published": "Thu, 05 Nov 2026 10:12:19 GMT",
       "category": "sahel",
       "region": "africa"
+    },
+    {
+      "title": "الاتحاد الأوروبي باعتباره جهة فاعلة في مجال الأمن العالمي: المساعدة العسكرية للدول الشريكة - IRIS - معهد العلاقات الدولية والاستراتيجية",
+      "description": "الاتحاد الأوروبي باعتباره جهة فاعلة في مجال الأمن العالمي: المساعدة العسكرية للدول الشريكة    IRIS - معهد العلاقات الدولية والاستراتيجية",
+      "original_title": "The EU as a Global Security Actor: Military Assistance to Partner States - IRIS - Institut de relations internationales et stratégiques",
+      "original_description": "The EU as a Global Security Actor: Military Assistance to Partner States &nbsp;&nbsp; IRIS - Institut de relations internationales et stratégiques",
+      "url": "https://www.iris-france.org/event/the-eu-as-a-global-security-actor-military-assistance-to-partner-states",
+      "source": "IRIS - Institut de relations internationales et stratégiques",
+      "published": "Thu, 05 Nov 2026 10:09:44 GMT",
+      "category": "international",
+      "region": "world"
     },
     {
       "title": "\"احتموا فوراً\".. آخر كلمات شرطي أوكراني قبل قصف روسي أودى بحياة العشرات",
@@ -211,6 +1245,17 @@
       "region": "world"
     },
     {
+      "title": "تونس وفرنسا تبحثان تعزيز التعاون ومراجعة اتفاق الشراكة مع الاتحاد الأوروبي - حقائق اون لاين",
+      "description": "تونس وفرنسا تبحثان تعزيز التعاون ومراجعة اتفاق الشراكة مع الاتحاد الأوروبي    حقائق اون لاين",
+      "original_title": "تونس وفرنسا تبحثان تعزيز التعاون ومراجعة اتفاق الشراكة مع الاتحاد الأوروبي - حقائق اون لاين",
+      "original_description": "تونس وفرنسا تبحثان تعزيز التعاون ومراجعة اتفاق الشراكة مع الاتحاد الأوروبي &nbsp;&nbsp; حقائق اون لاين",
+      "url": "https://hakaekonline.com/%D8%AA%D9%88%D9%86%D8%B3-%D9%88%D9%81%D8%B1%D9%86%D8%B3%D8%A7-%D8%AA%D8%A8%D8%AD%D8%AB%D8%A7%D9%86-%D8%AA%D8%B9%D8%B2%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%88%D9%86-%D9%88%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%D8%A9-%D8%A7%D8%AA%D9%81%D8%A7%D9%82-%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D9%83%D8%A9-%D9%85%D8%B9-%D8%A7%D9%84%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A",
+      "source": "حقائق اون لاين",
+      "published": "Thu, 05 Nov 2026 09:30:23 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
       "title": "مصادر محلية:مليشيات الحوثي تطلق 5صواريخ من مجمع لمنظمات الأمم المتحدة بالمخا باتجاه منطقة باب المندب",
       "description": "مصادر محلية: مليشيات الحوثي تطلق 5 صواريخ من مجمع لمنظمات الأمم المتحدة في المخا باتجاه منطقة باب المندب",
       "original_title": "مصادر محلية:مليشيات الحوثي تطلق 5صواريخ من مجمع لمنظمات الأمم المتحدة بالمخا باتجاه منطقة باب المندب",
@@ -255,6 +1300,17 @@
       "region": "africa"
     },
     {
+      "title": "تونس-فرنسا: محمد علي النفطي وجان نويل بارو يدعوان إلى تعزيز تعاونهما الثنائي - L'Économiste Maghrebin",
+      "description": "تونس-فرنسا: محمد علي النفطي وجان نويل بارو يدعوان إلى تعزيز التعاون الثنائي بينهما   ليكونوميست ماغاربي",
+      "original_title": "Tunisie–France : Mohamed Ali Nafti et Jean-Noël Barrot appellent à renforcer leur coopération bilatérale - L'Économiste Maghrébin",
+      "original_description": "Tunisie–France : Mohamed Ali Nafti et Jean-Noël Barrot appellent à renforcer leur coopération bilatérale &nbsp;&nbsp; L'Économiste Maghrébin",
+      "url": "https://www.leconomistemaghrebin.com/2026/11/05/tunisie-france-mohamed-ali-nafti-et-jean-noel-barrot-appellent-a-renforcer-leur-cooperation-bilaterale",
+      "source": "L'Économiste Maghrébin",
+      "published": "Thu, 05 Nov 2026 09:00:35 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
       "title": "تقرير يحذر من أن الجيش التشيكي فشل في تحقيق 70% من الأهداف الدفاعية لحلف شمال الأطلسي - Expats.cz",
       "description": "تقرير يحذر من أن الجيش التشيكي فشل في تحقيق 70% من الأهداف الدفاعية لحلف شمال الأطلسي    Expats.cz",
       "original_title": "Czech army falls short on 70% of NATO defense targets, report warns - Expats.cz",
@@ -275,17 +1331,6 @@
       "published": "Thu, 05 Nov 2026 08:57:41 GMT",
       "category": "rest",
       "region": "world"
-    },
-    {
-      "title": "تونس-فرنسا: محمد علي النفطي وجان نويل بارو يدعوان إلى تعزيز تعاونهما الثنائي - L'Économiste Maghrebin",
-      "description": "تونس-فرنسا: محمد علي النفطي وجان نويل بارو يدعوان إلى تعزيز التعاون الثنائي بينهما   ليكونوميست ماغاربي",
-      "original_title": "Tunisie–France : Mohamed Ali Nafti et Jean-Noël Barrot appellent à renforcer leur coopération bilatérale - L'Économiste Maghrébin",
-      "original_description": "Tunisie–France : Mohamed Ali Nafti et Jean-Noël Barrot appellent à renforcer leur coopération bilatérale &nbsp;&nbsp; L'Économiste Maghrébin",
-      "url": "https://www.leconomistemaghrebin.com/2026/11/05/tunisie-france-mohamed-ali-nafti-et-jean-noel-barrot-appellent-a-renforcer-leur-cooperation-bilaterale",
-      "source": "L'Économiste Maghrébin",
-      "published": "Thu, 05 Nov 2026 08:56:47 GMT",
-      "category": "north",
-      "region": "africa"
     },
     {
       "title": "هيئة بريطانية: تعرض ناقلة لهجوم بمقذوفين مجهولين قبالة قطر",
@@ -332,17 +1377,6 @@
       "region": "africa"
     },
     {
-      "title": "قائد الجيش الصومالي يحث القوات على تكثيف العمليات ضد حركة الشباب بالقرب من براوة - شبكة شابيلي الإعلامية",
-      "description": "قائد الجيش الصومالي يحث القوات على تكثيف العمليات ضد حركة الشباب بالقرب من براوة    شبكة شابيلي الإعلامية",
-      "original_title": "Somali Army Chief Urges Troops to Intensify Operations Against Al-Shabaab Near Barawe - Shabelle Media Network",
-      "original_description": "Somali Army Chief Urges Troops to Intensify Operations Against Al-Shabaab Near Barawe &nbsp;&nbsp; Shabelle Media Network",
-      "url": "https://shabellemedia.com/somali-army-chief-urges-troops-to-intensify-operations-against-al-shabaab-near-barawe",
-      "source": "Shabelle Media Network",
-      "published": "Thu, 05 Nov 2026 08:38:11 GMT",
-      "category": "sahel",
-      "region": "africa"
-    },
-    {
       "title": "وفد من الكونغرس الأميركي يتوجه إلى كوب31 وسط تفاؤل حذر بتجديد دور واشنطن المناخي",
       "description": "يخطط أعضاء الوفد لـ\"استكشاف فرص تجديد انخراط الولايات المتحدة في سياسات المناخ والطاقة والسياسة الاقتصادية\" في قمة الأمم المتحدة.",
       "original_title": "وفد من الكونغرس الأميركي يتوجه إلى كوب31 وسط تفاؤل حذر بتجديد دور واشنطن المناخي",
@@ -362,6 +1396,17 @@
       "source": "النهار",
       "published": "Thu, 05 Nov 2026 08:19:00 GMT",
       "category": "sahel",
+      "region": "africa"
+    },
+    {
+      "title": "المنظمون في جنوب السودان يوقعون مذكرة تفاهم لتعزيز الأمن السيبراني للتكنولوجيا المالية - TechAfrica News",
+      "description": "المنظمون في جنوب السودان يوقعون مذكرة تفاهم لتعزيز الأمن السيبراني للتكنولوجيا المالية    TechAfrica News",
+      "original_title": "South Sudan Regulators Sign MoU to Strengthen Fintech Cybersecurity - TechAfrica News",
+      "original_description": "South Sudan Regulators Sign MoU to Strengthen Fintech Cybersecurity &nbsp;&nbsp; TechAfrica News",
+      "url": "https://techafricanews.com/2026/11/05/south-sudan-regulators-sign-mou-to-strengthen-fintech-cybersecurity",
+      "source": "TechAfrica News",
+      "published": "Thu, 05 Nov 2026 08:08:46 GMT",
+      "category": "rest",
       "region": "africa"
     },
     {
@@ -420,17 +1465,6 @@
       "region": "world"
     },
     {
-      "title": "المنظمون في جنوب السودان يوقعون مذكرة تفاهم لتعزيز الأمن السيبراني للتكنولوجيا المالية - TechAfrica News",
-      "description": "المنظمون في جنوب السودان يوقعون مذكرة تفاهم لتعزيز الأمن السيبراني للتكنولوجيا المالية    TechAfrica News",
-      "original_title": "South Sudan Regulators Sign MoU to Strengthen Fintech Cybersecurity - TechAfrica News",
-      "original_description": "South Sudan Regulators Sign MoU to Strengthen Fintech Cybersecurity &nbsp;&nbsp; TechAfrica News",
-      "url": "https://techafricanews.com/2026/11/05/south-sudan-regulators-sign-mou-to-strengthen-fintech-cybersecurity",
-      "source": "TechAfrica News",
-      "published": "Thu, 05 Nov 2026 07:32:38 GMT",
-      "category": "rest",
-      "region": "africa"
-    },
-    {
       "title": "ملك الأردن إلى كازاخستان لبحث الأمن في مجال الذكاء الاصطناعي",
       "description": "عمّان: غادر ملك الأردن عبد الله الثاني، الخميس، إلى كازاخستان ليرأس مع رئيسها قاسم جومارت توكاييف جولة من مبادرة “اجتماعات العقبة” حول الأمن في مجال الذكاء الاصطناعي. وقال الديوان الملكي في بيان، إن الملك عبد الله غادر البلاد في زيارة رسمية إلى كازاخستان، وسيجري مباحثات مع الرئيس الكازاخستاني قاسم… — تغطية من مصدرين: القدس العربي، وكالة الأناضول.",
       "original_title": "ملك الأردن إلى كازاخستان لبحث الأمن في مجال الذكاء الاصطناعي",
@@ -460,6 +1494,17 @@
       "url": "https://www.aljazeera.net/news/2026/11/5/%d8%b3%d8%af-%d8%a7%d9%84%d9%85%d9%86%d8%b7%d8%b1%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d9%82%d9%86%d9%8a%d8%b7%d8%b1%d8%a9-%d9%82%d8%b5%d9%81-%d9%88%d8%aa%d9%88%d8%ba%d9%84?traffic_source=rss",
       "source": "aljazeera.net",
       "published": "Thu, 05 Nov 2026 10:04:48 +0300",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "واشنطن تفرض عقوبات على شبكة دولية متهمة بمحاولة تزويد إيران بصواريخ دفاع جوي محمولة - أخبار الغد",
+      "description": "واشنطن تفرض عقوبات على شبكة دولية متهمة بمحاولة تزويد إيران بصواريخ دفاع جوي محمولة    أخبار الغد",
+      "original_title": "واشنطن تفرض عقوبات على شبكة دولية متهمة بمحاولة تزويد إيران بصواريخ دفاع جوي محمولة - أخبار الغد",
+      "original_description": "واشنطن تفرض عقوبات على شبكة دولية متهمة بمحاولة تزويد إيران بصواريخ دفاع جوي محمولة &nbsp;&nbsp; أخبار الغد",
+      "url": "https://www.ghadnews.net/2026/11/05/%D9%88%D8%A7%D8%B4%D9%86%D8%B7%D9%86-%D8%AA%D9%81%D8%B1%D8%B6-%D8%B9%D9%82%D9%88%D8%A8%D8%A7%D8%AA-%D8%B9%D9%84%D9%89-%D8%B4%D8%A8%D9%83%D8%A9-%D8%AF%D9%88%D9%84%D9%8A%D8%A9-%D9%85%D8%AA%D9%87%D9%85",
+      "source": "أخبار الغد",
+      "published": "Thu, 05 Nov 2026 06:49:49 GMT",
       "category": "rest",
       "region": "world"
     },
@@ -1185,7 +2230,7 @@
       "original_description": "ISWAP Kills 100 In Attack On Nigerian Army Camp &nbsp;&nbsp; MEMRI | Middle East Media Research Institute",
       "url": "https://www.memri.org/jttm/islamic-state-west-africa-province-iswap-kills-and-wounds-around-100-nigerian-soldiers-attack",
       "source": "MEMRI | Middle East Media Research Institute",
-      "published": "Wed, 04 Nov 2026 19:54:03 GMT",
+      "published": "Wed, 04 Nov 2026 19:52:47 GMT",
       "category": "sahel",
       "region": "africa"
     },
@@ -1440,6 +2485,17 @@
       "source": "القدس العربي",
       "published": "Wed, 04 Nov 2026 17:29:50 GMT",
       "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "مشرعو الاتحاد الأوروبي يضغطون على الكتلة لتقييم التهديد الأمني ​​من سيارات BYD - رويترز",
+      "description": "يضغط المشرعون في الاتحاد الأوروبي من أجل تقييم التهديد الأمني ​​من سيارات BYD    رويترز",
+      "original_title": "EU lawmakers push for bloc to assess security threat from BYD cars - Reuters",
+      "original_description": "EU lawmakers push for bloc to assess security threat from BYD cars &nbsp;&nbsp; Reuters",
+      "url": "https://www.reuters.com/legal/litigation/eu-lawmakers-push-bloc-assess-security-threat-byd-cars-2026-11-04",
+      "source": "Reuters",
+      "published": "Wed, 04 Nov 2026 17:21:07 GMT",
+      "category": "international",
       "region": "world"
     },
     {
@@ -2367,6 +3423,17 @@
       "region": "world"
     },
     {
+      "title": "القائد العسكري لحلف شمال الأطلسي يطلب من بولندا أن تراقب بحذر المنطقة القريبة من الحدود الروسية",
+      "description": "القائد العسكري لحلف شمال الأطلسي يطلب من بولندا أن تراقب بحذر المنطقة القريبة من الحدود الروسية    النجوم والمشارب",
+      "original_title": "NATO’s military chief tells Poland to keep wary eye on area near Russian border - Stars and Stripes",
+      "original_description": "NATO’s military chief tells Poland to keep wary eye on area near Russian border &nbsp;&nbsp; Stars and Stripes",
+      "url": "https://www.stripes.com/theaters/europe/2026-11-04/poland-russia-border-threat-eucom-23360076.html",
+      "source": "Stars and Stripes",
+      "published": "Wed, 04 Nov 2026 11:37:06 GMT",
+      "category": "international",
+      "region": "world"
+    },
+    {
       "title": "الزعيم الكوري الشمالي يتعهّد ببناء سفن حربية ستكون \"الأكثر تطورًا وقوة\"",
       "description": "قال كيم جونغ أون إن \"البيئة الجيوسياسية الناشئة أخيرا والأعمال العدائية التي يقوم بها الخصوم\" تظهر \"الحاجة إلى امتلاك أكثر السفن الحربية تطورا وقوة\" بحسب وكالة الأنباء المركزية الكورية الشمالية.",
       "original_title": "الزعيم الكوري الشمالي يتعهّد ببناء سفن حربية ستكون \"الأكثر تطورًا وقوة\"",
@@ -2629,6 +3696,17 @@
       "published": "Wed, 04 Nov 2026 09:01:24 GMT",
       "category": "rest",
       "region": "world"
+    },
+    {
+      "title": "اتفاق تعاون بين النيجر وإدارة حفتر - أفريقيا نيوز",
+      "description": "النيجر وإدارة حفتر مرتبطتان باتفاقية تعاون",
+      "original_title": "Le Niger et l'administration Haftar liés par un accord de coopération - Africanews",
+      "original_description": "Le Niger et l'administration Haftar liés par un accord de coopération &nbsp;&nbsp; Africanews",
+      "url": "https://fr.africanews.com/2026/11/04/le-niger-et-ladministration-haftar-lies-par-un-accord-de-cooperation",
+      "source": "Africanews",
+      "published": "Wed, 04 Nov 2026 08:56:01 GMT",
+      "category": "sahel",
+      "region": "africa"
     },
     {
       "title": "تعاون نيامي وحفتر: رد على إرسال قوات جزائرية إلى النيجر؟",
@@ -3200,6 +4278,17 @@
       "source": "Modern Diplomacy",
       "published": "Tue, 03 Nov 2026 23:00:16 GMT",
       "category": "rest",
+      "region": "africa"
+    },
+    {
+      "title": "ليبيا-فرنسا: نحو تعزيز التعاون العسكري والأمني ​​- ACP | وكالة الصحافة الكونغولية",
+      "description": "ليبيا-فرنسا: نحو تعزيز التعاون العسكري والأمني ​​ACP | وكالة الصحافة الكونغولية",
+      "original_title": "Libye-France : vers un renforcement de la coopération militaire et sécuritaire - ACP | Agence Congolaise de Presse",
+      "original_description": "Libye-France : vers un renforcement de la coopération militaire et sécuritaire &nbsp;&nbsp; ACP | Agence Congolaise de Presse",
+      "url": "https://acp.cd/diplomatie/libye-france-vers-un-renforcement-de-la-cooperation-militaire-et-securitaire",
+      "source": "ACP | Agence Congolaise de Presse",
+      "published": "Tue, 03 Nov 2026 22:53:14 GMT",
+      "category": "north",
       "region": "africa"
     },
     {
@@ -4048,17 +5137,6 @@
       "published": "Tue, 03 Nov 2026 17:36:58 GMT",
       "category": "north",
       "region": "africa"
-    },
-    {
-      "title": "القائد العسكري لحلف شمال الأطلسي يطلب من بولندا أن تراقب بحذر المنطقة القريبة من الحدود الروسية",
-      "description": "القائد العسكري لحلف شمال الأطلسي يطلب من بولندا أن تراقب بحذر المنطقة القريبة من الحدود الروسية    النجوم والمشارب",
-      "original_title": "NATO’s military chief tells Poland to keep wary eye on area near Russian border - Stars and Stripes",
-      "original_description": "NATO’s military chief tells Poland to keep wary eye on area near Russian border &nbsp;&nbsp; Stars and Stripes",
-      "url": "https://www.stripes.com/theaters/europe/2026-11-04/poland-russia-border-threat-eucom-23360076.html",
-      "source": "Stars and Stripes",
-      "published": "Tue, 03 Nov 2026 17:32:28 GMT",
-      "category": "international",
-      "region": "world"
     },
     {
       "title": "اجتماعات وتحركات بشأن روسيا وأوكرانيا تسبق محادثات أبوظبي",
