@@ -1344,9 +1344,30 @@ def is_relevant_security_news(title, description):
     # Reject clearly unrelated topics based primarily on the headline. This
     # avoids dropping a valid security report merely because its long summary
     # mentions finance, education, health or another unrelated subject.
+    strong_security_terms = [
+        "security", "military", "army", "armed attack", "terrorist attack",
+        "terrorism", "terrorist", "militants", "insurgents", "insurgency",
+        "bombing", "bomb", "explosion", "ambush", "clash", "attack",
+        "kidnapping", "hostage", "ied", "counterterrorism",
+        "border security", "peacekeeping", "troops", "soldiers",
+        "airstrike", "air strikes", "military operation", "military operations",
+        "security cooperation", "defense cooperation", "defence cooperation",
+        "military cooperation", "sécurité", "militaire", "armée",
+        "attaque armée", "terrorisme", "djihadiste", "bombe", "explosion",
+        "affrontements", "conflit armé", "attentat", "défense", "missile",
+        "drone", "armement", "forces armées", "opération militaire",
+        "sécurité frontalière", "maintien de la paix",
+        "أمن", "أمني", "أمنية", "عسكري", "عسكرية", "الجيش",
+        "القوات المسلحة", "هجوم", "إرهابي", "إرهاب", "مسلح", "مسلحة",
+        "اشتباك", "اشتباكات", "قصف", "غارة", "غارات", "صاروخ", "صواريخ",
+        "طائرات مسيرة", "مقاتلات", "دفاع جوي", "تسلح", "صفقة أسلحة",
+        "مناورات عسكرية", "تدريبات عسكرية", "أمن الحدود", "مكافحة الإرهاب",
+        "جماعات مسلحة", "وزير الدفاع", "رئيس الأركان", "استخبارات",
+        "مخابرات", "وقف إطلاق النار", "سفينة حربية", "غواصة", "دبابات"
+    ]
     title_has_security_signal = any(
         term.casefold() in title_text
-        for term in DEFENSE_TERMS + SECURITY_TERMS
+        for term in DEFENSE_TERMS + strong_security_terms
     )
     if not title_has_security_signal and any(
         term.casefold() in title_text for term in EXCLUDED_TERMS
@@ -1374,7 +1395,7 @@ def is_relevant_security_news(title, description):
     has_subject = any(term in title_text for term in geographic_or_institutional_subjects)
     has_description_signal = any(
         term.casefold() in description_text
-        for term in DEFENSE_TERMS + SECURITY_TERMS
+        for term in DEFENSE_TERMS + strong_security_terms
     )
     return has_subject and has_description_signal
 
