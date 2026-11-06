@@ -1787,6 +1787,33 @@ def archive_file_for(article):
     )
 
 
+def write_json_if_changed(file_path, data):
+    """
+    Write JSON only when its substantive payload changes.
+    The volatile 'updated' timestamp is ignored during comparison so an
+    unchanged 15-minute feed check does not create a needless Git commit
+    and a new GitHub Pages deployment.
+    """
+    existing_data = None
+    if os.path.exists(file_path):
+        try:
+            with open(file_path, "r", encoding="utf-8") as file:
+                existing_data = json.load(file)
+        except Exception as exc:
+            print(f"Could not compare existing JSON {file_path}: {exc}")
+
+    if isinstance(existing_data, dict) and isinstance(data, dict):
+        old_payload = {key: value for key, value in existing_data.items() if key != "updated"}
+        new_payload = {key: value for key, value in data.items() if key != "updated"}
+        if old_payload == new_payload:
+            print(f"No substantive changes in {file_path}; preserving its timestamp.")
+            return False
+
+    with open(file_path, "w", encoding="utf-8") as file:
+        json.dump(data, file, ensure_ascii=False, indent=2)
+    return True
+
+
 # =========================================================
 # UPDATE ARCHIVE
 # =========================================================
@@ -1881,22 +1908,8 @@ def update_archive(all_articles):
                 final_items
         }
 
-        with open(
-            file_path,
-            "w",
-            encoding="utf-8"
-        ) as file:
-
-            json.dump(
-                archive_data,
-                file,
-                ensure_ascii=False,
-                indent=2
-            )
-
-        print(
-            f"Archive updated: {file_path}"
-        )
+        if write_json_if_changed(file_path, archive_data):
+            print(f"Archive updated: {file_path}")
 
 
 def clean_existing_archives():
@@ -1997,22 +2010,9 @@ def update_archive_index():
             months
     }
 
-    with open(
-        ARCHIVE_INDEX_FILE,
-        "w",
-        encoding="utf-8"
-    ) as file:
+    write_json_if_changed(ARCHIVE_INDEX_FILE, archive_index)
 
-        json.dump(
-            archive_index,
-            file,
-            ensure_ascii=False,
-            indent=2
-        )
-
-    print(
-        f"Archive index updated: {len(months)} month(s)"
-    )
+    print(f"Archive index checked: {len(months)} month(s)")
 
 
 # =========================================================
@@ -2238,22 +2238,9 @@ def main():
             current_news
     }
 
-    with open(
-        NEWS_FILE,
-        "w",
-        encoding="utf-8"
-    ) as file:
+    write_json_if_changed(NEWS_FILE, news_data)
 
-        json.dump(
-            news_data,
-            file,
-            ensure_ascii=False,
-            indent=2
-        )
-
-    print(
-        f"Current news saved: {len(current_news)}"
-    )
+    print(f"Current news checked: {len(current_news)}")
 
     print(
         "African Security Observer update completed successfully."
