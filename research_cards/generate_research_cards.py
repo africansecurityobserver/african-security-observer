@@ -530,6 +530,14 @@ def make_index(cards):
         out["years"].append({"year":y,"months":months})
     return out
 
+def is_quota_or_rate_limit_error(exc):
+    message = f"{type(exc).__name__}: {exc}".lower()
+    return any(marker in message for marker in (
+        "429", "resource_exhausted", "quota", "rate limit",
+        "rate_limit", "too many requests", "requests per day"
+    ))
+
+
 def main():
     key=os.getenv("GEMINI_API_KEY")
     if not key: raise RuntimeError("GEMINI_API_KEY is missing.")
@@ -703,6 +711,9 @@ publish boolean; introduction string; analysis_one, analysis_two, analysis_three
         except Exception as e:
             print("Generation failed; will retry later:",type(e).__name__)
             failed_count+=1
+            if is_quota_or_rate_limit_error(e):
+                print("Gemini quota/rate limit reached; stopping this run without another request.")
+                break
             continue
         if not out.get("publish"):
             # Never mark a relevant publication as permanently processed just
