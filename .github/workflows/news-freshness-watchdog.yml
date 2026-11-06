@@ -8,8 +8,8 @@ on:
     paths:
       - '.github/workflows/news-freshness-watchdog.yml'
   schedule:
-    # Check independently every 10 minutes; GitHub Actions cron schedules use UTC.
-    - cron: "3,13,23,33,43,53 * * * *"
+    # Check every 10 minutes, staggered away from the hour and the news refresh.
+    - cron: "4,14,24,34,44,54 * * * *"
   workflow_dispatch:
 
 permissions:
