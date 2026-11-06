@@ -1,3 +1,6 @@
+import json
+import os
+import tempfile
 import unittest
 
 from update_news import (
@@ -10,10 +13,35 @@ from update_news import (
     normalize_url,
     parse_published_datetime,
     RSS_FEEDS,
+    write_json_if_changed,
 )
 
 
 class NewsQualityTests(unittest.TestCase):
+    def test_unchanged_json_does_not_rewrite_or_advance_timestamp(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = os.path.join(temp_dir, "news.json")
+            original = {"updated": "2026-11-06T10:00:00+00:00", "items": [{"title": "خبر"}]}
+            with open(path, "w", encoding="utf-8") as file:
+                json.dump(original, file)
+            self.assertFalse(write_json_if_changed(
+                path,
+                {"updated": "2026-11-06T10:15:00+00:00", "items": [{"title": "خبر"}]}
+            ))
+            with open(path, "r", encoding="utf-8") as file:
+                self.assertEqual(json.load(file), original)
+
+    def test_changed_json_is_written(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = os.path.join(temp_dir, "news.json")
+            original = {"updated": "2026-11-06T10:00:00+00:00", "items": [{"title": "خبر"}]}
+            with open(path, "w", encoding="utf-8") as file:
+                json.dump(original, file)
+            updated = {"updated": "2026-11-06T10:15:00+00:00", "items": [{"title": "خبر جديد"}]}
+            self.assertTrue(write_json_if_changed(path, updated))
+            with open(path, "r", encoding="utf-8") as file:
+                self.assertEqual(json.load(file), updated)
+
     def test_rejects_arabic_sports_festival(self):
         title = "جمعية المحاربين تنظم مهرجانا رياضيا بمناسبة الاحتفال بانتصارات أكتوبر"
         description = "نظمت جمعية المحاربين القدماء مهرجاناً رياضياً لأعضائها."
