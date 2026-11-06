@@ -23,7 +23,7 @@ ARCHIVE_DIR = BASE_DIR / "daily_cards" / "archive"
 
 TIMEZONE = ZoneInfo("Africa/Tunis")
 
-MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 
 # Number of news items sent to Gemini at most
 MAX_NEWS_ITEMS = 100
