@@ -1466,6 +1466,23 @@ def is_editorially_eligible(text_value):
     if any(term in value for term in routine_civilian_markers) and not has_security_context:
         return False
 
+    # Reject generic statements about the importance of cooperation when
+    # they do not report a concrete meeting, decision, agreement or action.
+    vague_cooperation_markers = [
+        "اهمية تعزيز التعاون", "أهمية تعزيز التعاون",
+        "ضرورة تعزيز التعاون", "تعزيز التعاون في مجالات الامن والتنمية",
+        "تعزيز التعاون في مجالات الأمن والتنمية"
+    ]
+    concrete_action_markers = [
+        "بحث", "ناقش", "استقبل", "التقى", "اجتمع", "أجرى",
+        "وقع", "وقّع", "اتفاق", "اتفاقية", "مذكرة تفاهم",
+        "قرر", "قررت", "اعتمد", "أقر", "أقرت", "أطلق", "أطلقت",
+        "أنشأ", "تأسيس", "دشن", "دشّن", "بدأ تنفيذ"
+    ]
+    if (any(term in value for term in vague_cooperation_markers)
+            and not any(term in value for term in concrete_action_markers)):
+        return False
+
     return True
 
 

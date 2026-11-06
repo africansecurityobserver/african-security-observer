@@ -94,6 +94,12 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
     def test_filters_routine_source_material_before_gemini(self):
         text = "خرج نشطاء بيئيون في احتجاج أمام مؤتمر الأمم المتحدة للمناخ."
         self.assertFalse(card.is_editorially_eligible(text))
+        self.assertFalse(card.is_editorially_eligible(
+            "أكد وزير الدفاع أهمية تعزيز التعاون التونسي الجزائري والليبي في مجالات الأمن والتنمية."
+        ))
+        self.assertTrue(card.is_editorially_eligible(
+            "بحث وزير الدفاع مع نظيره اتفاقاً للتعاون العسكري وتبادل المعلومات."
+        ))
         self.assertTrue(card.is_editorially_eligible(
             "نفذ الجيش عملية عسكرية لملاحقة جماعة مسلحة عبر الحدود."
         ))
