@@ -72,7 +72,7 @@ jobs:
         run: |
           python -u daily_cards/generate_daily_card.py
 
-      - name: Verify today's card contains at least one event
+      - name: Verify today's card is fresh, structured, and non-empty
         run: |
           python - <<'PY'
           import json
@@ -90,16 +90,39 @@ jobs:
                        if c.get("date") == today and c.get("slot") == "daily"), None)
           if not card:
               raise SystemExit(f"No daily card exists for {today}; refusing to publish.")
-          count = sum(
-              1 for section in card.get("sections", [])
-              for event in section.get("events", [])
-              if isinstance(event, dict) and str(event.get("text", "")).strip()
-          )
+          if not card.get("source_fingerprint"):
+              raise SystemExit("Card has no source fingerprint; refusing to publish.")
+          if not card.get("generated_at"):
+              raise SystemExit("Card has no generation timestamp; refusing to publish.")
+
+          sections = card.get("sections", [])
+          expected = {
+              "libya", "algeria", "morocco", "africa_major", "terrorism",
+              "middle_east", "international_orgs", "world_major"
+          }
+          actual = {s.get("id") for s in sections if isinstance(s, dict)}
+          missing = expected - actual
+          if missing:
+              raise SystemExit(f"Card is missing expected sections: {sorted(missing)}")
+
+          texts = []
+          for section in sections:
+              for event in section.get("events", []):
+                  if isinstance(event, dict):
+                      value = str(event.get("text", "")).strip()
+                      if value:
+                          texts.append(value)
+
+          count = len(texts)
+          duplicates = len(texts) - len(set(texts))
           print(f"Today's published-event count: {count}")
+          print(f"Eligible source items sent to Gemini: {card.get('source_news_count', 'unknown')}")
+          print(f"Exact duplicate event texts: {duplicates}")
           if count < 1:
               raise SystemExit("Today's card is empty; refusing to publish it.")
+          if duplicates:
+              raise SystemExit("Card contains exact duplicate event texts; refusing to publish it.")
           PY
-
       - name: Commit and push card
         run: |
           git config user.name "github-actions[bot]"
