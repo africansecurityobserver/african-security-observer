@@ -25,7 +25,8 @@ permissions:
 # Prevent scheduled and push-triggered news updates from writing the same JSON files concurrently.
 concurrency:
   group: update-news-${{ github.ref }}
-  cancel-in-progress: false
+  # Prefer the newest validated code/data refresh over a stalled older run.
+  cancel-in-progress: true
 
 jobs:
   update-news:
