@@ -312,5 +312,25 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
         self.assertLessEqual(card.MAX_EVENTS_TO_RESEARCH, 10)
 
 
+    def test_supplementary_search_parses_google_news_rss_results(self):
+        original_fetch = card.fetch_research_url
+        rss = """<?xml version="1.0"?>
+        <rss><channel><item>
+          <title>Detailed report on the event</title>
+          <link>https://news.google.com/rss/articles/example</link>
+          <description>Additional verified details.</description>
+          <source>Example News</source>
+          <pubDate>Fri, 06 Nov 2026 10:00:00 GMT</pubDate>
+        </item></channel></rss>"""
+        try:
+            card.fetch_research_url = lambda url, timeout=7: (rss, url)
+            results = card.search_related_news("Tunisia security event")
+            self.assertEqual(len(results), 1)
+            self.assertEqual(results[0]["source"], "Example News")
+            self.assertIn("news.google.com", results[0]["link"])
+        finally:
+            card.fetch_research_url = original_fetch
+
+
 if __name__ == "__main__":
     unittest.main()
