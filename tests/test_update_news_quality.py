@@ -9,6 +9,7 @@ from update_news import (
     normalize_article,
     normalize_url,
     parse_published_datetime,
+    RSS_FEEDS,
 )
 
 
@@ -63,6 +64,31 @@ class NewsQualityTests(unittest.TestCase):
     def test_keeps_relevant_sahel_security_news(self):
         title = "Mali army clashes with armed militants near the border"
         self.assertTrue(is_relevant_security_news(title, "Security forces reported fighting."))
+
+    def test_keeps_terrorism_and_armed_attacks_outside_africa(self):
+        self.assertTrue(is_relevant_security_news(
+            "Suicide bombing targets a security convoy in Pakistan", ""
+        ))
+        self.assertTrue(is_relevant_security_news(
+            "Armed gangs launch attacks in Haiti", ""
+        ))
+        self.assertTrue(is_relevant_security_news(
+            "هجوم مسلح يستهدف قوات الأمن في باكستان", ""
+        ))
+        self.assertTrue(is_relevant_security_news(
+            "Une attaque armée frappe un poste militaire au Myanmar", ""
+        ))
+
+    def test_terrorism_feeds_are_global_not_nigeria_limited(self):
+        feeds = RSS_FEEDS["terrorism_global"]
+        self.assertEqual(len(feeds), 3)
+        joined = " ".join(feeds).casefold()
+        self.assertNotIn("nigeria", joined)
+        self.assertNotIn("borno", joined)
+        self.assertNotIn("adamawa", joined)
+        self.assertIn("terrorist", joined)
+        self.assertIn("attaque", joined)
+        self.assertIn("%D9%87", joined)  # Arabic search terms are URL-encoded.
 
     def test_keeps_designated_officials_diplomatic_activities(self):
         self.assertTrue(is_relevant_security_news(
