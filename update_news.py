@@ -1282,38 +1282,26 @@ def is_sports_related(title, description=""):
     return any(term in combined_text for term in strong_context)
 
 
-def is_relevant_security_news(
-    title,
-    description
-):
+def is_relevant_security_news(title, description):
+    """Keep security, defense, conflict and consequential official diplomacy news."""
+    title_text = clean_html(str(title or "")).casefold()
+    description_text = clean_html(str(description or "")).casefold()
+    text = title_text + " " + description_text
 
-    text = (
-        str(title)
-        + " "
-        + str(description)
-    ).lower()
-
-    # A sports context must never be rescued by generic terms such as attack/هجوم.
+    # Sports stories are always excluded, even if the summary mentions security.
     if is_sports_related(title, description):
         return False
 
-    if is_priority_named_official_news(title, description):
+    # Explicit priority coverage: designated Maghreb officials, Libya clashes/
+    # military flights, and consequential decisions by major organizations.
+    if (
+        is_priority_named_official_news(title, description)
+        or is_priority_magreb_leadership_news(title, description)
+        or is_priority_libya_clashes_or_military_flights(title, description)
+        or is_priority_global_organization_news(title, description)
+    ):
         return True
 
-    if is_priority_magreb_leadership_news(title, description):
-        return True
-
-    if is_priority_libya_clashes_or_military_flights(title, description):
-        return True
-
-    if is_priority_global_organization_news(title, description):
-        return True
-
-    title_text = clean_html(str(title or "")).casefold()
-
-    # Keep routine consumer scams out of this security/military publication.
-    # Cyber operations, espionage, attacks on infrastructure, and state-linked
-    # incidents remain eligible through their explicit security terminology.
     consumer_fraud_terms = [
         "الاحتيال الرقمي", "الاحتيال الإلكتروني", "احتيال عبر المنصات",
         "عمليات النصب", "scam warning", "consumer scam", "online shopping fraud",
@@ -1329,39 +1317,55 @@ def is_relevant_security_news(
     ]
     if (
         any(term in title_text for term in consumer_fraud_terms)
-        and not any(term in title_text for term in cyber_security_signals)
+        and not any(term in text for term in cyber_security_signals)
     ):
         return False
 
-    for word in EXCLUDED_TERMS:
-
-        if word.lower() in text:
-            return False
-
-    if any(
-        word.lower() in text
-        for word in DEFENSE_TERMS
+    # Reject clearly unrelated topics based primarily on the headline. This
+    # avoids dropping a valid security report merely because its long summary
+    # mentions finance, education, health or another unrelated subject.
+    title_has_security_signal = any(
+        term.casefold() in title_text
+        for term in DEFENSE_TERMS + SECURITY_TERMS
+    )
+    if not title_has_security_signal and any(
+        term.casefold() in title_text for term in EXCLUDED_TERMS
     ):
+        return False
 
+    # A security keyword buried only in an unrelated description is not enough.
+    # Require a headline signal, or a concrete geographic/official subject.
+    if title_has_security_signal:
         return True
 
-    if any(
-        word.lower() in text
-        for word in SECURITY_TERMS
-    ):
-
-        return True
-
-    return False
-
+    geographic_or_institutional_subjects = [
+        "libya", "libyan", "libye", "ليبيا", "الليبية",
+        "algeria", "algerian", "algérie", "الجزائر",
+        "morocco", "moroccan", "maroc", "المغرب",
+        "tunisia", "tunisian", "tunisie", "تونس",
+        "mali", "niger", "burkina", "chad", "mauritania",
+        "nigeria", "somalia", "sudan", "ethiopia", "kenya",
+        "africa", "african", "afrique", "إفريقيا", "أفريقيا",
+        "united nations", "nato", "north atlantic treaty",
+        "european union", "african union", "brics",
+        "الأمم المتحدة", "الناتو", "الاتحاد الأوروبي",
+        "الاتحاد الإفريقي", "بريكس"
+    ]
+    has_subject = any(term in title_text for term in geographic_or_institutional_subjects)
+    has_description_signal = any(
+        term.casefold() in description_text
+        for term in DEFENSE_TERMS + SECURITY_TERMS
+    )
+    return has_subject and has_description_signal
 
 # =========================================================
 # CLASSIFICATION
 # =========================================================
 
 def classify_region(title, description):
-    """Classify a story by geography for the new Africa/World navigation."""
-    text = (str(title or "") + " " + str(description or "")).lower()
+    """Return only the geographic region used by the public news interface."""
+    title_text = clean_html(str(title or "")).casefold()
+    description_text = clean_html(str(description or "")).casefold()
 
     africa_terms = [
         "africa", "african", "afrique", "africain", "africaine",
@@ -1387,14 +1391,20 @@ def classify_region(title, description):
         "تونس", "التونسية", "الجزائر", "الجزائرية", "المغرب", "المغربية",
         "ليبيا", "الليبية", "مصر", "المصرية", "الساحل", "مالي", "النيجر",
         "بوركينا فاسو", "تشاد", "موريتانيا", "موريتاني", "موريتانية",
-        "الموريتاني", "الموريتانية", "السنغال", "غينيا",
-        "ساحل العاج", "غانا", "نيجيريا", "السودان", "جنوب السودان",
-        "الصومال", "إثيوبيا", "كينيا", "أوغندا", "تنزانيا", "موزمبيق",
-        "زيمبابوي", "زامبيا", "أنغولا", "الكاميرون", "الكونغو",
-        "الغابون", "رواندا", "بوروندي", "جنوب إفريقيا", "مدغشقر"
+        "الموريتاني", "الموريتانية", "السنغال", "غينيا", "ساحل العاج",
+        "غانا", "نيجيريا", "السودان", "جنوب السودان", "الصومال", "إثيوبيا",
+        "كينيا", "أوغندا", "تنزانيا", "موزمبيق", "زيمبابوي", "زامبيا",
+        "أنغولا", "الكاميرون", "الكونغو", "الغابون", "رواندا", "بوروندي",
+        "جنوب إفريقيا", "مدغشقر"
     ]
-    return "africa" if any(term in text for term in africa_terms) else "world"
 
+    # The headline is authoritative. Consult the description only when the
+    # headline itself does not identify a region.
+    if any(term in title_text for term in africa_terms):
+        return "africa"
+    if any(term in description_text for term in africa_terms):
+        return "africa"
+    return "world"
 
 def classify_news(
     title,
@@ -1717,15 +1727,21 @@ def get_news():
 # =========================================================
 
 def normalize_article(article):
-    description = str(article.get("description") or "")
-    original_description = str(article.get("original_description") or "")
+    original_title = str(article.get("original_title") or article.get("title") or "").strip()
+    original_description = str(
+        article.get("original_description")
+        or article.get("description")
+        or article.get("summary")
+        or ""
+    ).strip()
+    description = str(article.get("description") or article.get("summary") or "").strip()
     source = str(article.get("source") or "").strip()
+    url = normalize_url(article.get("url", ""))
 
-    # Repair existing items created by the aggregator before source recovery
-    # was added, so the source label and summary improve on the next refresh.
+    # Recover publisher names from aggregator summaries when possible.
     for candidate in (original_description, description):
         match = re.search(
-            r"(?:—|–|-)\s*تغطية من مصدر واحد:\s*([^.!؟]+)",
+            r"(?:—|–|-|\|)\s*تغطية من مصدر واحد:\s*([^.!؟]+)",
             candidate,
             flags=re.IGNORECASE
         )
@@ -1735,36 +1751,40 @@ def normalize_article(article):
             break
 
     description = re.sub(
-        r"\s*(?:—|–|-)\s*تغطية من مصدر واحد:.*$",
+        r"\s*(?:—|–|-|\|)\s*تغطية من مصدر واحد:.*$",
         "",
         description,
         flags=re.IGNORECASE
     ).strip()
     original_description = re.sub(
-        r"\s*(?:—|–|-)\s*تغطية من مصدر واحد:.*$",
+        r"\s*(?:—|–|-|\|)\s*تغطية من مصدر واحد:.*$",
         "",
         original_description,
         flags=re.IGNORECASE
     ).strip()
 
-    return {
-        "title": article.get("title", ""),
-        "description": description,
-        "original_title": article.get("original_title", ""),
-        "original_description": original_description,
-        "url": normalize_url(article.get("url", "")),
-        "source": source or "مصدر غير معروف",
-        "published": article.get("published", ""),
-        "category": article.get("category", "rest"),
-        "region": article.get(
-            "region",
-            classify_region(
-                article.get("original_title") or article.get("title", ""),
-                original_description or description
-            )
-        )
-    }
+    if not source:
+        source = (urlsplit(url).hostname or "").removeprefix("www.") or "مصدر غير معروف"
 
+    category = classify_news(
+        original_title,
+        original_description,
+        str(article.get("category") or "")
+    )
+    region = classify_region(original_title, original_description)
+
+    return {
+        "title": str(article.get("title") or original_title),
+        "description": description,
+        "summary": description,
+        "original_title": original_title,
+        "original_description": original_description,
+        "url": url,
+        "source": source,
+        "published": article.get("published", ""),
+        "category": category,
+        "region": region
+    }
 
 def article_key(article):
 
@@ -1788,7 +1808,525 @@ def article_key(article):
     return "title:" + title
 
 
+def deduplicate_articles(articles):
+    """Remove duplicate stories by canonical URL and normalized headline."""
+    result = []
+    seen_urls = set()
+    seen_titles = set()
+
+    ordered = sorted(
+        (normalize_article(item) for item in articles),
+        key=lambda item: parse_published_datetime(item.get("published")) or datetime.min.replace(tzinfo=timezone.utc),
+        reverse=True
+    )
+    for article in ordered:
+        url_key = normalize_url(article.get("url", ""))
+        title_source = article.get("original_title") or article.get("title") or ""
+        title_key = re.sub(r"[\\W_]+", "", title_source.casefold(), flags=re.UNICODE)
+        if (url_key and url_key in seen_urls) or (title_key and title_key in seen_titles):
+            continue
+        if url_key:
+            seen_urls.add(url_key)
+        if title_key:
+            seen_titles.add(title_key)
+        result.append(article)
+    return result
+
+
 def archive_file_for(article):
+
+    published = article.get(
+        "published",
+        ""
+    )
+
+    dt = parse_published_datetime(published)
+
+    if dt is None:
+        dt = datetime.now(timezone.utc)
+
+    return os.path.join(
+        ARCHIVE_FOLDER,
+        dt.strftime("%Y-%m") + ".json"
+    )
+
+
+# =========================================================
+# UPDATE ARCHIVE
+# =========================================================
+
+def update_archive(all_articles):
+
+    os.makedirs(
+        ARCHIVE_FOLDER,
+        exist_ok=True
+    )
+
+    grouped = {}
+
+    for article in all_articles:
+
+        article = normalize_article(
+            article
+        )
+
+        file_path = archive_file_for(
+            article
+        )
+
+        if file_path not in grouped:
+
+            grouped[file_path] = {}
+
+        key = article_key(
+            article
+        )
+
+        grouped[file_path][key] = article
+
+    for file_path, articles in grouped.items():
+
+        existing = {}
+
+        if os.path.exists(
+            file_path
+        ):
+
+            try:
+
+                with open(
+                    file_path,
+                    "r",
+                    encoding="utf-8"
+                ) as file:
+
+                    old_data = json.load(
+                        file
+                    )
+
+                for article in old_data.get(
+                    "items",
+                    []
+                ):
+
+                    key = article_key(
+                        article
+                    )
+
+                    existing[key] = article
+
+            except Exception as e:
+
+                print(
+                    f"Could not read archive {file_path}: {e}"
+                )
+
+        existing.update(
+            articles
+        )
+
+        final_items = list(
+            existing.values()
+        )
+
+        final_items.sort(
+            key=lambda x: parse_published_datetime(x.get("published")) or datetime.min.replace(tzinfo=timezone.utc),
+            reverse=True
+        )
+
+        archive_data = {
+
+            "updated":
+                datetime.now(
+                    timezone.utc
+                ).isoformat(),
+
+            "items":
+                final_items
+        }
+
+        with open(
+            file_path,
+            "w",
+            encoding="utf-8"
+        ) as file:
+
+            json.dump(
+                archive_data,
+                file,
+                ensure_ascii=False,
+                indent=2
+            )
+
+        print(
+            f"Archive updated: {file_path}"
+        )
+
+
+def clean_existing_archives():
+    """Revalidate and deduplicate all monthly archives using current news rules."""
+    if not os.path.isdir(ARCHIVE_FOLDER):
+        return
+
+    for filename in os.listdir(ARCHIVE_FOLDER):
+        if not re.fullmatch(r"\\d{4}-\\d{2}\\.json", filename):
+            continue
+        path = os.path.join(ARCHIVE_FOLDER, filename)
+        try:
+            with open(path, "r", encoding="utf-8") as file:
+                data = json.load(file)
+            raw_items = data.get("items", []) if isinstance(data, dict) else data
+            valid = []
+            for item in raw_items if isinstance(raw_items, list) else []:
+                title = item.get("original_title") or item.get("title", "")
+                description = item.get("original_description") or item.get("description") or item.get("summary", "")
+                if not title or not is_relevant_security_news(title, description):
+                    continue
+                valid.append(item)
+            cleaned = deduplicate_articles(valid)
+            old_items = data.get("items", []) if isinstance(data, dict) else data
+            if cleaned != old_items:
+                archive_data = {
+                    "updated": datetime.now(timezone.utc).isoformat(),
+                    "items": cleaned
+                }
+                with open(path, "w", encoding="utf-8") as file:
+                    json.dump(archive_data, file, ensure_ascii=False, indent=2)
+                print(f"Cleaned archive: {path} ({len(old_items)} -> {len(cleaned)})")
+        except Exception as e:
+            print(f"Could not clean archive {path}: {e}")
+
+
+# =========================================================
+# UPDATE ARCHIVE INDEX
+# =========================================================
+
+def update_archive_index():
+
+    os.makedirs(
+        ARCHIVE_FOLDER,
+        exist_ok=True
+    )
+
+    months = []
+
+    for filename in os.listdir(
+        ARCHIVE_FOLDER
+    ):
+
+        if not filename.endswith(
+            ".json"
+        ):
+
+            continue
+
+        if filename == "index.json":
+
+            continue
+
+        month = filename[:-5]
+
+        try:
+
+            datetime.strptime(
+                month,
+                "%Y-%m"
+            )
+
+            months.append(
+                month
+            )
+
+        except ValueError:
+
+            continue
+
+    months = sorted(
+        set(months),
+        reverse=True
+    )
+
+    archive_index = {
+
+        "updated":
+            datetime.now(
+                timezone.utc
+            ).isoformat(),
+
+        "months":
+            months
+    }
+
+    with open(
+        ARCHIVE_INDEX_FILE,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            archive_index,
+            file,
+            ensure_ascii=False,
+            indent=2
+        )
+
+    print(
+        f"Archive index updated: {len(months)} month(s)"
+    )
+
+
+# =========================================================
+# BUILD CURRENT NEWS
+# =========================================================
+
+def build_current_news(all_articles):
+
+    now = datetime.now(
+        timezone.utc
+    )
+
+    current = []
+
+    seen = set()
+
+    for article in all_articles:
+
+        published = article.get(
+            "published",
+            ""
+        )
+
+        keep = True
+        published_dt = parse_published_datetime(published)
+
+        # Do not surface undated records as if they were current news.
+        if published_dt is None:
+            continue
+
+        if published_dt is not None:
+            age = now - published_dt
+
+            if age > timedelta(days=CURRENT_NEWS_DAYS):
+                keep = False
+
+            # Do not publish items dated more than a day in the future.
+            if age < -timedelta(days=1):
+                keep = False
+
+        if not keep:
+            continue
+
+        key = article_key(
+            article
+        )
+
+        if key in seen:
+            continue
+
+        seen.add(
+            key
+        )
+
+        current.append(
+            article
+        )
+
+    current.sort(
+        key=lambda x: parse_published_datetime(x.get("published")) or datetime.min.replace(tzinfo=timezone.utc),
+        reverse=True
+    )
+
+    return current
+
+
+# =========================================================
+# MAIN
+# =========================================================
+
+def main():
+
+    print(
+        "Starting African Security Observer update..."
+    )
+
+    old_news = load_existing_news()
+
+    print(
+        f"Existing current news: {len(old_news)}"
+    )
+
+    new_news = get_news()
+
+    print(
+        f"Fresh relevant news found: {len(new_news)}"
+    )
+
+    combined = {}
+
+    for article in old_news:
+
+        title_for_check = (
+            article.get(
+                "original_title"
+            )
+            or article.get(
+                "title",
+                ""
+            )
+        )
+
+        description_for_check = (
+            article.get(
+                "original_description"
+            )
+            or article.get(
+                "description",
+                ""
+            )
+        )
+
+        if not is_relevant_security_news(
+            title_for_check,
+            description_for_check
+        ):
+
+            continue
+
+        article = normalize_article(
+            article
+        )
+
+        # Migrate legacy items from the retired defense-only category to geographic categories.
+        if article.get("category") == "defense":
+            article["category"] = classify_news(
+                title_for_check,
+                description_for_check,
+                ""
+            )
+
+        # ترجمة الأخبار القديمة إذا كانت لا تزال بالإنجليزية
+        if (
+            not article.get(
+                "original_title"
+            )
+            or not contains_arabic(
+                article.get(
+                    "title",
+                    ""
+                )
+            )
+        ):
+
+            original_title = (
+                article.get(
+                    "original_title"
+                )
+                or article.get(
+                    "title",
+                    ""
+                )
+            )
+
+            original_description = (
+                article.get(
+                    "original_description"
+                )
+                or article.get(
+                    "description",
+                    ""
+                )
+            )
+
+            arabic_title, arabic_description = (
+                translate_article(
+                    original_title,
+                    original_description
+                )
+            )
+
+            article["original_title"] = (
+                original_title
+            )
+
+            article["original_description"] = (
+                original_description
+            )
+
+            article["title"] = (
+                arabic_title
+            )
+
+            article["description"] = (
+                arabic_description
+            )
+
+        key = article_key(
+            article
+        )
+
+        combined[key] = article
+
+    for article in new_news:
+
+        key = article_key(
+            article
+        )
+
+        combined[key] = normalize_article(
+            article
+        )
+
+    all_articles = deduplicate_articles(list(combined.values()))
+
+    update_archive(all_articles)
+    clean_existing_archives()
+    update_archive_index()
+
+    current_news = build_current_news(
+        all_articles
+    )
+    current_news = deduplicate_articles(current_news)
+
+    news_data = {
+
+        "updated":
+            datetime.now(
+                timezone.utc
+            ).isoformat(),
+
+        "items":
+            current_news
+    }
+
+    with open(
+        NEWS_FILE,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            news_data,
+            file,
+            ensure_ascii=False,
+            indent=2
+        )
+
+    print(
+        f"Current news saved: {len(current_news)}"
+    )
+
+    print(
+        "African Security Observer update completed successfully."
+    )
+
+
+# =========================================================
+# START PROGRAM
+# =========================================================
+
+if __name__ == "__main__":
+    main()
+
 
     published = article.get(
         "published",
