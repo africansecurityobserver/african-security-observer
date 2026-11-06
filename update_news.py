@@ -745,17 +745,17 @@ RSS_FEEDS = {
         for country in REST_OF_AFRICA_COUNTRIES
     ],
 
-    # Dedicated multilingual coverage of major African counter-terrorism
-    # operations, including ISWAP/Boko Haram attacks and military claims.
-    "terrorism_africa": [
+    # Worldwide multilingual coverage of terrorism, armed attacks and
+    # insurgent violence. These searches deliberately contain no country filter.
+    "terrorism_global": [
         "https://news.google.com/rss/search?q="
-        + quote_plus('("Nigeria" OR Nigerian OR Borno OR Adamawa) ("ISWAP" OR "Islamic State West Africa Province" OR "Boko Haram" OR "air strike" OR "airstrike") when:2d')
+        + quote_plus('("terrorist attack" OR terrorism OR jihadist OR insurgent OR militant attack OR bombing OR suicide bombing OR ambush OR "armed group" OR gunmen OR "mass shooting") when:2d')
         + "&hl=en-US&gl=US&ceid=US:en",
         "https://news.google.com/rss/search?q="
-        + quote_plus('("Nigeria" OR Borno OR Adamawa) (ISWAP OR "État islamique en Afrique de l’Ouest" OR "Boko Haram" OR jihadistes OR terroristes) when:2d')
+        + quote_plus('("attaque terroriste" OR terrorisme OR djihadiste OR insurgé OR attaque armée OR attentat OR attentat-suicide OR bombardement OR embuscade OR "groupe armé" OR miliciens) when:2d')
         + "&hl=fr&gl=FR&ceid=FR:fr",
         "https://news.google.com/rss/search?q="
-        + quote_plus('("نيجيريا" OR "ولاية بورنو" OR "ولاية أداماوا") (داعش OR "تنظيم الدولة الإسلامية في غرب إفريقيا" OR بوكو حرام OR مسلحون OR إرهابيون OR غارات) when:2d')
+        + quote_plus('(هجوم إرهابي OR هجمات إرهابية OR إرهاب OR إرهابيون OR جهاديون OR هجوم مسلح OR هجمات مسلحة OR تفجير OR تفجير انتحاري OR كمين OR جماعة مسلحة OR مسلحون OR اشتباكات مسلحة) when:2d')
         + "&hl=ar&gl=EG&ceid=EG:ar"
     ],
 
