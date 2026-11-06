@@ -1399,8 +1399,15 @@ if(data.updated){
 
 updated.textContent =
 'آخر تحديث: ' +
-new Date(data.updated)
-.toLocaleString('ar-TN');
+new Intl.DateTimeFormat(
+'ar-TN',
+{
+dateStyle:'short',
+timeStyle:'medium',
+hourCycle:'h23',
+timeZone:'Africa/Tunis'
+}
+).format(new Date(data.updated));
 
 }else{
 
