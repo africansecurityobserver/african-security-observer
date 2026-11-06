@@ -2,12 +2,10 @@ import feedparser
 import json
 import os
 import re
-import time
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 from urllib.parse import quote_plus, quote, urlsplit, urlunsplit, parse_qsl, urlencode
 from googlenewsdecoder import gnewsdecoder
-from deep_translator import GoogleTranslator
 from urllib.request import Request, urlopen
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -864,12 +862,6 @@ ARCHIVE_INDEX_FILE = os.path.join(
 # TRANSLATION
 # =========================================================
 
-translator = GoogleTranslator(
-    source="auto",
-    target="ar"
-)
-
-
 def clean_html(text):
     if not text:
         return ""
@@ -960,7 +952,7 @@ def google_translate_fallback(text):
 
             with urlopen(
                 request,
-                timeout=20
+                timeout=12
             ) as response:
 
                 raw = response.read().decode(
@@ -1009,92 +1001,27 @@ def google_translate_fallback(text):
 
 
 def translate_text(text):
-
+    """Translate through a bounded direct request; never wait indefinitely on a library call."""
     if not text:
         return ""
 
-    text = clean_html(text)
+    text = clean_html(text)[:5000]
+    if not text or contains_arabic(text):
+        return text
 
-    if not text:
-        return ""
+    translated = google_translate_fallback(text)
+    if translated and contains_arabic(translated):
+        return translated
 
-    text = text[:5000]
-
-    # محاولة الترجمة بواسطة deep-translator
-    for attempt in range(2):
-
-        try:
-
-            translated = translator.translate(
-                text
-            )
-
-            if (
-                translated
-                and translated.strip()
-                and contains_arabic(
-                    translated
-                )
-            ):
-
-                return translated.strip()
-
-            print(
-                "Translator returned unchanged/non-Arabic text."
-            )
-
-        except Exception as e:
-
-            print(
-                f"Translation attempt {attempt + 1} failed: {e}"
-            )
-
-        time.sleep(1)
-
-    # محاولة احتياطية مباشرة
-    print(
-        "Trying direct Google translation fallback..."
-    )
-
-    fallback = google_translate_fallback(
-        text
-    )
-
-    if (
-        fallback
-        and contains_arabic(
-            fallback
-        )
-    ):
-
-        return fallback
-
-    print(
-        "WARNING: Translation failed completely."
-    )
-
+    print("WARNING: Translation failed; retaining original source text.")
     return text
 
 
 def translate_article(title, description):
-
-    print(
-        f"Translating: {title}"
-    )
-
-    arabic_title = translate_text(
-        title
-    )
-
-    time.sleep(0.5)
-
-    arabic_description = translate_text(
-        description
-    )
-
+    print(f"Translating: {title}")
     return (
-        arabic_title,
-        arabic_description
+        translate_text(title),
+        translate_text(description)
     )
 
 
