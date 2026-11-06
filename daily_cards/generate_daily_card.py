@@ -1553,12 +1553,6 @@ def is_editorially_eligible(text_value):
            + ceremonial_markers + political_rumor_markers):
         return False
 
-    # Generic declarations about security are not separate events unless
-    # accompanied by a concrete decision, agreement, meeting or operation.
-    if (any(term in value for term in generic_security_statement_markers)
-            and not any(term in value for term in concrete_action_markers)):
-        return False
-
     # Reject generic statements about the importance of cooperation when
     # they do not report a concrete meeting, decision, agreement or action.
     vague_cooperation_markers = [
@@ -1572,6 +1566,12 @@ def is_editorially_eligible(text_value):
         "قرر", "قررت", "اعتمد", "أقر", "أقرت", "أطلق", "أطلقت",
         "أنشأ", "تأسيس", "دشن", "دشّن", "بدأ تنفيذ"
     ]
+
+    # Generic declarations about security are not separate events unless
+    # accompanied by a concrete decision, agreement, meeting or operation.
+    if (any(term in value for term in generic_security_statement_markers)
+            and not any(term in value for term in concrete_action_markers)):
+        return False
     if (any(term in value for term in vague_cooperation_markers)
             and not any(term in value for term in concrete_action_markers)):
         return False
