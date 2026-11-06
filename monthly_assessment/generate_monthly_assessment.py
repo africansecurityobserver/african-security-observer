@@ -182,7 +182,7 @@ def add_to_index(card):
     m["cards"].append({
         "date": card["date"], "title": card["title"], "subject": card["subject"],
         "slot": "monthly", "path": card["path"], "kind": "monthly_assessment",
-        "kind_label": "التقدير الاستراتيجي الشهري"
+        "kind_label": "التقديرات الشهرية الشاملة"
     })
     index["years"] = sorted(index["years"], key=lambda x: str(x["year"]), reverse=True)
     for y0 in index["years"]:
@@ -294,7 +294,7 @@ def main():
     date_tag = last.isoformat()
     slug = hashlib.sha1(f"{first:%Y-%m}".encode()).hexdigest()[:10]
     relative_path = f"{first:%Y-%m}/{last:%Y%m%d}_{slug}.json"
-    title = clean(output.get("title")) or f"التقدير الاستراتيجي الشهري — {MONTHS[first.month - 1]} {first.year}"
+    title = clean(output.get("title")) or f"التقديرات الشهرية الشاملة — {MONTHS[first.month - 1]} {first.year}"
     source_map = {}
     for item in news:
         url = item.get("url")
@@ -305,9 +305,9 @@ def main():
         coverage = f"اعتمد التقدير على {len(news)} مادة إخبارية جُمعت للفترة المستهدفة؛ وتُقرأ النتائج في ضوء التوزيع الجغرافي الفعلي للمواد وحدود المصادر المتاحة."
     card = {
         "id": slug, "kind": "monthly_assessment",
-        "kind_label": "التقدير الاستراتيجي الشهري",
+        "kind_label": "التقديرات الشهرية الشاملة",
         "title": title,
-        "subject": clean(output.get("subject")) or "التقدير الاستراتيجي الشهري للتطورات الأمنية والدفاعية والجيوسياسية",
+        "subject": clean(output.get("subject")) or "التقديرات الشهرية الشاملة للتطورات الأمنية والدفاعية والجيوسياسية",
         "date": date_tag, "period_start": first.isoformat(), "period_end": last.isoformat(),
         "region": "تقدير استراتيجي شامل — تونس وشمال إفريقيا وإفريقيا والعالم",
         "summary": summary, "coverage_note": coverage,
