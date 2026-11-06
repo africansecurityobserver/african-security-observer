@@ -249,9 +249,9 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
         try:
             card.search_related_news = lambda query, max_results=3: (
                 calls.append(query) or [{
-                    "title": "Independent report on the event",
+                    "title": "تونس تتلقى معدات مكافحة الإرهاب",
                     "link": "https://example.org/report",
-                    "description": "A detailed report describing the same event and its context.",
+                    "description": "تلقّت تونس معدات مكافحة الإرهاب في إطار التعاون الأمني.",
                     "source": "Example News",
                     "published": "Fri, 06 Nov 2026 10:00:00 GMT"
                 }]
@@ -281,6 +281,46 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
             card.search_related_news = original_search
             card.extract_research_article = original_extract
 
+    def test_cross_source_enrichment_rejects_stale_and_unrelated_reports(self):
+        from datetime import date
+        original_search = card.search_related_news
+        original_extract = card.extract_research_article
+        try:
+            card.search_related_news = lambda query, max_results=3: [
+                {
+                    "title": "قائد الجيش الأوغندي يعتقل أحد رموز المعارضة",
+                    "link": "https://example.org/old-arrest",
+                    "description": "تقرير عن اعتقال معارض في أوغندا.",
+                    "source": "Example News",
+                    "published": "Mon, 15 Jun 2026 13:49:00 GMT"
+                },
+                {
+                    "title": "أوغندا تنسحب من فعالية رياضية",
+                    "link": "https://example.org/unrelated",
+                    "description": "تقرير لا يتناول تنحي قائد الجيش.",
+                    "source": "Example News",
+                    "published": "Fri, 06 Nov 2026 10:00:00 GMT"
+                }
+            ]
+            card.extract_research_article = lambda result: (_ for _ in ()).throw(
+                AssertionError("Unrelated or stale articles must not be opened")
+            )
+            generated = {"sections": [{
+                "title": "الأحداث الكبرى في إفريقيا",
+                "events": [{
+                    "country": "أوغندا",
+                    "text": "أعلن قائد الجيش الأوغندي عن خطط مفاجئة للتنحي وسط تكهنات متزايدة حول الخلافة الرئاسية من الأب إلى الابن."
+                }]
+            }]}
+            evidence = card.collect_event_enrichment_evidence(
+                generated, date(2026, 11, 6)
+            )
+            self.assertEqual(evidence, [])
+        finally:
+            card.search_related_news = original_search
+            card.extract_research_article = original_extract
+
+
     def test_event_enrichment_prompt_requires_evidence_and_preserves_all_events(self):
         from datetime import date
         generated = {"sections": [{
@@ -308,7 +348,7 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
         self.assertIn("The equipment was delivered", prompt)
 
     def test_event_enrichment_is_bounded_and_versioned(self):
-        self.assertEqual(card.EVENT_ENRICHMENT_VERSION, 3)
+        self.assertEqual(card.EVENT_ENRICHMENT_VERSION, 4)
         self.assertLessEqual(card.MAX_EVENTS_TO_RESEARCH, 10)
 
 
