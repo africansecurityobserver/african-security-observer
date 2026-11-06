@@ -630,7 +630,7 @@ def fetch_research_url(url, timeout=5):
     )
     with urllib.request.urlopen(request, timeout=timeout) as response:
         content_type = response.headers.get("Content-Type", "")
-        if "html" not in content_type.lower():
+        if not any(token in content_type.lower() for token in ("html", "xml", "rss")):
             return "", response.geturl()
         raw = response.read(900000)
         charset = response.headers.get_content_charset() or "utf-8"
