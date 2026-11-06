@@ -1139,7 +1139,7 @@ def decode_url(url):
         result = gnewsdecoder(
             url,
             interval=0.5,
-            timeout=15
+            timeout=8
         )
 
         if result.get("success"):
@@ -1613,6 +1613,7 @@ def fetch_rss_feed(feed_category, feed_url):
 def get_news():
     items = []
     seen_urls = set()
+    seen_feed_urls = set()
     seen_titles = set()
     feed_tasks = [
         (feed_category, feed_url)
@@ -1647,6 +1648,11 @@ def get_news():
                 if not is_relevant_security_news(title, description):
                     print(f"Rejected unrelated news: {title}")
                     continue
+
+                raw_url_key = normalize_url(google_url)
+                if raw_url_key in seen_feed_urls:
+                    continue
+                seen_feed_urls.add(raw_url_key)
 
                 article_url = decode_url(google_url)
                 if not article_url:
