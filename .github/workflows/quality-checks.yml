@@ -8,6 +8,7 @@ on:
       - "build_articles.py"
       - "index.html"
       - "strategic_cards/**"
+      - "monthly_assessment/**"
       - "tests/**"
       - "requirements.txt"
       - ".github/workflows/quality-checks.yml"
@@ -19,6 +20,7 @@ on:
       - "build_news.py"
       - "build_articles.py"
       - "index.html"
+      - "monthly_assessment/**"
       - "tests/**"
       - "requirements.txt"
       - ".github/workflows/quality-checks.yml"
@@ -42,4 +44,4 @@ jobs:
       - name: Run news quality tests
         run: python -m unittest discover -s tests -v
       - name: Check Python syntax
-        run: python -m compileall -q update_news.py build_news.py build_articles.py daily_cards strategic_cards research_cards
+        run: python -m compileall -q update_news.py build_news.py build_articles.py daily_cards strategic_cards research_cards monthly_assessment
