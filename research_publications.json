@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T04:27+01:00",
+  "updated": "2026-11-06T13:58+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -738,8 +738,8 @@
       "center_short": "Carnegie Endowment",
       "title": "Red Sea Mirage: Why Russia Is Still Waiting on a Military Base in Sudan - Carnegie Endowment for International Peace",
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNZWZIVXZOTWZ1bWllMm9ucjhCRUtFSi1wQzRWcE9lamhBZnJVOUpScnVCYVROdnpYOFhvY19rZUpNNjZzYWRrUURyMXBDYl9sb2ZKVjdOV0lQdjZ3MzZnQi0zOUE5U2xRUWk1UElMejBsdGhDc2s4VTFSZVIxV1Rlc3pUeGwzSWl1czUzdEIyUkVmQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-05T23:24+01:00",
-      "date": "2026-11-05",
+      "published": "2026-11-06T08:58+01:00",
+      "date": "2026-11-06",
       "source": "Carnegie Endowment for International Peace",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxNZWZIVXZOTWZ1bWllMm9ucjhCRUtFSi1wQzRWcE9lamhBZnJVOUpScnVCYVROdnpYOFhvY19rZUpNNjZzYWRrUURyMXBDYl9sb2ZKVjdOV0lQdjZ3MzZnQi0zOUE5U2xRUWk1UElMejBsdGhDc2s4VTFSZVIxV1Rlc3pUeGwzSWl1czUzdEIyUkVmQQ?oc=5\" target=\"_blank\">Red Sea Mirage: Why Russia Is Still Waiting on a Military Base in Sudan</a> <font color=\"#6f6f6f\">Carnegie Endowment for International Peace</font>",
       "center_site": "https://carnegieendowment.org/",
@@ -760,6 +760,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "إصدار موجز حول \"المادة 4 الخاصة بأوروبا: معالجة البيئة الأمنية المتغيرة في أوروبا\""
+    },
+    {
+      "center": "المعهد الدنماركي للدراسات الدولية (DIIS)",
+      "center_short": "DIIS",
+      "title": "How conflict legacies shape green, digital and political transitions in Africa - DIIS",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMWw2Y3NJUVpNalJVdVRBclFoMW1Fc2dLdWxtY1pTRURDazlLbXM4d2xfY1JUR0Nqb2xiSzRFeGIyMUZLeWZNZFZZZFZ4YnZ6WFJNN2FlZEV3c1IyMWVCeTdvRVJKNkQ2c3JUcXR5LWhiOUJ0aVFMVDZpZTJscy1USElBUEZRUHI5Q3J2bGVPcjg3eF9WZTFDc2J4dF9HRWVGb3JqaFJCeTNSVXZiT1E?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-05T11:19+01:00",
+      "date": "2026-11-05",
+      "source": "DIIS",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNMWw2Y3NJUVpNalJVdVRBclFoMW1Fc2dLdWxtY1pTRURDazlLbXM4d2xfY1JUR0Nqb2xiSzRFeGIyMUZLeWZNZFZZZFZ4YnZ6WFJNN2FlZEV3c1IyMWVCeTdvRVJKNkQ2c3JUcXR5LWhiOUJ0aVFMVDZpZTJscy1USElBUEZRUHI5Q3J2bGVPcjg3eF9WZTFDc2J4dF9HRWVGb3JqaFJCeTNSVXZiT1E?oc=5\" target=\"_blank\">How conflict legacies shape green, digital and political transitions in Africa</a> <font color=\"#6f6f6f\">DIIS</font>",
+      "center_site": "https://diis.dk/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "كيف تشكل تركات الصراع التحولات الخضراء والرقمية والسياسية في أفريقيا - DIIS"
     },
     {
       "center": "مركز أولويات الدفاع",
@@ -1152,20 +1166,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "هل يمكن أن يؤدي القتال في إثيوبيا إلى اندلاع حرب إقليمية في القرن الإفريقي؟"
-    },
-    {
-      "center": "وكالة أبحاث الدفاع السويدية (FOI)",
-      "center_short": "FOI",
-      "title": "Beyond Wagner: Russia's Military Engagement in Africa in the 2020s - Executive Summary - Totalförsvarets forskningsinstitut - FOI",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOY0J4bTY3a1RoaEtVNkJ0SFZIVHBWZnhEUjRFLTJUQktCTEdob09kejFQNFZnTlU2Y2dSekhVT1M2a05EZXBkd2VxYnFxWlRTSDJxQ05mQmdMNklhbVFOVVJuNTg4aEluTU41NjJFZFk5V2gzX1dZMDhhMFM5bXNOQXhHNld1a2xyQmU4?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-07T08:00+01:00",
-      "date": "2026-10-07",
-      "source": "Totalförsvarets forskningsinstitut - FOI",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxOY0J4bTY3a1RoaEtVNkJ0SFZIVHBWZnhEUjRFLTJUQktCTEdob09kejFQNFZnTlU2Y2dSekhVT1M2a05EZXBkd2VxYnFxWlRTSDJxQ05mQmdMNklhbVFOVVJuNTg4aEluTU41NjJFZFk5V2gzX1dZMDhhMFM5bXNOQXhHNld1a2xyQmU4?oc=5\" target=\"_blank\">Beyond Wagner: Russia's Military Engagement in Africa in the 2020s - Executive Summary</a> <font color=\"#6f6f6f\">Totalförsvarets forskningsinstitut - FOI</font>",
-      "center_site": "https://foi.se/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "ما وراء فاغنر: المشاركة العسكرية الروسية في أفريقيا في عشرينيات القرن العشرين - ملخص تنفيذي - معهد توتالفورسفاريتس فورسكينج - حرية المعلومات"
     }
   ]
 }
