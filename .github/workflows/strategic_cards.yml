@@ -1,18 +1,13 @@
 name: Generate Strategic Cards
 
 on:
-  # Run a validation/generation pass when the generator or its schedule changes.
-  push:
-    branches:
-      - main
-    paths:
-      - "strategic_cards/generate_strategic_cards.py"
-      - ".github/workflows/strategic_cards.yml"
+  # Manual runs remain available; code pushes do not consume Gemini quota.
   workflow_dispatch:
 
   schedule:
-    # Check for new major news and defense/arms stories every 15 minutes.
-    - cron: "*/15 * * * *"
+    # Every six hours, Tunisia local time; offset to avoid the top of the hour.
+    - cron: "17 0,6,12,18 * * *"
+      timezone: "Africa/Tunis"
 
 permissions:
   contents: write
@@ -50,6 +45,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.5-flash-lite
           CARD_SLOT: news
+          MAX_CARDS_PER_RUN: "1"
         run: |
           python -u strategic_cards/generate_strategic_cards.py
 
