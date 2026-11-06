@@ -673,7 +673,7 @@ def is_priority_global_organization_news(title, description):
     text = (str(title) + " " + str(description)).casefold()
     organizations = [
         "united nations", "un security council", "unctad", "nations unies",
-        "onu", "مجلس الأمن", "الأمم المتحدة",
+        "مجلس الأمن", "الأمم المتحدة",
         "north atlantic treaty organization", "nato", "otan",
         "حلف شمال الأطلسي", "الناتو",
         "european union", "european council", "european commission",
