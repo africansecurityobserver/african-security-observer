@@ -30,9 +30,10 @@ class NewsQualityTests(unittest.TestCase):
         title = "Mali army clashes with armed militants near the border"
         self.assertTrue(is_relevant_security_news(title, "Security forces reported fighting."))
 
-    def test_arms_story_stays_in_defense_category(self):
+    def test_arms_story_remains_in_general_news_without_dedicated_category(self):
         title = "Nigeria signs an arms deal for new fighter jets"
-        self.assertEqual(classify_news(title, "", "defense"), "defense")
+        self.assertTrue(is_relevant_security_news(title, ""))
+        self.assertEqual(classify_news(title, "", "rest"), "rest")
 
     def test_mauritania_is_classified_as_sahel(self):
         self.assertEqual(classify_news("Mauritania announces a border security operation", "", "rest"), "sahel")
