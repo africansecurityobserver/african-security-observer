@@ -119,6 +119,9 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
         self.assertIn("قائمة المراجعة الثانية ذات الأولوية", prompt)
         self.assertIn("تونس تتلقى معدات مكافحة الإرهاب", prompt)
         self.assertIn("لا يوجد سقف تحريري لعدد الأحداث", prompt)
+        self.assertIn("تسليم دولة معدات مكافحة الإرهاب إلى تونس", prompt)
+        self.assertIn("تهديدات قنابل متعددة تستهدف رحلات جوية تجارية", prompt)
+        self.assertIn("صفقة لتحديث سفن حربية", prompt)
 
     def test_keeps_concrete_defense_aid_and_equipment_deliveries(self):
         examples = [
