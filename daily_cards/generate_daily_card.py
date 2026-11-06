@@ -2450,9 +2450,14 @@ def main():
         return
 
     source_fingerprint = fingerprint_news_items(news_items)
-    if existing_card and existing_card.get("source_fingerprint") == source_fingerprint:
+    force_refresh = os.getenv("FORCE_CARD_REFRESH", "false").strip().lower() in ("1", "true", "yes")
+    if (existing_card
+            and existing_card.get("source_fingerprint") == source_fingerprint
+            and not force_refresh):
         print("The source-news packet is unchanged since the last successful update; skipping Gemini to preserve quota.")
         return
+    if force_refresh:
+        print("Manual force-refresh requested; processing the current source packet.")
 
     # --------------------------------------------------------
     # Previous events
