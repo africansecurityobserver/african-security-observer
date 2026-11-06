@@ -31,6 +31,8 @@ concurrency:
 jobs:
   update-news:
     runs-on: ubuntu-24.04
+    # Keep a stalled refresh from blocking the next 15-minute cycle.
+    timeout-minutes: 14
 
     steps:
       - name: Checkout repository
