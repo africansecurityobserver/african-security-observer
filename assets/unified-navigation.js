@@ -3,13 +3,13 @@
 const primary=[
  {label:'الأخبار',href:'./',key:'home'},
  {label:'الحوصلة الإخبارية',href:'./daily_cards.html',key:'daily'},
- {label:'التقديرات الاستراتيجية',href:'./strategic_cards.html',key:'strategic'},
  {label:'مراكز البحوث',href:'./research_centers.html',key:'research'},
+ {label:'التقديرات الاستراتيجية',href:'./strategic_cards.html',key:'strategic'},
  {label:'الأرشيف',href:'./#archiveSection',key:'archive'}
 ];
 const submenus={
  home:[['الأخبار الحالية','home'],['المقالات الاستراتيجية','analysis'],['أرشيف الأخبار','archive']],
- daily:[['الأخبار','./'],['التقديرات الاستراتيجية','./strategic_cards.html'],['مراكز البحوث','./research_centers.html']],
+ daily:[['الأخبار','./'],['مراكز البحوث','./research_centers.html'],['التقديرات الاستراتيجية','./strategic_cards.html']],
  strategic:[['البطاقات الإخبارية','./strategic_cards.html?type=news'],['التقدير الشهري','./strategic_cards.html?type=monthly'],['منشورات مراكز البحوث','./strategic_cards.html?type=research'],['مراكز البحوث','./research_centers.html']],
  research:[['أحدث المنشورات','./research_centers.html'],['أرشيف البطاقات المرتبطة','./strategic_cards.html?type=research'],['التقديرات الاستراتيجية','./strategic_cards.html']]
 };
