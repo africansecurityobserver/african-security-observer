@@ -1549,8 +1549,18 @@ def is_editorially_eligible(text_value):
     if any(term in value for term in routine_civilian_markers) and not has_security_context:
         return False
 
-    if any(term in value for term in routine_health_markers + routine_local_election_markers
-           + ceremonial_markers + political_rumor_markers):
+    if any(term in value for term in routine_health_markers + routine_local_election_markers):
+        return False
+
+    # These conjunctions avoid excluding substantive summit decisions or
+    # other genuine developments that merely mention the same words.
+    if "رسائل تحيات" in value and "الذكرى" in value:
+        return False
+    if "مثل" in value and ("القمة الفرانكوفونية" in value or "القمة الفرنكوفونية" in value):
+        return False
+    if "نفى" in value and "اعتزامه مغادرة" in value and "إدارة" in value:
+        return False
+    if any(term in value for term in political_rumor_markers):
         return False
 
     # Reject generic statements about the importance of cooperation when
@@ -1942,7 +1952,8 @@ def same_event_text(left, right):
         ["وقف إطلاق النار", "هدنة", "تمديد الهدنة", "ceasefire", "truce"],
         ["ضحايا", "قتلى", "مصابين", "جرحى", "killed", "wounded", "injured", "casualties"],
         ["ناقلات النفط", "ناقلات نفط", "ناقلة نفط", "ناقلة النفط", "oil tankers", "oil tanker"],
-        ["حريق", "حرائق", "اندلاع حرائق", "اشتعلت النيران", "caught fire", "fires broke out"],
+        ["حريق", "حرائق", "حرايق", "اندلاع حرائق", "اندلاع حرايق",
+         "اشتعلت النيران", "caught fire", "fires broke out"],
     ]
 
     shared_groups = sum(
