@@ -1222,11 +1222,6 @@ onclick="printCurrentArticle()">
    GENERAL
 ===================================================== */
 
-const regionNames = {
-africa:'إفريقيا',
-world:'العالم'
-};
-
 const home =
 document.getElementById('home');
 
@@ -1281,10 +1276,6 @@ let items = [];
 
 
 function card(item){
-
-const category =
-regionNames[item.region] ||
-'الأخبار';
 
 const source =
 item.source ||
