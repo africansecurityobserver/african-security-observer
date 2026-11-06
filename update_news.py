@@ -2034,6 +2034,10 @@ def clean_existing_archives():
                 valid.append(item)
             cleaned = deduplicate_articles(valid)
             old_items = data.get("items", []) if isinstance(data, dict) else data
+            if not cleaned and old_items:
+                os.remove(path)
+                print(f"Removed empty archive after cleanup: {path}")
+                continue
             if cleaned != old_items:
                 archive_data = {
                     "updated": datetime.now(timezone.utc).isoformat(),
