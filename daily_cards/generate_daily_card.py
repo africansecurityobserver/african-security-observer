@@ -594,7 +594,7 @@ def identify_strategic_review_candidates(news_items):
 
 # Version 3 adds Arabic Google News and Bing News RSS fallbacks. Bump this
 # when the cross-source discovery strategy changes so today's card can retry.
-EVENT_ENRICHMENT_VERSION = 3
+EVENT_ENRICHMENT_VERSION = 4
 MAX_EVENTS_TO_RESEARCH = 6
 MAX_ARTICLE_CHARS = 2600
 
@@ -755,7 +755,31 @@ def collect_event_enrichment_evidence(generated, reference_date):
         query += f" before:{(reference_date + timedelta(days=1)).isoformat()}"
         results = search_related_news(query, max_results=3)
         sources = []
+        rejected_stale = 0
+        rejected_unrelated = 0
         for result in results:
+            # Search feeds can return old stories despite date operators. Never
+            # use undated or out-of-window material as evidence for today's event.
+            published_dt = parse_datetime(result.get("published", ""))
+            if not published_dt or not (
+                reference_date - timedelta(days=3)
+                <= published_dt.date()
+                <= reference_date
+            ):
+                rejected_stale += 1
+                continue
+
+            # A matching country/topic is not enough. Require concrete event
+            # similarity between the selected event and the indexed headline
+            # plus snippet before opening or using the article.
+            indexed_text = " ".join((
+                str(result.get("title", "")),
+                str(result.get("description", ""))
+            )).strip()
+            if not same_event_text(event_text, indexed_text):
+                rejected_unrelated += 1
+                continue
+
             marker = normalize_event_for_match(result.get("title", ""))
             if not marker or marker in seen_titles:
                 continue
@@ -765,6 +789,11 @@ def collect_event_enrichment_evidence(generated, reference_date):
                 sources.append(article)
             if len(sources) >= 2:
                 break
+        if rejected_stale or rejected_unrelated:
+            print(
+                f"Supplementary evidence screening for {country or section_title}: "
+                f"stale={rejected_stale}, unrelated={rejected_unrelated}"
+            )
         if sources:
             packets.append({
                 "section": section_title,
