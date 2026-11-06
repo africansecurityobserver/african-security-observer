@@ -1500,6 +1500,108 @@ Africa/Tunis
     return prompt
 
 
+def build_candidate_review_prompt(reference_date, candidates, generated):
+    """Ask for a focused second-pass review of potentially important omitted items."""
+    candidate_lines = []
+    for item_number, item in candidates:
+        candidate_lines.append(
+            f"مادة رقم {item_number}\n"
+            f"العنوان: {item.get('title', '')}\n"
+            f"العنوان الأصلي: {item.get('original_title', '')}\n"
+            f"الوصف: {item.get('description', '')}\n"
+            f"الوصف الأصلي: {item.get('original_description', '')}"
+        )
+
+    existing_lines = []
+    for section in generated.get("sections", []):
+        if not isinstance(section, dict):
+            continue
+        title = section.get("title", "")
+        for event in section.get("events", []):
+            if isinstance(event, dict) and event.get("text"):
+                existing_lines.append(
+                    f"- القسم: {title} | الدولة: {event.get('country', '')} | "
+                    f"{event.get('text', '')}"
+                )
+
+    sections = "\n".join(title for _, title in EXPECTED_SECTIONS)
+    candidate_text = "\n\n".join(candidate_lines) or "لا توجد مواد مرشحة."
+    existing_text = "\n".join(existing_lines) or "لا توجد أحداث مختارة بعد."
+
+    return f"""
+أنت محرر تدقيق ثانٍ في صحيفة استراتيجية متخصصة في الأمن والدفاع.
+التاريخ: {reference_date.strftime('%d/%m/%Y')} (توقيت تونس).
+
+مهمتك ليست إعادة إنشاء البطاقة. راجع قائمة المواد المرشحة أدناه
+واستخرج فقط التطورات المهمة المستقلة التي غابت عن المسودة الأولى.
+
+المسودة الأولى (ممنوع تكرار أحداثها):
+{existing_text}
+
+المواد التي يجب فحصها واحدة واحدة:
+{candidate_text}
+
+معايير الإدراج:
+- المساعدات والتجهيزات العسكرية والأمنية المحددة، بما فيها معدات
+  مكافحة الإرهاب والأمن البحري ومراقبة الحدود.
+- التغيرات الميدانية المؤثرة، مثل السيطرة على مناطق واستعادتها
+  وتدمير الآليات العسكرية والتقدم على جبهات القتال.
+- الانتشار أو الخطط الرسمية لنشر قوات أجنبية بأعداد ومهام محددة.
+- التهديدات الأمنية العابرة للحدود التي تستهدف الطيران المدني
+  أو المطارات أو المنشآت الحيوية.
+- الصفقات الدفاعية وتحديث السفن والطائرات وأنظمة الدفاع ومكافحة المسيّرات.
+- تنحي أو استقالة أو تعيين القيادات العسكرية العليا.
+- المناورات الكبرى متعددة الجنسيات، خصوصاً بمشاركة آلاف الجنود.
+- التجسس وتهريب الصواريخ والأسلحة واعتقال أشخاص ذوي أدوار محددة
+  مرتبطة بتنظيمات إرهابية أو عمليات مسلحة.
+- الهجمات والقصف الذي يوقع أعداداً كبيرة من الضحايا المدنيين
+  في سياق نزاع مسلح.
+
+لا تدرج تصريحاً عاماً عن أهمية التعاون دون واقعة محددة، ولا خبراً
+روتينياً عن اعتقال جنائي، ولا شائعة أو توقعاً. انسب الحصائل
+والادعاءات إلى الجهة التي أعلنتها إذا لم تكن مستقلة التحقق.
+ادمج التكرار، لكن لا تدمج واقعتين مختلفتين لمجرد أنهما تخصان الدولة
+نفسها. لا تضع مصادر أو روابط.
+
+صنّف الأحداث حصراً ضمن هذه الأقسام:
+{sections}
+
+أخرج JSON فقط بالبنية نفسها: sections، وكل قسم يحتوي title وevents،
+وكل حدث يحتوي country وtext. أعد فقط الأحداث الجديدة التي لا
+توجد في المسودة الأولى. إذا لم تجد حدثاً مؤهلاً، أعد أقساماً فارغة.
+"""
+
+
+def merge_generated_outputs(primary, supplemental):
+    """Append second-pass events without replacing the first-pass sections."""
+    merged = {
+        "sections": [
+            dict(section, events=list(section.get("events", [])))
+            for section in primary.get("sections", [])
+            if isinstance(section, dict)
+        ]
+    }
+    for extra_section in supplemental.get("sections", []):
+        if not isinstance(extra_section, dict):
+            continue
+        extra_title = str(extra_section.get("title", "")).strip()
+        target = next((
+            section for section in merged["sections"]
+            if str(section.get("title", "")).strip() == extra_title
+        ), None)
+        if target is None:
+            merged["sections"].append(dict(
+                extra_section,
+                events=list(extra_section.get("events", []))
+            ))
+            continue
+        target.setdefault("events", []).extend(
+            event for event in extra_section.get("events", [])
+            if isinstance(event, dict)
+        )
+    return merged
+
+
 # ============================================================
 # GEMINI GENERATION
 # ============================================================
@@ -2901,6 +3003,60 @@ def main():
         prompt
     )
 
+    # Run one focused second-pass audit per Tunisia calendar day.
+    # This adds recall without doubling every scheduled refresh or
+    # repeatedly spending quota on the same already-reviewed candidates.
+    audit_attempted_before = bool(
+        existing_card
+        and existing_card.get("candidate_audit_attempt_date") == reference_date.isoformat()
+    )
+    candidate_audit_attempted = audit_attempted_before
+    candidate_audit_completed = bool(
+        existing_card and existing_card.get("candidate_audit_completed")
+    )
+    strategic_candidates = identify_strategic_review_candidates(news_items)
+
+    if not candidate_audit_attempted:
+        candidate_audit_attempted = True
+        if strategic_candidates:
+            print(
+                f"Starting one-time second-pass audit for "
+                f"{len(strategic_candidates)} strategic candidates."
+            )
+            try:
+                review_prompt = build_candidate_review_prompt(
+                    reference_date, strategic_candidates, generated
+                )
+                supplemental = generate_with_gemini(review_prompt)
+                before_review_count = sum(
+                    len(section.get("events", []))
+                    for section in generated.get("sections", [])
+                    if isinstance(section, dict)
+                )
+                generated = merge_generated_outputs(generated, supplemental)
+                after_review_count = sum(
+                    len(section.get("events", []))
+                    for section in generated.get("sections", [])
+                    if isinstance(section, dict)
+                )
+                candidate_audit_completed = True
+                print(
+                    "Second-pass candidate audit completed: "
+                    f"added_before_dedup={max(0, after_review_count - before_review_count)}"
+                )
+            except Exception as error:
+                # Preserve the valid first-pass card if the optional review
+                # call fails; the attempt marker prevents repeated quota use.
+                print(
+                    "Second-pass candidate audit did not complete; "
+                    f"keeping first-pass output: {type(error).__name__}: {error}"
+                )
+        else:
+            candidate_audit_completed = True
+            print("No strategic candidates found for the second-pass audit.")
+    else:
+        print("Second-pass candidate audit already attempted today; skipping extra Gemini call.")
+
     # --------------------------------------------------------
     # Normalize
     # --------------------------------------------------------
@@ -2927,6 +3083,13 @@ def main():
         "source_fingerprint": source_fingerprint,
 
         "source_news_count": len(news_items),
+
+        "candidate_audit_attempt_date": (
+            reference_date.isoformat() if candidate_audit_attempted
+            else (existing_card or {}).get("candidate_audit_attempt_date")
+        ),
+
+        "candidate_audit_completed": candidate_audit_completed,
 
         "sections": sections
     }
