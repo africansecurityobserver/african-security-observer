@@ -9,6 +9,7 @@ from urllib.parse import quote_plus, quote, urlsplit, urlunsplit, parse_qsl, url
 from googlenewsdecoder import gnewsdecoder
 from deep_translator import GoogleTranslator
 from urllib.request import Request, urlopen
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 # =========================================================
@@ -1594,95 +1595,75 @@ def load_existing_news():
 # GET NEW NEWS
 # =========================================================
 
+def fetch_rss_feed(feed_category, feed_url):
+    """Fetch and parse one RSS feed; isolated so slow feeds do not block others."""
+    try:
+        request = Request(
+            feed_url,
+            headers={"User-Agent": "Mozilla/5.0"}
+        )
+        with urlopen(request, timeout=8) as response:
+            feed_content = response.read()
+        return feed_category, feed_url, feedparser.parse(feed_content)
+    except Exception as e:
+        print(f"Skipping feed after fetch error ({feed_category}): {e}")
+        return feed_category, feed_url, None
+
+
 def get_news():
-
     items = []
-
     seen_urls = set()
-
     seen_titles = set()
+    feed_tasks = [
+        (feed_category, feed_url)
+        for feed_category, feeds in RSS_FEEDS.items()
+        for feed_url in feeds
+    ]
 
-    for feed_category, feeds in RSS_FEEDS.items():
+    # Retrieve independent feeds concurrently. This keeps the 15-minute
+    # schedule practical even when several RSS providers are slow or offline.
+    with ThreadPoolExecutor(max_workers=12) as executor:
+        futures = [
+            executor.submit(fetch_rss_feed, feed_category, feed_url)
+            for feed_category, feed_url in feed_tasks
+        ]
 
-        for feed_url in feeds:
-
-            print(
-                f"Reading feed: {feed_category}"
-            )
-
-            # Fetch RSS with a strict timeout so one unresponsive feed
-            # cannot stall the entire scheduled update.
-            try:
-                request = Request(
-                    feed_url,
-                    headers={"User-Agent": "Mozilla/5.0"}
-                )
-                with urlopen(request, timeout=8) as response:
-                    feed_content = response.read()
-                feed = feedparser.parse(feed_content)
-            except Exception as e:
-                print(f"Skipping feed after fetch error: {e}")
+        for future in as_completed(futures):
+            feed_category, feed_url, feed = future.result()
+            if feed is None:
                 continue
 
-            for entry in feed.entries[
-                :MAX_NEWS_PER_FEED
-            ]:
+            print(f"Reading feed: {feed_category}")
 
-                title = entry.get(
-                    "title",
-                    ""
-                ).strip()
-
-                google_url = entry.get(
-                    "link",
-                    ""
-                ).strip()
-
+            for entry in feed.entries[:MAX_NEWS_PER_FEED]:
+                title = str(entry.get("title", "") or "").strip()
+                google_url = str(entry.get("link", "") or "").strip()
                 if not title or not google_url:
                     continue
 
                 description = clean_html(
-                    entry.get(
-                        "summary",
-                        entry.get(
-                            "description",
-                            ""
-                        )
-                    )
+                    entry.get("summary", entry.get("description", ""))
                 )
-
-                if not is_relevant_security_news(
-                    title,
-                    description
-                ):
-
-                    print(
-                        f"Rejected unrelated news: {title}"
-                    )
-
+                if not is_relevant_security_news(title, description):
+                    print(f"Rejected unrelated news: {title}")
                     continue
 
-                article_url = decode_url(
-                    google_url
-                )
-
-                if article_url in seen_urls:
+                article_url = decode_url(google_url)
+                if not article_url:
                     continue
 
+                normalized_url = normalize_url(article_url)
                 normalized_title = re.sub(
                     r"[\W_]+",
                     "",
                     title.casefold(),
                     flags=re.UNICODE
                 )
-
-                if normalized_title in seen_titles:
+                if normalized_url in seen_urls or normalized_title in seen_titles:
                     continue
 
                 published = entry.get("published") or entry.get("updated") or ""
                 published_dt = parse_published_datetime(published)
-
-                # Freshness cannot be verified without a usable publication date.
                 if published_dt is None:
                     print(f"Skipping undated RSS item: {title}")
                     continue
@@ -1690,8 +1671,6 @@ def get_news():
                 age = datetime.now(timezone.utc) - published_dt
                 if age > timedelta(hours=MAX_NEWS_AGE_HOURS):
                     continue
-
-                # Reject clearly future-dated feed entries.
                 if age < -timedelta(hours=24):
                     continue
 
@@ -1699,8 +1678,6 @@ def get_news():
                 source = source_obj.get("title", "") if hasattr(source_obj, "get") else ""
                 source = str(source or "").strip()
 
-                # Some curated Arabic RSS feeds carry the original publisher in
-                # their own summary instead of the RSS <source> field.
                 source_match = re.search(
                     r"(?:—|–|-)\s*تغطية من مصدر واحد:\s*([^.!؟]+)",
                     description,
@@ -1720,54 +1697,29 @@ def get_news():
                     host = urlsplit(article_url).hostname or ""
                     source = host.removeprefix("www.").strip() or "مصدر غير معروف"
 
-                category = classify_news(
-                    title,
-                    description,
-                    feed_category
-                )
-
-                # ترجمة الخبر الجديد
-                arabic_title, arabic_description = (
-                    translate_article(
-                        title,
-                        description
-                    )
-                )
+                category = classify_news(title, description, feed_category)
+                arabic_title, arabic_description = translate_article(title, description)
 
                 items.append({
-
                     "title": arabic_title,
-
                     "description": arabic_description,
-
+                    "summary": arabic_description,
                     "original_title": title,
-
                     "original_description": description,
-
-                    "url": article_url,
-
+                    "url": normalized_url,
                     "source": source,
-
                     "published": published,
-
                     "category": category,
-
                     "region": classify_region(title, description)
                 })
 
-                seen_urls.add(
-                    article_url
-                )
-
-                seen_titles.add(
-                    normalized_title
-                )
+                seen_urls.add(normalized_url)
+                seen_titles.add(normalized_title)
 
     items.sort(
         key=lambda x: parse_published_datetime(x.get("published")) or datetime.min.replace(tzinfo=timezone.utc),
         reverse=True
     )
-
     return items
 
 
