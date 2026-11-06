@@ -4,18 +4,22 @@ const primary=[
  {label:'الأخبار',href:'./',key:'home'},
  {label:'الحوصلة الإخبارية',href:'./daily_cards.html',key:'daily'},
  {label:'مراكز البحوث',href:'./research_centers.html',key:'research'},
- {label:'التقديرات الاستراتيجية',href:'./strategic_cards.html',key:'strategic'},
+ {label:'التقديرات الاستراتيجية من المصادر الإخبارية',href:'./strategic_cards.html?type=news',key:'strategicnews'},
+ {label:'التقديرات الاستراتيجية من مراكز البحوث',href:'./strategic_cards.html?type=research',key:'strategicresearch'},
+ {label:'التقديرات الشهرية الشاملة',href:'./strategic_cards.html?type=monthly',key:'strategicmonthly'},
  {label:'الأرشيف',href:'./#archiveSection',key:'archive'}
 ];
 const submenus={
  home:[['الأخبار الحالية','home'],['المقالات الاستراتيجية','analysis'],['أرشيف الأخبار','archive']],
  daily:[['الأخبار','./'],['مراكز البحوث','./research_centers.html'],['التقديرات من المصادر الإخبارية','./strategic_cards.html?type=news'],['التقديرات من مراكز البحوث','./strategic_cards.html?type=research'],['التقديرات الشهرية الشاملة','./strategic_cards.html?type=monthly']],
- strategic:[['البطاقات الإخبارية','./strategic_cards.html?type=news'],['التقدير الشهري','./strategic_cards.html?type=monthly'],['منشورات مراكز البحوث','./strategic_cards.html?type=research'],['مراكز البحوث','./research_centers.html']],
+ strategicnews:[['التقديرات من المصادر الإخبارية','./strategic_cards.html?type=news'],['التقديرات من مراكز البحوث','./strategic_cards.html?type=research'],['التقديرات الشهرية الشاملة','./strategic_cards.html?type=monthly']],
+ strategicresearch:[['التقديرات من المصادر الإخبارية','./strategic_cards.html?type=news'],['التقديرات من مراكز البحوث','./strategic_cards.html?type=research'],['التقديرات الشهرية الشاملة','./strategic_cards.html?type=monthly']],
+ strategicmonthly:[['التقديرات من المصادر الإخبارية','./strategic_cards.html?type=news'],['التقديرات من مراكز البحوث','./strategic_cards.html?type=research'],['التقديرات الشهرية الشاملة','./strategic_cards.html?type=monthly']],
  research:[['أحدث المنشورات','./research_centers.html'],['التقديرات الاستراتيجية من مراكز البحوث','./strategic_cards.html?type=research']]
 };
 const path=location.pathname.split('/').pop()||'index.html';
 const params=new URLSearchParams(location.search);
-let pageKey=path==='daily_cards.html'?'daily':path==='strategic_cards.html'?'strategic':path==='research_centers.html'?'research':'home';
+let pageKey=path==='daily_cards.html'?'daily':path==='strategic_cards.html'?({news:'strategicnews',research:'strategicresearch',monthly:'strategicmonthly'}[params.get('type')]||'strategicnews'):path==='research_centers.html'?'research':'home';
 function el(tag,attrs,html){const n=document.createElement(tag);Object.keys(attrs||{}).forEach(k=>n.setAttribute(k,attrs[k]));if(html!==undefined)n.innerHTML=html;return n;}
 function makeSubnav(key){
  const bar=el('nav',{class:'aso-subnav','aria-label':'التنقل داخل القسم'});
