@@ -1,16 +1,10 @@
 name: Generate Research-Center Strategic Cards
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "research_cards/generate_research_cards.py"
-      - "research_publications.json"
-      - ".github/workflows/research_cards.yml"
+  # New code and schedule commits do not trigger unplanned Gemini calls.
   schedule:
-    # Process the publication backlog hourly; the collector refreshes the queue every three hours.
-    - cron: "37 * * * *"
+    # Every six hours, staggered from strategic-news cards.
+    - cron: "37 1,7,13,19 * * *"
       timezone: "Africa/Tunis"
   workflow_dispatch:
 
@@ -46,7 +40,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.5-flash-lite
-          MAX_RESEARCH_CARDS_PER_RUN: "6"
+          MAX_RESEARCH_CARDS_PER_RUN: "1"
         run: python -u research_cards/generate_research_cards.py
       - name: Commit research cards and archive
         run: |
