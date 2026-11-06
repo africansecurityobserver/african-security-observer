@@ -3,6 +3,10 @@ import json
 import os
 import sys
 import time
+import urllib.request
+import urllib.parse
+import xml.etree.ElementTree as ET
+from html.parser import HTMLParser
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -290,6 +294,7 @@ def get_news_for_period(slot, reference_date):
                 ),
                 "category": item.get("category", ""),
                 "source": item.get("source", ""),
+                "url": item.get("url", ""),
                 "published": published,
             })
 
@@ -581,6 +586,192 @@ def identify_strategic_review_candidates(news_items):
         if any(marker.casefold() in searchable for marker in STRATEGIC_REVIEW_MARKERS):
             candidates.append((index, item))
     return candidates
+
+
+# ============================================================
+# CROSS-SOURCE EVENT ENRICHMENT
+# ============================================================
+
+EVENT_ENRICHMENT_VERSION = 1
+MAX_EVENTS_TO_RESEARCH = 10
+MAX_ARTICLE_CHARS = 2600
+
+
+class ArticleTextParser(HTMLParser):
+    """Dependency-free extraction of article paragraphs."""
+    def __init__(self):
+        super().__init__()
+        self.in_paragraph = False
+        self.current = []
+        self.paragraphs = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "p":
+            self.in_paragraph = True
+            self.current = []
+
+    def handle_endtag(self, tag):
+        if tag == "p" and self.in_paragraph:
+            value = " ".join(" ".join(self.current).split())
+            if len(value) > 50:
+                self.paragraphs.append(value)
+            self.current = []
+            self.in_paragraph = False
+
+    def handle_data(self, data):
+        if self.in_paragraph and data and data.strip():
+            self.current.append(data.strip())
+
+
+def fetch_research_url(url, timeout=5):
+    request = urllib.request.Request(
+        url,
+        headers={"User-Agent": "Mozilla/5.0 (compatible; AfricanSecurityObserver/1.0)"}
+    )
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        content_type = response.headers.get("Content-Type", "")
+        if "html" not in content_type.lower():
+            return "", response.geturl()
+        raw = response.read(900000)
+        charset = response.headers.get_content_charset() or "utf-8"
+        return raw.decode(charset, errors="replace"), response.geturl()
+
+
+def search_related_news(query, max_results=3):
+    params = urllib.parse.urlencode({
+        "q": query, "hl": "en-US", "gl": "US", "ceid": "US:en"
+    })
+    url = "https://news.google.com/rss/search?" + params
+    try:
+        xml_text, _ = fetch_research_url(url, timeout=7)
+        root = ET.fromstring(xml_text)
+    except Exception as error:
+        print(f"Supplementary search unavailable: {type(error).__name__}")
+        return []
+
+    results = []
+    for item in root.findall(".//item")[:max_results]:
+        title = item.findtext("title", default="").strip()
+        link = item.findtext("link", default="").strip()
+        description = item.findtext("description", default="").strip()
+        source_node = item.find("source")
+        source = (source_node.text or "").strip() if source_node is not None else ""
+        published = item.findtext("pubDate", default="").strip()
+        if title and link:
+            results.append({
+                "title": title, "link": link, "description": description,
+                "source": source, "published": published
+            })
+    return results
+
+
+def extract_research_article(result):
+    try:
+        html, final_url = fetch_research_url(result["link"], timeout=5)
+        parser = ArticleTextParser()
+        parser.feed(html)
+        excerpt = " ".join(parser.paragraphs)
+        if len(excerpt) < 180:
+            excerpt = result.get("description", "")
+        return {
+            "title": result.get("title", ""),
+            "source": result.get("source", ""),
+            "published": result.get("published", ""),
+            "url": final_url or result.get("link", ""),
+            "excerpt": excerpt[:MAX_ARTICLE_CHARS]
+        }
+    except Exception as error:
+        print(f"Article extraction unavailable: {type(error).__name__}")
+        return {
+            "title": result.get("title", ""),
+            "source": result.get("source", ""),
+            "published": result.get("published", ""),
+            "url": result.get("link", ""),
+            "excerpt": result.get("description", "")[:MAX_ARTICLE_CHARS]
+        }
+
+
+def collect_event_enrichment_evidence(generated, reference_date):
+    """Research only sparse events already selected for the daily card."""
+    candidates = []
+    for section in generated.get("sections", []):
+        if not isinstance(section, dict):
+            continue
+        for event in section.get("events", []):
+            if not isinstance(event, dict):
+                continue
+            text_value = str(event.get("text", "")).strip()
+            country = str(event.get("country", "")).strip()
+            if text_value and len(text_value) < 260:
+                candidates.append((section.get("title", ""), country, text_value))
+
+    candidates.sort(key=lambda item: len(item[2]))
+    packets = []
+    seen_titles = set()
+    for section_title, country, event_text in candidates[:MAX_EVENTS_TO_RESEARCH]:
+        query = " ".join(part for part in (country, event_text[:180]) if part)
+        query += f" after:{(reference_date - timedelta(days=3)).isoformat()}"
+        query += f" before:{(reference_date + timedelta(days=1)).isoformat()}"
+        results = search_related_news(query, max_results=3)
+        sources = []
+        for result in results:
+            marker = normalize_event_for_match(result.get("title", ""))
+            if not marker or marker in seen_titles:
+                continue
+            seen_titles.add(marker)
+            article = extract_research_article(result)
+            if len(str(article.get("excerpt", "")).strip()) >= 100:
+                sources.append(article)
+            if len(sources) >= 2:
+                break
+        if sources:
+            packets.append({
+                "section": section_title,
+                "country": country,
+                "event": event_text,
+                "sources": sources
+            })
+        print(f"Supplementary research: {country or section_title} -> {len(sources)} sources")
+    return packets
+
+
+def build_event_enrichment_prompt(generated, evidence_packets, reference_date):
+    sections = []
+    for section in generated.get("sections", []):
+        if not isinstance(section, dict):
+            continue
+        events = [
+            {"country": event.get("country", ""), "text": event.get("text", "")}
+            for event in section.get("events", [])
+            if isinstance(event, dict) and event.get("text")
+        ]
+        sections.append({"title": section.get("title", ""), "events": events})
+
+    return f"""
+أنت محرر تحقق وإثراء للأخبار الأمنية والاستراتيجية.
+التاريخ المرجعي: {reference_date.isoformat()} (توقيت تونس).
+
+حسّن صياغة الأحداث الموجودة فقط باستخدام الأدلة المسترجعة أدناه.
+لا تضف أحداثاً جديدة ولا تحذف أي حدث.
+
+الأحداث الحالية:
+{json.dumps(sections, ensure_ascii=False, indent=2)}
+
+الأدلة المسترجعة:
+{json.dumps(evidence_packets, ensure_ascii=False, indent=2)}
+
+قواعد إلزامية:
+- استخدم فقط التفاصيل التي تدعمها بوضوح مقتطفات المصادر أو نصوص المقالات.
+- تحقق من تطابق الحدث عبر الأطراف والمكان والتاريخ والفعل.
+- لا تضف أرقاماً أو أسماء أو حصائل أو أنواع معدات غير مثبتة.
+- عند اختلاف الروايات أو الأرقام، لا تحسم الخلاف.
+- لا تستنتج سبباً أو نتيجة أو حمولة أو مهمة غير مذكورة.
+- إذا لم تظهر تفاصيل موثوقة جديدة، أعد نص الحدث كما هو.
+- اجعل كل حدث فقرة عربية موجزة تبدأ بفعل واضح.
+- لا تذكر أسماء المصادر أو الروابط داخل نص الحدث.
+- أعد جميع الأحداث في الأقسام نفسها، ولا تغير تصنيفها.
+- أخرج JSON فقط: sections، وكل قسم title وevents، وكل حدث country وtext.
+"""
 
 
 # ============================================================
