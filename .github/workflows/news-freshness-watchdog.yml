@@ -2,9 +2,8 @@ name: News Freshness Watchdog
 
 on:
   schedule:
-    # Independent safety check: recover if the main 15-minute news updater stops running.
-    - cron: "7,22,37,52 * * * *"
-      timezone: "UTC"
+    # Check independently every 10 minutes; GitHub Actions cron schedules use UTC.
+    - cron: "3,13,23,33,43,53 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -62,7 +61,7 @@ jobs:
           print(f"Latest news-updater run: {latest_at}")
           print(f"Age of latest run: {age}")
 
-          if age is not None and age <= timedelta(minutes=35):
+          if age is not None and age <= timedelta(minutes=25):
               print("The scheduled news updater has run recently; no recovery needed.")
               raise SystemExit(0)
 
