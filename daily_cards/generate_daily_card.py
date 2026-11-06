@@ -25,6 +25,9 @@ TIMEZONE = ZoneInfo("Africa/Tunis")
 
 MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 
+# Bump only when the editorial second-pass policy materially changes.
+CANDIDATE_AUDIT_VERSION = 2
+
 # Allow the full eligible daily feed through on normal-volume days.
 # If volume exceeds this ceiling, select across categories instead of taking
 # only the newest tail of the chronological feed.
@@ -1555,7 +1558,31 @@ def build_candidate_review_prompt(reference_date, candidates, generated):
 - التجسس وتهريب الصواريخ والأسلحة واعتقال أشخاص ذوي أدوار محددة
   مرتبطة بتنظيمات إرهابية أو عمليات مسلحة.
 - الهجمات والقصف الذي يوقع أعداداً كبيرة من الضحايا المدنيين
-  في سياق نزاع مسلح.
+  في سياق نزاع مسلح، حتى عندما تتضارب الاتهامات بشأن الجهة المسؤولة.
+- الاجتماعات أو الاتصالات الرسمية بين وزيري دفاع أو قادة عسكريين
+  عندما يكون موضوعها الأمن أو الدفاع محدداً، حتى إن لم ينته اللقاء
+  إلى توقيع اتفاق.
+
+أمثلة محددة يجب التحقق منها في المواد المرشحة إن كانت موجودة:
+- خطة رسمية للصومال لنشر 20 ألف جندي أجنبي، مع تعهد تركي بإرسال
+  15 ألفاً: أدرجها كتوجه/خطة معلنة لا كقوات وصلت بالفعل، إذا تأكدت
+  الأرقام والجهات من المادة.
+- إعلان قائد الجيش الأوغندي خططه للتنحي: أدرجه كتطور في القيادة
+  العسكرية، وافصل الخبر عن تكهنات الخلافة الرئاسية.
+- صفقة شركة بناء سفن إسبانية لتحديث سفن حربية قديمة لبحرية إفريقية:
+  أدرجها كتحديث للقدرات البحرية إذا كانت الصفقة مؤكدة، ولا تخمّن
+  اسم الدولة المستفيدة إذا لم يرد.
+- مقتل مدنيين في قصف سوق شعبي بتعز: أدرج التطور في اليمن مع ذكر
+  الحصيلة المنقولة والتأكيد على تضارب الاتهامات إذا ورد.
+- إعلان القوات الحكومية اليمنية حصيلة 387 عنصراً و1211 عملية
+  و96 آلية: أدرجه كتقرير عمليات معلن إذا كانت الفترة أو مناسبة
+  الإعلان واضحة، وانسب الأرقام إلى الجهة المعلنة.
+- اتصال أو اجتماع وزير الدفاع التركي مع نظيره الأوكراني، واجتماع
+  لجنة التعاون الدفاعي الإماراتية الألمانية: أدرج الواقعة الرسمية
+  إذا كان موضوع الدفاع والأمن محدداً في المادة، دون اختلاق نتائج.
+- اعتقال مشتبه به في تفجير سيارة استهدف مسؤولاً محلياً في دنيبرو:
+  أدرجه إذا كانت المادة تربط التفجير باستهداف أمني أو سياسي،
+  لا إذا ظهر أنه حادث جنائي اعتيادي.
 
 لا تدرج تصريحاً عاماً عن أهمية التعاون دون واقعة محددة، ولا خبراً
 روتينياً عن اعتقال جنائي، ولا شائعة أو توقعاً. انسب الحصائل
@@ -2975,40 +3002,57 @@ def main():
     )
 
     # --------------------------------------------------------
-    # Build prompt
+    # First-pass generation (or audit-only refresh)
     # --------------------------------------------------------
 
     current_events = load_current_day_events(reference_date)
     print(f"Existing events supplied for cumulative update: {len(current_events)}")
 
-    prompt = build_prompt(
-        slot=slot,
-        reference_date=reference_date,
-        start=start,
-        end=end,
-        news_items=news_items,
-        previous_events=previous_events,
-        current_events=current_events
+    audit_version_pending = bool(
+        existing_card
+        and existing_card.get("candidate_audit_version") != CANDIDATE_AUDIT_VERSION
+    )
+    same_source_packet = bool(
+        existing_card
+        and existing_card.get("source_fingerprint") == source_fingerprint
     )
 
-    # --------------------------------------------------------
-    # Gemini
-    # --------------------------------------------------------
+    if same_source_packet and audit_version_pending:
+        # Reuse the already-published first-pass card and spend only one
+        # additional Gemini request on the improved audit policy.
+        generated = {
+            "sections": [
+                {
+                    "title": section.get("title", ""),
+                    "events": list(section.get("events", []))
+                }
+                for section in existing_card.get("sections", [])
+                if isinstance(section, dict)
+            ]
+        }
+        print(
+            "Source packet unchanged; reusing current card and running "
+            "the upgraded candidate audit only."
+        )
+    else:
+        prompt = build_prompt(
+            slot=slot,
+            reference_date=reference_date,
+            start=start,
+            end=end,
+            news_items=news_items,
+            previous_events=previous_events,
+            current_events=current_events
+        )
 
-    print(
-        f"Generating card with Gemini model: {MODEL_NAME}"
-    )
+        print(f"Generating card with Gemini model: {MODEL_NAME}")
+        generated = generate_with_gemini(prompt)
 
-    generated = generate_with_gemini(
-        prompt
-    )
-
-    # Run one focused second-pass audit per Tunisia calendar day.
-    # This adds recall without doubling every scheduled refresh or
-    # repeatedly spending quota on the same already-reviewed candidates.
+    # Run one focused second-pass audit per editorial version and day.
+    # Routine scheduled refreshes continue to use one Gemini request.
     audit_attempted_before = bool(
         existing_card
-        and existing_card.get("candidate_audit_attempt_date") == reference_date.isoformat()
+        and existing_card.get("candidate_audit_version") == CANDIDATE_AUDIT_VERSION
     )
     candidate_audit_attempted = audit_attempted_before
     candidate_audit_completed = bool(
@@ -3090,6 +3134,11 @@ def main():
         ),
 
         "candidate_audit_completed": candidate_audit_completed,
+
+        "candidate_audit_version": (
+            CANDIDATE_AUDIT_VERSION if candidate_audit_attempted
+            else (existing_card or {}).get("candidate_audit_version")
+        ),
 
         "sections": sections
     }
