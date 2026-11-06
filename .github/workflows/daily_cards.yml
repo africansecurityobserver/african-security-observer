@@ -16,9 +16,10 @@ on:
         default: "daily"
 
   schedule:
-    # Create the daily card at 06:00, then refresh it every 15 minutes.
-    # All times use Tunisia local time.
-    - cron: "*/15 6-23 * * *"
+    # Offset scheduled runs away from the start of the hour, when GitHub
+    # Actions schedule queues are more likely to be congested.
+    # First daily generation: 06:07 Tunisia time; refresh every 15 minutes.
+    - cron: "7,22,37,52 6-23 * * *"
       timezone: "Africa/Tunis"
 
     # Final catch-up shortly before the day closes.
