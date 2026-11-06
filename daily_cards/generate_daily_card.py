@@ -3293,6 +3293,63 @@ def main():
         print("Second-pass candidate audit already attempted today; skipping extra Gemini call.")
 
     # --------------------------------------------------------
+    # Cross-source enrichment of sparse selected events
+    # --------------------------------------------------------
+
+    enrichment_attempted_before = bool(
+        existing_card
+        and existing_card.get("event_enrichment_version") == EVENT_ENRICHMENT_VERSION
+        and existing_card.get("event_enrichment_attempted")
+    )
+    enrichment_attempted = enrichment_attempted_before
+    enrichment_completed = bool(
+        existing_card and existing_card.get("event_enrichment_completed")
+    )
+
+    if not enrichment_attempted:
+        enrichment_attempted = True
+        try:
+            print("Starting bounded cross-source research for sparse selected events.")
+            evidence_packets = collect_event_enrichment_evidence(
+                generated, reference_date
+            )
+            if evidence_packets:
+                enrichment_prompt = build_event_enrichment_prompt(
+                    generated, evidence_packets, reference_date
+                )
+                enriched = generate_with_gemini(enrichment_prompt)
+                original_count = sum(
+                    len(section.get("events", []))
+                    for section in generated.get("sections", [])
+                    if isinstance(section, dict)
+                )
+                enriched_count = sum(
+                    len(section.get("events", []))
+                    for section in enriched.get("sections", [])
+                    if isinstance(section, dict)
+                )
+                if enriched_count != original_count:
+                    raise RuntimeError(
+                        "Enrichment response changed the event count; preserving original card."
+                    )
+                generated = enriched
+                print(
+                    "Cross-source enrichment completed for "
+                    f"{len(evidence_packets)} events."
+                )
+            else:
+                print("No sufficiently detailed supplementary sources were found.")
+            enrichment_completed = True
+        except Exception as error:
+            print(
+                "Cross-source enrichment failed; preserving the valid card: "
+                f"{type(error).__name__}: {error}"
+            )
+            enrichment_completed = False
+    else:
+        print("Cross-source enrichment was already attempted today; skipping.")
+
+    # --------------------------------------------------------
     # Normalize
     # --------------------------------------------------------
 
@@ -3330,6 +3387,15 @@ def main():
             CANDIDATE_AUDIT_VERSION if candidate_audit_attempted
             else (existing_card or {}).get("candidate_audit_version")
         ),
+
+        "event_enrichment_version": (
+            EVENT_ENRICHMENT_VERSION if enrichment_attempted
+            else (existing_card or {}).get("event_enrichment_version")
+        ),
+
+        "event_enrichment_attempted": enrichment_attempted,
+
+        "event_enrichment_completed": enrichment_completed,
 
         "sections": sections
     }
