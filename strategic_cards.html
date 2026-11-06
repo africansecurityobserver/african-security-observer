@@ -80,6 +80,7 @@ body *{visibility:hidden!important}
 <div id="content"><div class="loading">جارٍ تحميل أرشيف البطاقات…</div></div>
 </main>
 <footer>المرصد الإفريقي للأمن والدفاع</footer>
+<script src="./assets/unified-navigation.js" defer></script>
 <script>
 const newsIndexUrl='./strategic_cards/archive/index.json';
 const weeklyIndexUrl='./weekly_assessments/archive/index.json';
@@ -255,8 +256,7 @@ const sources=!isWeekly&&(card.sources||[]).length?'<h2>المصادر</h2><ul>'
 const weeklyRefs=isMonthly&&(card.weekly_reports||[]).length?'<h2>التقديرات الأسبوعية المعتمدة</h2><ul>'+card.weekly_reports.map(x=>'<li>'+esc(x.title||'تقدير أسبوعي')+' ('+esc(x.period_start||'')+' – '+esc(x.period_end||'')+')</li>').join('')+'</ul>':'';
 const coverage=isMonthly&&card.coverage_note?'<p><b>ملاحظة حول التغطية:</b> '+esc(card.coverage_note)+'</p>':'';
 const header=isWeekly?'<h1 style="color:#102b46;text-align:center">'+esc(weeklyCardTitle(card))+'</h1>':'<h1 style="color:#102b46">'+esc(card.title||'البطاقة الاستراتيجية')+'</h1>'+(card.subject?'<h2>'+esc(card.subject)+'</h2>':'')+'<p style="color:#687887">'+esc(dateLabel(card.date))+(card.region?' — '+esc(card.region):'')+'</p><p><b>'+esc(card.summary||'')+'</b></p>';
-const documentHtml='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>'+esc(isWeekly?'التقدير الاستراتيجي الأسبوعي':card.title||'البطاقة الاستراتيجية')+'</title></head><body dir="rtl" style="font-family:Tahoma,Arial,sans-serif;color:#172535;line-height:1.8">'+header+coverage+sections+weeklyRefs+sources+(isWeekly?'':'<p style="margin-top:24px;font-size:10pt;color:#687887">المرصد الإفريقي للأمن والدفاع</p>')+'<script src="./assets/unified-navigation.js" defer></script>
-</body></html>';
+const documentHtml='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>'+esc(isWeekly?'التقدير الاستراتيجي الأسبوعي':card.title||'البطاقة الاستراتيجية')+'</title></head><body dir="rtl" style="font-family:Tahoma,Arial,sans-serif;color:#172535;line-height:1.8">'+header+coverage+sections+weeklyRefs+sources+(isWeekly?'':'<p style="margin-top:24px;font-size:10pt;color:#687887">المرصد الإفريقي للأمن والدفاع</p>')+'</body></html>';
 const blob=new Blob(['\ufeff',documentHtml],{type:'application/msword;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');
 link.href=url;link.download='تقدير-استراتيجي-'+String(card.date||'').replace(/[^0-9-]/g,'')+'.doc';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
