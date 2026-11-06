@@ -193,19 +193,7 @@ def add_to_index(card):
     save_json(INDEX, index)
 
 
-def build_prompt(first, last, reports, news):
-    blocks = []
-    for number, report in enumerate(reports, 1):
-        sections = "\n".join(
-            f"- {clean(section.get('heading'))}: {str(section.get('text') or '')[:2200]}"
-            for section in report.get("sections", [])
-        )
-        blocks.append(
-            f"تقدير أسبوعي {number}: {report.get('title')} | "
-            f"الفترة: {report.get('period_start')} إلى {report.get('period_end')}\n"
-            f"الحوصلة: {str(report.get('summary') or '')[:1800]}\n{sections}"
-        )
-    weekly_block = "\n\n".join(blocks) or "لم يتوفر أي تقدير أسبوعي منشور لهذه الفترة."
+def build_prompt(first, last, news):
     news_block = "\n".join(
         f"- [{item.get('published')}] [{item.get('region')}] {item.get('title')} — "
         f"{item.get('summary', '')[:650]} (المصدر: {item.get('source')}; الرابط: {item.get('url')})"
@@ -215,7 +203,7 @@ def build_prompt(first, last, reports, news):
 أنت رئيس تحرير قسم التقديرات الاستراتيجية في «المرصد الإفريقي للأمن والدفاع».
 أنجز تقديراً استراتيجياً شهرياً شاملاً باللغة العربية للفترة {first.isoformat()} إلى {last.isoformat()}.
 
-قاعدة إلزامية: يجب إعداد التقرير وإكمال أقسامه الثمانية حتى لو لم تتوفر أي تقديرات أسبوعية أو كانت التغطية الأسبوعية جزئية. لا تعتبر نقص التقارير الأسبوعية سبباً للإلغاء أو التأجيل. استند إلى كل ما توفر من التقديرات الأسبوعية وإلى الأخبار الإقليمية والدولية المرفقة. استكمل الفجوات بالبحث الإخباري المرفق، لا بالاختلاق. إذا لم تتوفر معطيات كافية في محور أو فترة، اذكر حدود المعلومات بوضوح وقدّم تحليلاً متحفظاً بدلاً من اختراع وقائع. لا تدّعِ أن التغطية كاملة إذا لم تكن كذلك.
+قاعدة إلزامية: يجب إعداد التقرير وإكمال أقسامه الثمانية حتى إذا كانت المواد الإخبارية المتاحة محدودة. لا تعتبر محدودية الأخبار سبباً للإلغاء أو التأجيل. استند مباشرة إلى الأخبار الإقليمية والدولية المرفقة، واستكمل الفجوات بالبحث الإخباري المتاح لا بالاختلاق. إذا لم تتوفر معطيات كافية في محور أو فترة، اذكر حدود المعلومات بوضوح وقدّم تحليلاً متحفظاً بدلاً من اختراع وقائع. لا تدّعِ أن التغطية كاملة إذا لم تكن كذلك.
 
 هذا ليس تجميعاً زمنياً للتقارير الأسبوعية. أعد تركيب الأحداث عبر الشهر، واستخرج الاتجاهات والتحولات وروابطها الاستراتيجية. ميّز بين الوقائع الواردة في المواد والاستنتاجات التحليلية والسيناريوهات الاحتمالية. لا تكرر الأحداث، ولا تضف أرقاماً أو صفقات أو نوايا غير مسندة إلى المواد. لا تعامل عنوان الخبر وحده كدليل على كل تفاصيله.
 
@@ -241,10 +229,7 @@ def build_prompt(first, last, reports, news):
 
 استهدف 110-170 كلمة لكل قسم، مع إعطاء الأولوية للدقة لا للحشو. الملخص التنفيذي 90-140 كلمة. إذا كانت المادة ضعيفة، لا تملأ المساحة بكلام عام أو حقائق غير موثقة؛ بيّن النقص وحدود التقدير. عرّف الاختصارات عند أول ورودها.
 
-أعد JSON فقط بالحقول title وsubject وsummary وsections وcoverage_note. يجب أن تحتوي sections على ثمانية عناصر بالضبط، وكل عنصر heading وtext. اجعل coverage_note تشرح عدد التقديرات الأسبوعية المتاحة ومقدار التغطية، وما إذا كان استكمال الصورة اعتمد على الأخبار.
-
-التقديرات الأسبوعية المتاحة ({len(reports)}):
-{weekly_block}
+أعد JSON فقط بالحقول title وsubject وsummary وsections وcoverage_note. يجب أن تحتوي sections على ثمانية عناصر بالضبط، وكل عنصر heading وtext. اجعل coverage_note تشرح عدد المواد الإخبارية المتاحة وتوزيعها الجغرافي وحدود التغطية الفعلية.
 
 الأخبار المجمعة للفترة ({len(news)} مادة):
 {news_block}
@@ -283,7 +268,7 @@ def main():
         try:
             response = client.models.generate_content(
                 model=MODEL,
-                contents=build_prompt(first, last, [], news),
+                contents=build_prompt(first, last, news),
                 config=types.GenerateContentConfig(
                     response_mime_type="application/json", response_schema=schema,
                     temperature=0.2, max_output_tokens=14000
