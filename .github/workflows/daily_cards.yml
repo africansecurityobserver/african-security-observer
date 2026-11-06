@@ -1,13 +1,6 @@
 name: Generate Daily Cards
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "daily_cards/generate_daily_card.py"
-      - ".github/workflows/daily_cards.yml"
-
   workflow_dispatch:
     inputs:
       slot:
@@ -16,14 +9,19 @@ on:
         default: "daily"
 
   schedule:
-    # Offset scheduled runs away from the start of the hour, when GitHub
-    # Actions schedule queues are more likely to be congested.
-    # First daily generation: 06:07 Tunisia time; refresh every 15 minutes.
-    - cron: "7,22,37,52 6-23 * * *"
+    # Tunisia local time: every 45 minutes from 06:00 through 15:45.
+    # The minute/hour combinations preserve a true 45-minute cadence.
+    - cron: "0,45 6,9,12,15 * * *"
+      timezone: "Africa/Tunis"
+    - cron: "30 7,10,13 * * *"
+      timezone: "Africa/Tunis"
+    - cron: "15 8,11,14 * * *"
       timezone: "Africa/Tunis"
 
-    # Final catch-up shortly before the day closes.
-    - cron: "59 23 * * *"
+    # Evening refreshes every two hours, followed by the final 23:50 update.
+    - cron: "0 16,18,20,22 * * *"
+      timezone: "Africa/Tunis"
+    - cron: "50 23 * * *"
       timezone: "Africa/Tunis"
 
 permissions:
