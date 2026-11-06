@@ -348,7 +348,16 @@ EXCLUDED_TERMS = [
     "مرض", "أمراض", "علاج", "أطباء", "طبيب", "لقاح", "تغذية",
     "طقس", "أحوال جوية", "أمطار", "درجات الحرارة", "توقعات الطقس",
     "جامعة", "جامعات", "مدرسة", "مدارس", "تعليم", "طلاب", "تلاميذ",
-    "تضخم", "بورصة", "أسهم", "سوق الأسهم", "مصارف", "بنوك"
+    "تضخم", "بورصة", "أسهم", "سوق الأسهم", "مصارف", "بنوك",
+    # French equivalents, since a substantial part of the source set is francophone.
+    "tourisme", "touristique", "touriste", "hôtel", "hôtels", "vacances",
+    "voyage", "voyages", "musique", "chanson", "chanteur", "chanteuse",
+    "cinéma", "film", "films", "série télévisée", "divertissement",
+    "célébrité", "mode", "recette", "cuisine", "restaurant", "restaurants",
+    "santé", "médical", "médicale", "hôpital", "maladie", "traitement",
+    "météo", "pluie", "température", "université", "école", "éducation",
+    "étudiant", "étudiants", "inflation", "bourse", "banque", "banques",
+    "concert", "album", "box office", "netflix", "actor", "actress"
 ]
 
 
