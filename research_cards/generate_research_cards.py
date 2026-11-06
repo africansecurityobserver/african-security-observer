@@ -640,7 +640,7 @@ def main():
         print(f"Deferred {recently_failed_count} recently failed publications until their retry cooldown expires.")
     # Work in small batches. Recent failures are deferred so the queue advances
     # to other publications; they remain pending and are retried after 12 hours.
-    max_per_run = max(1, int(os.getenv("MAX_RESEARCH_CARDS_PER_RUN", "6")))
+    max_per_run = max(1, int(os.getenv("MAX_RESEARCH_CARDS_PER_RUN", "1")))
     candidates = candidates[:max_per_run]
     if total_candidates > len(candidates):
         print(f"Batch limit: processing {len(candidates)} of {total_candidates} pending publications; the rest stay queued.")
