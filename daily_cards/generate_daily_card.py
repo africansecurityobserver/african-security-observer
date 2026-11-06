@@ -593,7 +593,7 @@ def identify_strategic_review_candidates(news_items):
 # ============================================================
 
 EVENT_ENRICHMENT_VERSION = 1
-MAX_EVENTS_TO_RESEARCH = 8
+MAX_EVENTS_TO_RESEARCH = 6
 MAX_ARTICLE_CHARS = 2600
 
 
