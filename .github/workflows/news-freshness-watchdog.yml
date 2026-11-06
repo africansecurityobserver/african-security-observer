@@ -88,4 +88,5 @@ jobs:
               method="POST",
               payload={"ref": "main"},
           )
-          print("Recovery dispatch accepted by GitHub Actions.")          PY
+          print("Recovery dispatch accepted by GitHub Actions.")
+          PY
