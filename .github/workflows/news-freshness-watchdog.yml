@@ -1,0 +1,74 @@
+name: News Freshness Watchdog
+
+on:
+  schedule:
+    # Independent safety check: recover if the main 15-minute news updater stops running.
+    - cron: "7,22,37,52 * * * *"
+      timezone: "UTC"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: news-freshness-watchdog
+  cancel-in-progress: true
+
+jobs:
+  verify-news-updater:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Check updater activity and recover if overdue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from datetime import datetime, timezone, timedelta
+
+          result = subprocess.run(
+              [
+                  "gh", "run", "list",
+                  "--workflow", "update-news.yml",
+                  "--limit", "10",
+                  "--json", "databaseId,status,createdAt"
+              ],
+              check=True, capture_output=True, text=True
+          )
+          runs = json.loads(result.stdout or "[]")
+          active_statuses = {"inProgress", "queued", "waiting", "requested", "pending"}
+          active = [run for run in runs if run.get("status") in active_statuses]
+
+          if active:
+              print("A news refresh is already queued or running; no duplicate dispatch.")
+              raise SystemExit(0)
+
+          latest = max(
+              runs,
+              key=lambda run: datetime.fromisoformat(
+                  run["createdAt"].replace("Z", "+00:00")
+              ),
+              default=None
+          )
+          now = datetime.now(timezone.utc)
+          latest_at = (
+              datetime.fromisoformat(latest["createdAt"].replace("Z", "+00:00"))
+              if latest else None
+          )
+          age = now - latest_at if latest_at else None
+          print(f"Latest news-updater run: {latest_at}")
+          print(f"Age of latest run: {age}")
+
+          if age is not None and age <= timedelta(minutes=35):
+              print("The scheduled news updater has run recently; no recovery needed.")
+              raise SystemExit(0)
+
+          print("News updater is overdue; dispatching one recovery run.")
+          subprocess.run(
+              ["gh", "workflow", "run", "update-news.yml", "--ref", "main"],
+              check=True
+          )
+          PY
