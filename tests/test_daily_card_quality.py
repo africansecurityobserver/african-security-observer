@@ -91,6 +91,34 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
         self.assertEqual(by_id["world_major"]["events"], [])
         self.assertEqual(len(by_id["middle_east"]["events"]), 1)
 
+    def test_strategic_review_candidate_scan_catches_diverse_defense_and_security_items(self):
+        items = [
+            {"title": "تونس تتلقى معدات مكافحة الإرهاب", "description": "معدات بقيمة محددة"},
+            {"title": "الجيش السوداني يوسع سيطرته في كردفان", "description": "انتزع مناطق جديدة"},
+            {"title": "تهديدات جديدة بالقنابل تستهدف الرحلات الجوية", "description": "بلاغات أمنية"},
+            {"title": "مناورات الناتو في ليتوانيا", "description": "مشاركة آلاف الجنود"},
+            {"title": "نتيجة مباراة كرة قدم", "description": "الدوري المحلي"},
+        ]
+        candidates = card.identify_strategic_review_candidates(items)
+        candidate_numbers = [number for number, _ in candidates]
+        self.assertEqual(candidate_numbers, [1, 2, 3, 4])
+
+    def test_prompt_contains_candidate_audit_and_has_no_event_count_ceiling(self):
+        from datetime import date, datetime
+        from zoneinfo import ZoneInfo
+
+        reference_date = date(2026, 11, 6)
+        start = datetime(2026, 11, 6, 0, 0, tzinfo=ZoneInfo("Africa/Tunis"))
+        end = datetime(2026, 11, 6, 20, 0, tzinfo=ZoneInfo("Africa/Tunis"))
+        prompt = card.build_prompt(
+            "daily", reference_date, start, end,
+            [{"title": "تونس تتلقى معدات مكافحة الإرهاب", "description": "معدات محددة"}],
+            [], []
+        )
+        self.assertIn("قائمة المراجعة الثانية ذات الأولوية", prompt)
+        self.assertIn("تونس تتلقى معدات مكافحة الإرهاب", prompt)
+        self.assertIn("لا يوجد سقف تحريري لعدد الأحداث", prompt)
+
     def test_keeps_concrete_defense_aid_and_equipment_deliveries(self):
         examples = [
             "تسلمت تونس معدات مكافحة الإرهاب بقيمة تتجاوز مليون دولار.",
