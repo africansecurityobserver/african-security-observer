@@ -637,7 +637,7 @@ def build_prompt(
             f"{item.get('description', '')} | "
             f"{item.get('original_description', '')}"
         )
-    strategic_candidate_text = "\\n".join(strategic_candidate_material)
+    strategic_candidate_text = "\n".join(strategic_candidate_material)
     if not strategic_candidate_text:
         strategic_candidate_text = "لم تُرصد مواد مرشحة بهذه المؤشرات."
 
