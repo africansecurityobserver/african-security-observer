@@ -991,42 +991,9 @@ def main():
         if not valid:
             print(
                 f"First draft failed quality validation (words={word_count}, sections={len(sections)}); "
-                "requesting one corrective rewrite."
+                "leaving the source eligible for the next six-hour run without a second Gemini request."
             )
-            retry_prompt = base_prompt + """
-
-مراجعة تصحيحية إلزامية: المسودة السابقة لم تحقق الحد الأدنى المطلوب من الجودة.
-أعد كتابة البطاقة كاملة، لا تكتفِ بإضافة جمل قصيرة. المطلوب 900 كلمة عربية تقريباً،
-وخمسة أقسام تحليلية على الأقل بما فيها قسم مستقل بعنوان «خلاصة استراتيجية».
-احرص على أن يكون لكل قسم مضمون مختلف، وأن تشرح الخلفية والأدلة والتداعيات والقيود،
-مع فقرة ختامية عن تونس حين تكون ذات صلة. لا تستخدم كلمتي «الآلية» أو «الآليات» في العنوان.
-إذا كان المصدر لا يتيح ذلك بصدق، أعد publish=false.
-أخرج JSON المطابق للمخطط فقط.
-"""
-            try:
-                retry_result = client.interactions.create(
-                    model=MODEL,
-                    input=retry_prompt,
-                    response_format={"type": "text", "mime_type": "application/json", "schema": schema},
-                    generation_config={"temperature": 0.15, "thinking_level": "low"}
-                )
-                retry_output = json.loads(retry_result.output_text or "{}")
-                reviewed_count += 1
-                if not retry_output.get("publish"):
-                    checked.add(url)
-                    data["checked_urls"] = list(checked)[-1500:]
-                    save_json(DATA_FILE, data)
-                    sync_archive(data)
-                    print(f"Corrective rewrite rejected as insufficient: {title_original[:120]}")
-                    continue
-                output = retry_output
-                kind, subject, sections, summary_text, word_count, has_conclusion, valid = unpack_generated_card(output)
-            except Exception as exc:
-                print(f"Corrective rewrite failed; source remains eligible for retry: {type(exc).__name__}")
-                if is_quota_or_rate_limit_error(exc):
-                    print("Gemini quota/rate limit reached during correction; stopping this run.")
-                    break
-                continue
+            continue
 
         if not valid:
             print(
