@@ -1488,6 +1488,43 @@ def is_editorially_eligible(text_value):
         "climate conference", "climate summit",
         "friday for future", "fridays for future"
     ]
+    # Routine health campaigns, local candidacies and ceremonial
+    # anniversary messages are not strategic/security developments.
+    routine_health_markers = [
+        "حملة نوفمبر الأزرق", "حملة نوفمبر الازرق",
+        "التوعية بسرطان البروستات", "سرطان البروستات",
+        "الكشف المبكر عن سرطان البروستات",
+        "prostate cancer awareness", "prostate cancer screening campaign"
+    ]
+    routine_local_election_markers = [
+        "انتخابات أعضاء المجالس الشعبية البلدية",
+        "انتخابات اعضاء المجالس الشعبية البلدية",
+        "المجالس الشعبية البلدية والولائية",
+        "ترشح لانتخابات أعضاء المجالس الشعبية",
+        "municipal council elections", "candidacy for municipal councils"
+    ]
+    ceremonial_markers = [
+        "رسائل تحيات بمناسبة إحياء الذكرى",
+        "رسائل تهنئة بمناسبة إحياء الذكرى",
+        "رسائل تحيات بمناسبة الذكرى",
+        "congratulatory messages on the anniversary",
+        "greetings on the anniversary",
+        "مثل الملك في القمة الفرانكوفونية",
+        "مثل الملك في القمة الفرنكوفونية",
+        "represented the king at the francophonie summit"
+    ]
+    political_rumor_markers = [
+        "نفى اعتزامه مغادرة إدارة",
+        "نفى اعتزامه مغادرة الادارة",
+        "denied plans to leave the administration",
+        "denied he planned to leave the administration"
+    ]
+    generic_security_statement_markers = [
+        "جزء لا يتجزأ من أمن واستقرار",
+        "جزء لا يتجزأ من امن واستقرار",
+        "an integral part of the security and stability"
+    ]
+
     security_context_markers = [
         "إرهاب", "إرهابي", "تنظيم مسلح", "جماعة مسلحة",
         "هجوم مسلح", "اشتباك مسلح", "عملية عسكرية", "قوات الجيش",
@@ -1510,6 +1547,16 @@ def is_editorially_eligible(text_value):
             return False
 
     if any(term in value for term in routine_civilian_markers) and not has_security_context:
+        return False
+
+    if any(term in value for term in routine_health_markers + routine_local_election_markers
+           + ceremonial_markers + political_rumor_markers):
+        return False
+
+    # Generic declarations about security are not separate events unless
+    # accompanied by a concrete decision, agreement, meeting or operation.
+    if (any(term in value for term in generic_security_statement_markers)
+            and not any(term in value for term in concrete_action_markers)):
         return False
 
     # Reject generic statements about the importance of cooperation when
@@ -1894,6 +1941,8 @@ def same_event_text(left, right):
         ["إطلاق نار", "برصاص", "نيران الجيش", "gunfire", "shot by"],
         ["وقف إطلاق النار", "هدنة", "تمديد الهدنة", "ceasefire", "truce"],
         ["ضحايا", "قتلى", "مصابين", "جرحى", "killed", "wounded", "injured", "casualties"],
+        ["ناقلات النفط", "ناقلات نفط", "ناقلة نفط", "ناقلة النفط", "oil tankers", "oil tanker"],
+        ["حريق", "حرائق", "اندلاع حرائق", "اشتعلت النيران", "caught fire", "fires broke out"],
     ]
 
     shared_groups = sum(
