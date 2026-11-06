@@ -16,7 +16,6 @@ from google.genai import types
 ROOT = Path(__file__).resolve().parent.parent
 TZ = ZoneInfo("Africa/Tunis")
 MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
-WEEKLY_INDEX = ROOT / "weekly_assessments" / "archive" / "index.json"
 NEWS_FILE = ROOT / "news.json"
 ARCHIVE = ROOT / "monthly_assessments" / "archive"
 INDEX = ARCHIVE / "index.json"
@@ -76,33 +75,6 @@ def load_json(path, default):
 def save_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-
-
-def weekly_entries():
-    index = load_json(WEEKLY_INDEX, {"years": []})
-    entries = []
-    for year in index.get("years", []):
-        for month in year.get("months", []):
-            for item in month.get("cards", []):
-                if item.get("kind") == "weekly_assessment" and item.get("path"):
-                    entries.append(item)
-    return entries
-
-
-def collect_reports(first, last):
-    reports = []
-    for entry in weekly_entries():
-        card = load_json(ROOT / "weekly_assessments" / "archive" / entry["path"], None)
-        if not isinstance(card, dict):
-            continue
-        try:
-            start, end = date.fromisoformat(card["period_start"]), date.fromisoformat(card["period_end"])
-        except Exception:
-            continue
-        if start <= last and end >= first:
-            reports.append(card)
-    reports.sort(key=lambda x: (x.get("period_start", ""), x.get("period_end", "")))
-    return reports
 
 
 def parse_date(value):
@@ -287,9 +259,8 @@ def main():
     if month_path.exists() and os.getenv("FORCE_MONTHLY") != "1":
         print(f"Monthly assessment already exists for {first:%Y-%m}; skipping duplicate scheduled run.")
         return
-    reports = collect_reports(first, last)
     news = fetch_month_news(first, last)
-    print(f"Monthly inputs: weekly_assessments={len(reports)}, news_items={len(news)}")
+    print(f"Monthly inputs: news_items={len(news)}")
 
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
@@ -312,7 +283,7 @@ def main():
         try:
             response = client.models.generate_content(
                 model=MODEL,
-                contents=build_prompt(first, last, reports, news),
+                contents=build_prompt(first, last, [], news),
                 config=types.GenerateContentConfig(
                     response_mime_type="application/json", response_schema=schema,
                     temperature=0.2, max_output_tokens=14000
@@ -339,26 +310,14 @@ def main():
     slug = hashlib.sha1(f"{first:%Y-%m}".encode()).hexdigest()[:10]
     relative_path = f"{first:%Y-%m}/{last:%Y%m%d}_{slug}.json"
     title = clean(output.get("title")) or f"التقدير الاستراتيجي الشهري — {MONTHS[first.month - 1]} {first.year}"
-    weekly_refs = [{
-        "title": x.get("title", "التقدير الاستراتيجي الأسبوعي"),
-        "date": x.get("date"), "period_start": x.get("period_start"),
-        "period_end": x.get("period_end"), "path": x.get("path", "")
-    } for x in reports]
     source_map = {}
     for item in news:
         url = item.get("url")
         if url and url not in source_map:
             source_map[url] = {"title": item.get("title", url), "url": url}
-    for report in reports:
-        for source in report.get("sources", []):
-            url = source.get("url")
-            if url and url not in source_map:
-                source_map[url] = {"title": source.get("title", url), "url": url}
     coverage = clean(output.get("coverage_note"))
-    if not reports:
-        coverage = (coverage + " " if coverage else "") + "لم يتوفر أي تقدير أسبوعي منشور للشهر؛ استند التقرير إلى المواد الإخبارية التي أمكن جمعها، مع بيان حدود التغطية."
-    elif len(reports) < 4:
-        coverage = (coverage + " " if coverage else "") + f"اعتمد التقرير على {len(reports)} تقدير/تقديرات أسبوعية فقط، واستُكملت المعطيات بالأخبار المتاحة."
+    if not coverage:
+        coverage = f"اعتمد التقدير على {len(news)} مادة إخبارية جُمعت للفترة المستهدفة؛ وتُقرأ النتائج في ضوء التوزيع الجغرافي الفعلي للمواد وحدود المصادر المتاحة."
     card = {
         "id": slug, "kind": "monthly_assessment",
         "kind_label": "التقدير الاستراتيجي الشهري",
@@ -367,13 +326,13 @@ def main():
         "date": date_tag, "period_start": first.isoformat(), "period_end": last.isoformat(),
         "region": "تقدير استراتيجي شامل — تونس وشمال إفريقيا وإفريقيا والعالم",
         "summary": summary, "coverage_note": coverage,
-        "sections": sections, "weekly_reports": weekly_refs,
+        "sections": sections,
         "sources": list(source_map.values())[:100], "news_items_count": len(news),
         "path": relative_path
     }
     save_json(ARCHIVE / relative_path, card)
     add_to_index(card)
-    print(f"Published monthly assessment: {title}; weekly_reports={len(reports)}; news={len(news)}; sources={len(card['sources'])}; path={relative_path}")
+    print(f"Published monthly assessment: {title}; news={len(news)}; sources={len(card['sources'])}; path={relative_path}")
 
 
 if __name__ == "__main__":
