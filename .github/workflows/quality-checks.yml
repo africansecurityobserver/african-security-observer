@@ -4,7 +4,6 @@ on:
   pull_request:
     paths:
       - "update_news.py"
-      - "build_news.py"
       - "build_articles.py"
       - "index.html"
       - "strategic_cards/**"
@@ -44,4 +43,4 @@ jobs:
       - name: Run news quality tests
         run: python -m unittest discover -s tests -v
       - name: Check Python syntax
-        run: python -m compileall -q update_news.py build_news.py build_articles.py daily_cards strategic_cards research_cards monthly_assessment
+        run: python -m compileall -q update_news.py build_articles.py daily_cards strategic_cards research_cards monthly_assessment
