@@ -133,7 +133,7 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
 
     def test_does_not_turn_generic_cooperation_statements_into_events(self):
         self.assertFalse(card.is_editorially_eligible(
-            "أكد وزير الدفاع أهمية التعاون الثلاثي في تعزيز الأمن والتنمية، دون الإعلان عن اجتماع أو قرار أو اتفاق."
+            "أكد وزير الدفاع أهمية التعاون الثلاثي في تعزيز الأمن والتنمية، دون الإعلان عن إجراء محدد."
         ))
 
     def test_does_not_admit_ordinary_local_crime_without_security_context(self):
