@@ -593,7 +593,7 @@ def identify_strategic_review_candidates(news_items):
 # ============================================================
 
 EVENT_ENRICHMENT_VERSION = 1
-MAX_EVENTS_TO_RESEARCH = 10
+MAX_EVENTS_TO_RESEARCH = 8
 MAX_ARTICLE_CHARS = 2600
 
 
@@ -637,7 +637,7 @@ def fetch_research_url(url, timeout=5):
         return raw.decode(charset, errors="replace"), response.geturl()
 
 
-def search_related_news(query, max_results=3):
+def search_related_news(query, max_results=2):
     params = urllib.parse.urlencode({
         "q": query, "hl": "en-US", "gl": "US", "ceid": "US:en"
     })
