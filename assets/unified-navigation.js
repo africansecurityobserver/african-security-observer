@@ -9,9 +9,9 @@ const primary=[
 ];
 const submenus={
  home:[['الأخبار الحالية','home'],['المقالات الاستراتيجية','analysis'],['أرشيف الأخبار','archive']],
- daily:[['الأخبار','./'],['مراكز البحوث','./research_centers.html'],['التقديرات الاستراتيجية','./strategic_cards.html']],
+ daily:[['الأخبار','./'],['مراكز البحوث','./research_centers.html'],['التقديرات من المصادر الإخبارية','./strategic_cards.html?type=news'],['التقديرات من مراكز البحوث','./strategic_cards.html?type=research'],['التقديرات الشهرية الشاملة','./strategic_cards.html?type=monthly']],
  strategic:[['البطاقات الإخبارية','./strategic_cards.html?type=news'],['التقدير الشهري','./strategic_cards.html?type=monthly'],['منشورات مراكز البحوث','./strategic_cards.html?type=research'],['مراكز البحوث','./research_centers.html']],
- research:[['أحدث المنشورات','./research_centers.html'],['أرشيف البطاقات المرتبطة','./strategic_cards.html?type=research'],['التقديرات الاستراتيجية','./strategic_cards.html']]
+ research:[['أحدث المنشورات','./research_centers.html'],['التقديرات الاستراتيجية من مراكز البحوث','./strategic_cards.html?type=research']]
 };
 const path=location.pathname.split('/').pop()||'index.html';
 const params=new URLSearchParams(location.search);
