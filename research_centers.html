@@ -152,7 +152,7 @@ async function load(){
     centerEl.appendChild(o);
   });
   const updated=data.updated?new Date(data.updated):null;
-  statusEl.textContent='المراكز المتابعة: '+(data.center_count||names.length)+' · المنشورات المؤهلة: '+publications.length+(updated&&!Number.isNaN(updated.getTime())?' · آخر تحديث: '+new Intl.DateTimeFormat('ar-TN',{dateStyle:'medium',timeStyle:'short'}).format(updated):'');
+  statusEl.textContent='المراكز المتابعة: '+(data.center_count||names.length)+' · المنشورات المؤهلة: '+publications.length+(updated&&!Number.isNaN(updated.getTime())?' · آخر تحديث: '+new Intl.DateTimeFormat('ar-TN',{dateStyle:'medium',timeStyle:'short',hourCycle:'h23',timeZone:'Africa/Tunis'}).format(updated):'');
   render();
  }catch(e){
   console.error(e);
