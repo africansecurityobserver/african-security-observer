@@ -1,0 +1,123 @@
+name: Daily Card Watchdog
+
+on:
+  workflow_dispatch:
+  schedule:
+    # A second check at offset times. This can recover missed/failed
+    # generation runs, but still uses GitHub's scheduler.
+    - cron: "13,43 * * * *"
+      timezone: "Africa/Tunis"
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: daily-card-watchdog
+  cancel-in-progress: false
+
+jobs:
+  check-and-recover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Check whether today's card is missing or empty
+        id: check
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime
+          from email.utils import parsedate_to_datetime
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          tz = ZoneInfo("Africa/Tunis")
+          today = datetime.now(tz).date()
+
+          def parse_date(value):
+              if not value:
+                  return None
+              value = str(value).strip()
+              try:
+                  dt = parsedate_to_datetime(value)
+                  if dt.tzinfo is None:
+                      dt = dt.replace(tzinfo=ZoneInfo("UTC"))
+                  return dt.astimezone(tz)
+              except Exception:
+                  pass
+              try:
+                  dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+                  if dt.tzinfo is None:
+                      dt = dt.replace(tzinfo=ZoneInfo("UTC"))
+                  return dt.astimezone(tz)
+              except Exception:
+                  return None
+
+          cards_path = Path("daily_cards/cards.json")
+          cards_data = json.loads(cards_path.read_text(encoding="utf-8")) if cards_path.exists() else {}
+          cards = cards_data.get("cards", []) if isinstance(cards_data, dict) else []
+          today_card = next((card for card in reversed(cards)
+                             if card.get("date") == today.isoformat()
+                             and card.get("slot") == "daily"), None)
+          event_count = sum(
+              1 for section in (today_card or {}).get("sections", [])
+              for event in section.get("events", [])
+              if isinstance(event, dict) and str(event.get("text", "")).strip()
+          )
+
+          news_path = Path("news.json")
+          news_data = json.loads(news_path.read_text(encoding="utf-8")) if news_path.exists() else {}
+          items = news_data.get("items", []) if isinstance(news_data, dict) else []
+          todays_news = [
+              item for item in items
+              if (parse_date(item.get("published")) is not None
+                  and parse_date(item.get("published")).date() == today)
+          ]
+
+          needs_recovery = event_count == 0 and len(todays_news) > 0
+          print(f"Tunisia date: {today.isoformat()}")
+          print(f"Existing card events: {event_count}")
+          print(f"Today's source-news items: {len(todays_news)}")
+          print(f"Recovery needed: {needs_recovery}")
+          with open(__import__("os").environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"needs_recovery={'true' if needs_recovery else 'false'}\n")
+          PY
+
+      - name: Avoid duplicate recovery attempts
+        if: steps.check.outputs.needs_recovery == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          runs_json="$(gh run list --workflow daily_cards.yml --limit 5 --json status,createdAt)"
+          python - "$runs_json" <<'PY'
+          import json
+          import sys
+          from datetime import datetime, timezone
+
+          runs = json.loads(sys.argv[1] or "[]")
+          now = datetime.now(timezone.utc)
+          active = any(run.get("status") in ("queued", "in_progress") for run in runs)
+          latest = None
+          for run in runs:
+              try:
+                  created = datetime.fromisoformat(run["createdAt"].replace("Z", "+00:00"))
+                  latest = created if latest is None or created > latest else latest
+              except Exception:
+                  pass
+
+          recent = latest is not None and (now - latest).total_seconds() < 3600
+          should_skip = active or recent
+          print(f"Active generation: {active}; recent attempt within 60 minutes: {recent}")
+          with open("watchdog_decision.txt", "w", encoding="utf-8") as f:
+              f.write("skip" if should_skip else "dispatch")
+          PY
+          if [ "$(cat watchdog_decision.txt)" = "skip" ]; then
+            echo "A generation run is active or was attempted within the last hour; no duplicate dispatch."
+            exit 0
+          fi
+          gh workflow run daily_cards.yml --ref main -f slot=daily
+          echo "Dispatched a recovery run for today's missing/empty card."
