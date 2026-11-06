@@ -121,6 +121,9 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
         self.assertIn("الجيش السوداني يوسع سيطرته في كردفان", prompt)
         self.assertIn("حدث موجود بالفعل", prompt)
         self.assertIn("أعد فقط الأحداث الجديدة", prompt)
+        self.assertIn("قائد الجيش الأوغندي", prompt)
+        self.assertIn("مقتل مدنيين في قصف سوق شعبي بتعز", prompt)
+        self.assertEqual(card.CANDIDATE_AUDIT_VERSION, 2)
 
     def test_second_pass_merge_appends_without_replacing_first_pass_events(self):
         primary = {"sections": [{
