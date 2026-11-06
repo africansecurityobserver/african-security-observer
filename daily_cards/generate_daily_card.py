@@ -525,6 +525,61 @@ def extract_previous_events(cards, current_date):
 
 
 # ============================================================
+# STRATEGIC CANDIDATE AUDIT
+# ============================================================
+
+STRATEGIC_REVIEW_MARKERS = (
+    # Defense aid, equipment, procurement and military cooperation.
+    "مكافحة الإرهاب", "مكافحة الارهاب", "معدات مكافحة", "معدات عسكرية",
+    "مساعدات عسكرية", "مساعدات دفاعية", "معدات الأمن البحري",
+    "معدات الامن البحري", "تعاون دفاعي", "تعاون عسكري", "اتفاق دفاعي",
+    "صفقة دفاعية", "صفقة تسلح", "سفن حربية", "تحديث السفن",
+    "أنظمة مضادة للطائرات", "مكافحة الطائرات المسيّرة",
+    "مكافحة الطائرات المسيرة", "الامن البحري",
+    "counterterrorism equipment", "military aid", "defense assistance",
+    "defence assistance", "maritime security equipment",
+    "military cooperation", "defense cooperation", "defence cooperation",
+    "warship", "naval modernization", "counter-drone", "defense deal",
+    # Field developments and military operations.
+    "اشتباكات مسلحة", "اشتباك مسلح", "معارك", "معركة", "هجوم مسلح",
+    "قصف", "تقدم الجيش", "توسيع السيطرة", "استعادة مناطق",
+    "انتزاع مناطق", "تدمير آليات", "السيطرة على مناطق",
+    "clashes", "battle", "military operation", "territorial control",
+    "seized areas", "recaptured areas", "destroyed military vehicles",
+    # Terrorism, intelligence, aviation threats and weapons trafficking.
+    "بوكو حرام", "داعش", "تنظيم القاعدة", "تهريب صواريخ", "تهريب أسلحة",
+    "تهريب اسلحة", "تفجير سيارة", "سيارة مفخخة", "تهديدات بالقنابل",
+    "تهديد بوجود قنبلة", "تجسس", "عميل روسي", "مخبر لجماعة",
+    "مخبر لتنظيم", "bomb threat", "espionage", "missile smuggling",
+    "arms smuggling", "car bombing", "boko haram", "islamic state",
+    "al-qaeda", "informant", "spy",
+    # Senior military leadership, foreign deployments and major exercises.
+    "قائد الجيش", "رئيس الأركان", "رئيس الاركان", "تنحي قائد",
+    "تنحى", "استقالة قائد", "استقال قائد", "إقالة قائد",
+    "تعيين قائد", "نشر قوات أجنبية", "نشر قوات", "مناورات عسكرية",
+    "مناورات الناتو", "تدريبات عسكرية", "military chief", "army chief",
+    "chief of staff", "foreign troop deployment", "military exercises",
+    "nato exercise", "resigns as army chief"
+)
+
+
+def identify_strategic_review_candidates(news_items):
+    """
+    Build a recall-oriented review list from source titles and descriptions.
+    This is not an automatic publication filter: Gemini must assess each
+    candidate's factuality, strategic relevance and duplication.
+    """
+    candidates = []
+    for index, item in enumerate(news_items, start=1):
+        searchable = " ".join(str(item.get(key, "") or "") for key in (
+            "title", "description", "original_title", "original_description"
+        )).casefold()
+        if any(marker.casefold() in searchable for marker in STRATEGIC_REVIEW_MARKERS):
+            candidates.append((index, item))
+    return candidates
+
+
+# ============================================================
 # GEMINI PROMPT
 # ============================================================
 
@@ -572,6 +627,21 @@ def build_prompt(
     current_text = "\n".join(f"- {event}" for event in (current_events or []))
     if not current_text:
         current_text = "لا توجد أحداث محفوظة في نسخة اليوم الحالية."
+
+    strategic_candidates = identify_strategic_review_candidates(news_items)
+    strategic_candidate_material = []
+    for item_number, item in strategic_candidates:
+        strategic_candidate_material.append(
+            f"مادة رقم {item_number}: {item.get('title', '')} | "
+            f"{item.get('original_title', '')} | "
+            f"{item.get('description', '')} | "
+            f"{item.get('original_description', '')}"
+        )
+    strategic_candidate_text = "\\n".join(strategic_candidate_material)
+    if not strategic_candidate_text:
+        strategic_candidate_text = "لم تُرصد مواد مرشحة بهذه المؤشرات."
+
+    print(f"Strategic candidate audit list: {len(strategic_candidates)} items")
 
     prompt = f"""
 أنت محرر رئيسي في صحيفة استخباراتية/استراتيجية عربية متخصصة
@@ -646,9 +716,11 @@ Africa/Tunis
 
 13. لا تضف أحداثاً قديمة لمجرد الوصول إلى عدد معين.
 
-14. العدد المستهدف عموماً هو 15 إلى 20 حدثاً في البطاقة،
-    لكن هذا ليس حداً إلزامياً.
-    إذا كانت الفترة هادئة، يمكن أن تكون البطاقة أقل.
+14. لا يوجد سقف تحريري لعدد الأحداث، ولا تختصر البطاقة للوصول
+    إلى رقم مستهدف. أدرج جميع التطورات المستقلة التي تستوفي المعايير.
+    قد تكون البطاقة 15 إلى 20 حدثاً في الأيام الهادئة، وقد تتجاوز
+    20 حدثاً في الأيام المزدحمة إذا توفرت وقائع مهمة ومستقلة.
+    لا تسقط خبراً مؤهلاً لمجرد أن البطاقة تضم عدداً كافياً من الأخبار.
 
 15. ليبيا يجب أن تحتوي عادةً على أكبر عدد من الأحداث عندما تكون
     هناك مادة كافية وذات صلة، لأن القسم الليبي هو قسم محوري في الصحيفة.
@@ -1225,6 +1297,22 @@ Africa/Tunis
 - أضف كل حدث جديد مستقل من المواد الحالية.
 - لا تحذف حدثاً لمجرد أنه لم يظهر في نتائج التحديث الحالي أو لأن النموذج لم يختره.
 - دمج التكرارات مسموح، أما حذف الأحداث السابقة أو استبدال القائمة كاملة فممنوع.
+
+============================================================
+قائمة المراجعة الثانية ذات الأولوية
+============================================================
+
+رصدت آلية أولية المواد التالية لأنها تتضمن مؤشرات محتملة على تطورات
+دفاعية أو ميدانية أو استخباراتية أو أمنية أو قيادية. هذه القائمة
+ليست قراراً آلياً بالنشر، لكنها قائمة تدقيق إلزامية:
+
+{strategic_candidate_text}
+
+افحص كل مادة في هذه القائمة على حدة، ثم ارجع إلى نصها الكامل ضمن
+المواد الإخبارية أدناه. لا تتجاوز أي مادة لمجرد أن خبرها لا يشبه
+الأنماط التي اعتدت اختيارها. إذا كانت الواقعة محددة ومهمة فأدرجها،
+وإذا استبعدتها فليكن ذلك لسبب تحريري حقيقي مثل ضعف التأكيد أو
+التكرار أو محدودية الأهمية، لا بسبب نوع عنوانها أو صيغته.
 
 ============================================================
 المواد الإخبارية للفترة الحالية
