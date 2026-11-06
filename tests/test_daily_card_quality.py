@@ -63,6 +63,41 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
             "وقّع وزير الدفاع اتفاقاً للتعاون العسكري وتبادل المعلومات الاستخباراتية."
         ))
 
+    def test_routes_egyptian_major_event_out_of_libya_section(self):
+        sections = [
+            {"id": section_id, "title": title, "events": []}
+            for section_id, title in card.EXPECTED_SECTIONS
+        ]
+        sections[0]["events"].append({
+            "country": "مصر",
+            "text": "أعلن الجيش المصري مقتل رئيس أركان حرس الحدود خلال عملية عسكرية."
+        })
+        routed = card.route_geographic_events(sections)
+        by_id = {section["id"]: section for section in routed}
+        self.assertEqual(by_id["libya"]["events"], [])
+        self.assertEqual(len(by_id["africa_major"]["events"]), 1)
+
+    def test_routes_middle_east_event_to_its_section(self):
+        sections = [
+            {"id": section_id, "title": title, "events": []}
+            for section_id, title in card.EXPECTED_SECTIONS
+        ]
+        sections[-1]["events"].append({
+            "country": "إيران",
+            "text": "أعلن الحرس الثوري الإيراني إجراء مناورات بحرية في مضيق هرمز."
+        })
+        routed = card.route_geographic_events(sections)
+        by_id = {section["id"]: section for section in routed}
+        self.assertEqual(by_id["world_major"]["events"], [])
+        self.assertEqual(len(by_id["middle_east"]["events"]), 1)
+
+    def test_filters_routine_source_material_before_gemini(self):
+        text = "خرج نشطاء بيئيون في احتجاج أمام مؤتمر الأمم المتحدة للمناخ."
+        self.assertFalse(card.is_editorially_eligible(text))
+        self.assertTrue(card.is_editorially_eligible(
+            "نفذ الجيش عملية عسكرية لملاحقة جماعة مسلحة عبر الحدود."
+        ))
+
 
 if __name__ == "__main__":
     unittest.main()

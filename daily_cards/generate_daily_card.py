@@ -261,6 +261,15 @@ def get_news_for_period(slot, reference_date):
         # Keep the slot's time window as well as the local publication date.
         # Half-open interval: start <= dt < end
         if start <= dt < end:
+            editorial_text = " ".join(str(item.get(key, "") or "") for key in (
+                "title", "description", "original_title", "original_description"
+            ))
+            if is_sports_related(editorial_text):
+                print(f"Excluded sports source item before Gemini: {editorial_text[:120]}")
+                continue
+            if not is_editorially_eligible(editorial_text):
+                print(f"Excluded low-relevance source item before Gemini: {editorial_text[:160]}")
+                continue
             selected.append({
                 "title": item.get("title", ""),
                 "description": item.get("description", ""),
@@ -1261,13 +1270,13 @@ def generate_with_gemini(prompt):
 
             print("=" * 70)
             print(f"Trying Gemini model: {model_name} (attempt {attempt}/2)")
-            print("Timeout: 180 seconds")
+            print("Timeout: 120 seconds")
             print("=" * 70)
 
             try:
                 client = genai.Client(
                     api_key=api_key,
-                    http_options=types.HttpOptions(timeout=180000)
+                    http_options=types.HttpOptions(timeout=120000)
                 )
 
                 interaction = client.interactions.create(
@@ -1649,7 +1658,7 @@ def normalize_sections(generated):
             "events": clean_events
         })
 
-    return route_priority_events(final_sections)
+    return route_geographic_events(route_priority_events(final_sections))
 
 # ============================================================
 # ACCUMULATIVE DAILY-CARD MERGING
@@ -1891,6 +1900,113 @@ def normalize_country_for_match(value):
     return aliases.get(value, value)
 
 
+def route_geographic_events(sections):
+    """
+    Correct obvious section mismatches using the event's stated country or
+    institution. Terrorism remains a dedicated global section; named
+    Libya/Algeria/Morocco coverage keeps its country-specific priority.
+    """
+    if not isinstance(sections, list):
+        return sections
+
+    by_id = {section.get("id"): section for section in sections if isinstance(section, dict)}
+    africa = {
+        "مصر", "egypt", "السودان", "sudan", "جنوب السودان", "south sudan",
+        "تونس", "tunisia", "موريتانيا", "mauritania", "السنغال", "senegal",
+        "غامبيا", "gambia", "غينيا", "guinea", "غينيا بيساو", "guinea bissau",
+        "سيراليون", "sierra leone", "ليبيريا", "liberia", "ساحل العاج",
+        "cote divoire", "ivory coast", "غانا", "ghana", "توغو", "togo",
+        "بنين", "benin", "بوركينا فاسو", "burkina faso", "مالي", "mali",
+        "النيجر", "niger", "نيجيريا", "nigeria", "الكاميرون", "cameroon",
+        "تشاد", "chad", "افريقيا الوسطى", "جمهورية افريقيا الوسطى",
+        "central african republic", "الغابون", "gabon", "غينيا الاستوائية",
+        "equatorial guinea", "الكونغو", "congo", "جمهورية الكونغو الديمقراطية",
+        "democratic republic of the congo", "الكونغو الديمقراطية",
+        "اوغندا", "uganda", "كينيا", "kenya", "تنزانيا", "tanzania",
+        "رواندا", "rwanda", "بوروندي", "burundi", "اثيوبيا", "ethiopia",
+        "اريتريا", "eritrea", "الصومال", "somalia", "جيبوتي", "djibouti",
+        "جنوب افريقيا", "south africa", "زامبيا", "zambia", "زيمبابوي",
+        "zimbabwe", "موزمبيق", "mozambique", "انغولا", "angola",
+        "ناميبيا", "namibia", "بوتسوانا", "botswana", "مدغشقر", "madagascar",
+        "مالاوي", "malawi", "ليسوتو", "lesotho", "اسواتيني", "eswatini"
+    }
+    middle_east = {
+        "فلسطين", "palestine", "اسرائيل", "israel", "الاردن", "jordan",
+        "لبنان", "lebanon", "سوريا", "syria", "العراق", "iraq",
+        "ايران", "iran", "السعوديه", "saudi arabia", "اليمن", "yemen",
+        "الامارات", "united arab emirates", "uae", "قطر", "qatar",
+        "الكويت", "kuwait", "البحرين", "bahrain", "عمان", "oman",
+        "تركيا", "turkey"
+    }
+    organizations = {
+        "الامم المتحده", "united nations", "مجلس الامن", "un security council",
+        "حلف الناتو", "حلف شمال الاطلسي", "nato",
+        "الاتحاد الاوروبي", "european union", "eu",
+        "الاتحاد الافريقي", "african union", "au",
+        "بريكس", "brics"
+    }
+    terrorism_terms = (
+        "ارهاب", "ارهابي", "ارهابيه", "تنظيم داعش", "تنظيم القاعده",
+        "بوكو حرام", "داعش", "جماعه مسلحه", "هجوم ارهابي",
+        "عمليه ارهابيه", "terrorism", "terrorist", "isis", "islamic state",
+        "al qaeda", "boko haram", "iswap", "jihadist"
+    )
+    major_africa_terms = (
+        "انقلاب", "محاوله انقلاب", "رئيس الاركان", "قائد الجيش",
+        "قائد القوات المسلحه", "مقتل قائد", "مقتل رئيس الاركان",
+        "عقد تسلح", "صفقه تسلح", "صفقه عسكريه", "اتفاق دفاعي",
+        "عمليه عسكريه واسعه", "هجوم واسع", "حاله الطوارئ",
+        "تمرد عسكري", "اغتيال مسؤول", "وفاه الرئيس", "استقاله الرئيس",
+        "military coup", "coup attempt", "chief of staff", "arms deal",
+        "defense agreement", "major military operation"
+    )
+
+    for section in sections:
+        if not isinstance(section, dict):
+            continue
+        source_id = section.get("id")
+        retained = []
+        for event in section.get("events", []):
+            if not isinstance(event, dict):
+                continue
+            country = normalize_country_for_match(event.get("country", ""))
+            text_value = str(event.get("text", "") or "")
+            normalized_text = normalize_event_for_match(text_value)
+            target_id = None
+
+            if country in organizations:
+                target_id = "international_orgs"
+            elif source_id != "terrorism" and source_id not in ("libya", "algeria", "morocco") and any(
+                term in normalized_text for term in terrorism_terms
+            ):
+                target_id = "terrorism"
+            elif country in middle_east and source_id != "terrorism":
+                target_id = "middle_east"
+            elif country in ("ليبيا", "libya"):
+                target_id = "libya"
+            elif country in ("الجزائر", "algeria"):
+                target_id = "algeria"
+            elif country in ("المغرب", "morocco"):
+                target_id = "morocco"
+            elif country in africa and source_id in ("libya", "algeria", "morocco"):
+                target_id = "africa_major"
+            elif country in africa and source_id == "world_major" and any(
+                term in normalized_text for term in major_africa_terms
+            ):
+                target_id = "africa_major"
+
+            if target_id and target_id != source_id and target_id in by_id:
+                by_id[target_id]["events"] = merge_event_lists(
+                    by_id[target_id].get("events", []), [event]
+                )
+                print(f"Corrected section for {country or 'unidentified country'}: {source_id} -> {target_id}")
+            else:
+                retained.append(event)
+        section["events"] = retained
+
+    return sections
+
+
 def merge_event_lists(existing_events, incoming_events):
     """
     Keep every previously published event. New items are appended; likely
@@ -1998,7 +2114,7 @@ def merge_card_sections(existing_sections, incoming_sections):
             "title": title,
             "events": events
         })
-    return route_priority_events(merged_sections)
+    return route_geographic_events(route_priority_events(merged_sections))
 
 
 def load_current_day_events(reference_date):
