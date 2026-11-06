@@ -117,7 +117,7 @@ return Number(p[2])+' '+monthLabel(p[1])+' '+p[0];
 function setBreadcrumb(level){
 let html='<button onclick="showRoot()">التقديرات الاستراتيجية</button>';
 if(level!=='root'){
-html+='<span>‹</span><button onclick="showYears()">'+(archiveType==='research'?'منشورات مراكز البحث':archiveType==='monthly'?'التقدير الاستراتيجي الشهري':'أرشيف البطاقات الاستراتيجية الإخبارية السابقة')+'</button>';
+html+='<span>‹</span><button onclick="showYears()">'+(archiveType==='research'?'التقديرات الاستراتيجية من مراكز البحوث':archiveType==='monthly'?'التقديرات الشهرية الشاملة':'التقديرات الاستراتيجية من المصادر الإخبارية')+'</button>';
 }
 if(level!=='years'&&selectedYear){
 html+='<span>‹</span><button onclick="showMonths(\''+selectedYear+'\')">'+esc(selectedYear)+'</button>';
@@ -132,12 +132,12 @@ function findYear(year){return archiveIndex.years.find(y=>String(y.year)===Strin
 function showRoot(){
 currentView='root';selectedYear=null;selectedMonth=null;
 setBreadcrumb('root');
-pageTitle.textContent='التقديرات الاستراتيجية';
+pageTitle.textContent='أقسام التقديرات الاستراتيجية';
 pageDescription.textContent='اختر نوع المواد الاستراتيجية التي تريد تصفحها.';
 content.innerHTML='<div class="folder-grid">'+
-'<button class="folder" onclick="openArchive(\'monthly\')"><div class="folder-icon">📊</div><div class="folder-title">التقدير الاستراتيجي الشهري</div><div class="folder-meta">تقدير مستقل يستخلص الاتجاهات والتحولات من الأخبار الموثقة خلال الشهر</div></button>'+
-'<button class="folder" onclick="openArchive(\'news\')"><div class="folder-icon">🗂️</div><div class="folder-title">أرشيف البطاقات الاستراتيجية الإخبارية السابقة</div><div class="folder-meta">البطاقات السابقة المنشأة انطلاقًا من الأخبار، محفوظة كما هي</div></button>'+
-'<button class="folder" onclick="openArchive(\'research\')"><div class="folder-icon">📚</div><div class="folder-title">منشورات مراكز البحث</div><div class="folder-meta">قسم مستقل لمنشورات مراكز الدراسات، دون تغيير في آلية عمله</div></button>'+
+'<button class="folder" onclick="openArchive(\'monthly\')"><div class="folder-icon">📊</div><div class="folder-title">التقديرات الشهرية الشاملة</div><div class="folder-meta">تقدير شامل يصدر في بداية كل شهر ويلخص أبرز أحداث الشهر المنقضي</div></button>'+
+'<button class="folder" onclick="openArchive(\'news\')"><div class="folder-icon">🗂️</div><div class="folder-title">التقديرات الاستراتيجية من المصادر الإخبارية</div><div class="folder-meta">بطاقات تحليلية دورية تنطلق من المستجدات والأحداث والصفقات والزيارات الكبرى</div></button>'+
+'<button class="folder" onclick="openArchive(\'research\')"><div class="folder-icon">📚</div><div class="folder-title">التقديرات الاستراتيجية من مراكز البحوث</div><div class="folder-meta">بطاقات تحليلية دورية تستند إلى منشورات ودراسات مراكز البحوث</div></button>'+
 '</div>';
 }
 async function openArchive(type){
@@ -160,7 +160,7 @@ content.innerHTML='<div class="error">تعذر تحميل هذا الأرشيف 
 function showYears(){
 currentView='years';
 selectedYear=null;selectedMonth=null;setBreadcrumb('years');
-pageTitle.textContent=archiveType==='research'?'منشورات مراكز البحث':archiveType==='monthly'?'التقدير الاستراتيجي الشهري':'أرشيف البطاقات الاستراتيجية الإخبارية السابقة';
+pageTitle.textContent=archiveType==='research'?'التقديرات الاستراتيجية من مراكز البحوث':archiveType==='monthly'?'التقديرات الشهرية الشاملة':'التقديرات الاستراتيجية من المصادر الإخبارية';
 pageDescription.textContent='اختر السنة، ثم الشهر، لعرض البطاقات المحفوظة.';
 if(!archiveIndex.years.length){content.innerHTML='<div class="empty">لا توجد بطاقات مؤرشفة في هذا الملف حتى الآن.</div>';return;}
 content.innerHTML='<div class="folder-grid">'+archiveIndex.years.map(y=>{
@@ -173,7 +173,7 @@ currentView='months';
 selectedYear=String(year);selectedMonth=null;setBreadcrumb('months');
 const entry=findYear(year);
 pageTitle.textContent='السنة '+year;
-pageDescription.textContent=archiveType==='research'?'منشورات وتحليلات مراكز البحث كما كانت، دون تغيير في هذا القسم.':archiveType==='monthly'?'قراءة استراتيجية شاملة تستخلص الاتجاهات والتحولات من الأخبار الموثقة خلال الشهر.':'أرشيف البطاقات السابقة المستخلصة من الأخبار اليومية.';
+pageDescription.textContent=archiveType==='research'?'بطاقات تحليلية دورية مبنية على منشورات مراكز البحوث.':archiveType==='monthly'?'تقديرات شاملة تصدر في بداية الشهر لتلخيص وتحليل أحداث الشهر المنقضي.':'بطاقات تحليلية دورية مبنية على المستجدات والأحداث والصفقات والزيارات الكبرى.';
 if(!entry||!(entry.months||[]).length){content.innerHTML='<div class="empty">لا توجد أشهر مؤرشفة في هذه السنة.</div>';return;}
 content.innerHTML='<div class="folder-grid">'+entry.months.map(m=>{
 return '<button class="folder" onclick="showMonthCards(\''+esc(year)+'\',\''+esc(m.month)+'\')"><div class="folder-icon">📂</div><div class="folder-title">'+esc(monthLabel(m.month))+'</div><div class="folder-meta">'+(m.cards||[]).length+' بطاقة محفوظة</div></button>';
@@ -183,7 +183,7 @@ function showMonthCards(year,month){
 currentView='cards';selectedYear=String(year);selectedMonth=String(month);setBreadcrumb('cards');
 const y=findYear(year),m=y&&(y.months||[]).find(x=>String(x.month)===String(month));
 pageTitle.textContent='بطاقات '+monthLabel(month)+' '+year;
-pageDescription.textContent=archiveType==='research'?'اختر منشورًا لقراءة البطاقة المرتبطة به.':archiveType==='monthly'?'اختر التقدير الشهري لقراءة التحليل الشامل.':'اختر بطاقة من الأرشيف الإخباري السابق.';
+pageDescription.textContent=archiveType==='research'?'اختر بطاقة مستندة إلى منشور بحثي لقراءة التحليل.':archiveType==='monthly'?'اختر التقدير الشهري الشامل لقراءة التحليل.':'اختر تقديراً استراتيجياً مبنياً على مصدر إخباري.';
 if(!m||!(m.cards||[]).length){content.innerHTML='<div class="empty">لا توجد بطاقات محفوظة في هذا الشهر.</div>';return;}
 const cards=[...m.cards].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.title||'').localeCompare(a.title||''));
 content.innerHTML='<div class="cards-grid">'+cards.map((c,i)=>'<button class="card-link" onclick="openArchivedCard('+i+')"><div class="card-date">'+esc(dateLabel(c.date))+'</div><div class="card-period">'+(c.slot==='morning'?'التقدير الاستراتيجي الصباحي':c.slot==='evening'?'التقدير الاستراتيجي المسائي':esc(c.kind_label||'تقدير استراتيجي'))+'</div><div class="card-subtitle">'+esc(c.subject||c.title||'')+'</div></button>').join('')+'</div>';
