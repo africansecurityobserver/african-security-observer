@@ -72,7 +72,7 @@ PERIODS = {
     "daily": {
         "start_hour": 6,
         "start_minute": 0,
-        "label": "06:00–23:59 (تُحدّث خلال اليوم)",
+        "label": "00:00–23:59 (تُنشأ عند 06:00 وتُحدّث خلال اليوم)",
     },
 }
 
@@ -148,14 +148,14 @@ def determine_slot(now):
     return "daily"
 
 def get_period_dates(slot, reference_date):
-    """Collect today's news from 06:00 until the current local time."""
+    """Collect all news published on today's local calendar date, from midnight."""
     if slot != "daily":
         raise ValueError(f"Unknown card type: {slot}")
 
     now = datetime.now(TIMEZONE)
     start = datetime(
         reference_date.year, reference_date.month, reference_date.day,
-        6, 0, tzinfo=TIMEZONE
+        0, 0, tzinfo=TIMEZONE
     )
     end = max(start, now) if now.date() == reference_date else start
     return start, end
@@ -470,7 +470,7 @@ def build_prompt(
 
     date_text = reference_date.strftime("%d/%m/%Y")
 
-    period_label = f"06:00–{end.strftime('%H:%M')} (تُحدّث خلال اليوم)"
+    period_label = f"00:00–{end.strftime('%H:%M')} (أخبار اليوم بالتوقيت المحلي)
 
     news_material = []
 
@@ -2203,11 +2203,15 @@ def main():
         reference_date
     )
 
-    # A scheduled run that starts before 06:00 must not publish an empty
-    # placeholder for the current day. Wait for the first valid daily window.
-    if now < start:
+    # The card is first generated at 06:00, but it must include all
+    # news published on the same Tunisia calendar date, including 00:00–06:00.
+    generation_start = datetime(
+        reference_date.year, reference_date.month, reference_date.day,
+        6, 0, tzinfo=TIMEZONE
+    )
+    if now < generation_start:
         print(
-            f"Daily card window has not started yet ({start.isoformat()}); "
+            f"Daily card window has not started yet ({generation_start.isoformat()}); "
             "skipping without writing an empty card."
         )
         return
