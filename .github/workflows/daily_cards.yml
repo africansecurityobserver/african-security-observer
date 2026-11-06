@@ -66,6 +66,7 @@ jobs:
         timeout-minutes: 4
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.5-flash-lite
           CARD_SLOT: ${{ inputs.slot || 'daily' }}
           FORCE_CARD_REFRESH: ${{ inputs.force_refresh || 'false' }}
         run: |
