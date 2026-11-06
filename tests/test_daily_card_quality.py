@@ -91,6 +91,25 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
         self.assertEqual(by_id["world_major"]["events"], [])
         self.assertEqual(len(by_id["middle_east"]["events"]), 1)
 
+    def test_news_fingerprint_is_independent_of_feed_order(self):
+        first = [
+            {"url": "https://example.com/a", "title": "خبر أ"},
+            {"url": "https://example.com/b", "title": "خبر ب"},
+        ]
+        second = list(reversed(first))
+        self.assertEqual(
+            card.fingerprint_news_items(first),
+            card.fingerprint_news_items(second)
+        )
+
+    def test_news_fingerprint_changes_when_source_material_changes(self):
+        original = [{"url": "https://example.com/a", "title": "خبر أ"}]
+        updated = [{"url": "https://example.com/a", "title": "خبر أ جديد"}]
+        self.assertNotEqual(
+            card.fingerprint_news_items(original),
+            card.fingerprint_news_items(updated)
+        )
+
     def test_filters_routine_source_material_before_gemini(self):
         text = "خرج نشطاء بيئيون في احتجاج أمام مؤتمر الأمم المتحدة للمناخ."
         self.assertFalse(card.is_editorially_eligible(text))
