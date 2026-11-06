@@ -26,7 +26,7 @@ function makeSubnav(key){
  (submenus[key]||submenus.home).forEach(([label,target])=>{
   if(key==='home'&&target!=='home'){
    const b=el('button',{type:'button'},label);
-   b.addEventListener('click',()=>{const old=document.querySelector('.nav button[data-section="'+target+'"]');if(old)old.click();});
+   b.addEventListener('click',()=>{const mapped=target==='analysis'?'strategicnews':target;const old=document.querySelector('.nav button[data-section="'+mapped+'"]');if(old)old.click();});
    inner.appendChild(b);
   }else{
    const a=el('a',{href:target==='home'?'./':target},label);
@@ -67,5 +67,5 @@ function addHomeSubnav(){
  buttons.forEach(b=>observer.observe(b,{attributes:true,attributeFilter:['class']}));
  update();
 }
-if(pageKey==='home')addHomeSubnav();else addInnerShell();
+if(pageKey==='home'){addHomeSubnav();window.addEventListener('load',()=>{const requested=new URLSearchParams(location.search).get('section');if(!requested)return;const mapped=requested==='analysis'?'strategicnews':requested;const activate=()=>{const btn=document.querySelector('.nav button[data-section="'+mapped+'"]');if(btn){btn.click();return;}window.setTimeout(activate,180);};activate();});}else addInnerShell();
 })();
