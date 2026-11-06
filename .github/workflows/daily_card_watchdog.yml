@@ -80,25 +80,13 @@ jobs:
 
           now = datetime.now(tz)
           generated_at = parse_date((today_card or {}).get("generated_at"))
-          latest_news_at = max(
-              (parse_date(item.get("published")) for item in todays_news
-               if parse_date(item.get("published")) is not None),
-              default=None
-          )
-          stale_with_new_material = bool(
-              generated_at and latest_news_at
-              and (now - generated_at).total_seconds() >= 45 * 60
-              and (latest_news_at - generated_at).total_seconds() >= 15 * 60
-          )
           missing_or_empty = event_count == 0 and len(todays_news) > 0
-          needs_recovery = missing_or_empty or stale_with_new_material
+          needs_recovery = missing_or_empty
           print(f"Tunisia date: {today.isoformat()}")
           print(f"Existing card events: {event_count}")
           print(f"Today's source-news items: {len(todays_news)}")
-          print(f"Latest source-news timestamp: {latest_news_at}")
           print(f"Card generated at: {generated_at}")
-          print(f"Stale with newer source material: {stale_with_new_material}")
-          print(f"Recovery needed: {needs_recovery}")
+          print(f"Recovery needed (missing/empty card only): {needs_recovery}")
           with open(__import__("os").environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
               output.write(f"needs_recovery={'true' if needs_recovery else 'false'}\n")
           PY
@@ -125,14 +113,14 @@ jobs:
               except Exception:
                   pass
 
-          recent = latest is not None and (now - latest).total_seconds() < 3600
+          recent = latest is not None and (now - latest).total_seconds() < 3 * 3600
           should_skip = active or recent
-          print(f"Active generation: {active}; recent attempt within 60 minutes: {recent}")
+          print(f"Active generation: {active}; recent attempt within 3 hours: {recent}")
           with open("watchdog_decision.txt", "w", encoding="utf-8") as f:
               f.write("skip" if should_skip else "dispatch")
           PY
           if [ "$(cat watchdog_decision.txt)" = "skip" ]; then
-            echo "A generation run is active or was attempted within the last hour; no duplicate dispatch."
+            echo "A generation run is active or was attempted within the last three hours; no duplicate dispatch."
             exit 0
           fi
           gh workflow run daily_cards.yml --ref main -f slot=daily
