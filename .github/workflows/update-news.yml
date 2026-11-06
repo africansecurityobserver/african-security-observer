@@ -14,8 +14,8 @@ on:
       - '.github/workflows/update-news.yml'
 
   schedule:
-    # Refresh the source news feed every 15 minutes (UTC).
-    - cron: '*/15 * * * *'
+    # Stagger refreshes away from the busiest minute marks in GitHub Actions.
+    - cron: '7,22,37,52 * * * *'
 
   workflow_dispatch:
 
