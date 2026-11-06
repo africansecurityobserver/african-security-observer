@@ -13,6 +13,16 @@ on:
         type: boolean
         default: false
 
+  # Run a forced verification refresh when the card generator or its
+  # workflow changes. Generated card-data commits do not match these paths,
+  # so this cannot create a self-triggering loop.
+  push:
+    branches:
+      - main
+    paths:
+      - "daily_cards/generate_daily_card.py"
+      - ".github/workflows/daily_cards.yml"
+
   schedule:
     # Tunisia local time: every 45 minutes from 06:00 through 15:45.
     # The minute/hour combinations preserve a true 45-minute cadence.
@@ -68,7 +78,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.5-flash-lite
           CARD_SLOT: ${{ inputs.slot || 'daily' }}
-          FORCE_CARD_REFRESH: ${{ inputs.force_refresh || 'false' }}
+          FORCE_CARD_REFRESH: ${{ github.event_name == 'push' || inputs.force_refresh || 'false' }}
         run: |
           python -u daily_cards/generate_daily_card.py
 
