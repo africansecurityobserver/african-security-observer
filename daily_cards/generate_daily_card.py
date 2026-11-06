@@ -1,3 +1,4 @@
+import hashlib
 import json
 import os
 import sys
@@ -1304,8 +1305,17 @@ def generate_with_gemini(prompt):
             )
             print(f"Error: {type(e).__name__}: {e}")
             print("=" * 70)
-            # Move immediately to the next stable model; do not sleep or
-            # repeat a timed-out request. The total provider wait is bounded.
+            error_text = f"{type(e).__name__}: {e}".lower()
+            quota_error = any(marker in error_text for marker in (
+                "429", "resource_exhausted", "quota", "rate limit",
+                "rate_limit", "too many requests", "requests per day"
+            ))
+            if quota_error:
+                raise RuntimeError(
+                    f"Gemini quota/rate limit reached on {model_name}; "
+                    "stopping without fallback to protect the other workflows."
+                ) from e
+            # For non-quota failures only, try the next configured model once.
 
     raise RuntimeError(
         "All configured Gemini models failed. Last error: "
@@ -2281,6 +2291,21 @@ def save_archive_index():
     )
 
 
+def fingerprint_news_items(items):
+    """Stable digest of the exact source packet; unchanged feeds need no Gemini call."""
+    normalized = []
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        normalized.append(json.dumps(
+            item, ensure_ascii=False, sort_keys=True, default=str,
+            separators=(",", ":")
+        ))
+    normalized.sort()
+    payload = "\n".join(normalized).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
+
+
 # ============================================================
 # MAIN
 # ============================================================
@@ -2410,25 +2435,23 @@ def main():
         f"News candidates: {len(news_items)}"
     )
 
+    existing_card = next((
+        item for item in reversed(load_previous_cards())
+        if item.get("date") == reference_date.isoformat()
+        and item.get("slot") == slot
+    ), None)
+
     if not news_items:
-
         print("No news found for this period.")
-        existing_card = next((
-            item for item in reversed(load_previous_cards())
-            if item.get("date") == reference_date.isoformat()
-            and item.get("slot") == slot
-        ), None)
-
-        # Keep the first scheduled card as a placeholder if the feed is not
-        # ready yet. The next 15-minute run will enrich it when news arrives.
-        # Never rewrite an existing card merely because a feed run is empty.
         if existing_card:
             print("Keeping the existing daily card unchanged; no news candidates in this run.")
             return
-
-        # Do not publish an empty placeholder as if it were a completed daily card.
-        # The watchdog can retry once today's news feed contains material.
         print("No card written: today's feed has no news candidates yet.")
+        return
+
+    source_fingerprint = fingerprint_news_items(news_items)
+    if existing_card and existing_card.get("source_fingerprint") == source_fingerprint:
+        print("The source-news packet is unchanged since the last successful update; skipping Gemini to preserve quota.")
         return
 
     # --------------------------------------------------------
@@ -2498,6 +2521,8 @@ def main():
         "title": f"الحوصلة الإخبارية ليوم {reference_date.strftime('%d/%m/%Y')}",
 
         "generated_at": now.isoformat(),
+
+        "source_fingerprint": source_fingerprint,
 
         "sections": sections
     }
