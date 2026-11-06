@@ -25,7 +25,7 @@ MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 MAX_CANDIDATES = 60
 MAX_CARD_AGE_DAYS = 7
 MAX_ARCHIVE_CARDS_PER_TYPE = 300
-MAX_CARDS_PER_RUN = 6
+MAX_CARDS_PER_RUN = max(1, int(os.getenv("MAX_CARDS_PER_RUN", "1")))
 
 # Supplemental searches widen strategic coverage beyond the existing daily-news
 # feed, especially for diplomacy, defense policy, logistics, and defense economics.
@@ -785,6 +785,14 @@ def unpack_generated_card(output):
     return kind, subject, sections, summary_text, word_count, has_conclusion, valid
 
 
+def is_quota_or_rate_limit_error(exc):
+    message = f"{type(exc).__name__}: {exc}".lower()
+    return any(marker in message for marker in (
+        "429", "resource_exhausted", "quota", "rate limit",
+        "rate_limit", "too many requests", "requests per day"
+    ))
+
+
 def main():
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
@@ -964,6 +972,9 @@ def main():
         except Exception as exc:
             # A transient model/API error must not permanently blacklist the source.
             print(f"Strategic-card generation failed for one article: {type(exc).__name__}")
+            if is_quota_or_rate_limit_error(exc):
+                print("Gemini quota/rate limit reached; stopping this run without another model request.")
+                break
             continue
 
         reviewed_count += 1
@@ -1012,6 +1023,9 @@ def main():
                 kind, subject, sections, summary_text, word_count, has_conclusion, valid = unpack_generated_card(output)
             except Exception as exc:
                 print(f"Corrective rewrite failed; source remains eligible for retry: {type(exc).__name__}")
+                if is_quota_or_rate_limit_error(exc):
+                    print("Gemini quota/rate limit reached during correction; stopping this run.")
+                    break
                 continue
 
         if not valid:
