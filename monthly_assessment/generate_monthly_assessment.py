@@ -294,7 +294,7 @@ def main():
     date_tag = last.isoformat()
     slug = hashlib.sha1(f"{first:%Y-%m}".encode()).hexdigest()[:10]
     relative_path = f"{first:%Y-%m}/{last:%Y%m%d}_{slug}.json"
-    title = clean(output.get("title")) or f"التقديرات الشهرية الشاملة — {MONTHS[first.month - 1]} {first.year}"
+    title = clean(output.get("title")) or f"التقدير الشهري الشامل — {MONTHS[first.month - 1]} {first.year}"
     source_map = {}
     for item in news:
         url = item.get("url")
@@ -307,7 +307,7 @@ def main():
         "id": slug, "kind": "monthly_assessment",
         "kind_label": "التقديرات الشهرية الشاملة",
         "title": title,
-        "subject": clean(output.get("subject")) or "التقديرات الشهرية الشاملة للتطورات الأمنية والدفاعية والجيوسياسية",
+        "subject": clean(output.get("subject")) or "التقدير الشهري الشامل للتطورات الأمنية والدفاعية والجيوسياسية",
         "date": date_tag, "period_start": first.isoformat(), "period_end": last.isoformat(),
         "region": "تقدير استراتيجي شامل — تونس وشمال إفريقيا وإفريقيا والعالم",
         "summary": summary, "coverage_note": coverage,
