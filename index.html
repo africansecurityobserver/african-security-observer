@@ -1222,21 +1222,9 @@ onclick="printCurrentArticle()">
    GENERAL
 ===================================================== */
 
-const names = {
-home:'الرئيسية',
-world:'أخبار العالم',
-analysis:'المقالات الاستراتيجية',
-archive:'الأرشيف'
-};
-
-const categoryNames = {
-sahel:'أخبار إفريقيا',
-north:'أخبار إفريقيا',
-rest:'أخبار إفريقيا',
+const regionNames = {
 africa:'أخبار إفريقيا',
-world:'أخبار العالم',
-international:'أخبار العالم',
-defense:'أخبار عسكرية'
+world:'أخبار العالم'
 };
 
 const home =
@@ -1295,8 +1283,8 @@ let items = [];
 function card(item){
 
 const category =
-categoryNames[item.category] ||
-'متابعة إفريقية';
+regionNames[item.region] ||
+'الأخبار';
 
 const source =
 item.source ||
@@ -1315,7 +1303,7 @@ item.published ||
 'تاريخ غير متوفر';
 
 const summary =
-item.summary || '';
+item.description || item.summary || '';
 
 return `
 
@@ -1478,67 +1466,6 @@ newsList.innerHTML = '';
 empty.classList.remove('hidden');
 
 }
-
-}
-
-
-/* =====================================================
-   CATEGORY DISPLAY
-===================================================== */
-
-function showCategory(category){
-
-const filtered =
-items.filter(function(item){
-
-if(category === 'world'){
-return item.region === 'world' ||
-(!item.region && !['sahel','north','rest'].includes(item.category));
-}
-
-return item.category === category;
-
-});
-
-document.getElementById('sectionTitle').textContent =
-names[category] || 'الأخبار';
-
-const list =
-document.getElementById('section-list');
-
-
-if(filtered.length === 0){
-
-list.innerHTML = `
-<div class="empty">
-لا توجد أخبار متاحة حاليًا في هذا القسم.
-</div>
-`;
-
-}else{
-
-list.innerHTML =
-filtered.map(card).join('');
-
-}
-
-
-home.classList.add('hidden');
-
-articlesSection.classList.add('hidden');
-
-articleReaderSection.classList.add('hidden');
-
-archiveSection.classList.add('hidden');
-
-placeholder.classList.remove('hidden');
-
-setActiveNav(category);
-
-window.scrollTo({
-top:0,
-behavior:'smooth'
-});
 
 }
 
@@ -2558,20 +2485,6 @@ this.dataset.section;
 if(section === 'home'){
 
 showHome();
-
-}
-
-else if(
-section === 'world'
-){
-
-showCategory(section);
-
-}
-
-else if(section === 'analysis'){
-
-showArticles();
 
 }
 
