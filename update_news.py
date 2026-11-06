@@ -337,7 +337,18 @@ EXCLUDED_TERMS = [
     "imf",
     "inflation",
     "gdp",
-    "unesco"
+    "unesco",
+    # Arabic equivalents for clearly unrelated consumer/lifestyle coverage.
+    "سياحة", "سياحي", "سياحية", "سائح", "سياح", "فنادق", "فندق",
+    "عطلة", "عطلات", "رحلة سياحية", "رحلات سياحية",
+    "أغنية", "أغاني", "موسيقى", "مغني", "مغنية", "فنان", "فنانة",
+    "سينما", "فيلم", "أفلام", "مسلسل", "مسلسلات", "ترفيه", "مشاهير",
+    "موضة", "أزياء", "طبخ", "وصفة", "وصفات", "مطعم", "مطاعم",
+    "صحة", "صحي", "صحية", "طبي", "طبية", "مستشفى", "مستشفيات",
+    "مرض", "أمراض", "علاج", "أطباء", "طبيب", "لقاح", "تغذية",
+    "طقس", "أحوال جوية", "أمطار", "درجات الحرارة", "توقعات الطقس",
+    "جامعة", "جامعات", "مدرسة", "مدارس", "تعليم", "طلاب", "تلاميذ",
+    "تضخم", "بورصة", "أسهم", "سوق الأسهم", "مصارف", "بنوك"
 ]
 
 
@@ -1402,7 +1413,13 @@ def classify_region(title, description):
     # headline itself does not identify a region.
     if any(term in title_text for term in africa_terms):
         return "africa"
-    if any(term in description_text for term in africa_terms):
+    description_country_terms = [
+        term for term in africa_terms
+        if term not in {
+            "africa", "african", "afrique", "africain", "africaine", "sahel"
+        }
+    ]
+    if any(term in description_text for term in description_country_terms):
         return "africa"
     return "world"
 
@@ -1477,18 +1494,16 @@ def classify_news(
         "ساحل العاج"
     ]
 
-    if any(
-        word in text
-        for word in north_words
-    ):
+    def contains_country_term(term):
+        # Avoid matching "Niger" inside "Nigeria".
+        if re.fullmatch(r"[a-z][a-z -]*", term, flags=re.IGNORECASE):
+            return re.search(r"(?<![a-z])" + re.escape(term) + r"(?![a-z])", text) is not None
+        return term in text
 
+    if any(contains_country_term(word) for word in north_words):
         return "north"
 
-    if any(
-        word in text
-        for word in sahel_words
-    ):
-
+    if any(contains_country_term(word) for word in sahel_words):
         return "sahel"
 
     if feed_category in ("north", "north_leaders"):
