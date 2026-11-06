@@ -65,6 +65,14 @@ class NewsQualityTests(unittest.TestCase):
         title = "Mali army clashes with armed militants near the border"
         self.assertTrue(is_relevant_security_news(title, "Security forces reported fighting."))
 
+    def test_arabic_security_targeting_is_not_misclassified_as_sport(self):
+        self.assertFalse(is_sports_related(
+            "هجوم مسلح يستهدف قوات الأمن في باكستان", ""
+        ))
+        self.assertTrue(is_relevant_security_news(
+            "هجوم مسلح يستهدف قوات الأمن في باكستان", ""
+        ))
+
     def test_keeps_terrorism_and_armed_attacks_outside_africa(self):
         self.assertTrue(is_relevant_security_news(
             "Suicide bombing targets a security convoy in Pakistan", ""
@@ -88,7 +96,7 @@ class NewsQualityTests(unittest.TestCase):
         self.assertNotIn("adamawa", joined)
         self.assertIn("terrorist", joined)
         self.assertIn("attaque", joined)
-        self.assertIn("%D9%87", joined)  # Arabic search terms are URL-encoded.
+        self.assertIn("%d9%87", joined)  # Arabic search terms are URL-encoded.
 
     def test_keeps_designated_officials_diplomatic_activities(self):
         self.assertTrue(is_relevant_security_news(
