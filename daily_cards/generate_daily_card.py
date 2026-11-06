@@ -1209,7 +1209,6 @@ Africa/Tunis
 
 def generate_with_gemini(prompt):
     api_key = os.getenv("GEMINI_API_KEY")
-
     if not api_key:
         raise RuntimeError("GEMINI_API_KEY is not set.")
 
@@ -1221,115 +1220,95 @@ def generate_with_gemini(prompt):
                 "items": {
                     "type": "object",
                     "properties": {
-                        "title": {
-                            "type": "string"
-                        },
+                        "title": {"type": "string"},
                         "events": {
                             "type": "array",
                             "items": {
                                 "type": "object",
                                 "properties": {
-                                    "country": {
-                                        "type": "string"
-                                    },
-                                    "text": {
-                                        "type": "string"
-                                    }
+                                    "country": {"type": "string"},
+                                    "text": {"type": "string"}
                                 },
-                                "required": [
-                                    "country",
-                                    "text"
-                                ]
+                                "required": ["country", "text"]
                             }
                         }
                     },
-                    "required": [
-                        "title",
-                        "events"
-                    ]
+                    "required": ["title", "events"]
                 }
             }
         },
-        "required": [
-            "sections"
-        ]
+        "required": ["sections"]
     }
 
-    # Try the configured model first, then independent fallback models.
-    # Retry transient capacity / rate-limit errors before switching models.
+    # Stable, documented models in descending preference. Each model gets
+    # one bounded attempt so a stalled provider cannot consume the workflow.
     models = list(dict.fromkeys([
         MODEL_NAME,
+        "gemini-3.7-flash",
         "gemini-3.5-flash-lite",
-        "gemini-2.5-flash",
     ]))
 
+    client = genai.Client(
+        api_key=api_key,
+        http_options=types.HttpOptions(timeout=45000)
+    )
     last_error = None
 
     for model_name in models:
-        for attempt in range(1, 3):
+        started = time.monotonic()
+        print("=" * 70)
+        print(f"Trying Gemini model: {model_name}")
+        print("Per-model request timeout: 45 seconds")
+        print("=" * 70)
+
+        try:
+            interaction = client.interactions.create(
+                model=model_name,
+                input=prompt,
+                response_format={
+                    "type": "text",
+                    "mime_type": "application/json",
+                    "schema": response_schema
+                },
+                generation_config={
+                    "thinking_level": "low"
+                }
+            )
+
+            output_text = interaction.output_text
+            if not output_text:
+                raise RuntimeError(
+                    f"Gemini returned an empty response from {model_name}."
+                )
+
+            result = json.loads(output_text)
+            if not isinstance(result, dict) or not isinstance(result.get("sections"), list):
+                raise RuntimeError(
+                    f"Gemini returned an invalid card structure from {model_name}."
+                )
 
             print("=" * 70)
-            print(f"Trying Gemini model: {model_name} (attempt {attempt}/2)")
-            print("Timeout: 120 seconds")
+            print(
+                f"Gemini generation succeeded with {model_name} "
+                f"in {time.monotonic() - started:.1f}s"
+            )
             print("=" * 70)
+            return result
 
-            try:
-                client = genai.Client(
-                    api_key=api_key,
-                    http_options=types.HttpOptions(timeout=120000)
-                )
-
-                interaction = client.interactions.create(
-                    model=model_name,
-                    input=prompt,
-                    response_format={
-                        "type": "text",
-                        "mime_type": "application/json",
-                        "schema": response_schema
-                    },
-                    generation_config={
-                        "temperature": 0.2,
-                        "thinking_level": "low"
-                    }
-                )
-
-                output_text = interaction.output_text
-                if not output_text:
-                    raise RuntimeError(
-                        f"Gemini returned an empty response from {model_name}."
-                    )
-
-                result = json.loads(output_text)
-
-                print("=" * 70)
-                print(f"Gemini generation succeeded with: {model_name}")
-                print("=" * 70)
-                return result
-
-            except Exception as e:
-                last_error = e
-                error_text = str(e)
-
-                print("=" * 70)
-                print(f"Gemini model failed: {model_name}, attempt {attempt}/2")
-                print(f"Error: {type(e).__name__}: {e}")
-                print("=" * 70)
-
-                transient = any(
-                    code in error_text
-                    for code in ("429", "500", "502", "503", "504")
-                )
-                if transient and attempt < 2:
-                    print("Transient Gemini service error; retrying in 12 seconds.")
-                    time.sleep(12)
-                    continue
-
-                # Switch to the next model after a permanent error or
-                # after the retry budget for a transient error is exhausted.
-                break
+        except Exception as e:
+            last_error = e
+            print("=" * 70)
+            print(
+                f"Gemini model failed: {model_name} "
+                f"after {time.monotonic() - started:.1f}s"
+            )
+            print(f"Error: {type(e).__name__}: {e}")
+            print("=" * 70)
+            # Move immediately to the next stable model; do not sleep or
+            # repeat a timed-out request. The total provider wait is bounded.
 
     raise RuntimeError(
-        "All Gemini models failed. Last error: "
+        "All configured Gemini models failed. Last error: "
         f"{type(last_error).__name__}: {last_error}"
     )
 
