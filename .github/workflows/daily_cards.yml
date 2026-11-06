@@ -31,7 +31,7 @@ permissions:
 
 concurrency:
   group: daily-security-cards-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   generate-card:
