@@ -1146,6 +1146,12 @@ Africa/Tunis
   الواسعة ذات الأثر الأمني؛ بشرط أن تكون الصلة موثقة في المادة.
 - إذا شككت في أن الخبر يحقق هذا المعيار، فاستبعده بدلاً من خفض معيار
   البطاقة وإدراج خبر هامشي.
+- استبعد المطالب النقابية والاحتجاجات المطلبية المتعلقة بالنقل والأسعار
+  والدعم والوقود، والأخبار البيئية أو فعاليات المناخ الروتينية، ما لم
+  تتضمن الواقعة نفسها أثراً أمنياً أو دفاعياً أو قراراً استراتيجياً واضحاً.
+- لا تجعل ورود اسم رئيس حكومة أو منظمة دولية في خبر مدني أو اقتصادي
+  سبباً كافياً لإدراجه؛ العبرة بموضوع الواقعة وأثرها، لا بالأسماء الواردة
+  عرضاً فيها.
 
 أعطِ الأولوية لما يمكن للقارئ أن يعرف منه بوضوح: من فعل ماذا؟ وأين؟ ومتى؟
 وما النتيجة أو التفاصيل الملموسة؟ اذكر الأرقام والأسماء والمواقع والتواريخ
@@ -1340,10 +1346,12 @@ def is_sports_related(text):
     sports_terms = [
         "football", "soccer", "كرة القدم", "كروي", "كروية", "الدوري",
         "مباراة", "مباريات", "لاعب", "لاعبين", "لاعبو", "نادي", "أندية",
-        "مدرب", "هدف", "أهداف", "مهاجم", "ركلة جزاء", "champions league",
-        "premier league", "la liga", "serie a", "bundesliga", "footballer",
-        "striker", "goalkeeper", "scored", "league table", "transfer window",
-        "match de football", "club de football", "championnat", "buteur", "attaquant"
+        "مدرب", "سجل هدفاً", "سجل هدفا", "أحرز هدفاً", "أحرز هدفا",
+        "أهداف المباراة", "هدف المباراة", "هداف الدوري", "مهاجم كرة القدم",
+        "ركلة جزاء", "champions league", "premier league", "la liga",
+        "serie a", "bundesliga", "footballer", "striker", "goalkeeper",
+        "scored", "league table", "transfer window", "match de football",
+        "club de football", "championnat", "buteur", "attaquant"
     ]
     return any(term in value for term in sports_terms)
 
@@ -1408,11 +1416,46 @@ def is_editorially_eligible(text_value):
 
     is_ordinary_crime = any(term in value for term in ordinary_crime_markers)
     is_routine_police_case = any(term in value for term in routine_police_markers)
+    # Explicitly exclude routine civilian/economic/environmental stories that
+    # may mention a government official or an international institution but
+    # do not describe a security, defense, or strategic-policy development.
+    routine_civilian_markers = [
+        "تنسيقية النقابات", "النقابات الوطنية", "مطلب نقابي",
+        "قطاع النقل الطرقي", "النقل الطرقي للبضائع",
+        "الدعم الاستثنائي المباشر", "الدعم الاستثنائي",
+        "ارتفاع أسعار المحروقات", "أسعار المحروقات",
+        "احتجاجات بيئية", "نشطاء بيئيون", "ناشطون بيئيون",
+        "حركة أيام الجمعة من أجل المستقبل", "مؤتمر الأمم المتحدة للمناخ",
+        "مؤتمر المناخ", "فعاليات مؤتمر المناخ",
+        "labor union", "union demands", "freight transport",
+        "road freight", "fuel prices", "fuel price increase",
+        "climate activists", "environmental activists",
+        "climate conference", "climate summit",
+        "friday for future", "fridays for future"
+    ]
+    security_context_markers = [
+        "إرهاب", "إرهابي", "تنظيم مسلح", "جماعة مسلحة",
+        "هجوم مسلح", "اشتباك مسلح", "عملية عسكرية", "قوات الجيش",
+        "القوات المسلحة", "وزارة الدفاع", "وزير الدفاع",
+        "الأمن القومي", "التعاون الأمني", "أمن الحدود",
+        "مكافحة الإرهاب", "استخبارات", "مخابرات",
+        "military operation", "armed forces", "defense ministry",
+        "defence ministry", "national security", "border security",
+        "counter-terrorism", "military cooperation", "intelligence",
+        "armed attack", "armed clashes"
+    ]
+
     is_security_exception = any(term in value for term in national_security_markers)
+    has_security_context = is_security_exception or any(
+        term in value for term in security_context_markers
+    )
 
     if is_ordinary_crime and (is_routine_police_case or "سلاح أبيض" in value or "السلاح الأبيض" in value):
-        if not is_security_exception:
+        if not has_security_context:
             return False
+
+    if any(term in value for term in routine_civilian_markers) and not has_security_context:
+        return False
 
     return True
 
