@@ -3,15 +3,15 @@
   "slot": "daily",
   "period": "00:00–23:59 (تُنشأ عند 06:00 وتُحدّث خلال اليوم)",
   "title": "الحوصلة الإخبارية ليوم 06/11/2026",
-  "generated_at": "2026-11-06T22:53:27.199931+01:00",
+  "generated_at": "2026-11-06T23:00:10.719480+01:00",
   "source_fingerprint": "b8642fa129b9b3130d2026dae8782d0805c86da98a8a1a64b896a23a5212245b",
   "source_news_count": 164,
   "candidate_audit_attempt_date": "2026-11-06",
   "candidate_audit_completed": true,
   "candidate_audit_version": 2,
-  "event_enrichment_version": 1,
+  "event_enrichment_version": 2,
   "event_enrichment_attempted": true,
-  "event_enrichment_completed": true,
+  "event_enrichment_completed": false,
   "event_enrichment_sources": [],
   "sections": [
     {
