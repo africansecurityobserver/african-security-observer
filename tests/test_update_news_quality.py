@@ -31,6 +31,16 @@ class NewsQualityTests(unittest.TestCase):
             "تتعلق القواعد بالاستدامة وأمن البيانات في مراكز الحوسبة."
         ))
 
+    def test_rejects_french_entertainment_and_tourism(self):
+        self.assertFalse(is_relevant_security_news(
+            "Une nouvelle chanson devient un succès mondial",
+            "Un article consacré à la musique et au divertissement."
+        ))
+        self.assertFalse(is_relevant_security_news(
+            "La fréquentation touristique des hôtels augmente",
+            "Les voyages et les vacances attirent davantage de visiteurs."
+        ))
+
     def test_rejects_routine_consumer_digital_fraud(self):
         title = "ميتا: الاحتيال الرقمي يعبر المنصات ويتطلب تعاوناً أوسع لمواجهته"
         description = "تواجه المنصات عمليات احتيال تجارية وتعمل على توعية المستخدمين."
