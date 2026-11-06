@@ -49,6 +49,14 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Run news quality tests
+        run: |
+          python -m unittest discover -s tests -v
+
+      - name: Check Python syntax
+        run: |
+          python -m compileall -q update_news.py build_articles.py daily_cards strategic_cards research_cards monthly_assessment
+
       - name: Update news
         run: |
           python update_news.py
