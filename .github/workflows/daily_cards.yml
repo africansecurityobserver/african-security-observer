@@ -30,7 +30,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: daily-security-cards-${{ github.ref }}
+  group: daily-security-cards-v2-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
