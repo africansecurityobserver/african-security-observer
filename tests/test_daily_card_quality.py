@@ -249,9 +249,9 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
         try:
             card.search_related_news = lambda query, max_results=3: (
                 calls.append(query) or [{
-                    "title": "تونس تتلقى معدات مكافحة الإرهاب",
+                    "title": "تلقّت تونس معدات مكافحة الإرهاب.",
                     "link": "https://example.org/report",
-                    "description": "تلقّت تونس معدات مكافحة الإرهاب في إطار التعاون الأمني.",
+                    "description": "تلقّت تونس معدات مكافحة الإرهاب.",
                     "source": "Example News",
                     "published": "Fri, 06 Nov 2026 10:00:00 GMT"
                 }]
