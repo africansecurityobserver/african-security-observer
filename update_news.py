@@ -669,12 +669,12 @@ def make_global_organization_feeds():
 
 
 def is_priority_global_organization_news(title, description):
-    """Keep consequential news about major international organizations."""
-    text = (str(title) + " " + str(description)).lower()
+    """Keep major organizations' consequential security and defense developments."""
+    text = (str(title) + " " + str(description)).casefold()
     organizations = [
         "united nations", "un security council", "unctad", "nations unies",
         "onu", "مجلس الأمن", "الأمم المتحدة",
-        "nato", "north atlantic treaty organization", "otan",
+        "north atlantic treaty organization", "nato", "otan",
         "حلف شمال الأطلسي", "الناتو",
         "european union", "european council", "european commission",
         "union européenne", "الاتحاد الأوروبي", "المجلس الأوروبي",
@@ -683,24 +683,28 @@ def is_priority_global_organization_news(title, description):
         "african union", "union africaine", "الاتحاد الإفريقي",
         "الاتحاد الأفريقي", "مفوضية الاتحاد الإفريقي"
     ]
-    major_events = [
-        "security council", "resolution", "sanction", "peacekeeping",
-        "peace and security", "defense", "defence", "military mission",
-        "summit", "strategic partnership", "ceasefire", "arms embargo",
-        "collective defense", "collective defence", "accession",
-        "enlargement", "crisis", "conflict", "official statement",
-        "decision", "agreement", "treaty", "funding", "military aid",
-        "sécurité", "défense", "sanctions", "maintien de la paix",
-        "résolution", "sommet", "accord", "crise", "conflit",
-        "قرار", "عقوبات", "حفظ السلام", "أمن", "دفاع", "عسكري",
-        "قمة", "اتفاق", "أزمة", "نزاع", "وقف إطلاق النار",
-        "مهمة عسكرية", "بعثة", "مساعدات عسكرية", "بيان مشترك",
-        "شراكة استراتيجية", "إصلاح مجلس الأمن"
+    security_events = [
+        "security council", "peacekeeping", "peace and security",
+        "defense", "defence", "military mission", "arms embargo",
+        "ceasefire", "collective defense", "collective defence",
+        "military aid", "security policy", "security cooperation",
+        "defense cooperation", "defence cooperation", "military cooperation",
+        "armed forces", "military operation", "military operations",
+        "weapons", "arms deal", "sanctions", "war", "armed conflict",
+        "energy security", "cybersecurity", "cyber security",
+        "sécurité", "défense", "militaire", "maintien de la paix",
+        "cessez-le-feu", "embargo sur les armes", "forces armées",
+        "opération militaire", "sécurité énergétique",
+        "أمن", "أمني", "أمنية", "أمن الطاقة", "دفاع", "عسكري",
+        "عسكرية", "القوات المسلحة", "عملية عسكرية", "عمليات عسكرية",
+        "حفظ السلام", "وقف إطلاق النار", "حظر الأسلحة", "عقوبات",
+        "مساعدات عسكرية", "تعاون أمني", "تعاون دفاعي", "نزاع مسلح",
+        "حرب", "أمن سيبراني"
     ]
-    return (
-        any(term in text for term in organizations)
-        and any(term in text for term in major_events)
+    has_organization = any(term in text for term in organizations) or bool(
+        re.search(r"(?<![a-z])(?:nato|otan|brics|onu)(?![a-z])", text)
     )
+    return has_organization and any(term in text for term in security_events)
 
 
 RSS_FEEDS = {
