@@ -3380,7 +3380,12 @@ def main():
     )
     enrichment_sources = (
         list(existing_card.get("event_enrichment_sources", []))
-        if existing_card and isinstance(existing_card.get("event_enrichment_sources", []), list)
+        if (
+            existing_card
+            and existing_card.get("event_enrichment_version") == EVENT_ENRICHMENT_VERSION
+            and existing_card.get("event_enrichment_completed")
+            and isinstance(existing_card.get("event_enrichment_sources", []), list)
+        )
         else []
     )
 
