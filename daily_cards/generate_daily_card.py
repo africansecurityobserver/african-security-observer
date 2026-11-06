@@ -25,8 +25,10 @@ TIMEZONE = ZoneInfo("Africa/Tunis")
 
 MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 
-# Number of news items sent to Gemini at most
-MAX_NEWS_ITEMS = 100
+# Allow the full eligible daily feed through on normal-volume days.
+# If volume exceeds this ceiling, select across categories instead of taking
+# only the newest tail of the chronological feed.
+MAX_NEWS_ITEMS = 180
 
 # Senior officials whose concrete, current events receive priority in the
 # daily card. Names are matched against Arabic and common Latin-script forms.
@@ -245,6 +247,9 @@ def get_news_for_period(slot, reference_date):
     )
 
     selected = []
+    today_count = 0
+    sports_excluded = 0
+    editorial_excluded = 0
 
     for item in items:
         published = item.get("published")
@@ -262,14 +267,15 @@ def get_news_for_period(slot, reference_date):
         # Keep the slot's time window as well as the local publication date.
         # Half-open interval: start <= dt < end
         if start <= dt < end:
+            today_count += 1
             editorial_text = " ".join(str(item.get(key, "") or "") for key in (
                 "title", "description", "original_title", "original_description"
             ))
             if is_sports_related(editorial_text):
-                print(f"Excluded sports source item before Gemini: {editorial_text[:120]}")
+                sports_excluded += 1
                 continue
             if not is_editorially_eligible(editorial_text):
-                print(f"Excluded low-relevance source item before Gemini: {editorial_text[:160]}")
+                editorial_excluded += 1
                 continue
             selected.append({
                 "title": item.get("title", ""),
@@ -289,54 +295,108 @@ def get_news_for_period(slot, reference_date):
         key=lambda x: parse_datetime(x.get("published")) or start
     )
 
+    before_dedup_count = len(selected)
     selected = basic_deduplicate(selected)
+    after_dedup_count = len(selected)
 
-    # Preserve reports about named senior officials before applying the
-    # input cap. Also reserve room for major international-organization news.
+    # The old cap kept the newest non-priority items only. On busy days this
+    # silently discarded earlier events. Keep the complete eligible packet
+    # up to the ceiling; above it, preserve priority coverage and then
+    # interleave the remaining categories chronologically.
     if len(selected) > MAX_NEWS_ITEMS:
-        priority_people_items = [
-            item for item in selected
-            if priority_section_for_text(news_item_search_text(item))
-        ][-40:]
-        priority_org_items = [
-            item for item in selected
-            if item.get("category") == "international"
-        ][-20:]
-
-        # Reserve input capacity for major African counter-terrorism reports
-        # so a high volume of unrelated feeds cannot crowd them out.
         terrorism_terms = (
             "iswap", "islamic state west africa province", "boko haram",
             "ولاية غرب أفريقيا", "الدولة الإسلامية في غرب أفريقيا",
             "داعش", "بوكو حرام", "terroristes", "jihadistes",
             "état islamique en afrique de l’ouest"
         )
-        priority_terrorism_items = [
-            item for item in selected
-            if any(
-                term in news_item_search_text(item).casefold()
-                for term in terrorism_terms
-            )
-        ][-30:]
+        priority_groups = [
+            [
+                item for item in selected
+                if priority_section_for_text(news_item_search_text(item))
+            ],
+            [
+                item for item in selected
+                if str(item.get("category", "")).casefold() == "international"
+            ],
+            [
+                item for item in selected
+                if any(term in news_item_search_text(item).casefold()
+                       for term in terrorism_terms)
+            ],
+        ]
 
         chosen = []
         chosen_ids = set()
-        for item in priority_people_items + priority_org_items + priority_terrorism_items:
-            marker = id(item)
-            if marker not in chosen_ids:
-                chosen.append(item)
-                chosen_ids.add(marker)
+        for group in priority_groups:
+            for item in group:
+                marker = id(item)
+                if marker not in chosen_ids:
+                    chosen.append(item)
+                    chosen_ids.add(marker)
 
-        other_items = [
-            item for item in selected
-            if id(item) not in chosen_ids
-        ]
-        remaining = max(0, MAX_NEWS_ITEMS - len(chosen))
-        selected = chosen + (other_items[-remaining:] if remaining else [])
+        def spread(items, count):
+            """Choose evenly across a chronological list without favoring its tail."""
+            if count <= 0:
+                return []
+            if len(items) <= count:
+                return list(items)
+            if count == 1:
+                return [items[len(items) // 2]]
+            indexes = [
+                round(i * (len(items) - 1) / (count - 1))
+                for i in range(count)
+            ]
+            return [items[index] for index in indexes]
+
+        if len(chosen) >= MAX_NEWS_ITEMS:
+            selected = spread(chosen, MAX_NEWS_ITEMS)
+        else:
+            remaining_slots = MAX_NEWS_ITEMS - len(chosen)
+            by_category = {}
+            for item in selected:
+                if id(item) in chosen_ids:
+                    continue
+                category = str(item.get("category") or "other").strip().casefold()
+                by_category.setdefault(category, []).append(item)
+
+            # Sort each category chronologically, then take one item per
+            # category per pass to prevent a single busy feed/category from
+            # crowding out the rest.
+            for category_items in by_category.values():
+                category_items.sort(
+                    key=lambda x: parse_datetime(x.get("published")) or start
+                )
+
+            balanced = []
+            category_names = sorted(by_category)
+            while len(balanced) < remaining_slots:
+                added = False
+                for category in category_names:
+                    if by_category[category]:
+                        balanced.append(by_category[category].pop(0))
+                        added = True
+                        if len(balanced) >= remaining_slots:
+                            break
+                if not added:
+                    break
+
+            selected = chosen + balanced
+
         selected.sort(
             key=lambda x: parse_datetime(x.get("published")) or start
         )
 
+    print(
+        "News selection audit: "
+        f"raw={len(items)}, today_in_window={today_count}, "
+        f"sports_excluded={sports_excluded}, "
+        f"editorial_excluded={editorial_excluded}, "
+        f"before_dedup={before_dedup_count}, "
+        f"after_dedup={after_dedup_count}, "
+        f"sent_to_gemini={len(selected)}, "
+        f"omitted_by_capacity={max(0, after_dedup_count - len(selected))}"
+    )
     return selected
 
 
@@ -2525,6 +2585,8 @@ def main():
         "generated_at": now.isoformat(),
 
         "source_fingerprint": source_fingerprint,
+
+        "source_news_count": len(news_items),
 
         "sections": sections
     }
