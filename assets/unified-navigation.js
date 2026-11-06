@@ -29,7 +29,7 @@ function makeSubnav(key){
    inner.appendChild(b);
   }else{
    const a=el('a',{href:target==='home'?'./':target},label);
-   if((key==='strategic'&&((params.get('type')||'')===({ 'البطاقات الإخبارية':'news','التقدير الأسبوعي':'weekly','التقدير الشهري':'monthly','منشورات مراكز البحوث':'research'}[label]||'__none__')))||(key==='research'&&label==='أحدث المنشورات'))a.className='is-current';
+   if((key==='strategic'&&((params.get('type')||'')===({ 'البطاقات الإخبارية':'news','التقدير الشهري':'monthly','منشورات مراكز البحوث':'research'}[label]||'__none__')))||(key==='research'&&label==='أحدث المنشورات'))a.className='is-current';
    inner.appendChild(a);
   }
  });
