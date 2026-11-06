@@ -470,7 +470,7 @@ def build_prompt(
 
     date_text = reference_date.strftime("%d/%m/%Y")
 
-    period_label = f"00:00–{end.strftime('%H:%M')} (أخبار اليوم بالتوقيت المحلي)
+    period_label = f"00:00–{end.strftime('%H:%M')} (أخبار اليوم بالتوقيت المحلي)"
 
     news_material = []
 
