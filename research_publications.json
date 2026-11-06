@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T13:58+01:00",
+  "updated": "2026-11-06T21:27+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 40,
+  "count": 41,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -732,6 +732,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
+    },
+    {
+      "center": "مجلس العلاقات الخارجية",
+      "center_short": "CFR",
+      "title": "COP31 and Climate Action’s New Centers of Gravity",
+      "url": "https://www.cfr.org/articles/cop31-and-climate-actions-new-centers-of-gravity",
+      "published": "2026-11-06T19:28+01:00",
+      "date": "2026-11-06",
+      "source": "CFR",
+      "description": "As the world is on track to miss climate targets, governments are grappling with the consequences of climate change. Three think tank experts in the United States, Canada, and South Africa offer analyses on the status of multilateral cooperation on climate action, the importance of energy security, and the role of technology in the climate conversation.",
+      "center_site": "https://cfr.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "COP31 ومراكز الجاذبية الجديدة للعمل المناخي"
     },
     {
       "center": "مؤسسة كارنيغي للسلام الدولي",
