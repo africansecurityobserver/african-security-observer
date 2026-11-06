@@ -46,6 +46,16 @@ class NewsQualityTests(unittest.TestCase):
         description = "تواجه المنصات عمليات احتيال تجارية وتعمل على توعية المستخدمين."
         self.assertFalse(is_relevant_security_news(title, description))
 
+    def test_global_organizations_are_kept_for_security_but_not_unrelated_funding(self):
+        self.assertTrue(is_relevant_security_news(
+            "NATO announces a new collective defense measure",
+            "The alliance described the military decision."
+        ))
+        self.assertFalse(is_relevant_security_news(
+            "European Union approves funding for climate research",
+            "The decision supports environmental research projects."
+        ))
+
     def test_keeps_armed_clashes_in_libya(self):
         title = "اشتباكات مسلحة بين مجموعات في ليبيا"
         self.assertTrue(is_relevant_security_news(title, ""))
