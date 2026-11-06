@@ -87,6 +87,9 @@ jobs:
           python - <<'PY'
           import json
           from datetime import datetime
+          from daily_cards.generate_daily_card import (
+              normalize_country_for_match, normalize_event_for_match, same_event_text
+          )
           from pathlib import Path
           from zoneinfo import ZoneInfo
 
@@ -115,23 +118,34 @@ jobs:
           if missing:
               raise SystemExit(f"Card is missing expected sections: {sorted(missing)}")
 
-          texts = []
+          seen = []
+          duplicates = []
           for section in sections:
               for event in section.get("events", []):
-                  if isinstance(event, dict):
-                      value = str(event.get("text", "")).strip()
-                      if value:
-                          texts.append(value)
+                  if not isinstance(event, dict):
+                      continue
+                  value = str(event.get("text", "")).strip()
+                  if not value:
+                      continue
+                  country = normalize_country_for_match(event.get("country", ""))
+                  for prior_country, prior_text in seen:
+                      if normalize_event_for_match(value) == normalize_event_for_match(prior_text):
+                          duplicates.append(value)
+                          break
+                      if (not country or not prior_country or country == prior_country) and same_event_text(prior_text, value):
+                          duplicates.append(value)
+                          break
+                  else:
+                      seen.append((country, value))
 
-          count = len(texts)
-          duplicates = len(texts) - len(set(texts))
+          count = len(seen)
           print(f"Today's published-event count: {count}")
           print(f"Eligible source items sent to Gemini: {card.get('source_news_count', 'unknown')}")
-          print(f"Exact duplicate event texts: {duplicates}")
+          print(f"Semantic duplicate event texts: {len(duplicates)}")
           if count < 1:
               raise SystemExit("Today's card is empty; refusing to publish it.")
           if duplicates:
-              raise SystemExit("Card contains exact duplicate event texts; refusing to publish it.")
+              raise SystemExit("Card contains semantic duplicate events; refusing to publish it.")
           PY
       - name: Commit and push card
         run: |
