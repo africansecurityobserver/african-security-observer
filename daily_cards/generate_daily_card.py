@@ -1243,10 +1243,11 @@ def generate_with_gemini(prompt):
 
     # Stable, documented models in descending preference. Each model gets
     # one bounded attempt so a stalled provider cannot consume the workflow.
+    # Keep the fallback separate from gemini-3.5-flash-lite, which is shared
+    # by the strategic-news and research-center workflows.
     models = list(dict.fromkeys([
         MODEL_NAME,
         "gemini-3.7-flash",
-        "gemini-3.5-flash-lite",
     ]))
 
     client = genai.Client(
