@@ -91,6 +91,56 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
         self.assertEqual(by_id["world_major"]["events"], [])
         self.assertEqual(len(by_id["middle_east"]["events"]), 1)
 
+    def test_keeps_concrete_defense_aid_and_equipment_deliveries(self):
+        examples = [
+            "تسلمت تونس معدات مكافحة الإرهاب بقيمة تتجاوز مليون دولار.",
+            "قدم الاتحاد الأوروبي معدات للأمن البحري إلى قوات الدفاع الكينية.",
+            "أعلنت دولة تقديم مساعدات عسكرية ومعدات مراقبة حدود إلى الجيش."
+        ]
+        for text in examples:
+            with self.subTest(text=text):
+                self.assertTrue(card.is_editorially_eligible(text))
+
+    def test_keeps_major_field_developments_and_military_leadership_changes(self):
+        examples = [
+            "وسع الجيش السوداني سيطرته في كردفان وانتزع أربع مناطق ودمر آليات عسكرية.",
+            "أعلن قائد الجيش الأوغندي خططه الرسمية للتنحي عن منصبه.",
+            "أعلنت الحكومة الاتفاق على نشر قوات أجنبية محددة العدد والمهمة."
+        ]
+        for text in examples:
+            with self.subTest(text=text):
+                self.assertTrue(card.is_editorially_eligible(text))
+
+    def test_keeps_air_security_threats_espionage_and_arms_smuggling(self):
+        examples = [
+            "أعلنت السلطات تسجيل تهديدات جديدة بالقنابل استهدفت رحلات جوية تجارية.",
+            "اعتقلت أجهزة الأمن عميلاً روسياً للاشتباه في تورطه بتفجير سيارة مفخخة.",
+            "اعتقلت السلطات مجموعة مرتبطة بتهريب صواريخ."
+        ]
+        for text in examples:
+            with self.subTest(text=text):
+                self.assertTrue(card.is_editorially_eligible(text))
+
+    def test_keeps_large_military_exercises_and_defense_industry_deals(self):
+        examples = [
+            "شارك ستة آلاف جندي من الناتو في مناورات عسكرية واسعة في ليتوانيا.",
+            "وقعت شركة بناء سفن صفقة لتحديث سفن حربية تابعة لقوات بحرية إفريقية.",
+            "أطلق الناتو منصة لتسريع شراء الأنظمة المضادة للطائرات المسيّرة."
+        ]
+        for text in examples:
+            with self.subTest(text=text):
+                self.assertTrue(card.is_editorially_eligible(text))
+
+    def test_does_not_turn_generic_cooperation_statements_into_events(self):
+        self.assertFalse(card.is_editorially_eligible(
+            "أكد وزير الدفاع أهمية التعاون الثلاثي في تعزيز الأمن والتنمية."
+        ))
+
+    def test_does_not_admit_ordinary_local_crime_without_security_context(self):
+        self.assertFalse(card.is_editorially_eligible(
+            "اعتقلت الشرطة شاباً للاشتباه في سرقة متجر محلي."
+        ))
+
     def test_news_fingerprint_is_independent_of_feed_order(self):
         first = [
             {"url": "https://example.com/a", "title": "خبر أ"},
