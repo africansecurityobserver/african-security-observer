@@ -11,7 +11,7 @@ const primary=[
 ];
 const submenus={
  home:[['الأخبار الحالية','home'],['أخبار إفريقيا','africa'],['التسلح والدفاع','defense'],['المقالات الاستراتيجية','analysis'],['أرشيف الأخبار','archive']],
- daily:[['أرشيف الحوصلات','./daily_cards.html'],['التقديرات الاستراتيجية','./strategic_cards.html'],['مراكز البحوث','./research_centers.html']],
+ daily:[['الرئيسية','./'],['التقديرات الاستراتيجية','./strategic_cards.html'],['مراكز البحوث','./research_centers.html']],
  strategic:[['البطاقات الإخبارية','./strategic_cards.html?type=news'],['التقدير الأسبوعي','./strategic_cards.html?type=weekly'],['التقدير الشهري','./strategic_cards.html?type=monthly'],['منشورات مراكز البحوث','./strategic_cards.html?type=research'],['مراكز البحوث','./research_centers.html']],
  research:[['أحدث المنشورات','./research_centers.html'],['أرشيف البطاقات المرتبطة','./strategic_cards.html?type=research'],['التقديرات الاستراتيجية','./strategic_cards.html']]
 };
@@ -47,8 +47,6 @@ function addInnerShell(){
  head.appendChild(nav);
  document.body.insertBefore(head,document.body.firstChild);
  head.after(makeSubnav(pageKey));
- const main=document.querySelector('body>main');
- if(main){const crumb=el('div',{class:'aso-breadcrumb'});crumb.innerHTML='<a href="./">الرئيسية</a><span aria-hidden="true"> ‹ </span><span>'+({daily:'الحوصلة الإخبارية',strategic:'التقديرات الاستراتيجية',research:'مراكز البحوث'}[pageKey]||'')+'</span>';head.after(crumb);}
 }
 function addHomeSubnav(){
  const mast=document.querySelector('.masthead');
