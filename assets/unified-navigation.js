@@ -11,7 +11,7 @@ const primary=[
 const submenus={
  home:[['الأخبار الحالية','home'],['أخبار إفريقيا','africa'],['المقالات الاستراتيجية','analysis'],['أرشيف الأخبار','archive']],
  daily:[['الرئيسية','./'],['التقديرات الاستراتيجية','./strategic_cards.html'],['مراكز البحوث','./research_centers.html']],
- strategic:[['البطاقات الإخبارية','./strategic_cards.html?type=news'],['التقدير الأسبوعي','./strategic_cards.html?type=weekly'],['التقدير الشهري','./strategic_cards.html?type=monthly'],['منشورات مراكز البحوث','./strategic_cards.html?type=research'],['مراكز البحوث','./research_centers.html']],
+ strategic:[['البطاقات الإخبارية','./strategic_cards.html?type=news'],['التقدير الشهري','./strategic_cards.html?type=monthly'],['منشورات مراكز البحوث','./strategic_cards.html?type=research'],['مراكز البحوث','./research_centers.html']],
  research:[['أحدث المنشورات','./research_centers.html'],['أرشيف البطاقات المرتبطة','./strategic_cards.html?type=research'],['التقديرات الاستراتيجية','./strategic_cards.html']]
 };
 const path=location.pathname.split('/').pop()||'index.html';
