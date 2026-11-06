@@ -308,7 +308,7 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
         self.assertIn("The equipment was delivered", prompt)
 
     def test_event_enrichment_is_bounded_and_versioned(self):
-        self.assertEqual(card.EVENT_ENRICHMENT_VERSION, 1)
+        self.assertEqual(card.EVENT_ENRICHMENT_VERSION, 2)
         self.assertLessEqual(card.MAX_EVENTS_TO_RESEARCH, 10)
 
 
