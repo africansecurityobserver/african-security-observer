@@ -308,7 +308,7 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
         self.assertIn("The equipment was delivered", prompt)
 
     def test_event_enrichment_is_bounded_and_versioned(self):
-        self.assertEqual(card.EVENT_ENRICHMENT_VERSION, 2)
+        self.assertEqual(card.EVENT_ENRICHMENT_VERSION, 3)
         self.assertLessEqual(card.MAX_EVENTS_TO_RESEARCH, 10)
 
 
@@ -323,11 +323,19 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
           <pubDate>Fri, 06 Nov 2026 10:00:00 GMT</pubDate>
         </item></channel></rss>"""
         try:
-            card.fetch_research_url = lambda url, timeout=7: (rss, url)
+            requested_urls = []
+            def fake_fetch(url, timeout=7):
+                requested_urls.append(url)
+                return rss, url
+
+            card.fetch_research_url = fake_fetch
             results = card.search_related_news("Tunisia security event")
             self.assertEqual(len(results), 1)
             self.assertEqual(results[0]["source"], "Example News")
             self.assertIn("news.google.com", results[0]["link"])
+            self.assertTrue(any("hl=ar" in url and "ceid=EG%3Aar" in url for url in requested_urls))
+            self.assertTrue(any("hl=en-US" in url for url in requested_urls))
+            self.assertTrue(any("bing.com/news/search" in url for url in requested_urls))
         finally:
             card.fetch_research_url = original_fetch
 
