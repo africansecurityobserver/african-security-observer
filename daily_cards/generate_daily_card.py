@@ -3305,6 +3305,11 @@ def main():
     enrichment_completed = bool(
         existing_card and existing_card.get("event_enrichment_completed")
     )
+    enrichment_sources = (
+        list(existing_card.get("event_enrichment_sources", []))
+        if existing_card and isinstance(existing_card.get("event_enrichment_sources", []), list)
+        else []
+    )
 
     if not enrichment_attempted:
         enrichment_attempted = True
@@ -3318,20 +3323,36 @@ def main():
                     generated, evidence_packets, reference_date
                 )
                 enriched = generate_with_gemini(enrichment_prompt)
-                original_count = sum(
-                    len(section.get("events", []))
+                original_shape = sorted(
+                    (section.get("title", ""), len(section.get("events", [])))
                     for section in generated.get("sections", [])
                     if isinstance(section, dict)
                 )
-                enriched_count = sum(
-                    len(section.get("events", []))
+                enriched_shape = sorted(
+                    (section.get("title", ""), len(section.get("events", [])))
                     for section in enriched.get("sections", [])
                     if isinstance(section, dict)
                 )
-                if enriched_count != original_count:
+                if enriched_shape != original_shape:
                     raise RuntimeError(
-                        "Enrichment response changed the event count; preserving original card."
+                        "Enrichment response changed section/event structure; preserving original card."
                     )
+                enrichment_sources = [
+                    {
+                        "country": packet.get("country", ""),
+                        "event": packet.get("event", ""),
+                        "sources": [
+                            {
+                                "title": source.get("title", ""),
+                                "source": source.get("source", ""),
+                                "published": source.get("published", ""),
+                                "url": source.get("url", "")
+                            }
+                            for source in packet.get("sources", [])
+                        ]
+                    }
+                    for packet in evidence_packets
+                ]
                 generated = enriched
                 print(
                     "Cross-source enrichment completed for "
@@ -3396,6 +3417,8 @@ def main():
         "event_enrichment_attempted": enrichment_attempted,
 
         "event_enrichment_completed": enrichment_completed,
+
+        "event_enrichment_sources": enrichment_sources,
 
         "sections": sections
     }
