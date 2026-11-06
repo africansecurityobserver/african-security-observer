@@ -104,6 +104,37 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
         candidate_numbers = [number for number, _ in candidates]
         self.assertEqual(candidate_numbers, [1, 2, 3, 4])
 
+    def test_second_pass_prompt_targets_candidates_missing_from_first_pass(self):
+        from datetime import date
+
+        prompt = card.build_candidate_review_prompt(
+            date(2026, 11, 6),
+            [(1, {
+                "title": "الجيش السوداني يوسع سيطرته في كردفان",
+                "description": "انتزع أربع مناطق ودمر آليات عسكرية"
+            })],
+            {"sections": [{
+                "title": "الأحداث الكبرى في إفريقيا",
+                "events": [{"country": "مصر", "text": "حدث موجود بالفعل"}]
+            }]}
+        )
+        self.assertIn("الجيش السوداني يوسع سيطرته في كردفان", prompt)
+        self.assertIn("حدث موجود بالفعل", prompt)
+        self.assertIn("أعد فقط الأحداث الجديدة", prompt)
+
+    def test_second_pass_merge_appends_without_replacing_first_pass_events(self):
+        primary = {"sections": [{
+            "title": "الأحداث الكبرى في إفريقيا",
+            "events": [{"country": "مصر", "text": "الحدث الأول"}]
+        }]}
+        supplemental = {"sections": [{
+            "title": "الأحداث الكبرى في إفريقيا",
+            "events": [{"country": "السودان", "text": "الحدث الثاني"}]
+        }]}
+        merged = card.merge_generated_outputs(primary, supplemental)
+        events = merged["sections"][0]["events"]
+        self.assertEqual([event["text"] for event in events], ["الحدث الأول", "الحدث الثاني"])
+
     def test_prompt_contains_candidate_audit_and_has_no_event_count_ceiling(self):
         from datetime import date, datetime
         from zoneinfo import ZoneInfo
