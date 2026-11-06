@@ -2271,23 +2271,9 @@ def main():
             print("Keeping the existing daily card unchanged; no news candidates in this run.")
             return
 
-        empty_sections = [
-            {"id": section_id, "title": title, "events": []}
-            for section_id, title in EXPECTED_SECTIONS
-        ]
-        card = {
-            "date": reference_date.isoformat(),
-            "slot": slot,
-            "period": PERIODS[slot]["label"],
-            "title": f"الحوصلة الإخبارية ليوم {reference_date.strftime('%d/%m/%Y')}",
-            "generated_at": now.isoformat(),
-            "sections": empty_sections
-        }
-        card = update_cards_file(card)
-        save_archive(card)
-        # Sync any additional events recovered from the archive back to cards.json.
-        update_cards_file(card)
-        print("Empty card saved because there were no candidates and no populated card existed.")
+        # Do not publish an empty placeholder as if it were a completed daily card.
+        # The watchdog can retry once today's news feed contains material.
+        print("No card written: today's feed has no news candidates yet.")
         return
 
     # --------------------------------------------------------
