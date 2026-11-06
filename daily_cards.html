@@ -80,6 +80,7 @@ body *{visibility:hidden!important}
 <div id="content"><div class="loading">جارٍ تحميل أرشيف البطاقات…</div></div>
 </main>
 <footer>المرصد الإفريقي للأمن والدفاع</footer>
+<script src="./assets/unified-navigation.js" defer></script>
 <script>
 const indexUrl='./daily_cards/archive/index.json';
 const content=document.getElementById('content');
@@ -206,8 +207,7 @@ const events=(section.events||[]).map(event=>
 ).join('');
 return '<h2 style="background:#102b46;color:#fff;padding:8px 12px;font-size:16pt">'+esc(section.title||'')+'</h2>'+events;
 }).join('');
-const documentHtml='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>'+esc(card.title||'الحوصلة الإخبارية')+'</title></head><body dir="rtl" style="font-family:Tahoma,Arial,sans-serif;color:#172535;line-height:1.8"><h1 style="color:#102b46">'+esc(card.title||'الحوصلة الإخبارية')+'</h1><p style="color:#687887">'+esc(dateLabel(card.date))+' — '+esc(card.period||'')+'</p>'+sections+'<p style="margin-top:24px;font-size:10pt;color:#687887">المرصد الإفريقي للأمن والدفاع</p><script src="./assets/unified-navigation.js" defer></script>
-</body></html>';
+const documentHtml='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>'+esc(card.title||'الحوصلة الإخبارية')+'</title></head><body dir="rtl" style="font-family:Tahoma,Arial,sans-serif;color:#172535;line-height:1.8"><h1 style="color:#102b46">'+esc(card.title||'الحوصلة الإخبارية')+'</h1><p style="color:#687887">'+esc(dateLabel(card.date))+' — '+esc(card.period||'')+'</p>'+sections+'<p style="margin-top:24px;font-size:10pt;color:#687887">المرصد الإفريقي للأمن والدفاع</p></body></html>';
 const blob=new Blob(['\ufeff',documentHtml],{type:'application/msword;charset=utf-8'});
 const url=URL.createObjectURL(blob);
 const link=document.createElement('a');
