@@ -961,10 +961,6 @@ h1{font-size:clamp(23px,3vw,30px);letter-spacing:.15px}
 الرئيسية
 </button>
 
-<button data-section="africa">
-أخبار إفريقيا
-</button>
-
    <button data-section="dailycards"
 onclick="window.location.href='./daily_cards.html'">
 الحوصلة الاخبارية
@@ -1487,11 +1483,6 @@ function showCategory(category){
 
 const filtered =
 items.filter(function(item){
-
-if(category === 'africa'){
-return item.region === 'africa' ||
-(!item.region && ['sahel','north','rest'].includes(item.category));
-}
 
 if(category === 'world'){
 return item.region === 'world' ||
@@ -2564,8 +2555,7 @@ showHome();
 }
 
 else if(
-section === 'world' ||
-section === 'africa'
+section === 'world'
 ){
 
 showCategory(section);
