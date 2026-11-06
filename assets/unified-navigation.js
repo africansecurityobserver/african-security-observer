@@ -2,14 +2,13 @@
 'use strict';
 const primary=[
  {label:'الرئيسية',href:'./',key:'home'},
- {label:'أخبار إفريقيا',href:'./?section=africa',key:'africa'},
  {label:'الحوصلة الإخبارية',href:'./daily_cards.html',key:'daily'},
  {label:'التقديرات الاستراتيجية',href:'./strategic_cards.html',key:'strategic'},
  {label:'مراكز البحوث',href:'./research_centers.html',key:'research'},
  {label:'الأرشيف',href:'./#archiveSection',key:'archive'}
 ];
 const submenus={
- home:[['الأخبار الحالية','home'],['أخبار إفريقيا','africa'],['المقالات الاستراتيجية','analysis'],['أرشيف الأخبار','archive']],
+ home:[['الأخبار الحالية','home'],['المقالات الاستراتيجية','analysis'],['أرشيف الأخبار','archive']],
  daily:[['الرئيسية','./'],['التقديرات الاستراتيجية','./strategic_cards.html'],['مراكز البحوث','./research_centers.html']],
  strategic:[['البطاقات الإخبارية','./strategic_cards.html?type=news'],['التقدير الشهري','./strategic_cards.html?type=monthly'],['منشورات مراكز البحوث','./strategic_cards.html?type=research'],['مراكز البحوث','./research_centers.html']],
  research:[['أحدث المنشورات','./research_centers.html'],['أرشيف البطاقات المرتبطة','./strategic_cards.html?type=research'],['التقديرات الاستراتيجية','./strategic_cards.html']]
@@ -64,5 +63,5 @@ function addHomeSubnav(){
  buttons.forEach(b=>observer.observe(b,{attributes:true,attributeFilter:['class']}));
  update();
 }
-if(pageKey==='home'){addHomeSubnav();window.addEventListener('load',()=>{const requested=new URLSearchParams(location.search).get('section');if(!requested||requested==='defense')return;const mapped=requested==='analysis'?'strategicnews':requested;const activate=()=>{const btn=document.querySelector('.nav button[data-section="'+mapped+'"]');if(btn){btn.click();return;}window.setTimeout(activate,180);};activate();});}else addInnerShell();
+if(pageKey==='home'){addHomeSubnav();window.addEventListener('load',()=>{const requested=new URLSearchParams(location.search).get('section');if(!requested||requested==='defense'||requested==='africa')return;const mapped=requested==='analysis'?'strategicnews':requested;const activate=()=>{const btn=document.querySelector('.nav button[data-section="'+mapped+'"]');if(btn){btn.click();return;}window.setTimeout(activate,180);};activate();});}else addInnerShell();
 })();
