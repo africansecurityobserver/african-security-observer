@@ -592,7 +592,7 @@ def identify_strategic_review_candidates(news_items):
 # CROSS-SOURCE EVENT ENRICHMENT
 # ============================================================
 
-EVENT_ENRICHMENT_VERSION = 1
+EVENT_ENRICHMENT_VERSION = 2
 MAX_EVENTS_TO_RESEARCH = 6
 MAX_ARTICLE_CHARS = 2600
 
@@ -3303,7 +3303,10 @@ def main():
     )
     enrichment_attempted = enrichment_attempted_before
     enrichment_completed = bool(
-        existing_card and existing_card.get("event_enrichment_completed")
+        existing_card
+        and existing_card.get("event_enrichment_version") == EVENT_ENRICHMENT_VERSION
+        and existing_card.get("event_enrichment_completed")
+        and existing_card.get("event_enrichment_sources")
     )
     enrichment_sources = (
         list(existing_card.get("event_enrichment_sources", []))
@@ -3358,9 +3361,10 @@ def main():
                     "Cross-source enrichment completed for "
                     f"{len(evidence_packets)} events."
                 )
+                enrichment_completed = bool(enrichment_sources)
             else:
                 print("No sufficiently detailed supplementary sources were found.")
-            enrichment_completed = True
+                enrichment_completed = False
         except Exception as error:
             print(
                 "Cross-source enrichment failed; preserving the valid card: "
