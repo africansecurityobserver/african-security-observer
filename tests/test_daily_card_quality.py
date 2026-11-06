@@ -92,6 +92,7 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
         self.assertEqual(len(by_id["middle_east"]["events"]), 1)
 
     def test_strategic_review_candidate_scan_catches_diverse_defense_and_security_items(self):
+        # Include verb forms and modifiers commonly used in translated headlines.
         items = [
             {"title": "تونس تتلقى معدات مكافحة الإرهاب", "description": "معدات بقيمة محددة"},
             {"title": "الجيش السوداني يوسع سيطرته في كردفان", "description": "انتزع مناطق جديدة"},
