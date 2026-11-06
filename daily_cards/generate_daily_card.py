@@ -592,7 +592,9 @@ def identify_strategic_review_candidates(news_items):
 # CROSS-SOURCE EVENT ENRICHMENT
 # ============================================================
 
-EVENT_ENRICHMENT_VERSION = 2
+# Version 3 adds Arabic Google News and Bing News RSS fallbacks. Bump this
+# when the cross-source discovery strategy changes so today's card can retry.
+EVENT_ENRICHMENT_VERSION = 3
 MAX_EVENTS_TO_RESEARCH = 6
 MAX_ARTICLE_CHARS = 2600
 
@@ -637,32 +639,71 @@ def fetch_research_url(url, timeout=5):
         return raw.decode(charset, errors="replace"), response.geturl()
 
 
-def search_related_news(query, max_results=2):
-    params = urllib.parse.urlencode({
-        "q": query, "hl": "en-US", "gl": "US", "ceid": "US:en"
-    })
-    url = "https://news.google.com/rss/search?" + params
-    try:
-        xml_text, _ = fetch_research_url(url, timeout=7)
-        root = ET.fromstring(xml_text)
-    except Exception as error:
-        print(f"Supplementary search unavailable: {type(error).__name__}")
-        return []
+def search_related_news(query, max_results=3):
+    """
+    Search independent news indexes in Arabic and English.
 
+    The earlier implementation sent Arabic event text only to the US-English
+    Google News edition. That silently missed many Arabic-language reports.
+    Keep each request bounded and merge/deduplicate results across providers.
+    """
+    feeds = [
+        (
+            "Google News Arabic",
+            "https://news.google.com/rss/search?",
+            {"hl": "ar", "gl": "EG", "ceid": "EG:ar"}
+        ),
+        (
+            "Google News English",
+            "https://news.google.com/rss/search?",
+            {"hl": "en-US", "gl": "US", "ceid": "US:en"}
+        ),
+        (
+            "Bing News RSS",
+            "https://www.bing.com/news/search?",
+            {"format": "rss"}
+        ),
+    ]
     results = []
-    for item in root.findall(".//item")[:max_results]:
-        title = item.findtext("title", default="").strip()
-        link = item.findtext("link", default="").strip()
-        description = item.findtext("description", default="").strip()
-        source_node = item.find("source")
-        source = (source_node.text or "").strip() if source_node is not None else ""
-        published = item.findtext("pubDate", default="").strip()
-        if title and link:
+    seen = set()
+    failures = []
+
+    for provider, endpoint, options in feeds:
+        params = {"q": query, **options}
+        url = endpoint + urllib.parse.urlencode(params)
+        try:
+            xml_text, _ = fetch_research_url(url, timeout=7)
+            root = ET.fromstring(xml_text)
+        except Exception as error:
+            failures.append(f"{provider}:{type(error).__name__}")
+            print(f"Supplementary search unavailable ({provider}): {type(error).__name__}")
+            continue
+
+        for item in root.findall(".//item"):
+            title = item.findtext("title", default="").strip()
+            link = item.findtext("link", default="").strip()
+            description = item.findtext("description", default="").strip()
+            source_node = item.find("source")
+            source = (source_node.text or "").strip() if source_node is not None else ""
+            if not source:
+                source = item.findtext("News", default="").strip()
+            published = item.findtext("pubDate", default="").strip()
+            marker = normalize_event_for_match(title) or link
+            if not title or not link or marker in seen:
+                continue
+            seen.add(marker)
             results.append({
                 "title": title, "link": link, "description": description,
-                "source": source, "published": published
+                "source": source or provider, "published": published,
+                "provider": provider
             })
-    return results
+            if len(results) >= max_results:
+                break
+        print(f"Supplementary search: {provider} -> {len(results)} unique results")
+
+    if not results and failures:
+        print("All supplementary news feeds failed: " + ", ".join(failures))
+    return results[:max_results]
 
 
 def extract_research_article(result):
