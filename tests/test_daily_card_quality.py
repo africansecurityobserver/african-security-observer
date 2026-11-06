@@ -251,7 +251,7 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
                 calls.append(query) or [{
                     "title": "تلقّت تونس معدات مكافحة الإرهاب.",
                     "link": "https://example.org/report",
-                    "description": "تلقّت تونس معدات مكافحة الإرهاب.",
+                    "description": "",
                     "source": "Example News",
                     "published": "Fri, 06 Nov 2026 10:00:00 GMT"
                 }]
