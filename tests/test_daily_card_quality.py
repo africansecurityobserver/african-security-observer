@@ -240,5 +240,77 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
         ))
 
 
+    def test_cross_source_enrichment_searches_only_short_selected_events(self):
+        from datetime import date
+        original_search = card.search_related_news
+        original_extract = card.extract_research_article
+        calls = []
+
+        try:
+            card.search_related_news = lambda query, max_results=3: (
+                calls.append(query) or [{
+                    "title": "Independent report on the event",
+                    "link": "https://example.org/report",
+                    "description": "A detailed report describing the same event and its context.",
+                    "source": "Example News",
+                    "published": "Fri, 06 Nov 2026 10:00:00 GMT"
+                }]
+            )
+            card.extract_research_article = lambda result: {
+                "title": result["title"],
+                "source": result["source"],
+                "published": result["published"],
+                "url": result["link"],
+                "excerpt": "Verified details about the same event, including the location, actors and operational context. " * 2
+            }
+            generated = {"sections": [{
+                "title": "الأحداث الكبرى في إفريقيا",
+                "events": [
+                    {"country": "تونس", "text": "تلقّت تونس معدات مكافحة الإرهاب."},
+                    {"country": "السودان", "text": "حدث طويل " + ("تفاصيل إضافية " * 30)}
+                ]
+            }]}
+            evidence = card.collect_event_enrichment_evidence(generated, date(2026, 11, 6))
+            self.assertEqual(len(calls), 1)
+            self.assertIn("after:2026-11-03", calls[0])
+            self.assertIn("before:2026-11-07", calls[0])
+            self.assertEqual(len(evidence), 1)
+            self.assertEqual(evidence[0]["country"], "تونس")
+            self.assertEqual(len(evidence[0]["sources"]), 1)
+        finally:
+            card.search_related_news = original_search
+            card.extract_research_article = original_extract
+
+    def test_event_enrichment_prompt_requires_evidence_and_preserves_all_events(self):
+        from datetime import date
+        generated = {"sections": [{
+            "title": "الأحداث الكبرى في إفريقيا",
+            "events": [
+                {"country": "تونس", "text": "تلقّت تونس معدات مكافحة الإرهاب."},
+                {"country": "كينيا", "text": "تسلّمت كينيا معدات أمن بحري."}
+            ]
+        }]}
+        prompt = card.build_event_enrichment_prompt(
+            generated,
+            [{
+                "country": "تونس",
+                "event": "تلقّت تونس معدات مكافحة الإرهاب.",
+                "sources": [{
+                    "source": "Example News",
+                    "excerpt": "The equipment was delivered to the national guard."
+                }]
+            }],
+            date(2026, 11, 6)
+        )
+        self.assertIn("لا تضف أحداثاً جديدة ولا تحذف أي حدث", prompt)
+        self.assertIn("لا تضف أرقاماً أو أسماء أو حصائل", prompt)
+        self.assertIn("تسلّمت كينيا معدات أمن بحري", prompt)
+        self.assertIn("The equipment was delivered", prompt)
+
+    def test_event_enrichment_is_bounded_and_versioned(self):
+        self.assertEqual(card.EVENT_ENRICHMENT_VERSION, 1)
+        self.assertLessEqual(card.MAX_EVENTS_TO_RESEARCH, 10)
+
+
 if __name__ == "__main__":
     unittest.main()
