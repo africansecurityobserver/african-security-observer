@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T12:45+01:00",
+  "updated": "2026-11-07T19:49+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 41,
+  "count": 40,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -1166,20 +1166,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "كيف يهدد التصعيد العسكري للحوثيين في البحر الأحمر إفريقيا"
-    },
-    {
-      "center": "مركز الدراسات الاستراتيجية والدولية (CSIS)",
-      "center_short": "CSIS",
-      "title": "Could Fighting in Ethiopia Spark Regional War in the Horn of Africa? - CSIS | Center for Strategic and International Studies",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOaFZ5MzYycTVhUXhKMWdYLXVCWG03WWZnMTYwTm1zZngzVlBKNTdZaU45TlZNbnAwa1B4dVo1dmlxT2J0bFhEcjF1dXRjdGs4eFlXMVlRQXN5c2Q3YWU1VkhJLWlYZTU4bm9uUDE2ZmlYLUUtcDZsQmFqalVvemYzX1ZybXpnZEt5Znh3YTNWcHNDMk1HNTlwbC1vVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-08T14:55+01:00",
-      "date": "2026-10-08",
-      "source": "CSIS | Center for Strategic and International Studies",
-      "description": "Could Fighting in Ethiopia Spark Regional War in the Horn of Africa? CSIS | Center for Strategic and International Studies",
-      "center_site": "https://csis.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "هل يمكن أن يؤدي القتال في إثيوبيا إلى اندلاع حرب إقليمية في القرن الإفريقي؟"
     }
   ]
 }
