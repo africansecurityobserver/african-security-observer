@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T10:02+01:00",
+  "updated": "2026-11-08T18:05+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 39,
+  "count": 38,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -720,18 +720,18 @@
       "title_ar": "كيف تُسهّل تكنولوجيا المراقبة الأوروبية القمع في مصر ومنطقة الشرق الأوسط وشمال أفريقيا"
     },
     {
-      "center": "مجموعة الأزمات الدولية",
-      "center_short": "International Crisis Group",
-      "title": "The U.S. and UN Will Need More Patience to Resolve Western Sahara Conflict - International Crisis Group",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPOVNVbW85ZW5KMHp5QUo0NXdJU205bGhOMmVlNVpicGN0dXc5TzAwVUg2UUFTMi1LdlI1aVdyTjcyYXZ0ekdRV2RQNVFEQVNLOWlSek81elN6dm50d2NGejJ5dmJpc0dMUXdocGthblVBd3lMWGU5cGVQYmhPUXlfbHRSMV9PWW4yMUFLWjREOGtUbXNNbDhWUm5hdWZxYTAyVmE0dXlDNzRyYmtQQ1o5dkZZcHZhVG5uY1FpMkNxMlhROFpSN21KaVdaZXFuWV84UUtR?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-09T16:45+01:00",
-      "date": "2026-10-09",
-      "source": "International Crisis Group",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxPOVNVbW85ZW5KMHp5QUo0NXdJU205bGhOMmVlNVpicGN0dXc5TzAwVUg2UUFTMi1LdlI1aVdyTjcyYXZ0ekdRV2RQNVFEQVNLOWlSek81elN6dm50d2NGejJ5dmJpc0dMUXdocGthblVBd3lMWGU5cGVQYmhPUXlfbHRSMV9PWW4yMUFLWjREOGtUbXNNbDhWUm5hdWZxYTAyVmE0dXlDNzRyYmtQQ1o5dkZZcHZhVG5uY1FpMkNxMlhROFpSN21KaVdaZXFuWV84UUtR?oc=5\" target=\"_blank\">The U.S. and UN Will Need More Patience to Resolve Western Sahara Conflict</a> <font color=\"#6f6f6f\">International Crisis Group</font>",
-      "center_site": "https://crisisgroup.org/",
-      "relevance_tier": 3,
-      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "ستحتاج الولايات المتحدة والأمم المتحدة إلى مزيد من الصبر لحل نزاع الصحراء الغربية - مجموعة الأزمات الدولية"
+      "center": "المعهد الجنوب إفريقي للشؤون الدولية (SAIIA)",
+      "center_short": "SAIIA",
+      "title": "The 1.5% Defence Problem: Matching South Africa’s Military Ambitions With its Means",
+      "url": "https://saiia.org.za/research/1-5-defence-problem-matching-south-africas-military-ambitions-its/",
+      "published": "2026-11-08T15:36+01:00",
+      "date": "2026-11-08",
+      "source": "SAIIA",
+      "description": "<a href=\"https://saiia.org.za/research/1-5-defence-problem-matching-south-africas-military-ambitions-its/\" title=\"The 1.5% Defence Problem: Matching South Africa’s Military Ambitions With its Means\" rel=\"nofollow\"><img width=\"1920\" height=\"1279\" src=\"https://saiia.org.za/wp-content/uploads/2026/11/AGDP_OP-512313266_edited-1.jpg\" class=\"webfeedsFeaturedVisual wp-post-image\" alt=\"\" link_thumbnail=\"1\" decoding=\"async\" srcset=\"https://saiia.org.za/wp-content/uploads/2026/11/AGDP_OP-512313266_edited-",
+      "center_site": "https://saiia.org.za/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "مشكلة الدفاع بنسبة 1.5 ٪: مطابقة الطموحات العسكرية لجنوب إفريقيا مع وسائلها"
     },
     {
       "center": "مجلس العلاقات الخارجية",
@@ -846,6 +846,20 @@
       "title_ar": "إدارة الأسلحة والذخائر في أفريقيا: نظرة معمقة - تحديث 2022"
     },
     {
+      "center": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
+      "center_short": "IISS",
+      "title": "Resilience Under Fire: The Gulf’s Food Security, Water Security and Business Continuity in Wartime - The International Institute for Strategic Studies",
+      "url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxNMHFfRjBqYVE0eXlQZ2RqQlVIckZXb1MzNkhyTzFfbTZyVVlmWDc4VWw2YTg4UjZEZzdVQlEwX1Q0Tjkwa1kwZFk3UXBqWTFOaExVTWIxS1duMXY4V2wyMXFXSVdMQmh3V1pmdjd2d3R2RFg3dnc3MURFOG1BQVlodWJUbzg2WDg2ZE5mTXNLVUpUYXdEUE9qWDBHRElISUYtb0F6YS1sZlFCZUtHc2tJN0lsNmdmTVVMcGIxUm9TQkYtQVRTQTJvbk5qRGQyVlZOcHdUZGEteXk0Wnp1QW5PWkhNWlFMa19YUjFLMU5oZTRsVVlvUEdyV0VWSXkzdUlLM0s3cUlsVVdEUlRxWW9NN05TdnZxalJ4aURZVWVuT1VPd091ZGQ0LW0xaHNNWFZFMEVSYXdBdVpoQWw3N1NCa3JNODBaYXc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-01T08:00+01:00",
+      "date": "2026-11-01",
+      "source": "The International Institute for Strategic Studies",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMixwJBVV95cUxNMHFfRjBqYVE0eXlQZ2RqQlVIckZXb1MzNkhyTzFfbTZyVVlmWDc4VWw2YTg4UjZEZzdVQlEwX1Q0Tjkwa1kwZFk3UXBqWTFOaExVTWIxS1duMXY4V2wyMXFXSVdMQmh3V1pmdjd2d3R2RFg3dnc3MURFOG1BQVlodWJUbzg2WDg2ZE5mTXNLVUpUYXdEUE9qWDBHRElISUYtb0F6YS1sZlFCZUtHc2tJN0lsNmdmTVVMcGIxUm9TQkYtQVRTQTJvbk5qRGQyVlZOcHdUZGEteXk0Wnp1QW5PWkhNWlFMa19YUjFLMU5oZTRsVVlvUEdyV0VWSXkzdUlLM0s3cUlsVVdEUlRxWW9NN05TdnZxalJ4aURZVWVuT1VPd091ZGQ0LW0xaHNNWFZFMEVSYXdBdVpoQWw3N1NCa3JNODBaYXc?oc=5\" targ",
+      "center_site": "https://iiss.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الصمود تحت النار: الأمن الغذائي والأمن المائي واستمرارية الأعمال في الخليج في زمن الحرب - المعهد الدولي للدراسات الاستراتيجية"
+    },
+    {
       "center": "مركز الدراسات الاستراتيجية في جامعة أديس أبابا",
       "center_short": "IPSS Addis Ababa",
       "title": "Why You Must Read Morgenthau’s Politics Among Nations: A Note to African Peace and Security Researchers 1 - ipss-addis.org",
@@ -858,20 +872,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "لماذا يجب عليك قراءة سياسة مورغنثاو بين الأمم: مذكرة للباحثين الأفارقة في مجال السلام والأمن 1 - ipss-addis.org"
-    },
-    {
-      "center": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
-      "center_short": "IISS",
-      "title": "Resilience Under Fire: The Gulf’s Food Security, Water Security and Business Continuity in Wartime - The International Institute for Strategic Studies",
-      "url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxNMHFfRjBqYVE0eXlQZ2RqQlVIckZXb1MzNkhyTzFfbTZyVVlmWDc4VWw2YTg4UjZEZzdVQlEwX1Q0Tjkwa1kwZFk3UXBqWTFOaExVTWIxS1duMXY4V2wyMXFXSVdMQmh3V1pmdjd2d3R2RFg3dnc3MURFOG1BQVlodWJUbzg2WDg2ZE5mTXNLVUpUYXdEUE9qWDBHRElISUYtb0F6YS1sZlFCZUtHc2tJN0lsNmdmTVVMcGIxUm9TQkYtQVRTQTJvbk5qRGQyVlZOcHdUZGEteXk0Wnp1QW5PWkhNWlFMa19YUjFLMU5oZTRsVVlvUEdyV0VWSXkzdUlLM0s3cUlsVVdEUlRxWW9NN05TdnZxalJ4aURZVWVuT1VPd091ZGQ0LW0xaHNNWFZFMEVSYXdBdVpoQWw3N1NCa3JNODBaYXc?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-30T20:19+01:00",
-      "date": "2026-10-30",
-      "source": "The International Institute for Strategic Studies",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMixwJBVV95cUxNMHFfRjBqYVE0eXlQZ2RqQlVIckZXb1MzNkhyTzFfbTZyVVlmWDc4VWw2YTg4UjZEZzdVQlEwX1Q0Tjkwa1kwZFk3UXBqWTFOaExVTWIxS1duMXY4V2wyMXFXSVdMQmh3V1pmdjd2d3R2RFg3dnc3MURFOG1BQVlodWJUbzg2WDg2ZE5mTXNLVUpUYXdEUE9qWDBHRElISUYtb0F6YS1sZlFCZUtHc2tJN0lsNmdmTVVMcGIxUm9TQkYtQVRTQTJvbk5qRGQyVlZOcHdUZGEteXk0Wnp1QW5PWkhNWlFMa19YUjFLMU5oZTRsVVlvUEdyV0VWSXkzdUlLM0s3cUlsVVdEUlRxWW9NN05TdnZxalJ4aURZVWVuT1VPd091ZGQ0LW0xaHNNWFZFMEVSYXdBdVpoQWw3N1NCa3JNODBaYXc?oc=5\" targ",
-      "center_site": "https://iiss.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "الصمود تحت النار: الأمن الغذائي والأمن المائي واستمرارية الأعمال في الخليج في زمن الحرب - المعهد الدولي للدراسات الاستراتيجية"
     },
     {
       "center": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
@@ -1138,20 +1138,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "أجرت دويتشه فيله مقابلة مع جينيفيف دونيلون ماي حول الأمن الغذائي في الصين - معهد سياسة الأمن والتنمية"
-    },
-    {
-      "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
-      "center_short": "UNIDIR",
-      "title": "UNIDIR and WANEP support communities on the frontline of early warning",
-      "url": "https://unidir.org/unidir-and-wanep-support-communities-on-the-frontline-of-early-warning/",
-      "published": "2026-10-09T13:51+01:00",
-      "date": "2026-10-09",
-      "source": "UNIDIR",
-      "description": "<p>UNIDIR, in partnership with the West Africa Network for Peacebuilding (WANEP), brought together community early-warning monitors and local stakeholders for a training in Ouangolodougou, Côte d’Ivoire, taking place from 22 to 24 September. Participants strengthened their capacity to identify, monitor, document and report risks associated with ammunition diversion and trafficking. The training, supported by the<span class=\"excerpt-read-more\">... <a class=\"btn--link\" href=\"https://unidir.org/uni",
-      "center_site": "https://unidir.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "يقدم معهد الأمم المتحدة لبحوث نزع السلاح (UNIDIR) وشبكة غرب آسيا للإنذار المبكر (WANEP) الدعم للمجتمعات التي تقف في الخطوط الأمامية للإنذار المبكر."
     }
   ]
 }
