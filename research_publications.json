@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T00:39+01:00",
+  "updated": "2026-11-08T10:02+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 40,
+  "count": 39,
   "publications": [
     {
       "center": "المركز العربي في واشنطن",
@@ -1152,20 +1152,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "يقدم معهد الأمم المتحدة لبحوث نزع السلاح (UNIDIR) وشبكة غرب آسيا للإنذار المبكر (WANEP) الدعم للمجتمعات التي تقف في الخطوط الأمامية للإنذار المبكر."
-    },
-    {
-      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-      "center_short": "ISS Africa",
-      "title": "How Houthi military aggression in the Red Sea threatens Africa - ISS Africa",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPYjFSN0kxVUF4TFVNNV96YTh4b2FhRTBrNDZwaWp1aUNEaENnX3FGaVJtT0puQWc3TUZIREtpXzlfZ2trZ0RJS3BQMWI0REw5MHA5S1VXeHpTTHI4RHF3Nm93ME1kWWV6U045X2FQUGw0VUlFT0V1NXhVc0sxNWRHSXZ1MWFuZnVlX0ZBZndxMFZ1ZDFGZVAyb3pn?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-09T09:08+01:00",
-      "date": "2026-10-09",
-      "source": "ISS Africa",
-      "description": "How Houthi military aggression in the Red Sea threatens Africa ISS Africa",
-      "center_site": "https://issafrica.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "كيف يهدد التصعيد العسكري للحوثيين في البحر الأحمر إفريقيا"
     }
   ]
 }
