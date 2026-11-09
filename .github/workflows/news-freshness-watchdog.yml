@@ -51,6 +51,8 @@ jobs:
                   body = response.read()
                   return json.loads(body) if body else {}
 
+          import base64
+
           result = github_json(
               f"{api_root}/actions/workflows/update-news.yml/runs?per_page=10"
           )
@@ -62,27 +64,27 @@ jobs:
               print("A news refresh is already queued or running; no duplicate dispatch.")
               raise SystemExit(0)
 
-          latest = max(
-              runs,
-              key=lambda run: datetime.fromisoformat(
-                  run["created_at"].replace("Z", "+00:00")
-              ),
-              default=None
+          # Check the actual publication timestamp, not just the existence of a recent run.
+          news_data = github_json(f"{api_root}/contents/news.json?ref=main")
+          encoded = news_data.get("content", "")
+          if not encoded:
+              raise RuntimeError("GitHub returned no content for news.json.")
+          news_json = json.loads(base64.b64decode(encoded).decode("utf-8"))
+          updated_raw = news_json.get("updated")
+          updated_at = (
+              datetime.fromisoformat(updated_raw.replace("Z", "+00:00"))
+              if updated_raw else None
           )
           now = datetime.now(timezone.utc)
-          latest_at = (
-              datetime.fromisoformat(latest["created_at"].replace("Z", "+00:00"))
-              if latest else None
-          )
-          age = now - latest_at if latest_at else None
-          print(f"Latest news-updater run: {latest_at}")
-          print(f"Age of latest run: {age}")
+          age = now - updated_at if updated_at else None
+          print(f"news.json updated timestamp: {updated_at}")
+          print(f"Age of published news data: {age}")
 
-          if age is not None and age <= timedelta(minutes=25):
-              print("The news updater has run recently; no recovery needed.")
+          if age is not None and timedelta(0) <= age <= timedelta(minutes=25):
+              print("Published news data is fresh; no recovery needed.")
               raise SystemExit(0)
 
-          print("News updater is overdue; dispatching one recovery run.")
+          print("Published news data is stale or has no valid timestamp; dispatching recovery.")
           github_json(
               f"{api_root}/actions/workflows/update-news.yml/dispatches",
               method="POST",
