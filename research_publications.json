@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T14:56+01:00",
+  "updated": "2026-11-10T00:27+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,8 +605,22 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 38,
+  "count": 40,
   "publications": [
+    {
+      "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
+      "center_short": "SWP",
+      "title": "How the Military Is Restructuring Egypt’s Gold Sector Through Force - Stiftung Wissenschaft und Politik (SWP)",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQMWI2d1F5emZ3ZUk1WEhPcnkxSUVZLTBvdEpIQ1BIWVJESF91M2d0Wmk0LWFHM2NqRWxuWThwbXFRZHl1eS1tVHhaSldRb3MyNkFidWV0X05aZXV4aktSSnl4TjZMeWRROGJOeC1IdkZQcjZhbXpNeGl1TW42SEt1WkFnS19tN0lpbWl5QnNxdUR0aXdVX09LSEVZTkdPQUdsUS1ZOHJ2NHBHSF9IUnc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-09T20:59+01:00",
+      "date": "2026-11-09",
+      "source": "Stiftung Wissenschaft und Politik (SWP)",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQMWI2d1F5emZ3ZUk1WEhPcnkxSUVZLTBvdEpIQ1BIWVJESF91M2d0Wmk0LWFHM2NqRWxuWThwbXFRZHl1eS1tVHhaSldRb3MyNkFidWV0X05aZXV4aktSSnl4TjZMeWRROGJOeC1IdkZQcjZhbXpNeGl1TW42SEt1WkFnS19tN0lpbWl5QnNxdUR0aXdVX09LSEVZTkdPQUdsUS1ZOHJ2NHBHSF9IUnc?oc=5\" target=\"_blank\">How the Military Is Restructuring Egypt’s Gold Sector Through Force</a> <font color=\"#6f6f6f\">Stiftung Wissenschaft und Politik (SWP)</font>",
+      "center_site": "https://swp-berlin.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "كيف يعيد الجيش هيكلة قطاع الذهب في مصر من خلال القوة - Stiftung Wissenschaft und Politik (SWP)"
+    },
     {
       "center": "المركز العربي في واشنطن",
       "center_short": "Arab Center Washington DC",
@@ -704,6 +718,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "كيف تُسهّل تكنولوجيا المراقبة الأوروبية القمع في مصر ومنطقة الشرق الأوسط وشمال أفريقيا"
+    },
+    {
+      "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
+      "center_short": "UNIDIR",
+      "title": "2024 Training on Norms, International Law and Cyberspace: Cybersecurity in international law",
+      "url": "https://unidir.org/video/cybersecurity-in-international-law/",
+      "published": "2026-11-09T17:02+01:00",
+      "date": "2026-11-09",
+      "source": "UNIDIR",
+      "description": "",
+      "center_site": "https://unidir.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "2024 التدريب على القواعد والقانون الدولي والفضاء الإلكتروني: الأمن السيبراني في القانون الدولي"
     },
     {
       "center": "معهد الدراسات الأمنية والتنمية (ISDP)",
