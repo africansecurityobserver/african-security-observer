@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T03:41+01:00",
+  "updated": "2026-11-09T14:56+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -692,20 +692,6 @@
       "title_ar": "ورشة عمل SETA تفحص الروابط الأمنية بين بحر البلطيق والبحر الأسود والبحر الأبيض المتوسط - SETA - Siyaset, Ekonomi ve Toplum Araştırmaları Vakfı"
     },
     {
-      "center": "معهد الدراسات الأمنية والتنمية (ISDP)",
-      "center_short": "ISDP",
-      "title": "From Hormuz to the Eastern Mediterranean: India, Israel, and the Indo-Pacific’s Western Flank - Institute for Security & Development Policy",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxORWYzME95NzhDZVA4TVl1WUk3QVVpbUtVTDZOOVRzQ0dDWm1hMWducWdnNVNTbHRyay03TzdFM1I0NkFnaXBkZEpjUjZ5Rmp4NWllRHU1SzgtSW1zQ2FpN0FEMTdvTVQtZGw2NFF1cmIwX1hRR1J3czB1QWFpYlBLV0dfOS12X0x1ODRMN1Z6cmVaeFNHZjlUOUNETnNzOXRzNGxLa2swNHVyTVpzakc4?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-15T09:40+01:00",
-      "date": "2026-10-15",
-      "source": "Institute for Security & Development Policy",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxORWYzME95NzhDZVA4TVl1WUk3QVVpbUtVTDZOOVRzQ0dDWm1hMWducWdnNVNTbHRyay03TzdFM1I0NkFnaXBkZEpjUjZ5Rmp4NWllRHU1SzgtSW1zQ2FpN0FEMTdvTVQtZGw2NFF1cmIwX1hRR1J3czB1QWFpYlBLV0dfOS12X0x1ODRMN1Z6cmVaeFNHZjlUOUNETnNzOXRzNGxLa2swNHVyTVpzakc4?oc=5\" target=\"_blank\">From Hormuz to the Eastern Mediterranean: India, Israel, and the Indo-Pacific’s Western Flank</a> <font color=\"#6f6f6f\">Institute for Security & Development Policy</font>",
-      "center_site": "https://isdp.eu/",
-      "relevance_tier": 3,
-      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "من هرمز إلى شرق البحر الأبيض المتوسط: الهند وإسرائيل والجناح الغربي لمنطقة المحيطين الهندي والهادئ - معهد سياسة الأمن والتنمية"
-    },
-    {
       "center": "معهد التحرير لسياسة الشرق الأوسط",
       "center_short": "TIMEP",
       "title": "How European Surveillance Technology Facilitates Repression in Egypt and MENA",
@@ -718,6 +704,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "كيف تُسهّل تكنولوجيا المراقبة الأوروبية القمع في مصر ومنطقة الشرق الأوسط وشمال أفريقيا"
+    },
+    {
+      "center": "معهد الدراسات الأمنية والتنمية (ISDP)",
+      "center_short": "ISDP",
+      "title": "Niklas Swanström Participated in the 7th Symposium on Global Maritime Cooperation and Ocean Governance in Sanya - Institute for Security & Development Policy",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQTE9FYnpIR3p0ckRLQ3UyTVNQbUlSSkx4X0N1UTcxOVFPalhieDlwaTZBWklwbi01anZLdHl5bnVRZVJVdTRlZkN5RUlNMFJOTmRmSVB4NU93QVpCbHpXQ2xxaV85YXRvVmN3dm53LXN6cmRaX3FNLUt1RFpwSzJvUjJ6U193SXpGd3ZCckllTnA2UlZnQ2had2xESC04N2ExWENQSDBsNmNzVl9tR2d4WWllNXNJZm9uZURMNGR6S0NWQkRyUnNkM1ZuSFBwN2FCSE9r?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-09T11:00+01:00",
+      "date": "2026-11-09",
+      "source": "Institute for Security & Development Policy",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxQTE9FYnpIR3p0ckRLQ3UyTVNQbUlSSkx4X0N1UTcxOVFPalhieDlwaTZBWklwbi01anZLdHl5bnVRZVJVdTRlZkN5RUlNMFJOTmRmSVB4NU93QVpCbHpXQ2xxaV85YXRvVmN3dm53LXN6cmRaX3FNLUt1RFpwSzJvUjJ6U193SXpGd3ZCckllTnA2UlZnQ2had2xESC04N2ExWENQSDBsNmNzVl9tR2d4WWllNXNJZm9uZURMNGR6S0NWQkRyUnNkM1ZuSFBwN2FCSE9r?oc=5\" target=\"_blank\">Niklas Swanström Participated in the 7th Symposium on Global Maritime Cooperation and Ocean Governance in Sanya</a> <font color=\"#6f6f6f\">Insti",
+      "center_site": "https://isdp.eu/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "شارك نيكلاس سوانستروم في الندوة السابعة حول التعاون البحري العالمي وإدارة المحيطات في سانيا - معهد سياسة الأمن والتنمية"
     },
     {
       "center": "المعهد الأسترالي للسياسة الاستراتيجية (ASPI)",
