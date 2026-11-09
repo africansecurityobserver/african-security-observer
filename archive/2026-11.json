@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T00:04:21.099152+00:00",
+  "updated": "2026-11-09T00:12:17.856672+00:00",
   "items": [
     {
       "title": "أوغندا تبدأ سحب قواتها من الصومال – الأسبوع",
@@ -614,18 +614,6 @@
       "region": "world"
     },
     {
-      "title": "المدعون البولنديون يفتحون تحقيقًا إرهابيًا في إطلاق النار في كراكوف - الغارديان",
-      "description": "المدعون البولنديون يفتحون تحقيقًا في الإرهاب في إطلاق النار في كراكوف    الغارديان",
-      "summary": "المدعون البولنديون يفتحون تحقيقًا في الإرهاب في إطلاق النار في كراكوف    الغارديان",
-      "original_title": "Polish prosecutors open terrorism investigation into Kraków shooting - The Guardian",
-      "original_description": "Polish prosecutors open terrorism investigation into Kraków shooting &nbsp;&nbsp; The Guardian",
-      "url": "https://www.theguardian.com/world/2026/nov/08/krakow-shooting-poland-terrorism-investigation",
-      "source": "The Guardian",
-      "published": "Sun, 08 Nov 2026 16:56:00 GMT",
-      "category": "rest",
-      "region": "world"
-    },
-    {
       "title": "بولندا: التحقيق مستمر في ملابسات هجوم كراكوف",
       "description": "فتح القضاء البولندي الأحد تحقيقا في عمل إرهابي، فيما توافد الناس إلى الساحة الرئيسية في مدينة كراكوف حاملين شموعا وزهورا تكريما للأشخاص الستة الذين قُتلوا فيها السبت برصاص مسلّح قالت السلطات إنه كان \"مبهورا بإيديولوجيات اليمين المتطرّف\".",
       "summary": "فتح القضاء البولندي الأحد تحقيقا في عمل إرهابي، فيما توافد الناس إلى الساحة الرئيسية في مدينة كراكوف حاملين شموعا وزهورا تكريما للأشخاص الستة الذين قُتلوا فيها السبت برصاص مسلّح قالت السلطات إنه كان \"مبهورا بإيديولوجيات اليمين المتطرّف\".",
@@ -1102,6 +1090,18 @@
       "url": "https://www.kyivpost.com/post/89477",
       "source": "Kyiv Post",
       "published": "Sun, 08 Nov 2026 11:56:32 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "المدعون البولنديون يفتحون تحقيقًا إرهابيًا في إطلاق النار في كراكوف - الغارديان",
+      "description": "المدعون البولنديون يفتحون تحقيقًا في الإرهاب في إطلاق النار في كراكوف    الغارديان",
+      "summary": "المدعون البولنديون يفتحون تحقيقًا في الإرهاب في إطلاق النار في كراكوف    الغارديان",
+      "original_title": "Polish prosecutors open terrorism investigation into Kraków shooting - The Guardian",
+      "original_description": "Polish prosecutors open terrorism investigation into Kraków shooting &nbsp;&nbsp; The Guardian",
+      "url": "https://www.theguardian.com/world/2026/nov/08/krakow-shooting-poland-terrorism-investigation",
+      "source": "The Guardian",
+      "published": "Sun, 08 Nov 2026 11:50:00 GMT",
       "category": "rest",
       "region": "world"
     },
@@ -2499,8 +2499,8 @@
     },
     {
       "title": "مدنين: هبوط اضطراري لطائرة عسكرية ليبية - موزاييك إف إم",
-      "description": "مدنين: هبوط اضطراري لطائرة عسكرية ليبية    موزاييك إف إم",
-      "summary": "مدنين: هبوط اضطراري لطائرة عسكرية ليبية    موزاييك إف إم",
+      "description": "مدنين: هبوط اضطراري لطائرة عسكرية ليبية    موزاييك FM",
+      "summary": "مدنين: هبوط اضطراري لطائرة عسكرية ليبية    موزاييك FM",
       "original_title": "Médenine: Atterrissage d’urgence d'un avion militaire libyen - Mosaique FM",
       "original_description": "Médenine: Atterrissage d’urgence d'un avion militaire libyen &nbsp;&nbsp; Mosaique FM",
       "url": "https://www.mosaiquefm.net/amp/fr/video/448954/player",
@@ -2558,9 +2558,9 @@
       "region": "africa"
     },
     {
-      "title": "في بولندا، قتل مطلق النار \"المفتون بالإيديولوجيات اليمينية المتطرفة\" ستة أشخاص على الأقل في كراكوف، دونالد توسك يدين العمل \"الإرهابي\" - لوموند.فر",
-      "description": "في بولندا، قتل مطلق النار \"المفتون بالإيديولوجيات اليمينية المتطرفة\" ستة أشخاص على الأقل في كراكوف، دونالد توسك يدين العمل \"الإرهابي\" لوموند.fr",
-      "summary": "في بولندا، قتل مطلق النار \"المفتون بالإيديولوجيات اليمينية المتطرفة\" ستة أشخاص على الأقل في كراكوف، دونالد توسك يدين العمل \"الإرهابي\" لوموند.fr",
+      "title": "في بولندا، قتل مطلق النار \"المفتون بإيديولوجيات اليمين المتطرف\" ستة أشخاص على الأقل في كراكوف، دونالد تاسك يدين العمل \"الإرهابي\" - لوموند.فر",
+      "description": "في بولندا، قتل مطلق النار \"المفتون بالإيديولوجيات اليمينية المتطرفة\" ستة أشخاص على الأقل في كراكوف، دونالد تاسك يدين العمل \"الإرهابي\" لوموند.fr",
+      "summary": "في بولندا، قتل مطلق النار \"المفتون بالإيديولوجيات اليمينية المتطرفة\" ستة أشخاص على الأقل في كراكوف، دونالد تاسك يدين العمل \"الإرهابي\" لوموند.fr",
       "original_title": "En Pologne, un tireur « fasciné par les idéologies d’extrême droite » fait au moins six morts à Cracovie, Donald Tusk dénonce un acte de « terrorisme » - Le Monde.fr",
       "original_description": "En Pologne, un tireur « fasciné par les idéologies d’extrême droite » fait au moins six morts à Cracovie, Donald Tusk dénonce un acte de « terrorisme » &nbsp;&nbsp; Le Monde.fr",
       "url": "https://www.lemonde.fr/international/article/2026/11/07/en-pologne-au-moins-six-morts-dans-une-attaque-par-arme-a-feu-a-cracovie-le-tireur-interpelle_6808293_3211.html",
