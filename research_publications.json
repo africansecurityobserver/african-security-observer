@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T22:12+01:00",
+  "updated": "2026-11-09T03:41+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -720,6 +720,20 @@
       "title_ar": "كيف تُسهّل تكنولوجيا المراقبة الأوروبية القمع في مصر ومنطقة الشرق الأوسط وشمال أفريقيا"
     },
     {
+      "center": "المعهد الأسترالي للسياسة الاستراتيجية (ASPI)",
+      "center_short": "ASPI",
+      "title": "Just to be clear, we do not buy tanks in the hope of using them",
+      "url": "https://www.aspistrategist.org.au/just-to-be-clear-we-do-not-buy-tanks-in-the-hope-of-using-them/",
+      "published": "2026-11-09T01:02+01:00",
+      "date": "2026-11-09",
+      "source": "ASPI",
+      "description": "During the latest Senate committee hearing on government spending, the army’s A$1.2 billion acquisition of 75 M1A2 Abrams main battle tanks came under fire. Senator Fatima Payman asked why Defence was investing so heavily in ...",
+      "center_site": "https://aspistrategist.org.au/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "فقط لنكون واضحين، نحن لا نشتري الصهاريج على أمل استخدامها"
+    },
+    {
       "center": "المعهد الجنوب إفريقي للشؤون الدولية (SAIIA)",
       "center_short": "SAIIA",
       "title": "The 1.5% Defence Problem: Matching South Africa’s Military Ambitions With its Means",
@@ -984,20 +998,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "لا يمكن لحلف الناتو تحمل الغموض في مواجهة الحرب الهجينة الروسية - orfonline.org"
-    },
-    {
-      "center": "المعهد الأسترالي للسياسة الاستراتيجية (ASPI)",
-      "center_short": "ASPI",
-      "title": "To secure supply, Australia needs to engage with Africa’s mineral sovereignty",
-      "url": "https://www.aspistrategist.org.au/to-secure-supply-australia-needs-to-engage-with-africas-mineral-sovereignty/",
-      "published": "2026-10-26T20:00+01:00",
-      "date": "2026-10-26",
-      "source": "ASPI",
-      "description": "Africa’s push for greater control over its minerals is a national security question for Australia, not just a commercial one for its miners. Canberra should coordinate more directly with African governments, both nationally and regionally ...",
-      "center_site": "https://aspistrategist.org.au/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "لضمان الإمدادات، تحتاج أستراليا إلى الانخراط مع الدول الأفريقية فيما يتعلق بسيادتها على المعادن."
     },
     {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
