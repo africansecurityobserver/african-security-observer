@@ -1,7 +1,7 @@
 /**
  * Cloudflare Worker scheduled trigger for African Security Observer news updates.
  *
- * Configure a Cron Trigger: */15 * * * *
+ * Configure a Cron Trigger to run every 15 minutes (UTC).
  * Store GITHUB_TOKEN as a Worker secret (never commit it).
  * Required secret scope: fine-grained PAT restricted to this repository,
  * with Actions: Read and write.
