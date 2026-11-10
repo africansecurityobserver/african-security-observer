@@ -3,9 +3,8 @@ name: Daily Card Watchdog
 on:
   workflow_dispatch:
   schedule:
-    # A second check at offset times. This can recover missed/failed
-    # generation runs, but still uses GitHub's scheduler.
-    - cron: "13,43 * * * *"
+    # Check 7 minutes after each scheduled digest; recover only when missing/empty.
+    - cron: "27,57 * * * *"
       timezone: "Africa/Tunis"
 
 permissions:
