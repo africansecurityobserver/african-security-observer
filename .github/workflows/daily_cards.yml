@@ -16,6 +16,7 @@ on:
   # Run a forced verification refresh when the card generator or its
   # workflow changes. Generated card-data commits do not match these paths,
   # so this cannot create a self-triggering loop.
+  # Touching this workflow also re-registers its scheduled trigger on main.
   push:
     branches:
       - main
