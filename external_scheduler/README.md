@@ -21,7 +21,7 @@ Never paste the token into this repository, a public file, or a chat.
 4. Add a Cron Trigger: `*/15 * * * *` (every 15 minutes, UTC).
 5. Check Worker Logs after the first scheduled invocation.
 
-The Worker reads the public `news.json` timestamp. If it is older than 25 minutes, it checks for an active updater run and dispatches `update-news.yml` only when no run is queued or running.
+The Worker checks the latest `update-news.yml` workflow attempt. If no attempt has started in the last 40 minutes, it checks for an active run and dispatches `update-news.yml` only when no run is queued or running. It deliberately does not use `news.json.updated`, because that timestamp is preserved when a successful refresh finds no new stories.
 
 ## 3. Verify operation
 
@@ -29,4 +29,4 @@ After deployment, observe at least 3–4 scheduled cycles. Confirm both:
 - Worker logs show either fresh-data skips or accepted dispatches.
 - GitHub Actions shows corresponding `workflow_dispatch` runs, and `news.json` receives a newer `updated` timestamp.
 
-The existing GitHub Actions schedule and in-repository watchdog remain as additional layers. The external Worker is the independent trigger.
+The primary GitHub Actions schedule runs at minutes 10 and 40. The in-repository watchdog and this optional Worker check at minutes 25 and 55 as recovery layers. If this Worker is already deployed, publish the updated `cloudflare_worker.js` and change its Cron Trigger to `25,55 * * * *` in the Cloudflare dashboard; changing the repository file alone does not redeploy a Worker.
