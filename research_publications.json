@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T00:27+01:00",
+  "updated": "2026-11-10T10:54+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 40,
+  "count": 41,
   "publications": [
     {
       "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
@@ -718,6 +718,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "كيف تُسهّل تكنولوجيا المراقبة الأوروبية القمع في مصر ومنطقة الشرق الأوسط وشمال أفريقيا"
+    },
+    {
+      "center": "المعهد الأسترالي للسياسة الاستراتيجية (ASPI)",
+      "center_short": "ASPI",
+      "title": "The new ‘cold’ war: hacked fridges reveal infrastructure-security gaps",
+      "url": "https://www.aspistrategist.org.au/the-new-cold-war-hacked-fridges-reveal-infrastructure-security-gaps/",
+      "published": "2026-11-10T04:55+01:00",
+      "date": "2026-11-10",
+      "source": "ASPI",
+      "description": "A wave of cyberattacks on European supermarkets last week exposed a vulnerability that extends well beyond refrigeration. For Australia, the national security challenge is protecting the interconnected critical infrastructure systems that sustain our economy, essential ...",
+      "center_site": "https://aspistrategist.org.au/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الحرب \"الباردة\" الجديدة: الثلاجات المخترقة تكشف عن ثغرات أمنية في البنية التحتية"
     },
     {
       "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
