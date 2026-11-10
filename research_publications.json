@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T10:54+01:00",
+  "updated": "2026-11-10T19:41+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 41,
+  "count": 42,
   "publications": [
     {
       "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
@@ -718,6 +718,34 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "كيف تُسهّل تكنولوجيا المراقبة الأوروبية القمع في مصر ومنطقة الشرق الأوسط وشمال أفريقيا"
+    },
+    {
+      "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
+      "center_short": "UNIDIR",
+      "title": "Gender Perspectives in Arms Control and Disarmament: Views from Africa",
+      "url": "https://unidir.org/publication/gender-perspectives-in-arms-control-and-disarmament-views-from-africa/",
+      "published": "2026-11-10T13:56+01:00",
+      "date": "2026-11-10",
+      "source": "UNIDIR",
+      "description": "",
+      "center_site": "https://unidir.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "المنظورات الجنسانية في تحديد الأسلحة ونزع السلاح: وجهات نظر من أفريقيا"
+    },
+    {
+      "center": "مؤسسة RAND",
+      "center_short": "RAND",
+      "title": "Ready for War 2030: A Scenario: Bolstering the UK and NATO's Preparedness - RAND",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBIaE5OLUZuUnBmejlCeUcxSEl1NzBRZHFhbHAwTTQwZF9rM3ZOV211SF9yY0pTTnhTTE5KOExzRUR0elk5T2dERkNfbkhoUlZUMEhfZ3RvTXZZRnU1TmFPRjgyWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-10T11:10+01:00",
+      "date": "2026-11-10",
+      "source": "RAND",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiY0FVX3lxTFBIaE5OLUZuUnBmejlCeUcxSEl1NzBRZHFhbHAwTTQwZF9rM3ZOV211SF9yY0pTTnhTTE5KOExzRUR0elk5T2dERkNfbkhoUlZUMEhfZ3RvTXZZRnU1TmFPRjgyWQ?oc=5\" target=\"_blank\">Ready for War 2030: A Scenario: Bolstering the UK and NATO's Preparedness</a> <font color=\"#6f6f6f\">RAND</font>",
+      "center_site": "https://rand.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الاستعداد لحرب 2030: سيناريو: تعزيز استعداد المملكة المتحدة وحلف الناتو - RAND"
     },
     {
       "center": "المعهد الأسترالي للسياسة الاستراتيجية (ASPI)",
@@ -886,20 +914,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "يخشى الحلفاء أن يستهدف ترامب حلف الناتو في حالة خسارة منتصف المدة"
-    },
-    {
-      "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
-      "center_short": "UNIDIR",
-      "title": "Weapons and Ammunition Management in Africa Insight: 2022 Update",
-      "url": "https://unidir.org/publication/weapons-and-ammunition-management-in-africa-insight-2022-update/",
-      "published": "2026-11-02T10:15+01:00",
-      "date": "2026-11-02",
-      "source": "UNIDIR",
-      "description": "",
-      "center_site": "https://unidir.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "إدارة الأسلحة والذخائر في أفريقيا: نظرة معمقة - تحديث 2022"
     },
     {
       "center": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
