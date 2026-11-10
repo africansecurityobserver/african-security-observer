@@ -96,7 +96,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          runs_json="$(gh run list --workflow daily_cards.yml --limit 5 --json status,createdAt)"
+          runs_json="$(gh run list --workflow daily_cards.yml --limit 5 --json status,conclusion,createdAt)"
           python - "$runs_json" <<'PY'
           import json
           import sys
@@ -113,14 +113,14 @@ jobs:
               except Exception:
                   pass
 
-          recent = latest is not None and (now - latest).total_seconds() < 3 * 3600
+          recent = latest is not None and (now - latest).total_seconds() < 25 * 60
           should_skip = active or recent
-          print(f"Active generation: {active}; recent attempt within 3 hours: {recent}")
+          print(f"Active generation: {active}; attempt within 25 minutes: {recent}")
           with open("watchdog_decision.txt", "w", encoding="utf-8") as f:
               f.write("skip" if should_skip else "dispatch")
           PY
           if [ "$(cat watchdog_decision.txt)" = "skip" ]; then
-            echo "A generation run is active or was attempted within the last three hours; no duplicate dispatch."
+            echo "A generation run is active or was attempted within the last 25 minutes; no duplicate dispatch."
             exit 0
           fi
           gh workflow run daily_cards.yml --ref main -f slot=daily
