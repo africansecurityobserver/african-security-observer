@@ -1,7 +1,9 @@
 /**
- * Cloudflare Worker scheduled trigger for African Security Observer news updates.
+ * Cloudflare Worker backup trigger for African Security Observer news updates.
  *
- * Configure a Cron Trigger to run every 15 minutes (UTC).
+ * Configure its Cron Trigger to run at minutes 25 and 55 of every hour:
+ *   25,55 * * * *
+ * These checks run between the primary GitHub Actions refreshes at :10 and :40.
  * Store GITHUB_TOKEN as a Worker secret (never commit it).
  * Required secret scope: fine-grained PAT restricted to this repository,
  * with Actions: Read and write.
@@ -11,7 +13,7 @@ const OWNER = "africansecurityobserver";
 const REPO = "african-security-observer";
 const WORKFLOW_FILE = "update-news.yml";
 const BRANCH = "main";
-const MAX_AGE_MINUTES = 25;
+const MAX_RUN_AGE_MINUTES = 40;
 
 async function githubRequest(url, token, options = {}) {
   const response = await fetch(url, {
@@ -35,31 +37,32 @@ export default {
   async scheduled(controller, env, ctx) {
     if (!env.GITHUB_TOKEN) throw new Error("Missing GITHUB_TOKEN Worker secret.");
 
-    const rawUrl = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/news.json`;
-    const newsResponse = await fetch(rawUrl, { cf: { cacheTtl: 0, cacheEverything: false } });
-    if (!newsResponse.ok) throw new Error(`Could not read news.json: HTTP ${newsResponse.status}`);
-    const news = await newsResponse.json();
-    const updatedAt = Date.parse(news.updated || "");
-    const ageMinutes = Number.isFinite(updatedAt)
-      ? (Date.now() - updatedAt) / 60000
-      : Number.POSITIVE_INFINITY;
-
-    console.log(`news.json age: ${ageMinutes.toFixed(1)} minutes`);
-    if (ageMinutes >= 0 && ageMinutes <= MAX_AGE_MINUTES) {
-      console.log("News data is fresh; skipping dispatch.");
-      return;
-    }
-
     const apiRoot = `https://api.github.com/repos/${OWNER}/${REPO}`;
-    const runs = await githubRequest(
-      `${apiRoot}/actions/workflows/${WORKFLOW_FILE}/runs?branch=${BRANCH}&per_page=5`,
+    const result = await githubRequest(
+      `${apiRoot}/actions/workflows/${WORKFLOW_FILE}/runs?branch=${BRANCH}&per_page=10`,
       env.GITHUB_TOKEN
     );
-    const active = (runs.workflow_runs || []).some(run =>
+    const runs = result.workflow_runs || [];
+    const active = runs.some(run =>
       ["queued", "in_progress", "waiting", "requested", "pending"].includes(run.status)
     );
     if (active) {
       console.log("A news update is already queued or running; skipping duplicate dispatch.");
+      return;
+    }
+
+    // Do not use news.json.updated here: it intentionally remains unchanged
+    // when a successful refresh finds no new stories.
+    const latest = runs[0];
+    const latestRaw = latest && (latest.run_started_at || latest.created_at);
+    const latestAt = latestRaw ? Date.parse(latestRaw) : Number.NaN;
+    const ageMinutes = Number.isFinite(latestAt)
+      ? (Date.now() - latestAt) / 60000
+      : Number.POSITIVE_INFINITY;
+
+    console.log(`Latest news workflow attempt age: ${ageMinutes.toFixed(1)} minutes`);
+    if (ageMinutes >= 0 && ageMinutes <= MAX_RUN_AGE_MINUTES) {
+      console.log("A news refresh was attempted within the safety window; skipping dispatch.");
       return;
     }
 
@@ -72,6 +75,6 @@ export default {
         body: JSON.stringify({ ref: BRANCH }),
       }
     );
-    console.log("GitHub accepted the external news-update dispatch.");
+    console.log("GitHub accepted the backup news-update dispatch.");
   },
 };
