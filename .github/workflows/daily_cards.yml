@@ -34,7 +34,8 @@ permissions:
 
 concurrency:
   group: daily-security-cards-v2-${{ github.ref }}
-  cancel-in-progress: true
+  # Let an active generation finish; a newer scheduled run must not cancel it.
+  cancel-in-progress: false
 
 jobs:
   generate-card:
@@ -142,20 +143,15 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Stage every generated/tracked change before committing. This also
-          # prevents a later rebase from failing on an unstaged generated file.
-          git add -A
+          # Publish only the daily-card outputs owned by this workflow.
+          # Never stage Python bytecode, temporary files, or unrelated site data.
+          git add -A -- daily_cards/cards.json daily_cards/archive/
 
           if git diff --cached --quiet; then
-            echo "No changes to commit."
+            echo "No daily-card changes."
           else
             git commit -m "Update daily security card"
             for attempt in 1 2 3; do
-              # Re-stage and amend if the generator left any late file changes.
-              git add -A
-              if ! git diff --cached --quiet; then
-                git commit --amend --no-edit
-              fi
               if git fetch origin main && git rebase origin/main && git push origin main; then exit 0; fi
               git rebase --abort || true
               echo "Push attempt $attempt failed; retrying after refreshing main."
