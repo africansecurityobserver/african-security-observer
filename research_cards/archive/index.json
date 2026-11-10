@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T23:41:01+01:00",
+  "updated": "2026-11-10T08:42:52+01:00",
   "years": [
     {
       "year": "2026",
@@ -7,6 +7,16 @@
         {
           "month": "11",
           "cards": [
+            {
+              "date": "2026-11-09",
+              "title": "كيف يعيد الجيش هيكلة قطاع الذهب في مصر من خلال القوة - Stiftung Wissenschaft und Politik (SWP)",
+              "subject": "كيف يعيد الجيش هيكلة قطاع الذهب في مصر من خلال القوة - Stiftung Wissenschaft und Politik (SWP)",
+              "path": "2026-11/20261109_44c9d70b6bbc.json",
+              "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
+              "source_title": "How the Military Is Restructuring Egypt’s Gold Sector Through Force - Stiftung Wissenschaft und Politik (SWP)",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
             {
               "date": "2026-11-05",
               "title": "إصدار موجز حول \"المادة 4 الخاصة بأوروبا: معالجة البيئة الأمنية المتغيرة في أوروبا\"",
