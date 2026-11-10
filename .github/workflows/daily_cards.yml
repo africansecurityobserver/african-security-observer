@@ -25,19 +25,8 @@ on:
       - ".github/workflows/daily_cards.yml"
 
   schedule:
-    # Tunisia local time: every 45 minutes from 06:00 through 15:45.
-    # The minute/hour combinations preserve a true 45-minute cadence.
-    - cron: "0,45 6,9,12,15 * * *"
-      timezone: "Africa/Tunis"
-    - cron: "30 7,10,13 * * *"
-      timezone: "Africa/Tunis"
-    - cron: "15 8,11,14 * * *"
-      timezone: "Africa/Tunis"
-
-    # Evening refreshes every two hours, followed by the final 23:50 update.
-    - cron: "0 16,18,20,22 * * *"
-      timezone: "Africa/Tunis"
-    - cron: "50 23 * * *"
+    # Refresh the news digest every 30 minutes at :20 and :50 Tunis time.
+    - cron: "20,50 * * * *"
       timezone: "Africa/Tunis"
 
 permissions:
