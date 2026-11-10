@@ -72,7 +72,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
+          # Python compilation creates local bytecode; never publish it.
+          # Remove both tracked and untracked cache files before staging so
+          # concurrent runs cannot conflict on binary __pycache__ artifacts.
+          find . -type d -name '__pycache__' -prune -exec rm -rf {} +
+          find . -type f -name '*.pyc' -delete
+          git add -A
           git diff --cached --quiet || git commit -m "Update news and articles"
           for attempt in 1 2 3; do
             if git pull --rebase origin main && git push origin main; then exit 0; fi
