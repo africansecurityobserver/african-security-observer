@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T07:30:54.493329+00:00",
+  "updated": "2026-11-11T07:50:42.062286+00:00",
   "cards": [
     {
       "date": "2026-10-07",
@@ -7730,9 +7730,9 @@
       "slot": "daily",
       "period": "00:00–23:59 (تُنشأ عند 06:00 وتُحدّث خلال اليوم)",
       "title": "الحوصلة الإخبارية ليوم 11/11/2026",
-      "generated_at": "2026-11-11T08:30:09.462419+01:00",
-      "source_fingerprint": "2ad9ea13f5c6dad8b39c670c38b35c78bc61445f248734f53e23697b0176d639",
-      "source_news_count": 43,
+      "generated_at": "2026-11-11T08:50:38.346204+01:00",
+      "source_fingerprint": "40b9d243155a4c1598ca2671b78b89966b050c2565ff6ac8df99433f18007cb3",
+      "source_news_count": 46,
       "candidate_audit_attempt_date": "2026-11-11",
       "candidate_audit_completed": true,
       "candidate_audit_version": 2,
