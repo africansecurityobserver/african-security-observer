@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T01:41+01:00",
+  "updated": "2026-11-11T10:29+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 43,
+  "count": 44,
   "publications": [
     {
       "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
@@ -788,6 +788,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "2024 التدريب على القواعد والقانون الدولي والفضاء الإلكتروني: الأمن السيبراني في القانون الدولي"
+    },
+    {
+      "center": "المعهد الفرنسي للعلاقات الدولية (IFRI)",
+      "center_short": "IFRI",
+      "title": "From Africa to Ukraine: An Investigation into African Prisoners of War - l'Institut français des relations internationales (IFRI)",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPbnRxc1JjSEhjVFFUUjU4QzQ2WWN6WHlna2VhVDZKS3Vhdkk0djBRR2h1VzVTSzdJUVhPSVlmamhpNURiWS12S2JvSHlZUWhvUU8zVDN5Y0J3dV9lVmczMy11bERPbUNpSlpMR0JaUHpoOTNuNFRRbWZNN0xGbUJRcTBYUUJhTVh3?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-09T12:52+01:00",
+      "date": "2026-11-09",
+      "source": "l'Institut français des relations internationales (IFRI)",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxPbnRxc1JjSEhjVFFUUjU4QzQ2WWN6WHlna2VhVDZKS3Vhdkk0djBRR2h1VzVTSzdJUVhPSVlmamhpNURiWS12S2JvSHlZUWhvUU8zVDN5Y0J3dV9lVmczMy11bERPbUNpSlpMR0JaUHpoOTNuNFRRbWZNN0xGbUJRcTBYUUJhTVh3?oc=5\" target=\"_blank\">From Africa to Ukraine: An Investigation into African Prisoners of War</a> <font color=\"#6f6f6f\">l'Institut français des relations internationales (IFRI)</font>",
+      "center_site": "https://ifri.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "من أفريقيا إلى أوكرانيا: تحقيق في أسرى الحرب الأفارقة - المعهد الفرنسي للعلاقات الدولية (IFRI)"
     },
     {
       "center": "معهد الدراسات الأمنية والتنمية (ISDP)",
