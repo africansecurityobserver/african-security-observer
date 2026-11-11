@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T08:02:55+01:00",
+  "updated": "2026-11-11T12:23:00+01:00",
   "years": [
     {
       "year": "2026",
@@ -8,12 +8,42 @@
           "month": "11",
           "cards": [
             {
+              "date": "2026-11-10",
+              "title": "تعزيز الجاهزية الوطنية البريطانية للحرب: دروس من نموذج الدفاع الشامل السويدي – مؤسسة RAND",
+              "subject": "نموذج الدفاع الشامل ودور المجتمع والقطاع الخاص في دعم الجاهزية العسكرية",
+              "path": "2026-11/20261110_rand-total-defence.json",
+              "center": "مؤسسة RAND – RAND Europe",
+              "source_title": "Strengthening UK national resilience and warfighting readiness",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-11-10",
+              "title": "إفريقيا بين توسيع هامش الاستقلال الاستراتيجي وتصاعد النزاعات الإقليمية – مؤسسة كارنيغي",
+              "subject": "تنامي الفاعلية الإفريقية في النظام الدولي متعدد الأقطاب ومخاطر تدويل النزاعات في القرن الإفريقي",
+              "path": "2026-11/20261110_carnegie-africa-agency.json",
+              "center": "مؤسسة كارنيغي للسلام الدولي – برنامج إفريقيا",
+              "source_title": "A Delicate Balance: Africa’s Agency on Full Display and Expanding Conflict in the Horn",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
               "date": "2026-11-09",
               "title": "كيف يعيد الجيش هيكلة قطاع الذهب في مصر من خلال القوة - Stiftung Wissenschaft und Politik (SWP)",
               "subject": "كيف يعيد الجيش هيكلة قطاع الذهب في مصر من خلال القوة - Stiftung Wissenschaft und Politik (SWP)",
               "path": "2026-11/20261109_44c9d70b6bbc.json",
               "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
               "source_title": "How the Military Is Restructuring Egypt’s Gold Sector Through Force - Stiftung Wissenschaft und Politik (SWP)",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-11-09",
+              "title": "الأرجنتين في عهد خافيير ميلي: ثلاث سنوات من التحول الاقتصادي وسنة حاسمة لإقناع الناخبين – المعهد الفرنسي للعلاقات الدولية",
+              "subject": "تداعيات الإصلاحات الاقتصادية الجذرية على الاستقرار الاجتماعي والخيارات الجيوسياسية للأرجنتين",
+              "path": "2026-11/20261109_ifri-milei-economic-turn.json",
+              "center": "المعهد الفرنسي للعلاقات الدولية (Ifri)",
+              "source_title": "Milei: Three Years of Change, One Year to Win People Over",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
