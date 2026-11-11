@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T10:29+01:00",
+  "updated": "2026-11-11T19:43+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -720,6 +720,20 @@
       "title_ar": "كيف تُسهّل تكنولوجيا المراقبة الأوروبية القمع في مصر ومنطقة الشرق الأوسط وشمال أفريقيا"
     },
     {
+      "center": "تشاتام هاوس",
+      "center_short": "Chatham House",
+      "title": "Africa Aware: Tigray’s renewed war and risks to the wider Horn of Africa - Chatham House",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQeXVfaFhpbkZGb2YxNVZWRm5fUGYyVEN5QTN5VlhsbERMQnBYZWhRMWNtN081bGc2Nmg4eEFQaFRDbHpNYjJ5NXo2Z004TmZsVloxR3hCMzNhSFV0cndrYkJ6STNwWEZvc3BQRXpnNnZUYjB5WXllSlBkZTBEQVBQRDZua255TGxWUFVqNG0zdHhGQUZfQXJKM1BnMURodw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-11T16:23+01:00",
+      "date": "2026-11-11",
+      "source": "Chatham House",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxQeXVfaFhpbkZGb2YxNVZWRm5fUGYyVEN5QTN5VlhsbERMQnBYZWhRMWNtN081bGc2Nmg4eEFQaFRDbHpNYjJ5NXo2Z004TmZsVloxR3hCMzNhSFV0cndrYkJ6STNwWEZvc3BQRXpnNnZUYjB5WXllSlBkZTBEQVBQRDZua255TGxWUFVqNG0zdHhGQUZfQXJKM1BnMURodw?oc=5\" target=\"_blank\">Africa Aware: Tigray’s renewed war and risks to the wider Horn of Africa</a> <font color=\"#6f6f6f\">Chatham House</font>",
+      "center_site": "https://chathamhouse.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "أفريقيا واعية: تجدد الحرب في تيغراي والمخاطر التي تهدد منطقة القرن الأفريقي الأوسع - تشاتام هاوس"
+    },
+    {
       "center": "مؤسسة كارنيغي للسلام الدولي",
       "center_short": "Carnegie Endowment",
       "title": "A Delicate Balance: Africa’s Agency on Full Display and Expanding Conflict in the Horn - Carnegie Endowment for International Peace",
@@ -1208,20 +1222,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "نحو صفقة جديدة للتجارة العالمية - أجندة تقدمية - مؤسسة فريدريش إيبرت جنيف"
-    },
-    {
-      "center": "معهد الدراسات الأمنية والتنمية (ISDP)",
-      "center_short": "ISDP",
-      "title": "Genevieve Donnellon-May was interviewed by Deutsche Welle about food security in China - Institute for Security & Development Policy",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNejEzYlZFcFlOQzc3STlOeW9oZUxRcnB2RWxMQ05sTUMwNnZtU2RndVpCUTZUd09SVkg1eEUzeUZVbHJOSXBmVlpjMzZzMXJKdEN4eDJoemlxSmZ6bWp1RjAwejMtdC1tc1hjd1FYVmZBRUtMclVoLVlaQjM5MXRrc0dLenFoV3ljVmxhUWxqU1Bfc2xCRzJySXRPSEJHVEprcnpwRW16ZDZ6akFJdWdrWFh3?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-12T17:25+01:00",
-      "date": "2026-10-12",
-      "source": "Institute for Security & Development Policy",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNejEzYlZFcFlOQzc3STlOeW9oZUxRcnB2RWxMQ05sTUMwNnZtU2RndVpCUTZUd09SVkg1eEUzeUZVbHJOSXBmVlpjMzZzMXJKdEN4eDJoemlxSmZ6bWp1RjAwejMtdC1tc1hjd1FYVmZBRUtMclVoLVlaQjM5MXRrc0dLenFoV3ljVmxhUWxqU1Bfc2xCRzJySXRPSEJHVEprcnpwRW16ZDZ6akFJdWdrWFh3?oc=5\" target=\"_blank\">Genevieve Donnellon-May was interviewed by Deutsche Welle about food security in China</a> <font color=\"#6f6f6f\">Institute for Security & Development Policy</font>",
-      "center_site": "https://isdp.eu/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "أجرت دويتشه فيله مقابلة مع جينيفيف دونيلون ماي حول الأمن الغذائي في الصين - معهد سياسة الأمن والتنمية"
     }
   ]
 }
