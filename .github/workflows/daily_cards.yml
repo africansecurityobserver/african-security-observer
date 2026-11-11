@@ -26,6 +26,7 @@ on:
 
   schedule:
     # Refresh the news digest every 30 minutes at :20 and :50 Tunis time.
+    # Keep this schedule on the default branch and verify each scheduled cycle.
     - cron: "20,50 * * * *"
       timezone: "Africa/Tunis"
 

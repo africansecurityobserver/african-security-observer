@@ -15,6 +15,7 @@ on:
 
   schedule:
     # Refresh the news section every 30 minutes, at minutes 10 and 40.
+    # Keep this schedule on the default branch and verify each scheduled cycle.
     - cron: '10,40 * * * *'
 
   workflow_dispatch:
