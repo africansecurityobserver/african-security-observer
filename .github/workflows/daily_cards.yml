@@ -24,11 +24,14 @@ on:
       - "daily_cards/generate_daily_card.py"
       - ".github/workflows/daily_cards.yml"
 
-  schedule:
-    # Refresh the news digest every 30 minutes at :20 and :50 Tunis time.
-    # Keep this schedule on the default branch and verify each scheduled cycle.
-    - cron: "20,50 * * * *"
-      timezone: "Africa/Tunis"
+  # Run only after the news-ingestion workflow has finished successfully.
+  # This removes the race where the card was generated from yesterday's feed
+  # snapshot while the current news update was still running.
+  workflow_run:
+    workflows:
+      - Update News
+    types:
+      - completed
 
 permissions:
   contents: write
@@ -40,6 +43,7 @@ concurrency:
 
 jobs:
   generate-card:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 8
 

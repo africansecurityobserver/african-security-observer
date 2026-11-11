@@ -226,6 +226,27 @@ class DailyCardEditorialQualityTests(unittest.TestCase):
             card.fingerprint_news_items(updated)
         )
 
+    def test_coverage_audit_includes_every_eligible_source_item(self):
+        items = [
+            {"title": "اجتماع وزيري الخارجية لبحث تطورات إقليمية"},
+            {"title": "مناورات عسكرية مشتركة"},
+            {"title": "مباراة كرة قدم"},
+        ]
+        candidates = card.identify_coverage_review_candidates(items)
+        self.assertEqual([number for number, _ in candidates], [1, 2, 3])
+
+    def test_review_attempt_is_bound_to_exact_source_fingerprint(self):
+        card_record = {"candidate_audit_fingerprint": "old"}
+        self.assertTrue(card.source_review_already_attempted(
+            card_record, "candidate_audit_fingerprint", "old"
+        ))
+        self.assertFalse(card.source_review_already_attempted(
+            card_record, "candidate_audit_fingerprint", "new"
+        ))
+        self.assertFalse(card.source_review_already_attempted(
+            card_record, "event_enrichment_fingerprint", "old"
+        ))
+
     def test_filters_routine_source_material_before_gemini(self):
         text = "خرج نشطاء بيئيون في احتجاج أمام مؤتمر الأمم المتحدة للمناخ."
         self.assertFalse(card.is_editorially_eligible(text))

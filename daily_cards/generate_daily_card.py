@@ -30,7 +30,7 @@ TIMEZONE = ZoneInfo("Africa/Tunis")
 MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 
 # Bump only when the editorial second-pass policy materially changes.
-CANDIDATE_AUDIT_VERSION = 2
+CANDIDATE_AUDIT_VERSION = 3
 
 # Allow the full eligible daily feed through on normal-volume days.
 # If volume exceeds this ceiling, select across categories instead of taking
@@ -574,9 +574,9 @@ STRATEGIC_REVIEW_MARKERS = (
 
 def identify_strategic_review_candidates(news_items):
     """
-    Build a recall-oriented review list from source titles and descriptions.
-    This is not an automatic publication filter: Gemini must assess each
-    candidate's factuality, strategic relevance and duplication.
+    Build a recall-oriented list of potentially strategic source material.
+    The first-pass feed is already editorially filtered; this marker scan
+    remains a diagnostic subset, not the full coverage-review input.
     """
     candidates = []
     for index, item in enumerate(news_items, start=1):
@@ -586,6 +586,23 @@ def identify_strategic_review_candidates(news_items):
         if any(marker.casefold() in searchable for marker in STRATEGIC_REVIEW_MARKERS):
             candidates.append((index, item))
     return candidates
+
+
+def identify_coverage_review_candidates(news_items):
+    """Return every eligible source item for the independent coverage audit."""
+    return [
+        (index, item)
+        for index, item in enumerate(news_items, start=1)
+        if isinstance(item, dict)
+    ]
+
+
+def source_review_already_attempted(existing_card, fingerprint_field, source_fingerprint):
+    """A review is reusable only for the exact source packet it examined."""
+    return bool(
+        isinstance(existing_card, dict)
+        and existing_card.get(fingerprint_field) == source_fingerprint
+    )
 
 
 # ============================================================
@@ -1796,8 +1813,11 @@ def build_candidate_review_prompt(reference_date, candidates, generated):
 أنت محرر تدقيق ثانٍ في صحيفة استراتيجية متخصصة في الأمن والدفاع.
 التاريخ: {reference_date.strftime('%d/%m/%Y')} (توقيت تونس).
 
-مهمتك ليست إعادة إنشاء البطاقة. راجع قائمة المواد المرشحة أدناه
-واستخرج فقط التطورات المهمة المستقلة التي غابت عن المسودة الأولى.
+مهمتك إجراء تدقيق شامل لتغطية المواد، لا إعادة إنشاء البطاقة.
+افحص كل مادة من القائمة أدناه واحدة واحدة، واستخرج التطورات السياسية
+والأمنية والعسكرية والاستراتيجية والدبلوماسية المهمة التي غابت عن
+المسودة الأولى. لا تفترض أن المادة غير مهمة لمجرد أنها لا تتضمن
+كلمات عسكرية صريحة.
 
 المسودة الأولى (ممنوع تكرار أحداثها):
 {existing_text}
@@ -1806,6 +1826,12 @@ def build_candidate_review_prompt(reference_date, candidates, generated):
 {candidate_text}
 
 معايير الإدراج:
+- القرارات والتحركات السياسية المهمة ذات الصلة بالأمن القومي أو
+  التوازنات الإقليمية أو النزاعات أو العلاقات بين الدول.
+- اللقاءات والاتصالات الرسمية ذات المضمون السياسي أو الأمني أو
+  الدفاعي المحدد، بما فيها مباحثات الرؤساء ورؤساء الحكومات والوزراء.
+- التطورات الدبلوماسية والعقوبات والاتفاقات والتحالفات التي تحمل
+  أثراً جيوسياسياً أو أمنياً ملموساً.
 - المساعدات والتجهيزات العسكرية والأمنية المحددة، بما فيها معدات
   مكافحة الإرهاب والأمن البحري ومراقبة الحدود.
 - التغيرات الميدانية المؤثرة، مثل السيطرة على مناطق واستعادتها
@@ -3309,28 +3335,31 @@ def main():
         print(f"Generating card with Gemini model: {MODEL_NAME}")
         generated = generate_with_gemini(prompt)
 
-    # Run one focused second-pass audit per editorial version and day.
-    # Routine scheduled refreshes continue to use one Gemini request.
+    # Re-run the coverage audit whenever the eligible source packet changes.
+    # This prevents an early-day attempt from suppressing review of later news.
     audit_attempted_before = bool(
         existing_card
         and existing_card.get("candidate_audit_version") == CANDIDATE_AUDIT_VERSION
+        and source_review_already_attempted(
+            existing_card, "candidate_audit_fingerprint", source_fingerprint
+        )
     )
     candidate_audit_attempted = audit_attempted_before
     candidate_audit_completed = bool(
-        existing_card and existing_card.get("candidate_audit_completed")
+        audit_attempted_before and existing_card.get("candidate_audit_completed")
     )
-    strategic_candidates = identify_strategic_review_candidates(news_items)
+    coverage_candidates = identify_coverage_review_candidates(news_items)
 
     if not candidate_audit_attempted:
         candidate_audit_attempted = True
-        if strategic_candidates:
+        if coverage_candidates:
             print(
-                f"Starting one-time second-pass audit for "
-                f"{len(strategic_candidates)} strategic candidates."
+                f"Starting full source-coverage audit for "
+                f"{len(coverage_candidates)} eligible source items."
             )
             try:
                 review_prompt = build_candidate_review_prompt(
-                    reference_date, strategic_candidates, generated
+                    reference_date, coverage_candidates, generated
                 )
                 supplemental = generate_with_gemini(review_prompt)
                 before_review_count = sum(
@@ -3360,7 +3389,7 @@ def main():
             candidate_audit_completed = True
             print("No strategic candidates found for the second-pass audit.")
     else:
-        print("Second-pass candidate audit already attempted today; skipping extra Gemini call.")
+        print("Coverage audit already completed/attempted for this exact source packet; skipping extra Gemini call.")
 
     # --------------------------------------------------------
     # Cross-source enrichment of sparse selected events
@@ -3370,6 +3399,9 @@ def main():
         existing_card
         and existing_card.get("event_enrichment_version") == EVENT_ENRICHMENT_VERSION
         and existing_card.get("event_enrichment_attempted")
+        and source_review_already_attempted(
+            existing_card, "event_enrichment_fingerprint", source_fingerprint
+        )
     )
     enrichment_attempted = enrichment_attempted_before
     enrichment_completed = bool(
@@ -3384,6 +3416,9 @@ def main():
             existing_card
             and existing_card.get("event_enrichment_version") == EVENT_ENRICHMENT_VERSION
             and existing_card.get("event_enrichment_completed")
+            and source_review_already_attempted(
+                existing_card, "event_enrichment_fingerprint", source_fingerprint
+            )
             and isinstance(existing_card.get("event_enrichment_sources", []), list)
         )
         else []
@@ -3447,7 +3482,7 @@ def main():
             )
             enrichment_completed = False
     else:
-        print("Cross-source enrichment was already attempted today; skipping.")
+        print("Cross-source enrichment was already attempted for this exact source packet; skipping.")
 
     # --------------------------------------------------------
     # Normalize
@@ -3483,6 +3518,11 @@ def main():
 
         "candidate_audit_completed": candidate_audit_completed,
 
+        "candidate_audit_fingerprint": (
+            source_fingerprint if candidate_audit_attempted
+            else (existing_card or {}).get("candidate_audit_fingerprint")
+        ),
+
         "candidate_audit_version": (
             CANDIDATE_AUDIT_VERSION if candidate_audit_attempted
             else (existing_card or {}).get("candidate_audit_version")
@@ -3494,6 +3534,11 @@ def main():
         ),
 
         "event_enrichment_attempted": enrichment_attempted,
+
+        "event_enrichment_fingerprint": (
+            source_fingerprint if enrichment_attempted
+            else (existing_card or {}).get("event_enrichment_fingerprint")
+        ),
 
         "event_enrichment_completed": enrichment_completed,
 
