@@ -674,6 +674,20 @@ def main():
         # get a cooldown instead of repeatedly selecting the same item.
         data["failed_urls"][canonical_url(url)] = datetime.now(TZ).isoformat(timespec="seconds")
         resolved,body=get_text(url,clean(p.get("center_site")),title)
+        # Some publishers block automated requests while authorised syndication
+        # partners expose the complete article. Try only explicitly curated
+        # fallback URLs from the publication record; never use search snippets.
+        if len(body.strip()) < 1200:
+            for fallback_url in p.get("fallback_urls", []):
+                fallback_url = clean(fallback_url)
+                if not fallback_url or fallback_url == url:
+                    continue
+                print("Trying curated full-text syndication fallback:", fallback_url)
+                fallback_resolved, fallback_body = get_text(fallback_url, "", title)
+                if len(fallback_body.strip()) >= 1200:
+                    resolved, body = fallback_resolved, fallback_body
+                    print("Curated syndication fallback supplied full text:", len(body.strip()), "characters")
+                    break
 
         # Hard rule: a strategic card may only be written from the publication's
         # accessible full text. A title, snippet, search-result extract, or short
@@ -743,7 +757,7 @@ publish boolean; introduction string; analysis_one, analysis_two, analysis_three
         card={"id":slug,"kind":"research_center","kind_label":"بطاقة استراتيجية من مراكز البحث",
           "title":title_ar or title,"source_title":title,"subject":title_ar or title,"center":center,
           "date":date,"published":published,"region":clean(p.get("relevance_label")),"summary":clean(out.get("summary")),
-          "sections":sections,"sources":[{"title":f"{center} — {title}","url":resolved if resolved.startswith("http") else url}],
+          "sections":sections,"sources":[{"title":f"{center} — {title}","url":url}] + ([{"title":"إعادة نشر مرخصة للنشرية — Premium Times","url":resolved}] if resolved.startswith("http") and resolved != url else []),
           "source_url":url,"source_original_url":resolved if resolved.startswith("http") else url,"path":path}
         save(ARCHIVE/path,card); data["cards"].append(card); data["processed_urls"].append(canonical_url(url))
         data["failed_urls"].pop(canonical_url(url), None)
