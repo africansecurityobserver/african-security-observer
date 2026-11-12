@@ -318,7 +318,12 @@ def classify_relevance(item):
         "moroccan", "maroc", "المغرب", "مغربي", "egypt", "egyptian",
         "مصر", "موريتانيا", "mauritania", "mediterranean", "méditerranée",
         "البحر المتوسط", "southern mediterranean", "western sahara",
-        "الصحراء الغربية", "sahel", "الساحل الإفريقي", "الساحل الافريقي"
+        "الصحراء الغربية", "sahel", "الساحل الإفريقي", "الساحل الافريقي",
+        # West Africa and the Lake Chad Basin are core African security theatres.
+        "west africa", "west african", "غرب افريقيا", "غرب إفريقيا",
+        "nigeria", "nigerian", "نيجيريا", "نيجيري",
+        "lake chad", "chad basin", "حوض بحيرة تشاد", "بحيرة تشاد",
+        "iswap", "boko haram", "بوكو حرام", "تنظيم الدولة الإسلامية في غرب أفريقيا"
     ]
     regional_security_or_spillover = (
         has_any(text, SPILLOVER_TERMS)
