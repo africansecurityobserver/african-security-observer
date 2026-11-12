@@ -1578,25 +1578,10 @@ def get_news():
                     print(f"Rejected unrelated news: {title}")
                     continue
 
-                raw_url_key = normalize_url(google_url)
-                if raw_url_key in seen_feed_urls:
-                    continue
-                seen_feed_urls.add(raw_url_key)
-
-                article_url = decode_url(google_url)
-                if not article_url:
-                    continue
-
-                normalized_url = normalize_url(article_url)
-                normalized_title = re.sub(
-                    r"[\W_]+",
-                    "",
-                    title.casefold(),
-                    flags=re.UNICODE
-                )
-                if normalized_url in seen_urls or normalized_title in seen_titles:
-                    continue
-
+                # Reject stale, undated, and implausibly future-dated entries
+                # BEFORE decoding Google News URLs. Leadership feeds use a
+                # wider search window, so decoding every old result here can
+                # consume several minutes and stall the entire refresh.
                 published = entry.get("published") or entry.get("updated") or ""
                 published_dt = parse_published_datetime(published)
                 if published_dt is None:
@@ -1607,6 +1592,28 @@ def get_news():
                 if age > timedelta(hours=MAX_NEWS_AGE_HOURS):
                     continue
                 if age < -timedelta(hours=24):
+                    continue
+
+                normalized_title = re.sub(
+                    r"[\W_]+",
+                    "",
+                    title.casefold(),
+                    flags=re.UNICODE
+                )
+                if normalized_title in seen_titles:
+                    continue
+
+                raw_url_key = normalize_url(google_url)
+                if raw_url_key in seen_feed_urls:
+                    continue
+                seen_feed_urls.add(raw_url_key)
+
+                article_url = decode_url(google_url)
+                if not article_url:
+                    continue
+
+                normalized_url = normalize_url(article_url)
+                if normalized_url in seen_urls:
                     continue
 
                 source_obj = entry.get("source") or {}
