@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T10:53+01:00",
+  "updated": "2026-11-12T19:57+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,8 +605,25 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 45,
+  "count": 46,
   "publications": [
+    {
+      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+      "center_short": "ISS Africa",
+      "title": "Islamic State is incentivising ISWAP to target military stockpiles - ISS Africa",
+      "url": "https://issafrica.org/iss-today/islamic-state-is-incentivising-iswap-to-target-military-stockpiles",
+      "published": "2026-11-12T10:05+01:00",
+      "date": "2026-11-12",
+      "source": "ISS Africa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPVEVucXpiRmo4aVdpRFFzdEJlTGdIMFpEb2U2X0g1NzFzZmNzMmxqT3NWZlR6WjlRb3hWOTRUMWltQndJS3phOF9XUW01a3hhTmNVZnloYlBsRjVEOE1VU1J4cmJsd2ZaQmlPaFBsbjV5a3FuM3lUNjRFbEpfbU9UTmYtdGZLVGlxNzAtd082ZWlGV2NqZmNlOG5MTnR4Y1E?oc=5\" target=\"_blank\">Islamic State is incentivising ISWAP to target military stockpiles</a> <font color=\"#6f6f6f\">ISS Africa</font>",
+      "center_site": "https://issafrica.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "تنظيم الدولة الإسلامية يحفز تنظيم الدولة الإسلامية في غرب أفريقيا لاستهداف المخزونات العسكرية - معهد الدراسات الأمنية في أفريقيا",
+      "fallback_urls": [
+        "https://www.premiumtimesng.com/news/headlines/924634-islamic-state-is-incentivising-iswap-to-target-military-stockpiles-in-nigeria-others.html"
+      ]
+    },
     {
       "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
       "center_short": "SWP",
@@ -706,35 +723,32 @@
       "title_ar": "ورشة عمل SETA تفحص الروابط الأمنية بين بحر البلطيق والبحر الأسود والبحر الأبيض المتوسط - SETA - Siyaset, Ekonomi ve Toplum Araştırmaları Vakfı"
     },
     {
-      "center": "معهد التحرير لسياسة الشرق الأوسط",
-      "center_short": "TIMEP",
-      "title": "How European Surveillance Technology Facilitates Repression in Egypt and MENA",
-      "url": "https://timep.org/2026/10/13/how-european-surveillance-technology-facilitates-repression-in-egypt-and-mena/?utm_source=rss&utm_medium=rss&utm_campaign=how-european-surveillance-technology-facilitates-repression-in-egypt-and-mena",
-      "published": "2026-10-13T14:47+01:00",
-      "date": "2026-10-13",
-      "source": "TIMEP",
-      "description": "<p>European surveillance technology continues to enable repression across MENA, as weak EU export controls leave the trade largely unchecked.</p> <p>The post <a href=\"https://timep.org/2026/10/13/how-european-surveillance-technology-facilitates-repression-in-egypt-and-mena/\">How European Surveillance Technology Facilitates Repression in Egypt and MENA</a> first appeared on <a href=\"https://timep.org\">The Tahrir Institute for Middle East Policy</a>.</p>",
-      "center_site": "https://timep.org/",
-      "relevance_tier": 3,
-      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "كيف تُسهّل تكنولوجيا المراقبة الأوروبية القمع في مصر ومنطقة الشرق الأوسط وشمال أفريقيا"
+      "center": "معهد هدسون",
+      "center_short": "Hudson Institute",
+      "title": "Senator Rick Scott (R-FL) sat down with Rebeccah Heinrichs to discuss American strategy, the need to modernize the defense industrial base, and the vital role of allies and partners in an unstable international environment.",
+      "url": "https://www.hudson.org/senator-rick-scott-r-fl-sat-down-rebeccah-heinrichs-discuss-american-strategy-need-modernize",
+      "published": "2026-11-12T19:17+01:00",
+      "date": "2026-11-12",
+      "source": "Hudson Institute",
+      "description": "<span>Senator Rick Scott (R-FL) sat down with Rebeccah Heinrichs to discuss American strategy, the need to modernize the defense industrial base, and the vital role of allies and partners in an unstable international environment.</span> <span><span>bbert@hudson.org</span></span> <span><time datetime=\"2026-11-12T13:17:26-05:00\" title=\"Thursday, November 12, 2026 - 13:17\">Thu, 11/12/2026 - 13:17</time> </span> <div class=\"hud-layout__short-form-article-hero hero hero--article-short hero--half-imag",
+      "center_site": "https://hudson.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "اجتمع السيناتور ريك سكوت (جمهوري من فلوريدا) مع ريبيكا هاينريش لمناقشة الاستراتيجية الأمريكية، والحاجة إلى تحديث القاعدة الصناعية الدفاعية، والدور الحيوي للحلفاء والشركاء في بيئة دولية غير مستقرة."
     },
     {
-      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-      "center_short": "ISS Africa",
-      "title": "Islamic State is incentivising ISWAP to target military stockpiles - ISS Africa",
-      "url": "https://issafrica.org/iss-today/islamic-state-is-incentivising-iswap-to-target-military-stockpiles",
-      "published": "2026-11-12T10:05+01:00",
+      "center": "مركز الأمن الأمريكي الجديد (CNAS)",
+      "center_short": "CNAS",
+      "title": "Examining Kushner’s European Security Framework - Center for a New American Security | CNAS",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNUDZmbFQ5VjBUajh3TFptZ1R4S3NyS3NCRkdIcHVsdXk1SDE4NUhHNXlxRktWNzcwVUVkcGtMMENENmoyRmlFS1BpQkdDOElIbWRDdGpKaXpxZEtmVEw3M1dxSTNnQlZKTm9IZjRtRlBkTGpkMlhqV1plZ2ZGQnp1VVBhT0pFdENvbjE2MG9YdDJqdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-12T17:03+01:00",
       "date": "2026-11-12",
-      "source": "ISS Africa",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPVEVucXpiRmo4aVdpRFFzdEJlTGdIMFpEb2U2X0g1NzFzZmNzMmxqT3NWZlR6WjlRb3hWOTRUMWltQndJS3phOF9XUW01a3hhTmNVZnloYlBsRjVEOE1VU1J4cmJsd2ZaQmlPaFBsbjV5a3FuM3lUNjRFbEpfbU9UTmYtdGZLVGlxNzAtd082ZWlGV2NqZmNlOG5MTnR4Y1E?oc=5\" target=\"_blank\">Islamic State is incentivising ISWAP to target military stockpiles</a> <font color=\"#6f6f6f\">ISS Africa</font>",
-      "center_site": "https://issafrica.org/",
-      "relevance_tier": 3,
-      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "تنظيم الدولة الإسلامية يحفز تنظيم الدولة الإسلامية في غرب أفريقيا لاستهداف المخزونات العسكرية - معهد الدراسات الأمنية في أفريقيا",
-      "fallback_urls": [
-        "https://www.premiumtimesng.com/news/headlines/924634-islamic-state-is-incentivising-iswap-to-target-military-stockpiles-in-nigeria-others.html"
-      ]
+      "source": "Center for a New American Security | CNAS",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxNUDZmbFQ5VjBUajh3TFptZ1R4S3NyS3NCRkdIcHVsdXk1SDE4NUhHNXlxRktWNzcwVUVkcGtMMENENmoyRmlFS1BpQkdDOElIbWRDdGpKaXpxZEtmVEw3M1dxSTNnQlZKTm9IZjRtRlBkTGpkMlhqV1plZ2ZGQnp1VVBhT0pFdENvbjE2MG9YdDJqdw?oc=5\" target=\"_blank\">Examining Kushner’s European Security Framework</a> <font color=\"#6f6f6f\">Center for a New American Security | CNAS</font>",
+      "center_site": "https://cnas.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "دراسة إطار كوشنر للأمن الأوروبي - مركز الأمن الأمريكي الجديد | CNAS"
     },
     {
       "center": "تشاتام هاوس",
