@@ -1,6 +1,66 @@
 {
-  "updated": "2026-11-12T13:04:30+01:00",
+  "updated": "2026-11-12T14:00:00+01:00",
   "cards": [
+    {
+      "id": "iswap-20261112",
+      "kind": "research_center",
+      "kind_label": "بطاقة استراتيجية من مراكز البحث",
+      "title": "تنظيم الدولة الإسلامية يحفّز «داعش» في غرب إفريقيا على استهداف مخازن الجيوش – معهد الدراسات الأمنية الإفريقي",
+      "source_title": "Islamic State is incentivising ISWAP to target military stockpiles",
+      "subject": "اقتصاد الغنائم والحوافز المالية بوصفهما محركاً لاستهداف القواعد العسكرية ومخازن السلاح في حوض بحيرة تشاد",
+      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+      "date": "2026-11-12",
+      "published": "2026-11-12T10:05+01:00",
+      "region": "غرب إفريقيا وحوض بحيرة تشاد",
+      "summary": "يكشف تحليل معهد الدراسات الأمنية الإفريقي كيف يوظف تنظيم الدولة الإسلامية حوافز مالية محددة لمكافأة مقاتلي تنظيم الدولة الإسلامية في غرب إفريقيا (ISWAP) على الاستيلاء على الأسلحة والمعدات من القواعد العسكرية. وتوضح المادة أن منظومة الغنائم لا تقتصر على تمويل المقاتلين، بل تؤثر في اختيار الأهداف والتكتيكات، وتستند إلى شبكات دفع عابرة للحدود. وتبرز بذلك الصلة بين التمويل غير الرسمي، واستدامة التمرد، ومخاطر انتقال الأسلحة المستولى عليها إلى اقتصاد النزاع في منطقة بحيرة تشاد.",
+      "sections": [
+        {
+          "heading": "المقدمة",
+          "text": "تناول الباحث تايو أديبايو (Taiwo Adebayo) في معهد الدراسات الأمنية الإفريقي (ISS Africa)، ضمن مادة «ISS Today» المنشورة في 12 نوفمبر 2026، الكيفية التي يستخدم بها تنظيم الدولة الإسلامية الحوافز المالية لتشجيع تنظيم الدولة الإسلامية في غرب إفريقيا (ISWAP) على مهاجمة القواعد العسكرية والاستيلاء على مخزوناتها من الأسلحة والمعدات. وتطرح المادة قراءة تتجاوز تفسير الهجمات باعتبارها عمليات عسكرية لانتزاع السلاح، لتبرز وجود منظومة اقتصادية منظمة تجعل الغنائم العسكرية مورداً مالياً وأداة للتجنيد والاستبقاء."
+        },
+        {
+          "heading": "أولاً: منظومة الحوافز المالية والغنائم العسكرية",
+          "text": "• يحصل مقاتلو ISWAP على مكافآت ترتبط بنوعية الأسلحة والمعدات المستولى عليها من القواعد العسكرية النيجيرية والإقليمية، وفق جدول أسعار يحدده تنظيم الدولة الإسلامية.\\n• أوردت المادة أمثلة على التسعيرة: 750 دولاراً لبندقية AK-47، و1000 دولار لقاذف RPG، و500 إلى 1000 دولار لصندوق الذخيرة بحسب العيار، و30 ألف دولار لشاحنة مجهزة بسلاح ثقيل.\\n• يحتفظ التنظيم بثلث قيمة الغنائم، ويوزع الباقي على المشاركين في الهجوم؛ وبذلك يجمع النظام بين تمويل البنية التنظيمية ومكافأة العناصر المنفذة.\\n• يحول هذا النظام الاستيلاء على المعدات من مكسب ميداني عارض إلى نشاط ذي عائد مالي متوقع، ويوفر حافزاً مباشراً للمشاركة في الهجمات."
+        },
+        {
+          "heading": "ثانياً: أثر الحوافز في اختيار الأهداف والتكتيكات",
+          "text": "• تساعد المكافآت المرتبطة بنوعية السلاح والمعدات على تفسير تركيز ISWAP على القواعد العسكرية ومخازن الأسلحة، بدلاً من الاقتصار على الكمائن أو الهجمات التي لا تضمن غنائم ذات قيمة.\\n• تمنح السيطرة على قاعدة عسكرية التنظيم مكاسب متداخلة: أسلحة وذخائر ومركبات تدعم عملياته اللاحقة، إضافة إلى العائد المالي للمقاتلين.\\n• تسهم الحوافز المادية في جذب المقاتلين والاحتفاظ بهم، لأنها تربط المشاركة في العمليات بمردود ملموس وتدعم تقاسم العائد وفق قواعد معلومة.\\n• لذلك لا تقتصر حماية القواعد على منع سقوط المواقع، بل تشمل حرمان التنظيم من مورد مالي ولوجستي يعزز قدرته على تكرار الهجمات."
+        },
+        {
+          "heading": "ثالثاً: التمايز بين ISWAP وجماعة بوكو حرام (JAS)",
+          "text": "• يميز المقال بين ISWAP وجماعة أهل السنة للدعوة والجهاد (JAS)، المعروفة على نطاق واسع باسم بوكو حرام، في أنماط تحصيل الموارد.\\n• وفق المادة، يعتمد ISWAP بصورة أوضح على نظام مكافآت منظم للاستيلاء على الأسلحة والمعدات العسكرية، بينما يرتبط نمط JAS بدرجة أكبر بالسلب المباشر ونهب ممتلكات المدنيين.\\n• لا يعني هذا التمايز غياب العنف أو النهب عن أي من الطرفين، لكنه يبرز اختلافاً في آليات تمويل العمليات والحوافز التي توجه سلوك المقاتلين."
+        },
+        {
+          "heading": "رابعاً: مسارات الدفع والشبكات العابرة للحدود",
+          "text": "• تشير المادة إلى نقل الأموال نقداً عبر مسارات تشمل الإمارات ومدينة كانو النيجيرية، أو عبر نجامينا في تشاد.\\n• تستعين هذه المسارات بشبكات صرف العملات وسعاة محليين لنقل الأموال إلى مخابئ التنظيم في منطقة بحيرة تشاد، بما يتجاوز القنوات المالية الرسمية ويصعّب تتبع المستفيدين النهائيين.\\n• تكشف هذه الآلية أن القدرة العملياتية لا تعتمد على مصادر التمويل وحدها، بل أيضاً على الوسطاء وشبكات التحويل والنقل النقدي التي تضمن وصول الأموال إلى المقاتلين ومراكز القيادة.\\n• يتطلب تعطيل هذه الشبكات تعاوناً مالياً واستخباراتياً عابراً للحدود، لا يقتصر على مراقبة الحسابات المصرفية التقليدية."
+        },
+        {
+          "heading": "خامساً: دلالات الاستمرارية والقدرة التنظيمية",
+          "text": "• يشير المقال إلى أن مقتل قائد ISWAP بوكار مايناك (Bukar Mainok) في ضربات أمريكية-نيجيرية خلال مايو 2026 لم يؤدِ إلى توقف العمليات، بما يبرز قدرة الشبكات المالية والتنظيمية على مواصلة العمل رغم خسارة قيادات بارزة.\\n• يلفت ذلك إلى محدودية المقاربات التي تركز حصراً على استهداف الأفراد إذا لم تتزامن مع تفكيك مصادر التمويل والوسطاء وآليات توزيع الموارد.\\n• وجود جدول مكافآت وقنوات دفع وشبكات محلية يوحي بقدر من المأسسة في إدارة اقتصاد الغنائم، ويعزز قدرة التنظيم على تحويل المكاسب الميدانية إلى موارد قابلة لإعادة الاستثمار."
+        },
+        {
+          "heading": "سادساً: التداعيات والتوصيات الأمنية",
+          "text": "• تعزيز قدرات وحدات الاستخبارات المالية على رصد أنماط التحويلات غير المعتادة وشبكات الصرف والوسطاء الذين ينقلون الأموال نقداً عبر الحدود، مع تطوير تبادل المعلومات بين الدول المعنية.\\n• توسيع التعاون بين نيجيريا وتشاد والنيجر والكاميرون، ومع الدول التي قد تمر عبرها التدفقات المالية، بما فيها الإمارات وفق المسارات التي أوردتها المادة، في إطار قانوني واضح.\\n• رفع مستوى حماية القواعد العسكرية ومخازن السلاح والذخيرة، وتقييم إجراءات الحراسة والإنذار والاستجابة لمنع الاستيلاء على المعدات.\\n• تحسين جرد الأسلحة والذخائر وتتبعها وتوثيق أرقامها ومصادرها ومسارات تداولها، لكشف انتقال المعدات المسروقة بين الجماعات المسلحة وشبكات الاتجار غير المشروع.\\n• التعامل مع اقتصاد التجنيد في حوض بحيرة تشاد بوصفه جزءاً من منظومة التهديد، وفهم دوافع الانضمام ومصادر الدخل التي توفرها الجماعات، وربط الإجراءات الأمنية بالحد من الاستغلال الاقتصادي والتهميش المحلي."
+        },
+        {
+          "heading": "سابعاً: الانعكاسات على تونس وشمال إفريقيا",
+          "text": "لا تقدم المادة دليلاً على وجود صلة عملياتية مباشرة بين شبكات ISWAP وتونس، كما أن مسرح الأحداث الأساسي يقع في غرب إفريقيا وحوض بحيرة تشاد. ومع ذلك، تبرز منها دروس وقائية:\\n• إدماج مؤشرات التمويل غير الرسمي وشبكات الصرف والوسطاء النقديين ضمن منظومة الإنذار المبكر، وعدم حصر المتابعة في التحويلات المصرفية النظامية.\\n• تعزيز التعاون الاستخباراتي والمالي مع الشركاء بشأن الشبكات العابرة للحدود، وتحليل الروابط بين التدفقات المالية وحركة الأفراد والسلع.\\n• دعم آليات تتبع الأسلحة والذخائر المسروقة أو المحوّلة عن مساراتها المشروعة، وتبادل البيانات بشأنها في فضاء الساحل وشمال إفريقيا.\\n• متابعة احتمال انتقال أساليب التمويل القائمة على مكافأة الاستيلاء على المعدات إلى مسارح أخرى، باعتباره مؤشراً يستحق الرصد لا دليلاً على انتقال فعلي إلى تونس.\\nوتتمثل الخلاصة لتونس في أن مكافحة الجماعات المسلحة لا تكتمل بتفكيك خلاياها أو استهداف قياداتها، بل تستلزم أيضاً تعطيل اقتصادها وشبكاتها المالية واللوجستية."
+        }
+      ],
+      "sources": [
+        {
+          "title": "معهد الدراسات الأمنية الإفريقي (ISS Africa) — Islamic State is incentivising ISWAP to target military stockpiles (المصدر الأصلي)",
+          "url": "https://issafrica.org/iss-today/islamic-state-is-incentivising-iswap-to-target-military-stockpiles"
+        },
+        {
+          "title": "Premium Times — إعادة نشر مرخصة للمادة المنشورة أولاً في ISS Today",
+          "url": "https://www.premiumtimesng.com/news/headlines/924634-islamic-state-is-incentivising-iswap-to-target-military-stockpiles-in-nigeria-others.html"
+        }
+      ],
+      "source_url": "https://www.premiumtimesng.com/news/headlines/924634-islamic-state-is-incentivising-iswap-to-target-military-stockpiles-in-nigeria-others.html",
+      "source_original_url": "https://issafrica.org/iss-today/islamic-state-is-incentivising-iswap-to-target-military-stockpiles",
+      "path": "2026-11/20261112_iswap-20261112.json"
+    },
     {
       "id": "44c9d70b6bbc",
       "kind": "research_center",
@@ -968,7 +1028,9 @@
     "https://www.defensepriorities.org/in-the-media/how-a-little-known-company-dominated-the-persian-gulf-oil-trade",
     "https://unidir.org/publication/weapons-and-ammunition-management-in-africa-insight-2022-update",
     "https://issi.org.pk/issue-brief-on-europes-own-article-4-addressing-europes-changing-security-environment",
-    "https://news.google.com/rss/articles/CBMirgFBVV95cUxQMWI2d1F5emZ3ZUk1WEhPcnkxSUVZLTBvdEpIQ1BIWVJESF91M2d0Wmk0LWFHM2NqRWxuWThwbXFRZHl1eS1tVHhaSldRb3MyNkFidWV0X05aZXV4aktSSnl4TjZMeWRROGJOeC1IdkZQcjZhbXpNeGl1TW42SEt1WkFnS19tN0lpbWl5QnNxdUR0aXdVX09LSEVZTkdPQUdsUS1ZOHJ2NHBHSF9IUnc"
+    "https://news.google.com/rss/articles/CBMirgFBVV95cUxQMWI2d1F5emZ3ZUk1WEhPcnkxSUVZLTBvdEpIQ1BIWVJESF91M2d0Wmk0LWFHM2NqRWxuWThwbXFRZHl1eS1tVHhaSldRb3MyNkFidWV0X05aZXV4aktSSnl4TjZMeWRROGJOeC1IdkZQcjZhbXpNeGl1TW42SEt1WkFnS19tN0lpbWl5QnNxdUR0aXdVX09LSEVZTkdPQUdsUS1ZOHJ2NHBHSF9IUnc",
+    "https://issafrica.org/iss-today/islamic-state-is-incentivising-iswap-to-target-military-stockpiles",
+    "https://www.premiumtimesng.com/news/headlines/924634-islamic-state-is-incentivising-iswap-to-target-military-stockpiles-in-nigeria-others.html"
   ],
   "failed_urls": {
     "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBoLXF5ZjlDQWhEcnRsdG1DQ2VEYjFMbkZyR2MwSXAwQm04dnQtLXA1ZDFxRUY5OVcyb04xRU9mVmZPQ1ZGY0g1a2J4UWxOUm1PU19KclZWWjA2SVFlaDNVV1k0XzE": "2026-11-12T12:56:06+01:00",
@@ -1001,7 +1063,6 @@
     "https://news.google.com/rss/articles/CBMiogFBVV95cUxNemt1YkU0bUsxaU9Ma0lhcVNZRmNvbkhrODA3QWZ2RkpDRDR0NVZUaE5sUDd5Nml3OGJYa0wtWDd3X1p5czhBdmU0VklIMlpoMXFMR295cFczM081T2RqMXNOc1hadHNxLXpaYnVpSnUwdjBuMFlFcFpFM3V6cWE5TWxtblRJeEF6c2lvM0ZLVTV4dkFUM0lpQUwxUDJnV2ZsVEHSAaIBQVVfeXFMTXprdWJFNG1LMWlPTGtJYXFTWUZjb25IazgwN0FmdkZKQ0Q0dDVWVGhObFA3eTZpdzhiWGtMLVg3d19aeXM4QXZlNFZJSDJaaDFxTEdveXBXMzNPNU9kajFzTnNYWnRzcS16WmJ1aUp1MHYwbjBZRXBaRTN1enFhOU1sbW5USXhBenNpbzNGS1U1eHZBVDNJaUFMMVAyZ1dmbFRB": "2026-11-06T02:46:08+01:00",
     "https://www.defensepriorities.org/in-the-media/allies-fear-trump-will-target-nato-in-case-of-midterm-loss": "2026-11-06T02:46:18+01:00",
     "https://news.google.com/rss/articles/CBMikgFBVV95cUxNZWZIVXZOTWZ1bWllMm9ucjhCRUtFSi1wQzRWcE9lamhBZnJVOUpScnVCYVROdnpYOFhvY19rZUpNNjZzYWRrUURyMXBDYl9sb2ZKVjdOV0lQdjZ3MzZnQi0zOUE5U2xRUWk1UElMejBsdGhDc2s4VTFSZVIxV1Rlc3pUeGwzSWl1czUzdEIyUkVmQQ": "2026-11-06T02:45:48+01:00",
-    "https://issafrica.org/iss-today/islamic-state-is-incentivising-iswap-to-target-military-stockpiles": "2026-11-12T13:04:19+01:00",
     "https://news.google.com/rss/articles/CBMingFBVV95cUxQeXVfaFhpbkZGb2YxNVZWRm5fUGYyVEN5QTN5VlhsbERMQnBYZWhRMWNtN081bGc2Nmg4eEFQaFRDbHpNYjJ5NXo2Z004TmZsVloxR3hCMzNhSFV0cndrYkJ6STNwWEZvc3BQRXpnNnZUYjB5WXllSlBkZTBEQVBQRDZua255TGxWUFVqNG0zdHhGQUZfQXJKM1BnMURodw": "2026-11-12T13:04:24+01:00",
     "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOU1JrOGZXX0l0dlVRdi1jX0w0UkM3eDFfN3EwOTJGNnJHbHQ3RUJRaEp1MzdyNThmTFREaUtLLXZrS1FJY01xaHppY0QxM3dfdFcyLW5xeGthX1M3Tlo5NXpvYkwxMDZPSEVZYkxRWEFPS3poVmFSUzhjSW5JNGZrVE9vcHg3ZGFyUkxON3lqaWMyYVhLeHEwdTlDSzlQLVg3U1Vlb0R6dEt0ZFRHQUtOVWZfbGl5U3VaYTNKUlFDWGU5LU1vRElOTjdybmI4ZDRrR2lRc0NHS0Vwa01JalR6eGtPWQ": "2026-11-12T13:04:27+01:00"
   }
