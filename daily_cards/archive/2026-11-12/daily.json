@@ -3,18 +3,31 @@
   "slot": "daily",
   "period": "00:00–23:59 (تُنشأ عند 06:00 وتُحدّث خلال اليوم)",
   "title": "الحوصلة الإخبارية ليوم 12/11/2026",
-  "generated_at": "2026-11-12T16:38:11.622952+01:00",
-  "source_fingerprint": "e2f396a1e240b283a8fc74023ebae31775f8843d746f40eb57fc7813b7936ffe",
-  "source_news_count": 137,
+  "generated_at": "2026-11-12T16:41:16.772534+01:00",
+  "source_fingerprint": "d2eb9e19af8dc08daf7b043d6d212a19dc3ee342b828e793f8e60282cca4b065",
+  "source_news_count": 143,
   "candidate_audit_attempt_date": "2026-11-12",
   "candidate_audit_completed": true,
-  "candidate_audit_fingerprint": "e2f396a1e240b283a8fc74023ebae31775f8843d746f40eb57fc7813b7936ffe",
+  "candidate_audit_fingerprint": "d2eb9e19af8dc08daf7b043d6d212a19dc3ee342b828e793f8e60282cca4b065",
   "candidate_audit_version": 3,
   "event_enrichment_version": 4,
   "event_enrichment_attempted": true,
-  "event_enrichment_fingerprint": "e2f396a1e240b283a8fc74023ebae31775f8843d746f40eb57fc7813b7936ffe",
-  "event_enrichment_completed": false,
-  "event_enrichment_sources": [],
+  "event_enrichment_fingerprint": "d2eb9e19af8dc08daf7b043d6d212a19dc3ee342b828e793f8e60282cca4b065",
+  "event_enrichment_completed": true,
+  "event_enrichment_sources": [
+    {
+      "country": "السعودية",
+      "event": "أعلنت الدفاعات الجوية السعودية اعتراض وتدمير 3 صواريخ كروز أطلقت باتجاه الرياض وطائرتين مسيّرتين في منطقة مكة المكرمة.",
+      "sources": [
+        {
+          "title": "التحالف بقيادة السعودية يعلن اعتراض ثلاثة صواريخ أطلقها الحوثيون باتجاه الرياض - مونت كارلو الدولية",
+          "source": "مونت كارلو الدولية",
+          "published": "Wed, 11 Nov 2026 15:06:14 GMT",
+          "url": "https://news.google.com/rss/articles/CBMi7wVBVV95cUxNbmp1cjk3R0pKb1B1eEd3THgzVGdSNnZkcEI0WkVEVTFBekh2eC1QVVpzclZfTU9LR3hDRm40V0lfeHpldHNOTXlOcHlVZkFiN3R0QU1wNW9OQU1fUDNUSmZMSndFNWNKYkdWTFRYVC1BNVlEY19MUkdwbjNaTlluSXpNV0hDWUNPSF8wMlNuMklnZ3VqbEpCOVAtcjlLUWwtNWMzMVUwMmhYY0tDZ0pWS1pFNGdLNDFGMXZvWWI0VVVtX1RISWxYZ0NFejdIdDdrbnpaclBlYlNUSEhVRWFCR2ZteDVra0VtREJzc091RXdnblJzVUR0NU9aakh1LVpxa3hpNFJKLUZEMWJMckctREJNazRQYUlDSVdkdko4R1NQaXV1OTN5MjJLdFJwQzZTV0xfdm9YWkxuUUx5V3lYWENPSk9WbXhTcDI1TmdNeE1rWlRodXJRYktkOE9abm0ybTRpVnNHOEtwU1VqN2dVeXdLay1ZQ3QxN2EybEM0dDF6RElZcHdKaW9zMGVfN2EzMnJrSlNRLWJoVEdBWkJOR3lSd0lpT2IzX1VnNlBKNmswcGhnUkNqa0NVNDdjQkoyVl82Yl9PYTd0cFdLRUhCVHk5d01OWjdFTEZYTEQtVTN5Z1ByQXcwS3owbUMwQ2JpQ0JJblp3bDdQb3NGMU1XMTB1MVpycnNmaWFWeXEwbWEwMVRqZE0xakY0OGZjTHFVbFRQZnp1bmFlaEJGRDVQUkdSTGlFNGFpcHcxWE1hQjg4OUdmQl9MZUxuRDcyemhSWlNGeFpnTUlyOXNpdVJwRGQyS0pJRVJaN3pZT3MxRnlKU3lmTzktaWFSQVY5TXR0V0ZuMmhpNGNTX2RDcXVta3BHanc4ZU1iNkVPVHZQbGlyNUs3aHB1VkJRRENucjlMcFpNLWpSVkRDYVJteV91eFQ0Q1lFTVhPNURzSk5kdGxQOTdYQ0hFOGQ5X1d1T0hTWnZCWWlZLVhMYkFmZ0FJ?oc=5&hl=en-US&gl=US&ceid=US:en"
+        }
+      ]
+    }
+  ],
   "sections": [
     {
       "id": "libya",
@@ -26,7 +39,7 @@
         },
         {
           "country": "ليبيا",
-          "text": "بحث الفريق \"صدام حفتر\" أوضاع المنطقة العسكرية البطنان خلال لقائه بالعميد عبدالسلام قويدر."
+          "text": "بحث الفريق \"صدام حفتر\" في ليبيا، مع العميد عبدالسلام قويدر أوضاع المنطقة العسكرية البطنان."
         }
       ]
     },
@@ -49,6 +62,10 @@
         {
           "country": "الجزائر",
           "text": "أقر مجلس وزراء العدل العرب مقترحات جزائرية لحماية الأطفال من النزاعات ومحاربة المخدرات التركيبية وفعّل اتفاقيات مكافحة الإرهاب والجريمة المعلوماتية."
+        },
+        {
+          "country": "الجزائر",
+          "text": "وجّه رئيس الجمهورية عبد المجيد تبون رسالة إلى المشاركين في قمة قادة مؤتمر الأطراف في اتفاقية الأمم المتحدة الإطارية بشأن تغير المناخ (كوب31) المنعقدة بمدينة أنطاليا التركية، قرأها الوزير الأول سيفي غريب، مؤكداً استعداد الجزائر لخفض الانبعاثات بنسبة 31 في المئة بدعم دولي."
         }
       ]
     },
@@ -97,6 +114,26 @@
         {
           "country": "إسرائيل",
           "text": "حذر سياسيون إسرائيليون، بينهم غادي آيزنكوت وأفيغدور ليبرمان، رئيس الوزراء بنيامين نتنياهو من الإقدام على تنفيذ عمليات عسكرية جديدة أو اتخاذ قرارات قد تجر إسرائيل إلى حرب خلال المرحلة الانتقالية وحكومة تسيير الأعمال."
+        },
+        {
+          "country": "سوريا",
+          "text": "استقبل وزير الدفاع السوري مرهف أبو قصرة وفداً عسكرياً أمريكياً برئاسة الأدميرال ليام هولين وبحث معه التطورات الإقليمية."
+        },
+        {
+          "country": "سوريا",
+          "text": "استقبلت القوات البحرية السورية وفداً عسكرياً فرنسياً على متن الفرقاطة سوركوف في ميناء اللاذقية في أول زيارة لسفينة عسكرية فرنسية إلى سوريا."
+        },
+        {
+          "country": "سوريا",
+          "text": "أعلنت وزارة الدفاع السورية استعادة طائرة نقل عسكرية من طراز إليوشن تابعة للقوى الجوية السورية كانت متوقفة في مطار بنينا بمدينة بنغازي في ليبيا، وذلك بعدما غادرت دمشق قبيل سقوط نظام بشار الأسد بأربعة أيام، موجهة الشكر لـ \"صدام حفتر\" وإدارة مطار بنينا على تسهيل استعادتها."
+        },
+        {
+          "country": "العراق",
+          "text": "أجرى الوزير الأول سيفي غريب في أنطاليا، محادثات مع رئيس جمهورية العراق نزار محمد سعيد آميدي، تناولت واقع العلاقات الثنائية وسبل تعزيز التعاون بين الجزائر والعراق."
+        },
+        {
+          "country": "فلسطين",
+          "text": "أجرى الوزير الأول سيفي غريب في أنطاليا، لقاء ثنائياً مع رئيس الوزراء الفلسطيني محمد مصطفى، تناول آخر التطورات التي تشهدها القضية الفلسطينية، في ظل استمرار الاعتداءات على الشعب الفلسطيني."
         },
         {
           "country": "فلسطين",
