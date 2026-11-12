@@ -14,8 +14,8 @@ on:
       - '.github/workflows/update-news.yml'
 
   schedule:
-    # Refresh the news section every 30 minutes; shifted to re-register the scheduled trigger.
-    - cron: '5,35 * * * *'
+    # Refresh every 20 minutes; staggered runs leave time for feed collection and publishing.
+    - cron: '*/20 * * * *'
 
   workflow_dispatch:
 
@@ -31,7 +31,7 @@ concurrency:
 jobs:
   update-news:
     runs-on: ubuntu-24.04
-    # Keep a stalled refresh from blocking the next 30-minute cycle.
+    # Keep a stalled refresh from blocking the next scheduled cycle.
     timeout-minutes: 14
 
     steps:
