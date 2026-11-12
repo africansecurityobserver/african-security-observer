@@ -7,9 +7,10 @@ on:
       - main
     paths:
       - '.github/workflows/news-freshness-watchdog.yml'
+      - '.github/workflows/update-news.yml'
   schedule:
-    # Check after each scheduled news refresh; recover only if no run started for 40 minutes.
-    - cron: "20,50 * * * *"
+    # Check between the 20-minute news refreshes and recover overdue attempts.
+    - cron: "10,30,50 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -79,8 +80,8 @@ jobs:
           print(f"Latest news workflow run: {latest_at}")
           print(f"Age of latest news workflow attempt: {age}")
 
-          if age is not None and timedelta(0) <= age <= timedelta(minutes=40):
-              print("A news refresh was attempted within the 40-minute safety window; no recovery needed.")
+          if age is not None and timedelta(0) <= age <= timedelta(minutes=35):
+              print("A news refresh was attempted within the 35-minute safety window; no recovery needed.")
               raise SystemExit(0)
 
           print("No news refresh attempt in the last 40 minutes; dispatching recovery.")
