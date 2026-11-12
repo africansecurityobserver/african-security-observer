@@ -13,16 +13,17 @@ on:
         type: boolean
         default: false
 
-  # Run a forced verification refresh when the card generator or its
-  # workflow changes. Generated card-data commits do not match these paths,
-  # so this cannot create a self-triggering loop.
-  # Touching this workflow also re-registers its scheduled trigger on main.
+  # Hourly backstop: refresh the card even if the news workflow_run trigger is missed.
+  schedule:
+    - cron: "25 * * * *"
+
+  # Run a forced verification refresh when the generator changes.
+  # Generated card-data commits do not match this path, preventing a self-triggering loop.
   push:
     branches:
       - main
     paths:
       - "daily_cards/generate_daily_card.py"
-      - ".github/workflows/daily_cards.yml"
 
   # Run only after the news-ingestion workflow has finished successfully.
   # This removes the race where the card was generated from yesterday's feed
@@ -89,7 +90,8 @@ jobs:
           from pathlib import Path
           from zoneinfo import ZoneInfo
 
-          today = datetime.now(ZoneInfo("Africa/Tunis")).date().isoformat()
+          now = datetime.now(ZoneInfo("Africa/Tunis"))
+          today = now.date().isoformat()
           path = Path("daily_cards/cards.json")
           if not path.exists():
               raise SystemExit("Daily card file is missing; refusing to publish.")
@@ -97,6 +99,9 @@ jobs:
           cards = data.get("cards", []) if isinstance(data, dict) else []
           card = next((c for c in reversed(cards)
                        if c.get("date") == today and c.get("slot") == "daily"), None)
+          if not card and now.hour < 6:
+              print("Card generation is intentionally deferred until 06:00 Tunis time; verification skipped.")
+              raise SystemExit(0)
           if not card:
               raise SystemExit(f"No daily card exists for {today}; refusing to publish.")
           if not card.get("source_fingerprint"):

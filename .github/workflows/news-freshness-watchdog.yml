@@ -8,8 +8,8 @@ on:
     paths:
       - '.github/workflows/news-freshness-watchdog.yml'
   schedule:
-    # Check 15 minutes after each scheduled news refresh; recover only if no run started for 40 minutes.
-    - cron: "25,55 * * * *"
+    # Check after each scheduled news refresh; recover only if no run started for 40 minutes.
+    - cron: "20,50 * * * *"
   workflow_dispatch:
 
 permissions:

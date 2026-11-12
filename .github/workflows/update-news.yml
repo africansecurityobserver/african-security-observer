@@ -14,9 +14,8 @@ on:
       - '.github/workflows/update-news.yml'
 
   schedule:
-    # Refresh the news section every 30 minutes, at minutes 10 and 40.
-    # Keep this schedule on the default branch and verify each scheduled cycle.
-    - cron: '10,40 * * * *'
+    # Refresh the news section every 30 minutes; shifted to re-register the scheduled trigger.
+    - cron: '5,35 * * * *'
 
   workflow_dispatch:
 

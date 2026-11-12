@@ -47,7 +47,9 @@ jobs:
               TIMEZONE, fingerprint_news_items, get_news_for_period
           )
 
-          today = datetime.now(TIMEZONE).date()
+          now = datetime.now(TIMEZONE)
+          today = now.date()
+          generation_start = now.replace(hour=6, minute=0, second=0, microsecond=0)
           news_items = get_news_for_period("daily", today)
           current_fingerprint = fingerprint_news_items(news_items) if news_items else ""
 
@@ -68,9 +70,11 @@ jobs:
           card_fingerprint = str((card or {}).get("source_fingerprint") or "")
           fingerprint_mismatch = bool(news_items) and card_fingerprint != current_fingerprint
           missing_or_empty = bool(news_items) and (card is None or event_count == 0)
-          needs_recovery = fingerprint_mismatch or missing_or_empty
+          before_generation_window = now < generation_start
+          needs_recovery = (not before_generation_window) and (fingerprint_mismatch or missing_or_empty)
 
           print(f"Tunisia date: {today.isoformat()}")
+          print(f"Generation window started: {not before_generation_window}")
           print(f"Eligible source-news items: {len(news_items)}")
           print(f"Published card events: {event_count}")
           print(f"Card fingerprint matches current news: {bool(card_fingerprint) and card_fingerprint == current_fingerprint}")
@@ -88,6 +92,7 @@ jobs:
           runs_json="$(gh run list --workflow daily_cards.yml --limit 10 --json status,createdAt)"
           python - "$runs_json" <<'PY'
           import json
+          import subprocess
           import sys
           from datetime import datetime, timezone
 
@@ -110,6 +115,10 @@ jobs:
           if should_skip:
               print("A generation run is active or was attempted recently; avoiding a duplicate dispatch.")
               raise SystemExit(0)
+
+          subprocess.run(
+              ["gh", "workflow", "run", "daily_cards.yml", "--ref", "main", "-f", "slot=daily"],
+              check=True,
+          )
+          print("Dispatched recovery because the published card does not match the current eligible news packet.")
           PY
-          gh workflow run daily_cards.yml --ref main -f slot=daily
-          echo "Dispatched recovery because the published card does not match the current eligible news packet."
