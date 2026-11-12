@@ -731,7 +731,10 @@
       "center_site": "https://issafrica.org/",
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "تنظيم الدولة الإسلامية يحفز تنظيم الدولة الإسلامية في غرب أفريقيا لاستهداف المخزونات العسكرية - معهد الدراسات الأمنية في أفريقيا"
+      "title_ar": "تنظيم الدولة الإسلامية يحفز تنظيم الدولة الإسلامية في غرب أفريقيا لاستهداف المخزونات العسكرية - معهد الدراسات الأمنية في أفريقيا",
+      "fallback_urls": [
+        "https://www.premiumtimesng.com/news/headlines/924634-islamic-state-is-incentivising-iswap-to-target-military-stockpiles-in-nigeria-others.html"
+      ]
     },
     {
       "center": "تشاتام هاوس",
