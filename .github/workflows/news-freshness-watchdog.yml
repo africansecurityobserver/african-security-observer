@@ -84,7 +84,7 @@ jobs:
               print("A news refresh was attempted within the 35-minute safety window; no recovery needed.")
               raise SystemExit(0)
 
-          print("No news refresh attempt in the last 40 minutes; dispatching recovery.")
+          print("No news refresh attempt in the last 35 minutes; dispatching recovery.")
           github_json(
               f"{api_root}/actions/workflows/update-news.yml/dispatches",
               method="POST",
