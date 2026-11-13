@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T19:57+01:00",
+  "updated": "2026-11-13T02:07+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 46,
+  "count": 47,
   "publications": [
     {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
@@ -723,6 +723,34 @@
       "title_ar": "ورشة عمل SETA تفحص الروابط الأمنية بين بحر البلطيق والبحر الأسود والبحر الأبيض المتوسط - SETA - Siyaset, Ekonomi ve Toplum Araştırmaları Vakfı"
     },
     {
+      "center": "معهد لوي",
+      "center_short": "Lowy Institute",
+      "title": "Why the Arctic cannot replace the Middle East’s shipping lanes",
+      "url": "https://www.lowyinstitute.org/the-interpreter/why-the-arctic-cannot-replace-the-middle-east-s-shipping-lanes",
+      "published": "2026-11-13T02:00+01:00",
+      "date": "2026-11-13",
+      "source": "Lowy Institute",
+      "description": "Russian Arctic energy, not Arctic shipping, is the real beneficiary of the current crisis – and Western sanctions complicate even that.",
+      "center_site": "https://lowyinstitute.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "لماذا لا يمكن للمنطقة القطبية الشمالية أن تحل محل طرق الشحن في الشرق الأوسط"
+    },
+    {
+      "center": "مركز الأمن الأمريكي الجديد (CNAS)",
+      "center_short": "CNAS",
+      "title": "Examining Kushner’s European Security Framework - Center for a New American Security | CNAS",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNUDZmbFQ5VjBUajh3TFptZ1R4S3NyS3NCRkdIcHVsdXk1SDE4NUhHNXlxRktWNzcwVUVkcGtMMENENmoyRmlFS1BpQkdDOElIbWRDdGpKaXpxZEtmVEw3M1dxSTNnQlZKTm9IZjRtRlBkTGpkMlhqV1plZ2ZGQnp1VVBhT0pFdENvbjE2MG9YdDJqdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-13T00:01+01:00",
+      "date": "2026-11-13",
+      "source": "Center for a New American Security | CNAS",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxNUDZmbFQ5VjBUajh3TFptZ1R4S3NyS3NCRkdIcHVsdXk1SDE4NUhHNXlxRktWNzcwVUVkcGtMMENENmoyRmlFS1BpQkdDOElIbWRDdGpKaXpxZEtmVEw3M1dxSTNnQlZKTm9IZjRtRlBkTGpkMlhqV1plZ2ZGQnp1VVBhT0pFdENvbjE2MG9YdDJqdw?oc=5\" target=\"_blank\">Examining Kushner’s European Security Framework</a> <font color=\"#6f6f6f\">Center for a New American Security | CNAS</font>",
+      "center_site": "https://cnas.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "دراسة إطار كوشنر للأمن الأوروبي - مركز الأمن الأمريكي الجديد | CNAS"
+    },
+    {
       "center": "معهد هدسون",
       "center_short": "Hudson Institute",
       "title": "Senator Rick Scott (R-FL) sat down with Rebeccah Heinrichs to discuss American strategy, the need to modernize the defense industrial base, and the vital role of allies and partners in an unstable international environment.",
@@ -735,20 +763,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "اجتمع السيناتور ريك سكوت (جمهوري من فلوريدا) مع ريبيكا هاينريش لمناقشة الاستراتيجية الأمريكية، والحاجة إلى تحديث القاعدة الصناعية الدفاعية، والدور الحيوي للحلفاء والشركاء في بيئة دولية غير مستقرة."
-    },
-    {
-      "center": "مركز الأمن الأمريكي الجديد (CNAS)",
-      "center_short": "CNAS",
-      "title": "Examining Kushner’s European Security Framework - Center for a New American Security | CNAS",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNUDZmbFQ5VjBUajh3TFptZ1R4S3NyS3NCRkdIcHVsdXk1SDE4NUhHNXlxRktWNzcwVUVkcGtMMENENmoyRmlFS1BpQkdDOElIbWRDdGpKaXpxZEtmVEw3M1dxSTNnQlZKTm9IZjRtRlBkTGpkMlhqV1plZ2ZGQnp1VVBhT0pFdENvbjE2MG9YdDJqdw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-12T17:03+01:00",
-      "date": "2026-11-12",
-      "source": "Center for a New American Security | CNAS",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxNUDZmbFQ5VjBUajh3TFptZ1R4S3NyS3NCRkdIcHVsdXk1SDE4NUhHNXlxRktWNzcwVUVkcGtMMENENmoyRmlFS1BpQkdDOElIbWRDdGpKaXpxZEtmVEw3M1dxSTNnQlZKTm9IZjRtRlBkTGpkMlhqV1plZ2ZGQnp1VVBhT0pFdENvbjE2MG9YdDJqdw?oc=5\" target=\"_blank\">Examining Kushner’s European Security Framework</a> <font color=\"#6f6f6f\">Center for a New American Security | CNAS</font>",
-      "center_site": "https://cnas.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "دراسة إطار كوشنر للأمن الأوروبي - مركز الأمن الأمريكي الجديد | CNAS"
     },
     {
       "center": "تشاتام هاوس",
