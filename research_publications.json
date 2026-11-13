@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T10:35+01:00",
+  "updated": "2026-11-13T19:32+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,8 +605,36 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 49,
+  "count": 51,
   "publications": [
+    {
+      "center": "المجلس الأطلسي",
+      "center_short": "Atlantic Council",
+      "title": "Washington is reshaping security in North Africa. Congress needs to ask how. - Atlantic Council",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQzRRLUc5UExZak84ZmRqVDdwVXgtMm1FVHdDZUF3bEViNWt0bGpJMUROMmRzbzBtTnNyRWk5T3R6RmdHQjFmZXY4TUt3bjVKY0N5NWNQeVA5SGRCS1dVbzljdGYxQnM2ZnpSNDN3Z0NqNG01WDhxbFNXVjlsbXVMc3Z1MDlDUTNLd0FCZjJHOEI5LWR1TENpNzgxc2d1dE4yd2VGZ3BHYkJjclZVZ1UwZGdSTTlFazB1UE16enpOdVUxZw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-13T16:16+01:00",
+      "date": "2026-11-13",
+      "source": "Atlantic Council",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQzRRLUc5UExZak84ZmRqVDdwVXgtMm1FVHdDZUF3bEViNWt0bGpJMUROMmRzbzBtTnNyRWk5T3R6RmdHQjFmZXY4TUt3bjVKY0N5NWNQeVA5SGRCS1dVbzljdGYxQnM2ZnpSNDN3Z0NqNG01WDhxbFNXVjlsbXVMc3Z1MDlDUTNLd0FCZjJHOEI5LWR1TENpNzgxc2d1dE4yd2VGZ3BHYkJjclZVZ1UwZGdSTTlFazB1UE16enpOdVUxZw?oc=5\" target=\"_blank\">Washington is reshaping security in North Africa. Congress needs to ask how.</a> <font color=\"#6f6f6f\">Atlantic Council</font>",
+      "center_site": "https://atlanticcouncil.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "تعمل واشنطن على إعادة تشكيل الأمن في شمال أفريقيا. يجب على الكونغرس أن يسأل كيف. - المجلس الأطلسي"
+    },
+    {
+      "center": "المبادرة العالمية لمكافحة الجريمة المنظمة العابرة للحدود",
+      "center_short": "Global Initiative",
+      "title": "Illicit markets and their intersection with conflict in the central Sahel - Global Initiative against Transnational Organized Crime (GI-TOC)",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOVE1BenNqWW5GMEdIYVZhNGpCNEh2X3RkUXJaUDFVaFh2YmpGOEVTbzVfNVdOcnQzNVRwQWR5bS00WUhfd0ZacmRwWVZkQnpQeHgwNFZsdGUzZmMwMFVYQzBuTElQajdfSG0yNWtFdExCcnRpeDlKcjB1NmRhZVBJSnlwQ0QzS0RDN1E?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-13T12:31+01:00",
+      "date": "2026-11-13",
+      "source": "Global Initiative against Transnational Organized Crime (GI-TOC)",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxOVE1BenNqWW5GMEdIYVZhNGpCNEh2X3RkUXJaUDFVaFh2YmpGOEVTbzVfNVdOcnQzNVRwQWR5bS00WUhfd0ZacmRwWVZkQnpQeHgwNFZsdGUzZmMwMFVYQzBuTElQajdfSG0yNWtFdExCcnRpeDlKcjB1NmRhZVBJSnlwQ0QzS0RDN1E?oc=5\" target=\"_blank\">Illicit markets and their intersection with conflict in the central Sahel</a> <font color=\"#6f6f6f\">Global Initiative against Transnational Organized Crime (GI-TOC)</font>",
+      "center_site": "https://globalinitiative.net/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "الأسواق غير المشروعة وتداخلها مع النزاعات في منطقة الساحل الوسطى - المبادرة العالمية لمكافحة الجريمة المنظمة عبر الوطنية (GI-TOC)"
+    },
     {
       "center": "مؤسسة كونراد أديناور",
       "center_short": "Konrad Adenauer Stiftung",
@@ -737,6 +765,34 @@
       "title_ar": "ورشة عمل SETA تفحص الروابط الأمنية بين بحر البلطيق والبحر الأسود والبحر الأبيض المتوسط - SETA - Siyaset, Ekonomi ve Toplum Araştırmaları Vakfı"
     },
     {
+      "center": "المجلس الأوروبي للعلاقات الخارجية (ECFR)",
+      "center_short": "ECFR",
+      "title": "After Abu Dhabi: How Europeans must reframe the European security debate - European Council on Foreign Relations",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQb3JkanJXUzRtZFFscHJVaERUUjdFWVNhT0VMM3daMlg3NTBKY1JLcWk2XzF3SHZKRGFQbnhUX2NmcjZyaUE4UndMT3prMEoxYkI3MFUzc2I4dkRVWGVfcjVPTFl2QXBoYUs1QlZJWHo0MzY3ZVJZU1JuWldfYk1mOFhmZ25EaXV2TUdVWmQ1ZkstdU1nNmkyV0hHVzLSAaIBQVVfeXFMTzdOQ0FWU2hUVk9FV3Z3LVVaaXE3ZkRnb29oV1poWGNJYVZIbTkxYmZNaWZjRzVLQU5GaTR2N1RLVmtpRWJJdzhkTGRMaGQ2V0tEc2ZHV2laQlBnNTVlNmd0UElmcTIxQXMwZENJZVNCZmhmOC16M2tBcVFIc3VGckM4YVBaVlBuRGRZRVZCYmxudHNNUEg1NlhEeXg0UUtJcWhn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-13T17:01+01:00",
+      "date": "2026-11-13",
+      "source": "European Council on Foreign Relations",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxQb3JkanJXUzRtZFFscHJVaERUUjdFWVNhT0VMM3daMlg3NTBKY1JLcWk2XzF3SHZKRGFQbnhUX2NmcjZyaUE4UndMT3prMEoxYkI3MFUzc2I4dkRVWGVfcjVPTFl2QXBoYUs1QlZJWHo0MzY3ZVJZU1JuWldfYk1mOFhmZ25EaXV2TUdVWmQ1ZkstdU1nNmkyV0hHVzLSAaIBQVVfeXFMTzdOQ0FWU2hUVk9FV3Z3LVVaaXE3ZkRnb29oV1poWGNJYVZIbTkxYmZNaWZjRzVLQU5GaTR2N1RLVmtpRWJJdzhkTGRMaGQ2V0tEc2ZHV2laQlBnNTVlNmd0UElmcTIxQXMwZENJZVNCZmhmOC16M2tBcVFIc3VGckM4YVBaVlBuRGRZRVZCYmxudHNNUEg1NlhEeXg0UUtJcWhn?oc=5\" target=\"_bl",
+      "center_site": "https://ecfr.eu/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "بعد أبوظبي: كيف يجب على الأوروبيين إعادة صياغة النقاش حول الأمن الأوروبي - المجلس الأوروبي للعلاقات الخارجية"
+    },
+    {
+      "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
+      "center_short": "UNIDIR",
+      "title": "Weapons and Ammunition Management in Africa Insight: 2023 Update",
+      "url": "https://unidir.org/publication/weapons-and-ammunition-management-in-africa-insight-2023-update/",
+      "published": "2026-11-13T14:22+01:00",
+      "date": "2026-11-13",
+      "source": "UNIDIR",
+      "description": "",
+      "center_site": "https://unidir.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "رؤية إدارة الأسلحة والذخائر في أفريقيا: تحديث 2023"
+    },
+    {
       "center": "معهد لوي",
       "center_short": "Lowy Institute",
       "title": "Why the Arctic cannot replace the Middle East’s shipping lanes",
@@ -833,20 +889,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "توازن دقيق: وكالة أفريقيا للعرض الكامل وتوسيع الصراع في القرن الأفريقي - مؤسسة كارنيغي للسلام الدولي"
-    },
-    {
-      "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
-      "center_short": "UNIDIR",
-      "title": "Gender Perspectives in Arms Control and Disarmament: Views from Africa",
-      "url": "https://unidir.org/publication/gender-perspectives-in-arms-control-and-disarmament-views-from-africa/",
-      "published": "2026-11-10T13:56+01:00",
-      "date": "2026-11-10",
-      "source": "UNIDIR",
-      "description": "",
-      "center_site": "https://unidir.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "المنظورات الجنسانية في تحديد الأسلحة ونزع السلاح: وجهات نظر من أفريقيا"
     },
     {
       "center": "مؤسسة RAND",
@@ -1281,20 +1323,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "برقية من مولدوفا: كيفية استعادة ردع الناتو ضد هجمات روسيا المتصاعدة بالطائرات بدون طيار - المجلس الأطلسي"
-    },
-    {
-      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-      "center_short": "ISS Africa",
-      "title": "How Africa is becoming a new theatre for adaptive drone warfare - ISS Africa",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPQVZDanhVOWlOLXFzdmVJTGJYS3IzOUlWM1JqdGd2ODN5MzRJZ0I2U1NlM1Jqa3R0RWN2ZTRGVGZoaTc2bTBieEJabWZGMWN3NmtHcmcyRzJqaElENnFpeVBIOXB0d3VvbU13QW9zSVdyNlZEbzJjVnZKNk1BQ2taZjVKXzZBSDlueklKQkVuM2FlVnQ0WWhiOUZzQjY5ZnpHT1JYNFdCTzRqYU5q?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-14T16:31+01:00",
-      "date": "2026-10-14",
-      "source": "ISS Africa",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPQVZDanhVOWlOLXFzdmVJTGJYS3IzOUlWM1JqdGd2ODN5MzRJZ0I2U1NlM1Jqa3R0RWN2ZTRGVGZoaTc2bTBieEJabWZGMWN3NmtHcmcyRzJqaElENnFpeVBIOXB0d3VvbU13QW9zSVdyNlZEbzJjVnZKNk1BQ2taZjVKXzZBSDlueklKQkVuM2FlVnQ0WWhiOUZzQjY5ZnpHT1JYNFdCTzRqYU5q?oc=5\" target=\"_blank\">How Africa is becoming a new theatre for adaptive drone warfare</a> <font color=\"#6f6f6f\">ISS Africa</font>",
-      "center_site": "https://issafrica.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "كيف أصبحت أفريقيا مسرحًا جديدًا لحرب الطائرات بدون طيار التكيفية - ISS Africa"
     }
   ]
 }
