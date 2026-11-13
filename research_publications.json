@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T02:07+01:00",
+  "updated": "2026-11-13T10:35+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,8 +605,22 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 47,
+  "count": 49,
   "publications": [
+    {
+      "center": "مؤسسة كونراد أديناور",
+      "center_short": "Konrad Adenauer Stiftung",
+      "title": "Regional Programme Security Policy Dialogue West Africa - Sahel (SIPODI West Africa - Sahel) - Konrad-Adenauer-Stiftung",
+      "url": "https://news.google.com/rss/articles/CBMisARBVV95cUxQRWdNX21ZTkJaSm1pQjFNdHNfa3RDZE9EOXpCYUJNNzhrSTk5ZnBlcUJtVGtwYmE3QU90M2stVHZ5WVFrX0x0dWFFNVF4eU8tWXdFWjJ3d25xT1ZVSW05ZzVPb0tnaDlibjFDaWtOR291WjdjaThlajRZSlNfbzFzM01HMVdDY2pxelNaaVpfVGpzNlhaU1ZkdVVrNF9oU2I2ekQ3aE1JS1gyRHp4aTBHRENNWWVvSm02a2VwSlRVQUljcUJYSGdOM3VCQ191THowMlU3VGFYT2ZpX2RMNHFibGIwcWN3VkwzOUd1TWQ1SkwydU5wUTJvU3BudVkxRG5fRWhwbjJZcW01S3RWOHNmeVktS1plWVVCRnVzS09LY1FxTHNZUzZWaUVPb2JLeFlzZ0Z5M09LZlM1dFRDX2lraW5yMHJOQkt5LXNhSVMxWDljT0RIVkVVNUZNQUN3OVVTUXE3b1pUdWh4WEpUN2d0Ynk2RThPSXZTRk53djROSTlYY2d5S2NiY1JPUm5TaEFwa2hLLWUtUFY3bVRCNTQzY2VxSElrUGRsZkdkcUtZMElDcmZtMkNqX0w3dWQ4QjFNYk93dWpzUV9PM2VEanFBSHA4SE95d2FDZTlRY0RuV0QyVXhQMUVmRlZNS3RpZXlfT1RYSldHTmJZMEkyQlFwSklUanBHQTZKbmE0VUZUdUxrZGVaei1TTnlQSWRFWHdTTlVCNnZZY2NfTVVBMEJWVg?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-13T00:14+01:00",
+      "date": "2026-11-13",
+      "source": "Konrad-Adenauer-Stiftung",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMisARBVV95cUxQRWdNX21ZTkJaSm1pQjFNdHNfa3RDZE9EOXpCYUJNNzhrSTk5ZnBlcUJtVGtwYmE3QU90M2stVHZ5WVFrX0x0dWFFNVF4eU8tWXdFWjJ3d25xT1ZVSW05ZzVPb0tnaDlibjFDaWtOR291WjdjaThlajRZSlNfbzFzM01HMVdDY2pxelNaaVpfVGpzNlhaU1ZkdVVrNF9oU2I2ekQ3aE1JS1gyRHp4aTBHRENNWWVvSm02a2VwSlRVQUljcUJYSGdOM3VCQ191THowMlU3VGFYT2ZpX2RMNHFibGIwcWN3VkwzOUd1TWQ1SkwydU5wUTJvU3BudVkxRG5fRWhwbjJZcW01S3RWOHNmeVktS1plWVVCRnVzS09LY1FxTHNZUzZWaUVPb2JLeFlzZ0Z5M09LZlM1dFRDX2lraW5yMHJOQkt5LXNhSVMxWD",
+      "center_site": "https://kas.de/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "البرنامج الإقليمي للحوار بشأن السياسة الأمنية في غرب أفريقيا - منطقة الساحل (SIPODI غرب أفريقيا - منطقة الساحل) - مؤسسة كونراد أديناور"
+    },
     {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
       "center_short": "ISS Africa",
@@ -737,6 +751,20 @@
       "title_ar": "لماذا لا يمكن للمنطقة القطبية الشمالية أن تحل محل طرق الشحن في الشرق الأوسط"
     },
     {
+      "center": "معهد لوي",
+      "center_short": "Lowy Institute",
+      "title": "Why the Arctic cannot replace the Middle East’s shipping lanes - Lowy Institute",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPdUFvMURzR1JXYk5LUmxXTkhVdlkzU1ltQjlmQmRIUXlzQ25IU2VhWkRZc2x6dVByQlhGNGgtY0ZsOFBiN0x0WFBJSGZ1RktFRXVudXZiaEEybzJuTlhSUDN1RHhwdVF2UXE3TGFWaG5WcmZCeE9DT29vNmJaRFhFalVHMGtEUEc0T18zWUptQ0VLRTNKSkFfOEJHS05WejdJVURYX1BrNzJ3QUZL?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-13T02:00+01:00",
+      "date": "2026-11-13",
+      "source": "Lowy Institute",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPdUFvMURzR1JXYk5LUmxXTkhVdlkzU1ltQjlmQmRIUXlzQ25IU2VhWkRZc2x6dVByQlhGNGgtY0ZsOFBiN0x0WFBJSGZ1RktFRXVudXZiaEEybzJuTlhSUDN1RHhwdVF2UXE3TGFWaG5WcmZCeE9DT29vNmJaRFhFalVHMGtEUEc0T18zWUptQ0VLRTNKSkFfOEJHS05WejdJVURYX1BrNzJ3QUZL?oc=5\" target=\"_blank\">Why the Arctic cannot replace the Middle East’s shipping lanes</a> <font color=\"#6f6f6f\">Lowy Institute</font>",
+      "center_site": "https://lowyinstitute.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "لماذا لا يمكن للمحيط المتجمد الشمالي أن يحل محل طرق الشحن في الشرق الأوسط - معهد لوي"
+    },
+    {
       "center": "مركز الأمن الأمريكي الجديد (CNAS)",
       "center_short": "CNAS",
       "title": "Examining Kushner’s European Security Framework - Center for a New American Security | CNAS",
@@ -763,6 +791,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "اجتمع السيناتور ريك سكوت (جمهوري من فلوريدا) مع ريبيكا هاينريش لمناقشة الاستراتيجية الأمريكية، والحاجة إلى تحديث القاعدة الصناعية الدفاعية، والدور الحيوي للحلفاء والشركاء في بيئة دولية غير مستقرة."
+    },
+    {
+      "center": "معهد جنيف للسياسات الأمنية (GCSP)",
+      "center_short": "GCSP",
+      "title": "Terrorism in 2040 : How to Counter Asymmetric Warfare in a Hyperconnected World",
+      "url": "https://www.gcsp.ch/publications/terrorism-2040-how-counter-asymmetric-warfare-hyperconnected-world",
+      "published": "2026-11-12T12:27+01:00",
+      "date": "2026-11-12",
+      "source": "GCSP",
+      "description": "<span>Terrorism in 2040 : How to Counter Asymmetric Warfare in a Hyperconnected World </span> <span><span>Antoine</span></span> <span><time datetime=\"2026-11-12T12:27:33+01:00\" title=\"Thursday, November 12, 2026 - 12:27\">Thu, 11/12/2026 - 12:27</time> </span> <div>External publications</div> <div>Global</div> <div><p>Bringing together contributions from internationally recognised experts, this research explores how terrorism may evolve by 2040 and examines the emerging challenges facing NATO and",
+      "center_site": "https://gcsp.ch/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الإرهاب في عام 2040: كيفية التصدي للحرب غير المتكافئة في عالم مترابط للغاية"
     },
     {
       "center": "تشاتام هاوس",
@@ -1253,20 +1295,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "كيف أصبحت أفريقيا مسرحًا جديدًا لحرب الطائرات بدون طيار التكيفية - ISS Africa"
-    },
-    {
-      "center": "مؤسسة فريدريش إيبرت",
-      "center_short": "Friedrich Ebert Stiftung",
-      "title": "Toward a New Deal for Global Trade - A Progressive Agenda - FES Geneva",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNTHgyWXppRzJsMXZYUy1vM0owUXNQdjlGSGFnOGZTeDhBc19qc3o0TWpNRnd5bW1oQnpfMWc1by1Uc3N5QjJnVHd6eEx2Q2lNbFFHZ21XZmxOZVJQc2tSeXplcjdxWFdYeHNEbk4zRmROYXRvQU1lemh3REJFTm1mbjJLYTQxTkRQWWZCUkUwZ3M?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-14T08:00+01:00",
-      "date": "2026-10-14",
-      "source": "FES Geneva",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxNTHgyWXppRzJsMXZYUy1vM0owUXNQdjlGSGFnOGZTeDhBc19qc3o0TWpNRnd5bW1oQnpfMWc1by1Uc3N5QjJnVHd6eEx2Q2lNbFFHZ21XZmxOZVJQc2tSeXplcjdxWFdYeHNEbk4zRmROYXRvQU1lemh3REJFTm1mbjJLYTQxTkRQWWZCUkUwZ3M?oc=5\" target=\"_blank\">Toward a New Deal for Global Trade - A Progressive Agenda</a> <font color=\"#6f6f6f\">FES Geneva</font>",
-      "center_site": "https://fes.de/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "نحو صفقة جديدة للتجارة العالمية - أجندة تقدمية - مؤسسة فريدريش إيبرت جنيف"
     }
   ]
 }
