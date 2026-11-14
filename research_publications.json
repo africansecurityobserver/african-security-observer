@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T01:53+01:00",
+  "updated": "2026-11-14T10:00+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 50,
+  "count": 49,
   "publications": [
     {
       "center": "المجلس الأطلسي",
@@ -1295,20 +1295,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الممرات البحرية في خطر، والنظام البحري تحت التهديد. بين الدفاع الجماعي وإسقاط القوة العالمية - Stiftung Wissenschaft und Politik (SWP)"
-    },
-    {
-      "center": "معهد العلاقات الدولية والاستراتيجية (IRIS)",
-      "center_short": "IRIS",
-      "title": "Cyberattacks on the Supply Chain: What Are the Implications for Food Security? - IRIS - Institut de relations internationales et stratégiques",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNaGx0Tkh2TTlDX0xXemd1ODBuWGIxOHR2SjhkNWRNTHFwR1JQVVh0dmdlRjFGMXJubFF3SXVWRU5DeExHZlVnckJhLTRoQThCZ294RFVFazJKU0ZjRXVoenRQTFdNaU1JRmR2VjUzUFBGaHpNelBxdjNkM25BZGJ2N2FSbnF3Zjd5NlZRMS1tU0NSdXhzZ2lnZldrUy1rTk9CbFV1bzhIb0NoUFdK?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-15T08:00+01:00",
-      "date": "2026-10-15",
-      "source": "IRIS - Institut de relations internationales et stratégiques",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNaGx0Tkh2TTlDX0xXemd1ODBuWGIxOHR2SjhkNWRNTHFwR1JQVVh0dmdlRjFGMXJubFF3SXVWRU5DeExHZlVnckJhLTRoQThCZ294RFVFazJKU0ZjRXVoenRQTFdNaU1JRmR2VjUzUFBGaHpNelBxdjNkM25BZGJ2N2FSbnF3Zjd5NlZRMS1tU0NSdXhzZ2lnZldrUy1rTk9CbFV1bzhIb0NoUFdK?oc=5\" target=\"_blank\">Cyberattacks on the Supply Chain: What Are the Implications for Food Security?</a> <font color=\"#6f6f6f\">IRIS - Institut de relations internationales et stratégiques</font>",
-      "center_site": "https://iris-france.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "الهجمات الإلكترونية على سلسلة التوريد: ما هي الآثار المترتبة على الأمن الغذائي ؟ - IRIS - معهد العلاقات الدولية والاستراتيجية"
     }
   ]
 }
