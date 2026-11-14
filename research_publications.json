@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T18:10+01:00",
+  "updated": "2026-11-14T22:31+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 49,
+  "count": 48,
   "publications": [
     {
       "center": "مؤسسة كونراد أديناور",
@@ -1281,20 +1281,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "ساحة المعركة الخفية تحت سطح البحر: الكابلات البحرية، والبنية التحتية الحيوية، والجغرافيا السياسية الجديدة للقوة البحرية"
-    },
-    {
-      "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
-      "center_short": "SWP",
-      "title": "Sea Lanes at Risk, Maritime Order under Threat. Between Collective Defence and Global Power Projection - Stiftung Wissenschaft und Politik (SWP)",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPY1JCdlRBOGtySFRGRGV0alE5VXVsY045bHV3VGtlQXRmLV9fMUhGZ1YybkhrdC0tWE5qdi1QUkQzSDZ4UGFWMWN4a1R4cTJJbG9QM3JULWlzUXkzYkRYcmlGOW5LSktUbkJ4TmFxalJfM2NrV0dBOXJmN19tWmZ5SkpBRmJZaUNjaXlzeFU2Q08?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-15T19:56+01:00",
-      "date": "2026-10-15",
-      "source": "Stiftung Wissenschaft und Politik (SWP)",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxPY1JCdlRBOGtySFRGRGV0alE5VXVsY045bHV3VGtlQXRmLV9fMUhGZ1YybkhrdC0tWE5qdi1QUkQzSDZ4UGFWMWN4a1R4cTJJbG9QM3JULWlzUXkzYkRYcmlGOW5LSktUbkJ4TmFxalJfM2NrV0dBOXJmN19tWmZ5SkpBRmJZaUNjaXlzeFU2Q08?oc=5\" target=\"_blank\">Sea Lanes at Risk, Maritime Order under Threat. Between Collective Defence and Global Power Projection</a> <font color=\"#6f6f6f\">Stiftung Wissenschaft und Politik (SWP)</font>",
-      "center_site": "https://swp-berlin.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "الممرات البحرية في خطر، والنظام البحري تحت التهديد. بين الدفاع الجماعي وإسقاط القوة العالمية - Stiftung Wissenschaft und Politik (SWP)"
     }
   ]
 }
