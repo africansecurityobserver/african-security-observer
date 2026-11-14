@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T19:28:22+01:00",
+  "updated": "2026-11-14T23:43:48+01:00",
   "years": [
     {
       "year": "2026",
@@ -99,6 +99,16 @@
               "path": "2026-10/20261028_06b7c1d0e2dd.json",
               "center": "مركز إفريقيا للدراسات الاستراتيجية",
               "source_title": "Lessons from Africa’s Drone Wars - Africa Center for Strategic Studies",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-10-22",
+              "title": "هيكل أمني جديد في الشرق الأوسط",
+              "subject": "هيكل أمني جديد في الشرق الأوسط",
+              "path": "2026-10/20261022_ae11db183827.json",
+              "center": "مؤسسة أبحاث المراقب (ORF)",
+              "source_title": "Towards a New Security Architecture in the Indo-Mediterranean - orfonline.org",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
