@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T10:00+01:00",
+  "updated": "2026-11-14T18:10+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -608,6 +608,20 @@
   "count": 49,
   "publications": [
     {
+      "center": "مؤسسة كونراد أديناور",
+      "center_short": "Konrad Adenauer Stiftung",
+      "title": "Events - Regional Programme Security Policy for West Africa - Sahel - Konrad-Adenauer-Stiftung",
+      "url": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxPcEFSVzBtZldyWDhGaWQ5VVNkcE5pSi1WbGJEUGJ5ME5rOE1UenFDUkR0N25WZldpZnA5MVBaeDdscFR1OFpqWXlDMVJkdGZ6MnpsMHlIMUNMcXJQZjFFa1F6SEloNGI2czBienVlUnhrV2tmNGwwUWd0T21RbXNzMXVLZzg2MFp3eExqejEtc3QtM1FDblBxMlBIRXo3ZW9aYWljN3BCeFRKa3VjWFB1ZTBfT2x4RkxOX2ktY3ZkdGVuYXpJdjVXWndMZmNYdXkzMmZGMGl3cE03T0lIZkxwTHNqd1AwR2RCSG5pNjgwakZDSE1DdTVVdXVqdGI3Tm9xTHAwa1UwTlRvbzZ2OVQxS0VyMTlKcG9yRU50V01yeS1RYkRIdlh0ck5reUNxNjl2ZWZVbFRJYVVpaWZuVG1xYk1ubVlMejA3dlp1V2RuT3dzSHNrWkJzSnZ6TTRjQzQwUUpsc0dsN3hCZ1RLV2FN?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-14T12:38+01:00",
+      "date": "2026-11-14",
+      "source": "Konrad-Adenauer-Stiftung",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi7wJBVV95cUxPcEFSVzBtZldyWDhGaWQ5VVNkcE5pSi1WbGJEUGJ5ME5rOE1UenFDUkR0N25WZldpZnA5MVBaeDdscFR1OFpqWXlDMVJkdGZ6MnpsMHlIMUNMcXJQZjFFa1F6SEloNGI2czBienVlUnhrV2tmNGwwUWd0T21RbXNzMXVLZzg2MFp3eExqejEtc3QtM1FDblBxMlBIRXo3ZW9aYWljN3BCeFRKa3VjWFB1ZTBfT2x4RkxOX2ktY3ZkdGVuYXpJdjVXWndMZmNYdXkzMmZGMGl3cE03T0lIZkxwTHNqd1AwR2RCSG5pNjgwakZDSE1DdTVVdXVqdGI3Tm9xTHAwa1UwTlRvbzZ2OVQxS0VyMTlKcG9yRU50V01yeS1RYkRIdlh0ck5reUNxNjl2ZWZVbFRJYVVpaWZuVG1xYk1ubVlMejA3dlp1V2RuT3",
+      "center_site": "https://kas.de/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "الفعاليات - البرنامج الإقليمي للسياسة الأمنية لغرب أفريقيا - منطقة الساحل - مؤسسة كونراد أденаور"
+    },
+    {
       "center": "المجلس الأطلسي",
       "center_short": "Atlantic Council",
       "title": "Washington is reshaping security in North Africa. Congress needs to ask how. - Atlantic Council",
@@ -693,20 +707,6 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "مصر تزن الدبلوماسية والتدخل العسكري في البحر الأحمر - المركز العربي واشنطن العاصمة"
-    },
-    {
-      "center": "مؤسسة كونراد أديناور",
-      "center_short": "Konrad Adenauer Stiftung",
-      "title": "Partner - Regional Programme Security Policy for West Africa - Sahel - Konrad-Adenauer-Stiftung",
-      "url": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxOSVVxUnZ5QnE2cmdWeTdOeUMzUHpjLTh1RkpGUVd2QUM2TTl5dkVKM1dDN2hCWHVocU5FX3RUM1J5d3VKVDc3a1IyUVFTV1FWUFBPakNMS0pVN255RU5yX2tSZWl1VmJqYUVBWFpnRkxhaWNIeEppek0xQjRzR3JnclhMN3R1OHVEM2lKUENKZjVLdEVtWVZRWkFtdzVtbjJhMGVuTzlnbE1aMms2UmNWZXQzVi1TSXJOT2Nya1p0WWJNNXZiWXQtRlJvTXR0bGlFdTBETW4yUFg0QVYwY2ZwanpXUllwSzBrSmUwTWdnQTFZRExuQnB4QlBDV19jOVlyQW5kQXpZa1lDd3N1R2FZSENUdVYwdlRLek1kVlhIQ2dCWGhOSFRIUVpBWGFJamtIT0tKeVg2Zlh1dWx2YVhENVljTVNpTldWODRSTmxWTkxMN0NNc2UtZzQwbnRfai1Gc3RZNA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-25T14:24+01:00",
-      "date": "2026-10-25",
-      "source": "Konrad-Adenauer-Stiftung",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi5AJBVV95cUxOSVVxUnZ5QnE2cmdWeTdOeUMzUHpjLTh1RkpGUVd2QUM2TTl5dkVKM1dDN2hCWHVocU5FX3RUM1J5d3VKVDc3a1IyUVFTV1FWUFBPakNMS0pVN255RU5yX2tSZWl1VmJqYUVBWFpnRkxhaWNIeEppek0xQjRzR3JnclhMN3R1OHVEM2lKUENKZjVLdEVtWVZRWkFtdzVtbjJhMGVuTzlnbE1aMms2UmNWZXQzVi1TSXJOT2Nya1p0WWJNNXZiWXQtRlJvTXR0bGlFdTBETW4yUFg0QVYwY2ZwanpXUllwSzBrSmUwTWdnQTFZRExuQnB4QlBDV19jOVlyQW5kQXpZa1lDd3N1R2FZSENUdVYwdlRLek1kVlhIQ2dCWGhOSFRIUVpBWGFJamtIT0tKeVg2Zlh1dWx2YVhENVljTVNpTldWODRSTmxWTk",
-      "center_site": "https://kas.de/",
-      "relevance_tier": 3,
-      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "شريك - سياسة أمن البرنامج الإقليمي لغرب أفريقيا - الساحل - مؤسسة كونراد أديناور"
     },
     {
       "center": "مؤسسة أبحاث المراقب (ORF)",
