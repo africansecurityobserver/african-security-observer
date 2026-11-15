@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T03:43+01:00",
+  "updated": "2026-11-15T13:46+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,21 +605,21 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 48,
+  "count": 46,
   "publications": [
     {
       "center": "مؤسسة كونراد أديناور",
       "center_short": "Konrad Adenauer Stiftung",
       "title": "Events - Regional Programme Security Policy for West Africa - Sahel - Konrad-Adenauer-Stiftung",
-      "url": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxPcEFSVzBtZldyWDhGaWQ5VVNkcE5pSi1WbGJEUGJ5ME5rOE1UenFDUkR0N25WZldpZnA5MVBaeDdscFR1OFpqWXlDMVJkdGZ6MnpsMHlIMUNMcXJQZjFFa1F6SEloNGI2czBienVlUnhrV2tmNGwwUWd0T21RbXNzMXVLZzg2MFp3eExqejEtc3QtM1FDblBxMlBIRXo3ZW9aYWljN3BCeFRKa3VjWFB1ZTBfT2x4RkxOX2ktY3ZkdGVuYXpJdjVXWndMZmNYdXkzMmZGMGl3cE03T0lIZkxwTHNqd1AwR2RCSG5pNjgwakZDSE1DdTVVdXVqdGI3Tm9xTHAwa1UwTlRvbzZ2OVQxS0VyMTlKcG9yRU50V01yeS1RYkRIdlh0ck5reUNxNjl2ZWZVbFRJYVVpaWZuVG1xYk1ubVlMejA3dlp1V2RuT3dzSHNrWkJzSnZ6TTRjQzQwUUpsc0dsN3hCZ1RLV2FN?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-14T12:38+01:00",
+      "url": "https://news.google.com/rss/articles/CBMivwRBVV95cUxNRWhmQzJaYkZPNktMMHRqMm1VS2gwRVNOSmViQUZ3TlA2d1l1dnJici1yenJodUhyR25RdUU4b0pUUWJBWVFDd2NCQjhHcE9DVWkxNjFma2JrZjFxdGdPcUhhbmtjSVFkdzZUTGZfWnI0WVZiLTFVeVhlSmlUVEV3YnFjZzBBOWpjREx0blgyR0tPWkxWS1RZNTRETW5lbDZTT3IzMUlBbVlmMHBfZlVMcVhUSDk3Y3dldzBDMTVhWGF0SzZvTW1fd3Y3Z1ZFYUVnaTlPUUVBeHZSSnhNSmJTQ18yR2RDTmVQaG1jb1BWbHU1MXRXU0VYb05JSW1ya1lxMVQ0WXpERmdpaURFTmEyY2NDcGNBdE1yLURYc1R2WGRvbzRQcURIa2FvWERJd005NVBxb3ZUR21zWkRKekNRSS1ybFVwLURDQ1BLS2xjSHYxZlRUckdKZXBpX3F2U1lzcHlUQ0NtbzcyeTFMWDdBZDBnRTVnd296WUxkd3FkY01TRmNoWUZFMTl0SmtRcWlKQ3NrcmhTSHpET1Bya2w4NjVpdjBBR0Y3ZEVJWGJfLUhUNEFlM0kzLW9ZRmVoOEFCR3hTWEw5NkZyMUREZkdaOHlUZjhnWUdVS3NFaGRGRGFUd3NaWkUzVmpGV21BVHBXT1U2S2MzcFQtcFFMTE5oMzVlbnJUeTBXdm9ocXBQNFVFd1ZfR3JRcHcyelI3SklpdDBoVFM5U01qbTlUZHRoMEVveUpzUkJodV9Tbk4tVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-14T12:55+01:00",
       "date": "2026-11-14",
       "source": "Konrad-Adenauer-Stiftung",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi7wJBVV95cUxPcEFSVzBtZldyWDhGaWQ5VVNkcE5pSi1WbGJEUGJ5ME5rOE1UenFDUkR0N25WZldpZnA5MVBaeDdscFR1OFpqWXlDMVJkdGZ6MnpsMHlIMUNMcXJQZjFFa1F6SEloNGI2czBienVlUnhrV2tmNGwwUWd0T21RbXNzMXVLZzg2MFp3eExqejEtc3QtM1FDblBxMlBIRXo3ZW9aYWljN3BCeFRKa3VjWFB1ZTBfT2x4RkxOX2ktY3ZkdGVuYXpJdjVXWndMZmNYdXkzMmZGMGl3cE03T0lIZkxwTHNqd1AwR2RCSG5pNjgwakZDSE1DdTVVdXVqdGI3Tm9xTHAwa1UwTlRvbzZ2OVQxS0VyMTlKcG9yRU50V01yeS1RYkRIdlh0ck5reUNxNjl2ZWZVbFRJYVVpaWZuVG1xYk1ubVlMejA3dlp1V2RuT3",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMivwRBVV95cUxNRWhmQzJaYkZPNktMMHRqMm1VS2gwRVNOSmViQUZ3TlA2d1l1dnJici1yenJodUhyR25RdUU4b0pUUWJBWVFDd2NCQjhHcE9DVWkxNjFma2JrZjFxdGdPcUhhbmtjSVFkdzZUTGZfWnI0WVZiLTFVeVhlSmlUVEV3YnFjZzBBOWpjREx0blgyR0tPWkxWS1RZNTRETW5lbDZTT3IzMUlBbVlmMHBfZlVMcVhUSDk3Y3dldzBDMTVhWGF0SzZvTW1fd3Y3Z1ZFYUVnaTlPUUVBeHZSSnhNSmJTQ18yR2RDTmVQaG1jb1BWbHU1MXRXU0VYb05JSW1ya1lxMVQ0WXpERmdpaURFTmEyY2NDcGNBdE1yLURYc1R2WGRvbzRQcURIa2FvWERJd005NVBxb3ZUR21zWkRKekNRSS1ybFVwLURDQ1BLS2xjSH",
       "center_site": "https://kas.de/",
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "الفعاليات - البرنامج الإقليمي للسياسة الأمنية لغرب أفريقيا - منطقة الساحل - مؤسسة كونراد أденаور"
+      "title_ar": "الفعاليات - البرنامج الإقليمي لسياسة الأمن لغرب أفريقيا - منطقة الساحل - مؤسسة كونراد أденаور"
     },
     {
       "center": "المجلس الأطلسي",
@@ -735,34 +735,6 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "المؤتمر التاسع والأربعون لقانون وسياسات المحيطات (COLP49)، أثينا، اليونان: \"الأمن البحري في البحر الأبيض المتوسط وما وراءه\" | الأحداث | المعهد الياباني للشؤون الدولية - 公益財団法人日本国際問題研究所"
-    },
-    {
-      "center": "المعهد الملكي إلكانو",
-      "center_short": "Elcano",
-      "title": "Bilateral relations between Morocco and the US and their implications for Spain - Real Instituto Elcano",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPclp4bHgyUTd4RGlVTXpSTzNZYlNZX3FRS3kzNWpOWGhqNVhhX04ybU1rYnNiaEhjcS1XbUN3TzhWaVBCcHFtTzJ3REFZNHprMmZwTEdPSEJ1UzNURDhlN2dROEk5VlQ2ZktsNzZWZzRaRVROTFpEWXVudU1CVDJ5LXVuV1k1bEpNXzI1LVQtb1dQRV9Yb2k4VVh0ZFMxd1NaSnFuWEFHa1QzZW1lMUlvUW5ndUZlemRGTlFrRFpaSmJzVkFmSmZN?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-16T12:56+01:00",
-      "date": "2026-10-16",
-      "source": "Real Instituto Elcano",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPclp4bHgyUTd4RGlVTXpSTzNZYlNZX3FRS3kzNWpOWGhqNVhhX04ybU1rYnNiaEhjcS1XbUN3TzhWaVBCcHFtTzJ3REFZNHprMmZwTEdPSEJ1UzNURDhlN2dROEk5VlQ2ZktsNzZWZzRaRVROTFpEWXVudU1CVDJ5LXVuV1k1bEpNXzI1LVQtb1dQRV9Yb2k4VVh0ZFMxd1NaSnFuWEFHa1QzZW1lMUlvUW5ndUZlemRGTlFrRFpaSmJzVkFmSmZN?oc=5\" target=\"_blank\">Bilateral relations between Morocco and the US and their implications for Spain</a> <font color=\"#6f6f6f\">Real Instituto Elcano</font>",
-      "center_site": "https://realinstitutoelcano.org/",
-      "relevance_tier": 3,
-      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "العلاقات الثنائية بين المغرب والولايات المتحدة وآثارها على إسبانيا - Real Instituto Elcano"
-    },
-    {
-      "center": "مؤسسة سيتا التركية",
-      "center_short": "SETA",
-      "title": "SETA Workshop Examines Baltic-Black Sea-Mediterranean Security Links - SETA - Siyaset, Ekonomi ve Toplum Araştırmaları Vakfı",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOLUMtSlE1M1RDSkYzZzZhZmdyTV9YdnM1MVpiYmtiR3U1YzRjRkk2a1cxUDNVektEQ0NiT0NIOW02UkFaOXdqcDlRdzBZZHNCM2JvdHd6UTB3ODJFVXFQSU1WNDljNlBxY25GUDZReFVvRGVBdnZBR01lQjNWLVNjTWF0WWw1SFZ4TFlEYVhvd2VwVXg3Vm95UQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-16T08:00+01:00",
-      "date": "2026-10-16",
-      "source": "SETA - Siyaset, Ekonomi ve Toplum Araştırmaları Vakfı",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOLUMtSlE1M1RDSkYzZzZhZmdyTV9YdnM1MVpiYmtiR3U1YzRjRkk2a1cxUDNVektEQ0NiT0NIOW02UkFaOXdqcDlRdzBZZHNCM2JvdHd6UTB3ODJFVXFQSU1WNDljNlBxY25GUDZReFVvRGVBdnZBR01lQjNWLVNjTWF0WWw1SFZ4TFlEYVhvd2VwVXg3Vm95UQ?oc=5\" target=\"_blank\">SETA Workshop Examines Baltic-Black Sea-Mediterranean Security Links</a> <font color=\"#6f6f6f\">SETA - Siyaset, Ekonomi ve Toplum Araştırmaları Vakfı</font>",
-      "center_site": "https://setav.org/",
-      "relevance_tier": 3,
-      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "ورشة عمل SETA تفحص الروابط الأمنية بين بحر البلطيق والبحر الأسود والبحر الأبيض المتوسط - SETA - Siyaset, Ekonomi ve Toplum Araştırmaları Vakfı"
     },
     {
       "center": "المجلس الأوروبي للعلاقات الخارجية (ECFR)",
