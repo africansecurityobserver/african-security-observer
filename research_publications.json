@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T10:48+01:00",
+  "updated": "2026-11-16T22:03+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 47,
+  "count": 49,
   "publications": [
     {
       "center": "مؤسسة كونراد أديناور",
@@ -695,6 +695,19 @@
       "title_ar": "كيف يعيد الجيش هيكلة قطاع الذهب في مصر من خلال القوة - Stiftung Wissenschaft und Politik (SWP)"
     },
     {
+      "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
+      "center_short": "SWP",
+      "title": "How the Military Is Restructuring Egypt’s Gold Sector Through Force - Stiftung Wissenschaft und Politik",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQMWI2d1F5emZ3ZUk1WEhPcnkxSUVZLTBvdEpIQ1BIWVJESF91M2d0Wmk0LWFHM2NqRWxuWThwbXFRZHl1eS1tVHhaSldRb3MyNkFidWV0X05aZXV4aktSSnl4TjZMeWRROGJOeC1IdkZQcjZhbXpNeGl1TW42SEt1WkFnS19tN0lpbWl5QnNxdUR0aXdVX09LSEVZTkdPQUdsUS1ZOHJ2NHBHSF9IUnc?oc=5",
+      "published": "2026-11-09T20:59+01:00",
+      "date": "2026-11-09",
+      "source": "Stiftung Wissenschaft und Politik",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQMWI2d1F5emZ3ZUk1WEhPcnkxSUVZLTBvdEpIQ1BIWVJESF91M2d0Wmk0LWFHM2NqRWxuWThwbXFRZHl1eS1tVHhaSldRb3MyNkFidWV0X05aZXV4aktSSnl4TjZMeWRROGJOeC1IdkZQcjZhbXpNeGl1TW42SEt1WkFnS19tN0lpbWl5QnNxdUR0aXdVX09LSEVZTkdPQUdsUS1ZOHJ2NHBHSF9IUnc?oc=5\" target=\"_blank\">How the Military Is Restructuring Egypt’s Gold Sector Through Force</a> <font color=\"#6f6f6f\">Stiftung Wissenschaft und Politik</font>",
+      "center_site": "https://swp-berlin.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة"
+    },
+    {
       "center": "المركز العربي في واشنطن",
       "center_short": "Arab Center Washington DC",
       "title": "Egypt Weighs Diplomacy and Military Intervention in the Red Sea - Arab Center Washington DC",
@@ -737,6 +750,19 @@
       "title_ar": "المؤتمر التاسع والأربعون لقانون وسياسات المحيطات (COLP49)، أثينا، اليونان: \"الأمن البحري في البحر الأبيض المتوسط وما وراءه\" | الأحداث | المعهد الياباني للشؤون الدولية - 公益財団法人日本国際問題研究所"
     },
     {
+      "center": "المجلس الأوروبي للعلاقات الخارجية (ECFR)",
+      "center_short": "ECFR",
+      "title": "Rearming without china: Time to secure Europe’s military supply chains - European Council on Foreign Relations",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOUkhGUFl6TUFTQzFLTUVfNG1EaFhqVko5MFNSekJadjNKNEU5WC1DNDlmaGVEV2lGbEMtOXpZMENSVEkxR2Y0M3NLdFdtbnNkUElrc2hjVWVkOFQxMFBrX01PQUNuRGZXVjROSXZUWEVvX0xEQzBnb3VfWnpjaXFreExQOGtaR085ZnBtaDRZNkkwMFNXZ0p4NtIBngFBVV95cUxOWmE4ZmtzQThOQXZ2ZXBsRzNqUnotcXVjWDhkT09relhJbWZpRmZNOHgtRzZBQWVKSjhXMWh1YmEzQnIzNldkbTBNcF9hb093bXRRTnRVMlUwaS02M1pLR2wwdlJ3cWVlRFVKUDd3NmRrNGQyUkhpYXdqLXpPWWN3XzREb3BNbVN4YWIzNGJvcld5cnVHMzFkcW5KNFp3QQ?oc=5",
+      "published": "2026-11-16T12:55+01:00",
+      "date": "2026-11-16",
+      "source": "European Council on Foreign Relations",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOUkhGUFl6TUFTQzFLTUVfNG1EaFhqVko5MFNSekJadjNKNEU5WC1DNDlmaGVEV2lGbEMtOXpZMENSVEkxR2Y0M3NLdFdtbnNkUElrc2hjVWVkOFQxMFBrX01PQUNuRGZXVjROSXZUWEVvX0xEQzBnb3VfWnpjaXFreExQOGtaR085ZnBtaDRZNkkwMFNXZ0p4NtIBngFBVV95cUxOWmE4ZmtzQThOQXZ2ZXBsRzNqUnotcXVjWDhkT09relhJbWZpRmZNOHgtRzZBQWVKSjhXMWh1YmEzQnIzNldkbTBNcF9hb093bXRRTnRVMlUwaS02M1pLR2wwdlJ3cWVlRFVKUDd3NmRrNGQyUkhpYXdqLXpPWWN3XzREb3BNbVN4YWIzNGJvcld5cnVHMzFkcW5KNFp3QQ?oc=5\" target=\"_blank\">Rearm",
+      "center_site": "https://ecfr.eu/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس"
+    },
+    {
       "center": "مركز الأمن الأمريكي الجديد (CNAS)",
       "center_short": "CNAS",
       "title": "Ukraine Peace Push Turns to NATO and Donbas - Center for a New American Security | CNAS",
@@ -749,20 +775,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "تحول مساعي السلام في أوكرانيا إلى حلف شمال الأطلسي ودونباس - مركز الأمن الأمريكي الجديد | CNAS"
-    },
-    {
-      "center": "المجلس الأوروبي للعلاقات الخارجية (ECFR)",
-      "center_short": "ECFR",
-      "title": "After Abu Dhabi: How Europeans must reframe the European security debate - European Council on Foreign Relations",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQb3JkanJXUzRtZFFscHJVaERUUjdFWVNhT0VMM3daMlg3NTBKY1JLcWk2XzF3SHZKRGFQbnhUX2NmcjZyaUE4UndMT3prMEoxYkI3MFUzc2I4dkRVWGVfcjVPTFl2QXBoYUs1QlZJWHo0MzY3ZVJZU1JuWldfYk1mOFhmZ25EaXV2TUdVWmQ1ZkstdU1nNmkyV0hHVzLSAaIBQVVfeXFMTzdOQ0FWU2hUVk9FV3Z3LVVaaXE3ZkRnb29oV1poWGNJYVZIbTkxYmZNaWZjRzVLQU5GaTR2N1RLVmtpRWJJdzhkTGRMaGQ2V0tEc2ZHV2laQlBnNTVlNmd0UElmcTIxQXMwZENJZVNCZmhmOC16M2tBcVFIc3VGckM4YVBaVlBuRGRZRVZCYmxudHNNUEg1NlhEeXg0UUtJcWhn?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-13T17:01+01:00",
-      "date": "2026-11-13",
-      "source": "European Council on Foreign Relations",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxQb3JkanJXUzRtZFFscHJVaERUUjdFWVNhT0VMM3daMlg3NTBKY1JLcWk2XzF3SHZKRGFQbnhUX2NmcjZyaUE4UndMT3prMEoxYkI3MFUzc2I4dkRVWGVfcjVPTFl2QXBoYUs1QlZJWHo0MzY3ZVJZU1JuWldfYk1mOFhmZ25EaXV2TUdVWmQ1ZkstdU1nNmkyV0hHVzLSAaIBQVVfeXFMTzdOQ0FWU2hUVk9FV3Z3LVVaaXE3ZkRnb29oV1poWGNJYVZIbTkxYmZNaWZjRzVLQU5GaTR2N1RLVmtpRWJJdzhkTGRMaGQ2V0tEc2ZHV2laQlBnNTVlNmd0UElmcTIxQXMwZENJZVNCZmhmOC16M2tBcVFIc3VGckM4YVBaVlBuRGRZRVZCYmxudHNNUEg1NlhEeXg0UUtJcWhn?oc=5\" target=\"_bl",
-      "center_site": "https://ecfr.eu/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "بعد أبوظبي: كيف يجب على الأوروبيين إعادة صياغة النقاش حول الأمن الأوروبي - المجلس الأوروبي للعلاقات الخارجية"
     },
     {
       "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
@@ -833,6 +845,19 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "اجتمع السيناتور ريك سكوت (جمهوري من فلوريدا) مع ريبيكا هاينريش لمناقشة الاستراتيجية الأمريكية، والحاجة إلى تحديث القاعدة الصناعية الدفاعية، والدور الحيوي للحلفاء والشركاء في بيئة دولية غير مستقرة."
+    },
+    {
+      "center": "المعهد الجنوب إفريقي للشؤون الدولية (SAIIA)",
+      "center_short": "SAIIA",
+      "title": "Tensions Between Argentina and the UK Over the Disputed Falkland Islands are Escalating",
+      "url": "https://saiia.org.za/in-the-news/tensions-between-argentina-uk-over-disputed-falkland-islands-are-escalating/",
+      "published": "2026-11-12T15:51+01:00",
+      "date": "2026-11-12",
+      "source": "SAIIA",
+      "description": "Acting Head of the African Governance and Diplomacy Programme at SAIIA, Gustavo de Carvalho, discusses UN Secretary-General António Guterres’ warning at COP31 that the climate crisis is outpacing the international response and the urgent need for stronger global climate action in this interview with SAfm.",
+      "center_site": "https://saiia.org.za/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس"
     },
     {
       "center": "معهد جنيف للسياسات الأمنية (GCSP)",
@@ -961,20 +986,6 @@
       "title_ar": "فقط لنكون واضحين، نحن لا نشتري الصهاريج على أمل استخدامها"
     },
     {
-      "center": "المعهد الجنوب إفريقي للشؤون الدولية (SAIIA)",
-      "center_short": "SAIIA",
-      "title": "The 1.5% Defence Problem: Matching South Africa’s Military Ambitions With its Means",
-      "url": "https://saiia.org.za/research/1-5-defence-problem-matching-south-africas-military-ambitions-its/",
-      "published": "2026-11-08T15:36+01:00",
-      "date": "2026-11-08",
-      "source": "SAIIA",
-      "description": "<a href=\"https://saiia.org.za/research/1-5-defence-problem-matching-south-africas-military-ambitions-its/\" title=\"The 1.5% Defence Problem: Matching South Africa’s Military Ambitions With its Means\" rel=\"nofollow\"><img width=\"1920\" height=\"1279\" src=\"https://saiia.org.za/wp-content/uploads/2026/11/AGDP_OP-512313266_edited-1.jpg\" class=\"webfeedsFeaturedVisual wp-post-image\" alt=\"\" link_thumbnail=\"1\" decoding=\"async\" srcset=\"https://saiia.org.za/wp-content/uploads/2026/11/AGDP_OP-512313266_edited-",
-      "center_site": "https://saiia.org.za/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "مشكلة الدفاع بنسبة 1.5 ٪: مطابقة الطموحات العسكرية لجنوب إفريقيا مع وسائلها"
-    },
-    {
       "center": "مجلس العلاقات الخارجية",
       "center_short": "CFR",
       "title": "COP31 and Climate Action’s New Centers of Gravity",
@@ -1085,6 +1096,19 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "اللاجئون الكونغوليون عالقون بين الحرب وإغلاق الأبواب - معهد الدراسات الأمنية في أفريقيا"
+    },
+    {
+      "center": "المعهد الجنوب إفريقي للشؤون الدولية (SAIIA)",
+      "center_short": "SAIIA",
+      "title": "Russia-Africa Summit: What Does Moscow Want, and What Does Africa Stand to Gain?",
+      "url": "https://saiia.org.za/in-the-news/russia-africa-summit-what-does-moscow-want-what-does-africa/",
+      "published": "2026-11-01T16:05+01:00",
+      "date": "2026-11-01",
+      "source": "SAIIA",
+      "description": "Acting Head of SAIIA’s African Governance and Diplomacy Programme, Gustavo de Carvalho, examines Russia’s growing interest in Africa and what the continent stands to gain from closer political, economic and security ties with Moscow in this interview with Power FM.",
+      "center_site": "https://saiia.org.za/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس"
     },
     {
       "center": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
