@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T08:13:43+01:00",
+  "updated": "2026-11-16T10:00:00+01:00",
   "years": [
     {
       "year": "2026",
@@ -14,6 +14,16 @@
               "path": "2026-11/20261113_4af59801554c.json",
               "center": "المبادرة العالمية لمكافحة الجريمة المنظمة العابرة للحدود",
               "source_title": "Illicit markets and their intersection with conflict in the central Sahel - Global Initiative against Transnational Organized Crime (GI-TOC)",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
+            {
+              "date": "2026-11-13",
+              "title": "تعمل واشنطن على إعادة تشكيل الأمن في شمال أفريقيا: على الكونغرس أن يسأل كيف – المجلس الأطلسي",
+              "subject": "تحولات السياسة الأمنية الأمريكية في الصحراء الغربية وليبيا، وأدوات الرقابة البرلمانية على التدخلات والمساعدات الأمنية",
+              "path": "2026-11/20261113_b67fd796ef22.json",
+              "center": "المجلس الأطلسي",
+              "source_title": "Washington is reshaping security in North Africa. Congress needs to ask how. – Atlantic Council",
               "slot": "research",
               "kind_label": "بطاقة استراتيجية من مراكز البحث"
             },
