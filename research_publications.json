@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T00:58+01:00",
+  "updated": "2026-11-16T10:48+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 46,
+  "count": 47,
   "publications": [
     {
       "center": "مؤسسة كونراد أديناور",
@@ -735,6 +735,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "المؤتمر التاسع والأربعون لقانون وسياسات المحيطات (COLP49)، أثينا، اليونان: \"الأمن البحري في البحر الأبيض المتوسط وما وراءه\" | الأحداث | المعهد الياباني للشؤون الدولية - 公益財団法人日本国際問題研究所"
+    },
+    {
+      "center": "مركز الأمن الأمريكي الجديد (CNAS)",
+      "center_short": "CNAS",
+      "title": "Ukraine Peace Push Turns to NATO and Donbas - Center for a New American Security | CNAS",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOUndkR0hCN1YzM1NXTkhnS19CSnVBRmp5dllKbXVxTzNjRENPNGc0ZUl4cURRWWtrNVJCLUtVY09QYmdma0I1RUhhM3o4YzdYRW9mMjc0OV9Lc3NIWmtrdkx3bnlEaEpMTENXc2VQV0FnVXQyRWFHVVRIOFJqczZHYXlqcElkNV9QV3kw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-14T09:00+01:00",
+      "date": "2026-11-14",
+      "source": "Center for a New American Security | CNAS",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxOUndkR0hCN1YzM1NXTkhnS19CSnVBRmp5dllKbXVxTzNjRENPNGc0ZUl4cURRWWtrNVJCLUtVY09QYmdma0I1RUhhM3o4YzdYRW9mMjc0OV9Lc3NIWmtrdkx3bnlEaEpMTENXc2VQV0FnVXQyRWFHVVRIOFJqczZHYXlqcElkNV9QV3kw?oc=5\" target=\"_blank\">Ukraine Peace Push Turns to NATO and Donbas</a> <font color=\"#6f6f6f\">Center for a New American Security | CNAS</font>",
+      "center_site": "https://cnas.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "تحول مساعي السلام في أوكرانيا إلى حلف شمال الأطلسي ودونباس - مركز الأمن الأمريكي الجديد | CNAS"
     },
     {
       "center": "المجلس الأوروبي للعلاقات الخارجية (ECFR)",
