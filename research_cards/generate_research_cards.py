@@ -660,11 +660,12 @@ def main():
     client=genai.Client(api_key=key,http_options=types.HttpOptions(timeout=180000))
     schema={"type":"object","properties":{
       "publish":{"type":"boolean"},"introduction":{"type":"string"},
-      "analysis_one":{"type":"array","items":{"type":"string"}},
-      "analysis_two":{"type":"array","items":{"type":"string"}},
-      "analysis_three":{"type":"array","items":{"type":"string"}},
-      "strategic_conclusion":{"type":"string"},"summary":{"type":"string"}},
-      "required":["publish","introduction","analysis_one","analysis_two","analysis_three","strategic_conclusion","summary"]}
+      "analysis_one":{"type":"object","properties":{"heading":{"type":"string"},"points":{"type":"array","items":{"type":"string"}}},"required":["heading","points"]},
+      "analysis_two":{"type":"object","properties":{"heading":{"type":"string"},"points":{"type":"array","items":{"type":"string"}}},"required":["heading","points"]},
+      "analysis_three":{"type":"object","properties":{"heading":{"type":"string"},"points":{"type":"array","items":{"type":"string"}}},"required":["heading","points"]},
+      "analysis_four":{"type":"object","properties":{"heading":{"type":"string"},"points":{"type":"array","items":{"type":"string"}}},"required":["heading","points"]},
+      "strategic_conclusion":{"type":"string"}},
+      "required":["publish","introduction","analysis_one","analysis_two","analysis_three","analysis_four","strategic_conclusion"]}
     count=0
     failed_count=0
     for p in candidates:
@@ -705,18 +706,32 @@ def main():
             failed_count += 1
             continue
         prompt=f"""
-أنت محرر بطاقة استراتيجية عربية في المرصد الإفريقي للأمن والدفاع. أنشئ بطاقة واحدة تلخص هذه النشرية وحدها.
-العنوان الأصلي الذي نشره المركز يجب أن يبقى محفوظاً كما هو: {title}
+أنت محرر ومحلل استراتيجي في «المرصد الإفريقي للأمن والدفاع». أعد بطاقة عربية دقيقة اعتماداً على النص الكامل لهذه النشرية وحدها.
+المركز/الجهة الناشرة: {center}
+تاريخ النشر: {published}
+العنوان الأصلي: {title}
 العنوان العربي المتاح: {title_ar}
-المركز: {center}; تاريخ النشر: {published}; الرابط: {resolved}
-أعد JSON:
-publish boolean; introduction string; analysis_one, analysis_two, analysis_three مصفوفات نصوص؛ strategic_conclusion string؛ summary string.
-الشكل خمسة عناصر فقط: (1) مقدمة عربية تذكر الموضوع والمركز وتنتهي حرفياً «وفيما يلي أهم ما ورد فيها.»؛
-(2)(3)(4) ثلاثة عناصر تحليلية، كل عنصر مصفوفة من أربع نقاط بالضبط، كل نقطة نحو 45-65 كلمة عربية، تشرح جوانب مختلفة من النشرية؛
-(5) حوصلة استراتيجية 120-170 كلمة، تستند إلى المادة، وتنتهي بجملة تربط الموضوع بتونس وتحتوي كلمة «تونس».
-لا تخترع حقائق أو أرقاماً أو دوافع. ميّز بين وقائع الكاتب وتحليله. اشرح الاختصارات عند أول ذكر. لا تكرر المعنى. أعد publish=false إذا كانت المادة سطحية أو لا تسمح ببطاقة موثوقة.
+الرابط الأصلي: {resolved}
+
+القالب إلزامي ويتكون من خمسة عناصر مرقمة:
+1. عنوان تحليلي دقيق تختاره أنت لهذا المحور، وتحته أربع نقاط بالضبط.
+2. عنوان تحليلي دقيق تختاره أنت لمحور ثانٍ مختلف، وتحته أربع نقاط بالضبط.
+3. عنوان تحليلي دقيق تختاره أنت لمحور ثالث مختلف، وتحته أربع نقاط بالضبط.
+4. عنوان تحليلي دقيق تختاره أنت لمحور رابع مختلف، وتحته أربع نقاط بالضبط.
+5. خلاصة استراتيجية لها علاقة بتونس: فقرة مترابطة تستخلص أهم النتائج وتوضح الصلة الفعلية بأمن تونس أو مصالحها أو جوارها أو خياراتها الاستراتيجية. لا تفتعل صلة أو تهديداً إذا كانت العلاقة محدودة.
+
+حقل introduction هو الفقرة الافتتاحية قبل العناصر الخمسة، ويجب أن تتبع هذه الصيغة:
+«نشرت [اسم المؤسسة] يوم [التاريخ] مقالاً بعنوان "[العنوان الأصلي أو ترجمته الدقيقة]" تناولت فيه [أبرز المحاور بإيجاز]، وفيما يلي أبرز ما جاء في المقال أو التقرير أو البحث:»
+اذكر اسم المركز كما هو، وتاريخ النشر المتاح، والعنوان الأصلي أو ترجمة أمينة له. لا تخترع تاريخاً أو عنواناً أو جهة ناشرة؛ إذا غاب التاريخ بوضوح فاكتب «في تاريخ غير محدد في المصدر».
+
+كل نقطة من النقاط الأربع تحت كل محور يجب أن تكون محددة وغنية بالمعلومات، وتغطي معلومة أو حجة مختلفة. لا تكرر الفكرة ولا تحوّل النقطة الواحدة إلى كلام إنشائي. يجب أن يحتوي كل محور من المحاور الأربعة على أربع نقاط بالضبط.
+استخدم أسماء المحاور التي تعكس فعلاً مضمون النشرية، لا عناوين عامة ثابتة. اكتب النقاط في المصفوفة points، وعنوان المحور في heading.
+اجعل الخلاصة التونسية دقيقة ومتصلة بموضوع النشرية، وميّز بين الوقائع واستنتاجات الكاتب واستنتاجك. لا تفرض توصية عامة لا يسندها المحتوى.
+لا تخترع حقائق أو أرقاماً أو دوافع أو اقتباسات. اشرح الاختصارات عند أول ذكر. إذا كانت النشرية سطحية أو لا تسمح بأربع نقاط مستقلة في كل محور، أعد publish=false.
+أعد JSON فقط وفق المخطط المحدد.
+
 وصف المصدر: {desc[:2200]}
-النص المستخرج من صفحة المصدر:
+النص المستخرج من المصدر:
 {body[:22000]}
 """
         try:
@@ -736,27 +751,32 @@ publish boolean; introduction string; analysis_one, analysis_two, analysis_three
             print("Model could not yet produce a reliable card; leaving publication pending:",title[:100])
             failed_count+=1
             continue
-        intro=clean(out.get("introduction")); groups=[out.get("analysis_one",[]),out.get("analysis_two",[]),out.get("analysis_three",[])]
-        if not intro.endswith("وفيما يلي أهم ما ورد فيها."): intro=re.sub(r"[.!؟؛،\s]+$","",intro)+". وفيما يلي أهم ما ورد فيها."
-        if any(not isinstance(g,list) or len(g)!=4 for g in groups):
-            print("Invalid bullet structure; will retry later:",title[:100])
+        intro=clean(out.get("introduction"))
+        groups=[out.get("analysis_one"),out.get("analysis_two"),out.get("analysis_three"),out.get("analysis_four")]
+        if not intro.endswith("وفيما يلي أبرز ما جاء في المقال أو التقرير أو البحث:"):
+            intro=re.sub(r"[.!؟؛،\s:]+$","",intro)+"، وفيما يلي أبرز ما جاء في المقال أو التقرير أو البحث:"
+        if any(not isinstance(g,dict) or not clean(g.get("heading")) or not isinstance(g.get("points"),list) or len(g.get("points"))!=4 for g in groups):
+            print("Invalid four-section/four-point structure; will retry later:",title[:100])
             failed_count+=1
             continue
-        sections=[{"heading":"المقدمة","text":intro}]
-        for h,g in zip(["أولاً: محاور النشرية ومرتكزاتها","ثانياً: النتائج والتفاصيل الرئيسية","ثالثاً: التداعيات والقيود"],groups):
-            sections.append({"heading":h,"text":"\n".join("• "+clean(x) for x in g)})
+        sections=[]
+        for index,g in enumerate(groups,1):
+            points=[clean(x) for x in g["points"]]
+            if any(len(x)<100 for x in points):
+                break
+            sections.append({"heading":f"{index}. "+clean(g["heading"]), "text":"\n".join("- "+x for x in points)})
         conclusion=clean(out.get("strategic_conclusion"))
-        conclusion=conclusion.rstrip(" .،؛")+". وتبرز أهمية هذه المسائل بالنسبة إلى تونس في متابعة انعكاساتها على أمنها ومصالحها الاستراتيجية."
-        if len(intro)<80 or len(conclusion)<180 or any(len(clean(x))<180 for g in groups for x in g):
-            print("Card failed length validation; will retry later:",title[:100])
+        if len(sections)!=4 or len(intro)<100 or len(conclusion)<180 or "تونس" not in conclusion:
+            print("Card failed structure or conclusion validation; will retry later:",title[:100])
             failed_count+=1
             continue
+        sections.append({"heading":"5. خلاصة استراتيجية لها علاقة بتونس","text":conclusion})
         slug=hashlib.sha1(url.encode()).hexdigest()[:12]
         now=datetime.now(TZ); date=published[:10] if re.match(r"\d{4}-\d{2}-\d{2}",published) else now.strftime("%Y-%m-%d")
         path=f"{date[:7]}/{date.replace('-','')}_{slug}.json"
         card={"id":slug,"kind":"research_center","kind_label":"بطاقة استراتيجية من مراكز البحث",
           "title":title_ar or title,"source_title":title,"subject":title_ar or title,"center":center,
-          "date":date,"published":published,"region":clean(p.get("relevance_label")),"summary":clean(out.get("summary")),
+          "date":date,"published":published,"region":clean(p.get("relevance_label")),"summary":intro,
           "sections":sections,"sources":[{"title":f"{center} — {title}","url":url}] + ([{"title":"إعادة نشر مرخصة للنشرية — Premium Times","url":resolved}] if resolved.startswith("http") and resolved != url else []),
           "source_url":url,"source_original_url":resolved if resolved.startswith("http") else url,"path":path}
         save(ARCHIVE/path,card); data["cards"].append(card); data["processed_urls"].append(canonical_url(url))
