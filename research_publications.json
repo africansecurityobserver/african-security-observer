@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T22:03+01:00",
+  "updated": "2026-11-17T06:05+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 49,
+  "count": 50,
   "publications": [
     {
       "center": "مؤسسة كونراد أديناور",
@@ -705,7 +705,8 @@
       "description": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQMWI2d1F5emZ3ZUk1WEhPcnkxSUVZLTBvdEpIQ1BIWVJESF91M2d0Wmk0LWFHM2NqRWxuWThwbXFRZHl1eS1tVHhaSldRb3MyNkFidWV0X05aZXV4aktSSnl4TjZMeWRROGJOeC1IdkZQcjZhbXpNeGl1TW42SEt1WkFnS19tN0lpbWl5QnNxdUR0aXdVX09LSEVZTkdPQUdsUS1ZOHJ2NHBHSF9IUnc?oc=5\" target=\"_blank\">How the Military Is Restructuring Egypt’s Gold Sector Through Force</a> <font color=\"#6f6f6f\">Stiftung Wissenschaft und Politik</font>",
       "center_site": "https://swp-berlin.org/",
       "relevance_tier": 3,
-      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة"
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "كيف يعيد الجيش هيكلة قطاع الذهب في مصر بالقوة - مؤسسة العلوم والسياسة"
     },
     {
       "center": "المركز العربي في واشنطن",
@@ -750,6 +751,34 @@
       "title_ar": "المؤتمر التاسع والأربعون لقانون وسياسات المحيطات (COLP49)، أثينا، اليونان: \"الأمن البحري في البحر الأبيض المتوسط وما وراءه\" | الأحداث | المعهد الياباني للشؤون الدولية - 公益財団法人日本国際問題研究所"
     },
     {
+      "center": "المعهد الأسترالي للسياسة الاستراتيجية (ASPI)",
+      "center_short": "ASPI",
+      "title": "Treaty a recognition we need Philippines in China strategy",
+      "url": "https://www.aspistrategist.org.au/treaty-a-recognition-we-need-philippines-in-china-strategy/",
+      "published": "2026-11-17T05:30+01:00",
+      "date": "2026-11-17",
+      "source": "ASPI",
+      "description": "Australia’s relationship with the Philippines is critical to Australia’s defence. The Defence Co-operation Arrangement, signed in Manila on Sunday, recognises a crucial fact: defending Australia, and particularly its dependence on maritime trade, requires a network ...",
+      "center_site": "https://aspistrategist.org.au/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "معاهدة تعترف بأننا بحاجة إلى الفلبين في استراتيجية الصين"
+    },
+    {
+      "center": "المركز العربي في واشنطن",
+      "center_short": "Arab Center Washington DC",
+      "title": "Washington Policy Weekly: Senators Push to Remove US-Israel Defense Cooperation Provisions from NDAA - Arab Center Washington DC",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOQUwwcDJoZ01fbkZQT3A1UVJ2LUZFUS1aQzU2SGJoaURUbzBNLWhMLXdDVjFQaGJ3YTNQUkJJZzdWNHdLeVdpU0taMU1oOFlBd3pUbjJHeHFQVFRMSlVENEhfS2MyZndUdlloRnA1T0lGdC1sRDNMX1BkQ0R6UmZGNWRGT0NsQkVCaGdYMVVuOEJDYk1za1h1UHVWTjRUWEc1NWdqaElxa245TlhXQXQyX2l1UE1fS0h2T09ncS02RlZMVk9tc1ZSU1hzTWtoNG8?oc=5",
+      "published": "2026-11-16T23:32+01:00",
+      "date": "2026-11-16",
+      "source": "Arab Center Washington DC",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxOQUwwcDJoZ01fbkZQT3A1UVJ2LUZFUS1aQzU2SGJoaURUbzBNLWhMLXdDVjFQaGJ3YTNQUkJJZzdWNHdLeVdpU0taMU1oOFlBd3pUbjJHeHFQVFRMSlVENEhfS2MyZndUdlloRnA1T0lGdC1sRDNMX1BkQ0R6UmZGNWRGT0NsQkVCaGdYMVVuOEJDYk1za1h1UHVWTjRUWEc1NWdqaElxa245TlhXQXQyX2l1UE1fS0h2T09ncS02RlZMVk9tc1ZSU1hzTWtoNG8?oc=5\" target=\"_blank\">Washington Policy Weekly: Senators Push to Remove US-Israel Defense Cooperation Provisions from NDAA</a> <font color=\"#6f6f6f\">Arab Center Washingto",
+      "center_site": "https://arabcenterdc.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "واشنطن بوليسي ويكلي: أعضاء مجلس الشيوخ يضغطون لإزالة أحكام التعاون الدفاعي بين الولايات المتحدة وإسرائيل من قانون تفويض الدفاع الوطني - المركز العربي في واشنطن العاصمة"
+    },
+    {
       "center": "المجلس الأوروبي للعلاقات الخارجية (ECFR)",
       "center_short": "ECFR",
       "title": "Rearming without china: Time to secure Europe’s military supply chains - European Council on Foreign Relations",
@@ -760,7 +789,8 @@
       "description": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOUkhGUFl6TUFTQzFLTUVfNG1EaFhqVko5MFNSekJadjNKNEU5WC1DNDlmaGVEV2lGbEMtOXpZMENSVEkxR2Y0M3NLdFdtbnNkUElrc2hjVWVkOFQxMFBrX01PQUNuRGZXVjROSXZUWEVvX0xEQzBnb3VfWnpjaXFreExQOGtaR085ZnBtaDRZNkkwMFNXZ0p4NtIBngFBVV95cUxOWmE4ZmtzQThOQXZ2ZXBsRzNqUnotcXVjWDhkT09relhJbWZpRmZNOHgtRzZBQWVKSjhXMWh1YmEzQnIzNldkbTBNcF9hb093bXRRTnRVMlUwaS02M1pLR2wwdlJ3cWVlRFVKUDd3NmRrNGQyUkhpYXdqLXpPWWN3XzREb3BNbVN4YWIzNGJvcld5cnVHMzFkcW5KNFp3QQ?oc=5\" target=\"_blank\">Rearm",
       "center_site": "https://ecfr.eu/",
       "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس"
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "إعادة التسلح دون الصين: حان الوقت لتأمين سلاسل الإمداد العسكرية في أوروبا - المجلس الأوروبي للعلاقات الخارجية"
     },
     {
       "center": "مركز الأمن الأمريكي الجديد (CNAS)",
@@ -857,7 +887,8 @@
       "description": "Acting Head of the African Governance and Diplomacy Programme at SAIIA, Gustavo de Carvalho, discusses UN Secretary-General António Guterres’ warning at COP31 that the climate crisis is outpacing the international response and the urgent need for stronger global climate action in this interview with SAfm.",
       "center_site": "https://saiia.org.za/",
       "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس"
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "التوترات بين الأرجنتين والمملكة المتحدة بشأن جزر فوكلاند المتنازع عليها تتصاعد"
     },
     {
       "center": "معهد جنيف للسياسات الأمنية (GCSP)",
@@ -970,20 +1001,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "شارك نيكلاس سوانستروم في الندوة السابعة حول التعاون البحري العالمي وإدارة المحيطات في سانيا - معهد سياسة الأمن والتنمية"
-    },
-    {
-      "center": "المعهد الأسترالي للسياسة الاستراتيجية (ASPI)",
-      "center_short": "ASPI",
-      "title": "Just to be clear, we do not buy tanks in the hope of using them",
-      "url": "https://www.aspistrategist.org.au/just-to-be-clear-we-do-not-buy-tanks-in-the-hope-of-using-them/",
-      "published": "2026-11-09T01:02+01:00",
-      "date": "2026-11-09",
-      "source": "ASPI",
-      "description": "During the latest Senate committee hearing on government spending, the army’s A$1.2 billion acquisition of 75 M1A2 Abrams main battle tanks came under fire. Senator Fatima Payman asked why Defence was investing so heavily in ...",
-      "center_site": "https://aspistrategist.org.au/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "فقط لنكون واضحين، نحن لا نشتري الصهاريج على أمل استخدامها"
     },
     {
       "center": "مجلس العلاقات الخارجية",
@@ -1108,7 +1125,8 @@
       "description": "Acting Head of SAIIA’s African Governance and Diplomacy Programme, Gustavo de Carvalho, examines Russia’s growing interest in Africa and what the continent stands to gain from closer political, economic and security ties with Moscow in this interview with Power FM.",
       "center_site": "https://saiia.org.za/",
       "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس"
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "قمة روسيا وأفريقيا: ماذا تريد موسكو، وما الذي ستكسبه أفريقيا؟"
     },
     {
       "center": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
