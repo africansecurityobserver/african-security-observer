@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T08:40:45.761912+00:00",
+  "updated": "2026-11-17T08:59:29.152031+00:00",
   "items": [
     {
       "title": "تصل أعمال الدفاع الإلكتروني الخاصة بالذكاء الاصطناعي التابعة لحلف شمال الأطلسي إلى ما يصل إلى 300 مليار رمز OpenAI شهريًا - Help Net Security",
@@ -27,8 +27,8 @@
     },
     {
       "title": "الحرب في الشرق الأوسط: سماع دوي انفجارات في البحرين وإيران تتبنى الهجوم على قاعدة أمريكية - lanouvellerepublique.fr",
-      "description": "الحرب في الشرق الأوسط: سماع دوي انفجارات في البحرين وإيران تتبنى الهجوم على قاعدة أمريكية    lanouvellerepublique.fr",
-      "summary": "الحرب في الشرق الأوسط: سماع دوي انفجارات في البحرين وإيران تتبنى الهجوم على قاعدة أمريكية    lanouvellerepublique.fr",
+      "description": "الحرب في الشرق الأوسط: سماع دوي انفجارات في البحرين وإيران تزعم الهجوم على قاعدة أمريكية    lanouvellerepublique.fr",
+      "summary": "الحرب في الشرق الأوسط: سماع دوي انفجارات في البحرين وإيران تزعم الهجوم على قاعدة أمريكية    lanouvellerepublique.fr",
       "original_title": "Guerre au Moyen-Orient : des explosions entendues à Bahreïn, l’Iran y revendique une attaque contre une base américaine - lanouvellerepublique.fr",
       "original_description": "Guerre au Moyen-Orient : des explosions entendues à Bahreïn, l’Iran y revendique une attaque contre une base américaine &nbsp;&nbsp; lanouvellerepublique.fr",
       "url": "https://www.lanouvellerepublique.fr/a-la-une/guerre-au-moyen-orient-des-explosions-entendues-a-bahrein-l-iran-y-revendique-une-attaque-contre-une-base-americaine-1794904215",
@@ -36,6 +36,18 @@
       "published": "Tue, 17 Nov 2026 08:30:08 GMT",
       "category": "rest",
       "region": "world"
+    },
+    {
+      "title": "الأمم المتحدة: الطائرات بدون طيار مسؤولة عن نحو ثلاثة أرباع ضحايا الحرب في السودان هذا العام - رويترز",
+      "description": "تقول الأمم المتحدة إن الطائرات بدون طيار مسؤولة عن ما يقرب من ثلاثة أرباع وفيات الحرب في السودان هذا العام",
+      "summary": "تقول الأمم المتحدة إن الطائرات بدون طيار مسؤولة عن ما يقرب من ثلاثة أرباع وفيات الحرب في السودان هذا العام",
+      "original_title": "Drones account for nearly three-quarters of Sudan war deaths this year, UN says - Reuters",
+      "original_description": "Drones account for nearly three-quarters of Sudan war deaths this year, UN says &nbsp;&nbsp; Reuters",
+      "url": "https://www.reuters.com/world/africa/drones-account-nearly-three-quarters-sudan-war-deaths-this-year-un-says-2026-11-17",
+      "source": "Reuters",
+      "published": "Tue, 17 Nov 2026 08:27:44 GMT",
+      "category": "rest",
+      "region": "africa"
     },
     {
       "title": "الأمم المتحدة: الطائرات بدون طيار مسؤولة عن نحو ثلاثة أرباع ضحايا الحرب في السودان هذا العام",
@@ -48,6 +60,30 @@
       "published": "Tue, 17 Nov 2026 08:27:04 GMT",
       "category": "rest",
       "region": "africa"
+    },
+    {
+      "title": "الأمم المتحدة تقول إن الطائرات بدون طيار مسؤولة عن ما يقرب من ثلاثة أرباع وفيات حرب السودان هذا العام",
+      "description": "تقول الأمم المتحدة إن الطائرات بدون طيار مسؤولة عن ما يقرب من ثلاثة أرباع وفيات حرب السودان هذا العام    U.S. News & World Report",
+      "summary": "تقول الأمم المتحدة إن الطائرات بدون طيار مسؤولة عن ما يقرب من ثلاثة أرباع وفيات حرب السودان هذا العام    U.S. News & World Report",
+      "original_title": "Drones Account for Nearly Three-Quarters of Sudan War Deaths This Year, UN Says - U.S. News & World Report",
+      "original_description": "Drones Account for Nearly Three-Quarters of Sudan War Deaths This Year, UN Says &nbsp;&nbsp; U.S. News & World Report",
+      "url": "https://www.usnews.com/news/world/articles/2026-11-17/drones-account-for-nearly-three-quarters-of-sudan-war-deaths-this-year-un-says",
+      "source": "U.S. News & World Report",
+      "published": "Tue, 17 Nov 2026 08:27:00 GMT",
+      "category": "rest",
+      "region": "africa"
+    },
+    {
+      "title": "\"كير\" يرحب بتعهد حاكمة تكساس المنتخبة بإلغاء تصنيفه \"إرهابيا\"",
+      "description": "مجلس العلاقات الأمريكية الإسلامية اعتبر اعتزام هينوجوسا إلغاء قرار أصدره الحاكم غريغ أبوت العام الماضي انتصارا لسيادة القانون",
+      "summary": "مجلس العلاقات الأمريكية الإسلامية اعتبر اعتزام هينوجوسا إلغاء قرار أصدره الحاكم غريغ أبوت العام الماضي انتصارا لسيادة القانون",
+      "original_title": "\"كير\" يرحب بتعهد حاكمة تكساس المنتخبة بإلغاء تصنيفه \"إرهابيا\"",
+      "original_description": "مجلس العلاقات الأمريكية الإسلامية اعتبر اعتزام هينوجوسا إلغاء قرار أصدره الحاكم غريغ أبوت العام الماضي انتصارا لسيادة القانون",
+      "url": "https://alikhbariya.net/stories/e31d049c-6d6f-42fc-9d22-409423d384fd/%D9%83%D9%8A%D8%B1-%D9%8A%D8%B1%D8%AD%D8%A8-%D8%A8%D8%AA%D8%B9%D9%87%D8%AF-%D8%AD%D8%A7%D9%83%D9%85%D8%A9-%D8%AA%D9%83%D8%B3%D8%A7%D8%B3-%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AE%D8%A8%D8%A9-%D8%A8%D8%A5%D9%84%D8%BA%D8%A7%D8%A1-%D8%AA%D8%B5%D9%86%D9%8A%D9%81%D9%87-%D8%A5%D8%B1%D9%87%D8%A7%D8%A8%D9%8A%D8%A7",
+      "source": "وكالة الأناضول",
+      "published": "Tue, 17 Nov 2026 08:16:03 GMT",
+      "category": "rest",
+      "region": "world"
     },
     {
       "title": "هجمات صاروخية روسية تخرج الجسرين الرئيسيين في كييف عن الخدمة",
@@ -350,6 +386,18 @@
       "region": "africa"
     },
     {
+      "title": "نيجيريا تقول إن الدعم الاستخباراتي الأمريكي يساعد في استهداف المسلحين وتأمين انتخابات 2027",
+      "description": "نيجيريا تقول إن الدعم الاستخباراتي الأمريكي يساعد في استهداف المسلحين وتأمين انتخابات 2027    ديلي نيشن",
+      "summary": "نيجيريا تقول إن الدعم الاستخباراتي الأمريكي يساعد في استهداف المسلحين وتأمين انتخابات 2027    ديلي نيشن",
+      "original_title": "Nigeria says US intelligence support helping target militants, secure 2027 election - Daily Nation",
+      "original_description": "Nigeria says US intelligence support helping target militants, secure 2027 election &nbsp;&nbsp; Daily Nation",
+      "url": "https://nation.africa/kenya/news/africa/nigeria-says-us-intelligence-support-helping-target-militants-secure-2027-election-5673428",
+      "source": "Daily Nation",
+      "published": "Tue, 17 Nov 2026 05:54:16 GMT",
+      "category": "rest",
+      "region": "africa"
+    },
+    {
       "title": "لماذا تتزايد الشراكات الأمنية في منطقة الشرق الأوسط وشمال أفريقيا؟",
       "description": "لا توجد بنية أمنية موحدة في المنطقة، لكن الحكومات تتبنى مجموعة متنوعة من الآليات، بدءاً من التحالفات العسكرية الرسمية واتفاقيات الدفاع ومقترحات عدم الاعتداء، وصولاً إلى التحالفات الأمنية.",
       "summary": "لا توجد بنية أمنية موحدة في المنطقة، لكن الحكومات تتبنى مجموعة متنوعة من الآليات، بدءاً من التحالفات العسكرية الرسمية واتفاقيات الدفاع ومقترحات عدم الاعتداء، وصولاً إلى التحالفات الأمنية.",
@@ -375,8 +423,8 @@
     },
     {
       "title": "الكمبيوتر العملاق الياباني Fugaku يفتقد الأمان الفائق بالتأكيد - The Register",
-      "description": "لقد قام الكمبيوتر العملاق الياباني Fugaku بإلغاء الأمان الفائق بالتأكيد    The Register",
-      "summary": "لقد قام الكمبيوتر العملاق الياباني Fugaku بإلغاء الأمان الفائق بالتأكيد    The Register",
+      "description": "لقد قام الكمبيوتر العملاق الياباني Fugaku بالتأكيد بإلغاء الأمان الفائق    The Register",
+      "summary": "لقد قام الكمبيوتر العملاق الياباني Fugaku بالتأكيد بإلغاء الأمان الفائق    The Register",
       "original_title": "Japan's Fugaku supercomputer has decidedly un-super security - The Register",
       "original_description": "Japan's Fugaku supercomputer has decidedly un-super security &nbsp;&nbsp; The Register",
       "url": "https://www.theregister.com/security/2026/11/17/japans-fugaku-supercomputer-has-decidedly-un-super-security/5310333",
@@ -411,12 +459,12 @@
     },
     {
       "title": "ضربات روسية تستهدف جسرين في كييف وهجوم أوكراني جديد على جسر القرم",
-      "description": "تبادلت روسيا وأوكرانيا هجمات استهدفت جسورا وبنى تحتية حيوية، إذ أصابت ضربات روسية جسرين رئيسيين في كييف مساء الإثنين، ما تسبب باضطرابات في إمدادات التدفئة والمياه في أجزاء من العاصمة الأوكرانية. في المقابل، أعلنت موسكو التصدي لطائرات مسيرة أوكرانية، فيما تعرض جسر القرم لهجوم لليوم الثاني على التوال…",
-      "summary": "تبادلت روسيا وأوكرانيا هجمات استهدفت جسورا وبنى تحتية حيوية، إذ أصابت ضربات روسية جسرين رئيسيين في كييف مساء الإثنين، ما تسبب باضطرابات في إمدادات التدفئة والمياه في أجزاء من العاصمة الأوكرانية. في المقابل، أعلنت موسكو التصدي لطائرات مسيرة أوكرانية، فيما تعرض جسر القرم لهجوم لليوم الثاني على التوال…",
+      "description": "تبادلت روسيا وأوكرانيا هجمات استهدفت جسورا وبنى تحتية حيوية، إذ أصابت ضربات روسية جسرين رئيسيين في كييف مساء الإثنين، ما تسبب باضطرابات في إمدادات التدفئة والمياه في أجزاء من العاصمة الأوكرانية. في المقابل، أعلنت موسكو التصدي لطائرات مسيرة أوكرانية، فيما تعرض جسر القرم لهجوم لليوم الثاني على التوال… — تغطية من مصدرين: النهار، فرانس 24 عربي.",
+      "summary": "تبادلت روسيا وأوكرانيا هجمات استهدفت جسورا وبنى تحتية حيوية، إذ أصابت ضربات روسية جسرين رئيسيين في كييف مساء الإثنين، ما تسبب باضطرابات في إمدادات التدفئة والمياه في أجزاء من العاصمة الأوكرانية. في المقابل، أعلنت موسكو التصدي لطائرات مسيرة أوكرانية، فيما تعرض جسر القرم لهجوم لليوم الثاني على التوال… — تغطية من مصدرين: النهار، فرانس 24 عربي.",
       "original_title": "ضربات روسية تستهدف جسرين في كييف وهجوم أوكراني جديد على جسر القرم",
-      "original_description": "تبادلت روسيا وأوكرانيا هجمات استهدفت جسورا وبنى تحتية حيوية، إذ أصابت ضربات روسية جسرين رئيسيين في كييف مساء الإثنين، ما تسبب باضطرابات في إمدادات التدفئة والمياه في أجزاء من العاصمة الأوكرانية. في المقابل، أعلنت موسكو التصدي لطائرات مسيرة أوكرانية، فيما تعرض جسر القرم لهجوم لليوم الثاني على التوال…",
+      "original_description": "تبادلت روسيا وأوكرانيا هجمات استهدفت جسورا وبنى تحتية حيوية، إذ أصابت ضربات روسية جسرين رئيسيين في كييف مساء الإثنين، ما تسبب باضطرابات في إمدادات التدفئة والمياه في أجزاء من العاصمة الأوكرانية. في المقابل، أعلنت موسكو التصدي لطائرات مسيرة أوكرانية، فيما تعرض جسر القرم لهجوم لليوم الثاني على التوال… — تغطية من مصدرين: النهار، فرانس 24 عربي.",
       "url": "https://alikhbariya.net/stories/dea34146-f08e-468e-aa7e-5987992f095c/%D8%B6%D8%B1%D8%A8%D8%A7%D8%AA-%D8%B1%D9%88%D8%B3%D9%8A%D8%A9-%D8%AA%D8%B3%D8%AA%D9%87%D8%AF%D9%81-%D8%AC%D8%B3%D8%B1%D9%8A%D9%86-%D9%81%D9%8A-%D9%83%D9%8A%D9%8A%D9%81-%D9%88%D9%87%D8%AC%D9%88%D9%85-%D8%A3%D9%88%D9%83%D8%B1%D8%A7%D9%86%D9%8A-%D8%AC%D8%AF%D9%8A%D8%AF-%D8%B9%D9%84%D9%89-%D8%AC%D8%B3%D8%B1-%D8%A7%D9%84%D9%82%D8%B1%D9%85",
-      "source": "فرانس 24 عربي",
+      "source": "alikhbariya.net",
       "published": "Tue, 17 Nov 2026 03:56:24 GMT",
       "category": "rest",
       "region": "world"
@@ -710,6 +758,18 @@
       "region": "africa"
     },
     {
+      "title": "التحقيق في الدافع الإرهابي لإطلاق النار الجماعي في حانة في أوستن: مكتب التحقيقات الفدرالي – ABC News – الأخبار العاجلة وآخر الأخبار ومقاطع الفيديو",
+      "description": "التحقيق في الدافع الإرهابي وراء إطلاق النار الجماعي في حانة في أوستن: مكتب التحقيقات الفيدرالي    ABC News - الأخبار العاجلة وآخر الأخبار ومقاطع الفيديو",
+      "summary": "التحقيق في الدافع الإرهابي وراء إطلاق النار الجماعي في حانة في أوستن: مكتب التحقيقات الفيدرالي    ABC News - الأخبار العاجلة وآخر الأخبار ومقاطع الفيديو",
+      "original_title": "Terrorism motive probed in mass shooting at Austin bar: FBI - ABC News - Breaking News, Latest News and Videos",
+      "original_description": "Terrorism motive probed in mass shooting at Austin bar: FBI &nbsp;&nbsp; ABC News - Breaking News, Latest News and Videos",
+      "url": "https://abcnews.com/US/active-attack-call-austin-prompts-emergency-response-texas/story?id=130646719",
+      "source": "ABC News - Breaking News, Latest News and Videos",
+      "published": "Mon, 16 Nov 2026 22:06:06 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
       "title": "مصادر \"العربية\": تحركات مصرية لحشد تأييد أوروبي لتصنيف الإخوان منظمة إرهابية",
       "description": "مصادر \"العربية\": تحركات مصرية لحشد تأييد أوروبي لتصنيف الإخوان منظمة إرهابية.. وترمب يلوّح بتوسيع التصنيف ليشمل فروع الجماعة #العربية",
       "summary": "مصادر \"العربية\": تحركات مصرية لحشد تأييد أوروبي لتصنيف الإخوان منظمة إرهابية.. وترمب يلوّح بتوسيع التصنيف ليشمل فروع الجماعة #العربية",
@@ -782,7 +842,7 @@
       "region": "world"
     },
     {
-      "title": "تسعى القوات الجوية الأمريكية إلى البحث عن شركات لإحياء أربع ناقلات نفط من طراز KC-10 لشمال إفريقيا - Military Africa",
+      "title": "تسعى القوات الجوية الأمريكية إلى البحث عن شركات لإحياء أربع ناقلات من طراز KC-10 لشمال إفريقيا - Military Africa",
       "description": "تسعى القوات الجوية الأمريكية إلى البحث عن شركات لإحياء أربع ناقلات نفط من طراز KC-10 لشمال إفريقيا    Military Africa",
       "summary": "تسعى القوات الجوية الأمريكية إلى البحث عن شركات لإحياء أربع ناقلات نفط من طراز KC-10 لشمال إفريقيا    Military Africa",
       "original_title": "USAF seeks firms to revive four KC-10 tankers for North Africa - Military Africa",
@@ -818,7 +878,7 @@
       "region": "africa"
     },
     {
-      "title": "اجتماع خاص حول بعثة الاتحاد الأفريقي لدعم وتحقيق الاستقرار في الصومال (AUSSOM) – تقرير مجلس الأمن",
+      "title": "اجتماع خاص حول بعثة الاتحاد الأفريقي لدعم وتحقيق الاستقرار في الصومال (AUSSOM) - تقرير مجلس الأمن",
       "description": "اجتماع خاص حول بعثة الاتحاد الأفريقي لدعم وتحقيق الاستقرار في الصومال (AUSSOM)    تقرير مجلس الأمن",
       "summary": "اجتماع خاص حول بعثة الاتحاد الأفريقي لدعم وتحقيق الاستقرار في الصومال (AUSSOM)    تقرير مجلس الأمن",
       "original_title": "Private Meeting on the African Union Support and Stabilization Mission in Somalia (AUSSOM) - Security Council Report",
@@ -827,6 +887,18 @@
       "source": "Security Council Report",
       "published": "Mon, 16 Nov 2026 21:28:54 GMT",
       "category": "international",
+      "region": "africa"
+    },
+    {
+      "title": "مصر تبحث تعزيز التعاون العسكري مع سنغافورة - الشرق الأوسط",
+      "description": "مصر تبحث تعزيز التعاون العسكري مع سنغافورة &nbsp;&nbsp; الشرق الأوسط",
+      "summary": "مصر تبحث تعزيز التعاون العسكري مع سنغافورة &nbsp;&nbsp; الشرق الأوسط",
+      "original_title": "مصر تبحث تعزيز التعاون العسكري مع سنغافورة - الشرق الأوسط",
+      "original_description": "مصر تبحث تعزيز التعاون العسكري مع سنغافورة &nbsp;&nbsp; الشرق الأوسط",
+      "url": "https://aawsat.com/%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A/%D8%B4%D9%85%D8%A7%D9%84-%D8%A7%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A7/5341973-%D9%85%D8%B5%D8%B1-%D8%AA%D8%A8%D8%AD%D8%AB-%D8%AA%D8%B9%D8%B2%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%88%D9%86-%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A-%D9%85%D8%B9-%D8%B3%D9%86%D8%BA%D8%A7%D9%81%D9%88%D8%B1%D8%A9",
+      "source": "الشرق الأوسط",
+      "published": "Mon, 16 Nov 2026 21:28:41 GMT",
+      "category": "north",
       "region": "africa"
     },
     {
@@ -854,7 +926,7 @@
       "region": "africa"
     },
     {
-      "title": "رئيس المخابرات المصرية يناقش وحدة ليبيا وأمنها مع دبيبة – الخارجية – مصر – الأهرام أونلاين",
+      "title": "رئيس المخابرات المصرية يبحث مع الدبيبة وحدة ليبيا وأمنها - الشؤون الخارجية - مصر - الأهرام أونلاين",
       "description": "رئيس المخابرات المصرية يبحث مع الدبيبة وحدة ليبيا وأمنها - الشؤون الخارجية - مصر    الأهرام أونلاين",
       "summary": "رئيس المخابرات المصرية يبحث مع الدبيبة وحدة ليبيا وأمنها - الشؤون الخارجية - مصر    الأهرام أونلاين",
       "original_title": "Egypt’s intelligence chief discusses Libya’s unity and security with Dbeibeh - Foreign Affairs - Egypt - Ahram Online",
@@ -1046,7 +1118,7 @@
       "region": "world"
     },
     {
-      "title": "انهيار دولة السودان – الكناري في منجم الفحم من أجل السلام والأمن الدوليين – allAfrica.com",
+      "title": "انهيار دولة السودان - الكناري في منجم الفحم من أجل السلام والأمن الدوليين - allAfrica.com",
       "description": "انهيار دولة السودان - الكناري في منجم الفحم من أجل السلام والأمن الدوليين    allAfrica.com",
       "summary": "انهيار دولة السودان - الكناري في منجم الفحم من أجل السلام والأمن الدوليين    allAfrica.com",
       "original_title": "Sudan's State Collapse - Canary in the Coal Mine for International Peace and Security - allAfrica.com",
@@ -1083,8 +1155,8 @@
     },
     {
       "title": "مكتبة القوة البرية – فرق الجيش الأمريكي في حرب المحيط الهادئ – مركز أبحاث الجيش الأسترالي",
-      "description": "مكتبة القوة البرية - فرق الجيش الأمريكي في حرب المحيط الهادئ    مركز أبحاث الجيش الأسترالي",
-      "summary": "مكتبة القوة البرية - فرق الجيش الأمريكي في حرب المحيط الهادئ    مركز أبحاث الجيش الأسترالي",
+      "description": "مكتبة الطاقة البرية - فرق الجيش الأمريكي في حرب المحيط الهادئ    مركز أبحاث الجيش الأسترالي",
+      "summary": "مكتبة الطاقة البرية - فرق الجيش الأمريكي في حرب المحيط الهادئ    مركز أبحاث الجيش الأسترالي",
       "original_title": "Land Power Library - US Army Divisions of the Pacific War - Australian Army Research Centre",
       "original_description": "Land Power Library - US Army Divisions of the Pacific War &nbsp;&nbsp; Australian Army Research Centre",
       "url": "https://researchcentre.army.gov.au/library/land-power-forum/land-power-library-us-army-divisions-pacific-war",
@@ -1658,18 +1730,6 @@
       "region": "africa"
     },
     {
-      "title": "مصر تبحث تعزيز التعاون العسكري مع سنغافورة - الشرق الأوسط",
-      "description": "مصر تبحث تعزيز التعاون العسكري مع سنغافورة &nbsp;&nbsp; الشرق الأوسط",
-      "summary": "مصر تبحث تعزيز التعاون العسكري مع سنغافورة &nbsp;&nbsp; الشرق الأوسط",
-      "original_title": "مصر تبحث تعزيز التعاون العسكري مع سنغافورة - الشرق الأوسط",
-      "original_description": "مصر تبحث تعزيز التعاون العسكري مع سنغافورة &nbsp;&nbsp; الشرق الأوسط",
-      "url": "https://aawsat.com/%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A/%D8%B4%D9%85%D8%A7%D9%84-%D8%A7%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A7/5341973-%D9%85%D8%B5%D8%B1-%D8%AA%D8%A8%D8%AD%D8%AB-%D8%AA%D8%B9%D8%B2%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%88%D9%86-%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A-%D9%85%D8%B9-%D8%B3%D9%86%D8%BA%D8%A7%D9%81%D9%88%D8%B1%D8%A9",
-      "source": "الشرق الأوسط",
-      "published": "Mon, 16 Nov 2026 15:38:31 GMT",
-      "category": "north",
-      "region": "africa"
-    },
-    {
       "title": "مصدر باكستاني للجزيرة: وزير الخارجية الإيراني يلتقي قائد الجيش الباكستاني",
       "description": "مصدر باكستاني للجزيرة: وزير الخارجية الإيراني يلتقي قائد الجيش الباكستاني في مقر قيادة أركان القوات المسلحة #الأخبار ===================== تابعونا على منصات الجزيرة الرقمية ===================== ▶Facebook▶https://facebook.com/aljazeerachannel ▶Instagram▶ https://instagram.com/aljazeera ▶Twitter▶ ht…",
       "summary": "مصدر باكستاني للجزيرة: وزير الخارجية الإيراني يلتقي قائد الجيش الباكستاني في مقر قيادة أركان القوات المسلحة #الأخبار ===================== تابعونا على منصات الجزيرة الرقمية ===================== ▶Facebook▶https://facebook.com/aljazeerachannel ▶Instagram▶ https://instagram.com/aljazeera ▶Twitter▶ ht…",
@@ -1678,18 +1738,6 @@
       "url": "https://alikhbariya.net/stories/88c7ea9a-4061-4aae-a66a-2354c17d304b/%D9%85%D8%B5%D8%AF%D8%B1-%D8%A8%D8%A7%D9%83%D8%B3%D8%AA%D8%A7%D9%86%D9%8A-%D9%84%D9%84%D8%AC%D8%B2%D9%8A%D8%B1%D8%A9-%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D8%A7%D9%84%D8%A5%D9%8A%D8%B1%D8%A7%D9%86%D9%8A-%D9%8A%D9%84%D8%AA%D9%82%D9%8A-%D9%82%D8%A7%D8%A6%D8%AF-%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D8%A8%D8%A7%D9%83%D8%B3%D8%AA%D8%A7%D9%86%D9%8A",
       "source": "الجزيرة نت",
       "published": "Mon, 16 Nov 2026 15:30:21 GMT",
-      "category": "rest",
-      "region": "world"
-    },
-    {
-      "title": "التحقيق في الدافع الإرهابي لإطلاق النار الجماعي في حانة في أوستن: مكتب التحقيقات الفدرالي – ABC News – الأخبار العاجلة وآخر الأخبار ومقاطع الفيديو",
-      "description": "التحقيق في الدافع الإرهابي وراء إطلاق النار الجماعي في حانة في أوستن: مكتب التحقيقات الفيدرالي    ABC News - الأخبار العاجلة وآخر الأخبار ومقاطع الفيديو",
-      "summary": "التحقيق في الدافع الإرهابي وراء إطلاق النار الجماعي في حانة في أوستن: مكتب التحقيقات الفيدرالي    ABC News - الأخبار العاجلة وآخر الأخبار ومقاطع الفيديو",
-      "original_title": "Terrorism motive probed in mass shooting at Austin bar: FBI - ABC News - Breaking News, Latest News and Videos",
-      "original_description": "Terrorism motive probed in mass shooting at Austin bar: FBI &nbsp;&nbsp; ABC News - Breaking News, Latest News and Videos",
-      "url": "https://abcnews.com/US/active-attack-call-austin-prompts-emergency-response-texas/story?id=130646719",
-      "source": "ABC News - Breaking News, Latest News and Videos",
-      "published": "Mon, 16 Nov 2026 15:26:33 GMT",
       "category": "rest",
       "region": "world"
     },
@@ -2175,8 +2223,8 @@
     },
     {
       "title": "شركة AAA Technologies تدخل مجال تصميم أشباه الموصلات وتوسع أعمال الأمن السيبراني لتشمل سنغافورة وموريشيوس ودبي - أخبار التكنولوجيا في الهند",
-      "description": "شركة AAA Technologies تدخل مجال تصميم أشباه الموصلات، وتوسع أعمال الأمن السيبراني لتشمل سنغافورة وموريشيوس ودبي    أخبار التكنولوجيا الهندية",
-      "summary": "شركة AAA Technologies تدخل مجال تصميم أشباه الموصلات، وتوسع أعمال الأمن السيبراني لتشمل سنغافورة وموريشيوس ودبي    أخبار التكنولوجيا الهندية",
+      "description": "شركة AAA Technologies تدخل مجال تصميم أشباه الموصلات، وتوسع أعمال الأمن السيبراني لتشمل سنغافورة وموريشيوس ودبي    الهند أخبار التكنولوجيا",
+      "summary": "شركة AAA Technologies تدخل مجال تصميم أشباه الموصلات، وتوسع أعمال الأمن السيبراني لتشمل سنغافورة وموريشيوس ودبي    الهند أخبار التكنولوجيا",
       "original_title": "AAA Technologies Enters Semiconductor Design, Expands Cybersecurity Business to Singapore, Mauritius, and Dubai - India Technology News",
       "original_description": "AAA Technologies Enters Semiconductor Design, Expands Cybersecurity Business to Singapore, Mauritius, and Dubai &nbsp;&nbsp; India Technology News",
       "url": "https://indiatechnologynews.in/aaa-technologies-enters-semiconductor-design-expands-cybersecurity-business-to-singapore-mauritius-and-dubai",
@@ -2342,7 +2390,7 @@
       "region": "africa"
     },
     {
-      "title": "غارة للجيش السوداني تقتل 15 شخصا، بينهم أطفال، بحسب جماعة حقوقية، الناجي - The Hindu",
+      "title": "غارة للجيش السوداني تقتل 15 شخصا بينهم أطفال، بحسب جماعة حقوقية، الناجي - The Hindu",
       "description": "غارة للجيش السوداني تقتل 15 شخصًا، بينهم أطفال، بحسب جماعة حقوقية، ناجٍ    الهندوسي",
       "summary": "غارة للجيش السوداني تقتل 15 شخصًا، بينهم أطفال، بحسب جماعة حقوقية، ناجٍ    الهندوسي",
       "original_title": "Sudan Army strike kills 15, including children says rights group, survivor - The Hindu",
@@ -2354,7 +2402,7 @@
       "region": "africa"
     },
     {
-      "title": "مرفق السلام الأوروبي: المجلس يزيد دعمه للأمن البحري في خليج غينيا إلى 31 مليون يورو - المجلس، الاتحاد الأوروبي",
+      "title": "مرفق السلام الأوروبي: المجلس يزيد الدعم للأمن البحري في خليج غينيا إلى 31 مليون يورو - المجلس، الاتحاد الأوروبي",
       "description": "مرفق السلام الأوروبي: المجلس يزيد دعمه للأمن البحري في خليج غينيا إلى 31 مليون يورو    المجلس، الاتحاد الأوروبي",
       "summary": "مرفق السلام الأوروبي: المجلس يزيد دعمه للأمن البحري في خليج غينيا إلى 31 مليون يورو    المجلس، الاتحاد الأوروبي",
       "original_title": "European Peace Facility: Council increases support for maritime security in the Gulf of Guinea to €31 million - Council, European Union",
@@ -2498,6 +2546,18 @@
       "region": "world"
     },
     {
+      "title": "اشتباكات بين الحرس الثوري وحزب كردي معارض قرب حدود العراق - أخبار حياة",
+      "description": "اشتباكات بين الحرس الثوري وحزب كردي معارض قرب حدود العراق &nbsp;&nbsp; أخبار حياة",
+      "summary": "اشتباكات بين الحرس الثوري وحزب كردي معارض قرب حدود العراق &nbsp;&nbsp; أخبار حياة",
+      "original_title": "اشتباكات بين الحرس الثوري وحزب كردي معارض قرب حدود العراق - أخبار حياة",
+      "original_description": "اشتباكات بين الحرس الثوري وحزب كردي معارض قرب حدود العراق &nbsp;&nbsp; أخبار حياة",
+      "url": "https://akhbarhayat.com/1259235/%D8%A7%D8%B4%D8%AA%D8%A8%D8%A7%D9%83%D8%A7%D8%AA-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%AD%D8%B1%D8%B3-%D8%A7%D9%84%D8%AB%D9%88%D8%B1%D9%8A-%D9%88%D8%AD%D8%B2%D8%A8-%D9%83%D8%B1%D8%AF%D9%8A-%D9%85%D8%B9",
+      "source": "أخبار حياة",
+      "published": "Mon, 16 Nov 2026 05:51:58 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
       "title": "اشتعال 4 منشآت صناعية عقب هجوم مسيرات في روستوف بروسيا",
       "description": "أفاد يوري سليوسار حاكم منطقة روستوف الروسية اليوم الاثنين بإصابة ثلاثة أشخاص واندلاع نيران في أربعة منشآت صناعية إثر هجوم بطائرات مسيرة على بلدة أزوف.",
       "summary": "أفاد يوري سليوسار حاكم منطقة روستوف الروسية اليوم الاثنين بإصابة ثلاثة أشخاص واندلاع نيران في أربعة منشآت صناعية إثر هجوم بطائرات مسيرة على بلدة أزوف.",
@@ -2580,6 +2640,18 @@
       "published": "Mon, 16 Nov 2026 05:30:30 GMT",
       "category": "rest",
       "region": "world"
+    },
+    {
+      "title": "في المقابل، الولايات المتحدة تمول الدعم العسكري للأمم المتحدة في الصومال لمدة عام آخر - أ ف ب",
+      "description": "وفي المقابل، قررت الولايات المتحدة تمويل الدعم العسكري للأمم المتحدة في الصومال لمدة عام آخر    AFP.com",
+      "summary": "وفي المقابل، قررت الولايات المتحدة تمويل الدعم العسكري للأمم المتحدة في الصومال لمدة عام آخر    AFP.com",
+      "original_title": "In reversal, US to fund UN military support in Somalia for another year - AFP.com",
+      "original_description": "In reversal, US to fund UN military support in Somalia for another year &nbsp;&nbsp; AFP.com",
+      "url": "https://www.afp.com/en/reversal-us-fund-un-military-support-somalia-another-year",
+      "source": "AFP.com",
+      "published": "Mon, 16 Nov 2026 05:29:17 GMT",
+      "category": "rest",
+      "region": "africa"
     },
     {
       "title": "واشنطن ستدعم مكتب الأمم المتحدة للدعم في الصومال لعام إضافي",
@@ -2774,6 +2846,18 @@
       "region": "world"
     },
     {
+      "title": "الحقيقة الهشة وراء التفجير المميت بالسيارة المفخخة بالقرب من دمشق - ИФЗ РАН",
+      "description": "الواقع الهش وراء التفجير المميت بالسيارة المفخخة بالقرب من دمشق    ИФЗ РАН",
+      "summary": "الواقع الهش وراء التفجير المميت بالسيارة المفخخة بالقرب من دمشق    ИФЗ РАН",
+      "original_title": "The Fragile Reality Behind The Deadly Car Bombing Near Damas - ИФЗ РАН",
+      "original_description": "The Fragile Reality Behind The Deadly Car Bombing Near Damas &nbsp;&nbsp; ИФЗ РАН",
+      "url": "https://geosirius.ifz.ru/fragile-reality-deadly-car-bombing-near-damascus",
+      "source": "ИФЗ РАН",
+      "published": "Sun, 15 Nov 2026 23:30:11 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
       "title": "الناتو ـ البنية التحتية والقدرات اللوجستية - المركز الأوروبي لدراسات مكافحة الإرهاب والاستخبارات",
       "description": "الناتو ـ البنية التحتية والقدرات اللوجستية &nbsp;&nbsp; المركز الأوروبي لدراسات مكافحة الإرهاب والاستخبارات",
       "summary": "الناتو ـ البنية التحتية والقدرات اللوجستية &nbsp;&nbsp; المركز الأوروبي لدراسات مكافحة الإرهاب والاستخبارات",
@@ -2954,6 +3038,18 @@
       "region": "world"
     },
     {
+      "title": "الأردن يصدر أحكاماً بالإعدام بحق منفذي هجوم الكرك - جريدة المدينة",
+      "description": "الأردن يصدر أحكاماً بالإعدام بحق منفذي هجوم الكرك &nbsp;&nbsp; جريدة المدينة",
+      "summary": "الأردن يصدر أحكاماً بالإعدام بحق منفذي هجوم الكرك &nbsp;&nbsp; جريدة المدينة",
+      "original_title": "الأردن يصدر أحكاماً بالإعدام بحق منفذي هجوم الكرك - جريدة المدينة",
+      "original_description": "الأردن يصدر أحكاماً بالإعدام بحق منفذي هجوم الكرك &nbsp;&nbsp; جريدة المدينة",
+      "url": "https://www.al-madina.com/ampArticle/1013434",
+      "source": "جريدة المدينة",
+      "published": "Sun, 15 Nov 2026 21:50:00 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
       "title": "وزير التعليم الصومالي يرفض المخاوف من سيطرة حركة الشباب مع انسحاب قوات الاتحاد الأفريقي - حيران أونلاين",
       "description": "وزير التعليم الصومالي يرفض المخاوف من سيطرة حركة الشباب مع انسحاب قوات الاتحاد الأفريقي    حيران أونلاين",
       "summary": "وزير التعليم الصومالي يرفض المخاوف من سيطرة حركة الشباب مع انسحاب قوات الاتحاد الأفريقي    حيران أونلاين",
@@ -2988,6 +3084,18 @@
       "published": "Sun, 15 Nov 2026 20:42:32 GMT",
       "category": "rest",
       "region": "africa"
+    },
+    {
+      "title": "السلطات البنمية تحقق في هجوم بالقنابل على منزل أحد الصحفيين - Morning Star | صحيفة الشعب اليومية",
+      "description": "السلطات البنمية تحقق في هجوم بالقنابل على منزل أحد الصحفيين    Morning Star | صحيفة الشعب اليومية",
+      "summary": "السلطات البنمية تحقق في هجوم بالقنابل على منزل أحد الصحفيين    Morning Star | صحيفة الشعب اليومية",
+      "original_title": "Panamanian authorities investigate bombing attack on reporter’s home - Morning Star | The People’s Daily",
+      "original_description": "Panamanian authorities investigate bombing attack on reporter’s home &nbsp;&nbsp; Morning Star | The People’s Daily",
+      "url": "https://morningstaronline.co.uk/article/panamanian-authorities-investigate-bombing-attack-investigative-reporters-home",
+      "source": "Morning Star | The People’s Daily",
+      "published": "Sun, 15 Nov 2026 20:42:22 GMT",
+      "category": "rest",
+      "region": "world"
     },
     {
       "title": "سقوط صاروخ يحمل 40 قمرا اصطناعيا لأمازون في فلوريدا",
@@ -3242,6 +3350,18 @@
       "region": "world"
     },
     {
+      "title": "الأردن يحكم بالإعدام على ثلاثة مدانين بتنفيذ هجوم مسلح على كنيسة في الكرك - الأول",
+      "description": "الأردن يحكم بالإعدام على ثلاثة مدانين بتنفيذ هجوم مسلح على كنيسة في الكرك &nbsp;&nbsp; الأول",
+      "summary": "الأردن يحكم بالإعدام على ثلاثة مدانين بتنفيذ هجوم مسلح على كنيسة في الكرك &nbsp;&nbsp; الأول",
+      "original_title": "الأردن يحكم بالإعدام على ثلاثة مدانين بتنفيذ هجوم مسلح على كنيسة في الكرك - الأول",
+      "original_description": "الأردن يحكم بالإعدام على ثلاثة مدانين بتنفيذ هجوم مسلح على كنيسة في الكرك &nbsp;&nbsp; الأول",
+      "url": "https://alaoual.com/%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/501584.html",
+      "source": "الأول",
+      "published": "Sun, 15 Nov 2026 18:44:53 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
       "title": "الحوثيون: إطلاق صاروخين على مطار الملك خالد والمركز المالي بالرياض",
       "description": "قالت جماعة ‌الحوثي اليمنية المتحالفة مع إيران اليوم الأحد إنها استهدفت مطار الملك خالد الدولي والمركز المالي في العاصمة السعودية الرياض بصاروخين باليستيين. وذكر الحوثيون في بيان “تمكنت قواتنا المسلحة بفضل الله من استهداف مطار خالد الدولي ‌والمركز المالي في… ‌الرياض بصاروخين بالستيين”. ولم يصدر أي ت… — تغطية من 3 مصادر: القدس العربي، سي إن إن بالعربية، موزاييك إف إم.",
       "summary": "قالت جماعة ‌الحوثي اليمنية المتحالفة مع إيران اليوم الأحد إنها استهدفت مطار الملك خالد الدولي والمركز المالي في العاصمة السعودية الرياض بصاروخين باليستيين. وذكر الحوثيون في بيان “تمكنت قواتنا المسلحة بفضل الله من استهداف مطار خالد الدولي ‌والمركز المالي في… ‌الرياض بصاروخين بالستيين”. ولم يصدر أي ت… — تغطية من 3 مصادر: القدس العربي، سي إن إن بالعربية، موزاييك إف إم.",
@@ -3322,6 +3442,18 @@
       "url": "https://www.newsweek.com/nato-member-estonia-to-shut-russia-border-after-sabotage-attack-12717506",
       "source": "Newsweek",
       "published": "Sun, 15 Nov 2026 17:43:00 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
+      "title": "محكمة أمن الدولة الأردنية تحكم على ثلاثة رجال بالإعدام شنقاً بسبب هجوم على كنيسة الكرك – NewsCord",
+      "description": "محكمة أمن الدولة الأردنية تحكم على ثلاثة رجال بالإعدام شنقاً فوق هجوم على كنيسة الكرك    NewsCord",
+      "summary": "محكمة أمن الدولة الأردنية تحكم على ثلاثة رجال بالإعدام شنقاً فوق هجوم على كنيسة الكرك    NewsCord",
+      "original_title": "Jordan’s State Security Court Sentences Three Men To Death By Hanging Over Karak Church Attack - NewsCord",
+      "original_description": "Jordan’s State Security Court Sentences Three Men To Death By Hanging Over Karak Church Attack &nbsp;&nbsp; NewsCord",
+      "url": "https://newscord.org/article/jordans-state-security-court-sentences-three-men-to-death-over-hamoud-church-att--Story_20261115_Jordansentences3ment97e5e746",
+      "source": "NewsCord",
+      "published": "Sun, 15 Nov 2026 17:39:28 GMT",
       "category": "rest",
       "region": "world"
     },
@@ -3470,9 +3602,9 @@
       "region": "world"
     },
     {
-      "title": "مائة شخص يتجمعون في مسيرة بيضاء تكريما لبينغو بوسيو وانجي الذي قُتل في الهجوم العنصري في تراب - franceinfo",
-      "description": "تجمع مائة شخص في مسيرة بيضاء تكريمًا لبينغو بوسيو وانجي، الذي قُتل في الهجوم العنصري في ترابيس    franceinfo",
-      "summary": "تجمع مائة شخص في مسيرة بيضاء تكريمًا لبينغو بوسيو وانجي، الذي قُتل في الهجوم العنصري في ترابيس    franceinfo",
+      "title": "مئة شخص يتجمعون في مسيرة بيضاء تكريما لبينغو بوسيو وانغي الذي قُتل في الهجوم العنصري في تراب - franceinfo",
+      "description": "تجمع مائة شخص في مسيرة بيضاء تكريمًا لبينغو بوسيو وانجي، الذي قُتل في الهجوم العنصري في تراب    franceinfo",
+      "summary": "تجمع مائة شخص في مسيرة بيضاء تكريمًا لبينغو بوسيو وانجي، الذي قُتل في الهجوم العنصري في تراب    franceinfo",
       "original_title": "Une centaine de personnes réunies pour une marche blanche en hommage à Pengo Bossio Wangi, tué dans l'attentat raciste de Trappes - franceinfo",
       "original_description": "Une centaine de personnes réunies pour une marche blanche en hommage à Pengo Bossio Wangi, tué dans l'attentat raciste de Trappes &nbsp;&nbsp; franceinfo",
       "url": "https://www.franceinfo.fr/faits-divers/terrorisme/attentat-raciste-a-trappes/une-centaine-de-personnes-reunies-pour-une-marche-blanche-en-hommage-a-pengo-bossio-wangi-tue-dans-l-attaque-raciste-de-trappes_8283689.html",
