@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T06:05+01:00",
+  "updated": "2026-11-17T15:29+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -751,6 +751,20 @@
       "title_ar": "المؤتمر التاسع والأربعون لقانون وسياسات المحيطات (COLP49)، أثينا، اليونان: \"الأمن البحري في البحر الأبيض المتوسط وما وراءه\" | الأحداث | المعهد الياباني للشؤون الدولية - 公益財団法人日本国際問題研究所"
     },
     {
+      "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
+      "center_short": "UNIDIR",
+      "title": "Weapons and Ammunition Management in Africa Insight: 2025 Update",
+      "url": "https://unidir.org/publication/weapons-and-ammunition-management-in-africa-insight-2025-update/",
+      "published": "2026-11-17T14:33+01:00",
+      "date": "2026-11-17",
+      "source": "UNIDIR",
+      "description": "",
+      "center_site": "https://unidir.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "نظرة ثاقبة على إدارة الأسلحة والذخائر في أفريقيا: تحديث 2025"
+    },
+    {
       "center": "المعهد الأسترالي للسياسة الاستراتيجية (ASPI)",
       "center_short": "ASPI",
       "title": "Treaty a recognition we need Philippines in China strategy",
@@ -805,20 +819,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "تحول مساعي السلام في أوكرانيا إلى حلف شمال الأطلسي ودونباس - مركز الأمن الأمريكي الجديد | CNAS"
-    },
-    {
-      "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
-      "center_short": "UNIDIR",
-      "title": "Weapons and Ammunition Management in Africa Insight: 2023 Update",
-      "url": "https://unidir.org/publication/weapons-and-ammunition-management-in-africa-insight-2023-update/",
-      "published": "2026-11-13T14:22+01:00",
-      "date": "2026-11-13",
-      "source": "UNIDIR",
-      "description": "",
-      "center_site": "https://unidir.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "رؤية إدارة الأسلحة والذخائر في أفريقيا: تحديث 2023"
     },
     {
       "center": "معهد لوي",
