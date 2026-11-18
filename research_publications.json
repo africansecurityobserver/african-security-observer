@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T15:29+01:00",
+  "updated": "2026-11-18T00:51+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 50,
+  "count": 51,
   "publications": [
     {
       "center": "مؤسسة كونراد أديناور",
@@ -709,6 +709,20 @@
       "title_ar": "كيف يعيد الجيش هيكلة قطاع الذهب في مصر بالقوة - مؤسسة العلوم والسياسة"
     },
     {
+      "center": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
+      "center_short": "IISS",
+      "title": "The Sahel’s juntas and the further decline of Western security partnerships - The International Institute for Strategic Studies",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOTVRTWlozQTJSUGJ1QTY5bGpkbk1RN3M3NnNmc3RQekJXcWt2b1FxMTZqek1ycFA4cEZXUUVnU0FXQ1JmanllVkZjeWhoOGtrczNsX0xxMVJuNEhSOXhJVk9SbjNJZ044bE5EYXBhbFNHQklhN0JweDVaNmJ2Q1ZhclI5ZTRZVHR6Tkpia1V0NUxoaEhUOGVRSjd2LWJUX0hBV0F3LVY3UkRqM0tQSWFFV1JfWFlyaDl5Y1NSVnVaSGxua1NwcC1odnAtRlE5cnpYSEE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-06T09:00+01:00",
+      "date": "2026-11-06",
+      "source": "The International Institute for Strategic Studies",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxOTVRTWlozQTJSUGJ1QTY5bGpkbk1RN3M3NnNmc3RQekJXcWt2b1FxMTZqek1ycFA4cEZXUUVnU0FXQ1JmanllVkZjeWhoOGtrczNsX0xxMVJuNEhSOXhJVk9SbjNJZ044bE5EYXBhbFNHQklhN0JweDVaNmJ2Q1ZhclI5ZTRZVHR6Tkpia1V0NUxoaEhUOGVRSjd2LWJUX0hBV0F3LVY3UkRqM0tQSWFFV1JfWFlyaDl5Y1NSVnVaSGxua1NwcC1odnAtRlE5cnpYSEE?oc=5\" target=\"_blank\">The Sahel’s juntas and the further decline of Western security partnerships</a> <font color=\"#6f6f6f\">The International Institute for Strategic ",
+      "center_site": "https://iiss.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "مجالس الحكم العسكري في منطقة الساحل والمزيد من تراجع الشراكات الأمنية الغربية - المعهد الدولي للدراسات الاستراتيجية"
+    },
+    {
       "center": "المركز العربي في واشنطن",
       "center_short": "Arab Center Washington DC",
       "title": "Egypt Weighs Diplomacy and Military Intervention in the Red Sea - Arab Center Washington DC",
@@ -805,6 +819,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "إعادة التسلح دون الصين: حان الوقت لتأمين سلاسل الإمداد العسكرية في أوروبا - المجلس الأوروبي للعلاقات الخارجية"
+    },
+    {
+      "center": "المعهد الدنماركي للدراسات الدولية (DIIS)",
+      "center_short": "DIIS",
+      "title": "Will a European Security Council work? Probably not - DIIS",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPSkt0V3U2MFFfQ2w1dDVpOU95WWlRNXo5U1RnNFN4QWotMFU5OFdJaTdvMFNmazYzak5BWl91ZlNHQ1RHNFZjOWk1S2JENHlvR3lqSTQwMF9RSmR2QzhoYTRLVFVUY19iYVVYRDZ5Qk92alZzQXZvTFI5d1RlWDJZN0xjajM5Snp1bHc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-16T11:38+01:00",
+      "date": "2026-11-16",
+      "source": "DIIS",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxPSkt0V3U2MFFfQ2w1dDVpOU95WWlRNXo5U1RnNFN4QWotMFU5OFdJaTdvMFNmazYzak5BWl91ZlNHQ1RHNFZjOWk1S2JENHlvR3lqSTQwMF9RSmR2QzhoYTRLVFVUY19iYVVYRDZ5Qk92alZzQXZvTFI5d1RlWDJZN0xjajM5Snp1bHc?oc=5\" target=\"_blank\">Will a European Security Council work? Probably not</a> <font color=\"#6f6f6f\">DIIS</font>",
+      "center_site": "https://diis.dk/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "هل سيعمل مجلس الأمن الأوروبي؟ ربما لا - معهد الدراسات الدفاعية (DIIS)"
     },
     {
       "center": "مركز الأمن الأمريكي الجديد (CNAS)",
@@ -1155,20 +1183,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "لماذا يجب عليك قراءة سياسة مورغنثاو بين الأمم: مذكرة للباحثين الأفارقة في مجال السلام والأمن 1 - ipss-addis.org"
-    },
-    {
-      "center": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
-      "center_short": "IISS",
-      "title": "Middle East war challenges Gulf role in global energy markets - The International Institute for Strategic Studies",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNdzhsWko1eVBWWG9EYXZjSEw4SGhRd0Z5TlplUVZVcWJOMm1NcDNWTDl0WnhiNFRVU2E0enRfWHpUREU5TGFkYS1OSlBfVmM3b0w0YURvdUdxZUNLMUFvZEFQREUyQ1E0T21mb1MzTUE0bVVzUzVKVkdMZ3daSkJfLUlzRTF0TFppcUdzMkFONFRzbGYyM1I0Y0FDWEM1N0k0VEh1dW50TExYMzVHNjc2U0FyMmFkUHpua0ttaDdUNUpqalVkSjAxVzBiTWxYMTk2NjNHYkxpM1pKeV9lLWc?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-30T16:58+01:00",
-      "date": "2026-10-30",
-      "source": "The International Institute for Strategic Studies",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxNdzhsWko1eVBWWG9EYXZjSEw4SGhRd0Z5TlplUVZVcWJOMm1NcDNWTDl0WnhiNFRVU2E0enRfWHpUREU5TGFkYS1OSlBfVmM3b0w0YURvdUdxZUNLMUFvZEFQREUyQ1E0T21mb1MzTUE0bVVzUzVKVkdMZ3daSkJfLUlzRTF0TFppcUdzMkFONFRzbGYyM1I0Y0FDWEM1N0k0VEh1dW50TExYMzVHNjc2U0FyMmFkUHpua0ttaDdUNUpqalVkSjAxVzBiTWxYMTk2NjNHYkxpM1pKeV9lLWc?oc=5\" target=\"_blank\">Middle East war challenges Gulf role in global energy markets</a> <font color=\"#6f6f6f\">The International Institute for Strategi",
-      "center_site": "https://iiss.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "حرب الشرق الأوسط تتحدى دور الخليج في أسواق الطاقة العالمية - المعهد الدولي للدراسات الاستراتيجية"
     },
     {
       "center": "مجلس العلاقات الخارجية",
