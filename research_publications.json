@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T11:13+01:00",
+  "updated": "2026-11-18T20:25+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -608,6 +608,20 @@
   "count": 51,
   "publications": [
     {
+      "center": "مبادرة الإصلاح العربي",
+      "center_short": "Arab Reform Initiative",
+      "title": "Algeria and the U.S.-Israeli War Against Iran - Arab Reform Initiative",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOcUdodk9jU3VFV2hSWkg3ZXU0TUR6Z2JVUEV2X2ZzTHhYd3JOQnNXLUQ4c1pxNGF0Q3MzdlhUaF9Xa3VVZXJ1Tjh5OVVOMGNtSjllaXpqUE1DOGVFLXJiYTNVczltdU1pMnh4dDdCbk1LMjVmaEdEeVdMRkVuV0pURGllQ1pBdGNMM1Z3ajRR?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-18T12:46+01:00",
+      "date": "2026-11-18",
+      "source": "Arab Reform Initiative",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxOcUdodk9jU3VFV2hSWkg3ZXU0TUR6Z2JVUEV2X2ZzTHhYd3JOQnNXLUQ4c1pxNGF0Q3MzdlhUaF9Xa3VVZXJ1Tjh5OVVOMGNtSjllaXpqUE1DOGVFLXJiYTNVczltdU1pMnh4dDdCbk1LMjVmaEdEeVdMRkVuV0pURGllQ1pBdGNMM1Z3ajRR?oc=5\" target=\"_blank\">Algeria and the U.S.-Israeli War Against Iran</a> <font color=\"#6f6f6f\">Arab Reform Initiative</font>",
+      "center_site": "https://arab-reform.net/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "الجزائر والحرب الأمريكية الإسرائيلية ضد إيران - مبادرة الإصلاح العربي"
+    },
+    {
       "center": "مؤسسة كونراد أديناور",
       "center_short": "Konrad Adenauer Stiftung",
       "title": "Events - Regional Programme Security Policy for West Africa - Sahel - Konrad-Adenauer-Stiftung",
@@ -833,6 +847,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "هل سيعمل مجلس الأمن الأوروبي؟ ربما لا - معهد الدراسات الدفاعية (DIIS)"
+    },
+    {
+      "center": "مركز الدراسات الاستراتيجية في جامعة أديس أبابا",
+      "center_short": "IPSS Addis Ababa",
+      "title": "The Research Conference on Conflict Resolution in Eastern Africa will take place on November 16, 2026 - ipss-addis.org",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9rcTRqQXpyWGpGZGhnVGdYc3JBa3Zsa0xOWlRTQTM0ODRyb0RPaUN3X1dhSEJJeDR1Wmc3eFFpc2NUSFBNTFkta01lS0k4Vl9QXzY3UlNleHV0NFIxVFpuZXBoLWV0SE95eFJvNTB6YmR0c1pNSlE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-16T09:00+01:00",
+      "date": "2026-11-16",
+      "source": "ipss-addis.org",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE9rcTRqQXpyWGpGZGhnVGdYc3JBa3Zsa0xOWlRTQTM0ODRyb0RPaUN3X1dhSEJJeDR1Wmc3eFFpc2NUSFBNTFkta01lS0k4Vl9QXzY3UlNleHV0NFIxVFpuZXBoLWV0SE95eFJvNTB6YmR0c1pNSlE?oc=5\" target=\"_blank\">The Research Conference on Conflict Resolution in Eastern Africa will take place on November 16, 2026</a> <font color=\"#6f6f6f\">ipss-addis.org</font>",
+      "center_site": "https://ipss-addis.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "سيعقد مؤتمر البحوث المعني بحل النزاعات في شرق أفريقيا في 16 نوفمبر 2026 - ipss-addis.org"
     },
     {
       "center": "مركز الأمن الأمريكي الجديد (CNAS)",
@@ -1171,20 +1199,6 @@
       "title_ar": "الصمود تحت النار: الأمن الغذائي والأمن المائي واستمرارية الأعمال في الخليج في زمن الحرب - المعهد الدولي للدراسات الاستراتيجية"
     },
     {
-      "center": "مركز الدراسات الاستراتيجية في جامعة أديس أبابا",
-      "center_short": "IPSS Addis Ababa",
-      "title": "Why You Must Read Morgenthau’s Politics Among Nations: A Note to African Peace and Security Researchers 1 - ipss-addis.org",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNOHk1WDJpWEFtQ1FhVFdhdXQyUmE0RU9ZQXc1RXd6LWtvODhYcVdmbmZLRF9tUm41UlBPSXNYYms0dHgtbndDZGZ3RXRnMmpCWGc5Um55bGFUNk9EaFNwR2F1LW5TZmprMWZ5RkdfRWRlM1NJVXItTjZ0SlQwTnFXdlZ1c01CU25kcTA1ZmpGV1ZMUnR1XzA1cThoOGZ3WldUQm5UbEkzVHhtSElyOUdpMDJ2d2NRQktNQ1pLUzFHSi13OVRKNUE?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-31T21:35+01:00",
-      "date": "2026-10-31",
-      "source": "ipss-addis.org",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNOHk1WDJpWEFtQ1FhVFdhdXQyUmE0RU9ZQXc1RXd6LWtvODhYcVdmbmZLRF9tUm41UlBPSXNYYms0dHgtbndDZGZ3RXRnMmpCWGc5Um55bGFUNk9EaFNwR2F1LW5TZmprMWZ5RkdfRWRlM1NJVXItTjZ0SlQwTnFXdlZ1c01CU25kcTA1ZmpGV1ZMUnR1XzA1cThoOGZ3WldUQm5UbEkzVHhtSElyOUdpMDJ2d2NRQktNQ1pLUzFHSi13OVRKNUE?oc=5\" target=\"_blank\">Why You Must Read Morgenthau’s Politics Among Nations: A Note to African Peace and Security Researchers 1</a> <font color=\"#6f6f6f\">ipss-addis.org</font>",
-      "center_site": "https://ipss-addis.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "لماذا يجب عليك قراءة سياسة مورغنثاو بين الأمم: مذكرة للباحثين الأفارقة في مجال السلام والأمن 1 - ipss-addis.org"
-    },
-    {
       "center": "مجلس العلاقات الخارجية",
       "center_short": "CFR",
       "title": "An Economic Shield of the Americas: How Washington Can Counter China and Build a More Prosperous Hemisphere",
@@ -1309,20 +1323,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "يرى \"إضفاء الطابع البحري\" على الحرب الاقتصادية أن طرق التجارة تصبح مناطق قوة بدلاً من قواعد - معهد الشرق الأوسط"
-    },
-    {
-      "center": "مركز الدراسات الاستراتيجية والأمنية في بنغلادش",
-      "center_short": "BIPSS",
-      "title": "The Invisible Battlefield Beneath the Sea: Undersea Cables, Critical Infrastructure and the New Geopolitics of Maritime Power",
-      "url": "https://bipss.org.bd/the-invisible-battlefield-beneath-the-sea-undersea-cables-critical-infrastructure-and-the-new-geopolitics-of-maritime-power/",
-      "published": "2026-10-19T11:39+01:00",
-      "date": "2026-10-19",
-      "source": "BIPSS",
-      "description": "In this commentary, BIPSS Research Assistant Farhana Rashid explores how submarine cables are emerging as strategic assets amid intensifying great-power competition, grey-zone operations, and growing threats to critical undersea infrastructure. The commentary examines the vulnerabilities of global cable networks, the challenges of protecting them under existing international legal frameworks, and the strategic significance of the …",
-      "center_site": "https://bipss.org.bd/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "ساحة المعركة الخفية تحت سطح البحر: الكابلات البحرية، والبنية التحتية الحيوية، والجغرافيا السياسية الجديدة للقوة البحرية"
     }
   ]
 }
