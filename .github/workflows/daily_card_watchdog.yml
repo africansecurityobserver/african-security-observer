@@ -1,10 +1,18 @@
 name: Daily Card Watchdog
 
 on:
+  # Recheck immediately when this watchdog is changed, so recovery logic is validated.
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/daily_card_watchdog.yml"
+
   workflow_dispatch:
   schedule:
-    # Check 7 minutes after each scheduled digest; compare the exact source packet.
-    - cron: "27,57 * * * *"
+    # Check twice per hour, away from the busiest minute-zero scheduling window.
+    # The watchdog dispatches generation only when today's card is missing or stale.
+    - cron: "13,43 * * * *"
       timezone: "Africa/Tunis"
 
 permissions:
