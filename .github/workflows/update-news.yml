@@ -1,4 +1,5 @@
 name: Update News
+# Recovery validation: a push to this workflow file intentionally triggers one safe news refresh.
 
 on:
   push:
