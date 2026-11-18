@@ -1,5 +1,5 @@
 name: Update News
-# Recovery validation: a push to this workflow file intentionally triggers one safe news refresh.
+# Recovery validation: manual workflow-file change triggers a safe news refresh; periodic scheduling is monitored separately.
 
 on:
   push:
