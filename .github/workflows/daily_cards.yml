@@ -24,9 +24,7 @@ on:
       - main
     paths:
       - "daily_cards/generate_daily_card.py"
-      - "daily_cards.yml"
       - "news.json"
-      - ".github/workflows/daily_cards.yml"
 
   # Run only after the news-ingestion workflow has finished successfully.
   # This removes the race where the card was generated from yesterday's feed
@@ -78,7 +76,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.5-flash-lite
           CARD_SLOT: ${{ inputs.slot || 'daily' }}
-          FORCE_CARD_REFRESH: ${{ github.event_name == 'push' || inputs.force_refresh || 'false' }}
+          FORCE_CARD_REFRESH: ${{ (github.event_name == 'push' && contains(github.event.head_commit.modified, 'daily_cards/generate_daily_card.py')) || inputs.force_refresh || 'false' }}
         run: |
           python -u daily_cards/generate_daily_card.py
 
