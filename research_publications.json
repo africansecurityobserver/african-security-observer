@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T20:25+01:00",
+  "updated": "2026-11-19T02:53+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 51,
+  "count": 52,
   "publications": [
     {
       "center": "مبادرة الإصلاح العربي",
@@ -620,6 +620,20 @@
       "relevance_tier": 2,
       "relevance_label": "ليبيا والجزائر",
       "title_ar": "الجزائر والحرب الأمريكية الإسرائيلية ضد إيران - مبادرة الإصلاح العربي"
+    },
+    {
+      "center": "المجلس الأطلسي",
+      "center_short": "Atlantic Council",
+      "title": "Upheaval in the Greater North African Security Complex demands a new transatlantic policy approach - Atlantic Council",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPdkMwdVJyVVF2bW0wWGdNb3VMOXdlTDkzekRFdXduT21lQ18wcHY1S05scDdTZXA1RnNUV1R1QzRTbW82V2Y0Y2ZDSEZBbDhiZXpWVEttOTdiYkU5aC0zdWdPaWljNEFSSnByenBzejd1WWdQaU9MZFNfSzlKZVBBZGU5Q1RSNDZyRHdDZ3NqSXVHVUM2dmh6TmU0V29yVHhIRkZjdzhZNmh1RjNYYlg2NEZrRU5GNGwtRjBOQXhfOEVoSzhYdmgtUG5Db0ZoR0lwUkQtclBITXMyY0xHTHpTVU93?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-18T22:05+01:00",
+      "date": "2026-11-18",
+      "source": "Atlantic Council",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxPdkMwdVJyVVF2bW0wWGdNb3VMOXdlTDkzekRFdXduT21lQ18wcHY1S05scDdTZXA1RnNUV1R1QzRTbW82V2Y0Y2ZDSEZBbDhiZXpWVEttOTdiYkU5aC0zdWdPaWljNEFSSnByenBzejd1WWdQaU9MZFNfSzlKZVBBZGU5Q1RSNDZyRHdDZ3NqSXVHVUM2dmh6TmU0V29yVHhIRkZjdzhZNmh1RjNYYlg2NEZrRU5GNGwtRjBOQXhfOEVoSzhYdmgtUG5Db0ZoR0lwUkQtclBITXMyY0xHTHpTVU93?oc=5\" target=\"_blank\">Upheaval in the Greater North African Security Complex demands a new transatlantic policy approach</a> <font color=\"#6f6f6f",
+      "center_site": "https://atlanticcouncil.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "الاضطرابات في مجمع أمن شمال أفريقيا الكبير تتطلب نهجًا سياسيًا جديدًا عبر الأطلسي - المجلس الأطلسي"
     },
     {
       "center": "مؤسسة كونراد أديناور",
@@ -777,6 +791,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "المؤتمر التاسع والأربعون لقانون وسياسات المحيطات (COLP49)، أثينا، اليونان: \"الأمن البحري في البحر الأبيض المتوسط وما وراءه\" | الأحداث | المعهد الياباني للشؤون الدولية - 公益財団法人日本国際問題研究所"
+    },
+    {
+      "center": "مجلس العلاقات الخارجية",
+      "center_short": "CFR",
+      "title": "What COP31 Missed About Global Food Security - Council on Foreign Relations",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1PMmY2U0lTZkNCRWNyeUxUTHFZY0NHTGlJQXQ1dThuTGY2b2ZER18tenliVnNTTXdRQVN1US1udGRCTVRsU0N5cXZaTWZuWWZvMTVyMEpMWnlLallWTmltTE9tNUFlal9HcTVVQ0RNdEtMYk92MVlQVC1femdnZw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-18T21:17+01:00",
+      "date": "2026-11-18",
+      "source": "Council on Foreign Relations",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE1PMmY2U0lTZkNCRWNyeUxUTHFZY0NHTGlJQXQ1dThuTGY2b2ZER18tenliVnNTTXdRQVN1US1udGRCTVRsU0N5cXZaTWZuWWZvMTVyMEpMWnlLallWTmltTE9tNUFlal9HcTVVQ0RNdEtMYk92MVlQVC1femdnZw?oc=5\" target=\"_blank\">What COP31 Missed About Global Food Security</a> <font color=\"#6f6f6f\">Council on Foreign Relations</font>",
+      "center_site": "https://cfr.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "ما فات مؤتمر الأطراف الحادي والثلاثون بشأن الأمن الغذائي العالمي - مجلس العلاقات الخارجية"
     },
     {
       "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
@@ -1057,20 +1085,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "شارك نيكلاس سوانستروم في الندوة السابعة حول التعاون البحري العالمي وإدارة المحيطات في سانيا - معهد سياسة الأمن والتنمية"
-    },
-    {
-      "center": "مجلس العلاقات الخارجية",
-      "center_short": "CFR",
-      "title": "COP31 and Climate Action’s New Centers of Gravity",
-      "url": "https://www.cfr.org/articles/cop31-and-climate-actions-new-centers-of-gravity",
-      "published": "2026-11-06T19:28+01:00",
-      "date": "2026-11-06",
-      "source": "CFR",
-      "description": "As the world is on track to miss climate targets, governments are grappling with the consequences of climate change. Three think tank experts in the United States, Canada, and South Africa offer analyses on the status of multilateral cooperation on climate action, the importance of energy security, and the role of technology in the climate conversation.",
-      "center_site": "https://cfr.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "COP31 ومراكز الجاذبية الجديدة للعمل المناخي"
     },
     {
       "center": "مؤسسة كارنيغي للسلام الدولي",
