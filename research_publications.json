@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T02:53+01:00",
+  "updated": "2026-11-19T11:25+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 52,
+  "count": 51,
   "publications": [
     {
       "center": "مبادرة الإصلاح العربي",
@@ -654,7 +654,7 @@
       "center_short": "Atlantic Council",
       "title": "Washington is reshaping security in North Africa. Congress needs to ask how. - Atlantic Council",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQzRRLUc5UExZak84ZmRqVDdwVXgtMm1FVHdDZUF3bEViNWt0bGpJMUROMmRzbzBtTnNyRWk5T3R6RmdHQjFmZXY4TUt3bjVKY0N5NWNQeVA5SGRCS1dVbzljdGYxQnM2ZnpSNDN3Z0NqNG01WDhxbFNXVjlsbXVMc3Z1MDlDUTNLd0FCZjJHOEI5LWR1TENpNzgxc2d1dE4yd2VGZ3BHYkJjclZVZ1UwZGdSTTlFazB1UE16enpOdVUxZw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-13T16:16+01:00",
+      "published": "2026-11-13T16:18+01:00",
       "date": "2026-11-13",
       "source": "Atlantic Council",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQzRRLUc5UExZak84ZmRqVDdwVXgtMm1FVHdDZUF3bEViNWt0bGpJMUROMmRzbzBtTnNyRWk5T3R6RmdHQjFmZXY4TUt3bjVKY0N5NWNQeVA5SGRCS1dVbzljdGYxQnM2ZnpSNDN3Z0NqNG01WDhxbFNXVjlsbXVMc3Z1MDlDUTNLd0FCZjJHOEI5LWR1TENpNzgxc2d1dE4yd2VGZ3BHYkJjclZVZ1UwZGdSTTlFazB1UE16enpOdVUxZw?oc=5\" target=\"_blank\">Washington is reshaping security in North Africa. Congress needs to ask how.</a> <font color=\"#6f6f6f\">Atlantic Council</font>",
@@ -777,20 +777,6 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "هيكل أمني جديد في الشرق الأوسط"
-    },
-    {
-      "center": "معهد اليابان للشؤون الدولية (JIIA)",
-      "center_short": "JIIA",
-      "title": "49th Conference on Oceans Law & Policy (COLP49), Athens, Greece: “Maritime Security in the Mediterranean Sea & Beyond” | Events | The Japan Institute of International Affairs - 公益財団法人日本国際問題研究所",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBoLXF5ZjlDQWhEcnRsdG1DQ2VEYjFMbkZyR2MwSXAwQm04dnQtLXA1ZDFxRUY5OVcyb04xRU9mVmZPQ1ZGY0g1a2J4UWxOUm1PU19KclZWWjA2SVFlaDNVV1k0XzE?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-20T03:17+01:00",
-      "date": "2026-10-20",
-      "source": "公益財団法人日本国際問題研究所",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTFBoLXF5ZjlDQWhEcnRsdG1DQ2VEYjFMbkZyR2MwSXAwQm04dnQtLXA1ZDFxRUY5OVcyb04xRU9mVmZPQ1ZGY0g1a2J4UWxOUm1PU19KclZWWjA2SVFlaDNVV1k0XzE?oc=5\" target=\"_blank\">49th Conference on Oceans Law & Policy (COLP49), Athens, Greece: “Maritime Security in the Mediterranean Sea & Beyond” | Events | The Japan Institute of International Affairs</a> <font color=\"#6f6f6f\">公益財団法人日本国際問題研究所</font>",
-      "center_site": "https://jiia.or.jp/",
-      "relevance_tier": 3,
-      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "المؤتمر التاسع والأربعون لقانون وسياسات المحيطات (COLP49)، أثينا، اليونان: \"الأمن البحري في البحر الأبيض المتوسط وما وراءه\" | الأحداث | المعهد الياباني للشؤون الدولية - 公益財団法人日本国際問題研究所"
     },
     {
       "center": "مجلس العلاقات الخارجية",
