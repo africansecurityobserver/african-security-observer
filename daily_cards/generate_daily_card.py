@@ -1960,7 +1960,7 @@ def generate_with_gemini(prompt):
 
     client = genai.Client(
         api_key=api_key,
-        http_options=types.HttpOptions(timeout=45000)
+        http_options=types.HttpOptions(timeout=90000)
     )
     last_error = None
 
@@ -1968,7 +1968,7 @@ def generate_with_gemini(prompt):
         started = time.monotonic()
         print("=" * 70)
         print(f"Trying Gemini model: {model_name}")
-        print("Per-model request timeout: 45 seconds")
+        print("Per-model request timeout: 90 seconds")
         print("=" * 70)
 
         try:
