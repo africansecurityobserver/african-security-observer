@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T11:25+01:00",
+  "updated": "2026-11-19T20:29+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 51,
+  "count": 53,
   "publications": [
     {
       "center": "مبادرة الإصلاح العربي",
@@ -777,6 +777,34 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "هيكل أمني جديد في الشرق الأوسط"
+    },
+    {
+      "center": "المعهد الملكي للخدمات المتحدة (RUSI)",
+      "center_short": "RUSI",
+      "title": "Can Drones Replace Soldiers? NATO's Uncrewed Strategy - Royal United Services Institute (RUSI)",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNQl94RGkxbFY4LWt6Z2JVVmF2YXBnM0E0dm94MXZVU0pRTEc2bHVWS0RYOUNBYjgxLThYSVY0aXV2S25ZMG5OdnZFYVNwRDBLTzhTbzdtU3QzRUpPdG1YeXZwMUxWMlBHOVJ1QWZDMEhjaWh4OUJUaDVLRkk4OVdkYlN0TFdVNXEySWZPdjRn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-19T13:39+01:00",
+      "date": "2026-11-19",
+      "source": "Royal United Services Institute (RUSI)",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxNQl94RGkxbFY4LWt6Z2JVVmF2YXBnM0E0dm94MXZVU0pRTEc2bHVWS0RYOUNBYjgxLThYSVY0aXV2S25ZMG5OdnZFYVNwRDBLTzhTbzdtU3QzRUpPdG1YeXZwMUxWMlBHOVJ1QWZDMEhjaWh4OUJUaDVLRkk4OVdkYlN0TFdVNXEySWZPdjRn?oc=5\" target=\"_blank\">Can Drones Replace Soldiers? NATO's Uncrewed Strategy</a> <font color=\"#6f6f6f\">Royal United Services Institute (RUSI)</font>",
+      "center_site": "https://rusi.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "هل يمكن للطائرات بدون طيار أن تحل محل الجنود؟ استراتيجية الناتو للمركبات غير المأهولة - المعهد الملكي للخدمات المتحدة (RUSI)"
+    },
+    {
+      "center": "مركز أبحاث السياسة الخارجية النمساوي (oiip)",
+      "center_short": "oiip",
+      "title": "Talking about European Security, without the OSCE • Publications - Österreichisches Institut für Internationale Politik",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYW5SMHgzYWpFdXVjQ3ZfNHpHbHo4Qk95T2trWWxXQVM0M2ZWM2F0eEZZYzVoOHpTNm1hWS1PNlNvUktIM194dk9fVUtHcXpMZjcycDM1cTFKaldSWGMtUUZHbVVWczhMRloyU0NkRHlSc3RtVm9PNmFlcnQ0eEhqQzRwZFNnSUZ1WmZJd01mZDJwUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-19T12:26+01:00",
+      "date": "2026-11-19",
+      "source": "Österreichisches Institut für Internationale Politik",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPYW5SMHgzYWpFdXVjQ3ZfNHpHbHo4Qk95T2trWWxXQVM0M2ZWM2F0eEZZYzVoOHpTNm1hWS1PNlNvUktIM194dk9fVUtHcXpMZjcycDM1cTFKaldSWGMtUUZHbVVWczhMRloyU0NkRHlSc3RtVm9PNmFlcnQ0eEhqQzRwZFNnSUZ1WmZJd01mZDJwUQ?oc=5\" target=\"_blank\">Talking about European Security, without the OSCE • Publications</a> <font color=\"#6f6f6f\">Österreichisches Institut für Internationale Politik</font>",
+      "center_site": "https://oiip.ac.at/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الحديث عن الأمن الأوروبي، من دون منظمة الأمن والتعاون في أوروبا • المنشورات - المعهد النمساوي للسياسة الدولية"
     },
     {
       "center": "مجلس العلاقات الخارجية",
