@@ -1,8 +1,17 @@
 name: Generate Strategic Cards
 
 on:
-  # Manual runs remain available; code pushes do not consume Gemini quota.
+  # Manual runs remain available; relevant news and generator changes also
+  # trigger a fresh candidate scan so important stories are not delayed six hours.
   workflow_dispatch:
+
+  push:
+    branches:
+      - main
+    paths:
+      - "news.json"
+      - "strategic_cards/generate_strategic_cards.py"
+      - ".github/workflows/strategic_cards.yml"
 
   schedule:
     # Every six hours, Tunisia local time; offset to avoid the top of the hour.
@@ -15,7 +24,7 @@ permissions:
 # Prevent overlapping strategic-news runs from racing to update the same JSON files.
 concurrency:
   group: strategic-news-cards-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   generate-strategic-card:
