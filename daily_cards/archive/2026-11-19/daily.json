@@ -3,16 +3,16 @@
   "slot": "daily",
   "period": "00:00–23:59 (تُنشأ عند 06:00 وتُحدّث خلال اليوم)",
   "title": "الحوصلة الإخبارية ليوم 19/11/2026",
-  "generated_at": "2026-11-19T14:58:42.915292+01:00",
-  "source_fingerprint": "3836472aef97f2ea5a67f412b9219f10610879247da67797ac8fcaccaff83d4e",
-  "source_news_count": 156,
+  "generated_at": "2026-11-19T23:07:05.217946+01:00",
+  "source_fingerprint": "8b92444c3d84885442d55c351563f4cec4a6ea082ea567c57ed30f68ea331179",
+  "source_news_count": 180,
   "candidate_audit_attempt_date": "2026-11-19",
   "candidate_audit_completed": true,
-  "candidate_audit_fingerprint": "3836472aef97f2ea5a67f412b9219f10610879247da67797ac8fcaccaff83d4e",
+  "candidate_audit_fingerprint": "8b92444c3d84885442d55c351563f4cec4a6ea082ea567c57ed30f68ea331179",
   "candidate_audit_version": 3,
   "event_enrichment_version": 4,
   "event_enrichment_attempted": true,
-  "event_enrichment_fingerprint": "3836472aef97f2ea5a67f412b9219f10610879247da67797ac8fcaccaff83d4e",
+  "event_enrichment_fingerprint": "8b92444c3d84885442d55c351563f4cec4a6ea082ea567c57ed30f68ea331179",
   "event_enrichment_completed": false,
   "event_enrichment_sources": [],
   "sections": [
@@ -34,6 +34,10 @@
       "id": "algeria",
       "title": "الجزائر",
       "events": [
+        {
+          "country": "الجزائر",
+          "text": "شارك وزير الدولة وزير الشؤون الخارجية والجالية الوطنية بالخارج والشؤون الإفريقية أحمد عطاف في أوسلو في أشغال الدورة الثالثة والعشرين لاجتماع وزراء خارجية الدول الإفريقية ودول شمال أوروبا."
+        },
         {
           "country": "الجزائر",
           "text": "أعلنت الجزائر تشديد إجراءاتها الرقابية لمكافحة غسل الأموال وتمويل الإرهاب، بتوخي مزيد من اليقظة عند التعامل مع المعاملات المشبوهة."
