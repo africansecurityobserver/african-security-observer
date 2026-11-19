@@ -31,7 +31,8 @@ MAX_CARDS_PER_RUN = max(1, int(os.getenv("MAX_CARDS_PER_RUN", "1")))
 # feed, especially for diplomacy, defense policy, logistics, and defense economics.
 STRATEGIC_RSS_QUERIES = {
     "defense_economics": [
-        '"defense economics" OR "defence economics" OR "critical minerals" OR "اقتصاد الدفاع" OR "المعادن الحيوية" Africa security'
+        '"defense economics" OR "defence economics" OR "critical minerals" OR "اقتصاد الدفاع" OR "المعادن الحيوية" Africa security',
+        '"Morocco" ("defense industry" OR "defence industry" OR "defense industrial base" OR "صناعة الدفاع" OR "الصناعة الدفاعية" OR "صناعة السلاح")'
     ],
     "military_transformation": [
         '"military restructuring" OR "autonomous warfare" OR "military AI" OR "إعادة هيكلة الجيش" OR "الذكاء الاصطناعي العسكري"'
@@ -114,7 +115,9 @@ TYPE_KEYWORDS = {
     ],
     "defense_economics": [
         "اقتصاد الدفاع", "الاقتصاد الدفاعي", "تمويل الدفاع", "تمويل عسكري",
-        "الصناعات الدفاعية", "القاعدة الصناعية الدفاعية", "المعادن الحيوية",
+        "صناعة الدفاع", "صناعة دفاعية", "الصناعة الدفاعية", "الصناعات الدفاعية",
+        "صناعة السلاح", "الصناعات العسكرية", "التصنيع الدفاعي", "قاعدة صناعية دفاعية",
+        "القاعدة الصناعية الدفاعية", "المعادن الحيوية",
         "سلاسل الإمداد", "تمويل التنمية", "النفوذ الاقتصادي", "الاستثمار الدفاعي",
         "defense economics", "defence economics", "defense industry", "defence industry",
         "defense financing", "military financing", "critical minerals", "supply chains",
@@ -519,6 +522,20 @@ def score_types(item):
     ]
     if any(term in combined for term in arms_terms):
         scores["deals"] += 5
+
+    # Defence-industrial roadmaps and domestic production programmes are
+    # strategic economic/industrial developments even when no arms contract
+    # or named weapon system is mentioned in the headline.
+    defence_industry_terms = [
+        "صناعة الدفاع", "صناعة دفاعية", "الصناعة الدفاعية", "الصناعات الدفاعية",
+        "صناعة السلاح", "الصناعات العسكرية", "التصنيع الدفاعي",
+        "defense industry", "defence industry", "defense industrial base",
+        "defence industrial base", "military industry", "defense manufacturing",
+        "industrie de défense", "industrie de l'armement"
+    ]
+    if any(term in combined for term in defence_industry_terms):
+        scores["defense_economics"] += 8
+        scores["defense_strategy"] += 3
 
     return scores
 
