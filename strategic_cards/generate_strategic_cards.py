@@ -1012,16 +1012,44 @@ def main():
 
         kind, subject, sections, summary_text, word_count, has_conclusion, valid = unpack_generated_card(output)
 
+        # A structurally incomplete first draft is not a reason to defer a
+        # well-sourced strategic event for another six-hour cycle. Request one
+        # focused repair, preserving the source material and all editorial rules.
         if not valid:
             print(
                 f"First draft failed quality validation (words={word_count}, sections={len(sections)}); "
-                "leaving the source eligible for the next six-hour run without a second Gemini request."
+                "requesting one structured revision."
             )
-            continue
+            repair_prompt = (
+                base_prompt
+                + "\\n\\nالمسودة الأولى التي أعدتها:\\n"
+                + json.dumps(output, ensure_ascii=False)
+                + "\\n\\nأعد صياغة البطاقة الآن مع الالتزام الحرفي بشروط القالب. "
+                  "يجب أن يكون الناتج بين 850 و1150 كلمة، وأن يتضمن خمسة أقسام بالضبط: "
+                  "أربعة أقسام تحليلية، في كل قسم أربع نقاط منفصلة تبدأ بـ - ، "
+                  "ثم قسم خامس بعنوان «5. خلاصة استراتيجية لها علاقة بتونس» في فقرة مترابطة. "
+                  "لا تختصر النقاط ولا تحذف أي قسم. لا تضف وقائع غير موجودة في المصادر. "
+                  "أعد JSON فقط وفق المخطط نفسه."
+            )
+            try:
+                repaired = client.interactions.create(
+                    model=MODEL,
+                    input=repair_prompt,
+                    response_format={"type": "text", "mime_type": "application/json", "schema": schema},
+                    generation_config={"temperature": 0.2, "thinking_level": "low"}
+                )
+                output = json.loads(repaired.output_text or "{}")
+                kind, subject, sections, summary_text, word_count, has_conclusion, valid = unpack_generated_card(output)
+            except Exception as exc:
+                print(f"Strategic-card revision failed: {type(exc).__name__}")
+                if is_quota_or_rate_limit_error(exc):
+                    print("Gemini quota/rate limit reached during revision; source remains eligible for a later run.")
+                    break
+                continue
 
         if not valid:
             print(
-                f"Generated card still failed quality validation (words={word_count}, sections={len(sections)}); "
+                f"Revised card still failed quality validation (words={word_count}, sections={len(sections)}); "
                 "source remains unchecked for a later retry."
             )
             continue
