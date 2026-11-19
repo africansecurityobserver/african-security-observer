@@ -2,6 +2,7 @@ import feedparser
 import json
 import os
 import re
+import time
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 from urllib.parse import quote_plus, quote, urlsplit, urlunsplit, parse_qsl, urlencode
@@ -818,7 +819,7 @@ RSS_FEEDS = {
 # SETTINGS
 # =========================================================
 
-MAX_NEWS_PER_FEED = 15
+MAX_NEWS_PER_FEED = 30
 MAX_NEWS_AGE_HOURS = 48
 CURRENT_NEWS_DAYS = 2
 
@@ -1525,18 +1526,34 @@ def load_existing_news():
 # =========================================================
 
 def fetch_rss_feed(feed_category, feed_url):
-    """Fetch and parse one RSS feed; isolated so slow feeds do not block others."""
-    try:
-        request = Request(
-            feed_url,
-            headers={"User-Agent": "Mozilla/5.0"}
-        )
-        with urlopen(request, timeout=8) as response:
-            feed_content = response.read()
-        return feed_category, feed_url, feedparser.parse(feed_content)
-    except Exception as e:
-        print(f"Skipping feed after fetch error ({feed_category}): {e}")
-        return feed_category, feed_url, None
+    """Fetch one RSS feed with bounded retries for transient network/provider errors."""
+    last_error = None
+    for attempt in range(1, 4):
+        try:
+            request = Request(
+                feed_url,
+                headers={
+                    "User-Agent": "Mozilla/5.0 (compatible; AfricanSecurityObserver/1.0)",
+                    "Accept": "application/rss+xml, application/xml, text/xml, */*"
+                }
+            )
+            with urlopen(request, timeout=15) as response:
+                feed_content = response.read()
+            parsed = feedparser.parse(feed_content)
+            if getattr(parsed, "bozo", False) and not parsed.entries:
+                raise ValueError("RSS response could not be parsed and contained no entries")
+            return feed_category, feed_url, parsed
+        except Exception as error:
+            last_error = error
+            print(
+                f"Feed fetch attempt {attempt}/3 failed ({feed_category}): "
+                f"{type(error).__name__}: {error}"
+            )
+            if attempt < 3:
+                time.sleep(attempt * 2)
+
+    print(f"Skipping feed after 3 failed attempts ({feed_category}): {last_error}")
+    return feed_category, feed_url, None
 
 
 def get_news():
