@@ -24,6 +24,9 @@ on:
       - main
     paths:
       - "daily_cards/generate_daily_card.py"
+      - "daily_cards.yml"
+      - "news.json"
+      - ".github/workflows/daily_cards.yml"
 
   # Run only after the news-ingestion workflow has finished successfully.
   # This removes the race where the card was generated from yesterday's feed
