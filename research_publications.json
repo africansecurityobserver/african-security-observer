@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T20:29+01:00",
+  "updated": "2026-11-20T02:47+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 53,
+  "count": 56,
   "publications": [
     {
       "center": "مبادرة الإصلاح العربي",
@@ -648,20 +648,6 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "الفعاليات - البرنامج الإقليمي لسياسة الأمن لغرب أفريقيا - منطقة الساحل - مؤسسة كونراد أденаور"
-    },
-    {
-      "center": "المجلس الأطلسي",
-      "center_short": "Atlantic Council",
-      "title": "Washington is reshaping security in North Africa. Congress needs to ask how. - Atlantic Council",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQzRRLUc5UExZak84ZmRqVDdwVXgtMm1FVHdDZUF3bEViNWt0bGpJMUROMmRzbzBtTnNyRWk5T3R6RmdHQjFmZXY4TUt3bjVKY0N5NWNQeVA5SGRCS1dVbzljdGYxQnM2ZnpSNDN3Z0NqNG01WDhxbFNXVjlsbXVMc3Z1MDlDUTNLd0FCZjJHOEI5LWR1TENpNzgxc2d1dE4yd2VGZ3BHYkJjclZVZ1UwZGdSTTlFazB1UE16enpOdVUxZw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-13T16:18+01:00",
-      "date": "2026-11-13",
-      "source": "Atlantic Council",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQzRRLUc5UExZak84ZmRqVDdwVXgtMm1FVHdDZUF3bEViNWt0bGpJMUROMmRzbzBtTnNyRWk5T3R6RmdHQjFmZXY4TUt3bjVKY0N5NWNQeVA5SGRCS1dVbzljdGYxQnM2ZnpSNDN3Z0NqNG01WDhxbFNXVjlsbXVMc3Z1MDlDUTNLd0FCZjJHOEI5LWR1TENpNzgxc2d1dE4yd2VGZ3BHYkJjclZVZ1UwZGdSTTlFazB1UE16enpOdVUxZw?oc=5\" target=\"_blank\">Washington is reshaping security in North Africa. Congress needs to ask how.</a> <font color=\"#6f6f6f\">Atlantic Council</font>",
-      "center_site": "https://atlanticcouncil.org/",
-      "relevance_tier": 3,
-      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "تعمل واشنطن على إعادة تشكيل الأمن في شمال أفريقيا. يجب على الكونغرس أن يسأل كيف. - المجلس الأطلسي"
     },
     {
       "center": "المبادرة العالمية لمكافحة الجريمة المنظمة العابرة للحدود",
@@ -777,6 +763,62 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "هيكل أمني جديد في الشرق الأوسط"
+    },
+    {
+      "center": "مركز الدراسات الاستراتيجية والدولية (CSIS)",
+      "center_short": "CSIS",
+      "title": "Middle Power Ties in the Gulf and Africa: The Iran War Inflection Point - CSIS | Center for Strategic and International Studies",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNLWkyNmN5OWxBa3VHNUtBaEJmRUUzMkEyS2xELWZWb2p1NENlYXB2aDVQcUNmcTF0emEtVVUxZGxXcDZoZnFfSWFyaURhTE1DU2NVcHFKNExRazhOVThVeGhIVzdxVlZuWlhubU9Lc0NfbzV3dHRZbEZrRU1BdDlWQktzYWFzOU0yOW1Eb3c4ZDN0U1E?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-19T22:37+01:00",
+      "date": "2026-11-19",
+      "source": "CSIS | Center for Strategic and International Studies",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNLWkyNmN5OWxBa3VHNUtBaEJmRUUzMkEyS2xELWZWb2p1NENlYXB2aDVQcUNmcTF0emEtVVUxZGxXcDZoZnFfSWFyaURhTE1DU2NVcHFKNExRazhOVThVeGhIVzdxVlZuWlhubU9Lc0NfbzV3dHRZbEZrRU1BdDlWQktzYWFzOU0yOW1Eb3c4ZDN0U1E?oc=5\" target=\"_blank\">Middle Power Ties in the Gulf and Africa: The Iran War Inflection Point</a> <font color=\"#6f6f6f\">CSIS | Center for Strategic and International Studies</font>",
+      "center_site": "https://csis.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "علاقات القوى المتوسطة في الخليج وأفريقيا: نقطة التحول في الحرب الإيرانية - مركز الدراسات الاستراتيجية والدولية | مركز الدراسات الاستراتيجية والدولية"
+    },
+    {
+      "center": "معهد هدسون",
+      "center_short": "Hudson Institute",
+      "title": "Transatlantic Defense Industrial Cooperation and NATO 3.0: A Conversation with US Ambassador to NATO Matthew Whitaker - Hudson Institute",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPTVAzVVhEZjNJQm1QVkotY0lZYnNaN25nRFIyUnJvUDF2WF9WNlZuelFqVUJBYTNFOVlkd3F1ZUFxVTFDc0RlSnJLci1NN29fMW5tSllMWHBsWDBrOVRETGFQMTdLZ2NYWjc3bEE3UXZyU0ZzbGV6X0J3SlItVUxDWm9IcUx4anc4alZKdEdXSUJ5ZS13c1g3dWM5Wmh0VWRqVm9nOG5BbXBGb2ZNN3hDS19XWnZsTl92b0dIWEc3RQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-19T20:39+01:00",
+      "date": "2026-11-19",
+      "source": "Hudson Institute",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPTVAzVVhEZjNJQm1QVkotY0lZYnNaN25nRFIyUnJvUDF2WF9WNlZuelFqVUJBYTNFOVlkd3F1ZUFxVTFDc0RlSnJLci1NN29fMW5tSllMWHBsWDBrOVRETGFQMTdLZ2NYWjc3bEE3UXZyU0ZzbGV6X0J3SlItVUxDWm9IcUx4anc4alZKdEdXSUJ5ZS13c1g3dWM5Wmh0VWRqVm9nOG5BbXBGb2ZNN3hDS19XWnZsTl92b0dIWEc3RQ?oc=5\" target=\"_blank\">Transatlantic Defense Industrial Cooperation and NATO 3.0: A Conversation with US Ambassador to NATO Matthew Whitaker</a> <font color=\"#6f6f6f\">Hudson Institute</font>",
+      "center_site": "https://hudson.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "التعاون الصناعي الدفاعي عبر الأطلسي وحلف شمال الأطلسي 3.0: حوار مع سفير الولايات المتحدة لدى حلف شمال الأطلسي ماثيو ويتاكر - معهد هدسون"
+    },
+    {
+      "center": "المجلس الأطلسي",
+      "center_short": "Atlantic Council",
+      "title": "US Energy Secretary Chris Wright and Polish Energy Minister Miłosz Motyka on why Europe’s security depends on its energy supply - Atlantic Council",
+      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPcU9ZV1RHMklJd0x2eEVrX21QeXdxVFEyekNCYVN5Q1oxMkUzcEpyek9rWHVGTnBxSVBtc09FbWN6cnJHN2VkQTFKdXV0UEVMbE90cHd2NFpuMDdxelg3c09QWEZFNGw3M3YzS0ZMRHg3Nk81TjlJT0NaeTlMTFh1YXYybnlRNUVJR3NjM0tmczVCUVJHNnlVd0RNTEI0SEFwcGNFQjVtYUFBVTV0enVEbURNNXRFd0I0M0RjUFVMbXlyM2NUMjVqLVlVM2h2b0dDSUMxUHlLSUgza2JjaWM3bkt4X19DUTRSbVNTTkdRV3YxQ215RWdMdTNxOGZpdWpNd1RMQ2VKUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-19T20:32+01:00",
+      "date": "2026-11-19",
+      "source": "Atlantic Council",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMihwJBVV95cUxPcU9ZV1RHMklJd0x2eEVrX21QeXdxVFEyekNCYVN5Q1oxMkUzcEpyek9rWHVGTnBxSVBtc09FbWN6cnJHN2VkQTFKdXV0UEVMbE90cHd2NFpuMDdxelg3c09QWEZFNGw3M3YzS0ZMRHg3Nk81TjlJT0NaeTlMTFh1YXYybnlRNUVJR3NjM0tmczVCUVJHNnlVd0RNTEI0SEFwcGNFQjVtYUFBVTV0enVEbURNNXRFd0I0M0RjUFVMbXlyM2NUMjVqLVlVM2h2b0dDSUMxUHlLSUgza2JjaWM3bkt4X19DUTRSbVNTTkdRV3YxQ215RWdMdTNxOGZpdWpNd1RMQ2VKUQ?oc=5\" target=\"_blank\">US Energy Secretary Chris Wright and Polish Energy Minister Miłosz Motyka",
+      "center_site": "https://atlanticcouncil.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "وزير الطاقة الأمريكي كريس رايت ووزير الطاقة البولندي ميلوش موتيكا عن سبب اعتماد أمن أوروبا على إمداداتها بالطاقة - مجلس الأطلسي"
+    },
+    {
+      "center": "معهد هدسون",
+      "center_short": "Hudson Institute",
+      "title": "Connected Vehicles, Manufacturing, and National Security: A Conversation with Senator Bernie Moreno",
+      "url": "https://www.hudson.org/events/connected-vehicles-manufacturing-national-security-conversation-senator-bernie-moreno",
+      "published": "2026-11-19T20:03+01:00",
+      "date": "2026-11-19",
+      "source": "Hudson Institute",
+      "description": "<span>Connected Vehicles, Manufacturing, and National Security: A Conversation with Senator Bernie Moreno</span> <span><span>nhuergo@hudson.org</span></span> <span><time datetime=\"2026-11-19T14:03:11-05:00\" title=\"Thursday, November 19, 2026 - 14:03\">Thu, 11/19/2026 - 14:03</time> </span> <div class=\"hud-layout__event-hero-mobile c-event-info\"> <div class=\"c-event-info__inner\"> <div class=\"layout__region c-event-info__date\"> <div class=\"block-field-block-node-event-detail-field-start-datetime bl",
+      "center_site": "https://hudson.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "المركبات المتصلة والتصنيع والأمن القومي: حوار مع السيناتور بيرني مورينو"
     },
     {
       "center": "المعهد الملكي للخدمات المتحدة (RUSI)",
