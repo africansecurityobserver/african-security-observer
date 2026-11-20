@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T02:47+01:00",
+  "updated": "2026-11-20T11:04+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 56,
+  "count": 54,
   "publications": [
     {
       "center": "مبادرة الإصلاح العربي",
@@ -678,23 +678,6 @@
       "title_ar": "البرنامج الإقليمي للحوار بشأن السياسة الأمنية في غرب أفريقيا - منطقة الساحل (SIPODI غرب أفريقيا - منطقة الساحل) - مؤسسة كونراد أديناور"
     },
     {
-      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-      "center_short": "ISS Africa",
-      "title": "Islamic State is incentivising ISWAP to target military stockpiles - ISS Africa",
-      "url": "https://issafrica.org/iss-today/islamic-state-is-incentivising-iswap-to-target-military-stockpiles",
-      "published": "2026-11-12T10:05+01:00",
-      "date": "2026-11-12",
-      "source": "ISS Africa",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPVEVucXpiRmo4aVdpRFFzdEJlTGdIMFpEb2U2X0g1NzFzZmNzMmxqT3NWZlR6WjlRb3hWOTRUMWltQndJS3phOF9XUW01a3hhTmNVZnloYlBsRjVEOE1VU1J4cmJsd2ZaQmlPaFBsbjV5a3FuM3lUNjRFbEpfbU9UTmYtdGZLVGlxNzAtd082ZWlGV2NqZmNlOG5MTnR4Y1E?oc=5\" target=\"_blank\">Islamic State is incentivising ISWAP to target military stockpiles</a> <font color=\"#6f6f6f\">ISS Africa</font>",
-      "center_site": "https://issafrica.org/",
-      "relevance_tier": 3,
-      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "تنظيم الدولة الإسلامية يحفز تنظيم الدولة الإسلامية في غرب أفريقيا لاستهداف المخزونات العسكرية - معهد الدراسات الأمنية في أفريقيا",
-      "fallback_urls": [
-        "https://www.premiumtimesng.com/news/headlines/924634-islamic-state-is-incentivising-iswap-to-target-military-stockpiles-in-nigeria-others.html"
-      ]
-    },
-    {
       "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
       "center_short": "SWP",
       "title": "How the Military Is Restructuring Egypt’s Gold Sector Through Force - Stiftung Wissenschaft und Politik (SWP)",
@@ -765,6 +748,20 @@
       "title_ar": "هيكل أمني جديد في الشرق الأوسط"
     },
     {
+      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+      "center_short": "ISS Africa",
+      "title": "Africa cannot afford to delay regulating autonomous weapons - ISS Africa",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQOHhhVnFJbXJFc3BPZEdrd2pRTVg0YlR4Vm1UVmdoM0FpLVhTVk5YMEt5LXlJWklwOHFJbk90S0JLelNkVDgtdVdjWHRKRUttSFBDUFAxRFY1dnUxdmJKUlBaaUdxZklSTFRmX3JnSzZDOXFzaHVNNWdvaFVRVEpYb0R5dHlDaHJIWXpfZDhXcnNVQTRwY2c?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-20T10:28+01:00",
+      "date": "2026-11-20",
+      "source": "ISS Africa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxQOHhhVnFJbXJFc3BPZEdrd2pRTVg0YlR4Vm1UVmdoM0FpLVhTVk5YMEt5LXlJWklwOHFJbk90S0JLelNkVDgtdVdjWHRKRUttSFBDUFAxRFY1dnUxdmJKUlBaaUdxZklSTFRmX3JnSzZDOXFzaHVNNWdvaFVRVEpYb0R5dHlDaHJIWXpfZDhXcnNVQTRwY2c?oc=5\" target=\"_blank\">Africa cannot afford to delay regulating autonomous weapons</a> <font color=\"#6f6f6f\">ISS Africa</font>",
+      "center_site": "https://issafrica.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "لا تستطيع أفريقيا تحمل تأخير تنظيم الأسلحة المستقلة - معهد الدراسات الأمنية في أفريقيا"
+    },
+    {
       "center": "مركز الدراسات الاستراتيجية والدولية (CSIS)",
       "center_short": "CSIS",
       "title": "Middle Power Ties in the Gulf and Africa: The Iran War Inflection Point - CSIS | Center for Strategic and International Studies",
@@ -824,11 +821,11 @@
       "center": "المعهد الملكي للخدمات المتحدة (RUSI)",
       "center_short": "RUSI",
       "title": "Can Drones Replace Soldiers? NATO's Uncrewed Strategy - Royal United Services Institute (RUSI)",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNQl94RGkxbFY4LWt6Z2JVVmF2YXBnM0E0dm94MXZVU0pRTEc2bHVWS0RYOUNBYjgxLThYSVY0aXV2S25ZMG5OdnZFYVNwRDBLTzhTbzdtU3QzRUpPdG1YeXZwMUxWMlBHOVJ1QWZDMEhjaWh4OUJUaDVLRkk4OVdkYlN0TFdVNXEySWZPdjRn?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-19T13:39+01:00",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOamlRSFpGcExLMzVreXJwMWg0VVRIOW5LN2hXdEluYW5wVFItYjRBMWhuYXFtLVFBT2tOTUotYzVMbnpfWnkwTHJuaXMtMGR6SHlIVmFtd05QVllFdEIwYURnSWNHbnRUZHd1ajlMM1lSUGp0ZWFLWmR6czlPVldZamVPS2VtMkY0ZUZ2eTg2YkpBdFBITUYwaVM5aUNyQ3RsSEF3Z0Y1YTZrZw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-19T13:42+01:00",
       "date": "2026-11-19",
       "source": "Royal United Services Institute (RUSI)",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxNQl94RGkxbFY4LWt6Z2JVVmF2YXBnM0E0dm94MXZVU0pRTEc2bHVWS0RYOUNBYjgxLThYSVY0aXV2S25ZMG5OdnZFYVNwRDBLTzhTbzdtU3QzRUpPdG1YeXZwMUxWMlBHOVJ1QWZDMEhjaWh4OUJUaDVLRkk4OVdkYlN0TFdVNXEySWZPdjRn?oc=5\" target=\"_blank\">Can Drones Replace Soldiers? NATO's Uncrewed Strategy</a> <font color=\"#6f6f6f\">Royal United Services Institute (RUSI)</font>",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOamlRSFpGcExLMzVreXJwMWg0VVRIOW5LN2hXdEluYW5wVFItYjRBMWhuYXFtLVFBT2tOTUotYzVMbnpfWnkwTHJuaXMtMGR6SHlIVmFtd05QVllFdEIwYURnSWNHbnRUZHd1ajlMM1lSUGp0ZWFLWmR6czlPVldZamVPS2VtMkY0ZUZ2eTg2YkpBdFBITUYwaVM5aUNyQ3RsSEF3Z0Y1YTZrZw?oc=5\" target=\"_blank\">Can Drones Replace Soldiers? NATO's Uncrewed Strategy</a> <font color=\"#6f6f6f\">Royal United Services Institute (RUSI)</font>",
       "center_site": "https://rusi.org/",
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
@@ -1365,34 +1362,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "لا يمكن لحلف الناتو تحمل الغموض في مواجهة الحرب الهجينة الروسية - orfonline.org"
-    },
-    {
-      "center": "معهد الدراسات الدفاعية والاستراتيجية الهندي (MP-IDSA)",
-      "center_short": "MP-IDSA",
-      "title": "Abhishek Mishra’s Article ‘Cheap drones, Costly wars: India can reshape Africa's new battlefield’ Published in Firstpost - MP-IDSA",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeGNQLWc3UndoNnltY2lsQW9qZnB1ZWJpNF9pM003cEFPYVZyaHk1ZkVyZzMxTWwwNlpVaXBIV1B2dGxLWlRSVVRUZWszU2dyNDM3RDBQeDJrWGwzclBxaTJRd2VqbmYzb3dyajNTWWtvYTJrX0JBc3JkQnhwLVNiOVRTNG81MGZ5MkZxaW9DTjZ1UGVWZmJwbw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-21T11:04+01:00",
-      "date": "2026-10-21",
-      "source": "MP-IDSA",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOeGNQLWc3UndoNnltY2lsQW9qZnB1ZWJpNF9pM003cEFPYVZyaHk1ZkVyZzMxTWwwNlpVaXBIV1B2dGxLWlRSVVRUZWszU2dyNDM3RDBQeDJrWGwzclBxaTJRd2VqbmYzb3dyajNTWWtvYTJrX0JBc3JkQnhwLVNiOVRTNG81MGZ5MkZxaW9DTjZ1UGVWZmJwbw?oc=5\" target=\"_blank\">Abhishek Mishra’s Article ‘Cheap drones, Costly wars: India can reshape Africa's new battlefield’ Published in Firstpost</a> <font color=\"#6f6f6f\">MP-IDSA</font>",
-      "center_site": "https://idsa.in/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "مقالة أبيشيك ميشرا \"طائرات بدون طيار رخيصة، حروب مكلفة: يمكن للهند إعادة تشكيل ساحة المعركة الجديدة في إفريقيا\" نشرت في Firstpost - MP - IDSA"
-    },
-    {
-      "center": "معهد الشرق الأوسط",
-      "center_short": "Middle East Institute",
-      "title": "The ‘navalization’ of economic warfare sees trade routes become zones of force rather than rules - Middle East Institute",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOWUpweGxjYTN4WVVSamlaeEFzSTR4Y1NHSHBOR2l6VDNtcFJXNS1oQUFZbXNGYllTUzJ4ekotelVQbGdEMnd4NHVjd3l0aldGZXFaa3B1SktlVTNDVHFubHBjblJya2lnQmpyQnJXaV9yZndQa3NBb3J2QVdkOVpwakxMcFBHUG50WjNNSXFhSXdhTlJ0YXljMjc2MWNWOU5RQWVCM001WnprRXhxV3dmSWs3NDF2RUVpTzY4LXBSSXRLMjA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-21T08:00+01:00",
-      "date": "2026-10-21",
-      "source": "Middle East Institute",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOWUpweGxjYTN4WVVSamlaeEFzSTR4Y1NHSHBOR2l6VDNtcFJXNS1oQUFZbXNGYllTUzJ4ekotelVQbGdEMnd4NHVjd3l0aldGZXFaa3B1SktlVTNDVHFubHBjblJya2lnQmpyQnJXaV9yZndQa3NBb3J2QVdkOVpwakxMcFBHUG50WjNNSXFhSXdhTlJ0YXljMjc2MWNWOU5RQWVCM001WnprRXhxV3dmSWs3NDF2RUVpTzY4LXBSSXRLMjA?oc=5\" target=\"_blank\">The ‘navalization’ of economic warfare sees trade routes become zones of force rather than rules</a> <font color=\"#6f6f6f\">Middle East Institute</font>",
-      "center_site": "https://mei.edu/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "يرى \"إضفاء الطابع البحري\" على الحرب الاقتصادية أن طرق التجارة تصبح مناطق قوة بدلاً من قواعد - معهد الشرق الأوسط"
     }
   ]
 }
