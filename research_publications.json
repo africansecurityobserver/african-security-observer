@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T10:53+01:00",
+  "updated": "2026-11-21T18:59+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 54,
+  "count": 53,
   "publications": [
     {
       "center": "مبادرة الإصلاح العربي",
@@ -732,20 +732,6 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "مصر تزن الدبلوماسية والتدخل العسكري في البحر الأحمر - المركز العربي واشنطن العاصمة"
-    },
-    {
-      "center": "مؤسسة أبحاث المراقب (ORF)",
-      "center_short": "ORF",
-      "title": "Towards a New Security Architecture in the Indo-Mediterranean - orfonline.org",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPZWY5N3dWVzZxNXY2eDJwalZxeVhPQkxWNGZ4dEJ4X2hlS3BZYTM2dUc1NmRHWW1CSmkxOWIxWWpkbVdrR0xmVW1NMzc2VTJvWWtCNkdYTFctQk9RYkFDa2Zqa3lZMWZkeGUta1dMUVh1SlVwUFdyMFJiVTJvdU9QSjN5MGdsd2ZsM3NXMXZPYnczdEhfdnB3cmNJYVl0ZTJULVE?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-22T12:04+01:00",
-      "date": "2026-10-22",
-      "source": "orfonline.org",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPZWY5N3dWVzZxNXY2eDJwalZxeVhPQkxWNGZ4dEJ4X2hlS3BZYTM2dUc1NmRHWW1CSmkxOWIxWWpkbVdrR0xmVW1NMzc2VTJvWWtCNkdYTFctQk9RYkFDa2Zqa3lZMWZkeGUta1dMUVh1SlVwUFdyMFJiVTJvdU9QSjN5MGdsd2ZsM3NXMXZPYnczdEhfdnB3cmNJYVl0ZTJULVE?oc=5\" target=\"_blank\">Towards a New Security Architecture in the Indo-Mediterranean</a> <font color=\"#6f6f6f\">orfonline.org</font>",
-      "center_site": "https://orfonline.org/",
-      "relevance_tier": 3,
-      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "هيكل أمني جديد في الشرق الأوسط"
     },
     {
       "center": "مجلس العلاقات الخارجية",
