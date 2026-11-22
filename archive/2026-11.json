@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T17:54:51.670150+00:00",
+  "updated": "2026-11-22T17:58:24.419836+00:00",
   "items": [
     {
       "title": "قبطان مصري يحبط 3 محاولات هجوم مسلح في خليج عدن وينقذ 21 بحاراً",
@@ -194,6 +194,18 @@
       "region": "world"
     },
     {
+      "title": "بنغازي: استهداف سفينة روسية بطائرات مسيرة في ليبيا - بليك",
+      "description": "بنغازي: استهداف سفينة روسية بطائرات مسيرة في ليبيا بليك",
+      "summary": "بنغازي: استهداف سفينة روسية بطائرات مسيرة في ليبيا بليك",
+      "original_title": "Benghazi: Un navire russe pris pour cible par des drones en Libye - Blick",
+      "original_description": "Benghazi: Un navire russe pris pour cible par des drones en Libye &nbsp;&nbsp; Blick",
+      "url": "https://www.blick.ch/fr/monde/benghazi-un-navire-russe-pris-pour-cible-par-des-drones-en-libye/fc9fc7t",
+      "source": "Blick",
+      "published": "Sun, 22 Nov 2026 16:28:23 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
       "title": "من التحريم إلى احتمال التصنيع.. مسؤول عسكري إيراني يثير الجدل بشأن القنبلة النووية",
       "description": "أكد وزير الخارجية عباس عراقجي في وقت سابق، أن الموقف الرسمي لطهران لا يزال على حاله، مشيراً إلى أن لمؤيّدي المراجعة ومعارضيها حججاً، وأن أي تغيير ستكون له تداعيات واسعة.",
       "summary": "أكد وزير الخارجية عباس عراقجي في وقت سابق، أن الموقف الرسمي لطهران لا يزال على حاله، مشيراً إلى أن لمؤيّدي المراجعة ومعارضيها حججاً، وأن أي تغيير ستكون له تداعيات واسعة.",
@@ -338,7 +350,7 @@
       "region": "africa"
     },
     {
-      "title": "هجوم كبير لجماعة نصرة الإسلام والمسلمين ضد الجيش المالي والفيلق الأفريقي الروسي في وسط مالي - Saharamedias الأب",
+      "title": "هجوم كبير لجماعة نصرة الإسلام والمسلمين ضد الجيش المالي والفيلق الأفريقي الروسي في وسط مالي - صحراءميدياس الأب",
       "description": "هجوم كبير لجماعة نصرة الإسلام والمسلمين ضد الجيش المالي والفيلق الأفريقي الروسي في وسط مالي صحراء ميدياس الأب",
       "summary": "هجوم كبير لجماعة نصرة الإسلام والمسلمين ضد الجيش المالي والفيلق الأفريقي الروسي في وسط مالي صحراء ميدياس الأب",
       "original_title": "Importante attaque du JNIM contre l’armée malienne et le corps africain russe dans le centre du Mali - Saharamedias Fr",
@@ -358,7 +370,7 @@
       "url": "https://www.lsi-africa.com/fr/actualite-africaine/libye-explosion-benghazi-attaque.html",
       "source": "LSi Africa",
       "published": "Sun, 22 Nov 2026 15:56:15 GMT",
-      "category": "north",
+      "category": "rest",
       "region": "africa"
     },
     {
@@ -458,6 +470,18 @@
       "region": "world"
     },
     {
+      "title": "ليبيا: انفجار يدمر سفينة روسية في ميناء بنغازي - لا نوفيل تريبيون",
+      "description": "ليبيا: انفجار يدمر سفينة روسية في ميناء بنغازي    لا نوفيل تريبيون",
+      "summary": "ليبيا: انفجار يدمر سفينة روسية في ميناء بنغازي    لا نوفيل تريبيون",
+      "original_title": "Libye : une explosion détruit un navire russe au port de Benghazi - La Nouvelle Tribune",
+      "original_description": "Libye : une explosion détruit un navire russe au port de Benghazi &nbsp;&nbsp; La Nouvelle Tribune",
+      "url": "https://lanouvelletribune.info/2026/11/libye-une-explosion-detruit-un-navire-russe-au-port-de-benghazi",
+      "source": "La Nouvelle Tribune",
+      "published": "Sun, 22 Nov 2026 15:20:48 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
       "title": "الجيش الوطني الليبي ينفي سحب خبراء عسكريين مصريين من بنغازي: \"التنسيق مستمر\" - الشرق للأخبار",
       "description": "الجيش الوطني الليبي ينفي سحب خبراء عسكريين مصريين من بنغازي: \"التنسيق مستمر\" &nbsp;&nbsp; الشرق للأخبار",
       "summary": "الجيش الوطني الليبي ينفي سحب خبراء عسكريين مصريين من بنغازي: \"التنسيق مستمر\" &nbsp;&nbsp; الشرق للأخبار",
@@ -531,8 +555,8 @@
     },
     {
       "title": "الجيش النيجيري يكرم اللواء إبراهيم علي و19 جنرالا آخرين في لقاء لفيلق المدرعات - PRNigeria News",
-      "description": "الجيش النيجيري يكرم اللواء إبراهيم علي و19 جنرالا آخرين في لقاء شمل سلاح المدرعات    PRNigeria News",
-      "summary": "الجيش النيجيري يكرم اللواء إبراهيم علي و19 جنرالا آخرين في لقاء شمل سلاح المدرعات    PRNigeria News",
+      "description": "الجيش النيجيري يكرم اللواء إبراهيم علي و19 جنرالا آخرين في لقاء لم شمل سلاح المدرعات    PRNigeria News",
+      "summary": "الجيش النيجيري يكرم اللواء إبراهيم علي و19 جنرالا آخرين في لقاء لم شمل سلاح المدرعات    PRNigeria News",
       "original_title": "Nigerian Army Honours Major General Ibrahim Ali, 19 Other Generals at Armoured Corps Reunion - PRNigeria News",
       "original_description": "Nigerian Army Honours Major General Ibrahim Ali, 19 Other Generals at Armoured Corps Reunion &nbsp;&nbsp; PRNigeria News",
       "url": "https://prnigeria.com/2026/11/22/nigerian-army-honours-major",
@@ -543,8 +567,8 @@
     },
     {
       "title": "برلمانيو الناتو يدعون إلى تغيير جذري في دفاعات الحلفاء - الناتو PA",
-      "description": "برلمانيو حلف شمال الأطلسي يدعون إلى تغيير جذري في الدفاع المتحالف مع حلف شمال الأطلسي (السلطة الفلسطينية).",
-      "summary": "برلمانيو حلف شمال الأطلسي يدعون إلى تغيير جذري في الدفاع المتحالف مع حلف شمال الأطلسي (السلطة الفلسطينية).",
+      "description": "برلمانيون من حلف شمال الأطلسي يدعون إلى تغيير جذري في دفاع حلف شمال الأطلسي (السلطة الفلسطينية).",
+      "summary": "برلمانيون من حلف شمال الأطلسي يدعون إلى تغيير جذري في دفاع حلف شمال الأطلسي (السلطة الفلسطينية).",
       "original_title": "Les parlementaires de l’OTAN appellent à un changement radical au niveau de la défense alliée - NATO PA",
       "original_description": "Les parlementaires de l’OTAN appellent à un changement radical au niveau de la défense alliée &nbsp;&nbsp; NATO PA",
       "url": "https://www.nato-pa.int/fr/news/les-parlementaires-de-lotan-appellent-un-changement-radical-au-niveau-de-la-defense-alliee",
@@ -854,7 +878,7 @@
       "region": "africa"
     },
     {
-      "title": "السودان يظل ملتزماً بمحاربة الإرهاب - يني شفق إنجليزي",
+      "title": "السودان يظل ملتزماً بمحاربة الإرهاب - يني شفق الإنجليزية",
       "description": "السودان يظل ملتزماً بمحاربة الإرهاب    يني شفق الإنجليزية",
       "summary": "السودان يظل ملتزماً بمحاربة الإرهاب    يني شفق الإنجليزية",
       "original_title": "Sudan remains committed to fighting terrorism - Yeni Safak English",
@@ -890,6 +914,18 @@
       "region": "africa"
     },
     {
+      "title": "تعيين مدير جديد للأمن العام في الأردن",
+      "description": "قرر ملك الأردن عبد الله الثاني، اليوم الأحد، تعيين اللواء أيمن العوايشة مديرا للأمن العام، خلفا لعبيد الله المعايطة الذي قُبلت استقالته وجرت ترقيته لرتبة فريق.",
+      "summary": "قرر ملك الأردن عبد الله الثاني، اليوم الأحد، تعيين اللواء أيمن العوايشة مديرا للأمن العام، خلفا لعبيد الله المعايطة الذي قُبلت استقالته وجرت ترقيته لرتبة فريق.",
+      "original_title": "تعيين مدير جديد للأمن العام في الأردن",
+      "original_description": "قرر ملك الأردن عبد الله الثاني، اليوم الأحد، تعيين اللواء أيمن العوايشة مديرا للأمن العام، خلفا لعبيد الله المعايطة الذي قُبلت استقالته وجرت ترقيته لرتبة فريق.",
+      "url": "https://www.aljazeera.net/news/2026/11/22/%d8%aa%d8%b9%d9%8a%d9%8a%d9%86-%d9%85%d8%af%d9%8a%d8%b1-%d8%ac%d8%af%d9%8a%d8%af-%d9%84%d9%84%d8%a3%d9%85%d9%86-%d8%a7%d9%84%d8%b9%d8%a7%d9%85-%d9%81%d9%8a-%d8%a7%d9%84%d8%a3%d8%b1%d8%af%d9%86?traffic_source=rss",
+      "source": "aljazeera.net",
+      "published": "Sun, 22 Nov 2026 15:54:36 +0300",
+      "category": "rest",
+      "region": "world"
+    },
+    {
       "title": "شحنة متفجرات ضخمة من سوريا إلى لبنان.. الجيش يضبط 264 كيلوغراماً ويوقف 3 أشخاص",
       "description": "سبق أن أعلنت السلطات السورية إحباط محاولات مماثلة لتهريب أسلحة وذخائر إلى لبنان، من بينها ضبط شحنة في محافظة طرطوس خلال أغسطس/آب الماضي، تضمنت بنادق آلية وقذائف \"آر بي جي\" وذخائر متنوعة.",
       "summary": "سبق أن أعلنت السلطات السورية إحباط محاولات مماثلة لتهريب أسلحة وذخائر إلى لبنان، من بينها ضبط شحنة في محافظة طرطوس خلال أغسطس/آب الماضي، تضمنت بنادق آلية وقذائف \"آر بي جي\" وذخائر متنوعة.",
@@ -912,6 +948,18 @@
       "published": "Sun, 22 Nov 2026 12:50:29 GMT",
       "category": "sahel",
       "region": "africa"
+    },
+    {
+      "title": "بسكّين يشير إلى تنظيم الدولة.. إصابة عسكري أردني في محافظة مادبا",
+      "description": "أصيب أحد أفراد الجيش الأردني بجروح طفيفة إثر طعنه بسكين في محافظة مادبا، في ثاني اعتداء من نوعه هذا الشهر بعد مقتل رجل أمن أمام السفارة السريلانكية في عمّان.",
+      "summary": "أصيب أحد أفراد الجيش الأردني بجروح طفيفة إثر طعنه بسكين في محافظة مادبا، في ثاني اعتداء من نوعه هذا الشهر بعد مقتل رجل أمن أمام السفارة السريلانكية في عمّان.",
+      "original_title": "بسكّين يشير إلى تنظيم الدولة.. إصابة عسكري أردني في محافظة مادبا",
+      "original_description": "أصيب أحد أفراد الجيش الأردني بجروح طفيفة إثر طعنه بسكين في محافظة مادبا، في ثاني اعتداء من نوعه هذا الشهر بعد مقتل رجل أمن أمام السفارة السريلانكية في عمّان.",
+      "url": "https://www.aljazeera.net/news/2026/11/22/%d8%b9%d8%a7%d8%ac%d9%84-%d8%a7%d9%84%d8%a3%d9%85%d9%86-%d8%a7%d9%84%d8%b9%d8%a7%d9%85-%d8%a7%d9%84%d8%a3%d8%b1%d8%af%d9%86%d9%8a-%d8%aa%d8%b9%d8%b1%d8%b6-%d8%a3%d8%ad%d8%af?traffic_source=rss",
+      "source": "aljazeera.net",
+      "published": "Sun, 22 Nov 2026 15:46:03 +0300",
+      "category": "rest",
+      "region": "world"
     },
     {
       "title": "انفجار في مستودع ذخيرة بقاعدة بنغازي البحرية الليبية - ميدل إيست مونيتور",
@@ -1106,6 +1154,18 @@
       "region": "world"
     },
     {
+      "title": "ليبيا: ظهور انفجارات في بنغازي وأوكرانيا ومصر - Agenzia Nova",
+      "description": "ليبيا: انفجارات في بنغازي وروابط أوكرانية ومصرية تظهر وكالة نوفا",
+      "summary": "ليبيا: انفجارات في بنغازي وروابط أوكرانية ومصرية تظهر وكالة نوفا",
+      "original_title": "Libye : Des explosions à Benghazi, des liens ukrainiens et égyptiens se dessinent - Agenzia Nova",
+      "original_description": "Libye : Des explosions à Benghazi, des liens ukrainiens et égyptiens se dessinent &nbsp;&nbsp; Agenzia Nova",
+      "url": "https://www.agenzianova.com/fr/news/Libye-%3A-Des-liens-ukrainiens-et-%C3%A9gyptiens-se-dessinent-suite-aux-explosions-de-Benghazi",
+      "source": "Agenzia Nova",
+      "published": "Sun, 22 Nov 2026 11:20:20 GMT",
+      "category": "north",
+      "region": "africa"
+    },
+    {
       "title": "تضرر مقر أممي إثر هجوم بمسيرات على الخرطوم",
       "description": "الخرطوم: أعلنت الأمم المتحدة، الأحد، تضرر أحد مقراتها في العاصمة السودانية الخرطوم جراء هجوم بطائرات مسيّرة، بينما كان موظفون تابعون لها داخله. جاء ذلك في بيان لمنسقة الأمم المتحدة المقيمة ومنسقة الشؤون الإنسانية في السودان دينيس براون، لم تحدد فيه الجهة التي تتبع لها الطائرات المسيرة. وقالت براون:…",
       "summary": "الخرطوم: أعلنت الأمم المتحدة، الأحد، تضرر أحد مقراتها في العاصمة السودانية الخرطوم جراء هجوم بطائرات مسيّرة، بينما كان موظفون تابعون لها داخله. جاء ذلك في بيان لمنسقة الأمم المتحدة المقيمة ومنسقة الشؤون الإنسانية في السودان دينيس براون، لم تحدد فيه الجهة التي تتبع لها الطائرات المسيرة. وقالت براون:…",
@@ -1118,7 +1178,7 @@
       "region": "africa"
     },
     {
-      "title": "سفينة شحن عسكرية روسية تنجرف إلى مياه الناتو بعد هجوم بطائرة بدون طيار ومخاطرة بالغرق الإخبارية",
+      "title": "سفينة شحن عسكرية روسية تنجرف إلى مياه الناتو بعد هجوم بطائرة بدون طيار ومخاطر الغرق الإخبارية",
       "description": "سفينة شحن عسكرية روسية تنجرف إلى مياه الناتو بعد غارة بطائرة بدون طيار، مما يهدد بالغرق    UNITED24 Media",
       "summary": "سفينة شحن عسكرية روسية تنجرف إلى مياه الناتو بعد غارة بطائرة بدون طيار، مما يهدد بالغرق    UNITED24 Media",
       "original_title": "Russian Military Cargo Ship Drifts Into NATO Waters After Drone Strike, Risks Sinking - UNITED24 Media",
@@ -1238,6 +1298,18 @@
       "region": "africa"
     },
     {
+      "title": "عاجل: مسلحون يهاجمون نجم سوبر إيجلز السابق سيجون أوديغبامي داخل مقر إقامة أبيوكوتا - الصحف الزرقاء",
+      "description": "عاجل: مسلحون يهاجمون نجم سوبر إيجلز السابق سيجون أوديغبامي داخل مقر إقامة أبيوكوتا    Blueprint Newspapers",
+      "summary": "عاجل: مسلحون يهاجمون نجم سوبر إيجلز السابق سيجون أوديغبامي داخل مقر إقامة أبيوكوتا    Blueprint Newspapers",
+      "original_title": "Breaking: Gunmen attack ex- Super Eagles ' star Segun Odegbami inside Abeokuta residence - Blueprint Newspapers",
+      "original_description": "Breaking: Gunmen attack ex- Super Eagles ' star Segun Odegbami inside Abeokuta residence &nbsp;&nbsp; Blueprint Newspapers",
+      "url": "https://blueprint.ng/breaking-gunmen-attack-ex-super-eagles-star-segun-odegbami-inside-abeokuta-residence",
+      "source": "Blueprint Newspapers",
+      "published": "Sun, 22 Nov 2026 10:22:25 GMT",
+      "category": "rest",
+      "region": "world"
+    },
+    {
       "title": "لا تستطيع أفريقيا أن تتحمل تأخير تنظيم الأسلحة المستقلة - محطة الفضاء الدولية أفريقيا",
       "description": "لا تستطيع أفريقيا تحمل تأخير تنظيم الأسلحة المستقلة    محطة الفضاء الدولية أفريقيا",
       "summary": "لا تستطيع أفريقيا تحمل تأخير تنظيم الأسلحة المستقلة    محطة الفضاء الدولية أفريقيا",
@@ -1275,8 +1347,8 @@
     },
     {
       "title": "السودان: الجيش يصد هجوماً لطائرات الدعم السريع على الخرطوم - www.horizons.dz",
-      "description": "السودان: الجيش يصد هجوماً لطائرات بدون طيار لقوات الدعم السريع على الخرطوم   www.horizons.dz",
-      "summary": "السودان: الجيش يصد هجوماً لطائرات بدون طيار لقوات الدعم السريع على الخرطوم   www.horizons.dz",
+      "description": "السودان: الجيش يصد هجوم طائرات الدعم السريع بطائرة بدون طيار على الخرطوم   www.horizons.dz",
+      "summary": "السودان: الجيش يصد هجوم طائرات الدعم السريع بطائرة بدون طيار على الخرطوم   www.horizons.dz",
       "original_title": "Soudan: l’armée repousse une attaque de drones des FSR sur Khartoum - www.horizons.dz",
       "original_description": "Soudan: l’armée repousse une attaque de drones des FSR sur Khartoum &nbsp;&nbsp; www.horizons.dz",
       "url": "https://www.horizons.dz/2026/11/soudan-larmee-repousse-une-attaque-de-drones-des-fsr-sur-khartoum",
@@ -1995,8 +2067,8 @@
     },
     {
       "title": "جنود متمردون يطلقون النار على شخصين في مدينة شمال ساحل العاج - يني شفق الإنجليزية",
-      "description": "جنود متمردون يطلقون النار على شخصين في مدينة بشمال ساحل العاج    يني شفق الإنجليزية",
-      "summary": "جنود متمردون يطلقون النار على شخصين في مدينة بشمال ساحل العاج    يني شفق الإنجليزية",
+      "description": "جنود متمردون يطلقون النار على شخصين في مدينة شمال ساحل العاج    يني شفق الإنجليزية",
+      "summary": "جنود متمردون يطلقون النار على شخصين في مدينة شمال ساحل العاج    يني شفق الإنجليزية",
       "original_title": "Mutinous soldiers shoot two people in northern Ivory Coast city - Yeni Safak English",
       "original_description": "Mutinous soldiers shoot two people in northern Ivory Coast city &nbsp;&nbsp; Yeni Safak English",
       "url": "https://en.yenisafak.com/world/mutinous-soldiers-shoot-two-people-in-northern-ivory-coast-city-2659304",
@@ -3782,7 +3854,7 @@
       "region": "world"
     },
     {
-      "title": "الجيش الفنلندي يرصد \"هجوما بطائرة بدون طيار\" على سفينة شحن روسية في خليج فنلندا - TVA Nouvelles",
+      "title": "الجيش الفنلندي يرصد “هجوما بطائرة بدون طيار” على سفينة شحن روسية في خليج فنلندا – TVA Nouvelles",
       "description": "الجيش الفنلندي يرصد \"هجومًا بطائرة بدون طيار\" على سفينة شحن روسية في خليج فنلندا - أخبار TVA",
       "summary": "الجيش الفنلندي يرصد \"هجومًا بطائرة بدون طيار\" على سفينة شحن روسية في خليج فنلندا - أخبار TVA",
       "original_title": "L'armée finlandaise a détecté une «attaque de drone» contre un cargo russe dans le golfe de Finlande - TVA Nouvelles",
@@ -4143,8 +4215,8 @@
     },
     {
       "title": "\"هجوم بطائرة بدون طيار\" على سفينة شحن روسية رصده الجيش الفنلندي في خليج فنلندا - غرب فرنسا",
-      "description": "“هجوم بطائرة بدون طيار” على سفينة شحن روسية رصده الجيش الفنلندي في خليج فنلندا غرب فرنسا",
-      "summary": "“هجوم بطائرة بدون طيار” على سفينة شحن روسية رصده الجيش الفنلندي في خليج فنلندا غرب فرنسا",
+      "description": "“هجوم بطائرة بدون طيار” على سفينة شحن روسية اكتشفه الجيش الفنلندي في خليج فنلندا غرب فرنسا",
+      "summary": "“هجوم بطائرة بدون طيار” على سفينة شحن روسية اكتشفه الجيش الفنلندي في خليج فنلندا غرب فرنسا",
       "original_title": "Une « attaque de drone » contre un cargo russe détectée par l’armée finlandaise dans le Golfe de Finlande - Ouest-France",
       "original_description": "Une « attaque de drone » contre un cargo russe détectée par l’armée finlandaise dans le Golfe de Finlande &nbsp;&nbsp; Ouest-France",
       "url": "https://www.ouest-france.fr/europe/finlande/une-attaque-de-drone-contre-un-cargo-russe-detectee-par-larmee-finlandaise-dans-le-golfe-de-finlande-96771304-e5a7-11f1-bd4e-6f30b8f49e21",
@@ -4395,8 +4467,8 @@
     },
     {
       "title": "اكتشف الجيش الفنلندي \"هجومًا بطائرة بدون طيار\" على سفينة شحن روسية في خليج فنلندا - لو سوار",
-      "description": "اكتشف الجيش الفنلندي “هجومًا بطائرة بدون طيار” على سفينة شحن روسية في خليج فنلندا Le Soir",
-      "summary": "اكتشف الجيش الفنلندي “هجومًا بطائرة بدون طيار” على سفينة شحن روسية في خليج فنلندا Le Soir",
+      "description": "رصد الجيش الفنلندي “هجوما بطائرة بدون طيار” على سفينة شحن روسية في خليج فنلندا Le Soir",
+      "summary": "رصد الجيش الفنلندي “هجوما بطائرة بدون طيار” على سفينة شحن روسية في خليج فنلندا Le Soir",
       "original_title": "L’armée finlandaise a détecté une « attaque de drone » contre un cargo russe dans le golfe de Finlande - Le Soir",
       "original_description": "L’armée finlandaise a détecté une « attaque de drone » contre un cargo russe dans le golfe de Finlande &nbsp;&nbsp; Le Soir",
       "url": "https://www.lesoir.be/784100/article/2026-11-21/larmee-finlandaise-detecte-une-attaque-de-drone-contre-un-cargo-russe-dans-le",
@@ -4419,8 +4491,8 @@
     },
     {
       "title": "اكتشف الجيش الفنلندي \"هجومًا بطائرة بدون طيار\" على سفينة شحن روسية في خليج فنلندا - La Libre.be",
-      "description": "كشف الجيش الفنلندي عن \"هجوم بطائرة بدون طيار\" على سفينة شحن روسية في خليج فنلندا   La Libre.be",
-      "summary": "كشف الجيش الفنلندي عن \"هجوم بطائرة بدون طيار\" على سفينة شحن روسية في خليج فنلندا   La Libre.be",
+      "description": "كشف الجيش الفنلندي عن \"هجوم بطائرة بدون طيار\" على سفينة شحن روسية في خليج فنلندا    La Libre.be",
+      "summary": "كشف الجيش الفنلندي عن \"هجوم بطائرة بدون طيار\" على سفينة شحن روسية في خليج فنلندا    La Libre.be",
       "original_title": "L'armée finlandaise a détecté une \"attaque de drone\" contre un cargo russe dans le golfe de Finlande - La Libre.be",
       "original_description": "L'armée finlandaise a détecté une \"attaque de drone\" contre un cargo russe dans le golfe de Finlande &nbsp;&nbsp; La Libre.be",
       "url": "https://www.lalibre.be/international/europe/2026/11/21/larmee-finlandaise-a-detecte-une-attaque-de-drone-contre-un-cargo-russe-dans-le-golfe-de-finlande-MLB4SPPVKVG2FFYBH7JC43CAHU",
@@ -4497,14 +4569,14 @@
       "original_description": "Dans la défense, le rapprochement entre le Canada et l’Union européenne prend corps &nbsp;&nbsp; Le Monde.fr",
       "url": "https://www.lemonde.fr/international/article/2026/11/21/dans-la-defense-le-rapprochement-entre-le-canada-et-l-union-europeenne-prend-corps_6814009_3210.html",
       "source": "Le Monde.fr",
-      "published": "Sat, 21 Nov 2026 11:30:05 GMT",
+      "published": "Sat, 21 Nov 2026 11:30:03 GMT",
       "category": "international",
       "region": "world"
     },
     {
       "title": "تونس-الولايات المتحدة: الاقتصاد والتعليم والأمن والثقافة، عام من التعاون المعزز - Leconomiste Maghrebin",
-      "description": "تونس-الولايات المتحدة الأمريكية: الاقتصاد والتعليم والأمن والثقافة، سنة من التعاون المعزز لوكونوميست المغاربي",
-      "summary": "تونس-الولايات المتحدة الأمريكية: الاقتصاد والتعليم والأمن والثقافة، سنة من التعاون المعزز لوكونوميست المغاربي",
+      "description": "تونس-الولايات المتحدة الأمريكية: الاقتصاد والتعليم والأمن والثقافة، عام من التعاون المعزز لوكونوميست المغاربي",
+      "summary": "تونس-الولايات المتحدة الأمريكية: الاقتصاد والتعليم والأمن والثقافة، عام من التعاون المعزز لوكونوميست المغاربي",
       "original_title": "Tunisie-USA: économie, éducation, sécurité et culture, une année de coopération renforcée - Leconomiste Maghrebin",
       "original_description": "Tunisie-USA: économie, éducation, sécurité et culture, une année de coopération renforcée &nbsp;&nbsp; Leconomiste Maghrebin",
       "url": "https://www.leconomistemaghrebin.com/2026/11/21/tunisie-usa-economie-education-securite-et-culture-une-annee-de-cooperation-renforcee",
@@ -4647,8 +4719,8 @@
     },
     {
       "title": "الاستطلاع غير الرسمي التاسع لمجلس الأمن التابع للأمم المتحدة لا يسفر عن قرار في السباق على منصب الأمين العام المقبل - ذا ناشيونال",
-      "description": "استطلاع الرأي التاسع غير الرسمي الذي أجراه مجلس الأمن التابع للأمم المتحدة لم يسفر عن أي قرار بشأن السباق على منصب الأمين العام المقبل    ذا ناشيونال",
-      "summary": "استطلاع الرأي التاسع غير الرسمي الذي أجراه مجلس الأمن التابع للأمم المتحدة لم يسفر عن أي قرار بشأن السباق على منصب الأمين العام المقبل    ذا ناشيونال",
+      "description": "استطلاع الرأي التاسع غير الرسمي الذي أجراه مجلس الأمن التابع للأمم المتحدة لم يسفر عن أي قرار بشأن السباق على منصب الأمين العام القادم    ذا ناشيونال",
+      "summary": "استطلاع الرأي التاسع غير الرسمي الذي أجراه مجلس الأمن التابع للأمم المتحدة لم يسفر عن أي قرار بشأن السباق على منصب الأمين العام القادم    ذا ناشيونال",
       "original_title": "UN Security Council's ninth straw poll brings no resolution in race for next secretary general - The National",
       "original_description": "UN Security Council's ninth straw poll brings no resolution in race for next secretary general &nbsp;&nbsp; The National",
       "url": "https://www.thenationalnews.com/news/2026/11/20/un-secretary-general-race-straw-poll",
@@ -5487,8 +5559,8 @@
     },
     {
       "title": "نيجيريا والكاميرون وتشاد والنيجر توقع اتفاقية جديدة عبر الحدود للتصدي للإرهاب",
-      "description": "نيجيريا والكاميرون وتشاد والنيجر توقع اتفاقًا جديدًا عبر الحدود للتصدي للإرهاب    THISDAYLIVE",
-      "summary": "نيجيريا والكاميرون وتشاد والنيجر توقع اتفاقًا جديدًا عبر الحدود للتصدي للإرهاب    THISDAYLIVE",
+      "description": "نيجيريا والكاميرون وتشاد والنيجر توقع اتفاقًا جديدًا عبر الحدود للتصدي للإرهاب    هذا اليوم لايف",
+      "summary": "نيجيريا والكاميرون وتشاد والنيجر توقع اتفاقًا جديدًا عبر الحدود للتصدي للإرهاب    هذا اليوم لايف",
       "original_title": "Nigeria, Cameroon, Chad, Niger Sign New Cross-Border Pact to Tackle Terrorism - THISDAYLIVE",
       "original_description": "Nigeria, Cameroon, Chad, Niger Sign New Cross-Border Pact to Tackle Terrorism &nbsp;&nbsp; THISDAYLIVE",
       "url": "https://www.thisdaylive.com/2026/11/19/nigeria-cameroon-chad-niger-sign-new-cross-border-pact-to-tackle-terrorism",
