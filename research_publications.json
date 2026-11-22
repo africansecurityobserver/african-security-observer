@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T10:49+01:00",
+  "updated": "2026-11-22T19:32+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -734,6 +734,20 @@
       "title_ar": "مصر تزن الدبلوماسية والتدخل العسكري في البحر الأحمر - المركز العربي واشنطن العاصمة"
     },
     {
+      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+      "center_short": "ISS Africa",
+      "title": "Africa cannot afford to delay regulating autonomous weapons - ISS Africa",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQOHhhVnFJbXJFc3BPZEdrd2pRTVg0YlR4Vm1UVmdoM0FpLVhTVk5YMEt5LXlJWklwOHFJbk90S0JLelNkVDgtdVdjWHRKRUttSFBDUFAxRFY1dnUxdmJKUlBaaUdxZklSTFRmX3JnSzZDOXFzaHVNNWdvaFVRVEpYb0R5dHlDaHJIWXpfZDhXcnNVQTRwY2c?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-22T11:16+01:00",
+      "date": "2026-11-22",
+      "source": "ISS Africa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxQOHhhVnFJbXJFc3BPZEdrd2pRTVg0YlR4Vm1UVmdoM0FpLVhTVk5YMEt5LXlJWklwOHFJbk90S0JLelNkVDgtdVdjWHRKRUttSFBDUFAxRFY1dnUxdmJKUlBaaUdxZklSTFRmX3JnSzZDOXFzaHVNNWdvaFVRVEpYb0R5dHlDaHJIWXpfZDhXcnNVQTRwY2c?oc=5\" target=\"_blank\">Africa cannot afford to delay regulating autonomous weapons</a> <font color=\"#6f6f6f\">ISS Africa</font>",
+      "center_site": "https://issafrica.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "لا تستطيع أفريقيا تحمل تأخير تنظيم الأسلحة المستقلة - معهد الدراسات الأمنية في أفريقيا"
+    },
+    {
       "center": "مجلس العلاقات الخارجية",
       "center_short": "CFR",
       "title": "Europe Could Be Walking Into a Trap Over Ukraine Talks",
@@ -746,20 +760,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "قد تقع أوروبا في فخ بسبب محادثات أوكرانيا"
-    },
-    {
-      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-      "center_short": "ISS Africa",
-      "title": "Africa cannot afford to delay regulating autonomous weapons - ISS Africa",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQOHhhVnFJbXJFc3BPZEdrd2pRTVg0YlR4Vm1UVmdoM0FpLVhTVk5YMEt5LXlJWklwOHFJbk90S0JLelNkVDgtdVdjWHRKRUttSFBDUFAxRFY1dnUxdmJKUlBaaUdxZklSTFRmX3JnSzZDOXFzaHVNNWdvaFVRVEpYb0R5dHlDaHJIWXpfZDhXcnNVQTRwY2c?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-20T10:28+01:00",
-      "date": "2026-11-20",
-      "source": "ISS Africa",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxQOHhhVnFJbXJFc3BPZEdrd2pRTVg0YlR4Vm1UVmdoM0FpLVhTVk5YMEt5LXlJWklwOHFJbk90S0JLelNkVDgtdVdjWHRKRUttSFBDUFAxRFY1dnUxdmJKUlBaaUdxZklSTFRmX3JnSzZDOXFzaHVNNWdvaFVRVEpYb0R5dHlDaHJIWXpfZDhXcnNVQTRwY2c?oc=5\" target=\"_blank\">Africa cannot afford to delay regulating autonomous weapons</a> <font color=\"#6f6f6f\">ISS Africa</font>",
-      "center_site": "https://issafrica.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "لا تستطيع أفريقيا تحمل تأخير تنظيم الأسلحة المستقلة - معهد الدراسات الأمنية في أفريقيا"
     },
     {
       "center": "معهد هدسون",
@@ -816,6 +816,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "وزير الطاقة الأمريكي كريس رايت ووزير الطاقة البولندي ميلوش موتيكا عن سبب اعتماد أمن أوروبا على إمداداتها بالطاقة - مجلس الأطلسي"
+    },
+    {
+      "center": "المجلس الأوروبي للعلاقات الخارجية (ECFR)",
+      "center_short": "ECFR",
+      "title": "Choreographing a comeback: What Russia’s Africa policy means for Europe",
+      "url": "https://ecfr.eu/article/choreographing-a-comeback-what-russias-africa-policy-means-for-europe/",
+      "published": "2026-11-19T17:42+01:00",
+      "date": "2026-11-19",
+      "source": "ECFR",
+      "description": "The third Russia-Africa summit reflects Moscow’s global ambitions—coupling ideology with pragmatism beyond security partnerships. Europeans need to demonstrate that they are well-placed to back African-led projects and deliver reliable cooperation",
+      "center_site": "https://ecfr.eu/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "التخطيط لعودة: ما الذي تعنيه سياسة روسيا تجاه أفريقيا لأوروبا"
     },
     {
       "center": "المعهد الملكي للخدمات المتحدة (RUSI)",
@@ -886,20 +900,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "واشنطن بوليسي ويكلي: أعضاء مجلس الشيوخ يضغطون لإزالة أحكام التعاون الدفاعي بين الولايات المتحدة وإسرائيل من قانون تفويض الدفاع الوطني - المركز العربي في واشنطن العاصمة"
-    },
-    {
-      "center": "المجلس الأوروبي للعلاقات الخارجية (ECFR)",
-      "center_short": "ECFR",
-      "title": "Rearming without china: Time to secure Europe’s military supply chains - European Council on Foreign Relations",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOUkhGUFl6TUFTQzFLTUVfNG1EaFhqVko5MFNSekJadjNKNEU5WC1DNDlmaGVEV2lGbEMtOXpZMENSVEkxR2Y0M3NLdFdtbnNkUElrc2hjVWVkOFQxMFBrX01PQUNuRGZXVjROSXZUWEVvX0xEQzBnb3VfWnpjaXFreExQOGtaR085ZnBtaDRZNkkwMFNXZ0p4NtIBngFBVV95cUxOWmE4ZmtzQThOQXZ2ZXBsRzNqUnotcXVjWDhkT09relhJbWZpRmZNOHgtRzZBQWVKSjhXMWh1YmEzQnIzNldkbTBNcF9hb093bXRRTnRVMlUwaS02M1pLR2wwdlJ3cWVlRFVKUDd3NmRrNGQyUkhpYXdqLXpPWWN3XzREb3BNbVN4YWIzNGJvcld5cnVHMzFkcW5KNFp3QQ?oc=5",
-      "published": "2026-11-16T12:55+01:00",
-      "date": "2026-11-16",
-      "source": "European Council on Foreign Relations",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOUkhGUFl6TUFTQzFLTUVfNG1EaFhqVko5MFNSekJadjNKNEU5WC1DNDlmaGVEV2lGbEMtOXpZMENSVEkxR2Y0M3NLdFdtbnNkUElrc2hjVWVkOFQxMFBrX01PQUNuRGZXVjROSXZUWEVvX0xEQzBnb3VfWnpjaXFreExQOGtaR085ZnBtaDRZNkkwMFNXZ0p4NtIBngFBVV95cUxOWmE4ZmtzQThOQXZ2ZXBsRzNqUnotcXVjWDhkT09relhJbWZpRmZNOHgtRzZBQWVKSjhXMWh1YmEzQnIzNldkbTBNcF9hb093bXRRTnRVMlUwaS02M1pLR2wwdlJ3cWVlRFVKUDd3NmRrNGQyUkhpYXdqLXpPWWN3XzREb3BNbVN4YWIzNGJvcld5cnVHMzFkcW5KNFp3QQ?oc=5\" target=\"_blank\">Rearm",
-      "center_site": "https://ecfr.eu/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "إعادة التسلح دون الصين: حان الوقت لتأمين سلاسل الإمداد العسكرية في أوروبا - المجلس الأوروبي للعلاقات الخارجية"
     },
     {
       "center": "المعهد الدنماركي للدراسات الدولية (DIIS)",
