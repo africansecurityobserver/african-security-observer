@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T19:32+01:00",
+  "updated": "2026-11-23T01:55+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -1042,6 +1042,20 @@
       "title_ar": "أفريقيا واعية: تجدد الحرب في تيغراي والمخاطر التي تهدد منطقة القرن الأفريقي الأوسع - تشاتام هاوس"
     },
     {
+      "center": "مؤسسة RAND",
+      "center_short": "RAND",
+      "title": "Ready for War 2030: A Scenario: Bolstering the UK and NATO's Preparedness - RAND",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNbzNQa01QbHVsQmlxdGx2WnBfemNOclhsQktvN3JpWVNhT2dCYUs2T0Y5cXhCdy16UjFBMS0zS3pEN3hLd0xtZU9wWWluSG9qTFczYnVqak9NRjI4anZIV2hpRk5jbHAwSEUxcXFpdkxTbThxaEtXTEJqWWd3Zml2Wk5mVl8zYUJHaEZwQV9oT0N1eFBaR2dN?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-11T03:48+01:00",
+      "date": "2026-11-11",
+      "source": "RAND",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxNbzNQa01QbHVsQmlxdGx2WnBfemNOclhsQktvN3JpWVNhT2dCYUs2T0Y5cXhCdy16UjFBMS0zS3pEN3hLd0xtZU9wWWluSG9qTFczYnVqak9NRjI4anZIV2hpRk5jbHAwSEUxcXFpdkxTbThxaEtXTEJqWWd3Zml2Wk5mVl8zYUJHaEZwQV9oT0N1eFBaR2dN?oc=5\" target=\"_blank\">Ready for War 2030: A Scenario: Bolstering the UK and NATO's Preparedness</a> <font color=\"#6f6f6f\">RAND</font>",
+      "center_site": "https://rand.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الاستعداد للحرب 2030: سيناريو: تعزيز استعداد المملكة المتحدة وحلف شمال الأطلسي - مؤسسة راند"
+    },
+    {
       "center": "مؤسسة كارنيغي للسلام الدولي",
       "center_short": "Carnegie Endowment",
       "title": "A Delicate Balance: Africa’s Agency on Full Display and Expanding Conflict in the Horn - Carnegie Endowment for International Peace",
@@ -1054,20 +1068,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "توازن دقيق: وكالة أفريقيا للعرض الكامل وتوسيع الصراع في القرن الأفريقي - مؤسسة كارنيغي للسلام الدولي"
-    },
-    {
-      "center": "مؤسسة RAND",
-      "center_short": "RAND",
-      "title": "Ready for War 2030: A Scenario: Bolstering the UK and NATO's Preparedness - RAND",
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBIaE5OLUZuUnBmejlCeUcxSEl1NzBRZHFhbHAwTTQwZF9rM3ZOV211SF9yY0pTTnhTTE5KOExzRUR0elk5T2dERkNfbkhoUlZUMEhfZ3RvTXZZRnU1TmFPRjgyWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-10T11:10+01:00",
-      "date": "2026-11-10",
-      "source": "RAND",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiY0FVX3lxTFBIaE5OLUZuUnBmejlCeUcxSEl1NzBRZHFhbHAwTTQwZF9rM3ZOV211SF9yY0pTTnhTTE5KOExzRUR0elk5T2dERkNfbkhoUlZUMEhfZ3RvTXZZRnU1TmFPRjgyWQ?oc=5\" target=\"_blank\">Ready for War 2030: A Scenario: Bolstering the UK and NATO's Preparedness</a> <font color=\"#6f6f6f\">RAND</font>",
-      "center_site": "https://rand.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "الاستعداد لحرب 2030: سيناريو: تعزيز استعداد المملكة المتحدة وحلف الناتو - RAND"
     },
     {
       "center": "المعهد الأسترالي للسياسة الاستراتيجية (ASPI)",
