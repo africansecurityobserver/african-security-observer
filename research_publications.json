@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T11:49+01:00",
+  "updated": "2026-11-23T23:41+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 55,
+  "count": 57,
   "publications": [
     {
       "center": "مبادرة الإصلاح العربي",
@@ -746,6 +746,48 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "مصر تزن الدبلوماسية والتدخل العسكري في البحر الأحمر - المركز العربي واشنطن العاصمة"
+    },
+    {
+      "center": "مركز أولويات الدفاع",
+      "center_short": "Defense Priorities",
+      "title": "U.S. launches new airstrikes in Somalia as State Department reverses UN funding cut",
+      "url": "https://www.defensepriorities.org/in-the-media/u-s-launches-new-airstrikes-in-somalia-as-state-department-reverses-un-funding-cut/",
+      "published": "2026-11-23T18:32+01:00",
+      "date": "2026-11-23",
+      "source": "Defense Priorities",
+      "description": "<p>The financial toll is substantial. A Brown University study documented more than $2.5 billion in U.S. counterterrorism assistance since 2007, […]</p> <p>The post <a href=\"https://www.defensepriorities.org/in-the-media/u-s-launches-new-airstrikes-in-somalia-as-state-department-reverses-un-funding-cut/\">U.S. launches new airstrikes in Somalia as State Department reverses UN funding cut</a> appeared first on <a href=\"https://www.defensepriorities.org\">Defense Priorities</a>.</p>",
+      "center_site": "https://defensepriorities.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الولايات المتحدة تشن غارات جوية جديدة في الصومال بينما يعود البيت الأبيض عن قرار خفض تمويل الأمم المتحدة"
+    },
+    {
+      "center": "المجلس الأطلسي",
+      "center_short": "Atlantic Council",
+      "title": "What NATO allies can learn from World War II partnerships about defense industrial production - Atlantic Council",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPbEV5aU9jZlVRWVdCYTVGUk9BNzB6cG1iMXNVT01DSUhuNmp1d0otSlVkTC0zMmpoT3BjN2dxR0w1OHY4S1dvMm5aWE9PVkFGR3hyV1lwZlhiVVVrVUZIVGNqNWhGY1h4MGxKdU5UWGsxWXJhdF9DUmlYS1IxMml5VXA0bjRYd2t1S3ZvWmpnRVgwVUNRZ1NwelVpMUN6cHdJMExSb1UwTnVnRkx3V1BQVzVsX1BKc2UzbEU2aDBDWnNOSzVQQTNhME9YRzZFd1NaWVNF?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-23T18:11+01:00",
+      "date": "2026-11-23",
+      "source": "Atlantic Council",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxPbEV5aU9jZlVRWVdCYTVGUk9BNzB6cG1iMXNVT01DSUhuNmp1d0otSlVkTC0zMmpoT3BjN2dxR0w1OHY4S1dvMm5aWE9PVkFGR3hyV1lwZlhiVVVrVUZIVGNqNWhGY1h4MGxKdU5UWGsxWXJhdF9DUmlYS1IxMml5VXA0bjRYd2t1S3ZvWmpnRVgwVUNRZ1NwelVpMUN6cHdJMExSb1UwTnVnRkx3V1BQVzVsX1BKc2UzbEU2aDBDWnNOSzVQQTNhME9YRzZFd1NaWVNF?oc=5\" target=\"_blank\">What NATO allies can learn from World War II partnerships about defense industrial production</a> <font color=\"#6f6f6f\">Atlantic Council</font>",
+      "center_site": "https://atlanticcouncil.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "ما الذي يمكن أن يتعلمه حلفاء الناتو من شراكات الحرب العالمية الثانية بشأن الإنتاج الصناعي الدفاعي - مجلس الأطلسي"
+    },
+    {
+      "center": "معهد الدراسات الدفاعية والاستراتيجية الهندي (MP-IDSA)",
+      "center_short": "MP-IDSA",
+      "title": "Ebola and Africa’s Health Security: Why Recurrent Outbreaks Remain a Global Concern - MP-IDSA",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQR3R0WXpNbEFpdE10WElNVUhCQTdYMlVucDlIY014VXh1dFZTM1MxWGpsdnJQT1E0el9MYVJFcWN2VFMwblJvdkRwdmRXcVZNNi1LN0wyUlpkVlluQ0hEN2hKRlNtRDNOUlM5dmNvcHZpOTBfSTNXUTU4QVlhdHpyRFJYbURkN3RJdW9kN2VoTmN0dHU4MUZyclUzY3E3VjJXQTBFbnY3dFZfYlNaSHl0SVduYndVT0tMZkhhNg?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-23T13:03+01:00",
+      "date": "2026-11-23",
+      "source": "MP-IDSA",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQR3R0WXpNbEFpdE10WElNVUhCQTdYMlVucDlIY014VXh1dFZTM1MxWGpsdnJQT1E0el9MYVJFcWN2VFMwblJvdkRwdmRXcVZNNi1LN0wyUlpkVlluQ0hEN2hKRlNtRDNOUlM5dmNvcHZpOTBfSTNXUTU4QVlhdHpyRFJYbURkN3RJdW9kN2VoTmN0dHU4MUZyclUzY3E3VjJXQTBFbnY3dFZfYlNaSHl0SVduYndVT0tMZkhhNg?oc=5\" target=\"_blank\">Ebola and Africa’s Health Security: Why Recurrent Outbreaks Remain a Global Concern</a> <font color=\"#6f6f6f\">MP-IDSA</font>",
+      "center_site": "https://idsa.in/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الإيبولا والأمن الصحي في أفريقيا: لماذا تظل التفشيات المتكررة مصدر قلق عالمي - معهد الدفاع للدراسات التحليلية في نيودلهي"
     },
     {
       "center": "المعهد الملكي إلكانو",
@@ -974,6 +1016,20 @@
     {
       "center": "معهد لوي",
       "center_short": "Lowy Institute",
+      "title": "Why the Arctic cannot replace the Middle East’s shipping lanes - Lowy Institute",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPdUFvMURzR1JXYk5LUmxXTkhVdlkzU1ltQjlmQmRIUXlzQ25IU2VhWkRZc2x6dVByQlhGNGgtY0ZsOFBiN0x0WFBJSGZ1RktFRXVudXZiaEEybzJuTlhSUDN1RHhwdVF2UXE3TGFWaG5WcmZCeE9DT29vNmJaRFhFalVHMGtEUEc0T18zWUptQ0VLRTNKSkFfOEJHS05WejdJVURYX1BrNzJ3QUZL?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-13T09:00+01:00",
+      "date": "2026-11-13",
+      "source": "Lowy Institute",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPdUFvMURzR1JXYk5LUmxXTkhVdlkzU1ltQjlmQmRIUXlzQ25IU2VhWkRZc2x6dVByQlhGNGgtY0ZsOFBiN0x0WFBJSGZ1RktFRXVudXZiaEEybzJuTlhSUDN1RHhwdVF2UXE3TGFWaG5WcmZCeE9DT29vNmJaRFhFalVHMGtEUEc0T18zWUptQ0VLRTNKSkFfOEJHS05WejdJVURYX1BrNzJ3QUZL?oc=5\" target=\"_blank\">Why the Arctic cannot replace the Middle East’s shipping lanes</a> <font color=\"#6f6f6f\">Lowy Institute</font>",
+      "center_site": "https://lowyinstitute.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "لماذا لا يمكن للمنطقة القطبية الشمالية أن تحل محل مسارات الشحن في الشرق الأوسط - معهد لوي"
+    },
+    {
+      "center": "معهد لوي",
+      "center_short": "Lowy Institute",
       "title": "Why the Arctic cannot replace the Middle East’s shipping lanes",
       "url": "https://www.lowyinstitute.org/the-interpreter/why-the-arctic-cannot-replace-the-middle-east-s-shipping-lanes",
       "published": "2026-11-13T02:00+01:00",
@@ -984,20 +1040,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "لماذا لا يمكن للمنطقة القطبية الشمالية أن تحل محل طرق الشحن في الشرق الأوسط"
-    },
-    {
-      "center": "معهد لوي",
-      "center_short": "Lowy Institute",
-      "title": "Why the Arctic cannot replace the Middle East’s shipping lanes - Lowy Institute",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPdUFvMURzR1JXYk5LUmxXTkhVdlkzU1ltQjlmQmRIUXlzQ25IU2VhWkRZc2x6dVByQlhGNGgtY0ZsOFBiN0x0WFBJSGZ1RktFRXVudXZiaEEybzJuTlhSUDN1RHhwdVF2UXE3TGFWaG5WcmZCeE9DT29vNmJaRFhFalVHMGtEUEc0T18zWUptQ0VLRTNKSkFfOEJHS05WejdJVURYX1BrNzJ3QUZL?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-13T02:00+01:00",
-      "date": "2026-11-13",
-      "source": "Lowy Institute",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPdUFvMURzR1JXYk5LUmxXTkhVdlkzU1ltQjlmQmRIUXlzQ25IU2VhWkRZc2x6dVByQlhGNGgtY0ZsOFBiN0x0WFBJSGZ1RktFRXVudXZiaEEybzJuTlhSUDN1RHhwdVF2UXE3TGFWaG5WcmZCeE9DT29vNmJaRFhFalVHMGtEUEc0T18zWUptQ0VLRTNKSkFfOEJHS05WejdJVURYX1BrNzJ3QUZL?oc=5\" target=\"_blank\">Why the Arctic cannot replace the Middle East’s shipping lanes</a> <font color=\"#6f6f6f\">Lowy Institute</font>",
-      "center_site": "https://lowyinstitute.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "لماذا لا يمكن للمحيط المتجمد الشمالي أن يحل محل طرق الشحن في الشرق الأوسط - معهد لوي"
     },
     {
       "center": "مركز الأمن الأمريكي الجديد (CNAS)",
@@ -1224,20 +1266,6 @@
       "title_ar": "سوء تقدير الصحراء الغربية: كيف يمكن لأوروبا وقف الحرب في شمال أفريقيا - المجلس الأوروبي للعلاقات الخارجية"
     },
     {
-      "center": "مركز أولويات الدفاع",
-      "center_short": "Defense Priorities",
-      "title": "Allies fear Trump will target NATO in case of midterm loss",
-      "url": "https://www.defensepriorities.org/in-the-media/allies-fear-trump-will-target-nato-in-case-of-midterm-loss/",
-      "published": "2026-11-02T22:09+01:00",
-      "date": "2026-11-02",
-      "source": "Defense Priorities",
-      "description": "<p>In theory, a Democrat majority in the House and Senate would restrain Trump’s maneuverability even on foreign and defense issues, […]</p> <p>The post <a href=\"https://www.defensepriorities.org/in-the-media/allies-fear-trump-will-target-nato-in-case-of-midterm-loss/\">Allies fear Trump will target NATO in case of midterm loss</a> appeared first on <a href=\"https://www.defensepriorities.org\">Defense Priorities</a>.</p>",
-      "center_site": "https://defensepriorities.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "يخشى الحلفاء أن يستهدف ترامب حلف الناتو في حالة خسارة منتصف المدة"
-    },
-    {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
       "center_short": "ISS Africa",
       "title": "Congolese refugees caught between war and closing doors - ISS Africa",
@@ -1280,6 +1308,20 @@
       "title_ar": "الصمود تحت النار: الأمن الغذائي والأمن المائي واستمرارية الأعمال في الخليج في زمن الحرب - المعهد الدولي للدراسات الاستراتيجية"
     },
     {
+      "center": "معهد ستيمسون",
+      "center_short": "Stimson Center",
+      "title": "NO PROSPERITY WITHOUT STABILITY: THE G20'S GROWTH AGENDA RUNS THROUGH AFRICA’S CONFLICT ZONES - Global Governance Innovation Network",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5CMVc5UEdlVlJ1Z3RZX2ZWb3B3LW1NZXN1QVlLVlNodTQ0dXhIMkZyblBLVTV3TUFkMFV2amd5LWZFang3a1loQjV4QVRvQTdtTlhtNlBRUXlRbWxReTExQTFKZ1BLNUxHTnM0NlVlWDNJbm42OWlZ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-01T08:00+01:00",
+      "date": "2026-11-01",
+      "source": "Global Governance Innovation Network",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTE5CMVc5UEdlVlJ1Z3RZX2ZWb3B3LW1NZXN1QVlLVlNodTQ0dXhIMkZyblBLVTV3TUFkMFV2amd5LWZFang3a1loQjV4QVRvQTdtTlhtNlBRUXlRbWxReTExQTFKZ1BLNUxHTnM0NlVlWDNJbm42OWlZ?oc=5\" target=\"_blank\">NO PROSPERITY WITHOUT STABILITY: THE G20'S GROWTH AGENDA RUNS THROUGH AFRICA’S CONFLICT ZONES</a> <font color=\"#6f6f6f\">Global Governance Innovation Network</font>",
+      "center_site": "https://stimson.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "لا ازدهار بدون استقرار: أجندة النمو لمجموعة العشرين تمر عبر مناطق النزاع في أفريقيا - شبكة ابتكار الحوكمة العالمية"
+    },
+    {
       "center": "مجلس العلاقات الخارجية",
       "center_short": "CFR",
       "title": "An Economic Shield of the Americas: How Washington Can Counter China and Build a More Prosperous Hemisphere",
@@ -1320,20 +1362,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "أفريقيا على علم: 10 سنوات من أزمة الكاميرون الناطقة باللغة الإنجليزية - تشاتام هاوس"
-    },
-    {
-      "center": "معهد الدراسات الدفاعية والاستراتيجية الهندي (MP-IDSA)",
-      "center_short": "MP-IDSA",
-      "title": "RK Narang Quoted in South China Morning Post Report ‘Can India turn wartime ammo sales into lasting European defence ties?’ - MP-IDSA",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQa2ctMTFfaWZhTVQydjV0RFRuelVNdUhOQU1rSkhkSnlEb01zcHdyLWJDLWlQVndBMDhCYVJxODB5STFpVncybTd3SkxaQlNTdmpZTVVRSEVwaksyR0k2Skt0azBPSU5QeWQ5aDNPZXZ4YXEwNDJkLVByeGsxTzBqSXpDQzY?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-29T09:15+01:00",
-      "date": "2026-10-29",
-      "source": "MP-IDSA",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMihAFBVV95cUxQa2ctMTFfaWZhTVQydjV0RFRuelVNdUhOQU1rSkhkSnlEb01zcHdyLWJDLWlQVndBMDhCYVJxODB5STFpVncybTd3SkxaQlNTdmpZTVVRSEVwaksyR0k2Skt0azBPSU5QeWQ5aDNPZXZ4YXEwNDJkLVByeGsxTzBqSXpDQzY?oc=5\" target=\"_blank\">RK Narang Quoted in South China Morning Post Report ‘Can India turn wartime ammo sales into lasting European defence ties?’</a> <font color=\"#6f6f6f\">MP-IDSA</font>",
-      "center_site": "https://idsa.in/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "RK Narang مقتبس في تقرير جنوب الصين الصباحي \"هل يمكن للهند تحويل مبيعات الذخيرة في زمن الحرب إلى علاقات دفاعية أوروبية دائمة ؟\" - MP - IDSA"
     },
     {
       "center": "معهد كوينسي للحكم المسؤول",
