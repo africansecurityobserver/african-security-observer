@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T01:55+01:00",
+  "updated": "2026-11-23T11:49+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 53,
+  "count": 55,
   "publications": [
     {
       "center": "مبادرة الإصلاح العربي",
@@ -634,6 +634,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "الاضطرابات في مجمع أمن شمال أفريقيا الكبير تتطلب نهجًا سياسيًا جديدًا عبر الأطلسي - مجلس الأطلسي"
+    },
+    {
+      "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
+      "center_short": "SWP",
+      "title": "Reinforcing Regime Security and Authoritarian Rule: Regionalism in the Sahel - Stiftung Wissenschaft und Politik",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPdEJJbC1ScjZZYXFjal9OSEtheWhSN2pTWTlwUFMzUHJEMXRiOWt4QWVESEJocVlWVmI2TV9GdFRiOXRGNDdiRzR3Xzc0QmZBV1VGZFc2VDhmV2lZcXdhX19FQUVJVXdfZWtNWldJNnZCdXk5cnVSRS1OZHJsUnk2MUxHSFMzNDQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-18T13:06+01:00",
+      "date": "2026-11-18",
+      "source": "Stiftung Wissenschaft und Politik",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxPdEJJbC1ScjZZYXFjal9OSEtheWhSN2pTWTlwUFMzUHJEMXRiOWt4QWVESEJocVlWVmI2TV9GdFRiOXRGNDdiRzR3Xzc0QmZBV1VGZFc2VDhmV2lZcXdhX19FQUVJVXdfZWtNWldJNnZCdXk5cnVSRS1OZHJsUnk2MUxHSFMzNDQ?oc=5\" target=\"_blank\">Reinforcing Regime Security and Authoritarian Rule: Regionalism in the Sahel</a> <font color=\"#6f6f6f\">Stiftung Wissenschaft und Politik</font>",
+      "center_site": "https://swp-berlin.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "تعزيز أمن النظام والحكم الاستبدادي: الإقليمية في منطقة الساحل - مؤسسة العلوم والسياسة"
     },
     {
       "center": "مؤسسة كونراد أديناور",
@@ -732,6 +746,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "مصر تزن الدبلوماسية والتدخل العسكري في البحر الأحمر - المركز العربي واشنطن العاصمة"
+    },
+    {
+      "center": "المعهد الملكي إلكانو",
+      "center_short": "Elcano",
+      "title": "A new strategy for another Europe: a Southern European contribution to the European Security Strategy - Real Instituto Elcano",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxObUQta0tuVDVRUUhVVlhtSWhaeU5MNGROVHc2dDljWm9TQXYtUlVhQk84dk9QT2xxcjVjYmQxY0k1a0pLRUd3eUc0XzFlOTlZRjkwRnBzV1Z2Vy1NUC05NUlZaTJaTEpkY2JzOHJIT3I4Sm9idjV2Qk5oWGRSMnoycVlxbVFKQ2N5TTR5WkY2MkVqYldKUzlTV25heXhKRS1vclZUenhNUkUwWUxSZE1tb244WHlsckZmNG1SVk5vdzZnc3hBaFFFOWVlQWJWOXRYcTBoc0VUb1Y3WFRiOEdUaQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-23T11:42+01:00",
+      "date": "2026-11-23",
+      "source": "Real Instituto Elcano",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi4AFBVV95cUxObUQta0tuVDVRUUhVVlhtSWhaeU5MNGROVHc2dDljWm9TQXYtUlVhQk84dk9QT2xxcjVjYmQxY0k1a0pLRUd3eUc0XzFlOTlZRjkwRnBzV1Z2Vy1NUC05NUlZaTJaTEpkY2JzOHJIT3I4Sm9idjV2Qk5oWGRSMnoycVlxbVFKQ2N5TTR5WkY2MkVqYldKUzlTV25heXhKRS1vclZUenhNUkUwWUxSZE1tb244WHlsckZmNG1SVk5vdzZnc3hBaFFFOWVlQWJWOXRYcTBoc0VUb1Y3WFRiOEdUaQ?oc=5\" target=\"_blank\">A new strategy for another Europe: a Southern European contribution to the European Security Strategy</a> <font color=\"#6f6f6",
+      "center_site": "https://realinstitutoelcano.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "استراتيجية جديدة لأوروبا أخرى: مساهمة جنوب أوروبا في استراتيجية الأمن الأوروبي - معهد إلكانو الملكي"
     },
     {
       "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
