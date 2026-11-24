@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T07:57+01:00",
+  "updated": "2026-11-24T20:31+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 58,
+  "count": 59,
   "publications": [
     {
       "center": "مبادرة الإصلاح العربي",
@@ -692,6 +692,20 @@
       "title_ar": "البرنامج الإقليمي للحوار بشأن السياسة الأمنية في غرب أفريقيا - منطقة الساحل (SIPODI غرب أفريقيا - منطقة الساحل) - مؤسسة كونراد أديناور"
     },
     {
+      "center": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
+      "center_short": "IISS",
+      "title": "The Sahel’s juntas and the further decline of Western security partnerships - The International Institute for Strategic Studies",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOTVRTWlozQTJSUGJ1QTY5bGpkbk1RN3M3NnNmc3RQekJXcWt2b1FxMTZqek1ycFA4cEZXUUVnU0FXQ1JmanllVkZjeWhoOGtrczNsX0xxMVJuNEhSOXhJVk9SbjNJZ044bE5EYXBhbFNHQklhN0JweDVaNmJ2Q1ZhclI5ZTRZVHR6Tkpia1V0NUxoaEhUOGVRSjd2LWJUX0hBV0F3LVY3UkRqM0tQSWFFV1JfWFlyaDl5Y1NSVnVaSGxua1NwcC1odnAtRlE5cnpYSEE?oc=5",
+      "published": "2026-11-12T09:00+01:00",
+      "date": "2026-11-12",
+      "source": "The International Institute for Strategic Studies",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxOTVRTWlozQTJSUGJ1QTY5bGpkbk1RN3M3NnNmc3RQekJXcWt2b1FxMTZqek1ycFA4cEZXUUVnU0FXQ1JmanllVkZjeWhoOGtrczNsX0xxMVJuNEhSOXhJVk9SbjNJZ044bE5EYXBhbFNHQklhN0JweDVaNmJ2Q1ZhclI5ZTRZVHR6Tkpia1V0NUxoaEhUOGVRSjd2LWJUX0hBV0F3LVY3UkRqM0tQSWFFV1JfWFlyaDl5Y1NSVnVaSGxua1NwcC1odnAtRlE5cnpYSEE?oc=5\" target=\"_blank\">The Sahel’s juntas and the further decline of Western security partnerships</a> <font color=\"#6f6f6f\">The International Institute for Strategic ",
+      "center_site": "https://iiss.org/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
+      "title_ar": "مجالس الحكم العسكري في منطقة الساحل والمزيد من تراجع الشراكات الأمنية الغربية - المعهد الدولي للدراسات الاستراتيجية"
+    },
+    {
       "center": "المعهد الألماني للشؤون الدولية والأمنية (SWP)",
       "center_short": "SWP",
       "title": "How the Military Is Restructuring Egypt’s Gold Sector Through Force - Stiftung Wissenschaft und Politik (SWP)",
@@ -720,20 +734,6 @@
       "title_ar": "كيف يعيد الجيش هيكلة قطاع الذهب في مصر بالقوة - مؤسسة العلوم والسياسة"
     },
     {
-      "center": "المعهد الدولي للدراسات الاستراتيجية (IISS)",
-      "center_short": "IISS",
-      "title": "The Sahel’s juntas and the further decline of Western security partnerships - The International Institute for Strategic Studies",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOTVRTWlozQTJSUGJ1QTY5bGpkbk1RN3M3NnNmc3RQekJXcWt2b1FxMTZqek1ycFA4cEZXUUVnU0FXQ1JmanllVkZjeWhoOGtrczNsX0xxMVJuNEhSOXhJVk9SbjNJZ044bE5EYXBhbFNHQklhN0JweDVaNmJ2Q1ZhclI5ZTRZVHR6Tkpia1V0NUxoaEhUOGVRSjd2LWJUX0hBV0F3LVY3UkRqM0tQSWFFV1JfWFlyaDl5Y1NSVnVaSGxua1NwcC1odnAtRlE5cnpYSEE?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-09T09:00+01:00",
-      "date": "2026-11-09",
-      "source": "The International Institute for Strategic Studies",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxOTVRTWlozQTJSUGJ1QTY5bGpkbk1RN3M3NnNmc3RQekJXcWt2b1FxMTZqek1ycFA4cEZXUUVnU0FXQ1JmanllVkZjeWhoOGtrczNsX0xxMVJuNEhSOXhJVk9SbjNJZ044bE5EYXBhbFNHQklhN0JweDVaNmJ2Q1ZhclI5ZTRZVHR6Tkpia1V0NUxoaEhUOGVRSjd2LWJUX0hBV0F3LVY3UkRqM0tQSWFFV1JfWFlyaDl5Y1NSVnVaSGxua1NwcC1odnAtRlE5cnpYSEE?oc=5\" target=\"_blank\">The Sahel’s juntas and the further decline of Western security partnerships</a> <font color=\"#6f6f6f\">The International Institute for Strategic ",
-      "center_site": "https://iiss.org/",
-      "relevance_tier": 3,
-      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
-      "title_ar": "مجالس الحكم العسكري في منطقة الساحل والمزيد من تراجع الشراكات الأمنية الغربية - المعهد الدولي للدراسات الاستراتيجية"
-    },
-    {
       "center": "المركز العربي في واشنطن",
       "center_short": "Arab Center Washington DC",
       "title": "Egypt Weighs Diplomacy and Military Intervention in the Red Sea - Arab Center Washington DC",
@@ -746,6 +746,34 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "مصر تزن الدبلوماسية والتدخل العسكري في البحر الأحمر - المركز العربي واشنطن العاصمة"
+    },
+    {
+      "center": "مؤسسة كارنيغي للسلام الدولي",
+      "center_short": "Carnegie Endowment",
+      "title": "The Military Exercise Remaking European Security - Carnegie Endowment for International Peace",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQMnVtTG9uZkxUOG1DQl9KbHoyX3dXWDR4aFpCczRFWkFMcmxTV1dlUmVfZUhxUXFwMDl4NGlCTXpLc19HT1VIalJMT3JhRkdla0lRTzUyTVJBYWU3UUR0dlhyVUozbGpOR1Z2YkxIMXJsOVFtY1VVa0NBR0lCeWRZa2xtU21NSGlidW9jdjAyampJeXlVdzdOaE1LdzBvdzlvWjU3M2ltaVRKbEo0Snkw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-24T14:31+01:00",
+      "date": "2026-11-24",
+      "source": "Carnegie Endowment for International Peace",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQMnVtTG9uZkxUOG1DQl9KbHoyX3dXWDR4aFpCczRFWkFMcmxTV1dlUmVfZUhxUXFwMDl4NGlCTXpLc19HT1VIalJMT3JhRkdla0lRTzUyTVJBYWU3UUR0dlhyVUozbGpOR1Z2YkxIMXJsOVFtY1VVa0NBR0lCeWRZa2xtU21NSGlidW9jdjAyampJeXlVdzdOaE1LdzBvdzlvWjU3M2ltaVRKbEo0Snkw?oc=5\" target=\"_blank\">The Military Exercise Remaking European Security</a> <font color=\"#6f6f6f\">Carnegie Endowment for International Peace</font>",
+      "center_site": "https://carnegieendowment.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "التمرين العسكري لإعادة تشكيل الأمن الأوروبي - مؤسسة كارنيغي للسلام الدولي"
+    },
+    {
+      "center": "معهد العلاقات الدولية والاستراتيجية (IRIS)",
+      "center_short": "IRIS",
+      "title": "Extending Supply Chain Security in EU Defence Funding: From Components to Raw Materials - IRIS - Institut de relations internationales et stratégiques",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZ09rVVpIdTJ5enpUYUFCOWRKa1JuMWR2S2xhUGNDMXhMTnZFU1ZhSjJHWEplYlZVeENBWHNLYXdWZ1hFLXFqd3RFV2FCNGgybEpDb1NFVzN0VlZjck55Ylg3VHJDXzk5WU9qbjQ2ZnU0cm9vaTVGbUVIdEMtRTM4Z2JET09kVUZGVUFRdDJlOFFsWmVIdDR0OVhaZzk5UTEwdzcwdkpXY3pmMXBrR0puQjhUcHhMRlc1ckE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-24T12:26+01:00",
+      "date": "2026-11-24",
+      "source": "IRIS - Institut de relations internationales et stratégiques",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNZ09rVVpIdTJ5enpUYUFCOWRKa1JuMWR2S2xhUGNDMXhMTnZFU1ZhSjJHWEplYlZVeENBWHNLYXdWZ1hFLXFqd3RFV2FCNGgybEpDb1NFVzN0VlZjck55Ylg3VHJDXzk5WU9qbjQ2ZnU0cm9vaTVGbUVIdEMtRTM4Z2JET09kVUZGVUFRdDJlOFFsWmVIdDR0OVhaZzk5UTEwdzcwdkpXY3pmMXBrR0puQjhUcHhMRlc1ckE?oc=5\" target=\"_blank\">Extending Supply Chain Security in EU Defence Funding: From Components to Raw Materials</a> <font color=\"#6f6f6f\">IRIS - Institut de relations internationales et stratégiques</",
+      "center_site": "https://iris-france.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "توسيع نطاق أمن سلسلة التوريد في تمويل الدفاع في الاتحاد الأوروبي: من المكونات إلى المواد الخام - معهد العلاقات الدولية والاستراتيجية (IRIS)"
     },
     {
       "center": "مركز الدراسات الاستراتيجية والأمنية في بنغلادش",
@@ -1138,20 +1166,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الاستعداد للحرب 2030: سيناريو: تعزيز استعداد المملكة المتحدة وحلف شمال الأطلسي - مؤسسة راند"
-    },
-    {
-      "center": "مؤسسة كارنيغي للسلام الدولي",
-      "center_short": "Carnegie Endowment",
-      "title": "A Delicate Balance: Africa’s Agency on Full Display and Expanding Conflict in the Horn - Carnegie Endowment for International Peace",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOU1JrOGZXX0l0dlVRdi1jX0w0UkM3eDFfN3EwOTJGNnJHbHQ3RUJRaEp1MzdyNThmTFREaUtLLXZrS1FJY01xaHppY0QxM3dfdFcyLW5xeGthX1M3Tlo5NXpvYkwxMDZPSEVZYkxRWEFPS3poVmFSUzhjSW5JNGZrVE9vcHg3ZGFyUkxON3lqaWMyYVhLeHEwdTlDSzlQLVg3U1Vlb0R6dEt0ZFRHQUtOVWZfbGl5U3VaYTNKUlFDWGU5LU1vRElOTjdybmI4ZDRrR2lRc0NHS0Vwa01JalR6eGtPWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-10T18:38+01:00",
-      "date": "2026-11-10",
-      "source": "Carnegie Endowment for International Peace",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi4wFBVV95cUxOU1JrOGZXX0l0dlVRdi1jX0w0UkM3eDFfN3EwOTJGNnJHbHQ3RUJRaEp1MzdyNThmTFREaUtLLXZrS1FJY01xaHppY0QxM3dfdFcyLW5xeGthX1M3Tlo5NXpvYkwxMDZPSEVZYkxRWEFPS3poVmFSUzhjSW5JNGZrVE9vcHg3ZGFyUkxON3lqaWMyYVhLeHEwdTlDSzlQLVg3U1Vlb0R6dEt0ZFRHQUtOVWZfbGl5U3VaYTNKUlFDWGU5LU1vRElOTjdybmI4ZDRrR2lRc0NHS0Vwa01JalR6eGtPWQ?oc=5\" target=\"_blank\">A Delicate Balance: Africa’s Agency on Full Display and Expanding Conflict in the Horn</a> <font color=\"#6f6f6f\">Carnegie",
-      "center_site": "https://carnegieendowment.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "توازن دقيق: وكالة أفريقيا للعرض الكامل وتوسيع الصراع في القرن الأفريقي - مؤسسة كارنيغي للسلام الدولي"
     },
     {
       "center": "المعهد الأسترالي للسياسة الاستراتيجية (ASPI)",
