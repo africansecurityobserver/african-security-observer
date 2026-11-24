@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T23:41+01:00",
+  "updated": "2026-11-24T07:57+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 57,
+  "count": 58,
   "publications": [
     {
       "center": "مبادرة الإصلاح العربي",
@@ -746,6 +746,20 @@
       "relevance_tier": 3,
       "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة",
       "title_ar": "مصر تزن الدبلوماسية والتدخل العسكري في البحر الأحمر - المركز العربي واشنطن العاصمة"
+    },
+    {
+      "center": "مركز الدراسات الاستراتيجية والأمنية في بنغلادش",
+      "center_short": "BIPSS",
+      "title": "From Border Controls to Battle Zones: The New Risks of Global Labor Migration",
+      "url": "https://bipss.org.bd/from-border-controls-to-battle-zones-the-new-risks-of-global-labor-migration/",
+      "published": "2026-11-24T05:27+01:00",
+      "date": "2026-11-24",
+      "source": "BIPSS",
+      "description": "BIPSS Research Assistant Jannatul Toba examines how global labour migration is increasingly shaped by border restrictions, political interests, security concerns and geopolitical conflicts. Toba highlights the contradiction between destination countries’ dependence on foreign labour and their increasingly restrictive approaches towards migrant populations, questioning why workers who contribute to economic stability are often denied adequate protection …",
+      "center_site": "https://bipss.org.bd/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "من ضوابط الحدود إلى مناطق القتال: المخاطر الجديدة للهجرة العالمية للعمالة"
     },
     {
       "center": "مركز أولويات الدفاع",
