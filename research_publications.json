@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T04:33+01:00",
+  "updated": "2026-11-25T16:39+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 59,
+  "count": 60,
   "publications": [
     {
       "center": "مبادرة الإصلاح العربي",
@@ -758,7 +758,22 @@
       "description": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQMnVtTG9uZkxUOG1DQl9KbHoyX3dXWDR4aFpCczRFWkFMcmxTV1dlUmVfZUhxUXFwMDl4NGlCTXpLc19HT1VIalJMT3JhRkdla0lRTzUyTVJBYWU3UUR0dlhyVUozbGpOR1Z2YkxIMXJsOVFtY1VVa0NBR0lCeWRZa2xtU21NSGlidW9jdjAyampJeXlVdzdOaE1LdzBvdzlvWjU3M2ltaVRKbEo0Snkw?oc=5\" target=\"_blank\">The Military Exercise Remaking European Security</a> <font color=\"#6f6f6f\">Carnegie Endowment for International Peace</font>",
       "center_site": "https://carnegieendowment.org/",
       "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس"
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "التمرين العسكري لإعادة تشكيل الأمن الأوروبي - مؤسسة كارنيغي للسلام الدولي"
+    },
+    {
+      "center": "مركز أبحاث السياسة الخارجية النمساوي (oiip)",
+      "center_short": "oiip",
+      "title": "A European Security Council: Who Defines Europe? • Publikationen - Österreichisches Institut für Internationale Politik",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPTm56cXk3WkFhNFBrT3c4OE9ZTWhXSWhrM3NHVHlPc2lGejJZYzRydHZBOTd5cU9MU3lYM29oWF9jdnNsVzBydHo4SEQ5UnFJZFExNFN0Yk5odkNMM25LbVRSb2x1WTlLWW1wNnRzN3BxSERfSDN4WFg2anRhcUdQMHNBUURaZ0RJNHc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-24T17:28+01:00",
+      "date": "2026-11-24",
+      "source": "Österreichisches Institut für Internationale Politik",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxPTm56cXk3WkFhNFBrT3c4OE9ZTWhXSWhrM3NHVHlPc2lGejJZYzRydHZBOTd5cU9MU3lYM29oWF9jdnNsVzBydHo4SEQ5UnFJZFExNFN0Yk5odkNMM25LbVRSb2x1WTlLWW1wNnRzN3BxSERfSDN4WFg2anRhcUdQMHNBUURaZ0RJNHc?oc=5\" target=\"_blank\">A European Security Council: Who Defines Europe? • Publikationen</a> <font color=\"#6f6f6f\">Österreichisches Institut für Internationale Politik</font>",
+      "center_site": "https://oiip.ac.at/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "مجلس الأمن الأوروبي: من يحدد هوية أوروبا؟ • المنشورات - المعهد النمساوي للسياسة الدولية"
     },
     {
       "center": "معهد العلاقات الدولية والاستراتيجية (IRIS)",
@@ -955,20 +970,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "هل يمكن للطائرات بدون طيار أن تحل محل الجنود؟ استراتيجية الناتو للمركبات غير المأهولة - المعهد الملكي للخدمات المتحدة (RUSI)"
-    },
-    {
-      "center": "مركز أبحاث السياسة الخارجية النمساوي (oiip)",
-      "center_short": "oiip",
-      "title": "Talking about European Security, without the OSCE • Publications - Österreichisches Institut für Internationale Politik",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYW5SMHgzYWpFdXVjQ3ZfNHpHbHo4Qk95T2trWWxXQVM0M2ZWM2F0eEZZYzVoOHpTNm1hWS1PNlNvUktIM194dk9fVUtHcXpMZjcycDM1cTFKaldSWGMtUUZHbVVWczhMRloyU0NkRHlSc3RtVm9PNmFlcnQ0eEhqQzRwZFNnSUZ1WmZJd01mZDJwUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-19T12:26+01:00",
-      "date": "2026-11-19",
-      "source": "Österreichisches Institut für Internationale Politik",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPYW5SMHgzYWpFdXVjQ3ZfNHpHbHo4Qk95T2trWWxXQVM0M2ZWM2F0eEZZYzVoOHpTNm1hWS1PNlNvUktIM194dk9fVUtHcXpMZjcycDM1cTFKaldSWGMtUUZHbVVWczhMRloyU0NkRHlSc3RtVm9PNmFlcnQ0eEhqQzRwZFNnSUZ1WmZJd01mZDJwUQ?oc=5\" target=\"_blank\">Talking about European Security, without the OSCE • Publications</a> <font color=\"#6f6f6f\">Österreichisches Institut für Internationale Politik</font>",
-      "center_site": "https://oiip.ac.at/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "الحديث عن الأمن الأوروبي، من دون منظمة الأمن والتعاون في أوروبا • المنشورات - المعهد النمساوي للسياسة الدولية"
     },
     {
       "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
@@ -1221,6 +1222,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "شارك نيكلاس سوانستروم في الندوة السابعة حول التعاون البحري العالمي وإدارة المحيطات في سانيا - معهد سياسة الأمن والتنمية"
+    },
+    {
+      "center": "مبادرة الإصلاح العربي",
+      "center_short": "Arab Reform Initiative",
+      "title": "Who Gets to Explain the War? Institutional Risk and the Politics of Expertise on the Middle East and North Africa - Arab Reform Initiative",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQMGNwbzVuNEZYWHdMNGxxYnNNTG5JclBaZ0kwSVJ2WU1ZRVZ5NW9hZ2ttMXhQUTlGc1lGa0pkUHdKTXZDcW1qclE2aHdZTlBkQjVGYmJ6c2h5aWlaRU5iUUYxTkkwczh3RGJEcnZlUjJ5dkN2RjBubzVOWC1QS3RaYXZtR2JwWDEzb2RqMzd0RmFCOU1oTDlvcFFfcHVIYjVPZms1czRhdmlQU21Rd2lnTHlPSTlTZ3hQeDVPbm5jWkxfdUk?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-09T09:00+01:00",
+      "date": "2026-11-09",
+      "source": "Arab Reform Initiative",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQMGNwbzVuNEZYWHdMNGxxYnNNTG5JclBaZ0kwSVJ2WU1ZRVZ5NW9hZ2ttMXhQUTlGc1lGa0pkUHdKTXZDcW1qclE2aHdZTlBkQjVGYmJ6c2h5aWlaRU5iUUYxTkkwczh3RGJEcnZlUjJ5dkN2RjBubzVOWC1QS3RaYXZtR2JwWDEzb2RqMzd0RmFCOU1oTDlvcFFfcHVIYjVPZms1czRhdmlQU21Rd2lnTHlPSTlTZ3hQeDVPbm5jWkxfdUk?oc=5\" target=\"_blank\">Who Gets to Explain the War? Institutional Risk and the Politics of Expertise on the Middle East and North Africa</a> <font color=\"#6f6f6f\">Arab Reform Initiative</",
+      "center_site": "https://arab-reform.net/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "من يحق له تفسير الحرب؟ المخاطر المؤسسية وسياسات الخبرة بشأن الشرق الأوسط وشمال أفريقيا - مبادرة الإصلاح العربي"
     },
     {
       "center": "مؤسسة كارنيغي للسلام الدولي",
