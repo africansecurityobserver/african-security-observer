@@ -96,3 +96,5 @@ jobs:
             sleep 2
           done
           exit 1
+
+# Manual refresh trigger: verify private Supabase news synchronization after secrets setup.
