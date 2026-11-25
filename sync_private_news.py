@@ -126,10 +126,16 @@ def main():
     now = datetime.now(timezone.utc)
     inserted = {table: 0 for table in FEEDS}
     failures = 0
+    stats = {
+        "feeds": 0, "entries": 0, "empty_titles": 0, "excluded": 0,
+        "unmatched_topic": 0, "invalid_dates": 0, "outside_window": 0,
+        "missing_links": 0, "duplicates": 0, "inserted": 0,
+    }
 
     for table, searches in FEEDS.items():
         for language, gl, ceid, query in searches:
             url = make_feed_url((language, gl, ceid), query)
+            stats["feeds"] += 1
             try:
                 feed = fetch_feed(url)
             except Exception as exc:
@@ -137,24 +143,37 @@ def main():
                 print(f"RSS error [{table}/{language}]: {type(exc).__name__}: {exc}")
                 continue
 
+            print(f"RSS fetched [{table}/{language}]: {len(feed.entries)} entr(y/ies)")
             for entry in feed.entries[:40]:
+                stats["entries"] += 1
                 raw_title = str(entry.get("title", "") or "").strip()
                 raw_description = str(entry.get("summary", entry.get("description", "")) or "").strip()
                 text = (raw_title + " " + raw_description).casefold()
-                if not raw_title or contains_any(text, EXCLUDED):
+                if not raw_title:
+                    stats["empty_titles"] += 1
+                    continue
+                if contains_any(text, EXCLUDED):
+                    stats["excluded"] += 1
                     continue
 
                 if table == "khoms_news" and not contains_any(text, KHOMS_TERMS):
+                    stats["unmatched_topic"] += 1
                     continue
                 if table == "judicial_police_news" and not contains_any(text, JUDICIAL_TERMS):
+                    stats["unmatched_topic"] += 1
                     continue
 
                 published = parse_entry_date(entry)
-                if published is None or now - published > timedelta(hours=48) or published - now > timedelta(hours=24):
+                if published is None:
+                    stats["invalid_dates"] += 1
+                    continue
+                if now - published > timedelta(hours=48) or published - now > timedelta(hours=24):
+                    stats["outside_window"] += 1
                     continue
 
                 google_url = str(entry.get("link", "") or "").strip()
                 if not google_url:
+                    stats["missing_links"] += 1
                     continue
                 try:
                     source_url = normalize_url(decode_url(google_url))
@@ -174,9 +193,11 @@ def main():
                     if source:
                         content = (content + "\n\nالمصدر: " + source).strip()
                     if already_exists(table, source_url):
+                        stats["duplicates"] += 1
                         continue
                     if insert_story(table, title or raw_title, content, source_url, published):
                         inserted[table] += 1
+                        stats["inserted"] += 1
                         print(f"Inserted [{table}]: {title or raw_title}")
                     time.sleep(0.15)
                 except Exception as exc:
@@ -184,6 +205,7 @@ def main():
                     print(f"Supabase sync error [{table}]: {type(exc).__name__}: {exc}")
 
     print("Private-news sync totals: " + ", ".join(f"{table}={count}" for table, count in inserted.items()))
+    print("Private-news diagnostic counters: " + ", ".join(f"{name}={count}" for name, count in stats.items()))
     if failures:
         print(f"Completed with {failures} feed/record error(s); next scheduled cycle will retry.")
     return 0
