@@ -16,7 +16,13 @@ import feedparser
 
 from update_news import decode_url, normalize_url, translate_article, parse_published_datetime
 
-SUPABASE_URL = os.getenv("SUPABASE_URL", "").rstrip("/")
+# Supabase URL and API keys are ASCII values. Strip invisible formatting
+# characters copied into GitHub Secrets before using them in HTTP requests.
+_raw_supabase_url = os.getenv("SUPABASE_URL", "")
+SUPABASE_URL = "".join(
+    char for char in _raw_supabase_url.strip()
+    if char.isascii() and not char.isspace()
+).rstrip("/")
 # Supabase API keys are ASCII tokens. Remove invisible Unicode formatting
 # characters that can be introduced when a key is copied into GitHub Secrets.
 _raw_supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY", "")
