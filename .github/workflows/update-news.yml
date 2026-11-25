@@ -11,6 +11,7 @@ on:
       - 'images/articles/**'
       - 'build_articles.py'
       - 'update_news.py'
+      - 'sync_private_news.py'
       - 'requirements.txt'
       - 'admin/config.yml'
       - '.github/workflows/update-news.yml'
@@ -69,6 +70,13 @@ jobs:
       - name: Build articles
         run: |
           python build_articles.py
+
+      - name: Sync owner-only private news to Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          python sync_private_news.py
 
       - name: Commit and push changes
         run: |
