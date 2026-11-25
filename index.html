@@ -986,7 +986,7 @@ onclick="window.location.href='./daily_cards.html'">
 الأرشيف
 </button>
 
-<a href="./private.html" style="color:#edf3f7;padding:13px 14px;text-decoration:none">الأقسام الخاصة</a>
+<a id="privateSectionsNav" class="hidden" href="./private.html" style="color:#edf3f7;padding:13px 14px;text-decoration:none">الأقسام الخاصة</a>
 </nav>
 
 </div>
@@ -2511,6 +2511,20 @@ start();
 
 </script>
 
+
+<script>
+(function(){
+ try{
+  for(let i=0;i<localStorage.length;i++){
+   const k=localStorage.key(i);if(!k||!k.endsWith('-auth-token'))continue;
+   const v=JSON.parse(localStorage.getItem(k)||'{}');
+   if(v.user&&v.user.id==='caef5244-9e77-47c0-b78f-a007ef4832ec'){
+    const el=document.getElementById('privateSectionsNav');if(el)el.classList.remove('hidden');
+   }
+  }
+ }catch(e){console.warn('Private navigation unavailable',e);}
+})();
+</script>
 
 </body>
 </html>
