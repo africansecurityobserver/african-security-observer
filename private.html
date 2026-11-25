@@ -87,7 +87,7 @@ document.getElementById('loginForm').addEventListener('submit',async e=>{
  e.preventDefault();const email=document.getElementById('email').value.trim();
  const button=document.getElementById('sendLink');button.disabled=true;
  showStatus(loginStatus,'جارٍ إرسال رابط الدخول إلى بريدك…');
- const {error}=await client.auth.signInWithOtp({email,options:{emailRedirectTo:location.origin+location.pathname,shouldCreateUser:false}});
+ const {error}=await client.auth.signInWithOtp({email,options:{emailRedirectTo:'https://africansecurityobserver.github.io/african-security-observer/',shouldCreateUser:false}});
  button.disabled=false;
  if(error){showStatus(loginStatus,'تعذر إرسال رابط الدخول: '+error.message);return;}
  showStatus(loginStatus,'تم إرسال رابط الدخول. افتح رسالة Supabase في بريدك واضغط الرابط من الهاتف نفسه.');
