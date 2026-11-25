@@ -61,7 +61,7 @@ jobs:
 
       - name: Check Python syntax
         run: |
-          python -m compileall -q update_news.py build_articles.py daily_cards strategic_cards research_cards monthly_assessment
+          python -m compileall -q update_news.py sync_private_news.py build_articles.py daily_cards strategic_cards research_cards monthly_assessment
 
       - name: Update news
         run: |
