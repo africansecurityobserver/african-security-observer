@@ -17,7 +17,13 @@ import feedparser
 from update_news import decode_url, normalize_url, translate_article, parse_published_datetime
 
 SUPABASE_URL = os.getenv("SUPABASE_URL", "").rstrip("/")
-SUPABASE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY", "")
+# Supabase API keys are ASCII tokens. Remove invisible Unicode formatting
+# characters that can be introduced when a key is copied into GitHub Secrets.
+_raw_supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY", "")
+SUPABASE_KEY = "".join(
+    char for char in _raw_supabase_key.strip()
+    if char.isascii() and not char.isspace()
+)
 
 FEEDS = {
     "khoms_news": [
