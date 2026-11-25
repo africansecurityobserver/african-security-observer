@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الأقسام الخاصة | المرصد الإفريقي</title>
+<style>
+:root{--navy:#10283f;--blue:#1b5872;--gold:#c9a45c;--paper:#f2f5f7;--ink:#172938;--muted:#687986;--line:#dbe3e8}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.8}
+header{background:linear-gradient(118deg,#0b2034,#153b55);color:white;border-bottom:4px solid var(--gold);padding:22px}
+.wrap{max-width:960px;margin:auto;padding:0 16px}h1{font-size:23px;margin:0}header p{margin:5px 0 0;color:#d1dce4;font-size:13px}
+main{padding:25px 0 50px}.panel,.news-card{background:white;border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:16px;box-shadow:0 4px 16px #10283f08}
+h2{font-size:19px;color:var(--navy);margin:0 0 14px}label{display:block;font-size:14px;font-weight:bold;margin-bottom:7px}
+input{width:100%;padding:12px;border:1px solid var(--line);border-radius:7px;font:inherit;margin-bottom:12px}
+button,.back{display:inline-block;border:0;border-radius:7px;padding:10px 16px;background:var(--navy);color:white;font:inherit;cursor:pointer;text-decoration:none}
+button.secondary{background:#e9eef2;color:var(--navy)}button:disabled{opacity:.55;cursor:wait}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.tabs button.active{background:var(--gold);color:#172535}
+.status{padding:10px 12px;border-radius:7px;background:#edf3f6;margin:12px 0;font-size:13px;white-space:pre-wrap}
+.hidden{display:none!important}.news-card h3{font-size:17px;color:var(--navy);margin:0 0 8px}.news-card p{margin:0 0 8px;white-space:pre-wrap}.meta{font-size:12px;color:var(--muted)}.meta a{color:var(--blue)}
+.empty{padding:25px;text-align:center;color:var(--muted);background:white;border:1px dashed var(--line);border-radius:9px}
+.actions{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<header><div class="wrap"><h1>المرصد الإفريقي | الأقسام الخاصة</h1><p>مساحة خاصة بصاحب الحساب المصرّح له فقط</p></div></header>
+<main class="wrap">
+<section id="loginPanel" class="panel">
+<h2>تسجيل الدخول</h2>
+<p>أدخل بريد الحساب المصرّح له. سنرسل إليك رابط دخول آمن عبر البريد الإلكتروني.</p>
+<form id="loginForm">
+<label for="email">البريد الإلكتروني</label>
+<input id="email" type="email" autocomplete="email" required value="issam.whibi@gmail.com">
+<button id="sendLink" type="submit">إرسال رابط الدخول</button>
+</form>
+<div id="loginStatus" class="status hidden" role="status"></div>
+</section>
+<section id="privatePanel" class="hidden">
+<div class="panel actions"><div><strong id="signedInAs"></strong><div class="meta">تم التحقق من صلاحية الحساب</div></div><button id="signOut" class="secondary">تسجيل الخروج</button></div>
+<div class="tabs">
+<button class="active" data-table="khoms_news">أخبار الخمس</button>
+<button data-table="judicial_police_news">أخبار الشرطة القضائية</button>
+</div>
+<div id="newsStatus" class="status hidden" role="status"></div>
+<div id="newsList"></div>
+</section>
+<p><a class="back" href="./index.html">العودة إلى الموقع الرئيسي</a></p>
+</main>
+<script>
+(function(){
+const SUPABASE_URL='https://kmtgdrxbselyxgtvwbpi.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY='sb_publishable_eDEbU30WIjea6p-Rm4qAvQ_bAQ_RmhI';
+const OWNER_ID='caef5244-9e77-47c0-b78f-a007ef4832ec';
+const client=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+const loginPanel=document.getElementById('loginPanel');
+const privatePanel=document.getElementById('privatePanel');
+const loginStatus=document.getElementById('loginStatus');
+const newsStatus=document.getElementById('newsStatus');
+const newsList=document.getElementById('newsList');
+let activeTable='khoms_news';
+function showStatus(el,message){el.textContent=message;el.classList.remove('hidden')}
+function escapeHtml(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+async function renderSession(){
+ const {data:{session},error}=await client.auth.getSession();
+ if(error){showStatus(loginStatus,'تعذر التحقق من جلسة الدخول: '+error.message);return;}
+ if(!session){loginPanel.classList.remove('hidden');privatePanel.classList.add('hidden');return;}
+ if(session.user.id!==OWNER_ID){
+   await client.auth.signOut();
+   loginPanel.classList.remove('hidden');privatePanel.classList.add('hidden');
+   showStatus(loginStatus,'هذا الحساب غير مصرّح له بالدخول إلى الأقسام الخاصة.');return;
+ }
+ loginPanel.classList.add('hidden');privatePanel.classList.remove('hidden');
+ document.getElementById('signedInAs').textContent='مسجل الدخول: '+session.user.email;
+ await loadNews(activeTable);
+}
+async function loadNews(table){
+ activeTable=table;newsList.innerHTML='';newsStatus.classList.add('hidden');
+ document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('active',b.dataset.table===table));
+ showStatus(newsStatus,'جارٍ تحميل الأخبار…');
+ const {data,error}=await client.from(table).select('id,title,content,source_url,published_at,created_at').order('published_at',{ascending:false});
+ if(error){showStatus(newsStatus,'تعذر تحميل الأخبار. تحقق من صلاحيات الجدول وسياسات RLS.\n'+error.message);return;}
+ newsStatus.classList.add('hidden');
+ if(!data||!data.length){newsList.innerHTML='<div class="empty">لا توجد أخبار منشورة في هذا القسم حتى الآن.</div>';return;}
+ newsList.innerHTML=data.map(item=>'<article class="news-card"><h3>'+escapeHtml(item.title)+'</h3><p>'+escapeHtml(item.content)+'</p><div class="meta">'+escapeHtml(item.published_at||item.created_at||'')+(item.source_url?' · <a href="'+escapeHtml(item.source_url)+'" target="_blank" rel="noopener noreferrer">المصدر</a>':'')+'</div></article>').join('');
+}
+document.getElementById('loginForm').addEventListener('submit',async e=>{
+ e.preventDefault();const email=document.getElementById('email').value.trim();
+ const button=document.getElementById('sendLink');button.disabled=true;
+ showStatus(loginStatus,'جارٍ إرسال رابط الدخول إلى بريدك…');
+ const {error}=await client.auth.signInWithOtp({email,options:{emailRedirectTo:'https://africansecurityobserver.github.io/african-security-observer/',shouldCreateUser:false}});
+ button.disabled=false;
+ if(error){showStatus(loginStatus,'تعذر إرسال رابط الدخول: '+error.message);return;}
+ showStatus(loginStatus,'تم إرسال رابط الدخول. افتح رسالة Supabase في بريدك واضغط الرابط من الهاتف نفسه.');
+});
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>loadNews(b.dataset.table)));
+document.getElementById('signOut').addEventListener('click',async()=>{await client.auth.signOut();location.reload();});
+client.auth.onAuthStateChange((_event,session)=>{if(session)renderSession();});
+renderSession();
+})();
+</script>
+</body>
+</html>
