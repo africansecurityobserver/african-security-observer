@@ -31,32 +31,40 @@ SUPABASE_KEY = "".join(
     if char.isascii() and not char.isspace()
 )
 
+# Broad collection: general web/news plus public social posts indexed by Google News.
+# Multiple queries per language increase recall; duplicates are removed by source_url.
 FEEDS = {
     "khoms_news": [
-        ('ar', 'EG', 'EG:ar', '(الخمس OR "مدينة الخمس" OR "ميناء الخمس" OR "بلدية الخمس") ليبيا when:2d'),
-        ('en-US', 'US', 'US:en', '("Al Khums" OR "Al-Khums" OR Khoms OR "Khoms Libya") (Libya OR Libyan) when:2d'),
-        ('fr', 'FR', 'FR:fr', '(Khoms OR "Al Khums" OR "Al-Khums") (Libye OR libyen) when:2d'),
+        ('ar', 'EG', 'EG:ar', '(الخمس OR "مدينة الخمس" OR "ميناء الخمس" OR "بلدية الخمس") (عسكري OR عسكرية OR أمن OR أمني OR أمنية OR الجيش OR القوات OR كتيبة OR لواء OR دورية OR اشتباك OR ضبط OR مداهمة OR تدريب OR قاعدة OR ميناء OR سفينة OR حرس OR شرطة) ليبيا when:7d'),
+        ('ar', 'EG', 'EG:ar', '(الخمس OR "مدينة الخمس" OR "ميناء الخمس") (site:facebook.com OR site:t.me OR site:x.com OR site:youtube.com OR site:instagram.com) (أمن OR عسكري OR الجيش OR الشرطة OR كتيبة OR دورية OR ضبط OR مداهمة) ليبيا when:7d'),
+        ('en-US', 'US', 'US:en', '("Al Khums" OR "Al-Khums" OR Khoms OR "Khoms Libya") (military OR security OR army OR forces OR battalion OR brigade OR patrol OR clash OR raid OR police OR navy OR port OR vessel) Libya when:7d'),
+        ('en-US', 'US', 'US:en', '("Al Khums" OR "Al-Khums" OR Khoms) (site:facebook.com OR site:t.me OR site:x.com OR site:youtube.com OR site:instagram.com) (military OR security OR army OR police OR patrol OR raid) Libya when:7d'),
+        ('fr', 'FR', 'FR:fr', '(Khoms OR "Al Khums" OR "Al-Khums") (militaire OR sécurité OR armée OR forces OR brigade OR patrouille OR affrontement OR police OR port OR navire) Libye when:7d'),
+        ('fr', 'FR', 'FR:fr', '(Khoms OR "Al Khums" OR "Al-Khums") (site:facebook.com OR site:t.me OR site:x.com OR site:youtube.com OR site:instagram.com) (militaire OR sécurité OR armée OR police) Libye when:7d'),
     ],
     "judicial_police_news": [
-        ('ar', 'EG', 'EG:ar', '("الشرطة القضائية" OR "جهاز الشرطة القضائية" OR "الإدارة العامة للشرطة القضائية" OR "فرع الشرطة القضائية") ليبيا when:2d'),
-        ('en-US', 'US', 'US:en', '("Judicial Police" OR "Judicial Police Department" OR "Criminal Investigation Department") (Libya OR Libyan) when:2d'),
-        ('fr', 'FR', 'FR:fr', '("police judiciaire") (Libye OR libyen) when:2d'),
+        ('ar', 'EG', 'EG:ar', '("الشرطة القضائية" OR "جهاز الشرطة القضائية" OR "الإدارة العامة للشرطة القضائية" OR "فرع الشرطة القضائية" OR "مؤسسات الإصلاح والتأهيل" OR "مراكز الإصلاح والتأهيل") ليبيا when:7d'),
+        ('ar', 'EG', 'EG:ar', '("الشرطة القضائية" OR "جهاز الشرطة القضائية" OR "مؤسسات الإصلاح والتأهيل" OR "مراكز الإصلاح والتأهيل") (site:facebook.com OR site:t.me OR site:x.com OR site:youtube.com OR site:instagram.com) ليبيا when:7d'),
+        ('ar', 'EG', 'EG:ar', '("جهاز الشرطة القضائية" OR "الشرطة القضائية") (سجن OR نزلاء OR نقل OR ترحيل OR ضبط OR قبض OR مداهمة OR تحقيق OR تأمين OR حراسة OR تدريب OR دورة OR افتتاح OR صيانة OR زيارة OR تفتيش OR تعميم OR قرار OR تكليف) ليبيا when:7d'),
+        ('en-US', 'US', 'US:en', '("Judicial Police" OR "Judicial Police Department" OR "Criminal Investigation Department" OR "Correction and Rehabilitation Institutions") Libya when:7d'),
+        ('en-US', 'US', 'US:en', '("Judicial Police" OR "Correction and Rehabilitation") (site:facebook.com OR site:t.me OR site:x.com OR site:youtube.com OR site:instagram.com) Libya when:7d'),
+        ('fr', 'FR', 'FR:fr', '("police judiciaire" OR "établissements de réforme et de réhabilitation") Libye when:7d'),
+        ('fr', 'FR', 'FR:fr', '("police judiciaire" OR "réforme et réhabilitation") (site:facebook.com OR site:t.me OR site:x.com OR site:youtube.com OR site:instagram.com) Libye when:7d'),
     ],
 }
 
-KHOMS_TERMS = ("الخمس", "مدينة الخمس", "ميناء الخمس", "بلدية الخمس",
-               "khoms", "al khums", "al-khums", "alkhums")
-JUDICIAL_TERMS = ("الشرطة القضائية", "جهاز الشرطة القضائية",
-                  "الإدارة العامة للشرطة القضائية", "فرع الشرطة القضائية",
-                  "judicial police", "judicial police department",
-                  "criminal investigation department", "police judiciaire")
-EXCLUDED = (
-    "كرة القدم", "مباراة", "الدوري", "football", "soccer",
-    "سياحة", "فندق", "tourism", "hotel",
-    "طقس", "حالة الطقس", "النشرة الجوية", "الأرصاد", "ارصاد", "رياح",
-    "أمطار", "امطار", "درجات الحرارة", "عاصفة", "توقعات جوية",
-    "weather", "meteorological", "wind forecast", "rain forecast",
-    "météo", "prévisions météorologiques", "pluie", "vents",
+KHOMS_TERMS = (
+    "الخمس", "مدينة الخمس", "ميناء الخمس", "بلدية الخمس",
+    "khoms", "al khums", "al-khums", "alkhums"
+)
+JUDICIAL_TERMS = (
+    "الشرطة القضائية", "جهاز الشرطة القضائية",
+    "الإدارة العامة للشرطة القضائية", "فرع الشرطة القضائية",
+    "مؤسسات الإصلاح والتأهيل", "مراكز الإصلاح والتأهيل",
+    "مؤسسة الإصلاح والتأهيل", "سجن", "السجون",
+    "judicial police", "judicial police department",
+    "criminal investigation department", "police judiciaire",
+    "correction and rehabilitation", "établissements de réforme",
 )
 
 
@@ -162,7 +170,7 @@ def main():
                 continue
 
             print(f"RSS fetched [{table}/{language}]: {len(feed.entries)} entr(y/ies)")
-            for entry in feed.entries[:40]:
+            for entry in feed.entries[:100]:
                 stats["entries"] += 1
                 raw_title = str(entry.get("title", "") or "").strip()
                 raw_description = str(entry.get("summary", entry.get("description", "")) or "").strip()
@@ -185,7 +193,7 @@ def main():
                 if published is None:
                     stats["invalid_dates"] += 1
                     continue
-                if now - published > timedelta(hours=48) or published - now > timedelta(hours=24):
+                if now - published > timedelta(days=7) or published - now > timedelta(hours=24):
                     stats["outside_window"] += 1
                     continue
 
