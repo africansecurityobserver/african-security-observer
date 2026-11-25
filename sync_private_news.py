@@ -50,8 +50,14 @@ JUDICIAL_TERMS = ("الشرطة القضائية", "جهاز الشرطة الق
                   "الإدارة العامة للشرطة القضائية", "فرع الشرطة القضائية",
                   "judicial police", "judicial police department",
                   "criminal investigation department", "police judiciaire")
-EXCLUDED = ("كرة القدم", "مباراة", "الدوري", "football", "soccer",
-            "سياحة", "فندق", "tourism", "hotel", "طقس", "weather")
+EXCLUDED = (
+    "كرة القدم", "مباراة", "الدوري", "football", "soccer",
+    "سياحة", "فندق", "tourism", "hotel",
+    "طقس", "حالة الطقس", "النشرة الجوية", "الأرصاد", "ارصاد", "رياح",
+    "أمطار", "امطار", "درجات الحرارة", "عاصفة", "توقعات جوية",
+    "weather", "meteorological", "wind forecast", "rain forecast",
+    "météo", "prévisions météorologiques", "pluie", "vents",
+)
 
 
 def make_feed_url(locale, query):
