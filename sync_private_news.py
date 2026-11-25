@@ -77,12 +77,16 @@ def fetch_feed(url):
 
 
 def supabase_headers():
-    return {
+    headers = {
         "apikey": SUPABASE_KEY,
-        "Authorization": "Bearer " + SUPABASE_KEY,
         "Content-Type": "application/json",
         "Accept": "application/json",
     }
+    # New sb_secret_* API keys are not JWTs: send them as apikey only.
+    # Legacy service_role keys are JWTs and also need the Authorization header.
+    if not SUPABASE_KEY.startswith("sb_secret_"):
+        headers["Authorization"] = "Bearer " + SUPABASE_KEY
+    return headers
 
 
 def already_exists(table, source_url):
