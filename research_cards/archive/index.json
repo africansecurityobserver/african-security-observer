@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T17:06:00+01:00",
+  "updated": "2026-11-26T22:54:07+01:00",
   "years": [
     {
       "year": "2026",
@@ -7,6 +7,16 @@
         {
           "month": "11",
           "cards": [
+            {
+              "date": "2026-11-26",
+              "title": "When Peacekeeping Ends Without Peace: What the Closure of MINURSO Means for the Future of UN Conflict Management",
+              "subject": "When Peacekeeping Ends Without Peace: What the Closure of MINURSO Means for the Future of UN Conflict Management",
+              "path": "2026-11/20261126_f6e7185af565.json",
+              "center": "مركز الدراسات الاستراتيجية والأمنية في بنغلادش",
+              "source_title": "When Peacekeeping Ends Without Peace: What the Closure of MINURSO Means for the Future of UN Conflict Management",
+              "slot": "research",
+              "kind_label": "بطاقة استراتيجية من مراكز البحث"
+            },
             {
               "date": "2026-11-18",
               "title": "الجزائر والحرب الأمريكية الإسرائيلية ضد إيران - مبادرة الإصلاح العربي",
