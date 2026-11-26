@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T15:19:23.095146+00:00",
+  "updated": "2026-11-26T18:45:28.649696+00:00",
   "cards": [
     {
       "date": "2026-10-07",
@@ -10646,16 +10646,16 @@
       "slot": "daily",
       "period": "00:00–23:59 (تُنشأ عند 06:00 وتُحدّث خلال اليوم)",
       "title": "الحوصلة الإخبارية ليوم 26/11/2026",
-      "generated_at": "2026-11-26T16:19:00.501231+01:00",
-      "source_fingerprint": "8bcc92b1a0255f05f8f8e3d9a277cd51b4727a19a09ddeca6487270329592ca7",
-      "source_news_count": 158,
+      "generated_at": "2026-11-26T19:45:09.433408+01:00",
+      "source_fingerprint": "1d00e8e625033811a05fcb456536b861d91c020da1b74352033ec83fc57019f3",
+      "source_news_count": 180,
       "candidate_audit_attempt_date": "2026-11-26",
       "candidate_audit_completed": true,
-      "candidate_audit_fingerprint": "8bcc92b1a0255f05f8f8e3d9a277cd51b4727a19a09ddeca6487270329592ca7",
+      "candidate_audit_fingerprint": "1d00e8e625033811a05fcb456536b861d91c020da1b74352033ec83fc57019f3",
       "candidate_audit_version": 3,
       "event_enrichment_version": 4,
       "event_enrichment_attempted": true,
-      "event_enrichment_fingerprint": "8bcc92b1a0255f05f8f8e3d9a277cd51b4727a19a09ddeca6487270329592ca7",
+      "event_enrichment_fingerprint": "1d00e8e625033811a05fcb456536b861d91c020da1b74352033ec83fc57019f3",
       "event_enrichment_completed": false,
       "event_enrichment_sources": [],
       "sections": [
