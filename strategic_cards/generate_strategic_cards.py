@@ -720,7 +720,7 @@ def build_prompt(source_material, slot_label, window_label, date_label):
 3. العنصر الخامس عنوانه حرفياً «5. خلاصة استراتيجية لها علاقة بتونس». اكتب تحته فقرة تحليلية مترابطة تشرح الصلة الفعلية بين الموضوع وأمن تونس أو مصالحها أو جوارها أو خياراتها الاستراتيجية. إذا كانت الصلة محدودة أو غير مباشرة، قل ذلك بوضوح ولا تفتعل تهديداً أو توصية.
 
 قواعد المحتوى والتحليل:
-- استهدف نحو 850 إلى 1150 كلمة للبطاقة كاملة، دون حشو، واجعل كل نقطة من النقاط الست عشرة مفيدة ومحددة.
+- استهدف نحو 600 إلى 800 كلمة للبطاقة كاملة، مع الحفاظ على النقاط الست عشرة والخلاصة التونسية دون حشو. اجعل كل نقطة محددة ومكتملة، ووزّع الكلمات على المحاور بحسب أهمية ما تسنده المصادر.، دون حشو، واجعل كل نقطة من النقاط الست عشرة مفيدة ومحددة.
 - فسّر الخلفية والدوافع والمصالح ومضمون التطور وآليات تنفيذه، ثم التداعيات والقيود والسيناريوهات عندما يوجد أساس مصدري.
 - في صفقات السلاح والمنظومات، احتفظ بالتفاصيل التقنية والتعاقدية المهمة، وميّز بين مواصفات الشركة والأداء المثبت ميدانياً، وبين الإعلان والعقد والتنفيذ والتسليم.
 - في الأزمات، انسب الاتهامات والادعاءات إلى أصحابها، ولا تعرضها كحقائق مستقلة دون أدلة.
@@ -804,7 +804,7 @@ def unpack_generated_card(output):
         kind in TYPE_LABELS and bool(subject) and title_ok
         and len(summary_text) >= 100 and len(sections) == 5
         and all(count == 4 for count in bullet_counts)
-        and has_conclusion and word_count >= 650
+        and has_conclusion and word_count >= 500
     )
     return kind, subject, sections, summary_text, word_count, has_conclusion, valid
 
@@ -845,6 +845,8 @@ def main():
             data[kind] = []
     if not isinstance(data.get("checked_urls"), list):
         data["checked_urls"] = []
+    if not isinstance(data.get("deferred_urls"), dict):
+        data["deferred_urls"] = {}
 
     checked = set(clean_text(url) for url in data["checked_urls"] if clean_text(url))
 
@@ -881,8 +883,33 @@ def main():
     # Duplicate prevention is source-URL based (checked_urls) and subject based;
     # several independent cards may be published on the same day.
     candidates = select_candidates(items, checked)
+
+    # Defer sources that recently failed extraction or generation. Without a
+    # cooldown, the same first 12 candidates can monopolise every scheduled run.
+    retry_window = timedelta(hours=24)
+    retry_cutoff = datetime.now(TZ) - retry_window
+    eligible_candidates = []
+    deferred_count = 0
+    for candidate in candidates:
+        candidate_url = clean_text(candidate.get("_url"))
+        last_attempt = data["deferred_urls"].get(candidate_url)
+        if last_attempt:
+            try:
+                attempted_at = datetime.fromisoformat(str(last_attempt))
+                if attempted_at.tzinfo is None:
+                    attempted_at = attempted_at.replace(tzinfo=TZ)
+                if attempted_at > retry_cutoff:
+                    deferred_count += 1
+                    continue
+            except (TypeError, ValueError):
+                pass
+        eligible_candidates.append(candidate)
+    candidates = eligible_candidates
+    if deferred_count:
+        print(f"Deferred {deferred_count} recently failed strategic sources; they remain eligible after 24 hours.")
+
     if not candidates:
-        print(f"No new, sufficiently relevant source articles were found for the {slot_label} period; no card will be fabricated.")
+        print(f"No new, sufficiently relevant source articles are ready for review in the {slot_label} period; no card will be fabricated.")
         return
 
     client = genai.Client(
@@ -954,6 +981,7 @@ def main():
                 f"(combined_body={total_readable}, description={len(description)}); "
                 f"will remain eligible for a later run: {title_original[:120]}"
             )
+            data["deferred_urls"][url] = datetime.now(TZ).isoformat(timespec="seconds")
             reviewed_count += 1
             continue
 
@@ -996,6 +1024,7 @@ def main():
         except Exception as exc:
             # A transient model/API error must not permanently blacklist the source.
             print(f"Strategic-card generation failed for one article: {type(exc).__name__}")
+            data["deferred_urls"][url] = datetime.now(TZ).isoformat(timespec="seconds")
             if is_quota_or_rate_limit_error(exc):
                 print("Gemini quota/rate limit reached; stopping this run without another model request.")
                 break
@@ -1003,6 +1032,7 @@ def main():
 
         reviewed_count += 1
         if not output.get("publish"):
+            data["deferred_urls"].pop(url, None)
             checked.add(url)
             data["checked_urls"] = list(checked)[-1500:]
             save_json(DATA_FILE, data)
@@ -1025,7 +1055,7 @@ def main():
                 + "\\n\\nالمسودة الأولى التي أعدتها:\\n"
                 + json.dumps(output, ensure_ascii=False)
                 + "\\n\\nأعد صياغة البطاقة الآن مع الالتزام الحرفي بشروط القالب. "
-                  "يجب أن يكون الناتج بين 850 و1150 كلمة، وأن يتضمن خمسة أقسام بالضبط: "
+                  "يجب أن يكون الناتج بين 600 و800 كلمة، وأن يتضمن خمسة أقسام بالضبط: "
                   "أربعة أقسام تحليلية، في كل قسم أربع نقاط منفصلة تبدأ بـ - ، "
                   "ثم قسم خامس بعنوان «5. خلاصة استراتيجية لها علاقة بتونس» في فقرة مترابطة. "
                   "لا تختصر النقاط ولا تحذف أي قسم. لا تضف وقائع غير موجودة في المصادر. "
@@ -1042,6 +1072,7 @@ def main():
                 kind, subject, sections, summary_text, word_count, has_conclusion, valid = unpack_generated_card(output)
             except Exception as exc:
                 print(f"Strategic-card revision failed: {type(exc).__name__}")
+                data["deferred_urls"][url] = datetime.now(TZ).isoformat(timespec="seconds")
                 if is_quota_or_rate_limit_error(exc):
                     print("Gemini quota/rate limit reached during revision; source remains eligible for a later run.")
                     break
@@ -1050,8 +1081,9 @@ def main():
         if not valid:
             print(
                 f"Revised card still failed quality validation (words={word_count}, sections={len(sections)}); "
-                "source remains unchecked for a later retry."
+                "source remains unchecked and is deferred for 24 hours."
             )
+            data["deferred_urls"][url] = datetime.now(TZ).isoformat(timespec="seconds")
             continue
 
         existing_cards = [
@@ -1066,6 +1098,7 @@ def main():
             for existing in existing_cards
         ):
             print(f"Duplicate strategic subject skipped: {subject}")
+            data["deferred_urls"].pop(url, None)
             checked.add(url)
             data["checked_urls"] = list(checked)[-1500:]
             save_json(DATA_FILE, data)
@@ -1097,6 +1130,7 @@ def main():
 
         data[kind].append(card)
         data[kind] = data[kind][-MAX_ARCHIVE_CARDS_PER_TYPE:]
+        data["deferred_urls"].pop(url, None)
         checked.add(url)
         data["checked_urls"] = list(checked)[-1500:]
         save_json(DATA_FILE, data)
@@ -1104,6 +1138,9 @@ def main():
         published_count += 1
         print(f"Published independent strategic card: {subject} ({TYPE_LABELS[kind]}; approx. {word_count} words)")
 
+    # Keep the retry ledger bounded while preserving the newest deferred URLs.
+    data["deferred_urls"] = dict(list(data["deferred_urls"].items())[-1500:])
+    save_json(DATA_FILE, data)
     print(f"Strategic-card run complete: published={published_count}; reviewed={reviewed_count}; candidates={len(candidates)}.")
 
 if __name__ == "__main__":
