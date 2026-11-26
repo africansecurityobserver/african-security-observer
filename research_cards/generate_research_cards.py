@@ -597,7 +597,7 @@ def main():
     candidates = []
     candidate_ids = set()
     failed_urls = data["failed_urls"]
-    retry_window = timedelta(hours=6)
+    retry_window = timedelta(hours=24)
     now_for_retry = datetime.now(TZ)
     recently_failed_count = 0
     for publication in publications:
@@ -610,7 +610,7 @@ def main():
         if url_key in known or (identity and identity in known_identities) or (identity and identity in candidate_ids):
             continue
         # Do not let inaccessible full-text pages monopolize every small batch.
-        # Failed publications remain pending, but are retried after a 12-hour cooldown.
+        # Failed publications remain pending and are retried after a 24-hour cooldown.
         last_attempt = failed_urls.get(url_key)
         if last_attempt:
             try:
