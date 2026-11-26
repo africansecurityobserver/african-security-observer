@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T04:33+01:00",
+  "updated": "2026-11-26T21:12+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,8 +605,21 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 59,
+  "count": 62,
   "publications": [
+    {
+      "center": "معهد هدسون",
+      "center_short": "Hudson Institute",
+      "title": "How Far Will Ukraine War Spread? Kyiv Targets Russian Vessels in Libya",
+      "url": "https://www.hudson.org/national-security-defense/how-far-will-ukraine-war-spread-kyiv-targets-russian-vessels-libya-bryan-clark",
+      "published": "2026-11-24T20:33+01:00",
+      "date": "2026-11-24",
+      "source": "Hudson Institute",
+      "description": "<span>How Far Will Ukraine War Spread? Kyiv Targets Russian Vessels in Libya</span> <span><span>bbert@hudson.org</span></span> <span><time datetime=\"2026-11-24T14:33:25-05:00\" title=\"Tuesday, November 24, 2026 - 14:33\">Tue, 11/24/2026 - 14:33</time> </span> <div class=\"hud-layout__short-form-article-hero hero hero--article-short hero--half-image-right\"> <div class=\"hero__inner\"> <div class=\"hero__content\"> <div class=\"layout__region layout__region--content-top hero__content-top\"> <div class=\"blo",
+      "center_site": "https://hudson.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر"
+    },
     {
       "center": "مبادرة الإصلاح العربي",
       "center_short": "Arab Reform Initiative",
@@ -620,6 +633,19 @@
       "relevance_tier": 2,
       "relevance_label": "ليبيا والجزائر",
       "title_ar": "الجزائر والحرب الأمريكية الإسرائيلية ضد إيران - مبادرة الإصلاح العربي"
+    },
+    {
+      "center": "مركز الدراسات الاستراتيجية والأمنية في بنغلادش",
+      "center_short": "BIPSS",
+      "title": "When Peacekeeping Ends Without Peace: What the Closure of MINURSO Means for the Future of UN Conflict Management",
+      "url": "https://bipss.org.bd/when-peacekeeping-ends-without-peace-what-the-closure-of-minurso-means-for-the-future-of-un-conflict-management/",
+      "published": "2026-11-26T09:43+01:00",
+      "date": "2026-11-26",
+      "source": "BIPSS",
+      "description": "BIPSS Research Associate Mohosina Mostofa Mity examined in this commentary the 35-year journey of the United Nations Mission for the Referendum in Western Sahara (MINURSO), assessing its contributions, limitations and eventual closure. The commentary explores how the mission helped contain tensions and maintain an international presence but failed to deliver the promised referendum or a …",
+      "center_site": "https://bipss.org.bd/",
+      "relevance_tier": 3,
+      "relevance_label": "شمال إفريقيا والبحر المتوسط والمنطقة القريبة"
     },
     {
       "center": "المجلس الأطلسي",
@@ -748,6 +774,19 @@
       "title_ar": "مصر تزن الدبلوماسية والتدخل العسكري في البحر الأحمر - المركز العربي واشنطن العاصمة"
     },
     {
+      "center": "مركز تحليل البيانات المتعلقة بالنزاعات المسلحة (ACLED)",
+      "center_short": "ACLED",
+      "title": "Russian missiles in Poland: Where does NATO draw the line? - ACLED",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOWU41YzBLV2xQd3hwWENaY2xZeURQTmtRX1BXV0tvdm5yTDk2QWpHQUVzb3FYclRNV2VwcXg5aUR3V3czYkJRcVotUno3aUI1cU84VFlRRzBBZFZ2QVI0VzBkdkpKWDFnZkxwWkozd2J2cG1qeVdhQnRVY3ZSTzJYNWFzOWRkZ0NKaW45dzNOYw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-26T10:29+01:00",
+      "date": "2026-11-26",
+      "source": "ACLED",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxOWU41YzBLV2xQd3hwWENaY2xZeURQTmtRX1BXV0tvdm5yTDk2QWpHQUVzb3FYclRNV2VwcXg5aUR3V3czYkJRcVotUno3aUI1cU84VFlRRzBBZFZ2QVI0VzBkdkpKWDFnZkxwWkozd2J2cG1qeVdhQnRVY3ZSTzJYNWFzOWRkZ0NKaW45dzNOYw?oc=5\" target=\"_blank\">Russian missiles in Poland: Where does NATO draw the line?</a> <font color=\"#6f6f6f\">ACLED</font>",
+      "center_site": "https://acleddata.com/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس"
+    },
+    {
       "center": "مؤسسة كارنيغي للسلام الدولي",
       "center_short": "Carnegie Endowment",
       "title": "The Military Exercise Remaking European Security - Carnegie Endowment for International Peace",
@@ -757,6 +796,19 @@
       "source": "Carnegie Endowment for International Peace",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQMnVtTG9uZkxUOG1DQl9KbHoyX3dXWDR4aFpCczRFWkFMcmxTV1dlUmVfZUhxUXFwMDl4NGlCTXpLc19HT1VIalJMT3JhRkdla0lRTzUyTVJBYWU3UUR0dlhyVUozbGpOR1Z2YkxIMXJsOVFtY1VVa0NBR0lCeWRZa2xtU21NSGlidW9jdjAyampJeXlVdzdOaE1LdzBvdzlvWjU3M2ltaVRKbEo0Snkw?oc=5\" target=\"_blank\">The Military Exercise Remaking European Security</a> <font color=\"#6f6f6f\">Carnegie Endowment for International Peace</font>",
       "center_site": "https://carnegieendowment.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس"
+    },
+    {
+      "center": "مركز أبحاث السياسة الخارجية النمساوي (oiip)",
+      "center_short": "oiip",
+      "title": "A European Security Council: Who Defines Europe? • Publikationen - Österreichisches Institut für Internationale Politik",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPTm56cXk3WkFhNFBrT3c4OE9ZTWhXSWhrM3NHVHlPc2lGejJZYzRydHZBOTd5cU9MU3lYM29oWF9jdnNsVzBydHo4SEQ5UnFJZFExNFN0Yk5odkNMM25LbVRSb2x1WTlLWW1wNnRzN3BxSERfSDN4WFg2anRhcUdQMHNBUURaZ0RJNHc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-24T17:28+01:00",
+      "date": "2026-11-24",
+      "source": "Österreichisches Institut für Internationale Politik",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxPTm56cXk3WkFhNFBrT3c4OE9ZTWhXSWhrM3NHVHlPc2lGejJZYzRydHZBOTd5cU9MU3lYM29oWF9jdnNsVzBydHo4SEQ5UnFJZFExNFN0Yk5odkNMM25LbVRSb2x1WTlLWW1wNnRzN3BxSERfSDN4WFg2anRhcUdQMHNBUURaZ0RJNHc?oc=5\" target=\"_blank\">A European Security Council: Who Defines Europe? • Publikationen</a> <font color=\"#6f6f6f\">Österreichisches Institut für Internationale Politik</font>",
+      "center_site": "https://oiip.ac.at/",
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس"
     },
@@ -873,6 +925,19 @@
       "title_ar": "قد تقع أوروبا في فخ بسبب محادثات أوكرانيا"
     },
     {
+      "center": "المركز العربي في واشنطن",
+      "center_short": "Arab Center Washington DC",
+      "title": "Washington Policy Weekly: Senators Push to Remove US-Israel Defense Cooperation Provisions from NDAA - Arab Center Washington DC",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOQUwwcDJoZ01fbkZQT3A1UVJ2LUZFUS1aQzU2SGJoaURUbzBNLWhMLXdDVjFQaGJ3YTNQUkJJZzdWNHdLeVdpU0taMU1oOFlBd3pUbjJHeHFQVFRMSlVENEhfS2MyZndUdlloRnA1T0lGdC1sRDNMX1BkQ0R6UmZGNWRGT0NsQkVCaGdYMVVuOEJDYk1za1h1UHVWTjRUWEc1NWdqaElxa245TlhXQXQyX2l1UE1fS0h2T09ncS02RlZMVk9tc1ZSU1hzTWtoNG8?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-20T09:00+01:00",
+      "date": "2026-11-20",
+      "source": "Arab Center Washington DC",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxOQUwwcDJoZ01fbkZQT3A1UVJ2LUZFUS1aQzU2SGJoaURUbzBNLWhMLXdDVjFQaGJ3YTNQUkJJZzdWNHdLeVdpU0taMU1oOFlBd3pUbjJHeHFQVFRMSlVENEhfS2MyZndUdlloRnA1T0lGdC1sRDNMX1BkQ0R6UmZGNWRGT0NsQkVCaGdYMVVuOEJDYk1za1h1UHVWTjRUWEc1NWdqaElxa245TlhXQXQyX2l1UE1fS0h2T09ncS02RlZMVk9tc1ZSU1hzTWtoNG8?oc=5\" target=\"_blank\">Washington Policy Weekly: Senators Push to Remove US-Israel Defense Cooperation Provisions from NDAA</a> <font color=\"#6f6f6f\">Arab Center Washingto",
+      "center_site": "https://arabcenterdc.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس"
+    },
+    {
       "center": "معهد هدسون",
       "center_short": "Hudson Institute",
       "title": "Connected Vehicles, Manufacturing, and National Security: A Conversation with Senator Bernie Moreno - Hudson Institute",
@@ -901,32 +966,17 @@
       "title_ar": "علاقات القوى المتوسطة في الخليج وأفريقيا: نقطة التحول في الحرب الإيرانية - مركز الدراسات الاستراتيجية والدولية | مركز الدراسات الاستراتيجية والدولية"
     },
     {
-      "center": "معهد هدسون",
-      "center_short": "Hudson Institute",
-      "title": "Transatlantic Defense Industrial Cooperation and NATO 3.0: A Conversation with US Ambassador to NATO Matthew Whitaker - Hudson Institute",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPTVAzVVhEZjNJQm1QVkotY0lZYnNaN25nRFIyUnJvUDF2WF9WNlZuelFqVUJBYTNFOVlkd3F1ZUFxVTFDc0RlSnJLci1NN29fMW5tSllMWHBsWDBrOVRETGFQMTdLZ2NYWjc3bEE3UXZyU0ZzbGV6X0J3SlItVUxDWm9IcUx4anc4alZKdEdXSUJ5ZS13c1g3dWM5Wmh0VWRqVm9nOG5BbXBGb2ZNN3hDS19XWnZsTl92b0dIWEc3RQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-19T20:39+01:00",
-      "date": "2026-11-19",
-      "source": "Hudson Institute",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPTVAzVVhEZjNJQm1QVkotY0lZYnNaN25nRFIyUnJvUDF2WF9WNlZuelFqVUJBYTNFOVlkd3F1ZUFxVTFDc0RlSnJLci1NN29fMW5tSllMWHBsWDBrOVRETGFQMTdLZ2NYWjc3bEE3UXZyU0ZzbGV6X0J3SlItVUxDWm9IcUx4anc4alZKdEdXSUJ5ZS13c1g3dWM5Wmh0VWRqVm9nOG5BbXBGb2ZNN3hDS19XWnZsTl92b0dIWEc3RQ?oc=5\" target=\"_blank\">Transatlantic Defense Industrial Cooperation and NATO 3.0: A Conversation with US Ambassador to NATO Matthew Whitaker</a> <font color=\"#6f6f6f\">Hudson Institute</font>",
-      "center_site": "https://hudson.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "التعاون الصناعي الدفاعي عبر الأطلسي وحلف شمال الأطلسي 3.0: حوار مع سفير الولايات المتحدة لدى حلف شمال الأطلسي ماثيو ويتاكر - معهد هدسون"
-    },
-    {
       "center": "المجلس الأطلسي",
       "center_short": "Atlantic Council",
       "title": "US Energy Secretary Chris Wright and Polish Energy Minister Miłosz Motyka on why Europe’s security depends on its energy supply - Atlantic Council",
       "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPcU9ZV1RHMklJd0x2eEVrX21QeXdxVFEyekNCYVN5Q1oxMkUzcEpyek9rWHVGTnBxSVBtc09FbWN6cnJHN2VkQTFKdXV0UEVMbE90cHd2NFpuMDdxelg3c09QWEZFNGw3M3YzS0ZMRHg3Nk81TjlJT0NaeTlMTFh1YXYybnlRNUVJR3NjM0tmczVCUVJHNnlVd0RNTEI0SEFwcGNFQjVtYUFBVTV0enVEbURNNXRFd0I0M0RjUFVMbXlyM2NUMjVqLVlVM2h2b0dDSUMxUHlLSUgza2JjaWM3bkt4X19DUTRSbVNTTkdRV3YxQ215RWdMdTNxOGZpdWpNd1RMQ2VKUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-19T20:32+01:00",
+      "published": "2026-11-19T21:10+01:00",
       "date": "2026-11-19",
       "source": "Atlantic Council",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMihwJBVV95cUxPcU9ZV1RHMklJd0x2eEVrX21QeXdxVFEyekNCYVN5Q1oxMkUzcEpyek9rWHVGTnBxSVBtc09FbWN6cnJHN2VkQTFKdXV0UEVMbE90cHd2NFpuMDdxelg3c09QWEZFNGw3M3YzS0ZMRHg3Nk81TjlJT0NaeTlMTFh1YXYybnlRNUVJR3NjM0tmczVCUVJHNnlVd0RNTEI0SEFwcGNFQjVtYUFBVTV0enVEbURNNXRFd0I0M0RjUFVMbXlyM2NUMjVqLVlVM2h2b0dDSUMxUHlLSUgza2JjaWM3bkt4X19DUTRSbVNTTkdRV3YxQ215RWdMdTNxOGZpdWpNd1RMQ2VKUQ?oc=5\" target=\"_blank\">US Energy Secretary Chris Wright and Polish Energy Minister Miłosz Motyka",
       "center_site": "https://atlanticcouncil.org/",
       "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "وزير الطاقة الأمريكي كريس رايت ووزير الطاقة البولندي ميلوش موتيكا عن سبب اعتماد أمن أوروبا على إمداداتها بالطاقة - مجلس الأطلسي"
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس"
     },
     {
       "center": "المجلس الأوروبي للعلاقات الخارجية (ECFR)",
@@ -957,20 +1007,6 @@
       "title_ar": "هل يمكن للطائرات بدون طيار أن تحل محل الجنود؟ استراتيجية الناتو للمركبات غير المأهولة - المعهد الملكي للخدمات المتحدة (RUSI)"
     },
     {
-      "center": "مركز أبحاث السياسة الخارجية النمساوي (oiip)",
-      "center_short": "oiip",
-      "title": "Talking about European Security, without the OSCE • Publications - Österreichisches Institut für Internationale Politik",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYW5SMHgzYWpFdXVjQ3ZfNHpHbHo4Qk95T2trWWxXQVM0M2ZWM2F0eEZZYzVoOHpTNm1hWS1PNlNvUktIM194dk9fVUtHcXpMZjcycDM1cTFKaldSWGMtUUZHbVVWczhMRloyU0NkRHlSc3RtVm9PNmFlcnQ0eEhqQzRwZFNnSUZ1WmZJd01mZDJwUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-19T12:26+01:00",
-      "date": "2026-11-19",
-      "source": "Österreichisches Institut für Internationale Politik",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPYW5SMHgzYWpFdXVjQ3ZfNHpHbHo4Qk95T2trWWxXQVM0M2ZWM2F0eEZZYzVoOHpTNm1hWS1PNlNvUktIM194dk9fVUtHcXpMZjcycDM1cTFKaldSWGMtUUZHbVVWczhMRloyU0NkRHlSc3RtVm9PNmFlcnQ0eEhqQzRwZFNnSUZ1WmZJd01mZDJwUQ?oc=5\" target=\"_blank\">Talking about European Security, without the OSCE • Publications</a> <font color=\"#6f6f6f\">Österreichisches Institut für Internationale Politik</font>",
-      "center_site": "https://oiip.ac.at/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "الحديث عن الأمن الأوروبي، من دون منظمة الأمن والتعاون في أوروبا • المنشورات - المعهد النمساوي للسياسة الدولية"
-    },
-    {
       "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
       "center_short": "UNIDIR",
       "title": "Weapons and Ammunition Management in Africa Insight: 2025 Update",
@@ -997,20 +1033,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "معاهدة تعترف بأننا بحاجة إلى الفلبين في استراتيجية الصين"
-    },
-    {
-      "center": "المركز العربي في واشنطن",
-      "center_short": "Arab Center Washington DC",
-      "title": "Washington Policy Weekly: Senators Push to Remove US-Israel Defense Cooperation Provisions from NDAA - Arab Center Washington DC",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOQUwwcDJoZ01fbkZQT3A1UVJ2LUZFUS1aQzU2SGJoaURUbzBNLWhMLXdDVjFQaGJ3YTNQUkJJZzdWNHdLeVdpU0taMU1oOFlBd3pUbjJHeHFQVFRMSlVENEhfS2MyZndUdlloRnA1T0lGdC1sRDNMX1BkQ0R6UmZGNWRGT0NsQkVCaGdYMVVuOEJDYk1za1h1UHVWTjRUWEc1NWdqaElxa245TlhXQXQyX2l1UE1fS0h2T09ncS02RlZMVk9tc1ZSU1hzTWtoNG8?oc=5",
-      "published": "2026-11-16T23:32+01:00",
-      "date": "2026-11-16",
-      "source": "Arab Center Washington DC",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxOQUwwcDJoZ01fbkZQT3A1UVJ2LUZFUS1aQzU2SGJoaURUbzBNLWhMLXdDVjFQaGJ3YTNQUkJJZzdWNHdLeVdpU0taMU1oOFlBd3pUbjJHeHFQVFRMSlVENEhfS2MyZndUdlloRnA1T0lGdC1sRDNMX1BkQ0R6UmZGNWRGT0NsQkVCaGdYMVVuOEJDYk1za1h1UHVWTjRUWEc1NWdqaElxa245TlhXQXQyX2l1UE1fS0h2T09ncS02RlZMVk9tc1ZSU1hzTWtoNG8?oc=5\" target=\"_blank\">Washington Policy Weekly: Senators Push to Remove US-Israel Defense Cooperation Provisions from NDAA</a> <font color=\"#6f6f6f\">Arab Center Washingto",
-      "center_site": "https://arabcenterdc.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "واشنطن بوليسي ويكلي: أعضاء مجلس الشيوخ يضغطون لإزالة أحكام التعاون الدفاعي بين الولايات المتحدة وإسرائيل من قانون تفويض الدفاع الوطني - المركز العربي في واشنطن العاصمة"
     },
     {
       "center": "المعهد الدنماركي للدراسات الدولية (DIIS)",
@@ -1221,6 +1243,19 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "شارك نيكلاس سوانستروم في الندوة السابعة حول التعاون البحري العالمي وإدارة المحيطات في سانيا - معهد سياسة الأمن والتنمية"
+    },
+    {
+      "center": "مبادرة الإصلاح العربي",
+      "center_short": "Arab Reform Initiative",
+      "title": "Who Gets to Explain the War? Institutional Risk and the Politics of Expertise on the Middle East and North Africa - Arab Reform Initiative",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQMGNwbzVuNEZYWHdMNGxxYnNNTG5JclBaZ0kwSVJ2WU1ZRVZ5NW9hZ2ttMXhQUTlGc1lGa0pkUHdKTXZDcW1qclE2aHdZTlBkQjVGYmJ6c2h5aWlaRU5iUUYxTkkwczh3RGJEcnZlUjJ5dkN2RjBubzVOWC1QS3RaYXZtR2JwWDEzb2RqMzd0RmFCOU1oTDlvcFFfcHVIYjVPZms1czRhdmlQU21Rd2lnTHlPSTlTZ3hQeDVPbm5jWkxfdUk?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-09T09:00+01:00",
+      "date": "2026-11-09",
+      "source": "Arab Reform Initiative",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQMGNwbzVuNEZYWHdMNGxxYnNNTG5JclBaZ0kwSVJ2WU1ZRVZ5NW9hZ2ttMXhQUTlGc1lGa0pkUHdKTXZDcW1qclE2aHdZTlBkQjVGYmJ6c2h5aWlaRU5iUUYxTkkwczh3RGJEcnZlUjJ5dkN2RjBubzVOWC1QS3RaYXZtR2JwWDEzb2RqMzd0RmFCOU1oTDlvcFFfcHVIYjVPZms1czRhdmlQU21Rd2lnTHlPSTlTZ3hQeDVPbm5jWkxfdUk?oc=5\" target=\"_blank\">Who Gets to Explain the War? Institutional Risk and the Politics of Expertise on the Middle East and North Africa</a> <font color=\"#6f6f6f\">Arab Reform Initiative</",
+      "center_site": "https://arab-reform.net/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس"
     },
     {
       "center": "مؤسسة كارنيغي للسلام الدولي",
