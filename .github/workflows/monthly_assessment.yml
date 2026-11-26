@@ -5,6 +5,11 @@ on:
     # 04:00 Tunisia time on the 2nd of each month; assess the previous month.
     - cron: "0 3 2 * *"
   workflow_dispatch:
+    inputs:
+      assessment_month:
+        description: "الشهر المراد تقييمه بصيغة YYYY-MM (اتركه فارغاً لاختيار الشهر السابق)"
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -37,6 +42,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.5-flash-lite
+          ASSESSMENT_MONTH: ${{ inputs.assessment_month }}
         run: python -u monthly_assessment/generate_monthly_assessment.py
       - name: Commit and publish monthly assessment
         run: |
