@@ -1,5 +1,6 @@
 name: Update News
 # Recovery validation: manual workflow-file change triggers a safe news refresh; periodic scheduling is monitored separately.
+# 2026-11-26 rollback recovery check: this commit intentionally triggers one clean ingestion run.
 # Manual recovery kick: 2026-11-25; run the full news ingestion and publish pipeline now.
 
 on:
