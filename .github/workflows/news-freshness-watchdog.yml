@@ -11,6 +11,18 @@ on:
   schedule:
     # Check between the 20-minute news refreshes and recover overdue attempts.
     - cron: "10,30,50 * * * *"
+  # Independent backstop: run after other regularly scheduled site workflows.
+  # This prevents the watchdog from depending exclusively on its own cron,
+  # which can also be delayed or dropped by GitHub's scheduler.
+  workflow_run:
+    workflows:
+      - Generate Daily Cards
+      - Daily Card Watchdog
+      - Update Research Center Publications
+      - Generate Research-Center Strategic Cards
+      - Generate Strategic Cards
+    types:
+      - completed
   workflow_dispatch:
 
 permissions:
