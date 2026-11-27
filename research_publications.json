@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T03:52+01:00",
+  "updated": "2026-11-27T16:09+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,8 +605,22 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 61,
+  "count": 64,
   "publications": [
+    {
+      "center": "مركز تحليل البيانات المتعلقة بالنزاعات المسلحة (ACLED)",
+      "center_short": "ACLED",
+      "title": "Is Libya being drawn further into the war between Russia and Ukraine? - ACLED",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOZFpEdnRFS0w5N245Z2pzdnJJb1owWHZFeFdVR2o3V3M4MklVMThHNWNXTlROVmFqNWZKbWkxaVhGSzdLeW45aE9RQ0hzWjE5RmplM1JjRWtna0h1eHNZZ19ESk5PMUlNVmlleXhiYl9wVFNDN3hzU21SSWI0M09Nanh4ZmVDa3hTRmFudUhPSTFsT1RPODI3dw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-27T16:05+01:00",
+      "date": "2026-11-27",
+      "source": "ACLED",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOZFpEdnRFS0w5N245Z2pzdnJJb1owWHZFeFdVR2o3V3M4MklVMThHNWNXTlROVmFqNWZKbWkxaVhGSzdLeW45aE9RQ0hzWjE5RmplM1JjRWtna0h1eHNZZ19ESk5PMUlNVmlleXhiYl9wVFNDN3hzU21SSWI0M09Nanh4ZmVDa3hTRmFudUhPSTFsT1RPODI3dw?oc=5\" target=\"_blank\">Is Libya being drawn further into the war between Russia and Ukraine?</a> <font color=\"#6f6f6f\">ACLED</font>",
+      "center_site": "https://acleddata.com/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "هل يتم جر ليبيا أكثر فأكثر إلى الحرب بين روسيا وأوكرانيا؟ - مشروع بيانات أحداث النزاع المسلح (ACLED)"
+    },
     {
       "center": "معهد هدسون",
       "center_short": "Hudson Institute",
@@ -762,6 +776,34 @@
       "title_ar": "كيف يعيد الجيش هيكلة قطاع الذهب في مصر بالقوة - مؤسسة العلوم والسياسة"
     },
     {
+      "center": "معهد الدراسات الأمنية الأوروبي (EUISS)",
+      "center_short": "EUISS",
+      "title": "Workshop on the Emerging and Disruptive Technologies that can bolster European defence, economic growth, and indispensability - European Union Institute for Security Studies |",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNQk50cXdIWHdxNExMQU1iZzlFYnZVM25OelVNS296OFM4VEE1MDBVVk1zV0FLTVM2TlZ1M0JPWjdiWFNRZGhuTDlvNEVsTnNscjB2cHRCc2taU0lFeU12OWxCR0dCazRNOU1uR0lDSkNTSXlOOUtKZld3NDlKX2pBNk9YNzU2YzBYaEpnNFlEUXJhR2Vab05SWnFJRjF3Y2g1X2VscWFVYlRYRGllY0NRY1ZXZW4xVkZ2OFE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-27T15:45+01:00",
+      "date": "2026-11-27",
+      "source": "European Union Institute for Security Studies |",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNQk50cXdIWHdxNExMQU1iZzlFYnZVM25OelVNS296OFM4VEE1MDBVVk1zV0FLTVM2TlZ1M0JPWjdiWFNRZGhuTDlvNEVsTnNscjB2cHRCc2taU0lFeU12OWxCR0dCazRNOU1uR0lDSkNTSXlOOUtKZld3NDlKX2pBNk9YNzU2YzBYaEpnNFlEUXJhR2Vab05SWnFJRjF3Y2g1X2VscWFVYlRYRGllY0NRY1ZXZW4xVkZ2OFE?oc=5\" target=\"_blank\">Workshop on the Emerging and Disruptive Technologies that can bolster European defence, economic growth, and indispensability</a> <font color=\"#6f6f6f\">European Union Institute",
+      "center_site": "https://iss.europa.eu/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "ورشة عمل حول التقنيات الناشئة والتحويلية التي يمكن أن تعزز الدفاع الأوروبي والنمو الاقتصادي والأهمية - معهد الاتحاد الأوروبي للدراسات الأمنية |"
+    },
+    {
+      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
+      "center_short": "ISS Africa",
+      "title": "Crowded waters: can Southern Africa steer Mozambique Channel security? - ISS Africa",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWE5sLTZteTR2eTZlNkZwNDJBNll4M0ZNWG1OZWIwR2N3cGJnLWhVXzBhMHBpdXV1V18yaG9MMVo2VENRZ2E1VGJqeEpINzRLM2VfSzFGQjFFY242a2dmSE5IUVhIMEMxUF9fY3lxdy0wcFBuVjVlWGR6aFVScWxpM1NPNDdFdUJNaDgwM3RRazV3U2ZKWmdpRVNhUmFINmVYQUE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-27T10:20+01:00",
+      "date": "2026-11-27",
+      "source": "ISS Africa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPWE5sLTZteTR2eTZlNkZwNDJBNll4M0ZNWG1OZWIwR2N3cGJnLWhVXzBhMHBpdXV1V18yaG9MMVo2VENRZ2E1VGJqeEpINzRLM2VfSzFGQjFFY242a2dmSE5IUVhIMEMxUF9fY3lxdy0wcFBuVjVlWGR6aFVScWxpM1NPNDdFdUJNaDgwM3RRazV3U2ZKWmdpRVNhUmFINmVYQUE?oc=5\" target=\"_blank\">Crowded waters: can Southern Africa steer Mozambique Channel security?</a> <font color=\"#6f6f6f\">ISS Africa</font>",
+      "center_site": "https://issafrica.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "المياه المزدحمة: هل يمكن لجنوب أفريقيا توجيه أمن قناة موزمبيق؟ - معهد دراسات الأمن في أفريقيا"
+    },
+    {
       "center": "مركز تحليل البيانات المتعلقة بالنزاعات المسلحة (ACLED)",
       "center_short": "ACLED",
       "title": "Russian missiles in Poland: Where does NATO draw the line? - ACLED",
@@ -774,6 +816,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الصواريخ الروسية في بولندا: أين يرسم حلف شمال الأطلسي الخط الفاصل؟ - ACLED"
+    },
+    {
+      "center": "مركز الجزيرة للدراسات",
+      "center_short": "Al Jazeera Centre for Studies",
+      "title": "The US-Israeli War on Iran and Its Impacts on Energy Security and Import Dependency in Sub-Saharan Africa - Al Jazeera Centre for Studies",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNOEU2YnZnWnpyWGQtTHpMNGxFVW9McnIwajl4VE5BcVZUbXF0eTdQRmFocDhsZm5xNFVPWDdlZ01oejJiSEtQZ3g1TzVyejZGZ1MwUlYxb2YyNWd1NFpxLVFuWTZuRng5ZDNBTTdlWDFaLWtjMWU3aDEtdXVQSERmbm4xWnplOGYwejVpa1ZwY3BIWjBTTzZrVm1ZdEQ0RUJRemdHZjZ5ODUwX25RYW90YlQxaFRZRmF6bU9UNWxyR2piRkNGMUE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-26T09:00+01:00",
+      "date": "2026-11-26",
+      "source": "Al Jazeera Centre for Studies",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNOEU2YnZnWnpyWGQtTHpMNGxFVW9McnIwajl4VE5BcVZUbXF0eTdQRmFocDhsZm5xNFVPWDdlZ01oejJiSEtQZ3g1TzVyejZGZ1MwUlYxb2YyNWd1NFpxLVFuWTZuRng5ZDNBTTdlWDFaLWtjMWU3aDEtdXVQSERmbm4xWnplOGYwejVpa1ZwY3BIWjBTTzZrVm1ZdEQ0RUJRemdHZjZ5ODUwX25RYW90YlQxaFRZRmF6bU9UNWxyR2piRkNGMUE?oc=5\" target=\"_blank\">The US-Israeli War on Iran and Its Impacts on Energy Security and Import Dependency in Sub-Saharan Africa</a> <font color=\"#6f6f6f\">Al Jazeera Centre for Studie",
+      "center_site": "https://studies.aljazeera.net/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الحرب الأمريكية الإسرائيلية على إيران وتأثيراتها على أمن الطاقة والاعتماد على الواردات في أفريقيا جنوب الصحراء - مركز الجزيرة للدراسات"
     },
     {
       "center": "مؤسسة كارنيغي للسلام الدولي",
@@ -816,6 +872,20 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "توسيع نطاق أمن سلسلة التوريد في تمويل الدفاع في الاتحاد الأوروبي: من المكونات إلى المواد الخام - معهد العلاقات الدولية والاستراتيجية (IRIS)"
+    },
+    {
+      "center": "مركز الجزيرة للدراسات",
+      "center_short": "Al Jazeera Centre for Studies",
+      "title": "The War in Ukraine Returns to Its Starting Point: A New European Security Order - Al Jazeera Centre for Studies",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNWk9McDdVZ1AyLWNYTFRITjB3VXFCV2U4YzdRQ1puRzg0ZnpUNC1jZWZmWlVfTDhMRTYtdjZQb3F0ZzlYaHAyN19BcXR3bUxxdmVCeEFodEpYZnNjaEJmLXZHejA0VmZPeTQzWXVwNENmTXpraDhrWHlHd0YwT0V3cFYwR28ta3dRaDh4R2Q0cnNyWDR6WmZUVXV1YkdBMW1MLV8xc3l5eDNsdXEyRHlKaEliYw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-24T09:00+01:00",
+      "date": "2026-11-24",
+      "source": "Al Jazeera Centre for Studies",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNWk9McDdVZ1AyLWNYTFRITjB3VXFCV2U4YzdRQ1puRzg0ZnpUNC1jZWZmWlVfTDhMRTYtdjZQb3F0ZzlYaHAyN19BcXR3bUxxdmVCeEFodEpYZnNjaEJmLXZHejA0VmZPeTQzWXVwNENmTXpraDhrWHlHd0YwT0V3cFYwR28ta3dRaDh4R2Q0cnNyWDR6WmZUVXV1YkdBMW1MLV8xc3l5eDNsdXEyRHlKaEliYw?oc=5\" target=\"_blank\">The War in Ukraine Returns to Its Starting Point: A New European Security Order</a> <font color=\"#6f6f6f\">Al Jazeera Centre for Studies</font>",
+      "center_site": "https://studies.aljazeera.net/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "الحرب في أوكرانيا تعود إلى نقطة انطلاقها: نظام أمني أوروبي جديد - مركز الجزيرة للدراسات"
     },
     {
       "center": "مركز الدراسات الاستراتيجية والأمنية في بنغلادش",
@@ -1322,20 +1392,6 @@
       "title_ar": "سوء تقدير الصحراء الغربية: كيف يمكن لأوروبا وقف الحرب في شمال أفريقيا - المجلس الأوروبي للعلاقات الخارجية"
     },
     {
-      "center": "معهد الدراسات الأمنية الإفريقي (ISS Africa)",
-      "center_short": "ISS Africa",
-      "title": "Congolese refugees caught between war and closing doors - ISS Africa",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSTAyQjlULWNSSEZxWGZteUlnZk5FdEh4Uy1URGFTNGlYcHNyWE05S1dtRndtT2xjMlB1aEtWT1JhSHc4LWdEZ1VuaDlSOUFJWU1HUGhFVWVseWVYUjBXR0VJUWhsTWJJQy1xcVFadTQ5d0tCOE0yWTJGaUstUFpiaEs5S0laam9RdW1wUXJhT0M?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-02T09:00+01:00",
-      "date": "2026-11-02",
-      "source": "ISS Africa",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxNSTAyQjlULWNSSEZxWGZteUlnZk5FdEh4Uy1URGFTNGlYcHNyWE05S1dtRndtT2xjMlB1aEtWT1JhSHc4LWdEZ1VuaDlSOUFJWU1HUGhFVWVseWVYUjBXR0VJUWhsTWJJQy1xcVFadTQ5d0tCOE0yWTJGaUstUFpiaEs5S0laam9RdW1wUXJhT0M?oc=5\" target=\"_blank\">Congolese refugees caught between war and closing doors</a> <font color=\"#6f6f6f\">ISS Africa</font>",
-      "center_site": "https://issafrica.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "اللاجئون الكونغوليون عالقون بين الحرب وإغلاق الأبواب - معهد الدراسات الأمنية في أفريقيا"
-    },
-    {
       "center": "المعهد الجنوب إفريقي للشؤون الدولية (SAIIA)",
       "center_short": "SAIIA",
       "title": "Russia-Africa Summit: What Does Moscow Want, and What Does Africa Stand to Gain?",
@@ -1446,20 +1502,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الدروس المستفادة من حروب الطائرات بدون طيار في أفريقيا - مركز أفريقيا للدراسات الاستراتيجية"
-    },
-    {
-      "center": "مؤسسة أبحاث المراقب (ORF)",
-      "center_short": "ORF",
-      "title": "NATO Cannot Afford Ambiguity in the Face of Russia’s Hybrid Warfare - orfonline.org",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOM3p3SnB1QmF2UVFtVTRjeXlkREs0ZHE0TF81WVZLUFpSR1padG5xZnZCOTdXQXc3TGlFemlzRHdWQlZKaWxuS0VXRWtUQlJSOVM0TTYwZXhWZHVkcDlmZ3V3enhIQndJV3R5WlBGUlNzcnJEMF9naUFJRS1wTHZBUU5hMVNHR3VIM0N0S0JfbUxhbERUTnpMQ1dzSC05b2tGWS1QWjkyR0dxQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-28T16:07+01:00",
-      "date": "2026-10-28",
-      "source": "orfonline.org",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOM3p3SnB1QmF2UVFtVTRjeXlkREs0ZHE0TF81WVZLUFpSR1padG5xZnZCOTdXQXc3TGlFemlzRHdWQlZKaWxuS0VXRWtUQlJSOVM0TTYwZXhWZHVkcDlmZ3V3enhIQndJV3R5WlBGUlNzcnJEMF9naUFJRS1wTHZBUU5hMVNHR3VIM0N0S0JfbUxhbERUTnpMQ1dzSC05b2tGWS1QWjkyR0dxQQ?oc=5\" target=\"_blank\">NATO Cannot Afford Ambiguity in the Face of Russia’s Hybrid Warfare</a> <font color=\"#6f6f6f\">orfonline.org</font>",
-      "center_site": "https://orfonline.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "لا يمكن لحلف الناتو تحمل الغموض في مواجهة الحرب الهجينة الروسية - orfonline.org"
     }
   ]
 }
