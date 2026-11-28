@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T01:32+01:00",
+  "updated": "2026-11-28T11:30+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -605,7 +605,7 @@
       "site": "https://cmimarseille.org/"
     }
   ],
-  "count": 64,
+  "count": 61,
   "publications": [
     {
       "center": "مركز تحليل البيانات المتعلقة بالنزاعات المسلحة (ACLED)",
@@ -634,6 +634,20 @@
       "relevance_tier": 2,
       "relevance_label": "ليبيا والجزائر",
       "title_ar": "إلى أي مدى ستنتشر الحرب في أوكرانيا؟ كييف تستهدف السفن الروسية في ليبيا"
+    },
+    {
+      "center": "المعهد الملكي للخدمات المتحدة (RUSI)",
+      "center_short": "RUSI",
+      "title": "Times Radio - Ukraine sinks a Russian warship in Libya - Royal United Services Institute (RUSI)",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQNDhmTkRncFRVb1U4Z2ZvOWFubExpNmJkUUJOQ2hyUXNsMUtqTmk4RnJRa1VfQ28xdUF3SUREbTFWNXVUNlBpMTh0aTVRMDhCdFFsQTBOSm02T2FhMG5lUUs0T09IWGhZUDZ5azJqSFI1eGo4RXFjS3dzNnlBZFdkNGpaUzNMSHJVWmE3d3R4dk1CcE9DNHp0alJNWXpXdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-23T09:00+01:00",
+      "date": "2026-11-23",
+      "source": "Royal United Services Institute (RUSI)",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxQNDhmTkRncFRVb1U4Z2ZvOWFubExpNmJkUUJOQ2hyUXNsMUtqTmk4RnJRa1VfQ28xdUF3SUREbTFWNXVUNlBpMTh0aTVRMDhCdFFsQTBOSm02T2FhMG5lUUs0T09IWGhZUDZ5azJqSFI1eGo4RXFjS3dzNnlBZFdkNGpaUzNMSHJVWmE3d3R4dk1CcE9DNHp0alJNWXpXdw?oc=5\" target=\"_blank\">Times Radio - Ukraine sinks a Russian warship in Libya</a> <font color=\"#6f6f6f\">Royal United Services Institute (RUSI)</font>",
+      "center_site": "https://rusi.org/",
+      "relevance_tier": 2,
+      "relevance_label": "ليبيا والجزائر",
+      "title_ar": "تايمز راديو - أوكرانيا تغرق سفينة حربية روسية في ليبيا - المعهد الملكي للخدمات المتحدة (RUSI)"
     },
     {
       "center": "مبادرة الإصلاح العربي",
@@ -1070,20 +1084,6 @@
       "title_ar": "التخطيط لعودة: ما الذي تعنيه سياسة روسيا تجاه أفريقيا لأوروبا"
     },
     {
-      "center": "المعهد الملكي للخدمات المتحدة (RUSI)",
-      "center_short": "RUSI",
-      "title": "Can Drones Replace Soldiers? NATO's Uncrewed Strategy - Royal United Services Institute (RUSI)",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOamlRSFpGcExLMzVreXJwMWg0VVRIOW5LN2hXdEluYW5wVFItYjRBMWhuYXFtLVFBT2tOTUotYzVMbnpfWnkwTHJuaXMtMGR6SHlIVmFtd05QVllFdEIwYURnSWNHbnRUZHd1ajlMM1lSUGp0ZWFLWmR6czlPVldZamVPS2VtMkY0ZUZ2eTg2YkpBdFBITUYwaVM5aUNyQ3RsSEF3Z0Y1YTZrZw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-19T13:42+01:00",
-      "date": "2026-11-19",
-      "source": "Royal United Services Institute (RUSI)",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOamlRSFpGcExLMzVreXJwMWg0VVRIOW5LN2hXdEluYW5wVFItYjRBMWhuYXFtLVFBT2tOTUotYzVMbnpfWnkwTHJuaXMtMGR6SHlIVmFtd05QVllFdEIwYURnSWNHbnRUZHd1ajlMM1lSUGp0ZWFLWmR6czlPVldZamVPS2VtMkY0ZUZ2eTg2YkpBdFBITUYwaVM5aUNyQ3RsSEF3Z0Y1YTZrZw?oc=5\" target=\"_blank\">Can Drones Replace Soldiers? NATO's Uncrewed Strategy</a> <font color=\"#6f6f6f\">Royal United Services Institute (RUSI)</font>",
-      "center_site": "https://rusi.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "هل يمكن للطائرات بدون طيار أن تحل محل الجنود؟ استراتيجية الناتو للمركبات غير المأهولة - المعهد الملكي للخدمات المتحدة (RUSI)"
-    },
-    {
       "center": "المعهد الدولي لنزع السلاح (UNIDIR)",
       "center_short": "UNIDIR",
       "title": "Weapons and Ammunition Management in Africa Insight: 2025 Update",
@@ -1460,48 +1460,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "جمهورية أفريقيا الوسطى: احتواء تداعيات حرب السودان - مجموعة الأزمات الدولية"
-    },
-    {
-      "center": "تشاتام هاوس",
-      "center_short": "Chatham House",
-      "title": "Africa Aware: 10 years of Cameroon’s Anglophone Crisis - Chatham House",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPNmFLaURmTVFnY0xMVWtEampqVEFTbWoxQmtsVFhvWGF1TEh6TTZmWEM5UmNWVVpPMzlabnRnWWZsUzV5THNWSXFQNVdYM2lrR09aY2RxVWZhYUIydkRZWDNudG5IU1l3QmNjRC1aZW1QdkVxYjlQM3dPQ3BSRk95MlhWXzFlaUZSOExxZ0VPNA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-29T11:14+01:00",
-      "date": "2026-10-29",
-      "source": "Chatham House",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxPNmFLaURmTVFnY0xMVWtEampqVEFTbWoxQmtsVFhvWGF1TEh6TTZmWEM5UmNWVVpPMzlabnRnWWZsUzV5THNWSXFQNVdYM2lrR09aY2RxVWZhYUIydkRZWDNudG5IU1l3QmNjRC1aZW1QdkVxYjlQM3dPQ3BSRk95MlhWXzFlaUZSOExxZ0VPNA?oc=5\" target=\"_blank\">Africa Aware: 10 years of Cameroon’s Anglophone Crisis</a> <font color=\"#6f6f6f\">Chatham House</font>",
-      "center_site": "https://chathamhouse.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "أفريقيا على علم: 10 سنوات من أزمة الكاميرون الناطقة باللغة الإنجليزية - تشاتام هاوس"
-    },
-    {
-      "center": "معهد كوينسي للحكم المسؤول",
-      "center_short": "Quincy Institute",
-      "title": "War in Ethiopia Begins Anew: Stakes for Africa and Beyond - Quincy Institute for Responsible Statecraft",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPWWQ2ZC02cE5fOV8xUWhvajVnbnlhZlhOeUsxWklfeGlpQnE5TWl2WXFCZkJNME8zX3cxVFJZcUx2b3dhd2ZPb1A0bktjX2c3ajVKWWRIWG9vREdSb1hGYUI4Qk16YWNDbFZrSFd4WjZsaGh4QVpJYnd6NXdYSGJrdkhRNEpaanJ5b3FhTmxCcS0?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-29T08:00+01:00",
-      "date": "2026-10-29",
-      "source": "Quincy Institute for Responsible Statecraft",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxPWWQ2ZC02cE5fOV8xUWhvajVnbnlhZlhOeUsxWklfeGlpQnE5TWl2WXFCZkJNME8zX3cxVFJZcUx2b3dhd2ZPb1A0bktjX2c3ajVKWWRIWG9vREdSb1hGYUI4Qk16YWNDbFZrSFd4WjZsaGh4QVpJYnd6NXdYSGJrdkhRNEpaanJ5b3FhTmxCcS0?oc=5\" target=\"_blank\">War in Ethiopia Begins Anew: Stakes for Africa and Beyond</a> <font color=\"#6f6f6f\">Quincy Institute for Responsible Statecraft</font>",
-      "center_site": "https://quincyinst.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "الحرب في إثيوبيا تبدأ من جديد: رهانات لأفريقيا وما وراءها - معهد كوينسي لفن الدولة المسؤول"
-    },
-    {
-      "center": "مركز إفريقيا للدراسات الاستراتيجية",
-      "center_short": "Africa Center for Strategic Studies",
-      "title": "Lessons from Africa’s Drone Wars - Africa Center for Strategic Studies",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5mdDdYSEtiWnB1WjdrVElXbldlX2ZTYzVtWTlFVGFEY2pVRUdzRmxSajBaR3NWdVZCcUd5T3dobDVDRUFucktHTTNiQnlmZGw1QndYSlZ1Y3NKNXVyek1ocmNQNk1kMDlCMm9XT2VfUllzQzJpQm9CcQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-10-29T04:02+01:00",
-      "date": "2026-10-29",
-      "source": "Africa Center for Strategic Studies",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMieEFVX3lxTE5mdDdYSEtiWnB1WjdrVElXbldlX2ZTYzVtWTlFVGFEY2pVRUdzRmxSajBaR3NWdVZCcUd5T3dobDVDRUFucktHTTNiQnlmZGw1QndYSlZ1Y3NKNXVyek1ocmNQNk1kMDlCMm9XT2VfUllzQzJpQm9CcQ?oc=5\" target=\"_blank\">Lessons from Africa’s Drone Wars</a> <font color=\"#6f6f6f\">Africa Center for Strategic Studies</font>",
-      "center_site": "https://africacenter.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "الدروس المستفادة من حروب الطائرات بدون طيار في أفريقيا - مركز أفريقيا للدراسات الاستراتيجية"
     }
   ]
 }
