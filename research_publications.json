@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T16:09+01:00",
+  "updated": "2026-11-28T01:32+01:00",
   "window_days": 30,
   "seed_start_date": "2026-10-01",
   "center_count": 100,
@@ -776,6 +776,20 @@
       "title_ar": "كيف يعيد الجيش هيكلة قطاع الذهب في مصر بالقوة - مؤسسة العلوم والسياسة"
     },
     {
+      "center": "تشاتام هاوس",
+      "center_short": "Chatham House",
+      "title": "Africa Aware: What the latest pan-African survey reveals about what African citizens want - Chatham House",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxONU84SkVFQjRNTEM2WENOZ2lNeVg1RWpWQTdCaXVWY1lHR3pERlhtYXFmdHN5MjVQRjhUek5tMXFYdkk4cXJqdm13ZUhJalFJcnJjRkpFbElhUGxyamc2YjloRjNodDBvSk04M01iMVhwT0pVNkpCNExIR2IwcGlHb0NsTUhkZWVkQmdiNFhIUmwzVlRVOUhBVWRGTTFjVjNtMUU5N2s5N3hoaEJNWnZtQ1FIb1dRWS12TlVuOVlB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "published": "2026-11-27T17:38+01:00",
+      "date": "2026-11-27",
+      "source": "Chatham House",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxONU84SkVFQjRNTEM2WENOZ2lNeVg1RWpWQTdCaXVWY1lHR3pERlhtYXFmdHN5MjVQRjhUek5tMXFYdkk4cXJqdm13ZUhJalFJcnJjRkpFbElhUGxyamc2YjloRjNodDBvSk04M01iMVhwT0pVNkpCNExIR2IwcGlHb0NsTUhkZWVkQmdiNFhIUmwzVlRVOUhBVWRGTTFjVjNtMUU5N2s5N3hoaEJNWnZtQ1FIb1dRWS12TlVuOVlB?oc=5\" target=\"_blank\">Africa Aware: What the latest pan-African survey reveals about what African citizens want</a> <font color=\"#6f6f6f\">Chatham House</font>",
+      "center_site": "https://chathamhouse.org/",
+      "relevance_tier": 4,
+      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
+      "title_ar": "دراسة \"أفريقيا واعية\": ما تكشفه أحدث دراسة استقصائية لعموم أفريقيا عن رغبات المواطنين الأفارقة - تشاتام هاوس"
+    },
+    {
       "center": "معهد الدراسات الأمنية الأوروبي (EUISS)",
       "center_short": "EUISS",
       "title": "Workshop on the Emerging and Disruptive Technologies that can bolster European defence, economic growth, and indispensability - European Union Institute for Security Studies |",
@@ -1222,20 +1236,6 @@
       "relevance_tier": 4,
       "relevance_label": "قضايا عالمية قد تؤثر في تونس",
       "title_ar": "الإرهاب في عام 2040: كيفية التصدي للحرب غير المتكافئة في عالم مترابط للغاية"
-    },
-    {
-      "center": "تشاتام هاوس",
-      "center_short": "Chatham House",
-      "title": "Africa Aware: Tigray’s renewed war and risks to the wider Horn of Africa - Chatham House",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQeXVfaFhpbkZGb2YxNVZWRm5fUGYyVEN5QTN5VlhsbERMQnBYZWhRMWNtN081bGc2Nmg4eEFQaFRDbHpNYjJ5NXo2Z004TmZsVloxR3hCMzNhSFV0cndrYkJ6STNwWEZvc3BQRXpnNnZUYjB5WXllSlBkZTBEQVBQRDZua255TGxWUFVqNG0zdHhGQUZfQXJKM1BnMURodw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "published": "2026-11-11T16:23+01:00",
-      "date": "2026-11-11",
-      "source": "Chatham House",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxQeXVfaFhpbkZGb2YxNVZWRm5fUGYyVEN5QTN5VlhsbERMQnBYZWhRMWNtN081bGc2Nmg4eEFQaFRDbHpNYjJ5NXo2Z004TmZsVloxR3hCMzNhSFV0cndrYkJ6STNwWEZvc3BQRXpnNnZUYjB5WXllSlBkZTBEQVBQRDZua255TGxWUFVqNG0zdHhGQUZfQXJKM1BnMURodw?oc=5\" target=\"_blank\">Africa Aware: Tigray’s renewed war and risks to the wider Horn of Africa</a> <font color=\"#6f6f6f\">Chatham House</font>",
-      "center_site": "https://chathamhouse.org/",
-      "relevance_tier": 4,
-      "relevance_label": "قضايا عالمية قد تؤثر في تونس",
-      "title_ar": "أفريقيا واعية: تجدد الحرب في تيغراي والمخاطر التي تهدد منطقة القرن الأفريقي الأوسع - تشاتام هاوس"
     },
     {
       "center": "مؤسسة RAND",
