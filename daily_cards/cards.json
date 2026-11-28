@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T10:54:32.489722+00:00",
+  "updated": "2026-11-28T10:57:03.838251+00:00",
   "cards": [
     {
       "date": "2026-10-07",
@@ -11066,37 +11066,18 @@
       "slot": "daily",
       "period": "00:00–23:59 (تُنشأ عند 06:00 وتُحدّث خلال اليوم)",
       "title": "الحوصلة الإخبارية ليوم 28/11/2026",
-      "generated_at": "2026-11-28T11:54:15.327190+01:00",
-      "source_fingerprint": "e38fda2362531387e83bf76910e489d8fea827253a292c5bbac126c3996c0c13",
-      "source_news_count": 106,
+      "generated_at": "2026-11-28T11:56:51.555102+01:00",
+      "source_fingerprint": "1e3920c9c52b7d9dcfe71acd851896458bc0920500921198f3a46197b9683ad4",
+      "source_news_count": 108,
       "candidate_audit_attempt_date": "2026-11-28",
       "candidate_audit_completed": true,
-      "candidate_audit_fingerprint": "e38fda2362531387e83bf76910e489d8fea827253a292c5bbac126c3996c0c13",
+      "candidate_audit_fingerprint": "1e3920c9c52b7d9dcfe71acd851896458bc0920500921198f3a46197b9683ad4",
       "candidate_audit_version": 3,
       "event_enrichment_version": 4,
       "event_enrichment_attempted": true,
-      "event_enrichment_fingerprint": "e38fda2362531387e83bf76910e489d8fea827253a292c5bbac126c3996c0c13",
-      "event_enrichment_completed": true,
-      "event_enrichment_sources": [
-        {
-          "country": "السعودية",
-          "event": "أعلن تحالف دعم الشرعية في اليمن اعتراض وتدمير صاروخ كروز أطلقته مليشيا الحوثي باتجاه منطقة الرياض.",
-          "sources": [
-            {
-              "title": "التحالف: اعتراض وتدمير صاروخ كروز أطلقه الحوثي باتجاه الرياض - العربية",
-              "source": "العربية",
-              "published": "Sat, 28 Nov 2026 03:32:00 GMT",
-              "url": "https://news.google.com/rss/articles/CBMigARBVV95cUxNTk5vd0hudWhOUTZMMVNRc1R5QzE5UWNGOFBCX2UzM3MxcEFuSlMtNU56MFZNYmdDUDJCUlBKeGlUczlxMjJfSG40aFltbXk4Y3NWWDNybVRlbE5yRHAxTjJZN2tjWEJvNkljZDhfUG9ZdnZyejNJQ3dvMXpIdk13dkxULS1GakRia2RFVElDb0JXSHRDNXdpU0VvOXg5U1ZwcC1sV2FKaGc2Sl9OcndtZzlCcW11M2pzQVlhY0tXNVZBNFhHMTVUbkMtLVFpM3lzUkhJcjgtOEVHcG5QVnd3bEx4M2NBU0FfZ2RXRlBsRnZlQWZOM3NBNDQ2WTZqVGNIUWw3VVN2WVRSZ1FncHBWTkszZ0ktbnY5NGRYeW5ld0JUWmY0VzdWT2N5SF9SYmJNbWJPRUZ4SW4tY21YS2ZIR2VzNWtUb20tV1BIRExUUVlwZW5WLXZKU0hfT3BmaUwyYWxOOXFpeGJvSi1xOXBfN2hYX0dRSGJkYnA1YXBiZHNkMXY5czZxQVJiYTZOSVJCLUdZUlBPZWc3ejQtWWN2UzBLNUVoNlI3Q2FTYWh0U1B1dlRuNXdBcVEzU0hJbHhoQ2tnUFA5UjI3MGpQUWN1WUFtX1JQUHFubndkbFEyVlpmRm53b2VjcE9Uai1CQTYwSUpUbmc3bk92N3RSVWZpRtIBhgRBVV95cUxNMXlMOFNaOHp6bEFBVnVvVUoxdzIxbnJ5aDI2YXFsRm02eEhuRWVudTA5T09ha003UzNyQUItbnZLTG43Ykp0VHROX2JyZDVjbnNKVnJNTVFEQ1AzcHc0RjdWNDcxTHFCQmVjcGwxS0s0WVNIRHJ5QlpiTWcteEg2OWFkTTdQVUhVWnVwRHhwQ2NuZTFkRUhZN0k0R1BWcVFheTY4SkNLazE0amJVcUQ5VEpENHFpaWpQR2M3Tnh5YWRHcUJQTmtrM1VXYVBhN0dtTS1FTmMzQXp3bGxwWUwzMkZHTWlRMkJaTnRLZDJZbUVidHZqT0ZZa2Zwd0htVHNqRFRDX1dFRXZvT3Y1TGZQVWJ0b0Z0WGZxZFJNNnUyYWtfV253TC10YXlOMGxSZ09mdHdBRXNHVG11bDg0TlNTQkpRTTFuazlHWDR5Z19BVy1BV2ltRUd1UTUxZXZwUzJGN0JOZGV2V0xJSVBkdGNjckpld2NPMG5KTTh1cGhGdDc3WmpmdldLNTB6eTVJdmFfdHdfbHVEay1YZmhqSEtMZUJxUDJwVllhZUg4ZkVSRGVMNXVDOUJkdklTZjlCZk96Zm9fTlpCTnVNS0JkN2hZUEV4eXZKVV9SRDdNQzhyNGtQSmdGYzlNX3lHMVc2NkhpY2gxQmExakt6bnNwODlTQzBMNGp3QQ?oc=5&hl=en-US&gl=US&ceid=US:en"
-            },
-            {
-              "title": "تحالف دعم الشرعية باليمن: اعتراض وتدمير صاروخ أطلقته ميليشيا الحوثي باتجاه الرياض - صدى البلد",
-              "source": "صدى البلد",
-              "published": "Sat, 28 Nov 2026 09:00:43 GMT",
-              "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE5PSHlwMnVRUlZKQnJNVjh5M28yZDRjd216Y1hZaHNnQ2pPaTNvUTBaNWxWLVI5SzRoZmhHeGVWemR6eFRUaVFv?oc=5&hl=en-US&gl=US&ceid=US:en"
-            }
-          ]
-        }
-      ],
+      "event_enrichment_fingerprint": "1e3920c9c52b7d9dcfe71acd851896458bc0920500921198f3a46197b9683ad4",
+      "event_enrichment_completed": false,
+      "event_enrichment_sources": [],
       "sections": [
         {
           "id": "libya",
